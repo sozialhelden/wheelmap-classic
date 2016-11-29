@@ -6,6 +6,7 @@ ca:
       notice: "Heu d'iniciar la sessió per veure aquesta pàgina."
   breadcrumbs:
     node:
+      create: "Afegir un nou lloc"
       edit: "Edita el lloc"
     root: Wheelmap
   common:
@@ -54,6 +55,8 @@ ca:
         notice: "La imatge s'ha eliminat correctament"
   form:
     show_fully_accessible_places: "accessible amb cadira de rodes"
+    show_limited_accessible_places: "Accessible amb cadira de rodes de manera parcial"
+    show_places_without_status: "Estat desconegut"
     show_unaccessible_places: "No accessible amb cadira de rodes"
   formtastic:
     hints:
@@ -110,6 +113,7 @@ ca:
       profile: Perfil
       suggestions: Suggerències
       what_is_barrier_free: "Què significa «accessible amb cadira de rodes»?"
+      what_is_wheelmap: "Què és Wheelmap?"
     searchbar:
       add_place: "Afegeix un altre lloc"
       find: Cerca
@@ -136,10 +140,15 @@ ca:
           upgrade: "Actualitza el navegador"
         warning:
           headline: "Li demanem disculpes."
+      link:
+        node:
+          create: "Afegir un nou lloc"
       popup:
         form:
+          limited: "Accessible amb cadira de rodes de manera parcial"
           'no': "No accessible amb cadira de rodes"
           save: Actualitza
+          unknown: "Estat desconegut"
           'yes': "Accessible amb cadira de rodes"
         help: "Accessible amb cadira de rodes? (ajuda)"
         more: "més..."
@@ -259,6 +268,7 @@ ca:
     step1: "Feu clic sobre un lloc que conegueu"
     step2: "Marqueu i feu clic per desar"
     step3: "Ja està.No necessites registre."
+    what_is_wheelmap: "Què és Wheelmap?"
   statistics: Estadístiques
   support:
     array:
@@ -301,7 +311,9 @@ ca:
       headline:
         your_images: "Imatges que heu penjat"
   wheelchairstatus:
+    limited: "Accessible amb cadira de rodes de manera parcial"
     'no': "No accessible amb cadira de rodes"
+    unknown: "Estat desconegut"
     'yes': "Accessible amb cadira de rodes"
   wheelmap:
     footer:

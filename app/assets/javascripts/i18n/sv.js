@@ -4,7 +4,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     "cancel": "Avbryt",
     "next": "Nästa",
     "save": "Spara",
-    "send": "Send"
+    "send": "Skicka"
   },
   "active_admin": {
     "access_denied": {
@@ -186,10 +186,10 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
         "address": "Adress",
         "address_city": "Ort",
         "address_housenumber": "Husnummer",
-        "address_postcode": "Postcode",
+        "address_postcode": "Postnummer",
         "address_street": "Gata",
         "name": "Namn",
-        "note": "Note",
+        "note": "Meddelande",
         "phone": "Telefon",
         "type": "Typ",
         "website": "Webbplats"
@@ -433,14 +433,14 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
   },
   "devise": {
     "confirmations": {
-      "confirmed": "Ditt konto är godkänt. Du är nu inloggad.",
-      "link": "You didn't receive confirmation instructions?",
+      "confirmed": "Din mejladress har bekräftats och ditt konto är godkänt. Du är nu inloggad.",
+      "link": "Kom inte mejlet med länken för att bekräfta fram?",
       "send_instructions": "Du kommer att få ett e-post med instruktioner om hur du bekräftar ditt konto om några minuter.",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
+      "send_paranoid_instructions": "Om ditt konto är upplagt kommer du inom några minuter att få ett mejl med instruktioner om hur du bekräftar din registrering."
     },
     "destroy": {
       "confirm": "Är du säker?",
-      "headline": "Delete account",
+      "headline": "Radera konto",
       "link": "Radera nu"
     },
     "edit": {
@@ -457,32 +457,32 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     },
     "failure": {
       "already_authenticated": "Du är redan inloggad.",
-      "inactive": "Your account has not been activated yet.",
+      "inactive": "Ditt konto är inte aktiverat ännu.",
       "invalid": "Felaktig e-post eller lösenord.",
       "invalid_token": "Felaktig inloggning",
       "last_attempt": "You have one more attempt before your account will be locked.",
       "locked": "Ditt konto är låst.",
       "not_found_in_database": "Invalid email or password.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Din session har avslutats, logga in för att fortsätta.",
       "unauthenticated": "Du måste logga in eller registrera dig för att fortsätta.",
       "unconfirmed": "Du måste bekräfta ditt konto innan du kan fortsätta"
     },
     "mailer": {
       "confirmation_instructions": {
-        "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
+        "landing_page": "Vänligen klicka på länken som vi just skickat till din mejladresss. Om du inte får något mejl från oss, kontrollera för att det inte har hamnat i Skräpmappen. Finns det inte där heller, kom tillbaka till registreringssidan och gör ett nytt försök.",
         "subject": "Valideringsinstruktioner"
       },
       "reset_password_instructions": {
         "subject": "Instruktioner för att återställa lösenord"
       },
       "unlock_instructions": {
-        "subject": "Unlock instructions"
+        "subject": "Instruktioner för att låsa upp lösenord"
       }
     },
     "mandatory": "* obligatoriskt",
     "omniauth_callbacks": {
       "failure": "Kunde inte auktorisera dig från %{kind} pga \"%{reason}\"",
-      "permission_missing": "You did not grant the required permission.",
+      "permission_missing": "Du har inte godkänt den behörighet som krävs.",
       "success": "Auktoriserad från %{kind} konto."
     },
     "password_recovery": {
@@ -499,7 +499,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
         "comment": "Om du inte har önskat att få återställa ditt lösenord, så bortse från detta e-postmeddelande.<br/>Ditt lösenord kommer inte att ändras om du inte klickar på länken ovan och väljer ett nytt lösenord.",
         "headline": "Välkommen %{email}",
         "link": "Byta lösnord",
-        "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
+        "text": "Vi har fått en begäran om att ändra ditt lösenord. Om du skickade denna begäran, klicka på länken - annars struntar du i detta mejl!"
       },
       "form": {
         "labels": {
@@ -513,8 +513,8 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     "passwords": {
       "link": "Glömt lösenord?",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
-      "send_instructions": "You will receive an email with instructions on how to reset your password in a few minutes",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
+      "send_instructions": "Inom några minuter kommer du att få ett mejl med instruktioner om hur du sparar ett nytt lösenord.",
+      "send_paranoid_instructions": "Om ditt konto är upplagt kommer du inom några minuter att få ett mejl med instruktioner om hur du sparar ett nytt lösenord.",
       "updated": "Ditt lösenord är ändrat. Du är nu inloggad.",
       "updated_not_active": "Ditt lösenord är nu ändrat"
     },
@@ -527,7 +527,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
         "locked": "låst",
         "unconfirmed": "ej bekräftad"
       },
-      "signed_up": "You have signed up successfully. A you have been sent a confirmation email.",
+      "signed_up": "Din registrering har lyckats. Ett mejl med bekräftelse har skickats till din mejladress.",
       "signed_up_but_inactive": "You have signed up successfully. However, we could not sign you in because your account is not yet activated.",
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
@@ -535,22 +535,22 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       "updated": "Din kontoinformation är uppdaterad."
     },
     "sessions": {
-      "inactive": "Your account has not been activated yet",
+      "inactive": "Ditt konto är inte aktiverat ännu.",
       "invalid": "Felaktig e-post eller lösenord.",
       "invalid_token": "Felaktig inloggnings token",
       "link": "Logga in",
       "locked": "Ditt konto är låst.",
       "new": {
         "no_osm_account": "Saknar du OpenStreetMap-konto?",
-        "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
+        "osm_promo_text": "Wheelmap bygger på geodata från OpenStreetMap (OSM). OpenStreetMap är en allmänt tillgänglig världskarta, som skapats av personer som du. Det är som en Wikipedia för kartor. För att kunna ändra platsinformation och skapa ny behöver du ha ett konto hos OpenStreetMap. Du behöver vara inloggad på kontot för att redigera kartan.",
         "promo_text_thank_you": "Tack för din support!",
         "sign_in_with": "Logga in med %{kind}",
         "sign_up_with_osm": "Registrera dig nu",
-        "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
+        "wheelmap_promo_text": "Din kunskap om platser som är tillgängliga för rullstolsburna, kan hjälpa personer med fysiska hinder att lättare planera sin vardag. Dessutom så bidrar det till att göra OpenStreetMap mer detaljerad."
       },
       "signed_in": "Inloggad.",
       "signed_out": "Utloggad.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Din session har avslutats, logga in för att fortsätta.",
       "unauthenticated": "Du måste logga på eller registrera dig innan du kan fortsätta.",
       "unconfirmed": "Du måste verifiera ditt konto innan du kan fortsätta."
     },
@@ -579,16 +579,16 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
           "email": "E-post",
           "password": "Lösenord",
           "password_confirmation": "Upprepa lösenord",
-          "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
+          "wants_newsletter": "Ja tack, låt mig veta vad som händer med Wheelmap - men inte mer än en gång i månaden."
         },
         "submit": "Registrera"
       },
       "headline": "Registrera dig"
     },
     "unlocks": {
-      "link": "You didn't receive unlock instructions?",
-      "send_instructions": "You will receive an email in a few minutes with instructions on how to unlock your account",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
+      "link": "Fick du inte mejlet med instruktioner för att låsa upp?",
+      "send_instructions": "Inom några minuter kommer du att få ett mejl med instruktioner om hur du låser upp ditt konto.",
+      "send_paranoid_instructions": "Om ditt konto är upplagt kommer du inom några minuter att få ett mejl med instruktioner om hur du låser upp ditt konto.",
       "unlocked": "Ditt konto är nu upplåst. Du kan nu logga in."
     }
   },
@@ -596,27 +596,27 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     "dynamic_format": "%{message}",
     "format": "%{attribute} %{message}",
     "messages": {
-      "accepted": "must be accepted",
+      "accepted": "måste godkännas",
       "already_confirmed": "är redan validerad, prova att logga in",
-      "blank": "must be filled in",
+      "blank": "måste vara ifyllt",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
       "carrierwave_processing_error": "failed to be processed",
       "confirmation": "måste vara samma som det upprepade",
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
-      "empty": "must be filled in",
+      "empty": "måste vara ifyllt",
       "equal_to": "måste vara exakt %{count}",
-      "even": "must be an even number",
+      "even": "måste vara ett jämnt heltal",
       "exclusion": "är reserverat",
       "expired": "utgånget, ansök om ett nytt",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
       "extension_white_list_error": "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}",
       "greater_than": "måste vara större än %{count}",
-      "greater_than_or_equal_to": "must be greater than or equal to %{count}",
+      "greater_than_or_equal_to": "måste vara större än eller lika med %{count}",
       "inclusion": "inte ett giltigt värde",
       "invalid": "inte giltig",
       "less_than": "måste vara mindre än %{count}",
-      "less_than_or_equal_to": "must be less than or equal to %{count}",
+      "less_than_or_equal_to": "måste vara mindre eller lika med %{count}",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
       "not_a_number": "är inte ett nummer",
@@ -627,7 +627,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
         "one": "Ett fel hindrade denna %{resource} från att sparas:",
         "other": "%{count} fel hindrade denna %{resource} från att sparas:"
       },
-      "odd": "must be an odd number",
+      "odd": "måste vara ett udda heltal",
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
@@ -639,7 +639,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": "Website address is not valid."
+          "invalid": "Webbadressen är inte giltig"
         }
       }
     },
@@ -691,26 +691,26 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
   },
   "formtastic": {
     "hints": {
-      "email": "We treat your address confidentially. We promise not to send you spam!",
+      "email": "Vi hanterar din adress konfidentiellt. Vi lovar att inte skicka skräppost!",
       "lat": "Flytta markören på kartan till korrekt position",
       "osm_username": "Ännu ej medlem?  <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Skapa ett Openstreetmap konto nu</a>",
       "password": "(lämnas tomt, om du inte vill ändra det)",
-      "phone": "For example: +49 30 12345678",
+      "phone": "exempel: +46 12345678",
       "website": "Till exempel: http://www.example.se"
     },
     "labels": {
       "category": "Kategori:",
       "centralkey": "Huvudnyckel:",
       "city": "Ort:",
-      "create": "Create a place",
+      "create": "Lägg in ny plats",
       "email": "E-post",
       "finish": "Avsluta",
       "housenumber": "Nummer:",
       "lat": "Latitud",
       "lon": "Longitud",
       "name": "Namn:",
-      "osm_password": "OpenStreetMap password",
-      "osm_username": "OpenStreetMap account name",
+      "osm_password": "Lösenord - OpenStreetMap",
+      "osm_username": "Användarnamn - OpenStreetMap",
       "password": "Lösenord",
       "password_confirmation": "Upprepa lösenord",
       "phone": "Telefon:",
@@ -736,7 +736,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
+      "description": "Wheelmap.org är en online-karta för att söka, hitta och markera rullstolstillgängliga platser. Bli delaktig genom att markera offentliga platser som t ex barer, restauranger, bio och mataffärer!",
       "homepage": "Hemsida",
       "keywords": "rullstolstillgängliga platser hitta sök lägg till",
       "search": "Sök",
@@ -758,10 +758,10 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       "newsletter": "Nyhetsbrev",
       "press": "Press",
       "profile": "Profil",
-      "projects": "Projekt",
+      "projects": "Bli inblandad",
       "suggestions": "Förslag",
       "what_is_barrier_free": "Vad betyder \"rullstolstillgänglig\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Lite om Wheelmap"
     },
     "searchbar": {
       "add_place": "Lägg till en plats",
@@ -770,7 +770,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       "title_add_place": "Lägg till en ny plats på denna position!"
     },
     "tagline": "Wheelmap logo",
-    "title": "Find wheelchair accessible places",
+    "title": "Hitta rullstolstillgängliga platser",
     "toolbar": {
       "categories": "Kategorier"
     }
@@ -799,7 +799,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "Visa på Wheelmap.org",
       "filter": {
         "category": "Välj kategori:",
         "deselect_all": "Välj ingen",
@@ -813,7 +813,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
         },
         "warning": {
           "headline": "Tyvärr!",
-          "message": "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
+          "message": "Du verkar använda Internet Explorer. Wheelmap kräver en webbläsare som följer standard för att fungera ordentligt. Fundera på att använda Firefox, Chrome, Safari eller Opera istället."
         }
       },
       "link": {
@@ -840,7 +840,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
         "help": "Rullstolstillgänglig? (Hjälp)",
         "more": "mera ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "Du ser fler platser om du zoomar in."
     }
   },
   "how?": "Hur?",
@@ -848,10 +848,10 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     "index": {
       "wheelchair": {
         "limit": {
-          "headline": "All partially wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Alla delvis tillgängliga för rullstol %{type} i %{city} (%{count})"
         },
         "no": {
-          "headline": "All not wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Alla helt otillgängliga för rullstol %{type} i %{city} (%{count})"
         },
         "unknown": {
           "headline": "Alla %{type} i %{city} med okänd rullstolstillgänglighet (%{count})"
@@ -871,17 +871,17 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": "Choose a category"
+      "prompt": "Välj kategori:"
     },
     "node": {
-      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
+      "info_edit_position": "Platsen kommer synas i Wheelmap som den visas ovan. Om markören inte är på korrekt ställe kan du  <a href=\"%{url}\"> ändra dess position på OpenstreetMap. \n</a>",
       "mail": {
-        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
-        "subject": "[Wheelmap] Problem with %{headline}"
+        "body": "(Vänligen skriv enbart på engelska eller tyska.)\n\nHi Sozialhelden,\n\nsomething is wrong with location: %{url}\n\n\nThe problem is:",
+        "subject": "[Wheelmap] Problem med %{headline}"
       }
     },
     "node_type": {
-      "prompt": "Choose a type"
+      "prompt": "Välj en typ"
     }
   },
   "node": {
@@ -910,7 +910,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       }
     },
     "errors": {
-      "default": "Oops something went wrong. We have been informed about this issue",
+      "default": "Ojdå, något gick fel. Vi har fått meddelande om problemet.",
       "not_authorized": "Tyvärr, inloggningen misslyckades",
       "not_available": "Tyvärr, denna sida kan just nu inte visas.",
       "not_existent": "Tyvärr, denna plats finns inte längre.",
@@ -923,37 +923,37 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     "new": {
       "form": {
         "legend": "Platsens läge",
-        "location": "Please click on the map where the place is located!",
+        "location": "Klicka på kartan där platsen är lokaliserad!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "Rullstolstillgänglighet:",
+            "title": "Information om rullstolstillgänglighet"
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
+            "help": "Du kan dra markören till det ställe på kartan där platsen finns.",
             "name": "Adress",
-            "title": "Where is the place?"
+            "title": "Var ligger platsen?"
           },
           "contact": {
             "name": "Kontakt",
-            "title": "Other contact information"
+            "title": "Annan kontaktinformation"
           },
           "name_category": {
-            "name": "Name and place type",
-            "title": "Give us some initial information about your place:"
+            "name": "Platsens namn och typ",
+            "title": "Ge oss lite grundinformation om din plats:"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "Är all information korrekt?"
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "Inga liknande platser hittades.",
+            "go_edit": "Fortsätt med inmatningen för denna platsen",
+            "go_new": "Det är ingen av platserna ovan ...",
+            "name": "Platser som liknar denna",
+            "title": "Vi hittade platser i närheten som liknar denna. Är det en av dessa?"
           }
         },
-        "title": "Add a place"
+        "title": "Lägg till ny plats"
       },
       "header": {
         "title": "Ny plats | wheelmap.org"
@@ -1013,11 +1013,11 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
         "listing": "Alla platser av typen '%{type} i %{city}",
         "upload": "Ladda upp bild"
       },
-      "more_data_from": "There is more information about this place, validated by:",
+      "more_data_from": "Det finns mer information om denna plats, varierad av:",
       "share": {
         "email": "E-post",
         "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
+        "text": "Jag hittade denna plats på Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1098,11 +1098,11 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
   "oauth": {
     "application": {
       "connect": {
-        "headline": "You need to connect your account with your OpenStreetMap account before you can create or modify places on Wheelmap.org."
+        "headline": "Du behöver koppla ditt konto till ditt OpenStreetMap-konto innan du kan skapa eller ändra platsinformation via Wheelmap.org."
       }
     },
     "callback": {
-      "notice": "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
+      "notice": "Ditt Wheelmap-konto är nu kopplat till OpenStreetMap konto %{user}."
     }
   },
   "or": "eller",
@@ -1119,8 +1119,8 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       "health": "Hälsa & Sjukvård",
       "leisure": "Fritid & Kultur",
       "misc": "Blandat",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Bank & Post",
+      "public_transfer": "Kollektivtrafik",
       "shopping": "Shopping",
       "sport": "Idrott",
       "tourism": "Turism",
@@ -1161,19 +1161,25 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       "government": {
         "courthouse": "Domstol",
         "embassy": "Ambassad",
+        "employment_agency": "Arbetsförmedling",
         "government": "Servicekontor",
         "police": "Polis",
         "public_building": "Publik byggnad",
-        "townhall": "Town hall"
+        "townhall": "Stadshus"
       },
       "health": {
+        "alternative": "Alternativ hälsovård",
         "dentist": "Tandläkare",
-        "doctors": "Doctor",
+        "doctors": "Läkare",
         "hearing_aids": "Hörcentral",
         "hospital": "Sjukhus",
         "medical_supply": "Medicinsk utr.",
+        "occupational_therapist": "Ergonom",
         "pharmacy": "Apotek",
+        "physiotherapist": "Sjukgymnast",
+        "psychotherapist": "Psykoterapeut",
         "social_facility": "Socialkontor",
+        "speech_therapist": "Logoped",
         "veterinary": "Veterinär"
       },
       "leisure": {
@@ -1181,23 +1187,26 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
         "brothel": "Bordell",
         "casino": "Casino",
         "cinema": "Bio",
-        "community_centre": "Community centre",
+        "community_centre": "Allaktivitetshus",
         "gallery": "Galleri",
-        "massage": "Massage spa",
+        "massage": "Massage",
         "nightclub": "Nattklubb",
         "playground": "Lekplats",
         "sauna": "Bastu",
         "stripclub": "Stripklubb",
-        "tattoo": "Tattoo shop",
+        "tattoo": "Tatueringssalong",
         "theatre": "Teater",
         "zoo": "Zoo"
       },
       "misc": {
+        "association": "Förening",
         "company": "Företagskontor",
         "estate_agent": "Fastighetsmäklare",
         "insurance": "Försäkringar",
         "lawyer": "Advokat",
+        "ngo": "Ideell samhällsförening",
         "place_of_worship": "Religiös plats",
+        "political_party": "Partikansli",
         "toilets": "Toalett"
       },
       "money_post": {
@@ -1211,7 +1220,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
         "aerodrome": "Flygplats",
         "bicycle_parking": "Cykelparkering",
         "bicycle_rental": "Cykeluthyrning",
-        "boatyard": "Boat yard",
+        "boatyard": "Båtvarv",
         "bus_station": "Busstation",
         "bus_stop": "Busshållplats",
         "cable_car": "Linbana",
@@ -1233,6 +1242,8 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       },
       "shopping": {
         "alcohol": "Alkohol",
+        "antiques": "Antikviteter",
+        "art": "Galleri",
         "bakery": "Bageri",
         "beauty": "Skönhetssalong",
         "beverages": "Drycker",
@@ -1241,28 +1252,37 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
         "butcher": "Köttaffär",
         "car_repair": "Bilverkstad",
         "car_shop": "Bilförsäljning",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "Apotek",
         "clothes": "Kläder",
         "computer": "Datorer",
         "confectionery": "Godisaffär",
         "convenience": "Närbutik",
+        "copyshop": "Kopiering",
         "deli": "Delikatesser",
         "department_store": "Varuhus",
         "doityourself": "Gör det själv",
         "dry_cleaning": "Kemtvätt",
         "electronics": "Elektronik",
+        "erotic": "Sexshop",
         "fabric": "Bygghandel",
         "farm_shop": "Lantbruksutrustning",
         "florist": "Blomsteraffär",
+        "funeral_directors": "Begravningsbyrå",
         "furniture": "Möbler",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Handelsträdgård",
         "gift": "Presentbutik",
+        "greengrocer": "Frukt och grönsakshandel",
         "hairdresser": "Frisör",
         "hardware": "Järnhandel",
+        "interior_decoration": "Inredningsaffär",
         "jewelry": "Smycken",
         "kiosk": "Kiosk",
         "laundry": "Tvätt",
         "mall": "Köpcentrum",
+        "mobile_phone": "Mobiltelefonförsäljare",
+        "music": "Skivaffär",
+        "musical_instrument": "Musikaffär",
+        "newsagent": "Tidningsaffär",
         "optician": "Optiker",
         "organic": "Hälsokost",
         "outdoor": "Friluftsutrustning",
@@ -1273,8 +1293,12 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
         "sports": "Sport",
         "stationery": "Kontorsmateriel",
         "supermarket": "Livsmedel",
+        "tailor": "Skrädderi",
+        "tea": "Teaffär",
+        "tobacco": "Tobaksaffär",
         "toys": "Leksaker",
         "travel_agency": "Resebyrå",
+        "variety_store": "Lågprisaffär",
         "video": "Videouthyrning"
       },
       "sport": {
@@ -1392,7 +1416,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
+        "headline": "Beklagar, vi kunde inte hitta en plats som kallas \"%{query}\".",
         "hint": {
           "example": "<strong>Exempel:</strong> London, Storbritannien",
           "info": "Vår söktjänst fungerar bara med namn -och/eller adressinformation. Var därför vänlig och sök efter platsens namn eller en adress, t.ex. gatunamn och/eller stad. Det fungerar inte att söka efter en sorts plats, t.ex. restaurang eller bio!",
@@ -1416,7 +1440,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
+      "headline": "Beklagar, något gick fel.",
       "info": "Vår söktjänst var tillfälligt otillgänglig.",
       "repeat_search": "Sök igen"
     }
@@ -1428,7 +1452,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     "step1": "Klicka på en plats som du känner till",
     "step2": "Markera den och klicka därefter på spara",
     "step3": "Klart! Ingen registrering behövs",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Information om Wheelmap"
   },
   "statistics": "Statistik",
   "support": {
@@ -1452,14 +1476,14 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     "pm": "pm"
   },
   "toiletstatus": {
-    "no": "No wheelchair accessible toilet",
-    "unknown": "Toilet status unknown",
+    "no": "Saknar rullstolstillgänglig toalett",
+    "unknown": "Information om toalett saknas",
     "what_is": {
-      "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
-      "unknown": "Help out by marking the toilet status!",
-      "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      "no": "Dörrars innermått är min. 90 cm, fri golvyta min 150 x 150 cm, toalettsits är i rullstolshöjd, med vikbara handtag och åtkomligt tvättfat.",
+      "unknown": "Hjälp andra genom att ange status för toalett!",
+      "yes": "Dörrars innermått är min. 90 cm, fri golvyta min 150 x 150 cm, toalettsits är i rullstolshöjd, med vikbara handtag och åtkomligt tvättfat."
     },
-    "yes": "Wheelchair accessible toilet"
+    "yes": "Rullstolstillgänglig toalett finns"
   },
   "user_sessions": {
     "create": {
@@ -1475,7 +1499,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       "notice": "Hejdå, kom tillbaka snart!"
     },
     "new": {
-      "email": "Email address",
+      "email": "Mejladress",
       "login": "Logga in",
       "login_with_twitter": "Logga in med hjälp av Twitter",
       "password": "Lösenord",
@@ -1485,8 +1509,8 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
   "users": {
     "after_signup_edit": {
       "welcome": {
-        "headline": "You are almost there! Now on to finalize your Wheelmap account:",
-        "set_password_for_mobile": "You have successfully registered with OpenStreetMap. Please choose an email address that you would like Wheelmap to use so we can keep you informed about your activities (for example the number of places you have marked). You can access this information on your \"Profile\".",
+        "headline": "Du är nästan klar! Nu återstår bara att färdigställa ditt Wheelmap-konto:",
+        "set_password_for_mobile": "Du har utan problem registrerats hos OpenStretMap. Ange en mejladress som du vill att Wheelmap skall använda för att hålla dig informerad om dina aktiviteter (t ex antal platser du har statusmarkerat). Du kan ändra adressen i din \"Profil\".",
         "text": "Hur kan vi kontakta dig? Du kan senare ändra denna information i din profil."
       }
     },
@@ -1498,62 +1522,62 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": "Your account information"
+          "user_data": "Din kontoinformation"
         },
         "title": "Profil"
       },
       "newsletter": {
-        "label": "Yes, keep me updated about Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
+        "label": "Ja, håll mig informerad om Wheelmap.",
+        "text": "Håll dig informerad via Wheelmaps nyhetsbrev. Oroa dig inte, vi kommer inte mejlbomba dig. Du kommer som mest höra av oss en gång i månaden.",
         "title": "Nyhetsbrev"
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
+        "empty": "Du har inte laddat upp några foton än.",
         "title": "Fotografier"
       },
       "show": {
         "greeting": {
-          "anonymously": "Hello there",
-          "personalized": "Hello %{name}"
+          "anonymously": "Hej där",
+          "personalized": "Hej %{name}"
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "one": "laddat upp %{count} foton",
+            "other": "laddat upp %{count} foton"
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "one": "lagt till %{count} platser",
+            "other": "lagt till %{count} platser"
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "one": "redigerat %{count} platser",
+            "other": "redigerat %{count} platser"
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "one": "markerat %{count} platser",
+            "other": "markerat %{count} platser"
           },
-          "text": "You have"
+          "text": "Du har"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
-        "title": "Overview"
+        "text_html": "Hallå där!<br>\nVälkommen (tillbaka) till Wheelmap.org! Vi är glada att du är med oss! Du kan kika runt på vår <a href=\"http://news.wheelmap.org/en/\">Blogg</a> eller <a href=\"http://news.wheelmap.org/en/FAQ/\">Vanliga frågor & svar</a> om du vill lära känna Wheelmap.org lite bättre. Eller så kan du ta reda på mer om <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projekten</a> som vi erbjuder kring Wheelmap.org och hur du kan bli delaktig.<br>\nFör att hålla kontakten kan du prenumerera på vårt månatliga nyhetsbrev och följa oss på <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> och <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Vi ser fram emot att få höra din åsikt och att påbörja en konversation med dig!<br>\nOch ha nu så kul med kartläggningen!<br>\nDitt Wheelmap-team",
+        "title": "Översikt"
       },
       "widget": {
-        "categories": "Show category filter",
-        "center": "Map area",
-        "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "categories": "Visa kategorifiltret",
+        "center": "Kartområde",
+        "empty_center": "Centrera kartan ...",
+        "empty_provider": "Välj leverantör",
+        "height": "Höjd",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
-          "preview": "Preview",
+          "embed": "Inbäddad kod",
+          "embed_explanation": "Du kan manuellt ändra värdena för latitud (<code>lat</code>), longitude (<code>lon</code>) och zoom nivå (<code>zoom</code>) i koden ovan, och därigenom justera kartavsnitt (widget) utifrån det område som du vill visa.",
+          "general": "Skapa din egen Wheelmap-kartlänk och lägg in den på din hemsida eller blog.",
+          "preview": "Förhandsvisning",
           "settings": "Inställningar"
         },
-        "providers": "Provider",
-        "title": "Widget",
-        "width": "Width"
+        "providers": "Leverantör",
+        "title": "Kartlänk",
+        "width": "Bredd"
       }
     }
   },

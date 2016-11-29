@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   "actions": {
     "cancel": "取消",
-    "next": "Next",
+    "next": "下一個",
     "save": "存檔",
     "send": "送出"
   },
@@ -185,7 +185,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "poi": {
         "address": "地址",
         "address_city": "城市",
-        "address_housenumber": "House number",
+        "address_housenumber": "門牌號碼",
         "address_postcode": "郵遞區號",
         "address_street": "街道",
         "name": "名字",
@@ -305,7 +305,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   },
   "breadcrumbs": {
     "node": {
-      "create": "Add a new place",
+      "create": "新增地點",
       "edit": "編輯地點"
     },
     "root": "Wheelmap"
@@ -434,13 +434,13 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "您的 email 成功地確認了。",
-      "link": "You didn't receive confirmation instructions?",
+      "link": "沒有收到解鎖文件？",
       "send_instructions": "幾分鐘之後，您的將會收到電子郵件以供驗證。",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
+      "send_paranoid_instructions": "如果您的帳號存在，幾分鐘後您將會收到一封驗證信。"
     },
     "destroy": {
       "confirm": "你確定嗎？",
-      "headline": "Delete account",
+      "headline": "刪除帳號",
       "link": "現在刪除"
     },
     "edit": {
@@ -457,32 +457,32 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
     },
     "failure": {
       "already_authenticated": "您已經登入",
-      "inactive": "Your account has not been activated yet.",
+      "inactive": "您的帳號尚未啓用",
       "invalid": "無效的電子信箱或密碼",
       "invalid_token": "認證失敗",
       "last_attempt": "You have one more attempt before your account will be locked.",
       "locked": "您的帳號被鎖定了",
       "not_found_in_database": "Invalid email or password.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "您的登入已經逾時，請重新登入以繼續操作。",
       "unauthenticated": "您必須登入或註冊帳號才能繼續",
       "unconfirmed": "您必須確認您的帳號以繼續操作。"
     },
     "mailer": {
       "confirmation_instructions": {
-        "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
+        "landing_page": "請點擊我們剛發送到您的電子郵件地址的鏈接。如果你沒有收到我們的郵件，請首先檢查，如果它沒有在您的垃圾郵件文件夾藏匿。如果它不存在返回註冊頁面，然後再試一次。",
         "subject": "再一個步驟就能啟動您的帳號。"
       },
       "reset_password_instructions": {
         "subject": "重設密碼"
       },
       "unlock_instructions": {
-        "subject": "Unlock instructions"
+        "subject": "解鎖指令"
       }
     },
     "mandatory": "* 必須的",
     "omniauth_callbacks": {
       "failure": "因為 %{reason}，所以您無法透過 %{kind} 登入。",
-      "permission_missing": "You did not grant the required permission.",
+      "permission_missing": "你沒有授予所需的權限。",
       "success": "成功的透過 %{kind} 登入。"
     },
     "password_recovery": {
@@ -499,7 +499,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "comment": "如果您沒有申請重設密碼，請忽略此郵件<br/>除非點選以上連結並設定心密碼，您的密碼不會被更改。",
         "headline": "歡迎 %{email}",
         "link": "更改我的密碼",
-        "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
+        "text": "我們收到更改密碼的請求。如果你發送請求，請單擊下面的鏈接 - 否則，忽略此！"
       },
       "form": {
         "labels": {
@@ -513,8 +513,8 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
     "passwords": {
       "link": "忘記密碼？",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
-      "send_instructions": "You will receive an email with instructions on how to reset your password in a few minutes",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
+      "send_instructions": "您將收到一封如何重新設定你的密碼的電子信件。",
+      "send_paranoid_instructions": "如果您的帳戶存在，在幾分鐘之內，您會收到一封重新設定你的密碼的說明電子郵件 ",
       "updated": "您的密碼修改成功，您現在已經登入了。",
       "updated_not_active": "您已成功修改密碼。"
     },
@@ -527,7 +527,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "locked": "已鎖定",
         "unconfirmed": "未確認"
       },
-      "signed_up": "You have signed up successfully. A you have been sent a confirmation email.",
+      "signed_up": "您已經註冊成功。已發送確認電子郵件給你。",
       "signed_up_but_inactive": "You have signed up successfully. However, we could not sign you in because your account is not yet activated.",
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
@@ -535,22 +535,22 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "updated": "您已經成功更新您的帳號。"
     },
     "sessions": {
-      "inactive": "Your account has not been activated yet",
+      "inactive": "您的帳號尚未啓用",
       "invalid": "無效的 email 或密碼。",
       "invalid_token": "認證失敗",
       "link": "登入",
       "locked": "您的帳號已被凍結",
       "new": {
         "no_osm_account": "還沒有 OpenStreetMap 的帳號嗎？",
-        "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
+        "osm_promo_text": "Wheelmap是基於來自OpenStreetMap（OSM）的地理數據。 OpenStreetMap是一個免費的全球地圖，由您創造。這就像維基百科的地圖。為了能夠編輯場所或建立新的，你需要一個OpenStreetMap的賬戶，必須用它登錄。",
         "promo_text_thank_you": "非常感謝您的貢獻！",
         "sign_in_with": "透過 %{kind} 方式登入",
         "sign_up_with_osm": "現在就註冊。",
-        "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
+        "wheelmap_promo_text": "用你的輪椅出入的地方知識，你可以幫助身體障礙的人能夠更好地規劃自己的日常生活。此外，這將有助於使OpenStreetMap的更詳細。"
       },
       "signed_in": "成功登入",
       "signed_out": "您已經成功登出了。",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "您的登入已經逾時，請重新登入以繼續操作。",
       "unauthenticated": "您必須登入或註冊以繼續操作。",
       "unconfirmed": "您必須確認您的帳號以繼續操作"
     },
@@ -579,16 +579,16 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
           "email": "電子郵件",
           "password": "密碼",
           "password_confirmation": "確認密碼",
-          "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
+          "wants_newsletter": "是的，讓我收到Wheelmap的最新信息  - 但請不超過每月一次。"
         },
         "submit": "註冊帳號"
       },
       "headline": "註冊"
     },
     "unlocks": {
-      "link": "You didn't receive unlock instructions?",
-      "send_instructions": "You will receive an email in a few minutes with instructions on how to unlock your account",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
+      "link": "您沒有收到解鎖指令？",
+      "send_instructions": "在幾分鐘之內，您會收到一封如何解除帳戶的說明電子郵件",
+      "send_paranoid_instructions": "如果您的帳戶存在，在幾分鐘之內，您會收到一封如何解除帳戶的說明電子郵件",
       "unlocked": "您的帳號已經成功解鎖。您現在已經登入。"
     }
   },
@@ -596,27 +596,27 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
     "dynamic_format": "%{message}",
     "format": "%{attribute} %{message}",
     "messages": {
-      "accepted": "must be accepted",
+      "accepted": "必須接受",
       "already_confirmed": "已確認",
-      "blank": "must be filled in",
+      "blank": "必須填寫",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
       "carrierwave_processing_error": "failed to be processed",
       "confirmation": "與確認值不符合",
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
-      "empty": "must be filled in",
+      "empty": "必須填寫",
       "equal_to": "必須確實為%{count}",
-      "even": "must be an even number",
+      "even": "必須是偶數",
       "exclusion": "被保留",
       "expired": "已經過期，請重新申請",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
       "extension_white_list_error": "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}",
       "greater_than": "必須大於 %{count}",
-      "greater_than_or_equal_to": "must be greater than or equal to %{count}",
+      "greater_than_or_equal_to": "必須大於或等於 %{count}",
       "inclusion": "無效數值",
       "invalid": "無效",
       "less_than": "必須小於 %{count}",
-      "less_than_or_equal_to": "must be less than or equal to %{count}",
+      "less_than_or_equal_to": "必須小於或等於 %{count}",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
       "not_a_number": "不是數字",
@@ -627,7 +627,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "one": "An error prohibited to save a %{resource}:",
         "other": "%{count} 個錯誤讓儲存 %{resource} 失敗: "
       },
-      "odd": "must be an odd number",
+      "odd": "必須是奇數",
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
@@ -653,9 +653,9 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   },
   "faq": {
     "answers": {
-      "0": "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!",
+      "0": "您可以隨時更改自己的地方的標記。只要選擇合適的標記和“保存” - 完成了！",
       "1": "登入後，你可以新增/修改所有地點的細節。請點選 \"編輯\" 並在空格修改或新增資訊。",
-      "2": "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
+      "2": "您可以在註釋部分中添加更多的信息（例如，“這個地方有一個移動坡道”）。點擊“編輯”和“添加評論”。"
     },
     "headline": "這個地點有什麼不對嗎?",
     "questions": {
@@ -685,13 +685,13 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   },
   "form": {
     "show_fully_accessible_places": "輪椅無障礙",
-    "show_limited_accessible_places": "Partially wheelchair accessible",
-    "show_places_without_status": "Unknown status",
+    "show_limited_accessible_places": "部分輪椅無障礙",
+    "show_places_without_status": "未知狀態",
     "show_unaccessible_places": "非輪椅無障礙"
   },
   "formtastic": {
     "hints": {
-      "email": "We treat your address confidentially. We promise not to send you spam!",
+      "email": "我們保密您的地址。我們承諾不向您發送垃圾郵件！",
       "lat": "將圖示移動到地圖上正確位置",
       "osm_username": "還不是會員嗎？ <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">現在就申請 OpenStreetMap 的會員 </a>",
       "password": "(如果你不想更動，請保持空白)",
@@ -702,15 +702,15 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "category": "分類：",
       "centralkey": "Central key:",
       "city": "城市：",
-      "create": "Create a place",
+      "create": "建議一個地點",
       "email": "電子郵件",
       "finish": "完成",
       "housenumber": "門牌號碼：",
       "lat": "緯度",
       "lon": "經度",
       "name": "名字：",
-      "osm_password": "OpenStreetMap password",
-      "osm_username": "OpenStreetMap account name",
+      "osm_password": "OpenStreetMap密碼",
+      "osm_username": " OpenStreetMap 帳號名稱",
       "password": "密碼 ",
       "password_confirmation": "重複密碼",
       "phone": "電話：",
@@ -736,7 +736,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
+      "description": "Wheelmap.org是一個在線地圖搜索，找到和標記輪椅容易接近的地方。獲得通過標記公共場所如酒吧，餐館，電影院和超市參與！",
       "homepage": "首頁",
       "keywords": "尋找輪椅無障礙空間的標誌",
       "search": "搜尋",
@@ -758,10 +758,10 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "newsletter": "電子報",
       "press": "文宣",
       "profile": "檔案",
-      "projects": "參與這個專案",
+      "projects": "參與其中",
       "suggestions": "建議",
       "what_is_barrier_free": "「輪椅無障礙」是什麼意思？",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Wheelmap 是什麼？"
     },
     "searchbar": {
       "add_place": "新增下一個地點",
@@ -770,7 +770,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "title_add_place": "在這個位置新增地點"
     },
     "tagline": "Wheelmap logo",
-    "title": "Find wheelchair accessible places",
+    "title": "尋找輪椅無障礙空間",
     "toolbar": {
       "categories": "分類"
     }
@@ -799,7 +799,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "顯示在Wheelmap.org",
       "filter": {
         "category": "選擇分類",
         "deselect_all": "全部取消選擇",
@@ -813,12 +813,12 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         },
         "warning": {
           "headline": "我們很抱歉！",
-          "message": "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
+          "message": "你似乎是使用Internet Explorer。 Wheelmap需要一個符合標準的瀏覽器才能正常工作。請考慮使用火狐，Chrome，Safari或Opera。"
         }
       },
       "link": {
         "node": {
-          "create": "Add a new place"
+          "create": "新增地點"
         }
       },
       "overlay": {
@@ -831,16 +831,16 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       },
       "popup": {
         "form": {
-          "limited": "Partially wheelchair accessible",
+          "limited": "部分輪椅無障礙 ",
           "no": "非輪椅無障礙",
           "save": "更新",
-          "unknown": "Unknown status",
+          "unknown": "未知狀態",
           "yes": "輪椅無障礙"
         },
         "help": "輪椅無障礙？(說明)",
         "more": "更多..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "進一步放大看更多的地方。"
     }
   },
   "how?": "如何？",
@@ -848,10 +848,10 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
     "index": {
       "wheelchair": {
         "limit": {
-          "headline": "All partially wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "%{city} 中所有輪椅無障礙的 %{type} (%{count})"
         },
         "no": {
-          "headline": "All not wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "%{city} 的所有非輪椅無障礙 %{type} (%{count})"
         },
         "unknown": {
           "headline": "%{city} 的所有輪椅無障礙環境不確定的 %{type} (%{count})"
@@ -910,7 +910,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       }
     },
     "errors": {
-      "default": "Oops something went wrong. We have been informed about this issue",
+      "default": "哎呀！出了問題了。我們已經被通知這個問題",
       "not_authorized": "抱歉，認證失敗",
       "not_available": "抱歉，這個頁面暫時不能使用。",
       "not_existent": "抱歉，這個地點已經失效了",
@@ -923,37 +923,37 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
     "new": {
       "form": {
         "legend": "地點的位置",
-        "location": "Please click on the map where the place is located!",
+        "location": "請點擊所在的地方是位於地圖上！",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "輪椅無障礙",
+            "title": "輪椅無障礙信息"
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
+            "help": "你可以將標記移動到地圖上的正確位置。",
             "name": "地址",
-            "title": "Where is the place?"
+            "title": "哪裡的地方？"
           },
           "contact": {
             "name": "聯繫我們",
-            "title": "Other contact information"
+            "title": "其他聯繫信息"
           },
           "name_category": {
-            "name": "Name and place type",
-            "title": "Give us some initial information about your place:"
+            "name": "名稱和地點類型",
+            "title": "給我們介紹一下你的地方一些的初步信息："
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "是否所有的信息是否正確？"
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "沒有發現類似的地方。",
+            "go_edit": "這個地方繼續",
+            "go_new": "這是上面沒有的地方...",
+            "name": "類似的地點",
+            "title": "我們發現附近類似的地方。是不是其中之一？"
           }
         },
-        "title": "Add a place"
+        "title": "新增地點"
       },
       "header": {
         "title": "新地點| wheelmap.org"
@@ -1013,11 +1013,11 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "listing": "在 %{city} 的所有 '%{type}' ",
         "upload": "上傳圖片"
       },
-      "more_data_from": "There is more information about this place, validated by:",
+      "more_data_from": "關於這個地點有更多訊息，被驗證",
       "share": {
         "email": "電子郵件",
         "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
+        "text": "我發現Wheelmap.org這個地方：%{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1098,11 +1098,11 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   "oauth": {
     "application": {
       "connect": {
-        "headline": "You need to connect your account with your OpenStreetMap account before you can create or modify places on Wheelmap.org."
+        "headline": "您需要將您的帳戶與您的帳戶OpenStreetMap的連接，然後才能創建或修改Wheelmap.org地方。"
       }
     },
     "callback": {
-      "notice": "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
+      "notice": "您Wheelmap帳戶現在連接到OpenStreetMap帳戶{user}。"
     }
   },
   "or": "或",
@@ -1118,9 +1118,9 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "government": "政府",
       "health": "醫療",
       "leisure": "休閒",
-      "misc": "Miscellaneous",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "misc": "雜貨店",
+      "money_post": "銀行/郵局",
+      "public_transfer": "公共交通工具",
       "shopping": "購物",
       "sport": "運動",
       "tourism": "觀光",
@@ -1161,19 +1161,25 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "government": {
         "courthouse": "法院",
         "embassy": "大使館",
+        "employment_agency": "就業服務中心",
         "government": "政府部門",
         "police": "警察局",
         "public_building": "公共建築",
-        "townhall": "Town hall"
+        "townhall": "市政廳"
       },
       "health": {
+        "alternative": "另類醫療執行者",
         "dentist": "牙醫",
-        "doctors": "Doctor",
+        "doctors": "醫生",
         "hearing_aids": "助聽器",
         "hospital": "醫院",
         "medical_supply": "醫療用品",
+        "occupational_therapist": "職能治療師",
         "pharmacy": "藥局",
+        "physiotherapist": "物理治療師",
+        "psychotherapist": "心理治療師",
         "social_facility": "社會機構",
+        "speech_therapist": "語言治療師",
         "veterinary": "獸醫"
       },
       "leisure": {
@@ -1181,23 +1187,26 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "brothel": "妓院",
         "casino": "賭場",
         "cinema": "電影院",
-        "community_centre": "Community centre",
+        "community_centre": "社區活動中心",
         "gallery": "畫廊",
-        "massage": "Massage spa",
+        "massage": "按摩",
         "nightclub": "夜總會",
         "playground": "遊樂器材",
         "sauna": "桑拿",
         "stripclub": "脫衣舞店",
-        "tattoo": "Tattoo shop",
+        "tattoo": "刺青店",
         "theatre": "戲院",
         "zoo": "動物園"
       },
       "misc": {
+        "association": "協會",
         "company": "公司行號 (辦公室)",
         "estate_agent": "房地產仲介",
         "insurance": "保險",
         "lawyer": "律師",
+        "ngo": "非政府組織",
         "place_of_worship": "宗教場所",
+        "political_party": "政黨辦公室",
         "toilets": "廁所"
       },
       "money_post": {
@@ -1211,7 +1220,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "aerodrome": "機場",
         "bicycle_parking": "自行車停車場",
         "bicycle_rental": "自行車出租",
-        "boatyard": "Boat yard",
+        "boatyard": "船廠",
         "bus_station": "公車站",
         "bus_stop": "公車站",
         "cable_car": "纜車",
@@ -1233,6 +1242,8 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       },
       "shopping": {
         "alcohol": "酒",
+        "antiques": "古董商",
+        "art": "藝廏",
         "bakery": "烘焙坊",
         "beauty": "美容店",
         "beverages": "飲料",
@@ -1241,28 +1252,37 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "butcher": "肉店",
         "car_repair": "汽車維修",
         "car_shop": "車行",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "化驗師/藥店",
         "clothes": "服飾",
         "computer": "電腦店",
         "confectionery": "點心店",
         "convenience": "便利商店",
+        "copyshop": "影印店",
         "deli": "熟食店",
         "department_store": "百貨公司",
         "doityourself": "DIY",
         "dry_cleaning": "乾洗",
         "electronics": "電子產品",
+        "erotic": "情趣用品店",
         "fabric": "布店",
         "farm_shop": "農產品",
         "florist": "花店",
+        "funeral_directors": "葬儀社",
         "furniture": "家具",
-        "garden_centre": "Garden centre",
+        "garden_centre": "花園中心",
         "gift": "禮品店",
+        "greengrocer": "蔬果店",
         "hairdresser": "髮型師",
         "hardware": "五金行",
+        "interior_decoration": "室內設計店",
         "jewelry": "珠寶銀樓",
         "kiosk": "書報亭",
         "laundry": "洗衣店",
         "mall": "購物中心",
+        "mobile_phone": "行動電話店",
+        "music": "唱片行",
+        "musical_instrument": "樂器店",
+        "newsagent": "報紙銷售點",
         "optician": "驗光師/眼鏡行",
         "organic": "有機商店",
         "outdoor": "戶外用品",
@@ -1273,8 +1293,12 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "sports": "運動",
         "stationery": "文具店",
         "supermarket": "超級市場",
+        "tailor": "裁縫師",
+        "tea": "茶行",
+        "tobacco": "菸店",
         "toys": "玩具店",
         "travel_agency": "旅行社",
+        "variety_store": "折扣店",
         "video": "影片出租店"
       },
       "sport": {
@@ -1395,8 +1419,8 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
         "headline": "抱歉，我們找不到名叫 \"%{query}\" 的地點。",
         "hint": {
           "example": "<strong>範例:</strong> 英國倫敦",
-          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
-          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
+          "info": "我們的搜索服務只適用於名稱和/或地址信息。因此，請透過搜索地點或地址，例如名稱街道名稱和/或城市。搜索類型的地方，例如餐館或電影院，不行！",
+          "work_in_progress": "我們努力在未來使搜索更簡單，會更直觀。"
         },
         "try_this": {
           "address": "請提供更 <strong>詳細的地址</strong>.",
@@ -1416,7 +1440,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
+      "headline": "抱歉，出了一些問題",
       "info": "我們的搜尋服務目前暫停。",
       "repeat_search": "重試搜尋"
     }
@@ -1428,7 +1452,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
     "step1": "點選一個您知道的地點",
     "step2": "標示然後點選存檔",
     "step3": "就這樣！免註冊",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Wheelmap 是什麼？"
   },
   "statistics": "統計",
   "support": {
@@ -1455,9 +1479,9 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
     "no": "沒有輪椅無障礙廁所",
     "unknown": "廁所狀態不明",
     "what_is": {
-      "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
-      "unknown": "Help out by marking the toilet status!",
-      "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      "no": "門的內徑最小寬度90公分 (35 inc)，淨空最小150 x 150公分(59 x 59)，有輪椅高度的廁所坐位，手把和洗手檯。",
+      "unknown": "請幫忙標記廁所狀態",
+      "yes": "門的內徑最小寬度90公分 (35 inc)，淨空最小150 x 150公分(59 x 59)，有輪椅高度的廁所坐位，手把和洗手檯。"
     },
     "yes": "輪椅無障礙廁所"
   },
@@ -1475,7 +1499,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "notice": "再見，歡迎再度光臨！"
     },
     "new": {
-      "email": "Email address",
+      "email": "電子郵件地址",
       "login": "登入",
       "login_with_twitter": "透過 Twitter 登入",
       "password": "密碼",
@@ -1485,8 +1509,8 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
   "users": {
     "after_signup_edit": {
       "welcome": {
-        "headline": "You are almost there! Now on to finalize your Wheelmap account:",
-        "set_password_for_mobile": "You have successfully registered with OpenStreetMap. Please choose an email address that you would like Wheelmap to use so we can keep you informed about your activities (for example the number of places you have marked). You can access this information on your \"Profile\".",
+        "headline": "你是幾乎快完成了！現在到完成您的Wheelmap帳戶：",
+        "set_password_for_mobile": "您已成功使用OpenStreetMap的註冊。請選擇您想Wheelmap使用，因此我們可以讓您隨時了解你的活動（例如名額已標記）的電子郵件地址。您可以訪問你的“個人資料”這一信息。",
         "text": "我們要如何和您聯繫？您可以在之後修改您的個人檔案。"
       }
     },
@@ -1504,11 +1528,11 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       },
       "newsletter": {
         "label": "是，我想收到 Wheelmap 的最新訊息。",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
+        "text": "保持取得最新的Wheelmap訊息。別擔心，我們不會寄給你垃圾郵件。你每月一次最多一次會從我們這裡寄出的最新消息。",
         "title": "電子報"
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
+        "empty": "您還沒有上傳任何照片。",
         "title": "相館"
       },
       "show": {
@@ -1527,7 +1551,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
           },
           "pois_edited": {
             "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "other": "編輯%{count}地方"
           },
           "pois_marked": {
             "one": "marked %{count} place",
@@ -1535,25 +1559,25 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
           },
           "text": "你有"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "您好，<br>\n歡迎（回）來到 Wheelmap.org！很高興您能加入！若想更加了解 Wheelmap.org，可以瀏覽我們的<a href=\"http://news.wheelmap.org/en/\">部落格</a>或<a href=\"http://news.wheelmap.org/en/FAQ/\">常見問題</a>。您也可以深入了解我們在 Wheelmap.org 所提供的<a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">計畫</a>，以及如何參與。<br>\n想保持聯繫，可以訂閱我們的每月新聞報，並在 <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> 和 <a href=\"https://twitter.com/wheelmap\">Twitter</a> 上追蹤我們。期待能聽到您的意見並與您對話！<br>\n而現在，祝您製圖愉快！<br>\n您的 Wheelmap 團隊",
         "title": "總覽"
       },
       "widget": {
-        "categories": "Show category filter",
-        "center": "Map area",
-        "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "categories": "展現類別過濾器",
+        "center": "地圖區域",
+        "empty_center": "搜索地圖的中心...",
+        "empty_provider": "選擇一個供應者",
+        "height": "高",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
-          "preview": "Preview",
+          "embed": "遷入碼",
+          "embed_explanation": "你可以更改規格為緯度（<code>緯度</code>），經度（<code> LON </code>），並在上面的代碼手動，從而調整縮放級別（<code>縮放</code>）根據你想顯示的位置在地圖段（widget）。",
+          "general": "創建您自己的Wheelmap小部件，並在您的網站或博客中嵌入它。",
+          "preview": "預覽",
           "settings": "設定"
         },
-        "providers": "Provider",
-        "title": "Widget",
-        "width": "Width"
+        "providers": "供應者",
+        "title": "小部件",
+        "width": "寬"
       }
     }
   },
@@ -1567,9 +1591,9 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
     }
   },
   "wheelchairstatus": {
-    "limited": "Partially wheelchair accessible",
+    "limited": "部分輪椅無障礙",
     "no": "非輪椅無障礙",
-    "unknown": "Unknown status",
+    "unknown": "未知狀態",
     "yes": "輪椅無障礙"
   },
   "wheelmap": {
@@ -1588,10 +1612,10 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "title": "Wheelmap－尋找輪椅無障礙空間"
     },
     "what_is": {
-      "fully_accessible": "Entrance without steps, all rooms without steps.",
-      "limited_accessible": "Entrance has one step with max. height 7cm (3 in), most rooms are without steps.",
-      "not_accessible": "Entrance has a step or several steps, rooms are not accessible.",
-      "unknown_accessible": "Help out by marking places!"
+      "fully_accessible": "入口沒有台階，所有的房間沒有台階。",
+      "limited_accessible": "門口有一個最大台階。高度7厘米(3 in)，大部分房間都沒有台階。",
+      "not_accessible": "門口有一個台階或幾個台階，房間都不可訪問。",
+      "unknown_accessible": "請幫忙標記地點"
     }
   },
   "will_paginate": {

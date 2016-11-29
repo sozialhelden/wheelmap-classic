@@ -758,7 +758,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "newsletter": "Newsletter",
       "press": "Press",
       "profile": "Profile",
-      "projects": "Projects",
+      "projects": "Get involved",
       "suggestions": "Suggestions",
       "what_is_barrier_free": "What does \"wheelchair accessible\" mean?",
       "what_is_wheelmap": "What is Wheelmap?"
@@ -1161,19 +1161,25 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       "government": {
         "courthouse": "Courthouse",
         "embassy": "Embassy",
+        "employment_agency": "Employment agency",
         "government": "Government agency",
         "police": "Police",
         "public_building": "Public building",
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Dentist",
         "doctors": "Doctor",
         "hearing_aids": "Hearing aid dealer",
         "hospital": "Hospital",
         "medical_supply": "Medical supplies",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Pharmacy",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Social facility",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Veterinary"
       },
       "leisure": {
@@ -1193,11 +1199,14 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
         "zoo": "Zoo"
       },
       "misc": {
+        "association": "Association",
         "company": "Company (Office)",
         "estate_agent": "Real estate agent",
         "insurance": "Insurance",
         "lawyer": "Lawyer",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Place of worship",
+        "political_party": "Political party office",
         "toilets": "Toilets"
       },
       "money_post": {
@@ -1233,6 +1242,8 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
       },
       "shopping": {
         "alcohol": "Liquor",
+        "antiques": "Antiques",
+        "art": "Gallery shop",
         "bakery": "Bakery",
         "beauty": "Beauty salon",
         "beverages": "Beverages",
@@ -1246,23 +1257,32 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
         "computer": "Computer",
         "confectionery": "Candy store",
         "convenience": "Convenience",
+        "copyshop": "Copy shop",
         "deli": "Delicatessen",
         "department_store": "Department store",
         "doityourself": "Do it yourself",
         "dry_cleaning": "Dry cleaning",
         "electronics": "Electronics",
+        "erotic": "Sex shop",
         "fabric": "Fabric shop",
         "farm_shop": "Farm shop",
         "florist": "Florist",
+        "funeral_directors": "Funeral home",
         "furniture": "Furniture",
         "garden_centre": "Garden centre",
         "gift": "Gift shop",
+        "greengrocer": "Greengrocer",
         "hairdresser": "Hairdresser",
         "hardware": "Hardware",
+        "interior_decoration": "Interior design shop",
         "jewelry": "Jewelry",
         "kiosk": "Kiosk",
         "laundry": "Laundry",
         "mall": "Shopping centre",
+        "mobile_phone": "Mobile phone shop",
+        "music": "Record store",
+        "musical_instrument": "Musical instrument shop",
+        "newsagent": "News agent",
         "optician": "Optician",
         "organic": "Organic shop",
         "outdoor": "Outdoor supply",
@@ -1273,8 +1293,12 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
         "sports": "Sports",
         "stationery": "Stationery",
         "supermarket": "Supermarket",
+        "tailor": "Tailor",
+        "tea": "Tea supply",
+        "tobacco": "Tobacco shop",
         "toys": "Toys",
         "travel_agency": "Travel agency",
+        "variety_store": "Discount store",
         "video": "Video rental store"
       },
       "sport": {
@@ -1535,7 +1559,7 @@ I18n.translations["vi"] = I18n.extend((I18n.translations["vi"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {

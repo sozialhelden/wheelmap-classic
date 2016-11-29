@@ -23,9 +23,11 @@ nl:
       choose_language: Kies de taal
       contact: Contact
       map: Plattegrond
-      projects: Projecten
+      projects: Doe mee
     toolbar:
       categories: Categorieën
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -35,32 +37,41 @@ nl:
         headline: 'Markeer en vind rolstoel toegankelijke plaatsen met Wheelmap.org - wereldwijd en gratis. Het is makkelijk:'
         lookup: Zoek een speciale plaats
         secondary_headline: 'Ons stoplicht systeem om de rolstoel toegankelijke openbare ruimtes te markeren:'
+      zoom_alert: Inzoomen om meer locaties te zien.
   nodes:
     new:
       form:
         legend: locatie
         section:
+          name_category:
+            name: Naam en locatie type
           address:
             name: Adres
+          similar_nodes:
+            name: Vergelijkbare plaatsen
+          accessibility:
+            name: Rolstoel toegankelijkheid
           contact:
             name: Contact
     node_data:
-      address: 'adres'
-      contact_details: 'contactgegevens'
+      address: 'Adres:'
+      contact_details: 'Contactgegevens:'
     node_edit:
       details: Details
       edit: Redigeren
     node_map:
-      map: 'Plattegrond'
+      map: 'Plattegrond:'
     node_note:
-      comment: 'Commentaar'
+      comment: 'Commentaar:'
     node_photos:
       add: Toevoegen
       photos_of_this_place: 'Fotos van deze plaats:'
       upload: Uploaden
+    node_similar:
+      similar: 'Vergelijkbare plaatsen: %{name}'
     node_status:
-      accessible_toilet: 'rolstoeltoegankelijk toilet'
-      wheelchair_accessibility: 'Rolstoel toegangelijk?'
+      accessible_toilet: 'Rolstoeltoegankelijk toilet:'
+      wheelchair_accessibility: 'Rolstoel toegankelijkheid:'
     node_streetview:
       streetview: 'Streetview:'
     show:
@@ -72,9 +83,9 @@ nl:
     index:
       no-results:
         hint:
-          example: <strong>bijvoorbeeld:</strong> London, United Kingdom
+          example: <strong>Bijvoorbeeld:</strong> London, United Kingdom
         try_this:
-          address: Geef a.u.b. meer <strong>address details</strong>.
+          address: Geef a.u.b. meer <strong>adres gegevens</strong>.
           intro: 'Probeer dit'
           spell_check: Controleer a.u.b. de  <strong>spelling</strong> van je text
       results:
@@ -82,12 +93,15 @@ nl:
           one: '%{count} resultaat'
           other: '%{count} resultaat:'
     timeout:
-      info: Onze zoekdienst was tijdelijk buiten werk
+      info: Onze zoekdienst was tijdelijk buiten werk.
       repeat_search: Herhaal de zoekopdracht
   users:
     profile:
       newsletter:
         title: Nieuwsbrief
+      show:
+        greeting:
+          personalized: Dag %{name}
       photos:
         title: 'Foto''s '
       edit:

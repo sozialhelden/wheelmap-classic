@@ -1,7 +1,7 @@
 I18n.translations || (I18n.translations = {});
 I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   "actions": {
-    "cancel": "\nإلغاء",
+    "cancel": "إلغاء",
     "next": "التالي",
     "save": "حفظ",
     "send": "Send"
@@ -183,15 +183,15 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   "activerecord": {
     "attributes": {
       "poi": {
-        "address": "\nالعنوان",
-        "address_city": "\n\nالمدينة",
+        "address": "العنوان",
+        "address_city": "المدينة",
         "address_housenumber": "رقم المنزل",
         "address_postcode": "Postcode",
-        "address_street": "\n\nشارع",
+        "address_street": "شارع",
         "name": "الإسم",
         "note": "Note",
-        "phone": "\nالهاتف",
-        "type": "\n\nالنوع",
+        "phone": "الهاتف",
+        "type": "النوع",
         "website": "موقع الكتروني"
       },
       "user": {
@@ -446,7 +446,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     "edit": {
       "form": {
         "labels": {
-          "current_password": "<i>(we need it to confirm your changes)</i> كلمة المرور الحالية ",
+          "current_password": "Current password <i>(we need it to confirm your changes)</i>",
           "email": "بريد الكتروني",
           "password": " كلمة المرور  <i>(أبقه فارغا اذا كنت لاتريد التعديل)<i/>",
           "password_confirmation": "إعادة كلمة المرور"
@@ -594,7 +594,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   },
   "errors": {
     "dynamic_format": "%{message}",
-    "format": "%{attribute} %{message}",
+    "format": "%{attribute}% {message}",
     "messages": {
       "accepted": "must be accepted",
       "already_confirmed": "تم التأكيد بالفعل",
@@ -724,7 +724,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "website": "موقع :",
       "wheelchair": "امكانية الوصول بالكرسي المتحرك ؟",
       "wheelchair_description": "تعليق حول سهولة الوصول :",
-      "wheelchair_toilet": "Wheelchair accessible toilet:"
+      "wheelchair_toilet": "كرسي متحرك في المتناول للمرحاض:"
     },
     "titles": {
       "basic": "معلومات أساسية",
@@ -758,10 +758,10 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "newsletter": "أخبار الموقع",
       "press": "صحافة",
       "profile": "الحساب",
-      "projects": "شارك",
+      "projects": "قم بالاشتراك",
       "suggestions": "الإقتراحات",
       "what_is_barrier_free": "ماذا تعني هذة الجملة \"إمكانية الوصول بالكرسي المتحرك\"؟",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "تعرف على ويل ماب ؟"
     },
     "searchbar": {
       "add_place": "أضف مكاناً آخر",
@@ -926,7 +926,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "امكانية الوصول بالكرسي المتحرك",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -970,7 +970,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       }
     },
     "node_data": {
-      "address": "Address:",
+      "address": "العنوان:",
       "contact_details": "Contact details:"
     },
     "node_edit": {
@@ -992,9 +992,9 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "similar": "Similar places: %{name}"
     },
     "node_status": {
-      "accessible_toilet": "Wheelchair accessible toilet:",
+      "accessible_toilet": "كرسي متحرك في المتناول للمرحاض:",
       "premium": "%{name} says: this place is",
-      "wheelchair_accessibility": "Wheelchair accessibility:"
+      "wheelchair_accessibility": "امكانية الوصول بالكرسي المتحرك:"
     },
     "node_streetview": {
       "streetview": "Streetview:"
@@ -1118,9 +1118,9 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "government": "حكومة",
       "health": "صحة",
       "leisure": "استراحة",
-      "misc": "\nمتفرقات\n",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "misc": "متفرقات",
+      "money_post": "بنك / مكتب بريد",
+      "public_transfer": "وسائل النقل العام",
       "shopping": "تسوق",
       "sport": "رياضة",
       "tourism": "سياحة",
@@ -1133,7 +1133,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "camp_site": "موقع للتخييم",
         "caravan_site": "موقع العربة\"كاراڨان\"",
         "chalet": "شاليه",
-        "dormitory": "Dormitory",
+        "dormitory": "المهجع",
         "guest_house": "بيت الضيافة",
         "hostel": "فندق",
         "hotel": "فندق",
@@ -1161,19 +1161,25 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "government": {
         "courthouse": "المحكمة",
         "embassy": "سفارة",
-        "government": "Government agency",
+        "employment_agency": "مكتب توظيف",
+        "government": "مصلحة حكومية",
         "police": "الشرطة",
         "public_building": "مبنى عام",
-        "townhall": "Town hall"
+        "townhall": "مبنى البلدية"
       },
       "health": {
+        "alternative": "عيادة ممارس للطب البديل",
         "dentist": "طبيب أسنان",
-        "doctors": "Doctor",
+        "doctors": "عيادة طبيب",
         "hearing_aids": "تاجر أدوات سمعية",
         "hospital": "مستشفى",
         "medical_supply": "مستلزمات طبية",
+        "occupational_therapist": "مُعالِجٌ مِهْنِيّ",
         "pharmacy": "صيدلية",
+        "physiotherapist": "عيادة أخصائي علاج طبيعي",
+        "psychotherapist": "عيادة طبيب نفسي",
         "social_facility": "مرافق اجتماعية",
+        "speech_therapist": "مُعالِجٌ النُّطُق",
         "veterinary": "طبيب بيطري"
       },
       "leisure": {
@@ -1181,23 +1187,26 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "brothel": "ماخور\"بيت دعارة\"",
         "casino": "ملهى",
         "cinema": "سينما",
-        "community_centre": "Community centre",
+        "community_centre": "مركز اجتماعي",
         "gallery": "المعرض",
-        "massage": "Massage spa",
+        "massage": "منتجع صحي للتدليك",
         "nightclub": "ملهى ليلي",
         "playground": "ساحة لعب",
         "sauna": "حمام البخار",
         "stripclub": "نادي تعري",
-        "tattoo": "Tattoo shop",
+        "tattoo": "متجر الوشم",
         "theatre": "مسرح",
         "zoo": "حديقة الحيوانات"
       },
       "misc": {
+        "association": "جمعية",
         "company": "شركة(مكتب)",
         "estate_agent": "وكيل عقاري",
         "insurance": "تأمين",
         "lawyer": "محامي",
+        "ngo": "منظمة غير حكومية",
         "place_of_worship": "مكان للعبادة",
+        "political_party": "مكتب حزب سياسي",
         "toilets": "دورات المياه"
       },
       "money_post": {
@@ -1211,7 +1220,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "aerodrome": "مطار",
         "bicycle_parking": "موقف للدراجات الهوائية",
         "bicycle_rental": "لتأجير الدراجات الهوائية",
-        "boatyard": "Boat yard",
+        "boatyard": "حوض بناء المراكب",
         "bus_station": "محطة الأوتوبيس",
         "bus_stop": "موقف أوتوبيس",
         "cable_car": "عربة كهربائية",
@@ -1233,6 +1242,8 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       },
       "shopping": {
         "alcohol": "مشروبات كحولية",
+        "antiques": "محل لبيع التحف",
+        "art": "محل لبيع المجوهرات",
         "bakery": "مخبز",
         "beauty": "صالون تجميل",
         "beverages": "مشروبات",
@@ -1241,28 +1252,37 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "butcher": "الجزار",
         "car_repair": "لإصلاح السيارات",
         "car_shop": "متجر السيارات",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "الكيميائي / الصَيْدَلِيّة",
         "clothes": "ملابس",
         "computer": "كمبيوتر",
         "confectionery": "محل حلويات",
         "convenience": "راحة",
+        "copyshop": "متجر النسخ",
         "deli": "متجر بيع الأغذية المعلبة",
         "department_store": "متجر شامل",
         "doityourself": "متجر الخردوات",
         "dry_cleaning": "التنظيف الجاف",
         "electronics": "أجهزة كهربائية",
+        "erotic": "متجر الجنس",
         "fabric": "محل الأقمشة",
         "farm_shop": "متجر تابع لمزرعة",
         "florist": "بائع الزهور",
+        "funeral_directors": "مكان الدفن",
         "furniture": "أثاث",
-        "garden_centre": "Garden centre",
+        "garden_centre": "مركز الحديقة",
         "gift": "محل هدايا",
+        "greengrocer": "بائع خضراوات",
         "hairdresser": "صالون تصفيف الشعر",
         "hardware": "أجهزة",
+        "interior_decoration": "متجر الديكور الداخلي",
         "jewelry": "مجوهرات",
         "kiosk": "كشك",
         "laundry": "مغسلة  ملابس",
         "mall": "مركز تسوق",
+        "mobile_phone": "محل لبيع الهواتف المحمولة",
+        "music": "محل لبيع التسجيلات",
+        "musical_instrument": "محل لبيع الآلات الموسيقية",
+        "newsagent": "صاحب محل لبيع الصحف والمجلات",
         "optician": "محل النظارات",
         "organic": "محل للمنتجات العضوية",
         "outdoor": "متجر لوازم الرحلات",
@@ -1273,8 +1293,12 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "sports": "رياضة",
         "stationery": "قرطاسية",
         "supermarket": "سوبرماركت",
+        "tailor": "خَيّاط",
+        "tea": "مخزون الشاي",
+        "tobacco": "متجر التبغ",
         "toys": "محل ألعاب",
         "travel_agency": "وكالة سفر",
+        "variety_store": "معرض للسلع المخفضة",
         "video": "متجرتأجيرالڤيديو"
       },
       "sport": {
@@ -1428,7 +1452,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     "step1": "قم بالنقر على المكان المطلوب",
     "step2": "قم بالتحديد ثم انقر اختيار حفظ",
     "step3": "لايتطلب التسجيل",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "تعرف على ويل ماب ؟"
   },
   "statistics": "إحصاءات",
   "support": {
@@ -1452,14 +1476,14 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     "pm": "مساء"
   },
   "toiletstatus": {
-    "no": "No wheelchair accessible toilet",
-    "unknown": "Toilet status unknown",
+    "no": "لا يوجد كرسي متحرك للمرحاض في المتناول",
+    "unknown": "وضع المرحاض غير معروف",
     "what_is": {
       "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
       "unknown": "Help out by marking the toilet status!",
       "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
     },
-    "yes": "Wheelchair accessible toilet"
+    "yes": "كرسي متحرك في المتناول للمرحاض"
   },
   "user_sessions": {
     "create": {
@@ -1535,7 +1559,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {
@@ -1549,7 +1573,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
           "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
           "general": "Create your own Wheelmap widget and embed it in your website or blog.",
           "preview": "Preview",
-          "settings": "\n\nالإعدادات"
+          "settings": "الإعدادات"
         },
         "providers": "Provider",
         "title": "Widget",

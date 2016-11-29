@@ -8,6 +8,8 @@ da:
       health: Sundhed
       leisure: Fritid
       misc: Diverse
+      money_post: "Bank / Posthus"
+      public_transfer: "Offentlig transport"
       shopping: Shopping
       sport: Sport
       tourism: Turisme
@@ -44,35 +46,49 @@ da:
       government:
         courthouse: Retsbygning
         embassy: Ambassade
+        employment_agency: "Jobcenter"
         government: "Statslig organisation"
         police: Politi
         public_building: "Offentlig bygning"
+        townhall: Rådhus
       health:
+        alternative: "Alternativ medicinbehandler"
         dentist: Tandlæge
+        doctors: Læge
         hearing_aids: "Høreapparatforhandler"
         hospital: Hospital
         medical_supply: "Håndkøbsmedicin"
+        occupational_therapist: "Erhvervsterapeut"
         pharmacy: ' Apotek'
+        physiotherapist: Fysioterapeut
+        psychotherapist: Psykoterapeut
         social_facility: "Plejehjem"
+        speech_therapist: "Talepædagog"
         veterinary: Dyrlæge
       leisure:
         arena: Sportsarena
         brothel: Bordel
         casino: Kasino
         cinema: Biograf
+        community_centre: "Borgerhus"
         gallery: Galleri
+        massage: "Massage kurbad"
         nightclub: Natklub
         playground: Legeplads
         sauna: Sauna
         stripclub: Stripclub
+        tattoo: "Tatoveringsforretning"
         theatre: Teater
         zoo: Zoo
       misc:
+        association: Forening
         company: "Firma (kontor)"
         estate_agent: "Ejendomsmægler"
         insurance: Forsikringsselskab
         lawyer: Advokat
+        ngo: "Ikke-statslig organisation"
         place_of_worship: "Religiøs tilbedelsessted"
+        political_party: "Politisk parti kontor"
         toilets: Toiletter
       money_post:
         atm: Pengeautomat
@@ -84,6 +100,7 @@ da:
         aerodrome: Lufthavn
         bicycle_parking: "Cykelparkering"
         bicycle_rental: "Cykeludlejning"
+        boatyard: Bådeværft
         bus_station: "Busstation"
         bus_stop: "Busstop"
         cable_car: "Svævebane"
@@ -104,6 +121,8 @@ da:
         tram_stop: "Sporvognsstop"
       shopping:
         alcohol: Vinhandler
+        antiques: 'Antikviteter '
+        art: "Galleributik"
         bakery: Bager
         beauty: "Skønhedssalon"
         beverages: Drikkevarer
@@ -112,26 +131,37 @@ da:
         butcher: Slagter
         car_repair: "Bilværksted"
         car_shop: "Biludstyrsbutik"
+        chemist: Farmaceut
         clothes: Tøjbutik
         computer: Computerbutik
         confectionery: "Slikbutik"
         convenience: Minimarked
+        copyshop: "Kopibutik"
         deli: Deli
         department_store: "Stormagasin"
         doityourself: "Byggemarked"
         dry_cleaning: "Tøjenseri"
         electronics: Elektronikbutik
+        erotic: "Sexbutik"
         fabric: "Stofbutik"
         farm_shop: "Gårdbutik"
         florist: Blomsterhandler
+        funeral_directors: "Begravelsesforretning"
         furniture: Møbelhandler
+        garden_centre: "Havecenter"
         gift: "Gavebutik"
+        greengrocer: Grønthandler
         hairdresser: Frisør
         hardware: Værktøjsbutik
+        interior_decoration: "Interiørdesignbutik"
         jewelry: Smykkeforretning
         kiosk: Kiosk
         laundry: Vaskeri
         mall: "Indkøbscenter"
+        mobile_phone: "Mobiltelefonforrening"
+        music: "Pladeforretning"
+        musical_instrument: "Musikinstrumentforretning"
+        newsagent: "Aviskiosk"
         optician: Optiker
         organic: "Økologisk butik"
         outdoor: "Friluftudstyrsbutik"
@@ -142,8 +172,12 @@ da:
         sports: Sportsforretninger
         stationery: Papirartikler
         supermarket: Supermarked
+        tailor: Skrædder
+        tea: "Teudvalg"
+        tobacco: "Tobakforretning "
         toys: Legetøj
         travel_agency: "Rejsebureau"
+        variety_store: "Discountbutik"
         video: "Videoudlejning"
       sport:
         pitch: "Sportsplads"

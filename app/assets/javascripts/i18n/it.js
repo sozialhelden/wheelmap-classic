@@ -766,7 +766,7 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
       "newsletter": "Newsletter",
       "press": "Articoli di giornale",
       "profile": "Profilo",
-      "projects": "Progetti",
+      "projects": "Partecipa",
       "suggestions": "Suggerimenti",
       "what_is_barrier_free": "Cosa significa \"accessibile in sedia a rotelle\"?",
       "what_is_wheelmap": "Cos'è Wheelmap?"
@@ -848,7 +848,7 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
         "help": "Accessibile in sedia a rotelle? (Aiuto)",
         "more": "più ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "Ingrandisci per vedere più attività."
     }
   },
   "how?": "Come?",
@@ -931,37 +931,37 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
     "new": {
       "form": {
         "legend": "Posizione del luogo ",
-        "location": "Please click on the map where the place is located!",
+        "location": "Clicca sulla mappa il punto in cui si trova l'attività!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "Accessibilità per sedie a rotelle",
+            "title": "Informazioni sulla accessibilità per sedie a rotelle"
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
+            "help": "Puoi spostare il segnaposto nella posizione corretta sulla mappa.",
             "name": "Indirizzo",
-            "title": "Where is the place?"
+            "title": "Dov'è l'attività?"
           },
           "contact": {
             "name": "Contatti",
-            "title": "Other contact information"
+            "title": "Altri recapiti"
           },
           "name_category": {
-            "name": "Name and place type",
-            "title": "Give us some initial information about your place:"
+            "name": "Nome e tipo di attività",
+            "title": "Forniscici delle informazioni iniziali sulla tua attività:"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "Le informazioni sono tutte esatte?"
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "Non sono state trovate attività simili.",
+            "go_edit": "Continua con questa attività",
+            "go_new": "Non è nessuna delle attività suddette...",
+            "name": "Posti simili",
+            "title": "Abbiamo trovato attività simili nei dintorni. È una di queste?"
           }
         },
-        "title": "Add a place"
+        "title": "Aggiungi una attività"
       },
       "header": {
         "title": "Nuovo luogo | wheelmap.org "
@@ -1169,19 +1169,25 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
       "government": {
         "courthouse": "Tribunale",
         "embassy": "Ambasciata",
+        "employment_agency": "Agenzia di collocamento",
         "government": "Agenzia del Governo",
         "police": "Polizia",
         "public_building": "Edificio pubblico",
         "townhall": "Municipio"
       },
       "health": {
+        "alternative": "Professionista di medicina alternativa",
         "dentist": "Dentista",
         "doctors": "Dottore",
         "hearing_aids": "Apparecchio per l'udito",
         "hospital": "Ospedale",
         "medical_supply": "Rifornimento sanitario",
+        "occupational_therapist": "Terapista occupazionale",
         "pharmacy": "Farmacia",
+        "physiotherapist": "Fisioterapista",
+        "psychotherapist": "Psicoterapeuta",
         "social_facility": "Servizi sociali",
+        "speech_therapist": "Logopedista",
         "veterinary": "Ambulatorio Veterinario"
       },
       "leisure": {
@@ -1191,21 +1197,24 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
         "cinema": "Cinema",
         "community_centre": "Centro comunitario",
         "gallery": "Galleria d'arte",
-        "massage": "Massage spa",
+        "massage": "Massaggi spa",
         "nightclub": "Night club",
         "playground": "Parco giochi",
         "sauna": "Sauna",
         "stripclub": "Strip club",
-        "tattoo": "Tattoo shop",
+        "tattoo": "Negozio di tatuaggi",
         "theatre": "Teatro",
         "zoo": "Zoo"
       },
       "misc": {
+        "association": "Associazione",
         "company": "Compagnia (Officio)\n",
         "estate_agent": "Agente Immobiliare",
         "insurance": "Assicurazione",
         "lawyer": "Avvocato",
+        "ngo": "Organizzazione non governativa",
         "place_of_worship": "Luogo di culto",
+        "political_party": "Ufficio di partito politico",
         "toilets": "Bagno pubblico"
       },
       "money_post": {
@@ -1241,6 +1250,8 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
       },
       "shopping": {
         "alcohol": "Bevande alcoliche",
+        "antiques": "Antiquario",
+        "art": "Negozio di galleria",
         "bakery": "Panetteria",
         "beauty": "Salone di Belleza",
         "beverages": "Bevande",
@@ -1254,23 +1265,32 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
         "computer": "Negozio di computers",
         "confectionery": "Dolci",
         "convenience": "Minimarket",
+        "copyshop": "Fotocopisteria",
         "deli": "Deli",
         "department_store": "Grande magazzino",
         "doityourself": "Fai da te",
         "dry_cleaning": "Lavanderia",
         "electronics": "Negozio d'elettronica",
+        "erotic": "Sexy shop",
         "fabric": "Negozio di Tessuti",
         "farm_shop": "Negozio di una Fattoria",
         "florist": "Fiorista",
+        "funeral_directors": "Onoranze funebri",
         "furniture": "Arredamento",
         "garden_centre": "Fioraio",
         "gift": "Negozio di Articoli da Regalo ",
+        "greengrocer": "Fruttivendolo",
         "hairdresser": "Parrucchiere",
         "hardware": "Ferramenta",
+        "interior_decoration": "Negozio di design degli interni",
         "jewelry": "Gioielleria",
         "kiosk": "Chiosco",
         "laundry": "Lavanderia",
         "mall": "Centro commerciale",
+        "mobile_phone": "Negozio di telefoni cellulari",
+        "music": "Negozio di dischi",
+        "musical_instrument": "Negozio di strumenti musicali",
+        "newsagent": "Giornalaio",
         "optician": "Ottico",
         "organic": "Negozio di Cibo Organico",
         "outdoor": "Negozio Outdoor",
@@ -1281,8 +1301,12 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
         "sports": "Sports",
         "stationery": "Cartoleria",
         "supermarket": "Supermercato",
+        "tailor": "Sarto",
+        "tea": "Negozio di the",
+        "tobacco": "Tabacchino",
         "toys": "Giocattoli",
         "travel_agency": "Agenzia di Viaggi",
+        "variety_store": "Discount",
         "video": "Negozio di video noleggio"
       },
       "sport": {
@@ -1543,7 +1567,7 @@ I18n.translations["it"] = I18n.extend((I18n.translations["it"] || {}), {
           },
           "text": "Hai"
         },
-        "text_html": "Ciao, <br>\nBenvenuto (bentornato) su Wheelmap.org! Siamo felici di averti a bordo! È possibile consultare il nostro <a href=\"http://wheelmap.org/en/blog-2/\"> Blog </a> o le nostre <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> se vuoi conoscere meglio Wheelmap.org. Oppure puoi scoprire di più sui  <a href=\"http://wheelmap.org/en/get-engaged/\">progetti</a> che offriamo attorno a Wheelmap.org e come partecipare. <br>\nResta in contatto <br>\nPer rimanere in contatto è possibile iscriversi alla nostra newsletter mensile e seguirci su <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> e <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Non vediamo l'ora di sentire la tua opinione e iniziare una conversazione con te! <br>\nE ora, buona mappatura!<br>\nIl team di Wheelmap",
+        "text_html": "Ciao,<br>\nBenvenuto (bentornato) su Wheelmap.org! Siamo felici di averti a bordo! È possibile consultare il nostro <a href=\\\"http://news.wheelmap.org/en/\\\">Blog</a> o le nostre <a href=\\\"http://news.wheelmap.org/en/FAQ/\\\">FAQs</a> se vuoi conoscere meglio Wheelmap.org. Oppure puoi scoprire di più sui <a href=\\\"http://news.wheelmap.org/en/wheelmap-ambassador/\\\">progetti</a> che offriamo attorno a Wheelmap.org e come partecipare.<br>\nPer rimanere in contatto è possibile iscriversi alla nostra newsletter mensile e seguirci su <a href=\\\"https://www.facebook.com/wheelmap\\\">Facebook</a> e <a href=\\\"https://twitter.com/wheelmap\\\">Twitter</a>. Non vediamo l'ora di sentire la tua opinione e iniziare una conversazione con te!<br>\nE ora, buona mappatura!<br>\nIl team di Wheelmap",
         "title": "Panoramica"
       },
       "widget": {

@@ -766,7 +766,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
       "newsletter": "Boletín de noticias",
       "press": "Prensa",
       "profile": "Perfil",
-      "projects": "Proyectos",
+      "projects": "Involúcrate",
       "suggestions": "Sugerencias",
       "what_is_barrier_free": "¿Qué significa \"accesible para silla de ruedas\"?",
       "what_is_wheelmap": "¿Qué es Wheelmap?"
@@ -848,7 +848,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "help": "¿Accesible para silla de ruedas? (Ayuda)",
         "more": "más ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "Haz zoom para ver mas lugares"
     }
   },
   "how?": "¿Cómo?",
@@ -931,37 +931,37 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
     "new": {
       "form": {
         "legend": "Ubicación del sitio",
-        "location": "Please click on the map where the place is located!",
+        "location": "Por favor, haz click donde el lugar esta localizado en el mapa",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "Accesibilidad para silla de ruedas",
+            "title": "Información de la accesibilidad para silla de rueda"
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
+            "help": "Puedes mover el marcador para corregir la localización en el mapa",
             "name": "Dirección",
-            "title": "Where is the place?"
+            "title": "¿Dónde esta el lugar?"
           },
           "contact": {
             "name": "Contacto",
-            "title": "Other contact information"
+            "title": "Otra información de contacto"
           },
           "name_category": {
-            "name": "Name and place type",
-            "title": "Give us some initial information about your place:"
+            "name": "Nombra y coloca el tipo",
+            "title": "Danos alguna información inicial sobre tu lugar"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "¿Es toda la información correcta?"
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "No hay lugares similares encontrados",
+            "go_edit": "Continuar con este lugar",
+            "go_new": "No es ninguno de los lugares mencionados arriba",
+            "name": "Lugares similares",
+            "title": "Encontramos lugares similares cerca. ¿Es uno de esos?"
           }
         },
-        "title": "Add a place"
+        "title": "Agrega un lugar"
       },
       "header": {
         "title": "Nuevo lugar | wheelmap.org"
@@ -1169,19 +1169,25 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
       "government": {
         "courthouse": "Juzgado",
         "embassy": "Embajada",
+        "employment_agency": "Agencia de empleos",
         "government": "Agencia gubernamental",
         "police": "Policía",
         "public_building": "Edificio público",
         "townhall": "Ayuntamiento"
       },
       "health": {
+        "alternative": "Especialista en medicina alternativa",
         "dentist": "Dentista",
         "doctors": "Doctor",
         "hearing_aids": "Distribuidor de audífonos",
         "hospital": "Hospital",
         "medical_supply": "Suministros Médicos",
+        "occupational_therapist": "Terapista ocupacional",
         "pharmacy": "Farmacia",
+        "physiotherapist": "Fisioterapeuta",
+        "psychotherapist": "Psicoterapeuta",
         "social_facility": "Instalaciones sociales",
+        "speech_therapist": "Terapista del habla",
         "veterinary": "Veterinario"
       },
       "leisure": {
@@ -1191,21 +1197,24 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "cinema": "Cine",
         "community_centre": "Centro comunitario",
         "gallery": "Galería",
-        "massage": "Massage spa",
+        "massage": "Spa de masajes",
         "nightclub": "Discoteca",
         "playground": "Área de juegos",
         "sauna": "Sauna",
         "stripclub": "Club de striptease",
-        "tattoo": "Tattoo shop",
+        "tattoo": "Tienda de tatuajes",
         "theatre": "Teatro",
         "zoo": "Zoo"
       },
       "misc": {
+        "association": "Asocición",
         "company": "Empresa (oficinas)",
         "estate_agent": "Agente inmobiliario",
         "insurance": "Seguros",
         "lawyer": "Abogado",
+        "ngo": "Organización no gubernamental",
         "place_of_worship": "Zona religiosa",
+        "political_party": "Oficina de partido político",
         "toilets": "Sanitarios"
       },
       "money_post": {
@@ -1241,6 +1250,8 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
       },
       "shopping": {
         "alcohol": "Licor",
+        "antiques": "Antiguedades",
+        "art": "Tienda de galería de arte",
         "bakery": "Panadería",
         "beauty": "Salón de belleza",
         "beverages": "Bebidas",
@@ -1254,23 +1265,32 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "computer": "Ordenadores",
         "confectionery": "Bombonería",
         "convenience": "Comodidad",
+        "copyshop": "Fotocopiadora",
         "deli": "Delicatessen",
         "department_store": "Almacén",
         "doityourself": "Hazlo tú mismo",
         "dry_cleaning": "Tintorería",
         "electronics": "Electrónicos",
+        "erotic": "Sex shop",
         "fabric": "Tienda de telas",
         "farm_shop": "Granja",
         "florist": "Floristería",
+        "funeral_directors": "Funeraría",
         "furniture": "Muebles",
         "garden_centre": "Centro de jardinería",
         "gift": "Tienda de regalos",
+        "greengrocer": "Verdulería",
         "hairdresser": "Peluquería",
         "hardware": "Hardware",
+        "interior_decoration": "Tienda de diseño de interiores",
         "jewelry": "Joyas",
         "kiosk": "Kiosko",
         "laundry": "Lavandería",
         "mall": "Centro comercial",
+        "mobile_phone": "Tienda de móviles",
+        "music": "Tienda de discos",
+        "musical_instrument": "Tienda de instrumentos musicales",
+        "newsagent": "Agente de noticias",
         "optician": "Ópica",
         "organic": "Tienda ecológica",
         "outdoor": "Suministros al aire libre",
@@ -1281,8 +1301,12 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         "sports": "Deportes",
         "stationery": "Papelería",
         "supermarket": "Supermercado",
+        "tailor": "Sastre",
+        "tea": "Distribuidor de té",
+        "tobacco": "Tabaquería",
         "toys": "Juguetes",
         "travel_agency": "Agencia de viajes",
+        "variety_store": "Tienda de rebajas",
         "video": "Videoclub"
       },
       "sport": {
@@ -1463,9 +1487,9 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
     "no": "Baño no accesible para silla de ruedas",
     "unknown": "Tipo de baño desconocido",
     "what_is": {
-      "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
+      "no": "El marco de la puerta mide como mínino 90cm (35''), dimensiones del baño son como mínimo 150 x 150 cm (59 x 59 ''), la altura del inodoro es para sillas, barandas plegables y lavamanos accesible.",
       "unknown": "Ayuda marcando el estado de los baños",
-      "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      "yes": "El marco de la puerta mide como mínimo 90cm (35''), dimensiones del baño son como mínimo 150 x 150 cm (59 x 59 ''), la altura del inodoro es para sillas, barandas plegables y lavamanos accesible."
     },
     "yes": "Baño accesible para silla de ruedas"
   },
@@ -1526,24 +1550,24 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "one": "subida %{count} foto",
+            "other": "subidas %{count} fotos"
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "one": "añadido %{count} lugar",
+            "other": "añadidos %{count} lugares"
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "one": "editado %{count} lugar",
+            "other": "editados %{count} lugares"
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "one": "marcado %{count} lugar",
+            "other": "marcados %{count} lugares"
           },
           "text": "Tú tienes"
         },
-        "text_html": "Hola,<br>\n Bienvenido (de nuevo) a Wheelmap.org! Estamos felices de tenerte con nosotros! Puedes navegar en nuestro <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> o <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> Si quieres saber un poco más sobre Wheelmap.org o aprender un poco sobre el <a href=\"http://wheelmap.org/en/get-engaged/\">projecto</a> que ofrecemos y como puedes formar parte de ellos.<br> \nMantente en contacto<br> \nPara estar en contacto, puedes subscribirte a nuestro boletín mensual o seguirnos en <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> y <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Esperamos con ansías escuchar tus opiniones y empezar una conversación contigo! \n<br> y ahora, mapea feliz!<br> \nTu equipo de Wheelmap",
+        "text_html": "Hola,<br>\nBienvenido (de nuevo) a Wheelmap.org! Estamos felices de tenerte con nosotros! Puedes navegar en nuestro <a href=\\\"http://news.wheelmap.org/en/\\\">Blog</a> o <a href=\\\"http://news.wheelmap.org/en/FAQ/\\\">FAQs</a> si quieres saber un poco más sobre Wheelmap.org. O quieres aprender un poco sobre el <a href=\\\"http://news.wheelmap.org/en/wheelmap-ambassador/\\\">projecto</a> que ofrecemos y como puedes formar parte de ellos.<br>\nPara estar en contacto, puedes subscribirte a nuestro boletín mensual o seguirnos en <a href=\\\"https://www.facebook.com/wheelmap\\\">Facebook</a> y <a href=\\\"https://twitter.com/wheelmap\\\">Twitter</a>. Esperamos con ansías escuchar tus opiniones y empezar una conversación contigo!<br>\nY ahora, mapea feliz!<br>\nTu equipo de Wheelmap",
         "title": "Visión de conjunto"
       },
       "widget": {

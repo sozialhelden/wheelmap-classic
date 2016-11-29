@@ -13,6 +13,7 @@ zh_TW:
     send: 送出
     save: 存檔
     cancel: 取消
+    next: 下一個
   errors:
     models:
       node:

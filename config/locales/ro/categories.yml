@@ -1,4 +1,204 @@
 ro:
   poi:
     category:
+      accommodation: Cazare
+      education: Educație
+      food: Mâncare
+      government: Birou guvernamental
+      health: Sănătate
+      leisure: Timp liber
       misc: Altele
+      money_post: "Bancă / Oficiu poștal"
+      public_transfer: "Transport în comun"
+      shopping: Cumpărături
+      sport: Sport
+      tourism: Turism
+      unknown: Necunoscut
+    name:
+      accommodation:
+        beach_resort: "Hotel pe plajă"
+        bed_and_breakfast: "Pensiune"
+        camp_site: "Zonă de campare"
+        caravan_site: "Campare rulotă"
+        chalet: Cabană
+        dormitory: Cămin
+        guest_house: "Casă de oaspeți"
+        hostel: Han
+        hotel: Hotel
+        motel: Motel
+      education:
+        college: Colegiu
+        driving_school: "Școală de șoferi"
+        kindergarten: Grădiniță
+        library: Bibliotecă
+        museum: Muzeu
+        school: Școală
+        university: Universitate
+      food:
+        bar: Bar
+        biergarten: Terasă
+        cafe: Cafenea
+        drinking_water: "Țâșnitoare"
+        fast_food: "Fast Food"
+        ice_cream: "Magazin de înghețată"
+        pub: Pub
+        restaurant: Restaurant
+      government:
+        courthouse: Tribunal
+        embassy: Ambasadă
+        employment_agency: "Agenție de recurtare"
+        government: "Agenție guvernamentală"
+        police: Secție de poliție
+        public_building: "Clădire publică"
+        townhall: Primărie
+      health:
+        alternative: "Cabinet medical de medicină alternativă"
+        dentist: Cabinet stomatologic
+        doctors: Cabinet medical
+        hearing_aids: "Comerciant de aparate auditive"
+        hospital: Spital
+        medical_supply: "Materiale medicale"
+        occupational_therapist: "Terapeut de orientare în carieră"
+        pharmacy: Farmacie
+        physiotherapist: Fizioterapeut
+        psychotherapist: Psihoterapeut
+        social_facility: "Servicii sociale"
+        speech_therapist: "Logoped"
+        veterinary: Cabinet veterinar
+      leisure:
+        arena: Arenă
+        brothel: Bordel
+        casino: Cazino
+        cinema: Cinema
+        community_centre: "Centru comunitar"
+        gallery: Galerie
+        massage: "Masaj spa"
+        nightclub: Club de noapte
+        playground: Loc de joacă
+        sauna: Saună
+        stripclub: Club de striptease
+        tattoo: "Salon de tatuaje"
+        theatre: Teatru
+        zoo: Grădină zoologică
+      misc:
+        association: Asociație
+        company: "Firmă (Birou)"
+        estate_agent: "Agent imobiliar"
+        insurance: Birou de asigurări
+        lawyer: Avocat
+        ngo: "Organizație nonguvernamentală"
+        place_of_worship: "Lăcaș de cult"
+        political_party: "Birou partid politic"
+        toilets: Toaletă publică
+      money_post:
+        atm: Bancomat
+        bank: Bancă
+        bureau_de_change: "Schimb valutar"
+        post_box: "Cutie poștală"
+        post_office: "Poștă"
+      public_transfer:
+        aerodrome: Aeroport
+        bicycle_parking: "Parcare pentru biciclete"
+        bicycle_rental: "Închiriere de biciclete"
+        boatyard: Doc
+        bus_station: "Stație de autobuz"
+        bus_stop: "Stație de autobuz"
+        cable_car: "Telecabină"
+        car_rental: "Închirieri auto"
+        car_sharing: "Car sharing"
+        chair_lift: "Telescaun"
+        ferry: Feribot
+        ferry_terminal: "Terminal de feribot"
+        fuel: "Benzinărie"
+        halt: Haltă
+        light_rail: "Tramvai ușor"
+        parking: Parcare
+        parking_aisle: "Culoar parcare"
+        platform: Platformă
+        station: "Gară"
+        subway_entrance: "Intrare metrou"
+        terminal: "Terminal de aeroport"
+        tram_stop: "Stație de tramvai"
+      shopping:
+        alcohol: Băutură
+        antiques: Magazin de antichități
+        art: "Magazin de artă"
+        bakery: Brutărie
+        beauty: "Salon de înfrumusețare"
+        beverages: Magazin de băuturi
+        bicycle: "Magazin de biciclete"
+        books: Librărie
+        butcher: Măcelar
+        car_repair: "Reparații auto"
+        car_shop: "Magazin auto"
+        chemist: Farmacie
+        clothes: Magazin de haine
+        computer: Magazin de calculatoare
+        confectionery: "Magazin de dulciuri"
+        convenience: Magazin
+        copyshop: "Xerox"
+        deli: Magazin de delicatese
+        department_store: "Magazin universal"
+        doityourself: "Bricolaj"
+        dry_cleaning: "Curățătorie"
+        electronics: Magazin de electronice
+        erotic: "Sex shop"
+        fabric: "Magazin de țesături"
+        farm_shop: "Magazin agricol"
+        florist: Florărie
+        funeral_directors: "Casă funerară"
+        furniture: Mobilă
+        garden_centre: "Florărie"
+        gift: "Magazin de cadouri"
+        greengrocer: Piață
+        hairdresser: Coafor
+        hardware: Hardware
+        interior_decoration: "Magazin de design interior"
+        jewelry: Bijuterii
+        kiosk: Chioşc
+        laundry: Spălătorie
+        mall: "Centru comercial"
+        mobile_phone: "Magazin de telefoane mobile"
+        music: "Magazin de discuri"
+        musical_instrument: "Magazin de instrumente muzicale"
+        newsagent: "Vânzător de ziare"
+        optician: Optician
+        organic: "Magazin naturist"
+        outdoor: "Magazin de echipament pentru exterior"
+        pet: "Magazin de animale"
+        photo: Foto
+        second_hand: "Mana a doua"
+        shoes: Magazin de încălțăminte
+        sports: Sporturi
+        stationery: Papetărie
+        supermarket: Supermarket
+        tailor: Croitorie
+        tea: "Magazin de ceaiuri"
+        tobacco: "Tutungerie"
+        toys: Jucării
+        travel_agency: "Agenție turistică"
+        variety_store: "Magazin cu reduceri"
+        video: "Magazin de închiriere video"
+      sport:
+        pitch: "Teren de sport"
+        sports_centre: "Centru sportiv"
+        stadium: Stadion
+        swimming: Înot
+        swimming_pool: "Piscină"
+      tourism:
+        archaeological_site: "Sit arheologic"
+        arts_centre: "Centru de artă"
+        artwork: Lucrare de artă
+        attraction: Atracție turistică
+        battlefield: Câmp de luptă
+        beach: Plajă
+        beacon: Far
+        castle: Castel
+        cave_entrance: "Intrare în peșteră"
+        information: "Punct de informare turistică"
+        memorial: Memorial
+        theme_park: "Parc de distracții"
+        tower: Turn
+        viewpoint: "Punct de observare"
+      unknown:
+        unknown: Necunoscut

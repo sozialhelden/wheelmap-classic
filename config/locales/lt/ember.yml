@@ -2,10 +2,13 @@ lt:
   models:
     node:
       mail:
+        subject: "[Wheelmap] Problemos su %{headline}"
         body: "(Prašome rašyti tik Anglų arba Vokiečių kalba.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"
   actions:
-    save: Išsaugoti
-    cancel: Atšaukti
+    send: Siųsti
+    save: Įrašyti
+    cancel: Atsisakyti
+    next: Kitas
   errors:
     models:
       node:

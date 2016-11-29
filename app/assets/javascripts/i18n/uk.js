@@ -786,10 +786,10 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
       "newsletter": "Інформаційний бюлетень",
       "press": "Преса",
       "profile": "Профіль",
-      "projects": "Проекти",
+      "projects": "Долучитися",
       "suggestions": "Пропозиції",
       "what_is_barrier_free": "Що означає \"доступ для людей на інвалідних візках\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Що таке Wheelmap?"
     },
     "searchbar": {
       "add_place": "Додати інше місце",
@@ -956,7 +956,7 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Доступність для людей на інвалідному візку",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -979,7 +979,7 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Схожі місця",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -1151,8 +1151,8 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
       "health": "Здоров'я",
       "leisure": "Дозвілля",
       "misc": "змішаний",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Банк / Пошта",
+      "public_transfer": "Громадський транспорт",
       "shopping": "Магазини",
       "sport": "Спорт",
       "tourism": "Туризм",
@@ -1193,19 +1193,25 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
       "government": {
         "courthouse": "Суд",
         "embassy": "Посольство",
+        "employment_agency": "Агентство по працевлаштуванню",
         "government": "Урядова організація",
         "police": "Поліція/Міліція",
         "public_building": "Громадський заклад",
-        "townhall": "Town hall"
+        "townhall": "Міська ратуша"
       },
       "health": {
+        "alternative": "Лікар нетрадиційної медицини",
         "dentist": "Дантист",
-        "doctors": "Doctor",
+        "doctors": "Лікар",
         "hearing_aids": "Продаж слухових апаратів",
         "hospital": "Лікарня",
         "medical_supply": "Медикаменти",
+        "occupational_therapist": "Працетерапевт ",
         "pharmacy": "Аптека",
+        "physiotherapist": "Фізіотерапевт",
+        "psychotherapist": "Психотерапевт",
         "social_facility": "Соціальний центр",
+        "speech_therapist": "Логопед",
         "veterinary": "Ветеринар"
       },
       "leisure": {
@@ -1213,23 +1219,26 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         "brothel": "Бордель",
         "casino": "Казино",
         "cinema": "Кінотеатр",
-        "community_centre": "Community centre",
+        "community_centre": "Громадський центр / Приймальня",
         "gallery": "Галерея",
-        "massage": "Massage spa",
+        "massage": "Спа-масаж",
         "nightclub": "Нічний клуб",
         "playground": "Дитячий майданчик",
         "sauna": "Сауна",
         "stripclub": "Стрип-клуб",
-        "tattoo": "Tattoo shop",
+        "tattoo": "Тату салон",
         "theatre": "Театр",
         "zoo": "Зоопарк"
       },
       "misc": {
+        "association": "Асоціація",
         "company": "Компанія (офіс)",
         "estate_agent": "Агентство нерухомості",
         "insurance": "Страхування",
         "lawyer": "Адвокат/Юрист",
+        "ngo": "Неурядова організація",
         "place_of_worship": "Місце поклоніння",
+        "political_party": "Офіс політичної партії",
         "toilets": "Туалет"
       },
       "money_post": {
@@ -1243,7 +1252,7 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         "aerodrome": "Аеропорт",
         "bicycle_parking": "Паркування для велосипедів",
         "bicycle_rental": "Оренда велосипедів",
-        "boatyard": "Boat yard",
+        "boatyard": "Шлюпочна майстерня",
         "bus_station": "Автобусна станція",
         "bus_stop": "Автобусна зупинка",
         "cable_car": "Фунікулер",
@@ -1265,6 +1274,8 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
       },
       "shopping": {
         "alcohol": "Алкоголь",
+        "antiques": "Антикваріат",
+        "art": "Магазин-галерея",
         "bakery": "Хліб",
         "beauty": "Салон краси",
         "beverages": "Напої",
@@ -1273,28 +1284,37 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         "butcher": "М'ясний",
         "car_repair": "СТО",
         "car_shop": "Автосалон",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "Аптека",
         "clothes": "Одяг",
         "computer": "Комп'ютерний",
         "confectionery": "Кондитерська",
         "convenience": "Міні-маркет",
+        "copyshop": "Копіювальний центр",
         "deli": "Делікатеси",
         "department_store": "Промтовари",
         "doityourself": "Зроби сам",
         "dry_cleaning": "Хімчистка",
         "electronics": "Електроніка",
+        "erotic": "Секс-шоп",
         "fabric": "Тканини",
         "farm_shop": "Фермерський",
         "florist": "Флорист",
+        "funeral_directors": "Похоронне бюро",
         "furniture": "Меблі",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Садовий центр",
         "gift": "Подарунки",
+        "greengrocer": "Продавець овочів",
         "hairdresser": "Перукар",
         "hardware": "Господарський магазин",
+        "interior_decoration": "Салон інтер'єру",
         "jewelry": "Ювелірні вироби",
         "kiosk": "Кіоск",
         "laundry": "Пральня",
         "mall": "Торговий центр",
+        "mobile_phone": "Магазин мобільних телефонів",
+        "music": "Магазин вінілових платівок",
+        "musical_instrument": "Магазин музичних інструментів",
+        "newsagent": "Газетний кіоск",
         "optician": "Оптика",
         "organic": "Натуральні харчові продукти",
         "outdoor": "Туристичний",
@@ -1305,8 +1325,12 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         "sports": "Спортивний магазин",
         "stationery": "Канцелярські товари",
         "supermarket": "Супермаркет",
+        "tailor": "Кравець",
+        "tea": "Постачання чаю",
+        "tobacco": "Тютюновий магазин",
         "toys": "Іграшки",
         "travel_agency": "Туристичне агентство",
+        "variety_store": "Дисконт-магазин",
         "video": "Відеопрокат"
       },
       "sport": {
@@ -1432,15 +1456,14 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
         },
         "try_this": {
           "address": "Будь ласка, додайте більше <strong>відомостей про адресу</strong>.",
-          "intro": "Спробуйте наступне:",
-          "spell_check": "Перевірте <strong>написання</strong> введених слів."
+          "intro": "Try this:",
+          "spell_check": "Check the <strong>spelling</strong> of your input."
         }
       },
       "results": {
         "ticker": {
-          "few": "%{count} результата:",
-          "one": "%{count} результат:",
-          "other": "%{count} результатів:"
+          "one": "%{count} result:",
+          "other": "%{count} results:"
         }
       },
       "search": {
@@ -1461,7 +1484,7 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
     "step1": "Натисніть на місце, яке ви знаєте",
     "step2": "Виберіть його статус і натисніть Зберегти",
     "step3": "І все! Реєстрація не потрібна",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Що таке Wheelmap?"
   },
   "statistics": "Статистика",
   "support": {
@@ -1571,7 +1594,7 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
           },
           "text": "У вас"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Огляд"
       },
       "widget": {

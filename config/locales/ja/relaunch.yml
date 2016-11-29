@@ -28,7 +28,7 @@ ja:
       choose_language: 言語を選択
       contact: 連絡先
       map: 地図
-      projects: プロジェクト
+      projects: 参加する
     toolbar:
       categories: カテゴリ
     meta:
@@ -44,15 +44,35 @@ ja:
         lookup: 指定した場所を探す
         secondary_headline: '公共の場所での車椅子のアクセシビリティをマークする自分たちの交通信号システム'
       embed_link: Wheelmap.orgで見る
+      zoom_alert: ズームインしてより多くの場所を閲覧
   nodes:
     new:
       form:
+        title: 場所を追加
         legend: 場所の位置座標
+        location: 地図上でその場所が位置している箇所をクリックしてください!
         section:
+          name_category:
+            name: 名前と場所のタイプ
+            title: "あなたの場所に関する基本的な情報を教えてください:"
           address:
             name: 住所
+            title: その場所はどこでしょうか?
+            help: 地図上の正しい場所までマーカーを動かすことができます。
+          similar_nodes:
+            name: ここに似た場所
+            title: 近くで類似する場所が見つかりました。これらの場所の内の一つでしょうか?
+            go_edit: この場所を続行
+            go_new: 上記の場所のどれでもありません…
+            empty: 類似する場所は見つかりませんでした。
+          accessibility:
+            name: 車椅子のアクセシビリティ
+            title: 車いすアクセス情報
           contact:
             name: 連絡先
+            title: 他の連絡先情報
+          overview:
+            title: この情報は全て正しいものですか?
     node_data:
       address: '住所:'
       contact_details: '詳しい連絡先:'
@@ -112,6 +132,7 @@ ja:
         label: はい、Wheelmapに関する更新を維持します。
       show:
         title: 概要
+        text_html: "こんにちは<br>\nWheelmap.orgにようこそ!　ご参加いただけることを嬉しく思います!　Wheelmap.orgについてもっと知りたい場合には、我々の<a href=\"http://news.wheelmap.org/en/\">ブログ</a>または<a href=\"http://news.wheelmap.org/en/FAQ/\">よくあるご質問</a>をご覧ください。もしくは、Wheelmap.orgにて提供されている<a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">プロジェクト</a>に関する情報と参加方法もご覧ください。<br>\n最新情報の入手をご希望の場合には、是非ともマンスリーのニュースレターにご購読いただき、<a href=\"https://www.facebook.com/wheelmap\">フェイスブック</a>と<a href=\"https://twitter.com/wheelmap\">ツイッター</a>でのフォローをお願いします。あなたからのご意見をお聞かせいただけること、そしてお話しをできることを楽しみにしております!<br>\nそれではマップのご利用をお楽しみください!<br>\nWheelmapチーム"
         greeting:
           anonymously: こんにちは
           personalized: こんにちわ！ %{name}
@@ -145,4 +166,5 @@ ja:
           settings: 設定
           preview: プレビュー
           embed: 埋め込みコード
+          embed_explanation: 上記のコード内で緯度(<code>lat</code>)、経度(<code>lon</code>)、ズームのレベル(<code>zoom</code>)の詳細を手動で変更することができます。これにより、表示をご希望の場所に合わせて、地図の部分を調節することができます。
           general: あなたのウェブサイトやブログ用のWheelmapウイジェットを作成する

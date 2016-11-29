@@ -2,9 +2,12 @@ ca:
   devise:
     confirmations:
       confirmed: "El teu correu electrònic s'ha confirmat correctament."
+      link: "No has rebut les instruccions de confirmació? "
       send_instructions: "Rebràs un correu en pocs minuts al correu electrònic que conté un enllaç de confirmació."
+      send_paranoid_instructions: "Si existeix el compte, rebràs un correu electrònic en uns pocs minuts amb instruccions sobre com confirmar el teu compte. "
     destroy:
       confirm: "Estàs segur?"
+      headline: "Eliminar compte "
       link: "Esborrar-lo ara"
     edit:
       form:
@@ -17,19 +20,25 @@ ca:
       headline: "Editar compte"
     failure:
       already_authenticated: "Ja has entrat."
-      invalid: "Correu electrònic o contrasenya no vàlid"
+      inactive: "El teu compte no s'ha activat encara. "
+      invalid: "Correu electrònic o contrasenya no vàlida"
       invalid_token: "Ha fallat l'autenticació"
       locked: "El teu compte està bloquejat"
+      timeout: "La teva sessió ha expirat, connecta't de nou per continuar. "
       unauthenticated: "Necessites entrar o registrar-te abans de continuar"
       unconfirmed: "Necessites confirmar el compte abans de continuar."
     mailer:
       confirmation_instructions:
+        landing_page: "Fes clic a l'enllaç que acabem d'enviar a la teva adreça de correu electrònic. Si no reps un correu electrònic de nosaltres comprova primer si no s'amaga a la teva carpeta de correu no desitjat. Si no hi és torna a la pàgina de registre i torna-ho a provar. "
         subject: "Un pas més per activar el compte"
       reset_password_instructions:
         subject: "Instruccions per reiniciar la contrasenya"
+      unlock_instructions:
+        subject: "Instruccions de desbloqueig"
     mandatory: "* Es requereix"
     omniauth_callbacks:
       failure: "L'autorització amb %{kind} ha fallat. Error: \"%{reason}\".\n"
+      permission_missing: "No has aconseguit el permís necessari. "
       success: "Has entrat correctament amb %{kind}."
     password_recovery:
       form:
@@ -42,6 +51,7 @@ ca:
         comment: "Si no has demanat un reinici de contrasenya ignora aquest missatge.<br/>La teva contrasenya no canviarà fins que no facis clic a l'enllaç de sobre i la canviïs tu."
         headline: "Benvingut %{email}"
         link: "Canviar contrasenya"
+        text: "Has rebut una sol·licitud per canviar la contrasenya. Si has enviat la sol·licitud fes clic al següent enllaç - en cas contrari ignora això "
       form:
         labels:
           password: "Contrasenya nova"
@@ -50,6 +60,8 @@ ca:
       headline: "Reinicia la contrasenya"
     passwords:
       link: "Has oblidat la contrasenya?"
+      send_instructions: "Rebràs un correu electrònic amb instruccions sobre com restablir la contrasenya en uns minuts "
+      send_paranoid_instructions: "Si existeix el compte rebràs un correu electrònic en uns pocs minuts amb instruccions sobre com restablir la contrasenya"
       updated: "La teva contrasenya s'ha canviat correctament i ara has entrat"
       updated_not_active: "La teva contrasenya s'ha canviat correctament"
     registrations:
@@ -60,19 +72,24 @@ ca:
         inactive: inactiu
         locked: bloquejat
         unconfirmed: no confirmat
+      signed_up: "T'has registrat amb èxit. Se t'ha enviat un correu electrònic de confirmació. "
       updated: "Has actualitzat el teu compte correctament."
     sessions:
+      inactive: "El teu compte no s'ha activat "
       invalid: "Correu electrònic o contrasenya no vàlida"
       invalid_token: "Ha fallat l'autenticació"
-      link: "Entra"
+      link: "Entrar"
       locked: "El teu compte està bloquejat"
       new:
         no_osm_account: "No tens compte a OpenStreetMap?"
+        osm_promo_text: "El Wheelmap es basa en dades geogràfiques d'OpenStreetMap (OSM). OpenStreetMap és un mapa gratuït a nivell mundial, creat per gent com tu. És com la Wikipedia pels mapes. Per poder editar llocs o per crear-ne de nous necessites un compte d'OpenStreetMap i has d'estar connectat amb ell."
         promo_text_thank_you: "Moltes gràcies pel teu suport."
         sign_in_with: "Entra amb %{kind}"
         sign_up_with_osm: "Registra't ara"
+        wheelmap_promo_text: "Amb el teu coneixement sobre llocs accessibles en cadira de rodes pots ajudar a les persones amb impediments físics per planificar millor la teva vida quotidiana. A més, això ajudarà a fer OpenStreetMap més detallat. "
       signed_in: "Has entrat correctament"
       signed_out: "Has sortit correctament"
+      timeout: "La teva sessió ha expirat, connecta't de nou per continuar.  "
       unauthenticated: "Necessites entrar o registrar-te abans de continuar"
       unconfirmed: "Necessites confirmar el compte abans de continuar."
     sign_in:
@@ -95,7 +112,11 @@ ca:
           email: Correu electrònic
           password: Contrasenya
           password_confirmation: "Repeteix la contrasenya"
+          wants_newsletter: "Sí, manten-me informat sobre Wheelmap - però no més d'una vegada al mes. "
         submit: "Registra't"
       headline: "Registra't"
     unlocks:
+      link: "No has rebut instruccions de desbloqueig? "
+      send_instructions: "Rebràs un correu electrònic en uns pocs minuts amb instruccions sobre com desbloquejar el teu compte "
+      send_paranoid_instructions: "Si ja existeix el compte rebràs un correu electrònic en uns pocs minuts amb instruccions sobre com desbloquejar el teu compte "
       unlocked: "El compte ha estat desbloquejat correctament. Ara has entrat."

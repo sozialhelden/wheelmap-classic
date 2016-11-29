@@ -315,6 +315,8 @@ es:
     unknown: "Tipo de baño desconocido"
     'yes': "Baño accesible para silla de ruedas"
     what_is:
+      'no': "El marco de la puerta mide como mínino 90cm (35''), dimensiones del baño son como mínimo 150 x 150 cm (59 x 59 ''), la altura del inodoro es para sillas, barandas plegables y lavamanos accesible."
+      'yes': "El marco de la puerta mide como mínimo 90cm (35''), dimensiones del baño son como mínimo 150 x 150 cm (59 x 59 ''), la altura del inodoro es para sillas, barandas plegables y lavamanos accesible."
       unknown: "Ayuda marcando el estado de los baños"
   user_sessions:
     create:

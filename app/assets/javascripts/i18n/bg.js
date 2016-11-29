@@ -192,7 +192,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "note": "Note",
         "phone": "Телефон",
         "type": "Вид",
-        "website": "Website\n"
+        "website": "Website"
       },
       "user": {
         "first_name": "Име",
@@ -758,10 +758,10 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
       "newsletter": "Newsletter",
       "press": "Преса",
       "profile": "Профил",
-      "projects": "Проекти",
+      "projects": "Включете се",
       "suggestions": "Предложения",
       "what_is_barrier_free": "Какво значи \"достъпно за инвалидни колички\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Какво е Wheelmap?"
     },
     "searchbar": {
       "add_place": "Добави ново място",
@@ -926,7 +926,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Достъп за инвалидни колички",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -949,7 +949,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Подобни места",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -1119,8 +1119,8 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
       "health": "Здраве",
       "leisure": "Отдих и свободно време",
       "misc": "Разни",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Банка / пощенски клон",
+      "public_transfer": "Обществен транспорт",
       "shopping": "Магазини",
       "sport": "Спорт",
       "tourism": "Туризъм",
@@ -1161,19 +1161,25 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
       "government": {
         "courthouse": "Съдебна палата",
         "embassy": "Посолство",
+        "employment_agency": "Агенция по заетостта",
         "government": "Държавна институция",
         "police": "Полиция",
         "public_building": "Обществена сграда",
-        "townhall": "Town hall"
+        "townhall": "Кметство"
       },
       "health": {
+        "alternative": "Лекар, практикуващ алтернативна медицина ",
         "dentist": "Зъболекар",
-        "doctors": "Doctor",
+        "doctors": "Доктор",
         "hearing_aids": "Магазин за слухови апарати",
         "hospital": "Болница",
         "medical_supply": "Лекарства",
+        "occupational_therapist": "Трудов терапевт",
         "pharmacy": "Аптека",
+        "physiotherapist": "Физиотерапевт",
+        "psychotherapist": "Психотерапевт",
         "social_facility": "Социално съоръжение",
+        "speech_therapist": "Логопед",
         "veterinary": "Ветеринар"
       },
       "leisure": {
@@ -1181,23 +1187,26 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "brothel": "Публичен дом",
         "casino": "Казино",
         "cinema": "Кино",
-        "community_centre": "Community centre",
+        "community_centre": "Общински център",
         "gallery": "Галерия",
-        "massage": "Massage spa",
+        "massage": "Студио за масажи",
         "nightclub": "Нощен клуб",
         "playground": "Площадка за игра",
         "sauna": "Сауна",
         "stripclub": "Стриптийз бар",
-        "tattoo": "Tattoo shop",
+        "tattoo": "Студио за татуировки",
         "theatre": "Театър",
         "zoo": "Зоологическа градина"
       },
       "misc": {
+        "association": "Дружество",
         "company": "Фирма (офис)",
         "estate_agent": "Агенция за недвижими имоти",
         "insurance": "Застраховки",
         "lawyer": "Адвокат",
+        "ngo": "Неправителствена организация",
         "place_of_worship": "Място за поклонение",
+        "political_party": "Кабинет на политическа партия ",
         "toilets": "Тоалетни"
       },
       "money_post": {
@@ -1211,7 +1220,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "aerodrome": "Летище",
         "bicycle_parking": "Паркинг за велосипеди",
         "bicycle_rental": "Колела под наем",
-        "boatyard": "Boat yard",
+        "boatyard": "Яхтено пристанище",
         "bus_station": "Автобусна спирка",
         "bus_stop": "Автобусна спирка",
         "cable_car": "Лифт",
@@ -1233,6 +1242,8 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
       },
       "shopping": {
         "alcohol": "Магазин за спиртни напитки",
+        "antiques": "Антикварни предмети ",
+        "art": "Магазин за произведения на изкуството",
         "bakery": "Фурна",
         "beauty": "Салон за красота",
         "beverages": "Напитки",
@@ -1241,28 +1252,37 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "butcher": "Месар",
         "car_repair": "Автомобилен сервиз",
         "car_shop": "Автомобилна къща",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "Аптека / Дрогерия",
         "clothes": "Дрехи",
         "computer": "Компютър",
         "confectionery": "Магазин за сладкиши",
         "convenience": "Малък магазин",
+        "copyshop": "Копирен център",
         "deli": "Деликатеси",
         "department_store": "Търговски комплекс",
         "doityourself": "Направи си сам",
         "dry_cleaning": "Химическо чистене",
         "electronics": "Електроника",
+        "erotic": "Секс магазин",
         "fabric": "Магазин за платове",
         "farm_shop": "Магазин за регионално производство",
         "florist": "Цветар",
+        "funeral_directors": "Погребално бюро",
         "furniture": "Мебели",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Градински център",
         "gift": "Магазин за подаръци",
+        "greengrocer": "Плод и зеленчук",
         "hairdresser": "Фризьор",
         "hardware": "Магазин за влакчета",
+        "interior_decoration": "Магазин за вътрешен дизайн ",
         "jewelry": "Бижутерия",
         "kiosk": "Будка",
         "laundry": "Обществена пералня",
         "mall": "Мол",
+        "mobile_phone": "Магазин за мобилни телефони",
+        "music": "Магазин за грамофонни плочи",
+        "musical_instrument": "Магазин за музикални инструменти",
+        "newsagent": "Будка за вестници и дребни стоки",
         "optician": "Оптика",
         "organic": "Био магазин",
         "outdoor": "Туристическа екипировка",
@@ -1273,8 +1293,12 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "sports": "Спорт",
         "stationery": "Канцеларски принадлежности",
         "supermarket": "Супермаркет",
+        "tailor": "Шивач",
+        "tea": "Магазин за чай",
+        "tobacco": "Магазин за цигари",
         "toys": "Играчки",
         "travel_agency": "Туристическа агенция",
+        "variety_store": "Магазин за преоценени стоки",
         "video": "Видеотека"
       },
       "sport": {
@@ -1428,7 +1452,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
     "step1": "Кликни върху познато място",
     "step2": "Маркирай и натисни \"запази\".",
     "step3": "Това е! Не е необходима регистрация.",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Какво е Wheelmap?"
   },
   "statistics": "Статистики",
   "support": {
@@ -1453,13 +1477,13 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
   },
   "toiletstatus": {
     "no": "No wheelchair accessible toilet",
-    "unknown": "Toilet status unknown",
+    "unknown": "Статусът на тоалетната не е известен",
     "what_is": {
       "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
       "unknown": "Help out by marking the toilet status!",
       "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
     },
-    "yes": "Wheelchair accessible toilet"
+    "yes": "Тоалетна достъпна за инвалидна количка"
   },
   "user_sessions": {
     "create": {
@@ -1535,7 +1559,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {

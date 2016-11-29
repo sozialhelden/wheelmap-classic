@@ -1,5 +1,21 @@
 sv:
+  models:
+    category:
+      prompt: "Välj kategori:"
+    node_type:
+      prompt: "Välj en typ"
+    node:
+      info_edit_position: "Platsen kommer synas i Wheelmap som den visas ovan. Om markören inte är på korrekt ställe kan du  <a href=\"%{url}\"> ändra dess position på OpenstreetMap. \n</a>"
+      mail:
+        subject: "[Wheelmap] Problem med %{headline}"
+        body: "(Vänligen skriv enbart på engelska eller tyska.)\n\nHi Sozialhelden,\n\nsomething is wrong with location: %{url}\n\n\nThe problem is:"
   actions:
+    send: Skicka
     save: Spara
     cancel: Avbryt
     next: Nästa
+  errors:
+    models:
+      node:
+        website:
+          invalid: "Webbadressen är inte giltig"

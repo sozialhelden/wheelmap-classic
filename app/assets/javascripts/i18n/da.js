@@ -440,7 +440,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
     },
     "destroy": {
       "confirm": "Er du sikker?",
-      "headline": "Delete account",
+      "headline": "Slet konto",
       "link": "Slet nu"
     },
     "edit": {
@@ -702,7 +702,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
       "category": "Kategori:",
       "centralkey": "Centralnøgle:",
       "city": "By:",
-      "create": "Create a place",
+      "create": "Opret et sted",
       "email": "E-mail",
       "finish": "Færdig",
       "housenumber": "Nr.",
@@ -758,10 +758,10 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
       "newsletter": "Nyhedsbrev",
       "press": "Tryk på",
       "profile": "Profil",
-      "projects": "Projekter",
+      "projects": "Bliv involveret",
       "suggestions": "Forslag",
       "what_is_barrier_free": "Hvad betyder \"kørestolstilgængeligt\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Hvad er Wheelmap?"
     },
     "searchbar": {
       "add_place": "Tilføj endnu et sted",
@@ -926,7 +926,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Kørestolstilgængeligt",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -949,11 +949,11 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Lignende steder",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": "Add a place"
+        "title": "Tilføj et sted"
       },
       "header": {
         "title": "Nyt sted | wheelmap.org"
@@ -1119,8 +1119,8 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
       "health": "Sundhed",
       "leisure": "Fritid",
       "misc": "Diverse",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Bank / Posthus",
+      "public_transfer": "Offentlig transport",
       "shopping": "Shopping",
       "sport": "Sport",
       "tourism": "Turisme",
@@ -1161,19 +1161,25 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
       "government": {
         "courthouse": "Retsbygning",
         "embassy": "Ambassade",
+        "employment_agency": "Jobcenter",
         "government": "Statslig organisation",
         "police": "Politi",
         "public_building": "Offentlig bygning",
-        "townhall": "Town hall"
+        "townhall": "Rådhus"
       },
       "health": {
+        "alternative": "Alternativ medicinbehandler",
         "dentist": "Tandlæge",
-        "doctors": "Doctor",
+        "doctors": "Læge",
         "hearing_aids": "Høreapparatforhandler",
         "hospital": "Hospital",
         "medical_supply": "Håndkøbsmedicin",
+        "occupational_therapist": "Erhvervsterapeut",
         "pharmacy": " Apotek",
+        "physiotherapist": "Fysioterapeut",
+        "psychotherapist": "Psykoterapeut",
         "social_facility": "Plejehjem",
+        "speech_therapist": "Talepædagog",
         "veterinary": "Dyrlæge"
       },
       "leisure": {
@@ -1181,23 +1187,26 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
         "brothel": "Bordel",
         "casino": "Kasino",
         "cinema": "Biograf",
-        "community_centre": "Community centre",
+        "community_centre": "Borgerhus",
         "gallery": "Galleri",
-        "massage": "Massage spa",
+        "massage": "Massage kurbad",
         "nightclub": "Natklub",
         "playground": "Legeplads",
         "sauna": "Sauna",
         "stripclub": "Stripclub",
-        "tattoo": "Tattoo shop",
+        "tattoo": "Tatoveringsforretning",
         "theatre": "Teater",
         "zoo": "Zoo"
       },
       "misc": {
+        "association": "Forening",
         "company": "Firma (kontor)",
         "estate_agent": "Ejendomsmægler",
         "insurance": "Forsikringsselskab",
         "lawyer": "Advokat",
+        "ngo": "Ikke-statslig organisation",
         "place_of_worship": "Religiøs tilbedelsessted",
+        "political_party": "Politisk parti kontor",
         "toilets": "Toiletter"
       },
       "money_post": {
@@ -1211,7 +1220,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
         "aerodrome": "Lufthavn",
         "bicycle_parking": "Cykelparkering",
         "bicycle_rental": "Cykeludlejning",
-        "boatyard": "Boat yard",
+        "boatyard": "Bådeværft",
         "bus_station": "Busstation",
         "bus_stop": "Busstop",
         "cable_car": "Svævebane",
@@ -1233,6 +1242,8 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
       },
       "shopping": {
         "alcohol": "Vinhandler",
+        "antiques": "Antikviteter ",
+        "art": "Galleributik",
         "bakery": "Bager",
         "beauty": "Skønhedssalon",
         "beverages": "Drikkevarer",
@@ -1241,28 +1252,37 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
         "butcher": "Slagter",
         "car_repair": "Bilværksted",
         "car_shop": "Biludstyrsbutik",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "Farmaceut",
         "clothes": "Tøjbutik",
         "computer": "Computerbutik",
         "confectionery": "Slikbutik",
         "convenience": "Minimarked",
+        "copyshop": "Kopibutik",
         "deli": "Deli",
         "department_store": "Stormagasin",
         "doityourself": "Byggemarked",
         "dry_cleaning": "Tøjenseri",
         "electronics": "Elektronikbutik",
+        "erotic": "Sexbutik",
         "fabric": "Stofbutik",
         "farm_shop": "Gårdbutik",
         "florist": "Blomsterhandler",
+        "funeral_directors": "Begravelsesforretning",
         "furniture": "Møbelhandler",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Havecenter",
         "gift": "Gavebutik",
+        "greengrocer": "Grønthandler",
         "hairdresser": "Frisør",
         "hardware": "Værktøjsbutik",
+        "interior_decoration": "Interiørdesignbutik",
         "jewelry": "Smykkeforretning",
         "kiosk": "Kiosk",
         "laundry": "Vaskeri",
         "mall": "Indkøbscenter",
+        "mobile_phone": "Mobiltelefonforrening",
+        "music": "Pladeforretning",
+        "musical_instrument": "Musikinstrumentforretning",
+        "newsagent": "Aviskiosk",
         "optician": "Optiker",
         "organic": "Økologisk butik",
         "outdoor": "Friluftudstyrsbutik",
@@ -1273,8 +1293,12 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
         "sports": "Sportsforretninger",
         "stationery": "Papirartikler",
         "supermarket": "Supermarked",
+        "tailor": "Skrædder",
+        "tea": "Teudvalg",
+        "tobacco": "Tobakforretning ",
         "toys": "Legetøj",
         "travel_agency": "Rejsebureau",
+        "variety_store": "Discountbutik",
         "video": "Videoudlejning"
       },
       "sport": {
@@ -1428,7 +1452,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
     "step1": "Klik på et sted du kender",
     "step2": "Markerer den og klik gem",
     "step3": "Det var det hele! Ingen registering er nødvendig",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Hvad er Wheelmap?"
   },
   "statistics": "Statistik",
   "support": {
@@ -1535,7 +1559,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
           },
           "text": "Du har"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overblik"
       },
       "widget": {

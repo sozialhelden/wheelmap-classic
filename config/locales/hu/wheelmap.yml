@@ -112,6 +112,7 @@ hu:
       profile: Profil
       suggestions: Javaslatok
       what_is_barrier_free: "Mit jelent a \"kerekesszékkel akadálymentes\"?"
+      what_is_wheelmap: "Mi a Wheelmap?"
     searchbar:
       add_place: "Új hely felvétele"
       find: Keres
@@ -266,6 +267,7 @@ hu:
     step1: "Kattints egy helyre, amit ismersz"
     step2: "Jelöld be és kattints a mentésre"
     step3: "Ennyi! Nincs szükség regisztrációra"
+    what_is_wheelmap: "Mi a Wheelmap?"
   statistics: Statisztika
   support:
     array:
@@ -284,6 +286,7 @@ hu:
     pm: du
   toiletstatus:
     'no': "Nincs akadálymentesített mosdó"
+    unknown: "Illemhely állapota ismeretlen"
     'yes': "Akadálymentesített mosdó"
   user_sessions:
     create:

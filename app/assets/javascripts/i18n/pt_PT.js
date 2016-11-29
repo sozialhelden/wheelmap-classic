@@ -758,7 +758,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
       "newsletter": "Newsletter",
       "press": "Imprensa",
       "profile": "Perfil",
-      "projects": "Projetos",
+      "projects": "Get involved",
       "suggestions": "Sugestões",
       "what_is_barrier_free": "O que significa \"acessível a cadeiras de rodas\"?",
       "what_is_wheelmap": "What is Wheelmap?"
@@ -1161,19 +1161,25 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
       "government": {
         "courthouse": "Tribunal",
         "embassy": "Embaixada",
+        "employment_agency": "Employment agency",
         "government": "Agência governamental",
         "police": "Polícia",
         "public_building": "Edifício público",
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Dentista",
         "doctors": "Doctor",
         "hearing_aids": "Loja de aparelhos auditivos",
         "hospital": "Hospital",
         "medical_supply": "Equipamentos médicos",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Farmácia",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Centro social",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Veterinário"
       },
       "leisure": {
@@ -1193,11 +1199,14 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
         "zoo": "Jardim zoológico"
       },
       "misc": {
+        "association": "Association",
         "company": "Escritório (empresa)",
         "estate_agent": "Agência imobiliária",
         "insurance": "Seguradora",
         "lawyer": "Advogado",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Local de culto",
+        "political_party": "Political party office",
         "toilets": "WC"
       },
       "money_post": {
@@ -1233,6 +1242,8 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
       },
       "shopping": {
         "alcohol": "Licor",
+        "antiques": "Antiques",
+        "art": "Gallery shop",
         "bakery": "Padaria",
         "beauty": "Salão de beleza",
         "beverages": "Bebidas",
@@ -1246,23 +1257,32 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
         "computer": "Loja de informática",
         "confectionery": "Loja de doces",
         "convenience": "Loja de conveniência",
+        "copyshop": "Copy shop",
         "deli": "Loja gourmet",
         "department_store": "Armazéns (lojas)",
         "doityourself": "Bricolage",
         "dry_cleaning": "Limpeza a seco",
         "electronics": "Electrónica",
+        "erotic": "Sex shop",
         "fabric": "Loja de confeções",
         "farm_shop": "Loja do produtor",
         "florist": "Florista",
+        "funeral_directors": "Funeral home",
         "furniture": "Mobiliário",
         "garden_centre": "Garden centre",
         "gift": "Loja de recordações",
+        "greengrocer": "Greengrocer",
         "hairdresser": "Cabeleireiro",
         "hardware": "Drogaria",
+        "interior_decoration": "Interior design shop",
         "jewelry": "Ourivesaria",
         "kiosk": "Quisque",
         "laundry": "Lavandaria",
         "mall": "Centro comercial",
+        "mobile_phone": "Mobile phone shop",
+        "music": "Record store",
+        "musical_instrument": "Musical instrument shop",
+        "newsagent": "News agent",
         "optician": "Óptica",
         "organic": "Loja de produtos biológicos",
         "outdoor": "Produtos de atividades ao ar livre",
@@ -1273,8 +1293,12 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
         "sports": "Loja de desporto",
         "stationery": "Material de escritório",
         "supermarket": "Supermercado",
+        "tailor": "Tailor",
+        "tea": "Tea supply",
+        "tobacco": "Tobacco shop",
         "toys": "Loja de brinquedos",
         "travel_agency": "Agência de viagens",
+        "variety_store": "Discount store",
         "video": "Clube de vídeo"
       },
       "sport": {
@@ -1535,7 +1559,7 @@ I18n.translations["pt_PT"] = I18n.extend((I18n.translations["pt_PT"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {

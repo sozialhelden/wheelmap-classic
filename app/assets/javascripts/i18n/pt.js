@@ -183,15 +183,15 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   "activerecord": {
     "attributes": {
       "poi": {
-        "address": "Address",
-        "address_city": "City",
+        "address": "Endereço",
+        "address_city": "Cidade",
         "address_housenumber": "Número de casa",
-        "address_postcode": "Postcode",
-        "address_street": "Street",
-        "name": "Name",
+        "address_postcode": "Código postal",
+        "address_street": "Rua",
+        "name": "Nome",
         "note": "Note",
-        "phone": "Phone",
-        "type": "Type",
+        "phone": "Telefone",
+        "type": "Tipo",
         "website": "Website"
       },
       "user": {
@@ -754,7 +754,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       "about_wheelmap": "About Wheelmap",
       "blog": "Blog",
       "choose_language": "Choose language",
-      "contact": "Contact",
+      "contact": "Contacto",
       "feedback": "Feedbck",
       "home": "Iniciar",
       "how_to_add_a_place": "Como adicionar lugares?",
@@ -762,11 +762,11 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       "logged_in_as": "Registrado como:",
       "login": "Entrar",
       "logout": "Sair",
-      "map": "Map",
+      "map": "Mapa",
       "newsletter": "Newsletter",
       "press": "Imprensa",
-      "profile": "Profile",
-      "projects": "Projects",
+      "profile": "Perfil",
+      "projects": "Envolva-se",
       "suggestions": "Sugestões",
       "what_is_barrier_free": "Qual o significado de \"acessível a cadeira de rodas\"?",
       "what_is_wheelmap": "What is Wheelmap?"
@@ -780,7 +780,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
     "tagline": "Lógotipo do Wheelmap",
     "title": "Find wheelchair accessible places",
     "toolbar": {
-      "categories": "Categories"
+      "categories": "Categorias"
     }
   },
   "helpers": {
@@ -943,7 +943,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
             "title": "Where is the place?"
           },
           "contact": {
-            "name": "Contact",
+            "name": "Contacto",
             "title": "Other contact information"
           },
           "name_category": {
@@ -978,23 +978,23 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       }
     },
     "node_data": {
-      "address": "Address:",
-      "contact_details": "Contact details:"
+      "address": "Endereço:",
+      "contact_details": "Detalhes de contacto:"
     },
     "node_edit": {
-      "details": "Details",
-      "edit": "Edit"
+      "details": "Detalhes",
+      "edit": "Editar"
     },
     "node_map": {
-      "map": "Map:"
+      "map": "Mapa:"
     },
     "node_note": {
-      "comment": "Comment:"
+      "comment": "Comentário:"
     },
     "node_photos": {
-      "add": "Add",
-      "photos_of_this_place": "Photos of this place:",
-      "upload": "Upload"
+      "add": "Adicionar",
+      "photos_of_this_place": "Fotografias deste local:",
+      "upload": "Enviar"
     },
     "node_similar": {
       "similar": "Similar places: %{name}"
@@ -1169,19 +1169,25 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       "government": {
         "courthouse": "Tribunal",
         "embassy": "Embaixada",
+        "employment_agency": "Employment agency",
         "government": "Government agency",
         "police": "Police",
         "public_building": "Edificio público",
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Dentist",
         "doctors": "Doctor",
         "hearing_aids": "Hearing aid dealer",
         "hospital": "Hospital",
         "medical_supply": "Medical supplies",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Farmácia",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Social facility",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Veterenário"
       },
       "leisure": {
@@ -1201,11 +1207,14 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
         "zoo": "Zoológico"
       },
       "misc": {
+        "association": "Association",
         "company": "Company (Office)",
         "estate_agent": "Real estate agent",
         "insurance": "Insurance",
         "lawyer": "Lawyer",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Lugar de oração ",
+        "political_party": "Political party office",
         "toilets": "Casa de banho"
       },
       "money_post": {
@@ -1241,6 +1250,8 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       },
       "shopping": {
         "alcohol": "Licor",
+        "antiques": "Antiques",
+        "art": "Gallery shop",
         "bakery": "Padaria",
         "beauty": "Beauty salon",
         "beverages": "Bebidas",
@@ -1254,23 +1265,32 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
         "computer": "Computador",
         "confectionery": "Candy store",
         "convenience": "Conveniência",
+        "copyshop": "Copy shop",
         "deli": "Delicatessen",
         "department_store": "Shopping Center",
         "doityourself": "Faça você mesmo",
         "dry_cleaning": "Limpeza a seco",
         "electronics": "Eletrónica",
+        "erotic": "Sex shop",
         "fabric": "Fabric shop",
         "farm_shop": "Farm shop",
         "florist": "Florista",
+        "funeral_directors": "Funeral home",
         "furniture": "Móvéis",
         "garden_centre": "Garden centre",
         "gift": "Gift shop",
+        "greengrocer": "Greengrocer",
         "hairdresser": "Cabeleireiro",
         "hardware": "Hardware",
+        "interior_decoration": "Interior design shop",
         "jewelry": "Jewelry",
         "kiosk": "Quisque",
         "laundry": "Lavandaria",
         "mall": "Shopping Center",
+        "mobile_phone": "Mobile phone shop",
+        "music": "Record store",
+        "musical_instrument": "Musical instrument shop",
+        "newsagent": "News agent",
         "optician": "Óptica",
         "organic": "Organic shop",
         "outdoor": "Outdoor supply",
@@ -1281,8 +1301,12 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
         "sports": "Sports",
         "stationery": "Stationery",
         "supermarket": "Supermercado",
+        "tailor": "Tailor",
+        "tea": "Tea supply",
+        "tobacco": "Tobacco shop",
         "toys": "Toys",
         "travel_agency": "Travel agency",
+        "variety_store": "Discount store",
         "video": "Video rental store"
       },
       "sport": {
@@ -1508,7 +1532,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
         "legends": {
           "user_data": "Your account information"
         },
-        "title": "Profile"
+        "title": "Perfil"
       },
       "newsletter": {
         "label": "Yes, keep me updated about Wheelmap.",
@@ -1517,7 +1541,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       },
       "photos": {
         "empty": "You haven't uploaded any photos yet.",
-        "title": "Photos"
+        "title": "Fotografias"
       },
       "show": {
         "greeting": {
@@ -1543,15 +1567,15 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {
         "categories": "Show category filter",
-        "center": "Map area",
+        "center": "Área do mapa",
         "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "empty_provider": "Escolha um Fornecedor",
+        "height": "Altura",
         "legends": {
           "embed": "Embed code",
           "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
@@ -1559,9 +1583,9 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
           "preview": "Preview",
           "settings": "Definições"
         },
-        "providers": "Provider",
+        "providers": "Fornecedor",
         "title": "Widget",
-        "width": "Width"
+        "width": "Largura"
       }
     }
   },

@@ -1,4 +1,7 @@
 zh:
+  header:
+    navigation:
+      projects: 参与其中
   nodes:
     new:
       form:

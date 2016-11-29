@@ -47,18 +47,24 @@ en:
       government:
         courthouse: Courthouse
         embassy: Embassy
+        employment_agency: "Employment agency"
         government: "Government agency"
         police: Police
         public_building: "Public building"
         townhall: Town hall
       health:
+        alternative: "Alternative medicine practitioner"
         dentist: Dentist
         doctors: Doctor
         hearing_aids: "Hearing aid dealer"
         hospital: Hospital
         medical_supply: "Medical supplies"
+        occupational_therapist: "Occupational therapist"
         pharmacy: Pharmacy
+        physiotherapist: Physiotherapist
+        psychotherapist: Psychotherapist
         social_facility: "Social facility"
+        speech_therapist: "Speech therapist"
         veterinary: Veterinary
       leisure:
         arena: Arena
@@ -67,21 +73,23 @@ en:
         cinema: Cinema
         community_centre: "Community centre"
         gallery: Gallery
+        massage: "Massage spa"
         nightclub: Nightclub
         playground: Playground
+        sauna: Sauna
         stripclub: Stripclub
+        tattoo: "Tattoo shop"
         theatre: Theatre
         zoo: Zoo
-        # Update 2016-04-26
-        sauna: Sauna
-        tattoo: "Tattoo shop"
-        massage: "Massage spa"
       misc:
+        association: Association
         company: "Company (Office)"
         estate_agent: "Real estate agent"
         insurance: Insurance
         lawyer: Lawyer
+        ngo: "Non-government organisation"
         place_of_worship: "Place of worship"
+        political_party: "Political party office"
         toilets: Toilets
       money_post:
         atm: ATM
@@ -114,6 +122,8 @@ en:
         tram_stop: "Tram stop"
       shopping:
         alcohol: Liquor
+        antiques: Antiques
+        art: "Gallery shop"
         bakery: Bakery
         beauty: "Beauty salon"
         beverages: Beverages
@@ -127,23 +137,32 @@ en:
         computer: Computer
         confectionery: "Candy store"
         convenience: Convenience
+        copyshop: "Copy shop"
         deli: Delicatessen
         department_store: "Department store"
         doityourself: "Do it yourself"
         dry_cleaning: "Dry cleaning"
         electronics: Electronics
+        erotic: "Sex shop"
         fabric: "Fabric shop"
         farm_shop: "Farm shop"
         florist: Florist
+        funeral_directors: "Funeral home"
         furniture: Furniture
         garden_centre: "Garden centre"
         gift: "Gift shop"
+        greengrocer: Greengrocer
         hairdresser: Hairdresser
         hardware: Hardware
+        interior_decoration: "Interior design shop"
         jewelry: Jewelry
         kiosk: Kiosk
         laundry: Laundry
         mall: "Shopping centre"
+        mobile_phone: "Mobile phone shop"
+        music: "Record store"
+        musical_instrument: "Musical instrument shop"
+        newsagent: "News agent"
         optician: Optician
         organic: "Organic shop"
         outdoor: "Outdoor supply"
@@ -154,8 +173,12 @@ en:
         sports: Sports
         stationery: Stationery
         supermarket: Supermarket
+        tailor: Tailor
+        tea: "Tea supply"
+        tobacco: "Tobacco shop"
         toys: Toys
         travel_agency: "Travel agency"
+        variety_store: "Discount store"
         video: "Video rental store"
       sport:
         pitch: "Sports field"

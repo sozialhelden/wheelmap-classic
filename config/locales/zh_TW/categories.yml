@@ -7,6 +7,9 @@ zh_TW:
       government: 政府
       health: 醫療
       leisure: 休閒
+      misc: 雜貨店
+      money_post: "銀行/郵局"
+      public_transfer: "公共交通工具"
       shopping: 購物
       sport: 運動
       tourism: 觀光
@@ -43,35 +46,49 @@ zh_TW:
       government:
         courthouse: 法院
         embassy: 大使館
+        employment_agency: "就業服務中心"
         government: "政府部門"
         police: 警察局
         public_building: "公共建築"
+        townhall: 市政廳
       health:
+        alternative: "另類醫療執行者"
         dentist: 牙醫
+        doctors: 醫生
         hearing_aids: "助聽器"
         hospital: 醫院
         medical_supply: "醫療用品"
+        occupational_therapist: "職能治療師"
         pharmacy: 藥局
+        physiotherapist: 物理治療師
+        psychotherapist: 心理治療師
         social_facility: "社會機構"
+        speech_therapist: "語言治療師"
         veterinary: 獸醫
       leisure:
         arena: 巨蛋
         brothel: 妓院
         casino: 賭場
         cinema: 電影院
+        community_centre: "社區活動中心"
         gallery: 畫廊
+        massage: "按摩"
         nightclub: 夜總會
         playground: 遊樂器材
         sauna: 桑拿
         stripclub: 脫衣舞店
+        tattoo: "刺青店"
         theatre: 戲院
         zoo: 動物園
       misc:
+        association: 協會
         company: "公司行號 (辦公室)"
         estate_agent: "房地產仲介"
         insurance: 保險
         lawyer: 律師
+        ngo: "非政府組織"
         place_of_worship: "宗教場所"
+        political_party: "政黨辦公室"
         toilets: 廁所
       money_post:
         atm: 自動櫃員機
@@ -83,6 +100,7 @@ zh_TW:
         aerodrome: 機場
         bicycle_parking: "自行車停車場"
         bicycle_rental: "自行車出租"
+        boatyard: 船廠
         bus_station: "公車站"
         bus_stop: "公車站"
         cable_car: "纜車"
@@ -103,6 +121,8 @@ zh_TW:
         tram_stop: "電車站"
       shopping:
         alcohol: 酒
+        antiques: 古董商
+        art: "藝廏"
         bakery: 烘焙坊
         beauty: "美容店"
         beverages: 飲料
@@ -111,26 +131,37 @@ zh_TW:
         butcher: 肉店
         car_repair: "汽車維修"
         car_shop: "車行"
+        chemist: 化驗師/藥店
         clothes: 服飾
         computer: 電腦店
         confectionery: "點心店"
         convenience: 便利商店
+        copyshop: "影印店"
         deli: 熟食店
         department_store: "百貨公司"
         doityourself: "DIY"
         dry_cleaning: "乾洗"
         electronics: 電子產品
+        erotic: "情趣用品店"
         fabric: "布店"
         farm_shop: "農產品"
         florist: 花店
+        funeral_directors: "葬儀社"
         furniture: 家具
+        garden_centre: "花園中心"
         gift: "禮品店"
+        greengrocer: 蔬果店
         hairdresser: 髮型師
         hardware: 五金行
+        interior_decoration: "室內設計店"
         jewelry: 珠寶銀樓
         kiosk: 書報亭
         laundry: 洗衣店
         mall: "購物中心"
+        mobile_phone: "行動電話店"
+        music: "唱片行"
+        musical_instrument: "樂器店"
+        newsagent: "報紙銷售點"
         optician: 驗光師/眼鏡行
         organic: "有機商店"
         outdoor: "戶外用品"
@@ -141,8 +172,12 @@ zh_TW:
         sports: 運動
         stationery: 文具店
         supermarket: 超級市場
+        tailor: 裁縫師
+        tea: "茶行"
+        tobacco: "菸店"
         toys: 玩具店
         travel_agency: "旅行社"
+        variety_store: "折扣店"
         video: "影片出租店"
       sport:
         pitch: "操場"

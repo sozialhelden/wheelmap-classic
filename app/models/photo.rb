@@ -17,6 +17,7 @@ class Photo < ActiveRecord::Base
 
   scope :with_user, -> { includes(:user) }
   scope :with_poi,  -> { includes(:poi) }
+  has_many :measurements
 
   acts_as_api
   include Api::Photo

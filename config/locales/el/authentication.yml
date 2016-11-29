@@ -4,20 +4,17 @@ el:
       confirmed: "Ο λογαριασμός σάς επιβεβαιώθηκε με επιτυχία. Είστε συνδεδεμένος."
       send_instructions: "Θα λάβετε ένα Email με οδηγίες για το πως επιβεβαιώνετε τον λογαριασμό σας άμεσα."
     destroy:
-      confirm: "Είσαι σίγουρος/η;"
       link: "Διαγραφή τώρα"
     edit:
       form:
         labels:
-          current_password: "Ισχύον κωδικός<i>(we need this to confirm your change)</i> "
           email: Email
-          password: "Kωδικός<i>(leave blank if you do not want to change it)</i> "
           password_confirmation: "Επαναλάβετε τον κωδικό πρόσβασης"
         submit: "Αποθήκευση αλλαγών"
       headline: "Διαχείριση λογαριασμού"
     failure:
       already_authenticated: "Είσαστε ήδη συνδεδεμένοι."
-      invalid: "Μη έγκυρο email ή κωδικός"
+      invalid: "Μη έγκυρο email ή κωδικός."
       invalid_token: "Άκυρη πιστοποίηση αυθεντικότητας."
       locked: "Ο λογαριασμός σας είναι κλειδωμένος"
       unauthenticated: "Πρέπει να συνδεθείυε ή να εγγραφείτε για να συνεχίσετε."
@@ -29,8 +26,8 @@ el:
         subject: "Οδηγίες γαι επαναφορά κωδικού"
     mandatory: "* Υποχρεωτικά πεδία"
     omniauth_callbacks:
-      failure: "Εξουσιοδότηση με το% {είδος} απέτυχε. Σφάλμα:\"%{λόγος}\"."
-      success: "Με επιτυχία είστε συνδεδεμένοι με το %{είδος}."
+      failure: "Εξουσιοδότηση με το% {kind} απέτυχε. Σφάλμα:\"%{reason}\"."
+      success: "Με επιτυχία είστε συνδεδεμένοι με το %{kind}."
     password_recovery:
       form:
         labels:
@@ -69,7 +66,7 @@ el:
       new:
         no_osm_account: "Δεν έχετε λογαριασμό στο OpenStreetMap;"
         promo_text_thank_you: "Σας ευχαριστούμε πολύ για την υποστήριξή σας!"
-        sign_in_with: "Σύνδεση με %{είδος}"
+        sign_in_with: "Σύνδεση με %{kind}"
         sign_up_with_osm: "Κάνετε εγγραφή τώρα."
       signed_in: "Συνδεθήκατε επιτυχώς."
       signed_out: "Αποσυνδεθήκατε επιτυχώς."
@@ -94,7 +91,7 @@ el:
         labels:
           email: Email
           password: Κωδικός πρόσβασης
-          password_confirmation: "Επαναλάβετε τον κωδικό\n\n\n\n"
+          password_confirmation: "Επαναλάβετε τον κωδικό"
         submit: "Εγγραφή"
       headline: "Εγγραφή"
     unlocks:

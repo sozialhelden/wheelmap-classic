@@ -758,10 +758,10 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
       "newsletter": "Hírlevél",
       "press": "Sajtó",
       "profile": "Profil",
-      "projects": "Projektek",
+      "projects": "Kapcsolódj be",
       "suggestions": "Javaslatok",
       "what_is_barrier_free": "Mit jelent a \"kerekesszékkel akadálymentes\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Mi a Wheelmap?"
     },
     "searchbar": {
       "add_place": "Új hely felvétele",
@@ -922,7 +922,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "location": "Please click on the map where the place is located!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
+            "name": "Kerekesszékes akadálymentesség",
             "title": "Information on wheelchair accessibility"
           },
           "address": {
@@ -945,7 +945,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Hasonló helyek",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -1115,8 +1115,8 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
       "health": "Egészségügy",
       "leisure": "Szabadidő",
       "misc": "Egyebek",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Bank / posta",
+      "public_transfer": "Közösségi közlekedés",
       "shopping": "Bevásárlás",
       "sport": "Sport",
       "tourism": "Turisztika",
@@ -1157,19 +1157,25 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
       "government": {
         "courthouse": "Bíróság",
         "embassy": "Követség",
+        "employment_agency": "Munkaközvetítő ügynökség",
         "government": "Kormányhivatal",
         "police": "Rendőrség",
         "public_building": "Középület",
-        "townhall": "Town hall"
+        "townhall": "Városháza"
       },
       "health": {
+        "alternative": "Alternatív gyógyászati orvos",
         "dentist": "Fogorvos",
-        "doctors": "Doctor",
+        "doctors": "Orvos",
         "hearing_aids": "Hallókészülék kereskedő",
         "hospital": "Kórház",
         "medical_supply": "Orvosi eszközök",
+        "occupational_therapist": "Foglalkozásterapeuta",
         "pharmacy": "Gyógyszertár",
+        "physiotherapist": "Gyógytornász",
+        "psychotherapist": "Pszichoterapeuta",
         "social_facility": "Szociális létesítmény",
+        "speech_therapist": "Beszédterapeuta",
         "veterinary": "Állatorvos"
       },
       "leisure": {
@@ -1177,23 +1183,26 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "brothel": "Bordély",
         "casino": "Kaszinó",
         "cinema": "Mozi",
-        "community_centre": "Community centre",
+        "community_centre": "Közösségi központ",
         "gallery": "Galléria",
-        "massage": "Massage spa",
+        "massage": "Masszázs fürdő",
         "nightclub": "Éjszakai bár",
         "playground": "Játszótér",
         "sauna": "Szauna",
         "stripclub": "Sztriptízbár",
-        "tattoo": "Tattoo shop",
+        "tattoo": "Tetováló szalon",
         "theatre": "Színház",
         "zoo": "Állatkert"
       },
       "misc": {
+        "association": "Egyesület",
         "company": "Cég (Iroda)",
         "estate_agent": "Ingatlanügynökség",
         "insurance": "Biztosító",
         "lawyer": "Ügyvéd",
+        "ngo": "Nem kormányzati szervezet",
         "place_of_worship": "Vallási hely",
+        "political_party": "Politikai párt iroda",
         "toilets": "Toalett"
       },
       "money_post": {
@@ -1207,7 +1216,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "aerodrome": "Reptér",
         "bicycle_parking": "Bicikliparkoló",
         "bicycle_rental": "Biciklikölcsönző",
-        "boatyard": "Boat yard",
+        "boatyard": "Hajóépítő telep",
         "bus_station": "Buszállomás",
         "bus_stop": "Buszmegálló",
         "cable_car": "Nagykabinos drótkötélpálya",
@@ -1229,6 +1238,8 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
       },
       "shopping": {
         "alcohol": "Állami italbolt",
+        "antiques": "Régiségek",
+        "art": "Galéria üzlet",
         "bakery": "Pékség",
         "beauty": "Szépségszalon",
         "beverages": "Italbolt",
@@ -1237,28 +1248,37 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "butcher": "Hentes",
         "car_repair": "Autószervíz",
         "car_shop": "Autóbolt",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "Háztartási bolt, drogéria",
         "clothes": "Ruhabolt",
         "computer": "Számítógépbolt",
         "confectionery": "Édességbolt",
         "convenience": "Közért",
+        "copyshop": "Fénymásoló",
         "deli": "Csemegebolt",
         "department_store": "Áruház",
         "doityourself": "Barkácsbolt",
         "dry_cleaning": "Ruhatisztító",
         "electronics": "Elektronikai szaküzlet",
+        "erotic": "szexshop",
         "fabric": "Méteráru",
         "farm_shop": "Termelői bolt",
         "florist": "Virágüzlet",
+        "funeral_directors": "Temetkezési vállalat",
         "furniture": "Bútorüzlet",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Kertészet",
         "gift": "Ajándékbolt",
+        "greengrocer": "Zöldségárus",
         "hairdresser": "Fodrászat",
         "hardware": "Háztartási bolt",
+        "interior_decoration": "Belsőépítészet üzlet",
         "jewelry": "Ékszerészet",
         "kiosk": "Trafik",
         "laundry": "Mosoda",
         "mall": "Bevásárló központ",
+        "mobile_phone": "Mobiltelefon üzlet",
+        "music": "Lemezbolt",
+        "musical_instrument": "Hangszerbolt",
+        "newsagent": "Hírügynök",
         "optician": "Optikus",
         "organic": "Biobolt",
         "outdoor": "Túrabolt",
@@ -1269,8 +1289,12 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "sports": "Sportáruház",
         "stationery": "Irodaszerek",
         "supermarket": "Szupermarket",
+        "tailor": "Szabó",
+        "tea": "Tea ellátó",
+        "tobacco": "Dohánybolt",
         "toys": "Játékbolt",
         "travel_agency": "Utazási iroda",
+        "variety_store": "Diszkont üzlet",
         "video": "Videokölcsönző"
       },
       "sport": {
@@ -1424,7 +1448,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
     "step1": "Kattints egy helyre, amit ismersz",
     "step2": "Jelöld be és kattints a mentésre",
     "step3": "Ennyi! Nincs szükség regisztrációra",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Mi a Wheelmap?"
   },
   "statistics": "Statisztika",
   "support": {
@@ -1449,7 +1473,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
   },
   "toiletstatus": {
     "no": "Nincs akadálymentesített mosdó",
-    "unknown": "Toilet status unknown",
+    "unknown": "Illemhely állapota ismeretlen",
     "what_is": {
       "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
       "unknown": "Help out by marking the toilet status!",
@@ -1531,7 +1555,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {

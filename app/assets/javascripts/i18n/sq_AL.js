@@ -758,7 +758,7 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
       "newsletter": "Fletushkë",
       "press": "Shtypi",
       "profile": "Profil",
-      "projects": "Projekte",
+      "projects": "Get involved",
       "suggestions": "Sugjerime",
       "what_is_barrier_free": "Çfarë do të thotë \"e aksesueshme në karrige me rrota\"?",
       "what_is_wheelmap": "What is Wheelmap?"
@@ -1161,19 +1161,25 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
       "government": {
         "courthouse": "Gjykatë",
         "embassy": "Ambasadë",
+        "employment_agency": "Employment agency",
         "government": "Agjenci qeveritare",
         "police": "Polici",
         "public_building": "Godinë publike",
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Dentist",
         "doctors": "Doctor",
         "hearing_aids": "Dyqan për pajisje dëgjimi",
         "hospital": "Spital",
         "medical_supply": "Vegla mjeksore",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Farmaci",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Objekt shoqëror",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Veterinar"
       },
       "leisure": {
@@ -1193,11 +1199,14 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
         "zoo": "Kopsht zoologjik"
       },
       "misc": {
+        "association": "Association",
         "company": "Kompani (Zyrë)",
         "estate_agent": "Agjent imobilar",
         "insurance": "Zyrë sigurimi",
         "lawyer": "Avokat",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Vend adhurimi",
+        "political_party": "Political party office",
         "toilets": "Tualete"
       },
       "money_post": {
@@ -1233,6 +1242,8 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
       },
       "shopping": {
         "alcohol": "Pije alkolike",
+        "antiques": "Antiques",
+        "art": "Gallery shop",
         "bakery": "Dyqan buke",
         "beauty": "Sallon bukurie",
         "beverages": "Pije alkoolike",
@@ -1246,23 +1257,32 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
         "computer": "Dyqan kompjuterash",
         "confectionery": "Dyqan ëmbëlsirash",
         "convenience": "Dyqan i vogël",
+        "copyshop": "Copy shop",
         "deli": "Ushqime të zgjedhura",
         "department_store": "Qendër tregtare",
         "doityourself": "Bëje vet",
         "dry_cleaning": "Pastrim kimik",
         "electronics": "Elektronike",
+        "erotic": "Sex shop",
         "fabric": "Dyqan pëlhurash",
         "farm_shop": "Dyqan ferme",
         "florist": "Luleshitës",
+        "funeral_directors": "Funeral home",
         "furniture": "Mobilje",
         "garden_centre": "Garden centre",
         "gift": "Suvenir",
+        "greengrocer": "Greengrocer",
         "hairdresser": "Floktar",
         "hardware": "Harduer",
+        "interior_decoration": "Interior design shop",
         "jewelry": "Stoli",
         "kiosk": "Kiosk",
         "laundry": "Lavandari",
         "mall": "Qendër tregtare",
+        "mobile_phone": "Mobile phone shop",
+        "music": "Record store",
+        "musical_instrument": "Musical instrument shop",
+        "newsagent": "News agent",
         "optician": "Dyqan syzesh optike",
         "organic": "Dyqan organik",
         "outdoor": "Furnizim në natyrë",
@@ -1273,8 +1293,12 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
         "sports": "Sporte",
         "stationery": "Kancelari",
         "supermarket": "Supermarket",
+        "tailor": "Tailor",
+        "tea": "Tea supply",
+        "tobacco": "Tobacco shop",
         "toys": "Lojra",
         "travel_agency": "Agjenci udhëtimi",
+        "variety_store": "Discount store",
         "video": "Dyqan i vidjosh me qira"
       },
       "sport": {
@@ -1535,7 +1559,7 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {

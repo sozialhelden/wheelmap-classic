@@ -8,6 +8,7 @@ pt_BR:
     node:
       create: "Adicionar um novo lugar"
       edit: "Editar lugar"
+    root: Wheelmap
   common:
     close: fechar
     skip: Pular
@@ -112,6 +113,7 @@ pt_BR:
       profile: Perfis
       suggestions: Sugestões
       what_is_barrier_free: "Qual o significado de \"acessível a cadeirantes\"?"
+      what_is_wheelmap: "O que é Wheelmap?"
     searchbar:
       add_place: "Adicionar outro lugar"
       find: Encontrar
@@ -266,6 +268,7 @@ pt_BR:
     step1: "Clique num lugar que você conhece."
     step2: "Marque-lo e clique em \"Salvar\""
     step3: "Pronto! Nenhum registro necessário!"
+    what_is_wheelmap: "O que é Wheelmap?"
   statistics: Estatísticas
   support:
     array:

@@ -28,7 +28,7 @@ it:
       choose_language: Scegli la lingua
       contact: Contatti
       map: Mappa
-      projects: Progetti
+      projects: Partecipa
     toolbar:
       categories: Categorie
     meta:
@@ -44,15 +44,35 @@ it:
         lookup: Cerca un luogo specifico
         secondary_headline: 'Il nostro "semaforo" per segnare l''accessibilità dei luoghi pubblici per sedie a rotelle:'
       embed_link: Mostra su Wheelmap.org
+      zoom_alert: Ingrandisci per vedere più attività.
   nodes:
     new:
       form:
+        title: Aggiungi una attività
         legend: 'Posizione del luogo '
+        location: Clicca sulla mappa il punto in cui si trova l'attività!
         section:
+          name_category:
+            name: Nome e tipo di attività
+            title: "Forniscici delle informazioni iniziali sulla tua attività:"
           address:
             name: Indirizzo
+            title: Dov'è l'attività?
+            help: Puoi spostare il segnaposto nella posizione corretta sulla mappa.
+          similar_nodes:
+            name: Posti simili
+            title: Abbiamo trovato attività simili nei dintorni. È una di queste?
+            go_edit: Continua con questa attività
+            go_new: Non è nessuna delle attività suddette...
+            empty: Non sono state trovate attività simili.
+          accessibility:
+            name: Accessibilità per sedie a rotelle
+            title: Informazioni sulla accessibilità per sedie a rotelle
           contact:
             name: Contatti
+            title: Altri recapiti
+          overview:
+            title: Le informazioni sono tutte esatte?
     node_data:
       address: 'Indirizzo: '
       contact_details: 'Dettagli del contatto:'
@@ -113,7 +133,8 @@ it:
         label: Si, tienimi aggiornato su Wheelmap.
       show:
         title: Panoramica
-        text_html: "Ciao, <br>\nBenvenuto (bentornato) su Wheelmap.org! Siamo felici di averti a bordo! È possibile consultare il nostro <a href=\"http://wheelmap.org/en/blog-2/\"> Blog </a> o le nostre <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> se vuoi conoscere meglio Wheelmap.org. Oppure puoi scoprire di più sui  <a href=\"http://wheelmap.org/en/get-engaged/\">progetti</a> che offriamo attorno a Wheelmap.org e come partecipare. <br>\nResta in contatto <br>\nPer rimanere in contatto è possibile iscriversi alla nostra newsletter mensile e seguirci su <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> e <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Non vediamo l'ora di sentire la tua opinione e iniziare una conversazione con te! <br>\nE ora, buona mappatura!<br>\nIl team di Wheelmap"
+        text_html: "Ciao,<br>\nBenvenuto (bentornato) su Wheelmap.org! Siamo felici di averti a bordo! È possibile consultare il nostro <a href=\\\"http://news.wheelmap.org/en/\\\">Blog</a> o le nostre <a href=\\\"http://news.wheelmap.org/en/FAQ/\\\">FAQs</a> se vuoi conoscere meglio Wheelmap.org. Oppure puoi scoprire di più sui <a href=\\\"http://news.wheelmap.org/en/wheelmap-ambassador/\\\">progetti</a> che offriamo attorno a Wheelmap.org e come partecipare.<br>\nPer rimanere in contatto è possibile iscriversi alla nostra newsletter mensile e seguirci su <a href=\\\"https://www.facebook.com/wheelmap\\\">Facebook</a> e <a href=\\\"https://twitter.com/wheelmap\\\">Twitter</a>. Non vediamo l'ora di sentire la tua opinione e iniziare una conversazione con te!<br>\nE ora, buona mappatura!<br>\nIl team\
+          \ di Wheelmap"
         greeting:
           anonymously: Ciao
           personalized: Ciao %{name}

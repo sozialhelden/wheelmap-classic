@@ -31,7 +31,7 @@ el:
       not_locked: "δεν ήταν κλειδωμένο"
       not_saved:
         one: "% {count} σφάλμα απαγορεύονται να αποθηκεύσετε έναν %{πόρο}:"
-        other: "% {count} σφάλματα απαγορεύονται να αποθηκεύσετε έναν %{πόρο}:"
+        other: "% {count} σφάλματα απαγορεύονται να αποθηκεύσετε έναν %{resource}:"
       taken: "Τό όνομα χρήστη, υπάρχει ήδη"
       too_long: "Είναι πολύ μεγάλο (το μέγιστο μήκος είναι %{count} χαρακτήρες)"
       too_short: "Είναι πολύ μικρό (το μικρότερο μήκος είναι %{count} χαρακτήρες)"
@@ -40,11 +40,11 @@ el:
       body: "Υπήρξαν προβλήματα με τα εξής πεδία"
       header:
         one: "%{count} σφάλμα απαγορεύει αυτό %{μοντέλο} να σωθεί"
-        other: "%{count} σφάλματα απαγορεύουν αυτό %{μοντέλο} να σωθεί"
+        other: "%{count} σφάλματα απαγορεύουν αυτό %{model} να σωθεί"
   flash:
     actions:
       create:
-        notice: "% {resource_name} δημιουργήθηκε επιτυχώς"
+        notice: "%{resource_name} δημιουργήθηκε επιτυχώς"
       destroy:
         alert: "%{resource_name} δεν μπορεσε να αφαιρεθει"
         notice: "%{resource_name} έχει διαγραφεί επιτυχώς"
@@ -112,6 +112,7 @@ el:
       profile: προφίλ
       suggestions: Προτάσεις
       what_is_barrier_free: "Τι σημαίνει 'προσβάσιμο με αναπηρική καρέκλα'?"
+      what_is_wheelmap: "Τι είναι το Wheelmap?"
     searchbar:
       add_place: "Πρόσθεσε μια άλλη τοποθεσία\n"
       find: Aναζήτηση
@@ -151,13 +152,6 @@ el:
         help: "Δυνατότητα πρόσβασης με αναπηρική καρέκλα"
         more: "περισσότερα ..."
   how?: Πώς;
-  landing_pages:
-    index:
-      wheelchair:
-        unknown:
-          headline: "Όλοι% {} τύπος σε% {} πόλη με άγνωστη κατάσταση αναπηρικό καροτσάκι (% {count})"
-        'yes':
-          headline: "Όλοι προσβάσιμο από αναπηρικά αμαξίδια% {} τύπος σε% {} πόλη (% {count})"
   layouts:
     application:
       banner:
@@ -203,7 +197,7 @@ el:
       link:
         back: πίσω
         large_map: Μεγέθυνση
-        listing: "Όλα τα σημεία του τύπου '% {} τύπος »σε% {} πόλη"
+        listing: "Όλα τα σημεία του τύπου '% {type}' σε %{city} "
         upload: "Μεταφόρτωση εικόνας"
       show-in-osm: OpenStreetMap
     update:
@@ -211,7 +205,7 @@ el:
         not_successfull: "Η εισαγωγή δεδομένων ήταν εσφαλμένη ή μη ολοκληρωμένη."
         successfull: "Ευχαριστούμε, η υποβολή του αιτήματος σας αποθηκεύτηκε επιτυχώς και θα είναι online σύντομα."
     update_wheelchair:
-      successfull: "Η κατάσταση για το \"% {name}\" έχει αλλάξει σε \"% {} κατάσταση\" και θα είναι έτοιμη σύντομα."
+      successfull: "Η κατάσταση για το \"% {name}\" έχει αλλάξει σε \"% {status}\" και θα είναι έτοιμη σύντομα."
   number:
     currency:
       format:
@@ -266,6 +260,7 @@ el:
     step1: "Κάντε κλικ σε ένα μέρος που γνωρίζετε"
     step2: "Σημειώστε το και κάντε κλικ στο Αποθήκευση"
     step3: "Αυτό είναι! Δεν είναι απαραίτητη η εγγραφή"
+    what_is_wheelmap: "Τι είναι το Wheelmap?"
   statistics: Στατιστικά
   support:
     array:
@@ -332,15 +327,15 @@ el:
   will_paginate:
     next_label: "Επόμενος &#8594;"
     page_entries_info:
-      multi_page: "Εμφάνιση% {μοντέλο} {%} από - {%} για να από% {count} στο σύνολο"
-      multi_page_html: "Εμφάνιση% {μοντέλο} <b>% {} από & nbsp? - & Nbsp? {%} για να </ b> <b>% {count} </ b> στο σύνολο"
+      multi_page: "Εμφάνιση % {model} %{from} - % {to} από %{count} στο σύνολο"
+      multi_page_html: "Εμφάνιση %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> για να <b>%{count}</b> στο σύνολο"
       single_page:
-        one: "Εμφάνιση 1% {} μοντέλο"
-        other: "Εμφάνιση όλων% {count} {%} μοντέλο"
-        zero: "Κανένα% {} μοντέλο βρέθηκε"
+        one: "Εμφάνιση 1% {model}"
+        other: "Εμφάνιση όλων% {count} %{model}"
+        zero: "Κανένα %{model} βρέθηκε"
       single_page_html:
-        one: "Εμφάνιση <b> 1 </ b>% {} μοντέλο"
-        other: "Εμφάνιση <b> όλων & nbsp?% {Count} </ b>% {} μοντέλο"
-        zero: "Κανένα% {} μοντέλο βρέθηκε"
-    page_gap: "βοήθεια"
+        one: "Εμφάνιση <b>1</ b>%{model}"
+        other: "Εμφάνιση <b> όλων&nbsp;%{count}</b>%{model} "
+        zero: "Κανένα %{model} βρέθηκε"
+    page_gap: "&hellip;"
     previous_label: "&#8592; Προηγούμενος"

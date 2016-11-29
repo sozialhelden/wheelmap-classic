@@ -1,10 +1,13 @@
 sv:
   devise:
     confirmations:
-      confirmed: "Ditt konto är godkänt. Du är nu inloggad."
+      confirmed: "Din mejladress har bekräftats och ditt konto är godkänt. Du är nu inloggad."
+      link: "Kom inte mejlet med länken för att bekräfta fram?"
       send_instructions: "Du kommer att få ett e-post med instruktioner om hur du bekräftar ditt konto om några minuter."
+      send_paranoid_instructions: "Om ditt konto är upplagt kommer du inom några minuter att få ett mejl med instruktioner om hur du bekräftar din registrering."
     destroy:
       confirm: "Är du säker?"
+      headline: "Radera konto"
       link: "Radera nu"
     edit:
       form:
@@ -17,19 +20,25 @@ sv:
       headline: "Ändra konto"
     failure:
       already_authenticated: "Du är redan inloggad."
+      inactive: "Ditt konto är inte aktiverat ännu."
       invalid: "Felaktig e-post eller lösenord."
       invalid_token: "Felaktig inloggning"
       locked: "Ditt konto är låst."
+      timeout: "Din session har avslutats, logga in för att fortsätta."
       unauthenticated: "Du måste logga in eller registrera dig för att fortsätta."
       unconfirmed: "Du måste bekräfta ditt konto innan du kan fortsätta"
     mailer:
       confirmation_instructions:
+        landing_page: "Vänligen klicka på länken som vi just skickat till din mejladresss. Om du inte får något mejl från oss, kontrollera för att det inte har hamnat i Skräpmappen. Finns det inte där heller, kom tillbaka till registreringssidan och gör ett nytt försök."
         subject: "Valideringsinstruktioner"
       reset_password_instructions:
         subject: "Instruktioner för att återställa lösenord"
+      unlock_instructions:
+        subject: "Instruktioner för att låsa upp lösenord"
     mandatory: "* obligatoriskt"
     omniauth_callbacks:
       failure: "Kunde inte auktorisera dig från %{kind} pga \"%{reason}\""
+      permission_missing: "Du har inte godkänt den behörighet som krävs."
       success: "Auktoriserad från %{kind} konto."
     password_recovery:
       form:
@@ -42,6 +51,7 @@ sv:
         comment: "Om du inte har önskat att få återställa ditt lösenord, så bortse från detta e-postmeddelande.<br/>Ditt lösenord kommer inte att ändras om du inte klickar på länken ovan och väljer ett nytt lösenord."
         headline: "Välkommen %{email}"
         link: "Byta lösnord"
+        text: "Vi har fått en begäran om att ändra ditt lösenord. Om du skickade denna begäran, klicka på länken - annars struntar du i detta mejl!"
       form:
         labels:
           password: "Nytt lösenord"
@@ -50,6 +60,8 @@ sv:
       headline: "Återställ lösenord"
     passwords:
       link: "Glömt lösenord?"
+      send_instructions: "Inom några minuter kommer du att få ett mejl med instruktioner om hur du sparar ett nytt lösenord."
+      send_paranoid_instructions: "Om ditt konto är upplagt kommer du inom några minuter att få ett mejl med instruktioner om hur du sparar ett nytt lösenord."
       updated: "Ditt lösenord är ändrat. Du är nu inloggad."
       updated_not_active: "Ditt lösenord är nu ändrat"
     registrations:
@@ -60,19 +72,24 @@ sv:
         inactive: ej aktiv
         locked: låst
         unconfirmed: ej bekräftad
+      signed_up: "Din registrering har lyckats. Ett mejl med bekräftelse har skickats till din mejladress."
       updated: "Din kontoinformation är uppdaterad."
     sessions:
+      inactive: "Ditt konto är inte aktiverat ännu."
       invalid: "Felaktig e-post eller lösenord."
       invalid_token: "Felaktig inloggnings token"
       link: "Logga in"
       locked: "Ditt konto är låst."
       new:
         no_osm_account: "Saknar du OpenStreetMap-konto?"
+        osm_promo_text: "Wheelmap bygger på geodata från OpenStreetMap (OSM). OpenStreetMap är en allmänt tillgänglig världskarta, som skapats av personer som du. Det är som en Wikipedia för kartor. För att kunna ändra platsinformation och skapa ny behöver du ha ett konto hos OpenStreetMap. Du behöver vara inloggad på kontot för att redigera kartan."
         promo_text_thank_you: "Tack för din support!"
         sign_in_with: "Logga in med %{kind}"
         sign_up_with_osm: "Registrera dig nu"
+        wheelmap_promo_text: "Din kunskap om platser som är tillgängliga för rullstolsburna, kan hjälpa personer med fysiska hinder att lättare planera sin vardag. Dessutom så bidrar det till att göra OpenStreetMap mer detaljerad."
       signed_in: "Inloggad."
       signed_out: "Utloggad."
+      timeout: "Din session har avslutats, logga in för att fortsätta."
       unauthenticated: "Du måste logga på eller registrera dig innan du kan fortsätta."
       unconfirmed: "Du måste verifiera ditt konto innan du kan fortsätta."
     sign_in:
@@ -95,7 +112,11 @@ sv:
           email: E-post
           password: Lösenord
           password_confirmation: "Upprepa lösenord"
+          wants_newsletter: "Ja tack, låt mig veta vad som händer med Wheelmap - men inte mer än en gång i månaden."
         submit: "Registrera"
       headline: "Registrera dig"
     unlocks:
+      link: "Fick du inte mejlet med instruktioner för att låsa upp?"
+      send_instructions: "Inom några minuter kommer du att få ett mejl med instruktioner om hur du låser upp ditt konto."
+      send_paranoid_instructions: "Om ditt konto är upplagt kommer du inom några minuter att få ett mejl med instruktioner om hur du låser upp ditt konto."
       unlocked: "Ditt konto är nu upplåst. Du kan nu logga in."

@@ -758,7 +758,7 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       "newsletter": "Paziņojumi par jaunumiem",
       "press": "Presei",
       "profile": "Profils",
-      "projects": "Projects",
+      "projects": "Get involved",
       "suggestions": "Ieteikumi",
       "what_is_barrier_free": "Ko \"pieejams ar ratiņkrēslu\" nozīmē?",
       "what_is_wheelmap": "What is Wheelmap?"
@@ -1161,19 +1161,25 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       "government": {
         "courthouse": "Tiesa",
         "embassy": "Vēstniecība",
+        "employment_agency": "Employment agency",
         "government": "Government agency",
         "police": "Policija",
         "public_building": "Publiska ēka",
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Dentist",
         "doctors": "Doctor",
         "hearing_aids": "Dzirdes aparātu izplatītājs",
         "hospital": "Slimnīca",
         "medical_supply": "Medicīnas preces",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Aptieka",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Sociālā iestāde",
+        "speech_therapist": "Speech therapist",
         "veterinary": "veterinārā klīnika"
       },
       "leisure": {
@@ -1193,11 +1199,14 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         "zoo": "Zooloģiskais dārzs"
       },
       "misc": {
+        "association": "Association",
         "company": "Uzņēmums (birojs)",
         "estate_agent": "Real estate agent",
         "insurance": "Insurance",
         "lawyer": "Juridiskie pakalpojumi",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Reliģisks objekts",
+        "political_party": "Political party office",
         "toilets": "Labierīcības"
       },
       "money_post": {
@@ -1233,6 +1242,8 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       },
       "shopping": {
         "alcohol": "Alkohols",
+        "antiques": "Antiques",
+        "art": "Gallery shop",
         "bakery": "Konditoreja",
         "beauty": "Beauty salon",
         "beverages": "Dzērieni",
@@ -1246,23 +1257,32 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         "computer": "Datori",
         "confectionery": "Candy store",
         "convenience": "Dažādas preces",
+        "copyshop": "Copy shop",
         "deli": "Delicatessen",
         "department_store": "Universālveikals",
         "doityourself": "mājai & dārzam",
         "dry_cleaning": "Ķīmiskā tīrītava",
         "electronics": "Elektronika",
+        "erotic": "Sex shop",
         "fabric": "Fabric shop",
         "farm_shop": "Farm shop",
         "florist": "Florists",
+        "funeral_directors": "Funeral home",
         "furniture": "Mēbeles",
         "garden_centre": "Garden centre",
         "gift": "Gift shop",
+        "greengrocer": "Greengrocer",
         "hairdresser": "Frizieris",
         "hardware": "Saimniecības preces",
+        "interior_decoration": "Interior design shop",
         "jewelry": "Jewelry",
         "kiosk": "Kiosks",
         "laundry": "Veļas mazgātuve",
         "mall": "Iepirkšanās centrs",
+        "mobile_phone": "Mobile phone shop",
+        "music": "Record store",
+        "musical_instrument": "Musical instrument shop",
+        "newsagent": "News agent",
         "optician": "optiķis",
         "organic": "Organic shop",
         "outdoor": "Outdoor supply",
@@ -1273,8 +1293,12 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         "sports": "Sports",
         "stationery": "Rakstāmlietas",
         "supermarket": "Lielveikals",
+        "tailor": "Tailor",
+        "tea": "Tea supply",
+        "tobacco": "Tobacco shop",
         "toys": "Toys",
         "travel_agency": "Travel agency",
+        "variety_store": "Discount store",
         "video": "Video noma"
       },
       "sport": {
@@ -1535,7 +1559,7 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {

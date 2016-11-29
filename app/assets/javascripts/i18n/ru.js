@@ -786,7 +786,7 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
       "newsletter": "Подписаться на обновления",
       "press": "Пресса",
       "profile": "Профиль",
-      "projects": "Проекты",
+      "projects": "Включайтесь",
       "suggestions": "Предложения",
       "what_is_barrier_free": "Что значит \"доступно на кресле-коляске\"?",
       "what_is_wheelmap": "Что такое Wheelmap?"
@@ -870,7 +870,7 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
         "help": "Доступно ли на кресле-коляске? (Справка)",
         "more": "Подробней ..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "Приблизьте, чтобы увидеть больше мест."
     }
   },
   "how?": "Как?",
@@ -953,37 +953,37 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
     "new": {
       "form": {
         "legend": "Расположение места",
-        "location": "Please click on the map where the place is located!",
+        "location": "Нажмите на карте там, где находится это место!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "Доступность на кресле-коляске",
+            "title": "Информация о доступности на кресле-коляске"
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
+            "help": "Вы можете перемещать маркер в нужное место на карте.",
             "name": "Адрес",
-            "title": "Where is the place?"
+            "title": "Где это место?"
           },
           "contact": {
             "name": "Контакты",
-            "title": "Other contact information"
+            "title": "Другая контактная информация"
           },
           "name_category": {
-            "name": "Name and place type",
-            "title": "Give us some initial information about your place:"
+            "name": "Название и тип места",
+            "title": "Дайте нам первичную информацию о вашем заведении:"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "Вся информация верна?"
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "Похожие места не были найдены.",
+            "go_edit": "Продолжить с этим местом",
+            "go_new": "Это ни одно из вышеперечисленных мест…",
+            "name": "Похожие места",
+            "title": "Мы нашли поблизости подобные места. Это одно из них?"
           }
         },
-        "title": "Add a place"
+        "title": "Добавить место"
       },
       "header": {
         "title": "Новое место | wheelmap.org"
@@ -1195,19 +1195,25 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
       "government": {
         "courthouse": "Суд",
         "embassy": "Посольство",
+        "employment_agency": "Кадровое агентство",
         "government": "Государственное учреждение",
         "police": "Полиция",
         "public_building": "Общественное здание",
         "townhall": "Администрация"
       },
       "health": {
+        "alternative": "Врач практикующий нетрадиционную медицину",
         "dentist": "Стоматолог",
         "doctors": "Врач",
         "hearing_aids": "Продажа слуховых аппаратов",
         "hospital": "Больница",
         "medical_supply": "Медикаменты",
+        "occupational_therapist": "Специалист по гигиене труда",
         "pharmacy": "Аптека",
+        "physiotherapist": "Физиотерапевт",
+        "psychotherapist": "Психотерапевт",
         "social_facility": "Социальный центр",
+        "speech_therapist": "Логопед",
         "veterinary": "Ветеринар"
       },
       "leisure": {
@@ -1217,21 +1223,24 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
         "cinema": "Кинотеатр",
         "community_centre": "Общественный центр",
         "gallery": "Галерея",
-        "massage": "Massage spa",
+        "massage": "Массажный и спа-салон",
         "nightclub": "Ночной клуб",
         "playground": "Детская площадка",
         "sauna": "Сауна",
         "stripclub": "Стрипклуб",
-        "tattoo": "Tattoo shop",
+        "tattoo": "Тату салон",
         "theatre": "Театр",
         "zoo": "Зоопарк"
       },
       "misc": {
+        "association": "Некоммерческая организация",
         "company": "Компания (офис)",
         "estate_agent": "Агентство недвижимости",
         "insurance": "Страхование",
         "lawyer": "Юрист",
+        "ngo": "Общественная организация",
         "place_of_worship": "Место поклонения",
+        "political_party": "Офис политической партии",
         "toilets": "Туалет"
       },
       "money_post": {
@@ -1267,6 +1276,8 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
       },
       "shopping": {
         "alcohol": "Спиртные напитки",
+        "antiques": "Антикварный магазин",
+        "art": "Произведения искусства",
         "bakery": "Кондитерская",
         "beauty": "Салон красоты",
         "beverages": "Напитки",
@@ -1280,23 +1291,32 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
         "computer": "Компьютер",
         "confectionery": "Магазин сладостей",
         "convenience": "Удобства",
+        "copyshop": "Копировальный центр",
         "deli": "Гастроном",
         "department_store": "Универмаг",
         "doityourself": "Сделай сам",
         "dry_cleaning": "Химчистка",
         "electronics": "Электроника",
+        "erotic": "Секс-шоп",
         "fabric": "Магазин тканей",
         "farm_shop": "Магазин фермерских продуктов",
         "florist": "Флорист",
+        "funeral_directors": "Ритуальные услуги",
         "furniture": "Мебель",
         "garden_centre": "Садовый центр",
         "gift": "Магазин \"Подарки\"",
+        "greengrocer": "Фрукты/овощи",
         "hairdresser": "Парикмахер",
         "hardware": "Аппаратура",
+        "interior_decoration": "Предметы интерьера",
         "jewelry": "Ювелирные изделия",
         "kiosk": "Киоск",
         "laundry": "Прачечная",
         "mall": "Торговый центр",
+        "mobile_phone": "Мобильные телефоны",
+        "music": "Музыкальный магазин",
+        "musical_instrument": "Магазин музыкальных инструментов",
+        "newsagent": "Газетный киоск",
         "optician": "Оптика",
         "organic": "Магазин экологических продуктов",
         "outdoor": "Товары для активного отдыха",
@@ -1307,8 +1327,12 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
         "sports": "Спорт",
         "stationery": "Канцелярские товары",
         "supermarket": "Супермаркет",
+        "tailor": "Портной",
+        "tea": "Чайный магазин",
+        "tobacco": "Табачный магазин",
         "toys": "Магазин игрушек",
         "travel_agency": "Туристическое агентство",
+        "variety_store": "Магазин с фиксированной ценой",
         "video": "Видеопрокат"
       },
       "sport": {
@@ -1579,7 +1603,7 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
           },
           "text": "Вы"
         },
-        "text_html": "Привет,<br>\nДобро пожаловать (вновь) на Wheelmap.org! Мы рады видеть вас на борту! Вы можете просмотреть наш <a href=\"http://wheelmap.org/en/blog-2/\">Блог</a> или <a href=\"http://wheelmap.org/en/faqs/\">Вопросы и ответы</a>, если вы хотите узнать Wheelmap.org немного больше. Или вы можете узнать больше о <a href=\"http://wheelmap.org/en/get-engaged/\"> проектах</a>, которые мы предлагаем совместно с Wheelmap.org и о том, как вы можете принять в них участие.<br>\nОставайтесь на связи<br>\nЧтобы поддерживать контакт, вы можете подписаться на нашу ежемесячную рассылку и следовать за нами на <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> и <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Мы с нетерпением ждем ваши мнения и начала общения с вами!<br>\nА теперь, счастливого картографирования!<br>\nВаша Wheelmap команда",
+        "text_html": "Привет,<br>\nДобро пожаловать (вновь) на Wheelmap.org! Мы рады видеть вас на борту! Вы можете просмотреть наш <a href=\\\"http://news.wheelmap.org/en/\\\">Блог</a> или <a href=\\\"http://news.wheelmap.org/en/FAQ/\\\">Вопросы и ответы</a>, если вы хотите узнать Wheelmap.org немного больше. Или вы можете узнать больше о <a href=\\\"http://news.wheelmap.org/en/wheelmap-ambassador/\\\">проектах</a>, которые мы предлагаем совместно с Wheelmap.org и о том, как вы можете принять в них участие.<br>\nPЧтобы поддерживать контакт, вы можете подписаться на нашу ежемесячную рассылку и следовать за нами на <a href=\\\"https://www.facebook.com/wheelmap\\\">Facebook</a> и <a href=\\\"https://twitter.com/wheelmap\\\">Twitter</a>. Мы с нетерпением ждем ваши мнения и начала общения с вами!<br>\nА теперь, счастливого картографирования!<br>\nВаша Wheelmap команда",
         "title": "Обзор"
       },
       "widget": {

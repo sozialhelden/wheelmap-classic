@@ -8,6 +8,8 @@ bg:
       health: Здраве
       leisure: Отдих и свободно време
       misc: Разни
+      money_post: "Банка / пощенски клон"
+      public_transfer: "Обществен транспорт"
       shopping: Магазини
       sport: Спорт
       tourism: Туризъм
@@ -44,35 +46,49 @@ bg:
       government:
         courthouse: Съдебна палата
         embassy: Посолство
+        employment_agency: "Агенция по заетостта"
         government: "Държавна институция"
         police: Полиция
         public_building: "Обществена сграда"
+        townhall: Кметство
       health:
+        alternative: "Лекар, практикуващ алтернативна медицина "
         dentist: Зъболекар
+        doctors: Доктор
         hearing_aids: "Магазин за слухови апарати"
         hospital: Болница
         medical_supply: "Лекарства"
+        occupational_therapist: "Трудов терапевт"
         pharmacy: Аптека
+        physiotherapist: Физиотерапевт
+        psychotherapist: Психотерапевт
         social_facility: "Социално съоръжение"
+        speech_therapist: "Логопед"
         veterinary: Ветеринар
       leisure:
         arena: Арена
         brothel: Публичен дом
         casino: Казино
         cinema: Кино
+        community_centre: "Общински център"
         gallery: Галерия
+        massage: "Студио за масажи"
         nightclub: Нощен клуб
         playground: Площадка за игра
         sauna: Сауна
         stripclub: Стриптийз бар
+        tattoo: "Студио за татуировки"
         theatre: Театър
         zoo: Зоологическа градина
       misc:
+        association: Дружество
         company: "Фирма (офис)"
         estate_agent: "Агенция за недвижими имоти"
         insurance: Застраховки
         lawyer: Адвокат
+        ngo: "Неправителствена организация"
         place_of_worship: "Място за поклонение"
+        political_party: "Кабинет на политическа партия "
         toilets: Тоалетни
       money_post:
         atm: Банкомат
@@ -84,6 +100,7 @@ bg:
         aerodrome: Летище
         bicycle_parking: "Паркинг за велосипеди"
         bicycle_rental: "Колела под наем"
+        boatyard: Яхтено пристанище
         bus_station: "Автобусна спирка"
         bus_stop: "Автобусна спирка"
         cable_car: "Лифт"
@@ -104,6 +121,8 @@ bg:
         tram_stop: "Трамвайна спирка"
       shopping:
         alcohol: Магазин за спиртни напитки
+        antiques: 'Антикварни предмети '
+        art: "Магазин за произведения на изкуството"
         bakery: Фурна
         beauty: "Салон за красота"
         beverages: Напитки
@@ -112,26 +131,37 @@ bg:
         butcher: Месар
         car_repair: "Автомобилен сервиз"
         car_shop: "Автомобилна къща"
+        chemist: Аптека / Дрогерия
         clothes: Дрехи
         computer: Компютър
         confectionery: "Магазин за сладкиши"
         convenience: Малък магазин
+        copyshop: "Копирен център"
         deli: Деликатеси
         department_store: "Търговски комплекс"
         doityourself: "Направи си сам"
         dry_cleaning: "Химическо чистене"
         electronics: Електроника
+        erotic: "Секс магазин"
         fabric: "Магазин за платове"
         farm_shop: "Магазин за регионално производство"
         florist: Цветар
+        funeral_directors: "Погребално бюро"
         furniture: Мебели
+        garden_centre: "Градински център"
         gift: "Магазин за подаръци"
+        greengrocer: Плод и зеленчук
         hairdresser: Фризьор
         hardware: Магазин за влакчета
+        interior_decoration: "Магазин за вътрешен дизайн "
         jewelry: Бижутерия
         kiosk: Будка
         laundry: Обществена пералня
         mall: "Мол"
+        mobile_phone: "Магазин за мобилни телефони"
+        music: "Магазин за грамофонни плочи"
+        musical_instrument: "Магазин за музикални инструменти"
+        newsagent: "Будка за вестници и дребни стоки"
         optician: Оптика
         organic: "Био магазин"
         outdoor: "Туристическа екипировка"
@@ -142,8 +172,12 @@ bg:
         sports: Спорт
         stationery: Канцеларски принадлежности
         supermarket: Супермаркет
+        tailor: Шивач
+        tea: "Магазин за чай"
+        tobacco: "Магазин за цигари"
         toys: Играчки
         travel_agency: "Туристическа агенция"
+        variety_store: "Магазин за преоценени стоки"
         video: "Видеотека"
       sport:
         pitch: "Спортно игрище"

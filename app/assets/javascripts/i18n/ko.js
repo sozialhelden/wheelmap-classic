@@ -758,7 +758,7 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
       "newsletter": "뉴스레터",
       "press": "언론사",
       "profile": "프로필",
-      "projects": "Projects",
+      "projects": "Get involved",
       "suggestions": "제안",
       "what_is_barrier_free": "\"휠체어 접근가능\"은 무슨 뜻인가요?",
       "what_is_wheelmap": "What is Wheelmap?"
@@ -1157,19 +1157,25 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
       "government": {
         "courthouse": "법원",
         "embassy": "대사관",
+        "employment_agency": "Employment agency",
         "government": "정부 기관",
         "police": "경찰서",
         "public_building": "공공기관",
         "townhall": "Town hall"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "치과 의원",
         "doctors": "Doctor",
         "hearing_aids": "보청기판매점",
         "hospital": "병원",
         "medical_supply": "의료",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "약국",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "복지시설",
+        "speech_therapist": "Speech therapist",
         "veterinary": "동물병원"
       },
       "leisure": {
@@ -1189,11 +1195,14 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
         "zoo": "동물원"
       },
       "misc": {
+        "association": "Association",
         "company": "회사(사무실)",
         "estate_agent": "부동산 중개인",
         "insurance": "보험 대리점",
         "lawyer": "변호사",
+        "ngo": "Non-government organisation",
         "place_of_worship": "기도원",
+        "political_party": "Political party office",
         "toilets": "화장실"
       },
       "money_post": {
@@ -1229,6 +1238,8 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
       },
       "shopping": {
         "alcohol": "술집",
+        "antiques": "Antiques",
+        "art": "Gallery shop",
         "bakery": "빵집",
         "beauty": "미용실",
         "beverages": "음료가게",
@@ -1242,23 +1253,32 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
         "computer": "컴퓨터상점",
         "confectionery": "과자점",
         "convenience": "편의시설",
+        "copyshop": "Copy shop",
         "deli": "조제 식품점",
         "department_store": "백화점",
         "doityourself": "스스로 할 수 있음",
         "dry_cleaning": "세탁소",
         "electronics": "전자제품",
+        "erotic": "Sex shop",
         "fabric": "직물 상점",
         "farm_shop": "농장 상점",
         "florist": "꽃집",
+        "funeral_directors": "Funeral home",
         "furniture": "가구점",
         "garden_centre": "Garden centre",
         "gift": "선물 가게",
+        "greengrocer": "Greengrocer",
         "hairdresser": "미용실",
         "hardware": "하드웨어",
+        "interior_decoration": "Interior design shop",
         "jewelry": "보석점",
         "kiosk": "간이매점",
         "laundry": "세탁소",
         "mall": "쇼핑센터",
+        "mobile_phone": "Mobile phone shop",
+        "music": "Record store",
+        "musical_instrument": "Musical instrument shop",
+        "newsagent": "News agent",
         "optician": "안경점",
         "organic": "유기농 식품점",
         "outdoor": "야외활동 용품점",
@@ -1269,8 +1289,12 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
         "sports": "스포츠",
         "stationery": "문구점",
         "supermarket": "슈퍼마켓",
+        "tailor": "Tailor",
+        "tea": "Tea supply",
+        "tobacco": "Tobacco shop",
         "toys": "장난감 상점",
         "travel_agency": "여행사",
+        "variety_store": "Discount store",
         "video": "비디오대여점"
       },
       "sport": {
@@ -1531,7 +1555,7 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
           },
           "text": "You have"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://wheelmap.org/en/blog-2/\">Blog</a> or <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://wheelmap.org/en/get-engaged/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nKeep in touch<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Overview"
       },
       "widget": {

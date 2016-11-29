@@ -28,9 +28,11 @@ hu:
       choose_language: Válassz nyelvet!
       contact: Elérhetőség
       map: Térkép
-      projects: Projektek
+      projects: Kapcsolódj be
     toolbar:
       categories: Kategóriák
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -47,6 +49,10 @@ hu:
         section:
           address:
             name: Cím
+          similar_nodes:
+            name: Hasonló helyek
+          accessibility:
+            name: Kerekesszékes akadálymentesség
           contact:
             name: Elérhetőség
     node_data:

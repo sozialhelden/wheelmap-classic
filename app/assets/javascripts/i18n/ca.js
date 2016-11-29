@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
   "actions": {
     "cancel": "Cancel·lar",
-    "next": "Next",
+    "next": "Següent",
     "save": "Desar",
     "send": "Enviar"
   },
@@ -305,7 +305,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
   },
   "breadcrumbs": {
     "node": {
-      "create": "Add a new place",
+      "create": "Afegir un nou lloc",
       "edit": "Edita el lloc"
     },
     "root": "Wheelmap"
@@ -434,13 +434,13 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "El teu correu electrònic s'ha confirmat correctament.",
-      "link": "You didn't receive confirmation instructions?",
+      "link": "No has rebut les instruccions de confirmació? ",
       "send_instructions": "Rebràs un correu en pocs minuts al correu electrònic que conté un enllaç de confirmació.",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
+      "send_paranoid_instructions": "Si existeix el compte, rebràs un correu electrònic en uns pocs minuts amb instruccions sobre com confirmar el teu compte. "
     },
     "destroy": {
       "confirm": "Estàs segur?",
-      "headline": "Delete account",
+      "headline": "Eliminar compte ",
       "link": "Esborrar-lo ara"
     },
     "edit": {
@@ -457,32 +457,32 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
     },
     "failure": {
       "already_authenticated": "Ja has entrat.",
-      "inactive": "Your account has not been activated yet.",
-      "invalid": "Correu electrònic o contrasenya no vàlid",
+      "inactive": "El teu compte no s'ha activat encara. ",
+      "invalid": "Correu electrònic o contrasenya no vàlida",
       "invalid_token": "Ha fallat l'autenticació",
       "last_attempt": "You have one more attempt before your account will be locked.",
       "locked": "El teu compte està bloquejat",
       "not_found_in_database": "Invalid email or password.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "La teva sessió ha expirat, connecta't de nou per continuar. ",
       "unauthenticated": "Necessites entrar o registrar-te abans de continuar",
       "unconfirmed": "Necessites confirmar el compte abans de continuar."
     },
     "mailer": {
       "confirmation_instructions": {
-        "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
+        "landing_page": "Fes clic a l'enllaç que acabem d'enviar a la teva adreça de correu electrònic. Si no reps un correu electrònic de nosaltres comprova primer si no s'amaga a la teva carpeta de correu no desitjat. Si no hi és torna a la pàgina de registre i torna-ho a provar. ",
         "subject": "Un pas més per activar el compte"
       },
       "reset_password_instructions": {
         "subject": "Instruccions per reiniciar la contrasenya"
       },
       "unlock_instructions": {
-        "subject": "Unlock instructions"
+        "subject": "Instruccions de desbloqueig"
       }
     },
     "mandatory": "* Es requereix",
     "omniauth_callbacks": {
       "failure": "L'autorització amb %{kind} ha fallat. Error: \"%{reason}\".\n",
-      "permission_missing": "You did not grant the required permission.",
+      "permission_missing": "No has aconseguit el permís necessari. ",
       "success": "Has entrat correctament amb %{kind}."
     },
     "password_recovery": {
@@ -499,7 +499,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "comment": "Si no has demanat un reinici de contrasenya ignora aquest missatge.<br/>La teva contrasenya no canviarà fins que no facis clic a l'enllaç de sobre i la canviïs tu.",
         "headline": "Benvingut %{email}",
         "link": "Canviar contrasenya",
-        "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
+        "text": "Has rebut una sol·licitud per canviar la contrasenya. Si has enviat la sol·licitud fes clic al següent enllaç - en cas contrari ignora això "
       },
       "form": {
         "labels": {
@@ -513,8 +513,8 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
     "passwords": {
       "link": "Has oblidat la contrasenya?",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
-      "send_instructions": "You will receive an email with instructions on how to reset your password in a few minutes",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
+      "send_instructions": "Rebràs un correu electrònic amb instruccions sobre com restablir la contrasenya en uns minuts ",
+      "send_paranoid_instructions": "Si existeix el compte rebràs un correu electrònic en uns pocs minuts amb instruccions sobre com restablir la contrasenya",
       "updated": "La teva contrasenya s'ha canviat correctament i ara has entrat",
       "updated_not_active": "La teva contrasenya s'ha canviat correctament"
     },
@@ -527,7 +527,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "locked": "bloquejat",
         "unconfirmed": "no confirmat"
       },
-      "signed_up": "You have signed up successfully. A you have been sent a confirmation email.",
+      "signed_up": "T'has registrat amb èxit. Se t'ha enviat un correu electrònic de confirmació. ",
       "signed_up_but_inactive": "You have signed up successfully. However, we could not sign you in because your account is not yet activated.",
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
@@ -535,22 +535,22 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       "updated": "Has actualitzat el teu compte correctament."
     },
     "sessions": {
-      "inactive": "Your account has not been activated yet",
+      "inactive": "El teu compte no s'ha activat ",
       "invalid": "Correu electrònic o contrasenya no vàlida",
       "invalid_token": "Ha fallat l'autenticació",
-      "link": "Entra",
+      "link": "Entrar",
       "locked": "El teu compte està bloquejat",
       "new": {
         "no_osm_account": "No tens compte a OpenStreetMap?",
-        "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
+        "osm_promo_text": "El Wheelmap es basa en dades geogràfiques d'OpenStreetMap (OSM). OpenStreetMap és un mapa gratuït a nivell mundial, creat per gent com tu. És com la Wikipedia pels mapes. Per poder editar llocs o per crear-ne de nous necessites un compte d'OpenStreetMap i has d'estar connectat amb ell.",
         "promo_text_thank_you": "Moltes gràcies pel teu suport.",
         "sign_in_with": "Entra amb %{kind}",
         "sign_up_with_osm": "Registra't ara",
-        "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
+        "wheelmap_promo_text": "Amb el teu coneixement sobre llocs accessibles en cadira de rodes pots ajudar a les persones amb impediments físics per planificar millor la teva vida quotidiana. A més, això ajudarà a fer OpenStreetMap més detallat. "
       },
       "signed_in": "Has entrat correctament",
       "signed_out": "Has sortit correctament",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "La teva sessió ha expirat, connecta't de nou per continuar.  ",
       "unauthenticated": "Necessites entrar o registrar-te abans de continuar",
       "unconfirmed": "Necessites confirmar el compte abans de continuar."
     },
@@ -579,16 +579,16 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
           "email": "Correu electrònic",
           "password": "Contrasenya",
           "password_confirmation": "Repeteix la contrasenya",
-          "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
+          "wants_newsletter": "Sí, manten-me informat sobre Wheelmap - però no més d'una vegada al mes. "
         },
         "submit": "Registra't"
       },
       "headline": "Registra't"
     },
     "unlocks": {
-      "link": "You didn't receive unlock instructions?",
-      "send_instructions": "You will receive an email in a few minutes with instructions on how to unlock your account",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
+      "link": "No has rebut instruccions de desbloqueig? ",
+      "send_instructions": "Rebràs un correu electrònic en uns pocs minuts amb instruccions sobre com desbloquejar el teu compte ",
+      "send_paranoid_instructions": "Si ja existeix el compte rebràs un correu electrònic en uns pocs minuts amb instruccions sobre com desbloquejar el teu compte ",
       "unlocked": "El compte ha estat desbloquejat correctament. Ara has entrat."
     }
   },
@@ -685,8 +685,8 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
   },
   "form": {
     "show_fully_accessible_places": "accessible amb cadira de rodes",
-    "show_limited_accessible_places": "Partially wheelchair accessible",
-    "show_places_without_status": "Unknown status",
+    "show_limited_accessible_places": "Accessible amb cadira de rodes de manera parcial",
+    "show_places_without_status": "Estat desconegut",
     "show_unaccessible_places": "No accessible amb cadira de rodes"
   },
   "formtastic": {
@@ -766,10 +766,10 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       "newsletter": "Butlletí",
       "press": "Prémer",
       "profile": "Perfil",
-      "projects": "Projectes",
+      "projects": "Ajuda'ns",
       "suggestions": "Suggerències",
       "what_is_barrier_free": "Què significa «accessible amb cadira de rodes»?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Què és Wheelmap?"
     },
     "searchbar": {
       "add_place": "Afegeix un altre lloc",
@@ -826,7 +826,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       },
       "link": {
         "node": {
-          "create": "Add a new place"
+          "create": "Afegir un nou lloc"
         }
       },
       "overlay": {
@@ -839,10 +839,10 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       },
       "popup": {
         "form": {
-          "limited": "Partially wheelchair accessible",
+          "limited": "Accessible amb cadira de rodes de manera parcial",
           "no": "No accessible amb cadira de rodes",
           "save": "Actualitza",
-          "unknown": "Unknown status",
+          "unknown": "Estat desconegut",
           "yes": "Accessible amb cadira de rodes"
         },
         "help": "Accessible amb cadira de rodes? (ajuda)",
@@ -879,7 +879,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": "Tria la categoria"
+      "prompt": "Triar categoria"
     },
     "node": {
       "info_edit_position": "La localització apareixerà a Wheelmap com es mostra aquí sobre. Si el marcador no és al lloc correcte tu pots <a href=\"%{url}\">canviar la posició a OpenStreetMap.</a>",
@@ -889,7 +889,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       }
     },
     "node_type": {
-      "prompt": "Tria un tipus"
+      "prompt": "Triar tipus"
     }
   },
   "node": {
@@ -957,7 +957,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Llocs similars",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -1126,9 +1126,9 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       "government": "Govern",
       "health": "Salut",
       "leisure": "Oci",
-      "misc": "Miscellaneous",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "misc": "Miscel·lània",
+      "money_post": "Banc / Oficina de correus",
+      "public_transfer": "Transport públic",
       "shopping": "Botigues",
       "sport": "Esports",
       "tourism": "Turisme",
@@ -1169,19 +1169,25 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       "government": {
         "courthouse": "Jutjat",
         "embassy": "Ambaixada",
+        "employment_agency": "Employment agency",
         "government": "Oficina governamental",
         "police": "Policia",
         "public_building": "Edifici públic",
-        "townhall": "Town hall"
+        "townhall": "Ajuntament"
       },
       "health": {
+        "alternative": "Alternative medicine practitioner",
         "dentist": "Dentista",
         "doctors": "Doctor",
         "hearing_aids": "Aparells auditius",
         "hospital": "Hospital",
         "medical_supply": "Subministraments mèdics",
+        "occupational_therapist": "Occupational therapist",
         "pharmacy": "Farmàcia",
+        "physiotherapist": "Physiotherapist",
+        "psychotherapist": "Psychotherapist",
         "social_facility": "Serveis socials",
+        "speech_therapist": "Speech therapist",
         "veterinary": "Veterinari"
       },
       "leisure": {
@@ -1189,7 +1195,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "brothel": "Prostíbul",
         "casino": "Casino",
         "cinema": "Cinema",
-        "community_centre": "Community centre",
+        "community_centre": "Centre cívic",
         "gallery": "Galeria",
         "massage": "Massage spa",
         "nightclub": "Discoteca",
@@ -1201,11 +1207,14 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "zoo": "Zoo"
       },
       "misc": {
+        "association": "Association",
         "company": "Companyia (oficina)",
         "estate_agent": "Immobiliària",
         "insurance": "Corredoria d'assegurances",
         "lawyer": "Despatx d'advocats",
+        "ngo": "Non-government organisation",
         "place_of_worship": "Lloc de culte",
+        "political_party": "Political party office",
         "toilets": "Lavabos"
       },
       "money_post": {
@@ -1219,7 +1228,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "aerodrome": "Aeroport",
         "bicycle_parking": "Pàrquing de bicicletes",
         "bicycle_rental": "Lloguer de bicicletes",
-        "boatyard": "Boat yard",
+        "boatyard": "Moll",
         "bus_station": "Estació d'autobusos",
         "bus_stop": "Parada d'autobús",
         "cable_car": "Telefèric (amb cabina tancada)",
@@ -1241,6 +1250,8 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       },
       "shopping": {
         "alcohol": "Licors",
+        "antiques": "Antiques",
+        "art": "Gallery shop",
         "bakery": "Forn i pastisseria",
         "beauty": "Saló de bellesa",
         "beverages": "Begudes",
@@ -1249,28 +1260,37 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "butcher": "Carnisseria",
         "car_repair": "Taller de cotxes",
         "car_shop": "Concessionari de cotxes",
-        "chemist": "Chemist / Drugstore",
+        "chemist": "Drogueria",
         "clothes": "Roba",
         "computer": "Informàtica",
         "confectionery": "Llaminadures",
         "convenience": "Queviures/petit súper",
+        "copyshop": "Copy shop",
         "deli": "Delicadeses",
         "department_store": "Gran magatzem",
         "doityourself": "Bricolatge",
         "dry_cleaning": "Tintoreria",
         "electronics": "Electrònica",
+        "erotic": "Sex shop",
         "fabric": "Teleria",
         "farm_shop": "Productes de granja",
         "florist": "Floristeria",
+        "funeral_directors": "Funeral home",
         "furniture": "Mobles",
-        "garden_centre": "Garden centre",
+        "garden_centre": "Centre de jardineria",
         "gift": "Botiga de regals",
+        "greengrocer": "Greengrocer",
         "hairdresser": "Perruqueria",
         "hardware": "Ferreteria",
+        "interior_decoration": "Interior design shop",
         "jewelry": "Joieria",
         "kiosk": "Quiosc",
         "laundry": "Bugaderia",
         "mall": "Centre comercial",
+        "mobile_phone": "Mobile phone shop",
+        "music": "Record store",
+        "musical_instrument": "Musical instrument shop",
+        "newsagent": "News agent",
         "optician": "Òptica",
         "organic": "Botiga naturista",
         "outdoor": "Articles d'esport a l'aire lliure",
@@ -1281,8 +1301,12 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
         "sports": "Esports",
         "stationery": "Papereria",
         "supermarket": "Supermercat",
+        "tailor": "Tailor",
+        "tea": "Tea supply",
+        "tobacco": "Tobacco shop",
         "toys": "Joguines",
         "travel_agency": "Agència de viatges",
+        "variety_store": "Discount store",
         "video": "Videoclub"
       },
       "sport": {
@@ -1436,7 +1460,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
     "step1": "Feu clic sobre un lloc que conegueu",
     "step2": "Marqueu i feu clic per desar",
     "step3": "Ja està.No necessites registre.",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Què és Wheelmap?"
   },
   "statistics": "Estadístiques",
   "support": {
@@ -1543,7 +1567,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
           },
           "text": "Tens"
         },
-        "text_html": "Hola,<br>\n(Tornem a ser) els de Wheelmap.org! Estem feliços de tenir-te abord amb nosaltres.Pots llegir el nostre <a href=\"http://wheelmap.org/en/blog-2/\">blog</a> o <a href=\"http://wheelmap.org/en/faqs/\">FAQs</a> si vols conèixer una mica millor Wheelmap.org. O pots saber-ne més sobre els  <a href=\"http://wheelmap.org/en/get-engaged/\">projectes</a> que oferim a Wheelmap.org i com hi pots participar.<br>\nEstar en contacte<br>\nPer estar en contacte et pots subscriure al nostre butlletí mensual i seguir-nos a <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> i <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Volem saber la teva opinió i parlar amb tu!<br>\nI ara mapeja feliç!<br>\nEl teu equip Wheelmap",
+        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
         "title": "Resum"
       },
       "widget": {
@@ -1557,7 +1581,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
           "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
           "general": "Create your own Wheelmap widget and embed it in your website or blog.",
           "preview": "Preview",
-          "settings": "Settings"
+          "settings": "Configuració"
         },
         "providers": "Provider",
         "title": "Widget",
@@ -1575,9 +1599,9 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
     }
   },
   "wheelchairstatus": {
-    "limited": "Partially wheelchair accessible",
+    "limited": "Accessible amb cadira de rodes de manera parcial",
     "no": "No accessible amb cadira de rodes",
-    "unknown": "Unknown status",
+    "unknown": "Estat desconegut",
     "yes": "Accessible amb cadira de rodes"
   },
   "wheelmap": {
