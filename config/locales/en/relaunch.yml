@@ -17,7 +17,7 @@ en:
     new:
       form:
         describe: Please write to us in English or German.
-        flash_after_submit: Thank you for your reporting! Our support team will get back to you as soon as possible.
+        flash_after_submit: Thank you for contacting us. Our support team will get back to you as soon as possible.
   faq:
     answers:
       0: You can always change the marking of a place yourself. Just choose the right marking and "Save" - done!
