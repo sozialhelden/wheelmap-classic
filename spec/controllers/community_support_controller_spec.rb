@@ -10,7 +10,7 @@ RSpec.describe CommunitySupportController, type: :controller do
   end
 
   describe "POST #create" do
-    let(:subject) { "Help request from wheelmap.org" }
+    let(:subject) { "Problem report from wheelmap.org" }
     let(:user_name) { "holger" }
     let(:email) { "holger@example.com" }
     let(:message) {"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean\r\n commodo ligula eget dolor. Aenean massa."}
