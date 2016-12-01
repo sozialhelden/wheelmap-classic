@@ -12,6 +12,11 @@ de:
         address_housenumber: Nummer
         address_postcode: Postleitzahl
         address_city: Stadt
+  community_support_form:
+    new:
+      form:
+        describe: Bitte schreibe uns in Englisch oder Deutsch.
+        flash_after_submit: Vielen Dank, dass du uns kontaktiert hast. Unser Support Team meldet sich so bald wie möglich bei dir zurück.
   faq:
     answers:
       0: Du kannst die Markierung jederzeit selbst ändern. Einfach die richtige Markierung wählen und "Speichern" - fertig!
@@ -29,6 +34,7 @@ de:
       contact: Kontakt
       map: Karte
       projects: Mitmachen
+      report_problem: Problem melden
     toolbar:
       categories: Kategorien
     meta:
