@@ -16,6 +16,7 @@ de:
     new:
       form:
         title: Problem melden
+        header_text: 'Manchmal läuft etwas nicht rund. Bitte beschreibe dein Problem, damit wir die App verbessern können, indem du die drei folgenden Fragen beantwortest: Was genau hast du gemacht? Welches Ergebnis hättest du erwartet? Was ist stattdessen passiert? (Bitte beachte: Die Wheelmap ist ein Projekt eines gemeinnützigen Vereins und wir haben nur begrenzte Ressourcen, um die App weiterzuentwickeln.)'
         describe: Bitte schreibe uns in Englisch oder Deutsch.
         flash_after_submit: Vielen Dank, dass du uns kontaktiert hast. Unser Support Team meldet sich so bald wie möglich bei dir zurück.
   faq:
