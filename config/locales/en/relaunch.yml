@@ -16,6 +16,7 @@ en:
   community_support_form:
     new:
       form:
+        title: Report a problem
         describe: Please write to us in English or German.
         flash_after_submit: Thank you for contacting us. Our support team will get back to you as soon as possible.
   faq:

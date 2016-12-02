@@ -15,6 +15,7 @@ de:
   community_support_form:
     new:
       form:
+        title: Problem melden
         describe: Bitte schreibe uns in Englisch oder Deutsch.
         flash_after_submit: Vielen Dank, dass du uns kontaktiert hast. Unser Support Team meldet sich so bald wie möglich bei dir zurück.
   faq:
