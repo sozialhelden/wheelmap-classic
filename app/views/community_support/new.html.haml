@@ -6,7 +6,7 @@
       %li=I18n.t('community_support_form.new.form.questions.a')
       %li=I18n.t('community_support_form.new.form.questions.b')
       %li=I18n.t('community_support_form.new.form.questions.c')
-    %p=I18n.t('community_support_form.new.form.note')
+    %h5=I18n.t('community_support_form.new.form.note')
     = semantic_form_for(@support_request, :url => community_support_index_path ) do |f|
       = f.input :name
       = f.input :email, hint: ""
