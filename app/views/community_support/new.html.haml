@@ -1,8 +1,12 @@
 .container
-  %h1=I18n.t('header.title')
-  %h1=I18n.t('community_support_form.new.form.title')
-  %p=I18n.t('community_support_form.new.form.header_text')
   .support-form
+    %h1=I18n.t('community_support_form.new.form.title')
+    %p=I18n.t('community_support_form.new.form.header_text')
+    %ul
+      %li=I18n.t('community_support_form.new.form.questions.0')
+      %li=I18n.t('community_support_form.new.form.questions.1')
+      %li=I18n.t('community_support_form.new.form.questions.2')
+    %p=I18n.t('community_support_form.new.form.note')
     = semantic_form_for(@support_request, :url => community_support_index_path ) do |f|
       = f.input :name
       = f.input :email, hint: ""
