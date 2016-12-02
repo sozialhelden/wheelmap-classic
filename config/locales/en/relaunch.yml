@@ -19,9 +19,9 @@ en:
         title: Report a problem
         header_text: Did you run into a problem? Please answer the following questions so we can fix it.
         questions:
-          0: What did you do?
-          1: What did you expect would happen?
-          2: What happened instead?
+          a: What did you do?
+          b: What did you expect would happen?
+          c: What happened instead?
         note: Note that Wheelmap is an open-source project run by a non-profit organization and we have limited resources for the app development.
         describe: Please write to us in English or German.
         flash_after_submit: Thank you for contacting us. Our support team will get back to you as soon as possible.
