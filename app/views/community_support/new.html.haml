@@ -1,8 +1,10 @@
 .container
-  .row
-    .support-form
-      = semantic_form_for(@support_request, :url => community_support_index_path ) do |f|
-        = f.input :name
-        = f.input :email, hint: ""
-        = f.input :message, as: :text , label: I18n.t('community_support_form.new.form.describe')
-        = f.action :submit
+  %h1=I18n.t('header.title')
+  %h1=I18n.t('community_support_form.new.form.title')
+  %p=I18n.t('community_support_form.new.form.header_text')
+  .support-form
+    = semantic_form_for(@support_request, :url => community_support_index_path ) do |f|
+      = f.input :name
+      = f.input :email, hint: ""
+      = f.input :message, as: :text , label: I18n.t('community_support_form.new.form.describe')
+      = f.action :submit
