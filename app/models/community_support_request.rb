@@ -1,6 +1,7 @@
 class CommunitySupportRequest
   include ActiveModel::Validations
-  attr_accessor :name, :email, :message, :osm_username, :is_logged_in
+  attr_accessor :name, :email, :message, :osm_username, :is_logged_in,
+    :last_zoom_level, :latitude, :longitude
 
   validates_presence_of :name, :email, :message
   validates :email, format: { with: /@/ }
@@ -10,6 +11,9 @@ class CommunitySupportRequest
     @email = params.fetch(:email, '')
     @message = params.fetch(:message, '')
     @user_agent = UserAgent.parse(params.fetch(:user_agent, ''))
+    @last_zoom_level = params.fetch(:last_zoom_level, '')
+    @latitude = params.fetch(:latitude, nil)
+    @longitude = params.fetch(:longitude, nil)
   end
 
   def browser_vendor

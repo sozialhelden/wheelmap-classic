@@ -17,6 +17,9 @@ RSpec.describe CommunitySupportController, type: :controller do
     let(:user_agent) { 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:48.0) Gecko/20100101 Firefox/48.0' }
     let(:osm_username) { 'lisa maier' }
     let(:current_user) { FactoryGirl.create(:user, :email => email, :oauth_token =>'token', :oauth_secret => 'secret', osm_username: osm_username) }
+    let(:latitude)        { 52.50327542986572 }
+    let(:longitude)       { 13.411503732204435 }
+    let(:last_zoom_level) { 15 }
 
     context "with valid form params and user not logged in" do
       before do
@@ -25,6 +28,9 @@ RSpec.describe CommunitySupportController, type: :controller do
         I18n.locale = :en
         allow(request).to receive(:user_agent).and_return(user_agent)
         params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
+        request.cookies['last_lat'] = latitude
+        request.cookies['last_lon'] = longitude
+        request.cookies['last_zoom'] = last_zoom_level
         post :create, params
       end
 
@@ -78,6 +84,18 @@ RSpec.describe CommunitySupportController, type: :controller do
 
         it "does not contain the user's osm username" do
           expect(raw_body).to_not include("OSM Username: #{osm_username}")
+        end
+
+        it "contains the last zoom level" do
+          expect(raw_body).to include("Zoom level: #{last_zoom_level}")
+        end
+
+        it "contains the last latitude" do
+          expect(raw_body).to include("Latitude: #{latitude}")
+        end
+
+        it "contains the last longitude" do
+          expect(raw_body).to include("Longitude: #{longitude}")
         end
 
         describe "the user agent" do
