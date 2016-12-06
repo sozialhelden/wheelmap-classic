@@ -11,11 +11,11 @@ class CommunitySupportRequest
     @email = params.fetch(:email, '')
     @message = params.fetch(:message, '')
     @user_agent = UserAgent.parse(params.fetch(:user_agent, ''))
-    @last_zoom_level = params.fetch(:last_zoom_level, nil) || 'N/A'
-    @latitude = params.fetch(:latitude, nil) || 'N/A'
-    @longitude = params.fetch(:longitude, nil) || 'N/A'
+    @last_zoom_level = value_or_not_available(params.fetch(:last_zoom_level, nil))
+    @latitude = value_or_not_available(params.fetch(:latitude, nil))
+    @longitude = value_or_not_available(params.fetch(:longitude, nil))
     @status_filters = localize_status_filters(params.fetch(:status_filters, nil))
-    @category_filters = params.fetch(:category_filters, nil) || ['Alle aktiv']
+    @category_filters = value_or_all_active(params.fetch(:category_filters, nil))
     @toilet_filters = localize_status_filters(params.fetch(:toilet_filters, nil))
   end
 
@@ -40,6 +40,22 @@ class CommunitySupportRequest
   end
 
   private
+
+  def value_or_not_available(value)
+    if value
+      value
+    else
+      'N/A'
+    end
+  end
+
+  def value_or_all_active(filters)
+    if filters
+      filters
+    else
+      ["Alle aktiv"]
+    end
+  end
 
   def localize_status_filters(filters)
     return ['Alle aktiviert'] if filters.nil?
