@@ -141,6 +141,38 @@ RSpec.describe CommunitySupportController, type: :controller do
       end
     end
 
+    context 'with valid form params but without cookie set' do
+      before do
+        ActionMailer::Base.deliveries.clear
+        @current_locale = I18n.locale
+        I18n.locale = :en
+        allow(request).to receive(:user_agent).and_return(user_agent)
+        params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
+        post :create, params
+      end
+
+      after do
+        I18n.locale = @current_locale
+      end
+
+      describe "email body" do
+        let(:last_delivery) { ActionMailer::Base.deliveries.last }
+        let(:raw_body) { last_delivery.body.raw_source }
+
+        it "contains empty latitude" do
+          expect(raw_body).to include("Latitude: N/A")
+        end
+
+        it "contains empty last zoom level" do
+          expect(raw_body).to include("Zoom level: N/A")
+        end
+
+        it "contains empty longitude" do
+          expect(raw_body).to include("Longitude: N/A")
+        end
+      end
+    end
+
     context "with invalid form params" do
       before do
         ActionMailer::Base.deliveries.clear

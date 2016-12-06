@@ -11,9 +11,9 @@ class CommunitySupportRequest
     @email = params.fetch(:email, '')
     @message = params.fetch(:message, '')
     @user_agent = UserAgent.parse(params.fetch(:user_agent, ''))
-    @last_zoom_level = params.fetch(:last_zoom_level, '')
-    @latitude = params.fetch(:latitude, nil)
-    @longitude = params.fetch(:longitude, nil)
+    @last_zoom_level = params.fetch(:last_zoom_level, nil) || 'N/A'
+    @latitude = params.fetch(:latitude, nil) || 'N/A'
+    @longitude = params.fetch(:longitude, nil) || 'N/A'
   end
 
   def browser_vendor
