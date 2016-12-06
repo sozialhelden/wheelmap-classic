@@ -11,4 +11,4 @@
       = f.input :name
       = f.input :email, hint: ""
       = f.input :message, as: :text , label: I18n.t('community_support_form.new.form.describe')
-      = f.action :submit
+      = f.action :submit, as: :button, label: I18n.t('community_support_form.new.form.submit_button')

@@ -26,6 +26,7 @@ de:
         note: 'Bitte beachte: Die Wheelmap ist ein Projekt eines gemeinnützigen Vereins und wir haben nur begrenzte Ressourcen, um die App weiterzuentwickeln.'
         describe: Bitte schreibe uns in Englisch oder Deutsch.
         flash_after_submit: Vielen Dank, dass du uns kontaktiert hast. Unser Support Team meldet sich so bald wie möglich bei dir zurück.
+        submit_button: Abschicken
   faq:
     answers:
       0: Du kannst die Markierung jederzeit selbst ändern. Einfach die richtige Markierung wählen und "Speichern" - fertig!
