@@ -1,7 +1,7 @@
 class CommunitySupportRequest
   include ActiveModel::Validations
   attr_accessor :name, :email, :message, :osm_username, :is_logged_in,
-    :last_zoom_level, :latitude, :longitude, :status_filters
+    :last_zoom_level, :latitude, :longitude, :status_filters, :category_filters
 
   validates_presence_of :name, :email, :message
   validates :email, format: { with: /@/ }
@@ -15,6 +15,7 @@ class CommunitySupportRequest
     @latitude = params.fetch(:latitude, nil) || 'N/A'
     @longitude = params.fetch(:longitude, nil) || 'N/A'
     @status_filters = localize_status_filters(params.fetch(:status_filters, nil))
+    @category_filters = params.fetch(:category_filters, nil) || ['Alle aktiv']
   end
 
   def browser_vendor
@@ -40,7 +41,7 @@ class CommunitySupportRequest
   private
 
   def localize_status_filters(filters)
-    return 'Alle aktiviert' if filters.nil?
+    return ['Alle aktiviert'] if filters.nil?
 
     filters.map do |filter|
       case filter.downcase
@@ -53,6 +54,6 @@ class CommunitySupportRequest
       else
         'Unbekannt'
       end
-    end.join(', ')
+    end
   end
 end
