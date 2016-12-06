@@ -8,7 +8,11 @@ Zoom level: <%= @community_support_request.last_zoom_level %>
 Latitude: <%= @community_support_request.latitude %>
 Longitude: <%= @community_support_request.longitude %>
 Rollstuhlfilter: <%= @community_support_request.status_filters.join(', ') %>
+<% if @community_support_request.category_filters.length > 0 %>
 Kategorien: <%= @community_support_request.category_filters.join(', ') %>
+<% else %>
+Kategorien: Keine ausgewählt
+<% end %>
 <% if @community_support_request.is_logged_in %>
 BenutzerIn ist eingeloggt mit: <%= @community_support_request.email %>
 OSM Username: <%= @community_support_request.osm_username %>
