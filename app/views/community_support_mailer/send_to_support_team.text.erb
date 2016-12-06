@@ -13,6 +13,7 @@ Kategorien: <%= @community_support_request.category_filters.join(', ') %>
 <% else %>
 Kategorien: Keine ausgewählt
 <% end %>
+WC: <%= @community_support_request.toilet_filters.join(", ") %>
 <% if @community_support_request.is_logged_in %>
 BenutzerIn ist eingeloggt mit: <%= @community_support_request.email %>
 OSM Username: <%= @community_support_request.osm_username %>

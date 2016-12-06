@@ -106,6 +106,10 @@ RSpec.describe CommunitySupportController, type: :controller do
           expect(raw_body).to include("Kategorien: Alle aktiv")
         end
 
+        it "says that all toilet filters are enabled" do
+          expect(raw_body).to include("WC: Alle aktiv")
+        end
+
         describe "the user agent" do
           it "has correct operating system vendor" do
             expect(raw_body).to include("Betriebssystem Hersteller: Macintosh")
@@ -261,10 +265,33 @@ RSpec.describe CommunitySupportController, type: :controller do
       end
     end
 
+    context 'with valid form params cookie set and toilet filter' do
+      before do
+        ActionMailer::Base.deliveries.clear
+        allow(request).to receive(:user_agent).and_return(user_agent)
+      end
+
+      context 'with some selected' do
+        before do
+          params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
+          request.cookies['last_toilet_filters'] = ["yes", "unknown"]
+          post :create, params
+        end
+
+        describe "email body" do
+          let(:last_delivery) { ActionMailer::Base.deliveries.last }
+          let(:raw_body) { last_delivery.body.raw_source }
+
+          it "indicates which category filters are enabled" do
+            expect(raw_body).to include("WC: Rollstuhlgerecht, Unbekannt")
+          end
+        end
+      end
+    end
+
     context "with invalid form params" do
       before do
         ActionMailer::Base.deliveries.clear
-
         params = {:community_support_request => { name: user_name, email: "holger$example.com", message: message }}
         post :create, params
       end

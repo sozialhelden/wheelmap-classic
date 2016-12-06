@@ -13,7 +13,8 @@ class CommunitySupportController < ApplicationController
                                        longitude: longitude,
                                        last_zoom_level: zoom_level,
                                        status_filters: status_filters,
-                                       category_filters: category_filters)
+                                       category_filters: category_filters,
+                                       toilet_filters: toilet_filters)
     @support_request = CommunitySupportRequest.new(support_params)
     if current_user
       @support_request.is_logged_in = true
@@ -49,6 +50,10 @@ class CommunitySupportController < ApplicationController
 
   def category_filters
     request.cookies['last_category_filters']
+  end
+
+  def toilet_filters
+    request.cookies['last_toilet_filters']
   end
 
   def form_params
