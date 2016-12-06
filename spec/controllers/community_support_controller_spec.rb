@@ -102,6 +102,10 @@ RSpec.describe CommunitySupportController, type: :controller do
           expect(raw_body).to include("Rollstuhlfilter: Alle aktiviert")
         end
 
+        it "says that all categories are enabled" do
+          expect(raw_body).to include("Kategorien: Alle aktiv")
+        end
+
         describe "the user agent" do
           it "has correct operating system vendor" do
             expect(raw_body).to include("Betriebssystem Hersteller: Macintosh")
