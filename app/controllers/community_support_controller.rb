@@ -11,7 +11,8 @@ class CommunitySupportController < ApplicationController
     support_params = form_params.merge(user_agent: request.user_agent,
                                        latitude: latitude,
                                        longitude: longitude,
-                                       last_zoom_level: zoom_level)
+                                       last_zoom_level: zoom_level,
+                                       status_filters: status_filters)
     @support_request = CommunitySupportRequest.new(support_params)
     if current_user
       @support_request.is_logged_in = true
@@ -39,6 +40,10 @@ class CommunitySupportController < ApplicationController
 
   def zoom_level
     request.cookies['last_zoom']
+  end
+
+  def status_filters
+    request.cookies['last_status_filters']
   end
 
   def form_params

@@ -98,6 +98,10 @@ RSpec.describe CommunitySupportController, type: :controller do
           expect(raw_body).to include("Longitude: #{longitude}")
         end
 
+        it "contains the correct filter status" do
+          expect(raw_body).to include("Rollstuhlfilter: Alle aktiviert")
+        end
+
         describe "the user agent" do
           it "has correct operating system vendor" do
             expect(raw_body).to include("Betriebssystem Hersteller: Macintosh")
@@ -169,6 +173,26 @@ RSpec.describe CommunitySupportController, type: :controller do
 
         it "contains empty longitude" do
           expect(raw_body).to include("Longitude: N/A")
+        end
+      end
+    end
+
+    context 'with valid form params cookie set and partially disabled wheelchair filters' do
+      before do
+        ActionMailer::Base.deliveries.clear
+        @current_locale = I18n.locale
+        allow(request).to receive(:user_agent).and_return(user_agent)
+        params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
+        request.cookies['last_status_filters'] = ["unknown", "yes"]
+        post :create, params
+      end
+
+      describe 'email body' do
+        let(:last_delivery) { ActionMailer::Base.deliveries.last }
+        let(:raw_body) { last_delivery.body.raw_source }
+
+        it "indicates which filters are enabled" do
+          expect(raw_body).to include("Rollstuhlfilter: Unbekannt, Rollstuhlgerecht")
         end
       end
     end
