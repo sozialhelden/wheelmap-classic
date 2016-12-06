@@ -287,6 +287,23 @@ RSpec.describe CommunitySupportController, type: :controller do
           end
         end
       end
+
+      context 'with none selected' do
+        before do
+          params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
+          request.cookies['last_toilet_filters'] = []
+          post :create, params
+        end
+
+        describe "email body" do
+          let(:last_delivery) { ActionMailer::Base.deliveries.last }
+          let(:raw_body) { last_delivery.body.raw_source }
+
+          it "indicates which category filters are enabled" do
+            expect(raw_body).to include("WC: Keine aktiv")
+          end
+        end
+      end
     end
 
     context "with invalid form params" do
