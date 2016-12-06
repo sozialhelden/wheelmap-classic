@@ -43,6 +43,8 @@ class CommunitySupportRequest
   def localize_status_filters(filters)
     return ['Alle aktiviert'] if filters.nil?
 
+    return ['Keine aktiv'] if filters.length == 0
+
     filters.map do |filter|
       case filter.downcase
       when 'yes'
