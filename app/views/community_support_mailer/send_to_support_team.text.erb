@@ -4,6 +4,16 @@ Betriebssystem Hersteller: <%= @community_support_request.operating_system %>
 Betriebssystem Version: <%= @community_support_request.operating_system_version %>
 Browser Hersteller: <%= @community_support_request.browser_vendor %>
 Browser Version: <%= @community_support_request.browser_version %>
+Zoom level: <%= @community_support_request.last_zoom_level %>
+Latitude: <%= @community_support_request.latitude %>
+Longitude: <%= @community_support_request.longitude %>
+Rollstuhlfilter: <%= @community_support_request.status_filters.join(', ') %>
+<% if @community_support_request.category_filters.length > 0 %>
+Kategorien: <%= @community_support_request.category_filters.join(', ') %>
+<% else %>
+Kategorien: Keine ausgewählt
+<% end %>
+WC: <%= @community_support_request.toilet_filters.join(", ") %>
 <% if @community_support_request.is_logged_in %>
 BenutzerIn ist eingeloggt mit: <%= @community_support_request.email %>
 OSM Username: <%= @community_support_request.osm_username %>
