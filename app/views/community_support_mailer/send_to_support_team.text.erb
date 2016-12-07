@@ -7,7 +7,7 @@ Browser Version: <%= @community_support_request.browser_version %>
 Zoom level: <%= @community_support_request.last_zoom_level %>
 Latitude: <%= @community_support_request.latitude %>
 Longitude: <%= @community_support_request.longitude %>
-Rollstuhlfilter: <%= @community_support_request.status_filters.join(', ') %>
+Rollstuhlfilter: <%= @community_support_request.wheelchair_status_filters.join(', ') %>
 <% if @community_support_request.category_filters.length > 0 %>
 Kategorien: <%= @community_support_request.category_filters.join(', ') %>
 <% else %>

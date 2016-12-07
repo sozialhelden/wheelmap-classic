@@ -12,7 +12,7 @@ class CommunitySupportController < ApplicationController
                                        latitude: latitude,
                                        longitude: longitude,
                                        last_zoom_level: zoom_level,
-                                       status_filters: status_filters,
+                                       wheelchair_status_filters: wheelchair_status_filters,
                                        category_filters: category_filters,
                                        toilet_filters: toilet_filters)
     @support_request = CommunitySupportRequest.new(support_params)
@@ -44,7 +44,7 @@ class CommunitySupportController < ApplicationController
     request.cookies['last_zoom']
   end
 
-  def status_filters
+  def wheelchair_status_filters
     filters = request.cookies['last_status_filters']
     return nil if filters.nil?
     JSON.parse(filters)

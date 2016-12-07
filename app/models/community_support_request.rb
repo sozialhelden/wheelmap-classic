@@ -1,7 +1,7 @@
 class CommunitySupportRequest
   include ActiveModel::Validations
   attr_accessor :name, :email, :message, :osm_username, :is_logged_in,
-    :last_zoom_level, :latitude, :longitude, :status_filters, :category_filters, :toilet_filters
+    :last_zoom_level, :latitude, :longitude, :wheelchair_status_filters, :category_filters, :toilet_filters
 
   validates_presence_of :name, :email, :message
   validates :email, format: { with: /@/ }
@@ -14,7 +14,7 @@ class CommunitySupportRequest
     @last_zoom_level = value_or_not_available(params.fetch(:last_zoom_level, nil))
     @latitude = value_or_not_available(params.fetch(:latitude, nil))
     @longitude = value_or_not_available(params.fetch(:longitude, nil))
-    @status_filters = localize_status_filters(params.fetch(:status_filters, nil))
+    @wheelchair_status_filters = localize_status_filters(params.fetch(:wheelchair_status_filters, nil))
     @category_filters = value_or_all_active(params.fetch(:category_filters, nil))
     @toilet_filters = localize_status_filters(params.fetch(:toilet_filters, nil))
   end
