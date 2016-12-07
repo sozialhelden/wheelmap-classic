@@ -16,7 +16,7 @@ class CommunitySupportController < ApplicationController
     end
 
     if @support_request.valid?
-      CommunitySupportMailer.send_to_support_team(@support_request).deliver
+      CommunitySupportMailer.delay.send_to_support_team(@support_request)
       flash[:notice] = I18n.t('community_support_form.new.form.flash_after_submit')
       redirect_to root_path
     else
