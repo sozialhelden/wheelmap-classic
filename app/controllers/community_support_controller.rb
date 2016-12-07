@@ -45,15 +45,21 @@ class CommunitySupportController < ApplicationController
   end
 
   def status_filters
-    request.cookies['last_status_filters']
+    filters = request.cookies['last_status_filters']
+    return nil if filters.nil?
+    JSON.parse(filters)
   end
 
   def category_filters
-    request.cookies['last_category_filters']
+    filters = request.cookies['last_category_filters']
+    return nil if filters.nil?
+    JSON.parse(filters)
   end
 
   def toilet_filters
-    request.cookies['last_toilet_filters']
+    filters = request.cookies['last_toilet_filters']
+    return nil if filters.nil?
+    JSON.parse(filters)
   end
 
   def form_params

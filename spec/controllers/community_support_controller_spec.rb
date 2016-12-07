@@ -194,7 +194,7 @@ RSpec.describe CommunitySupportController, type: :controller do
       context 'with partially enabled filters' do
         before do
           params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
-          request.cookies['last_status_filters'] = ["unknown", "yes"]
+          request.cookies['last_status_filters'] = ["unknown", "yes"].to_json
           post :create, params
         end
 
@@ -211,7 +211,7 @@ RSpec.describe CommunitySupportController, type: :controller do
       context 'with all filters disabled' do
         before do
           params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
-          request.cookies['last_status_filters'] = []
+          request.cookies['last_status_filters'] = [].to_json
           post :create, params
         end
 
@@ -235,7 +235,7 @@ RSpec.describe CommunitySupportController, type: :controller do
       context 'with some selected' do
         before do
           params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
-          request.cookies['last_category_filters'] = ["money_post","government","shopping","food"]
+          request.cookies['last_category_filters'] = ["money_post","government","shopping","food"].to_json
           post :create, params
         end
         describe "email body" do
@@ -251,7 +251,7 @@ RSpec.describe CommunitySupportController, type: :controller do
       context 'with none selected' do
         before do
           params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
-          request.cookies['last_category_filters'] = []
+          request.cookies['last_category_filters'] = [].to_json
           post :create, params
         end
         describe "email body" do
@@ -274,7 +274,7 @@ RSpec.describe CommunitySupportController, type: :controller do
       context 'with some selected' do
         before do
           params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
-          request.cookies['last_toilet_filters'] = ["yes", "unknown"]
+          request.cookies['last_toilet_filters'] = ["yes", "unknown"].to_json
           post :create, params
         end
 
@@ -291,7 +291,7 @@ RSpec.describe CommunitySupportController, type: :controller do
       context 'with none selected' do
         before do
           params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
-          request.cookies['last_toilet_filters'] = []
+          request.cookies['last_toilet_filters'] = [].to_json
           post :create, params
         end
 
