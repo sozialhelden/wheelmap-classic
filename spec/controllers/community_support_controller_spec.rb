@@ -20,10 +20,13 @@ RSpec.describe CommunitySupportController, type: :controller do
     let(:latitude)        { 52.50327542986572 }
     let(:longitude)       { 13.411503732204435 }
     let(:last_zoom_level) { 15 }
+    let(:params) { params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message}}}
+    let(:submit) { post :create, params }
 
     context "with valid form params and user not logged in" do
       before do
         ActionMailer::Base.deliveries.clear
+        Delayed::Worker.delay_jobs = false
         @current_locale = I18n.locale
         I18n.locale = :en
         allow(request).to receive(:user_agent).and_return(user_agent)
@@ -129,7 +132,7 @@ RSpec.describe CommunitySupportController, type: :controller do
         end
       end
 
-      context 'with valid form params and user is logged in' do
+    context 'with valid form params and user is logged in' do
         before do
           sign_in current_user
           ActionMailer::Base.deliveries.clear
@@ -303,6 +306,23 @@ RSpec.describe CommunitySupportController, type: :controller do
             expect(raw_body).to include("WC: Keine aktiv")
           end
         end
+      end
+    end
+
+    context 'with valid form params and delayed email delivery' do
+      before do
+        ActionMailer::Base.deliveries.clear
+        Delayed::Worker.delay_jobs = true
+        params
+      end
+
+      after do
+        I18n.locale = @current_locale
+      end
+
+      it "enqueues an email to send later to the support team" do
+        submit
+        expect(Delayed::Job.count).to eq(1)
       end
     end
 
