@@ -316,10 +316,6 @@ RSpec.describe CommunitySupportController, type: :controller do
         params
       end
 
-      after do
-        I18n.locale = @current_locale
-      end
-
       it "enqueues an email to send later to the support team" do
         submit
         expect(Delayed::Job.count).to eq(1)
