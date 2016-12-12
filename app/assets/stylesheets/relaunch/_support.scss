@@ -1,6 +1,13 @@
 
 .support-form {
   margin-top: $headerHeight + 40px;
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  h5 {
+    margin: 20px 0 30px 0;
+  }
 
   textarea {
     width: 100%;
