@@ -17,13 +17,13 @@ de:
       form:
         title: Problem melden
         # Sentence put into quotes because of `:`
-        header_text: 'Manchmal läuft etwas nicht rund. Bitte beschreibe dein Problem, damit wir die App verbessern können, indem du die drei folgenden Fragen beantwortest:'
+        header_text_html: "Manchmal läuft etwas nicht rund. Bitte schaue Dir unsere <a href=\"https://news.wheelmap.org/faq\">häufigen Fragen und Antworten</a> an bevor du uns schreibst. Wenn deine Frage dort nicht beantwortet ist, beantworte bitte die folgenden drei Fragen, damit wir das Problem lösen können."
         questions:
           a: Was genau hast du gemacht?
           b: Welches Ergebnis hättest du erwartet?
           c: Was ist stattdessen passiert?
           # Sentence put into quotes because of `:`
-        note: 'Bitte beachte: Die Wheelmap ist ein Projekt eines gemeinnützigen Vereins und wir haben nur begrenzte Ressourcen, um die App weiterzuentwickeln.'
+        note_html: '<strong>Bitte beachte: Die Wheelmap ist ein Projekt eines gemeinnützigen Vereins und wir haben nur begrenzte Ressourcen, um die App weiterzuentwickeln.</strong>'
         describe: Bitte schreibe uns in Englisch oder Deutsch.
         flash_after_submit: Vielen Dank, dass du uns kontaktiert hast. Unser Support Team meldet sich so bald wie möglich bei dir zurück.
         submit_button: Abschicken
