@@ -27,6 +27,10 @@ RSpec.describe CommunitySupportController, type: :controller do
       Delayed::Worker.delay_jobs = false
     end
 
+    after do
+      Delayed::Worker.delay_jobs = true
+    end
+
     context "with valid form params and user not logged in" do
       before do
         @current_locale = I18n.locale
