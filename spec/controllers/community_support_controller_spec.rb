@@ -161,7 +161,6 @@ RSpec.describe CommunitySupportController, type: :controller do
 
     context 'with valid form params but without cookie set' do
       before do
-        # ActionMailer::Base.deliveries.clear
         @current_locale = I18n.locale
         I18n.locale = :en
         allow(request).to receive(:user_agent).and_return(user_agent)
@@ -192,7 +191,6 @@ RSpec.describe CommunitySupportController, type: :controller do
 
     context 'with valid form params cookie set and wheelchair filters' do
       before do
-        ActionMailer::Base.deliveries.clear
         allow(request).to receive(:user_agent).and_return(user_agent)
       end
 
