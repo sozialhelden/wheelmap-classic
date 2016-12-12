@@ -21,16 +21,17 @@ RSpec.describe CommunitySupportController, type: :controller do
     let(:longitude)       { 13.411503732204435 }
     let(:last_zoom_level) { 15 }
     let(:params) { params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message}}}
-    let(:submit) { post :create, params }
+
+    before do
+      ActionMailer::Base.deliveries.clear
+      Delayed::Worker.delay_jobs = false
+    end
 
     context "with valid form params and user not logged in" do
       before do
-        ActionMailer::Base.deliveries.clear
-        Delayed::Worker.delay_jobs = false
         @current_locale = I18n.locale
         I18n.locale = :en
         allow(request).to receive(:user_agent).and_return(user_agent)
-        params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
         request.cookies['last_lat'] = latitude
         request.cookies['last_lon'] = longitude
         request.cookies['last_zoom'] = last_zoom_level
@@ -135,9 +136,7 @@ RSpec.describe CommunitySupportController, type: :controller do
     context 'with valid form params and user is logged in' do
         before do
           sign_in current_user
-          ActionMailer::Base.deliveries.clear
           allow(request).to receive(:user_agent).and_return(user_agent)
-          params = {:community_support_request => { name: user_name, email: email, message: message }}
           post :create, params
         end
 
@@ -158,11 +157,10 @@ RSpec.describe CommunitySupportController, type: :controller do
 
     context 'with valid form params but without cookie set' do
       before do
-        ActionMailer::Base.deliveries.clear
+        # ActionMailer::Base.deliveries.clear
         @current_locale = I18n.locale
         I18n.locale = :en
         allow(request).to receive(:user_agent).and_return(user_agent)
-        params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
         post :create, params
       end
 
@@ -196,7 +194,6 @@ RSpec.describe CommunitySupportController, type: :controller do
 
       context 'with partially enabled filters' do
         before do
-          params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
           request.cookies['last_status_filters'] = ["unknown", "yes"].to_json
           post :create, params
         end
@@ -213,7 +210,6 @@ RSpec.describe CommunitySupportController, type: :controller do
 
       context 'with all filters disabled' do
         before do
-          params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
           request.cookies['last_status_filters'] = [].to_json
           post :create, params
         end
@@ -231,13 +227,11 @@ RSpec.describe CommunitySupportController, type: :controller do
 
     context 'with valid form params cookie set and partially selected categories' do
       before do
-        ActionMailer::Base.deliveries.clear
         allow(request).to receive(:user_agent).and_return(user_agent)
       end
 
       context 'with some selected' do
         before do
-          params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
           request.cookies['last_category_filters'] = ["money_post","government","shopping","food"].to_json
           post :create, params
         end
@@ -253,7 +247,6 @@ RSpec.describe CommunitySupportController, type: :controller do
 
       context 'with none selected' do
         before do
-          params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
           request.cookies['last_category_filters'] = [].to_json
           post :create, params
         end
@@ -270,13 +263,11 @@ RSpec.describe CommunitySupportController, type: :controller do
 
     context 'with valid form params cookie set and toilet filter' do
       before do
-        ActionMailer::Base.deliveries.clear
         allow(request).to receive(:user_agent).and_return(user_agent)
       end
 
       context 'with some selected' do
         before do
-          params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
           request.cookies['last_toilet_filters'] = ["yes", "unknown"].to_json
           post :create, params
         end
@@ -293,7 +284,6 @@ RSpec.describe CommunitySupportController, type: :controller do
 
       context 'with none selected' do
         before do
-          params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message }}
           request.cookies['last_toilet_filters'] = [].to_json
           post :create, params
         end
@@ -311,20 +301,17 @@ RSpec.describe CommunitySupportController, type: :controller do
 
     context 'with valid form params and delayed email delivery' do
       before do
-        ActionMailer::Base.deliveries.clear
         Delayed::Worker.delay_jobs = true
-        params
+        post :create, params
       end
 
       it "enqueues an email to send later to the support team" do
-        submit
         expect(Delayed::Job.count).to eq(1)
       end
     end
 
     context "with invalid form params" do
       before do
-        ActionMailer::Base.deliveries.clear
         params = {:community_support_request => { name: user_name, email: "holger$example.com", message: message }}
         post :create, params
       end
