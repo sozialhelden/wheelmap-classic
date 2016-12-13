@@ -568,7 +568,7 @@ CREATE TABLE `widgets` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-02 14:43:26
+-- Dump completed on 2016-12-13  9:54:15
 INSERT INTO schema_migrations (version) VALUES ('20110107131649');
 
 INSERT INTO schema_migrations (version) VALUES ('20110114163727');
@@ -714,4 +714,6 @@ INSERT INTO schema_migrations (version) VALUES ('20161017134327');
 INSERT INTO schema_migrations (version) VALUES ('20161017135542');
 
 INSERT INTO schema_migrations (version) VALUES ('20161021141630');
+
+INSERT INTO schema_migrations (version) VALUES ('20161128102235');
 
