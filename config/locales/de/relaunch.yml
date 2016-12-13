@@ -23,7 +23,7 @@ de:
           b: Welches Ergebnis hättest du erwartet?
           c: Was ist stattdessen passiert?
           # Sentence put into quotes because of `:`
-        note_html: '<strong>Bitte beachte: Die Wheelmap ist ein Projekt eines gemeinnützigen Vereins und wir haben nur begrenzte Ressourcen, um die App weiterzuentwickeln.</strong>'
+        note: 'Bitte beachte: Die Wheelmap ist ein Projekt eines gemeinnützigen Vereins und wir haben nur begrenzte Ressourcen, um die App weiterzuentwickeln.'
         describe: Bitte schreibe uns in Englisch oder Deutsch.
         flash_after_submit: Vielen Dank, dass du uns kontaktiert hast. Unser Support Team meldet sich so bald wie möglich bei dir zurück.
         submit_button: Abschicken
