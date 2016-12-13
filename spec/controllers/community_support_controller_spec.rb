@@ -20,7 +20,7 @@ RSpec.describe CommunitySupportController, type: :controller do
     let(:latitude)        { 52.50327542986572 }
     let(:longitude)       { 13.411503732204435 }
     let(:last_zoom_level) { 15 }
-    let(:params) { params = {:community_support_request => { name: user_name, email: "holger@example.com", message: message}}}
+    let(:params) { { :community_support_request => { name: user_name, email: "holger@example.com", message: message}} }
 
     before do
       ActionMailer::Base.deliveries.clear

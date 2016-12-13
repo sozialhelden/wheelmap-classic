@@ -17,7 +17,7 @@ en:
     new:
       form:
         title: Report a problem
-        header_text: Did you run into a problem? Please answer the following questions so we can fix it.
+        header_text_html: "Please check the <a href=\"https://news.wheelmap.org/en/faq/\">frequently asked questions</a> for help first. If the solution to your problem is not there, please answer the following questions so we can fix it."
         questions:
           a: What did you do?
           b: What did you expect would happen?
