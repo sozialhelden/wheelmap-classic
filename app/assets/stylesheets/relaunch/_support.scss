@@ -1,10 +1,11 @@
+$mobile-breakpoint: 393px;
+
 .support-form {
 
   margin-top: $headerHeight + 20px;
   padding: 20px;
 
-  /* Small devices (tablets, 768px and up) */
-  @media (min-width: 393px) {
+  @media (min-width: $mobile-breakpoint) {
     margin-top: $headerHeight;
   }
 
