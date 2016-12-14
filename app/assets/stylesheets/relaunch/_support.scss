@@ -1,16 +1,12 @@
 .support-form {
 
-  /* Mobile devices */
-  @media (max-width: 767px) {
-    margin-top: $headerHeight + 20px;
-  }
+  margin-top: $headerHeight + 20px;
+  padding: 20px;
 
   /* Small devices (tablets, 768px and up) */
-  @media (min-width: 768px) {
+  @media (min-width: 393px) {
     margin-top: $headerHeight;
   }
-
-  padding: 20px;
 
   h1 {
     font-size: 28px;
