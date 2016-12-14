@@ -1,8 +1,19 @@
-
 .support-form {
-  margin-top: $headerHeight + 40px;
+
+  /* Mobile devices */
+  @media (max-width: 767px) {
+    margin-top: $headerHeight + 20px;
+  }
+
+  /* Small devices (tablets, 768px and up) */
+  @media (min-width: 768px) {
+    margin-top: $headerHeight;
+  }
+
+  padding: 20px;
+
   h1 {
-    margin-bottom: 20px;
+    font-size: 28px;
   }
 
   h5 {
@@ -10,13 +21,13 @@
   }
 
   textarea {
-    width: 100%;
-    height: 200px;
+    width: 75%;
+    height: 100px;
   }
 
   .help-block {
     color: red;
     display: inline;
     margin-left: 10px;
-  }
+}
 }
