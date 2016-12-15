@@ -17,7 +17,7 @@ de:
       form:
         title: Problem melden
         # Sentence put into quotes because of `:`
-        header_text_html: "Manchmal läuft etwas nicht rund. Bitte schaue Dir unsere <a href=\"https://news.wheelmap.org/faq\">häufig gestellten Fragen und Antworten</a> (FAQs) an bevor du uns schreibst. Wenn du dort keine Hilfe für dein Problem findest, beantworte bitte die folgenden drei Fragen, damit wir das Problem lösen können."
+        header_text_html: "Manchmal läuft etwas nicht rund. Bitte schaue dir unsere <a href=\"https://news.wheelmap.org/faq\">häufigen Fragen und Antworten</a> an, bevor du uns schreibst. Wenn deine Frage dort nicht beantwortet ist, beantworte bitte die folgenden drei Fragen, damit wir das Problem lösen können."
         questions:
           a: Was genau hast du gemacht?
           b: Welches Ergebnis hättest du erwartet?
