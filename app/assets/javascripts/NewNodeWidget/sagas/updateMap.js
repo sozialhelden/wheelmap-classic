@@ -14,10 +14,19 @@ export function* updateMap(node) {
     yield call(delay, 300);
 
     const address = yield call([ node, node.address ]);
-    const feature = yield call(geocode, address);
+    const features = yield call(geocode, address);
 
     // Restart daemon if no feature was found.
-    if (feature === undefined) {
+    if (features === undefined) {
+      return;
+    }
+
+    // It can happen that we receive multiple results for an address
+    // We need to find out which is the correct one
+    const feature = features.find(f => f.properties.housenumber === node.get('housenumber') &&
+                        f.properties.street === node.get('street'));
+
+    if(feature === undefined) {
       return;
     }
 

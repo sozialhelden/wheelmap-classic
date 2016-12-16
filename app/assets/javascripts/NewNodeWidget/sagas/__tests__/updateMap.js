@@ -8,6 +8,7 @@ import Node from '../../../common/models/Node';
 import cancelUpdateMap, { updateMap, debounceUpdateMap } from '../updateMap';
 
 jest.unmock('../updateMap');
+jest.unmock('../../../common/models/Node');
 
 describe('cancelUpdateMap', () => {
   it('fork debounceUpdateMap and cancel it when the marker was moved', () => {
@@ -34,7 +35,7 @@ describe('updateMap', () => {
   let node;
 
   beforeEach(() => {
-    node = new Node();
+    node = new Node({housenumber: 23, street: 'example street'});
     gen = updateMap(node);
   });
 
@@ -58,11 +59,15 @@ describe('updateMap', () => {
       lon: 13.5
     };
 
-    const feature = {
+    const feature = [{
       geometry: {
         coordinates: [ center.lon, center.lat ]
+      },
+      properties: {
+        housenumber: 23,
+        street: 'example street'
       }
-    };
+    }];
 
     expect(gen.next(feature))
       .toPut(actions.changeMapCenter(center));
