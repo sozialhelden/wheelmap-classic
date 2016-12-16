@@ -21,7 +21,7 @@ describe('navigateToNextSection', () => {
     expect(gen.next())
       .toSelect(selectors.node);
 
-    const node = new Node({name: 'gartenbank', lat: 52.5226074, lon: 13.2874013});
+    const node = new Node({ name: 'gartenbank', lat: 52.5226074, lon: 13.2874013 });
 
     expect(gen.next(node))
       .toSelect(selectors.activeSection);
