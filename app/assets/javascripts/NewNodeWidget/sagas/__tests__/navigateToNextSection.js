@@ -9,6 +9,7 @@ import { NAME_CATEGORY, ADDRESS } from '../../models/sections';
 import navigateToNextSection from '../navigateToNextSection';
 
 jest.unmock('../navigateToNextSection');
+jest.unmock('../../../common/models/Node');
 
 describe('navigateToNextSection', () => {
   it('navigates to next section', () => {
@@ -20,7 +21,7 @@ describe('navigateToNextSection', () => {
     expect(gen.next())
       .toSelect(selectors.node);
 
-    const node = new Node();
+    const node = new Node({ name: 'gartenbank', lat: 52.5226074, lon: 13.2874013 });
 
     expect(gen.next(node))
       .toSelect(selectors.activeSection);
@@ -39,9 +40,6 @@ describe('navigateToNextSection', () => {
     expect(gen.next(attrs))
       .toCall(validateNode, node, attrs);
 
-    expect(gen.next())
-      .toPut(load(false));
-
     expect(gen.next(node))
       .toSelect(selectors.sections);
 
@@ -49,6 +47,9 @@ describe('navigateToNextSection', () => {
 
     expect(gen.next(sections))
       .toPut(push.newNodeSectionPath(ADDRESS, node.serialize()));
+
+    expect(gen.next())
+      .toPut(load(false));
 
     expect(gen.next().done)
       .toBe(false);

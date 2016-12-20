@@ -20,6 +20,12 @@ export default function* navigateToNextSection() {
 
     try {
       yield call(validateNode, node, attrs);
+
+      const sections = yield select(selectors.sections);
+      const nextIndex = sections.indexOf(activeSection) + 1;
+      const nextSection = sections.get(nextIndex);
+
+      yield put(push.newNodeSectionPath(nextSection, node.serialize()));
     } catch (error) {
       if (yield call(HTTPError.is, error, 422)) {
         const { errors } = error;
@@ -32,11 +38,5 @@ export default function* navigateToNextSection() {
     } finally {
       yield put(load(false));
     }
-
-    const sections = yield select(selectors.sections);
-    const nextIndex = sections.indexOf(activeSection) + 1;
-    const nextSection = sections.get(nextIndex);
-
-    yield put(push.newNodeSectionPath(nextSection, node.serialize()));
   }
 }
