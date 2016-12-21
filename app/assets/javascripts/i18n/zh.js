@@ -314,6 +314,23 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
     "close": "关闭",
     "skip": "skip"
   },
+  "community_support_form": {
+    "new": {
+      "form": {
+        "describe": "Please write to us in English or German.",
+        "flash_after_submit": "Thank you for contacting us. Our support team will get back to you as soon as possible.",
+        "header_text_html": "Please check the <a href=\"https://news.wheelmap.org/en/faq/\">frequently asked questions</a> for help first. If the solution to your problem is not there, please answer the following questions so we can fix it.",
+        "note": "Note that Wheelmap is an open-source project run by a non-profit organization and we have limited resources for the app development.",
+        "questions": {
+          "a": "What did you do?",
+          "b": "What did you expect would happen?",
+          "c": "What happened instead?"
+        },
+        "submit_button": "Submit",
+        "title": "报告一个问题"
+      }
+    }
+  },
   "date": {
     "abbr_day_names": [
       "日",
@@ -759,6 +776,7 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       "press": "出版物",
       "profile": "Profile",
       "projects": "参与其中",
+      "report_problem": "报告一个问题",
       "suggestions": "建议",
       "what_is_barrier_free": "“轮椅通道”是什么意思",
       "what_is_wheelmap": "What is Wheelmap?"

@@ -186,10 +186,10 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "address": "العنوان",
         "address_city": "المدينة",
         "address_housenumber": "رقم المنزل",
-        "address_postcode": "Postcode",
+        "address_postcode": "الرمز البريدي",
         "address_street": "شارع",
         "name": "الإسم",
-        "note": "Note",
+        "note": "ملاحظة",
         "phone": "الهاتف",
         "type": "النوع",
         "website": "موقع الكتروني"
@@ -313,6 +313,23 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   "common": {
     "close": "مغلق",
     "skip": "تخطي"
+  },
+  "community_support_form": {
+    "new": {
+      "form": {
+        "describe": "يُرجى الكتابة إلينا باللغة English أو Deutsch.",
+        "flash_after_submit": "شكراً لاتصالك بنا. سيتصل بك فريق الدعم الخاص بنا بأسرع ما يمكن.",
+        "header_text_html": "يُرجى تفقد <a href=\"https://news.wheelmap.org/en/faq/\"> الأسئلة المتكررة </a> للمساعدة أولاً. إذا لم تجد حلاً لمشكلتك هناك، يُرجى الإجابة عن الأسئلة التالية حتى يمكننا إصلاح الأمر.",
+        "note": "لاحظ أن Wheelmap مشروع مفتوح المصدر تديره منظمة لا تهدف إلى الربح وأننا لدينا مصادر محدودة لتطوير التطبيق.",
+        "questions": {
+          "a": "ماذا فعلت؟",
+          "b": "ماذا توقعت أن يحدث؟",
+          "c": "ماذا حدث بدلاً من ذلك؟"
+        },
+        "submit_button": "تقديم",
+        "title": "بلغ عن مشكلة"
+      }
+    }
   },
   "date": {
     "abbr_day_names": [
@@ -653,15 +670,15 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   },
   "faq": {
     "answers": {
-      "0": "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!",
-      "1": "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask.",
-      "2": "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
+      "0": "يمكنك دائماً تغيير وسم مكان ما بنفسك. فقط اختر الوسم الصحيح و\"حفظ\" - انتهى الأمر!",
+      "1": "كمستخدم سجل دخوله، يمكنك أن تضيف / تصحح كل التفاصيل الخاصة بالمكان. انقر على \"تحرير\" وصحح أو أضف المعلومات في القناع.",
+      "2": "يمكنك إضافة المزيد من المعلومات (مثال، \"هذا المكان به تعلية نقالة\") في القسم الخاص بالتعليق. انقر على \"تحرير\" و\"إضافة تعليق\"."
     },
-    "headline": "Is there a problem with this place?",
+    "headline": "هل هناك مشكلة تخص هذا المكان؟",
     "questions": {
-      "0": "The marking is wrong.",
-      "1": "The details of the place are incorrect or missing.",
-      "2": "I have more information about this place."
+      "0": "وضع الوسم خطأ.",
+      "1": "تفاصيل المكان خاطئة أو مفقودة.",
+      "2": "لدي مزيد من المعلومات عن هذا المكان."
     }
   },
   "flash": {
@@ -736,7 +753,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
+      "description": "Wheelmap.org خريطة على الإنترنت تتيح البحث عن الأماكن التي يمكن الوصول إليها بالمقاعد المتحركة والعثور عليها وتحديدها. شارك بتحديد مواقع الأماكن العامة، مثل الحانات أو المطاعم أو دور العرض أو الأسواق مركزية!",
       "homepage": "الصفحة الرئيسية",
       "keywords": "أماكن يسهل الوصول اليها بالكرسي المتحرك، أضف علامة بحث",
       "search": "بحث",
@@ -759,6 +776,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "press": "صحافة",
       "profile": "الحساب",
       "projects": "قم بالاشتراك",
+      "report_problem": "بلغ عن مشكلة",
       "suggestions": "الإقتراحات",
       "what_is_barrier_free": "ماذا تعني هذة الجملة \"إمكانية الوصول بالكرسي المتحرك\"؟",
       "what_is_wheelmap": "تعرف على ويل ماب ؟"
@@ -799,7 +817,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "عرض على Wheelmap.org",
       "filter": {
         "category": "إختر التصنيف",
         "deselect_all": "عدم الإختيار",
@@ -840,7 +858,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
         "help": "هل وصول الكرسي المتحرك سهل؟ (بادر بتقديم المساعدة)",
         "more": "المزيد..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "التقريب لرؤية المزيد من الأماكن."
     }
   },
   "how?": "كيف ؟",
@@ -922,38 +940,38 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     },
     "new": {
       "form": {
-        "legend": "Location of the place",
-        "location": "Please click on the map where the place is located!",
+        "legend": "موقع المكان",
+        "location": "يُرجى النقر على الخريطة حيث توجد الأماكن!",
         "section": {
           "accessibility": {
             "name": "امكانية الوصول بالكرسي المتحرك",
-            "title": "Information on wheelchair accessibility"
+            "title": "معلومات عن إمكانية الوصول بمقعد متحرك"
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
+            "help": "يمكنك نقل الوسم إلى الموقع الصحيح على الخريطة.",
             "name": "العنوان",
-            "title": "Where is the place?"
+            "title": "أين المكان؟"
           },
           "contact": {
             "name": "للإتصال",
-            "title": "Other contact information"
+            "title": "معلومات أخرى للاتصال"
           },
           "name_category": {
-            "name": "Name and place type",
-            "title": "Give us some initial information about your place:"
+            "name": "اسم المكان ونوعه",
+            "title": "أعطنا بعض المعلومات الأولية عن مكانك:"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "هل كل المعلومات صحيحة؟"
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "لم يتم العثور على أماكن مماثلة.",
+            "go_edit": "المتابعة مع هذا المكان",
+            "go_new": "ليس أي من الأماكن المذكورة أعلاه...",
+            "name": "أماكن مماثلة",
+            "title": "وجدنا أماكن مماثلة قريبة. هل هو أحدها؟"
           }
         },
-        "title": "Add a place"
+        "title": "إضافة مكان"
       },
       "header": {
         "title": "مكان جديد | wheelmap.org"
@@ -971,39 +989,39 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     },
     "node_data": {
       "address": "العنوان:",
-      "contact_details": "Contact details:"
+      "contact_details": "تفاصيل الاتصال:"
     },
     "node_edit": {
       "details": "تفاصيل",
       "edit": "تحرير"
     },
     "node_map": {
-      "map": "Map:"
+      "map": "الخريطة:"
     },
     "node_note": {
-      "comment": "Comment:"
+      "comment": "تعليق:"
     },
     "node_photos": {
-      "add": "Add",
-      "photos_of_this_place": "Photos of this place:",
-      "upload": "Upload"
+      "add": "إضافة",
+      "photos_of_this_place": "صور هذا المكان:",
+      "upload": "تحميل"
     },
     "node_similar": {
-      "similar": "Similar places: %{name}"
+      "similar": "أماكن مماثلة: %{name}"
     },
     "node_status": {
       "accessible_toilet": "كرسي متحرك في المتناول للمرحاض:",
-      "premium": "%{name} says: this place is",
+      "premium": "يقول %{name}: هذا المكان",
       "wheelchair_accessibility": "امكانية الوصول بالكرسي المتحرك:"
     },
     "node_streetview": {
-      "streetview": "Streetview:"
+      "streetview": "منظر للشارع:"
     },
     "show": {
       "header": {
         "meta": {
-          "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
-          "title": "This place is on Wheelmap.org: %{name}"
+          "description": "تبين في Wheelmap. org إن كان هذا المكان يمكن الوصول إليه بمقعد متحرك. أو أضف المزيد من المعلومات والصور إلى المكان.",
+          "title": "هذا المكان على Wheelmap.org: % {اسم}"
         },
         "title": " %{node} مكان : "
       },
@@ -1017,7 +1035,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "share": {
         "email": "بريد الكتروني",
         "facebook": "فيس بوك",
-        "text": "I found this place on Wheelmap.org: %{name}",
+        "text": "وجدت هذا المكان على موقع Wheelmap.org : %{name}",
         "twitter": "تويتر"
       },
       "show-in-osm": "\"أوبن ستريت ماب\""
@@ -1416,22 +1434,26 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
+        "headline": "عفواً، لم يمكننا العثور على مكان يسمى \"%{query}\".",
         "hint": {
-          "example": "<strong>Example:</strong> London, United Kingdom",
-          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
-          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
+          "example": "<strong>مثال:</strong> لندن، المملكة المتحدة",
+          "info": "تعمل خدمتنا للبحث بالمعلومات الخاصة بالاسم و/ أو العنوان فقط. لذلك، يُرجى البحث عن اسم مكان أو عن عنوان، مثال، اسم الشارع و/ أو المدينة. البحث عن نوع المكان، مثال، مطعم أو سينما، لا يفيد!",
+          "work_in_progress": "عملنا بجد لجعل البحث عن أماكن أسهل وبديهياً أكثر في المستقبل."
         },
         "try_this": {
-          "address": "Please provide more <strong>address details</strong>.",
-          "intro": "Try this:",
-          "spell_check": "Check the <strong>spelling</strong> of your input."
+          "address": "يُرجى إعطاء المزيد من <strong> تفاصيل العنوان</strong>.",
+          "intro": "جرب هذا:",
+          "spell_check": "دقق <strong> هجاء</strong> مساهمتك."
         }
       },
       "results": {
         "ticker": {
-          "one": "%{count} result:",
-          "other": "%{count} results:"
+          "few": "%{count} نتيجة:",
+          "many": "%{count} نتيجة:",
+          "one": "%{count} نتيجة:",
+          "other": "%{count} نتيجة:",
+          "two": "%{count} نتيجة:",
+          "zero": "%{count} نتيجة:"
         }
       },
       "search": {
@@ -1440,9 +1462,9 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
-      "info": "Our search service was temporarily not available.",
-      "repeat_search": "Retry search"
+      "headline": "عفواً، حدث خطأ ما",
+      "info": "خدمة البحث الخاصة بنا غير متوفرة مؤقتاً.",
+      "repeat_search": "إعادة البحث"
     }
   },
   "splash": {
@@ -1522,62 +1544,78 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": "Your account information"
+          "user_data": "معلومات حسابك"
         },
         "title": "الحساب"
       },
       "newsletter": {
-        "label": "Yes, keep me updated about Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
+        "label": "نعم، أبقني على علم بأحدث ما يخص Wheelmap.",
+        "text": "تتبع أحدث الأخبار مع نشرة أخبار Wheelmap. لا تقلق، لن نغرقك بالرسائل. ستسمع منا مرة كل شهر على الأغلب.",
         "title": "أخبار الموقع"
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
+        "empty": "لم تقم بتحميل أي صور بعد.",
         "title": "صور"
       },
       "show": {
         "greeting": {
-          "anonymously": "Hello there",
-          "personalized": "Hello %{name}"
+          "anonymously": "مرحباً",
+          "personalized": "مرحباً يا %{name}"
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "few": "حُمِلت %{count} صورة",
+            "many": "حُمِلت %{count} صورة",
+            "one": "حُمِلت %{count} صور",
+            "other": "حُمِلت %{count} صورة",
+            "two": "حُمِلت %{count} صورة",
+            "zero": "حُمِلت %{count} صورة"
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "few": "أضيف %{count} مكاناً",
+            "many": "أضيف %{count} مكاناً",
+            "one": "أضيف %{count} مكاناً",
+            "other": "أضيف %{count} مكاناً",
+            "two": "أضيف %{count} مكاناً",
+            "zero": "أضيف %{count} مكاناً"
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "few": "حُررت %{count} أماكن",
+            "many": "حُررت %{count} أماكن",
+            "one": "حُررت %{count} مكاناً",
+            "other": "حُررت %{count} أماكن",
+            "two": "حُررت %{count} أماكن",
+            "zero": "حُررت %{count} أماكن"
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "few": "تم وسم %{count} أماكن",
+            "many": "تم وسم %{count} أماكن",
+            "one": "تم وسم %{count} مكان",
+            "other": "تم وسم %{count} أماكن",
+            "two": "تم وسم %{count} أماكن",
+            "zero": "تم وسم %{count} أماكن"
           },
-          "text": "You have"
+          "text": "لديك"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
-        "title": "Overview"
+        "text_html": "مرحباً،<br>\nمرحباً بك مرة أخرى في Wheelmap.org! يسعدنا وجودك معنا! يمكنك تصفح <a href=\"http://news.wheelmap.org/en/\">مدونتنا</a> أو <a href=\"http://news.wheelmap.org/en/FAQ/\">الأسئلة المتكررة</a> الخاصة بنا إن أردت التعريف على Wheelmap.org بشكل أفضل. أو يمكنك معرفة المزيد عن <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">المشاريع</a> التي نقدمها في Wheelmap.org وكيف يمكنك المشاركة معنا.<br>\nللبقاء على اتصال، يمكنك الاشتراك في نشرة أخبارنا الشهرية وتتبعنا عبر <a href=\"https://www.facebook.com/wheelmap\">فيس بوك</a> و<a href=\"https://twitter.com/wheelmap\">تويتر</a>. نحن نتطلع لسماع رأيك وبدء حوار معك !<br> \nوالآن، بحث سعيد في الخريطة!<br> \nفريق Wheelmap ",
+        "title": "نظرة عامة"
       },
       "widget": {
-        "categories": "Show category filter",
-        "center": "Map area",
-        "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "categories": "إظهار مرشح الفئة",
+        "center": "مساحة الخريطة",
+        "empty_center": "ابحث عن مركز الخريطة...",
+        "empty_provider": "اختيار مقدم",
+        "height": "الارتفاع",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
-          "preview": "Preview",
+          "embed": "تضمين رمز",
+          "embed_explanation": "يمكن تغيير مواصفات خط العرض (<code> خط العرض</code>، خط طول <code> خط الطول</code> ومستوى التكبير <code>التكبير</code> في الكود أعلاه وبذلك تعديل الجزء من الخريطة (القطعة) طبقاً للموقع الذي تريد إظهاره.",
+          "general": "أنشئ ودجة Wheelmap الخاصة بك وضمنها في موقعك أو مدونتك.",
+          "preview": "نظرة عامة",
           "settings": "الإعدادات"
         },
-        "providers": "Provider",
-        "title": "Widget",
-        "width": "Width"
+        "providers": "المقدم",
+        "title": "ودجة",
+        "width": "العرض"
       }
     }
   },

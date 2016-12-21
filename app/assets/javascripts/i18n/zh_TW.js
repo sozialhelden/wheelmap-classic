@@ -314,6 +314,23 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
     "close": "關閉",
     "skip": "跳過"
   },
+  "community_support_form": {
+    "new": {
+      "form": {
+        "describe": "寄訊息請用英文或是德文。",
+        "flash_after_submit": "謝謝你聯絡我們，我們的客服團隊會儘快回應。",
+        "header_text_html": "請先看<a href=\"https://news.wheelmap.org/en/faq/\">常見詢問</a>，如果你的問題解答沒有在上面，請回答問題讓我們新增。",
+        "note": "注意Wheelmap是由非營利組織經營的開源專案，我們放在app開發的資源有限。",
+        "questions": {
+          "a": "你做了什麼？",
+          "b": "你預期會發生什麼事？",
+          "c": "結果發生什麼事？"
+        },
+        "submit_button": "提及",
+        "title": "回報一個問題"
+      }
+    }
+  },
   "date": {
     "abbr_day_names": [
       "Sun",
@@ -759,6 +776,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "press": "文宣",
       "profile": "檔案",
       "projects": "參與其中",
+      "report_problem": "回報一個問題",
       "suggestions": "建議",
       "what_is_barrier_free": "「輪椅無障礙」是什麼意思？",
       "what_is_wheelmap": "Wheelmap 是什麼？"

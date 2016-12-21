@@ -315,6 +315,23 @@ I18n.translations["ro"] = I18n.extend((I18n.translations["ro"] || {}), {
     "close": "close",
     "skip": "skip"
   },
+  "community_support_form": {
+    "new": {
+      "form": {
+        "describe": "Please write to us in English or German.",
+        "flash_after_submit": "Thank you for contacting us. Our support team will get back to you as soon as possible.",
+        "header_text_html": "Please check the <a href=\"https://news.wheelmap.org/en/faq/\">frequently asked questions</a> for help first. If the solution to your problem is not there, please answer the following questions so we can fix it.",
+        "note": "Note that Wheelmap is an open-source project run by a non-profit organization and we have limited resources for the app development.",
+        "questions": {
+          "a": "What did you do?",
+          "b": "What did you expect would happen?",
+          "c": "What happened instead?"
+        },
+        "submit_button": "Submit",
+        "title": "Raportează probleme"
+      }
+    }
+  },
   "date": {
     "abbr_day_names": [
       "Sun",
@@ -760,6 +777,7 @@ I18n.translations["ro"] = I18n.extend((I18n.translations["ro"] || {}), {
       "press": "Press",
       "profile": "Profile",
       "projects": "Implicați-vă",
+      "report_problem": "Raportează probleme",
       "suggestions": "Suggestions",
       "what_is_barrier_free": "What does \"wheelchair accessible\" mean?",
       "what_is_wheelmap": "What is Wheelmap?"
