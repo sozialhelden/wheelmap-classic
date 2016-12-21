@@ -10,10 +10,15 @@ fi:
         address_housenumber: Talon numero
         address_postcode: Postinumero
         address_city: Kaupunki
+  community_support_form:
+    new:
+      form:
+        title: Ilmoita viasta
   header:
     navigation:
       map: Kartta
       projects: Osallistu
+      report_problem: Ilmoita viasta
   nodes:
     new:
       form:

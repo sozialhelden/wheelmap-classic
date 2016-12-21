@@ -1,4 +1,11 @@
 tlh:
+  community_support_form:
+    new:
+      form:
+        title: Report a problem
+  header:
+    navigation:
+      report_problem: Report a problem
   nodes:
     show:
       share:

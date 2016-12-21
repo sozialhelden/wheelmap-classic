@@ -1,4 +1,11 @@
 hi:
+  community_support_form:
+    new:
+      form:
+        title: समस्या की रिपोर्ट कीजिए
+  header:
+    navigation:
+      report_problem: समस्या की रिपोर्ट कीजिए
   nodes:
     show:
       share:

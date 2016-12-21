@@ -12,6 +12,19 @@ cs:
         address_housenumber: Číslo domu
         address_postcode: PSČ
         address_city: Město
+  community_support_form:
+    new:
+      form:
+        title: Nahlaste problém
+        header_text_html: "Pokud potřebujete pomoc, nejdřív hledejte v <a href=\"https://news.wheelmap.org/en/faq/\">nejčastěji kladených otázkách</a>, prosím. Pokud v nich nenaleznete řešení Vašeho problému, odpovězte prosím na následovní otázky, abychom ho mohli odstranit."
+        questions:
+          a: Co jste dělal?
+          b: Co jste čekal, že se stane?
+          c: Co se ve skutečnosti událo?
+        note: Nezapomeňte, že Wheelmap je projekt s otevřeným zdrojem a je provozován neziskovou organizací a na vývoj aplikace nemáme dostatek prostředků.
+        describe: Napište nám v angličtině nebo němčině, prosím.
+        flash_after_submit: Děkujeme Vám, že jste nás kontaktoval. Náš podpůrný tým se Vám ozve hned jak to bude možné.
+        submit_button: Odeslat
   faq:
     answers:
       0: Kdykoliv můžete sami změnit označení místa. Jednoduše zvolte správné označení a dejte "Uložit" - hotovo!
@@ -29,6 +42,7 @@ cs:
       contact: Kontakt
       map: Mapa
       projects: Zapojte se
+      report_problem: Nahlaste problém
     toolbar:
       categories: Kategorie
     meta:

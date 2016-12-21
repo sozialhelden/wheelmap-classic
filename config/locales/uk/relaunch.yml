@@ -12,6 +12,10 @@ uk:
         address_housenumber: Номер будинку
         address_postcode: Поштовий індекс
         address_city: Місто
+  community_support_form:
+    new:
+      form:
+        title: Повідомити про проблему
   faq:
     answers:
       0: Ви завжди можете змінити доступність місця самі. Просто виберіть відповідний варіант і натисніть "Зберегти".
@@ -29,6 +33,7 @@ uk:
       contact: Контакт
       map: Карта
       projects: Долучитися
+      report_problem: Повідомити про проблему
     toolbar:
       categories: Категорії
     meta:

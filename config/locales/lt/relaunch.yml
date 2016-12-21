@@ -11,6 +11,10 @@ lt:
         address_housenumber: Namo numeris
         address_postcode: Pašto kodas
         address_city: Miestas
+  community_support_form:
+    new:
+      form:
+        title: Pranešti apie problemą
   faq:
     answers:
       0: Jūs visuomet galite keisti vietos žymėjimą patys. Tiesiog pasirinkite tinkamą žymėjimą ir spauskite "Išsaugoti" - atlikta!
@@ -26,6 +30,7 @@ lt:
       choose_language: Pasirinkti kalbą
       contact: Kontaktai
       map: Žemėlapis
+      report_problem: Pranešti apie problemą
     toolbar:
       categories: Kategorijos
     meta:

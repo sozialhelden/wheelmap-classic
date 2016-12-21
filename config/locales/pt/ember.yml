@@ -1,4 +1,21 @@
 pt:
+  models:
+    category:
+      prompt: "Escolha uma categoria"
+    node_type:
+      prompt: "Escolha um tipo"
+    node:
+      info_edit_position: "A localização irá aparecer no Wheelmap como mostrado acima. Se o marcador não estiver no local correto, pode <a href=\"%{url}\">alterar a posição deste no site do OpenStreetMap.</a>"
+      mail:
+        subject: "[Wheelmap] Problema com %{headline}"
+        body: "(Por favor escreva apenas em Inglês ou Alemão.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:"
   actions:
+    send: Enviar
     save: Guardar
+    cancel: Cancelar
     next: Seguinte
+  errors:
+    models:
+      node:
+        website:
+          invalid: "O endereço do sítio web não é válido."

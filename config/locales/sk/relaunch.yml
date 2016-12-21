@@ -10,6 +10,10 @@ sk:
         address_street: Ulica
         address_housenumber: Číslo domu
         address_city: Mesto
+  community_support_form:
+    new:
+      form:
+        title: Nahláste problém
   faq:
     answers:
       0: Sami môžete kedykoľvek zmeniť označenie miesta. Jednoducho vyberte správne označenie a dajte "Uložiť" - hotovo!
@@ -27,6 +31,7 @@ sk:
       contact: Kontakt
       map: Mapa
       projects: Zapojte sa
+      report_problem: Nahláste problém
     toolbar:
       categories: Kategórie
     meta:

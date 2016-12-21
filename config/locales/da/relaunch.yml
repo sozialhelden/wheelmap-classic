@@ -12,6 +12,10 @@ da:
         address_housenumber: Husnummer
         address_postcode: Postnummer
         address_city: By
+  community_support_form:
+    new:
+      form:
+        title: Fejlrapporterer et problem
   faq:
     answers:
       0: Du kan altid ændre markeringen af et sted selv. Vælg højre markering og "Gem" færdig!
@@ -29,6 +33,7 @@ da:
       contact: Kontakt
       map: Kort
       projects: Bliv involveret
+      report_problem: Fejlrapporterer et problem
     toolbar:
       categories: kategorier
     meta:

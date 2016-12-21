@@ -12,6 +12,19 @@ it:
         address_housenumber: Numero civico
         address_postcode: Cap
         address_city: Città
+  community_support_form:
+    new:
+      form:
+        title: Segnala un problema
+        header_text_html: "Per favore, controlla per prima cosa le <a href=\"https://news.wheelmap.org/en/faq/\">domande frequenti</a> se hai bisogno di aiuto. Se non trovi lì la soluzione al tuo problema, per favore rispondi alle seguenti domandi per aiutarci a risolverlo. "
+        questions:
+          a: Che cosa hai fatto?
+          b: Che cosa ti aspettavi che accadesse?
+          c: Cosa è successo invece?
+        note: 'Nota che Wheelmap è un progetto open-source diretto da una organizzazione no-profit e per questo abbiamo risorse limitate per lo sviluppo dell''applicazione. '
+        describe: 'Per favore, scrivici in English o German. '
+        flash_after_submit: 'Grazie per averci contattato. Il nostro team ti risponderà il più presto possibile. '
+        submit_button: Invia
   faq:
     answers:
       0: Puoi sempre modificare la "qualifica" del posto. Scegli la "qualifica" corretta e premi "Salva" - fatto!
@@ -29,6 +42,7 @@ it:
       contact: Contatti
       map: Mappa
       projects: Partecipa
+      report_problem: Segnala un problema
     toolbar:
       categories: Categorie
     meta:

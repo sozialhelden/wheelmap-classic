@@ -1,4 +1,11 @@
 is:
+  community_support_form:
+    new:
+      form:
+        title: Tilkynntu villu
+  header:
+    navigation:
+      report_problem: Tilkynntu villu
   nodes:
     show:
       share:

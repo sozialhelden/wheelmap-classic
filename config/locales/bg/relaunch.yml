@@ -10,6 +10,10 @@ bg:
         address_street: Улица
         address_housenumber: Номер на къщата
         address_city: Град
+  community_support_form:
+    new:
+      form:
+        title: Съобщи за проблем
   faq:
     answers:
       0: Винаги можеш да промениш маркировката на това място самостоятелно. Просто избери правилния символ и натисни "Запази" - готово!
@@ -27,6 +31,7 @@ bg:
       contact: Контакт
       map: Карта
       projects: Включете се
+      report_problem: Съобщи за проблем
     toolbar:
       categories: Категории
     meta:

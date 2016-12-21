@@ -12,6 +12,10 @@ el:
         address_housenumber: Αριθμός σπιτιού
         address_postcode: Ταχυδρομικός τομέας
         address_city: Πόλη
+  community_support_form:
+    new:
+      form:
+        title: Report a problem
   faq:
     answers:
       0: Μπορείτε πάντα να αλλάξετε την σήμανση της θέσης σας. Απλά επιλέξτε την σωστη σήμανση και "Αποθήκευση" - έγινε!
@@ -29,6 +33,7 @@ el:
       contact: Επικοινωνία
       map: Χάρτης
       projects: Συμμετέχετε
+      report_problem: Report a problem
     toolbar:
       categories: Κατηγορίες
     meta:

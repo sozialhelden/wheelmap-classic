@@ -12,6 +12,19 @@ sv:
         address_housenumber: Husnummer
         address_postcode: Postnummer
         address_city: Ort
+  community_support_form:
+    new:
+      form:
+        title: Rapportera ett problem
+        header_text_html: "Vänligen se först <a href=\"https://news.wheelmap.org/en/faq/\">vanliga frågor</a> för hjälp. Om lösningen på ditt problem inte finns där, så var god besvara följande frågor så att vi kan lösa det."
+        questions:
+          a: Vad gjorde du?
+          b: Vad förväntade du dig skulle hända?
+          c: Vad skedde istället?
+        note: Notera att Wheelmap är ett projekt med öppen källkod drivet av en ideell organisation och vi har begränsade resurser för utveckling av appen.
+        describe: Vänligen skriv till oss på engelska eller tyska.
+        flash_after_submit: Tack för att du kontaktar oss. Vårt supportteam kommer att återkomma till dig snarast möjligt.
+        submit_button: Skicka in
   faq:
     answers:
       0: Du kan alltid ändra betyget på en plats själv. Välj bara rätt betyg och "Spara" - klart!
@@ -29,6 +42,7 @@ sv:
       contact: Kontakt
       map: Karta
       projects: Bli inblandad
+      report_problem: Rapportera ett problem
     toolbar:
       categories: Kategorier
     meta:

@@ -12,6 +12,19 @@ zh_TW:
         address_housenumber: 門牌號碼
         address_postcode: 郵遞區號
         address_city: 城市
+  community_support_form:
+    new:
+      form:
+        title: 回報一個問題
+        header_text_html: "請先看<a href=\"https://news.wheelmap.org/en/faq/\">常見詢問</a>，如果你的問題解答沒有在上面，請回答問題讓我們新增。"
+        questions:
+          a: 你做了什麼？
+          b: 你預期會發生什麼事？
+          c: 結果發生什麼事？
+        note: 注意Wheelmap是由非營利組織經營的開源專案，我們放在app開發的資源有限。
+        describe: 寄訊息請用英文或是德文。
+        flash_after_submit: 謝謝你聯絡我們，我們的客服團隊會儘快回應。
+        submit_button: 提及
   faq:
     answers:
       0: 您可以隨時更改自己的地方的標記。只要選擇合適的標記和“保存” - 完成了！
@@ -29,6 +42,7 @@ zh_TW:
       contact: 聯繫我們
       map: 地圖
       projects: 參與其中
+      report_problem: 回報一個問題
     toolbar:
       categories: 分類
     meta:

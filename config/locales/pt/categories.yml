@@ -5,8 +5,11 @@ pt:
       education: 'Ecucação '
       food: Comida
       government: Governo
+      health: Saúde
       leisure: Prazer
       misc: Outros
+      money_post: "Banco / Estação de Correios"
+      public_transfer: "Transporte público"
       shopping: Shopping
       sport: Desporto
       tourism: Turismo
@@ -18,12 +21,14 @@ pt:
         camp_site: "Acampamento"
         caravan_site: "Sitio de caravana"
         chalet: Chalet
+        dormitory: Residência universitária/dormitório
         guest_house: "Guest House"
         hostel: Pousada
         hotel: Hotel
         motel: Motel
       education:
         college: Colégio
+        driving_school: "Escola de condução"
         kindergarten: Jardim escola
         library: Biblioteca
         museum: Museu
@@ -35,26 +40,55 @@ pt:
         cafe: café
         drinking_water: "Agua potável"
         fast_food: "Fast food"
+        ice_cream: "Gelataria / geladaria"
         pub: Pub
         restaurant: Restaurante
       government:
         courthouse: Tribunal
         embassy: Embaixada
+        employment_agency: "Agência de emprego"
+        government: "Organismo governamental"
+        police: Polícia
         public_building: "Edificio público"
+        townhall: Câmara Municipal / Junta de Freguesia
       health:
+        alternative: "Praticante de medicinas alternativas"
+        dentist: Dentista
+        doctors: Médico
+        hearing_aids: "Vendedor de aparelhos auditivos"
         hospital: Hospital
+        medical_supply: "Equipamento médico"
+        occupational_therapist: "Terapeuta ocupacional"
         pharmacy: Farmácia
+        physiotherapist: Fisioterapeuta
+        psychotherapist: Psicoterapeuta
+        social_facility: "Infraestruturas sociais"
+        speech_therapist: "Terapeuta da fala"
         veterinary: Veterenário
       leisure:
         arena: Arena
+        brothel: Bordel
+        casino: Casino
         cinema: Cinema
+        community_centre: "Centro comunitário"
         gallery: Galeria
+        massage: "SPA e massagens"
         nightclub: Clube Nocturno
+        playground: Parque infantil
         sauna: Sauna
+        stripclub: Clube de striptease
+        tattoo: "Tatuador"
         theatre: Teatro
         zoo: Zoológico
       misc:
+        association: Associação
+        company: "Empresa (escritório)"
+        estate_agent: "Imobiliária"
+        insurance: Seguradora
+        lawyer: Advogado
+        ngo: "Organização não-governamental"
         place_of_worship: "Lugar de oração "
+        political_party: "Sede/filial de partido político"
         toilets: Casa de banho
       money_post:
         atm: Caixa Multibanco
@@ -66,6 +100,7 @@ pt:
         aerodrome: Aeroporto
         bicycle_parking: "Parque para bicicletas"
         bicycle_rental: "Aluguer de bicicletas"
+        boatyard: Estaleiro naval
         bus_station: "Estação de Autocarros"
         bus_stop: "Estação de Autocarros"
         cable_car: "Teleférico"
@@ -86,29 +121,66 @@ pt:
         tram_stop: "Estação de eléctrico"
       shopping:
         alcohol: Licor
+        antiques: Antiguidades
+        art: "Galeria de arte"
         bakery: Padaria
+        beauty: "Salão de beleza"
         beverages: Bebidas
         bicycle: "Loja de bicicletas"
         books: Livros
         butcher: Talho
+        car_repair: "Oficina de automóveis"
+        car_shop: "Loja de automóveis"
+        chemist: Parafarmácia
         clothes: Roupa
         computer: Computador
+        confectionery: "Loja de guloseimas"
         convenience: Conveniência
+        copyshop: "Loja de cópias/fotocópias"
+        deli: Loja de artigos finos e iguarias
         department_store: "Shopping Center"
         doityourself: "Faça você mesmo"
         dry_cleaning: "Limpeza a seco"
         electronics: Eletrónica
+        erotic: "Loja de artigos eróticos"
+        fabric: "Loja de tecidos"
+        farm_shop: "Loja de quinta/fazenda/produtos locais"
         florist: Florista
+        funeral_directors: "Funerária"
         furniture: Móvéis
+        garden_centre: "Loja de jardinajem"
+        gift: "Loja de lembranças/presentes"
+        greengrocer: Loja de frutas e verduras
         hairdresser: Cabeleireiro
         hardware: Hardware
+        interior_decoration: "Loja de design de interiores"
+        jewelry: Joalharia
         kiosk: Quisque
         laundry: Lavandaria
         mall: "Shopping Center"
+        mobile_phone: "Loja de telemóveis"
+        music: "Loja de música"
+        musical_instrument: "Loja de instrumentos musicais"
+        newsagent: "Banca de jornais e revistas"
         optician: Óptica
+        organic: "Loja de produtos orgânicos"
+        outdoor: "Loja de artigos para o ar livre"
+        pet: "Loja de animais"
+        photo: Loja de fotografia/equipamento
+        second_hand: "Artigos em segunda mão"
         shoes: Sapatos
+        sports: Artigos desportivos
+        stationery: Artigos de escritório
         supermarket: Supermercado
+        tailor: Alfaiate
+        tea: "Loja de chá"
+        tobacco: "Tabacaria"
+        toys: Brinquedos
+        travel_agency: "Agência de viagens"
+        variety_store: "Loja de descontos / preço fixo"
+        video: "Videoclube"
       sport:
+        pitch: "Campo desportivo"
         sports_centre: "Centro de desporto"
         stadium: Estádio
         swimming: Nadar

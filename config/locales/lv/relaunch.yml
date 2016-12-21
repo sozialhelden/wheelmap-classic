@@ -1,4 +1,11 @@
 lv:
+  community_support_form:
+    new:
+      form:
+        title: Ziņot par problēmu
+  header:
+    navigation:
+      report_problem: Ziņot par problēmu
   nodes:
     show:
       share:

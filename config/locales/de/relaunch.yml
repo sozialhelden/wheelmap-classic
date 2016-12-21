@@ -16,16 +16,14 @@ de:
     new:
       form:
         title: Problem melden
-        # Escape ':' with quotes
-        header_text_html: "Manchmal läuft etwas nicht rund. Bitte schaue dir unsere <a href=\"https://news.wheelmap.org/faq\">häufig gestellten Fragen und Antworten</a> (FAQs) an, bevor du uns schreibst. Wenn du dort keine Hilfe für dein Problem findest, beantworte bitte die folgenden drei Fragen, damit wir das Problem lösen können."
+        header_text_html: "Manchmal läuft etwas nicht rund. Bitte schaue dir unsere <a href=\"https://news.wheelmap.org/faq/\">häufig gestellten Fragen und Antworten (FAQs)</a> an, bevor du uns schreibst. Wenn du dort keine Hilfe für dein Problem findest, beantworte bitte die folgenden drei Fragen, damit wir das Problem lösen können."
         questions:
           a: Was genau hast du gemacht?
           b: Welches Ergebnis hättest du erwartet?
           c: Was ist stattdessen passiert?
-        # Escape ':' with quotes
         note: 'Bitte beachte: Die Wheelmap ist ein Projekt eines gemeinnützigen Vereins und wir haben nur begrenzte Ressourcen, um die App weiterzuentwickeln.'
-        describe: Bitte schreibe uns in Englisch oder Deutsch.
-        flash_after_submit: Vielen Dank, dass du uns kontaktiert hast. Unser Support Team meldet sich so bald wie möglich bei dir zurück.
+        describe: Bitte schreibe uns in Deutsch oder Englisch.
+        flash_after_submit: Vielen Dank, dass du uns kontaktiert hast! Unser Support-Team meldet sich so bald wie möglich bei dir zurück.
         submit_button: Abschicken
   faq:
     answers:

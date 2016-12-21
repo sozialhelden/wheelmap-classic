@@ -12,6 +12,19 @@ ja:
         address_housenumber: 家の番号
         address_postcode: 郵便番号
         address_city: 都道府県
+  community_support_form:
+    new:
+      form:
+        title: 問題を報告
+        header_text_html: "ヘルプが必要な場合、まず<a href=\"https://news.wheelmap.org/en/faq/\">よくあるご質問</a>を確認してください。解決策が見つからない場合は弊社にて修正致しますので下記の質問にお答えください。"
+        questions:
+          a: 何をしましたか？
+          b: 何が起こることを期待していましたか？
+          c: 代わりに何が起こりましたか？
+        note: Wheelmapは非営利団体が運営するオープンソースのプロジェクトであり、弊社はアプリ開発用のリソースを制限しておりますのでご了承ください。
+        describe: English又はGermanでお書きください。
+        flash_after_submit: お問い合わせを頂きありがとうございます。弊社サポートチームはなるべく早くご返信致します。
+        submit_button: 提出
   faq:
     answers:
       0: あなたが設定したマーキングはいつでも変更できます。正しいマーキングを選んで"Save"を押せば完了です！
@@ -29,6 +42,7 @@ ja:
       contact: 連絡先
       map: 地図
       projects: 参加する
+      report_problem: 問題を報告
     toolbar:
       categories: カテゴリ
     meta:

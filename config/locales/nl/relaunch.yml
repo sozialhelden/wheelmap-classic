@@ -10,6 +10,10 @@ nl:
         address_street: Straat
         address_housenumber: Huisnummer
         address_city: Stad
+  community_support_form:
+    new:
+      form:
+        title: Geef een probleem op
   faq:
     answers:
       0: U kunt altijd de markering van een plaats zelf veranderen. Kies gewoon de juiste markering en "Save" - klaar!
@@ -24,6 +28,7 @@ nl:
       contact: Contact
       map: Plattegrond
       projects: Doe mee
+      report_problem: Geef een probleem op
     toolbar:
       categories: Categorieën
     meta:

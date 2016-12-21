@@ -12,6 +12,10 @@ hu:
         address_housenumber: Házszám
         address_postcode: Irányítószám
         address_city: Város
+  community_support_form:
+    new:
+      form:
+        title: Hiba jelentése
   faq:
     answers:
       0: Bármikor megváltoztathatod egy hely besorolását. Csak válaszd ki a megfelelő színjelzést és kattints a "Mentés" gombra - Kész is!
@@ -29,6 +33,7 @@ hu:
       contact: Elérhetőség
       map: Térkép
       projects: Kapcsolódj be
+      report_problem: Hiba jelentése
     toolbar:
       categories: Kategóriák
     meta:
