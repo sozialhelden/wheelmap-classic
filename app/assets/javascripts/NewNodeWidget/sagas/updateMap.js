@@ -22,23 +22,22 @@ export function* updateMap(node) {
     }
 
     // It can happen that we receive multiple results for an address
-    // We need to find out which is the correct one
-    const feature = features.find(f => f.properties.housenumber === node.get('housenumber') &&
-                        f.properties.street === node.get('street'));
+    // We then ask the user to pick the correct one
 
-    if(feature === undefined) {
-      return;
+    if(features.length === 1) {
+      const feature = features[0];
+      const [ lon, lat ] = feature.geometry.coordinates;
+      const center = { lat, lon };
+
+      yield put(actions.changeMapCenter(center));
+
+      node = yield call([ node, node.merge ], center);
+
+      yield put(actions.changeNode(node));
+      yield put(actions.loadNodeCenter(false));
+    } else {
+      yield put(actions.renderPhotonResults(features));
     }
-
-    const [ lon, lat ] = feature.geometry.coordinates;
-    const center = { lat, lon };
-
-    yield put(actions.changeMapCenter(center));
-
-    node = yield call([ node, node.merge ], center);
-
-    yield put(actions.changeNode(node));
-    yield put(actions.loadNodeCenter(false));
   } catch (error) {
     if (error instanceof SagaCancellationException) {
       return;

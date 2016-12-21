@@ -16,6 +16,7 @@ export const UPDATE_MAP = 'UPDATE_MAP';
 export const SAVE_NODE = 'SAVE_NODE';
 export const LOAD_NODE_ADDRESS = 'LOADING_NODE_ADDRESS';
 export const LOAD_NODE_CENTER = 'LOADING_NODE_CENTER';
+export const RENDER_PHOTON_RESULTS = 'RENDER_PHOTON_RESULTS';
 
 export const enterContent = createAction(ENTER_CONTENT, (nextState, replace) => ({
   section: nextState.params.section,
@@ -38,3 +39,4 @@ export const setSimilar = createAction(SET_SIMILAR);
 export const saveNode = createAction(SAVE_NODE);
 export const loadNodeAddress = createAction(LOAD_NODE_ADDRESS);
 export const loadNodeCenter = createAction(LOAD_NODE_CENTER);
+export const renderPhotonResults = createAction(RENDER_PHOTON_RESULTS);

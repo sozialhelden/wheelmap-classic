@@ -87,6 +87,51 @@ describe('updateMap', () => {
       .toBe(true);
   });
 
+  it('delays execution, geocodes address and returns results if Photon returns more than one result', () => {
+    expect(gen.next())
+      .toPut(actions.loadNodeCenter(true));
+
+    expect(gen.next())
+      .toCall(delay, 300);
+
+    expect(gen.next())
+      .toCall([ node, node.address ]);
+
+    const address = 'Node address';
+
+    expect(gen.next(address))
+      .toCall(geocode, address);
+
+    const centerCoords = [{
+      lat: 14.5,
+      lon: 13.5
+    }, {
+      lat: 14.55,
+      lon: 13.55
+    }];
+
+    const features = [{
+      geometry: {
+        coordinates: [ centerCoords[0].lon, centerCoords[0].lat ]
+      },
+      properties: {
+        housenumber: 23,
+        street: 'example street'
+      }
+    }, {
+      geometry: {
+        coordinates: [ centerCoords[1].lon, centerCoords[1].lat ]
+      },
+      properties: {
+        housenumber: 230,
+        street: 'example street'
+      }
+    }];
+
+    expect(gen.next(features))
+      .toPut(actions.renderPhotonResults(features));
+  });
+
   it('delays execution, geocodes address and stops if no feature was found', () => {
     expect(gen.next())
       .toPut(actions.loadNodeCenter(true));
