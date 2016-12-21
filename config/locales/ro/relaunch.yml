@@ -8,9 +8,14 @@ ro:
         website: Website
         phone: Telefon
         address_housenumber: Numărul casei
+  community_support_form:
+    new:
+      form:
+        title: Raportează probleme
   header:
     navigation:
       projects: Implicați-vă
+      report_problem: Raportează probleme
   nodes:
     new:
       form:

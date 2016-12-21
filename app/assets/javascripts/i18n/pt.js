@@ -1,10 +1,10 @@
 I18n.translations || (I18n.translations = {});
 I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   "actions": {
-    "cancel": "Cancel",
+    "cancel": "Cancelar",
     "next": "Seguinte",
     "save": "Guardar",
-    "send": "Send"
+    "send": "Enviar"
   },
   "active_admin": {
     "access_denied": {
@@ -189,7 +189,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
         "address_postcode": "Código postal",
         "address_street": "Rua",
         "name": "Nome",
-        "note": "Note",
+        "note": "Nota",
         "phone": "Telefone",
         "type": "Tipo",
         "website": "Website"
@@ -312,7 +312,24 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   },
   "common": {
     "close": "fechar",
-    "skip": "skip"
+    "skip": "ignorar"
+  },
+  "community_support_form": {
+    "new": {
+      "form": {
+        "describe": "Por favor escreva-nos em Inglês Ou Alemão.",
+        "flash_after_submit": "Obrigado por nos contactar. A nossa equipa de suporte irá tratar do problema mal possa.",
+        "header_text_html": "Por favor consulte primeiro as <a href=\"https://news.wheelmap.org/en/faq/\">perguntas frequentes</a> para servir de ajuda. Se a solução para o seu problema não estiver descrito, por favor responda às seguintes questões para que nós possamos corrigir o problema.",
+        "note": "Note que o Wheelmap é um projecto de código-aberto administrado por uma organização sem fins lucrativos e temos recursos limitados para o desenvolvimento de aplicações.",
+        "questions": {
+          "a": "O que fez?",
+          "b": "O que era esperado que acontecece?",
+          "c": "O que ocorreu em vez disso?"
+        },
+        "submit_button": "Enviar",
+        "title": "Report a problem"
+      }
+    }
   },
   "date": {
     "abbr_day_names": [
@@ -434,123 +451,123 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "A sua conta está confirmada. Está agora ligado à sua conta.",
-      "link": "You didn't receive confirmation instructions?",
+      "link": "Não recebeu nenhumas instruções de confirmação?",
       "send_instructions": "Receberá dentro de minutos um e-mail com intruções de como confirmar a sua conta.",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
+      "send_paranoid_instructions": "Se a sua conta existir, irá receber um email em poucos minutos com instruções sobre a confirmação da sua conta."
     },
     "destroy": {
       "confirm": "Tem a certeza?",
-      "headline": "Delete account",
-      "link": "Apagar agora"
+      "headline": "Eliminar conta",
+      "link": "Eliminar agora"
     },
     "edit": {
       "form": {
         "labels": {
-          "current_password": "Palavra passe actual <i> (precisamos do seguinte para confirmar a alteração) </i>",
+          "current_password": "Palavra-passe atual <i> (precisamos dela para confirmar as suas alterações) </i>",
           "email": "E-mail",
-          "password": "Palavra passe <i> (deixar em branco se não quiser mudar) </i>",
+          "password": "Palavra-passe <i> (deixar em branco se não quiser mudar) </i>",
           "password_confirmation": "Repita a palavra passe"
         },
-        "submit": "Gravar mudanças"
+        "submit": "Guardar alterações"
       },
-      "headline": "Opções da conta"
+      "headline": "Editar conta"
     },
     "failure": {
-      "already_authenticated": "You are already signed in.",
-      "inactive": "Your account has not been activated yet.",
-      "invalid": "Palavra passe ou Email inválido. ",
-      "invalid_token": "d",
+      "already_authenticated": "Já iniciou a sessão.",
+      "inactive": "A sua conta ainda não foi ativada.",
+      "invalid": "Palavra-passe ou email inválido.",
+      "invalid_token": "Token de autenticação inválido",
       "last_attempt": "You have one more attempt before your account will be locked.",
-      "locked": "A sua conta está bloqueada.",
+      "locked": "A sua conta está bloqueada",
       "not_found_in_database": "Invalid email or password.",
-      "timeout": "Your session has expired, please sign in again to continue.",
-      "unauthenticated": "Voçê tem de se registrar antes de poder continuar.  ",
-      "unconfirmed": "Voçê tem de confirmar a sua conta antes de continuar."
+      "timeout": "A sua sessão expirou, por favor entre de novo na sua conta.",
+      "unauthenticated": "Tem de se registar antes de poder continuar",
+      "unconfirmed": "Tem de confirmar a sua conta antes de continuar."
     },
     "mailer": {
       "confirmation_instructions": {
-        "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
+        "landing_page": "Por favor clique no link que se encontra no email que lhe enviámos. Se não recebeu um email nosso, por favor confirme primeiro se por acaso não foi parar à pasta de spam do seu email. Se realmente não recebeu retorne à página de entrar na sua conta e tente de novo para que lhe seja enviado um novo email.",
         "subject": "Confirmação das instruções"
       },
       "reset_password_instructions": {
-        "subject": "Restabelecer as intruções sobre a palavra passe"
+        "subject": "Restabelecer as instruções sobre a palavra-passe"
       },
       "unlock_instructions": {
-        "subject": "Unlock instructions"
+        "subject": "Instruções de desbloqueio"
       }
     },
     "mandatory": "* campo obrigatório",
     "omniauth_callbacks": {
-      "failure": "não pôde ser confirmado de  %{kind} porque \"%{reason}",
-      "permission_missing": "You did not grant the required permission.",
-      "success": "Autorizado com sucesso de %{kind} conta"
+      "failure": "A autorização com %{kind} falhou. Erro: \"%{reason}.",
+      "permission_missing": "Não forneceu a permissão necessária.",
+      "success": "Autenticação bem sucedida com %{kind}."
     },
     "password_recovery": {
       "form": {
         "labels": {
           "email": "E-mail"
         },
-        "submit": "Restabelecer a sua palavra passe"
+        "submit": "Restabelecer a palavra-passe"
       },
-      "headline": "Esqueceu-se da senha?"
+      "headline": "Esqueceu-se da palavra-passe?"
     },
     "password_reset": {
       "email": {
-        "comment": "Se não pediu para alterar a sua palavra passe, por favor ignore este mail <br/>. A sua palavra passe não será alterada a não ser que carregue no seguinte link.",
-        "headline": "Bem vindo %{email}",
-        "link": "Mudar a palavra passe",
-        "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
+        "comment": "Se não pediu para alterar a sua palavra-passe, por favor ignore este email <br/>. A sua palavra-passe não será alterada a não ser que carregue no seguinte link.",
+        "headline": "Bem-vindo(a) %{email}",
+        "link": "Mudar a palavra-passe",
+        "text": "Recebemos um pedido para alterar a sua palavra-passe no nosso site wheelmap.org. Se foi você que fez o pedido, clique no seguinte link - caso contrário ignore este email!"
       },
       "form": {
         "labels": {
-          "password": "Nova palavra passe",
-          "password_confirmation": "Repita a palavra passe"
+          "password": "Nova palavra-passe",
+          "password_confirmation": "Repita a palavra-passe"
         },
-        "submit": "Restabelecer a palavra passe"
+        "submit": "Restabelecer a palavra-passe"
       },
-      "headline": "Restabelecer a palavra passe"
+      "headline": "Restabelecer a palavra-passe"
     },
     "passwords": {
-      "link": "Esquececeu-se da palavra passe?",
+      "link": "Esqueceu-se da palavra-passe?",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
-      "send_instructions": "You will receive an email with instructions on how to reset your password in a few minutes",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
-      "updated": "A sua palavra passe foi alterada con sucesso. Está agora ligado à sua conta.",
-      "updated_not_active": "Your password was changed successfully"
+      "send_instructions": "Irá receber um email com instruções como repor a sua palavra-passe dentro de minutos",
+      "send_paranoid_instructions": "Se a sua conta existir, irá receber um email em poucos minutos com instruções sobre a reposição da sua palavra-passe",
+      "updated": "A sua palavra-passe foi alterada com sucesso. Está agora ligado à sua conta",
+      "updated_not_active": "A sua palavra-passe foi alterada com sucesso"
     },
     "registrations": {
-      "destroyed": "Adeus! A sua conta foi cancelada com sucesso. Até breve.",
-      "inactive_signed_up": "You have signed up successfully, but we could not log you in. Reason: \"%{reason}\"",
+      "destroyed": "A sua conta foi cancelada com sucesso. Esperamos vê-lo(a) novamente.",
+      "inactive_signed_up": "Entrou na sua conta com sucesso, mas não foi possível completar o processo pela seguinte razão: \"%{reason}\"",
       "link": "Criar conta",
       "reasons": {
-        "inactive": "inactive",
-        "locked": "locked",
-        "unconfirmed": "unconfirmed"
+        "inactive": "inativo",
+        "locked": "bloqueado",
+        "unconfirmed": "não confirmado"
       },
-      "signed_up": "You have signed up successfully. A you have been sent a confirmation email.",
+      "signed_up": "A conta foi criada com sucesso. Foi-lhe enviado um email de confirmação.",
       "signed_up_but_inactive": "You have signed up successfully. However, we could not sign you in because your account is not yet activated.",
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
       "update_needs_confirmation": "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address.",
-      "updated": "A actualização da sua conta decorreu com sucesso"
+      "updated": "Atualizou a sua conta com sucesso"
     },
     "sessions": {
-      "inactive": "Your account has not been activated yet",
-      "invalid": "E-mail ou palavra passe inválida ",
-      "invalid_token": "Ficha de autentificação inválida",
-      "link": "Entrar na conta",
+      "inactive": "A sua conta ainda não foi ativada",
+      "invalid": "E-mail ou palavra-passe inválida ",
+      "invalid_token": "Token de autenticação inválido",
+      "link": "Iniciar sessão",
       "locked": "A sua conta está bloqueada",
       "new": {
-        "no_osm_account": "No OpenStreetMap account?",
-        "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
-        "promo_text_thank_you": "Thank you very much for your support!",
-        "sign_in_with": "Log in with %{kind}",
-        "sign_up_with_osm": "Register now.",
-        "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
+        "no_osm_account": "Sem conta no OpenStreetMap?",
+        "osm_promo_text": "O Wheelmap é baseado em dados geográficos do OpenStreetMap (OSM). O OpenStreetMap é um mapa mundial livre e editável por qualquer pessoa. É como a Wikipédia dos mapas. Por forma a conseguir editar locais ou criar novos locais tem de ter uma conta de utilizador no OpenStreetMap e necessita de iniciar sessão com ela.",
+        "promo_text_thank_you": "Obrigado pelo seu apoio!",
+        "sign_in_with": "Iniciar sessão com %{kind}",
+        "sign_up_with_osm": "Criar conta agora.",
+        "wheelmap_promo_text": "Com o seu conhecimento sobre locais com acessibilidade a cadeira de rodas pode ajudar outras pessoas com dificuldades físicas a planearem melhor as suas vidas diariamente. Além disso, ajudará a tornar o OpenStreetMap mais completo e detalhado."
       },
       "signed_in": "Entrou na conta com sucesso",
       "signed_out": "Saiu da conta com sucesso",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "A sua sessão expirou, por favor entre de novo na sua conta.",
       "unauthenticated": "Tem de criar uma conta ou entrar na sua conta para continuar.",
       "unconfirmed": "Tem de confirmar a sua conta antes de continuar"
     },
@@ -570,25 +587,25 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
     },
     "sign_up": {
       "email": {
-        "confirm_my_account": "Confirm my account",
-        "please_confirm": "You can confirm your account through the link below:",
-        "welcome": "Welcome %{email}!"
+        "confirm_my_account": "Confirme a sua conta",
+        "please_confirm": "Pode confirmar a sua conta com o link seguinte:",
+        "welcome": "Bem-vindo(a) %{email}!"
       },
       "form": {
         "labels": {
           "email": "E-mail",
           "password": "Palavra passe",
           "password_confirmation": "Repita a palavra passe",
-          "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
+          "wants_newsletter": "Sim, manter-me informado sobre o Wheelmap - mas por favor não mais do que 1 vez por mês"
         },
         "submit": "Registrar-se"
       },
       "headline": "Registrar-se"
     },
     "unlocks": {
-      "link": "You didn't receive unlock instructions?",
-      "send_instructions": "You will receive an email in a few minutes with instructions on how to unlock your account",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
+      "link": "Não recebeu instruções para desbloqueio da conta?",
+      "send_instructions": "Irá receber um email em poucos minutos com instruções sobre como desbloquear a sua conta",
+      "send_paranoid_instructions": "Se a sua existir, irá receber um email dentro de poucos minutos com instuções sobre como desbloquear a sua conta",
       "unlocked": "A sua conta foi desbloqueada com sucesso. Está agora ligado(a) à sua conta"
     }
   },
@@ -596,27 +613,27 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
     "dynamic_format": "%{message}",
     "format": "%{attribute} %{message}",
     "messages": {
-      "accepted": "must be accepted",
+      "accepted": "tem de ser aceite",
       "already_confirmed": "já estava confirmado, por favor volte a registrar-se",
-      "blank": "must be filled in",
+      "blank": "tem de ser preenchido",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
       "carrierwave_processing_error": "failed to be processed",
       "confirmation": "não coincide com a confirmação",
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
-      "empty": "must be filled in",
+      "empty": "tem de ser preenchido",
       "equal_to": "tem de ser igual a %{count}",
-      "even": "must be an even number",
+      "even": "tem de ser um número par",
       "exclusion": "é reservado",
-      "expired": "expired, please request a new one",
+      "expired": "expirou, por favor peça um novo",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
       "extension_white_list_error": "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}",
       "greater_than": "tem de ser maior que %{count}",
-      "greater_than_or_equal_to": "must be greater than or equal to %{count}",
+      "greater_than_or_equal_to": "tem de ser maior ou igual a %{count}",
       "inclusion": "não está incluído na lista",
       "invalid": "é inválido",
       "less_than": "tem de ser menor que %{count}",
-      "less_than_or_equal_to": "must be less than or equal to %{count}",
+      "less_than_or_equal_to": "tem de ser menor ou igual a %{count}",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
       "not_a_number": "não é um número",
@@ -627,7 +644,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
         "one": "Um erro impdiu que %{resource} fosse salvo:",
         "other": "%{count} erros impediu que %{resource} fossem salvos :"
       },
-      "odd": "must be an odd number",
+      "odd": "tem de ser um número ímpar",
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
@@ -639,7 +656,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": "Website address is not valid."
+          "invalid": "O endereço do sítio web não é válido."
         }
       }
     },
@@ -653,15 +670,15 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   },
   "faq": {
     "answers": {
-      "0": "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!",
-      "1": "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask.",
-      "2": "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
+      "0": "Pode sempre alterar a marcação de um local. Basta escolher a marcação correta e \"Guardar\" - já está!",
+      "1": "Como utilizador autenticado, pode adicionar / corrigir todos os detalhes de um local. Clique em \"Editar\" e corrija ou adicione a informação.",
+      "2": "Pode adicionar mais informação (por ex. \"Este local tem uma rampa móvel\") na secção de comentários. Clique em \"Editar\" e \"Adicionar comentário\"."
     },
-    "headline": "Is there a problem with this place?",
+    "headline": "Existe algum problema com este local?",
     "questions": {
-      "0": "The marking is wrong.",
-      "1": "The details of the place are incorrect or missing.",
-      "2": "I have more information about this place."
+      "0": "O marcador está errado.",
+      "1": "Os detalhes do local estão incorretos ou em falta.",
+      "2": "Eu tenho mais informações sobre este local."
     }
   },
   "flash": {
@@ -679,7 +696,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
     },
     "photos": {
       "destroy": {
-        "notice": "Image was successfully deleted"
+        "notice": "A imagem foi eliminada com sucesso"
       }
     }
   },
@@ -693,40 +710,40 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
     "cancel": "Cancelar %{model}",
     "create": "Criar %{model}",
     "hints": {
-      "email": "We treat your address confidentially. We promise not to send you spam!",
+      "email": "Nós lidamos com o seu endereço de forma confidencial. Prometemos não enviar spam!",
       "lat": "Coloque o inicador que se encontra no mapa para a posição correcta ",
       "osm_username": "Ainda não é membro? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Criar uma conta Openstreetmp agora</a>",
       "password": "(deixe em branco se não quiser mudar) ",
-      "phone": "For example: +49 30 12345678",
+      "phone": "Por exemplo: +351 21 1234567",
       "website": "p. ex. http://www.example.com"
     },
     "labels": {
       "category": "Categoria:",
-      "centralkey": "Central key:",
+      "centralkey": "Chave central:",
       "city": "Cidade:",
-      "create": "Create a place",
+      "create": "Criar um local",
       "email": "E-mail",
-      "finish": "Finish",
+      "finish": "Terminar",
       "housenumber": "Nr:",
       "lat": "Latitude",
       "lon": "Longitude",
       "name": "Nome:",
-      "osm_password": "OpenStreetMap password",
-      "osm_username": "OpenStreetMap account name",
+      "osm_password": "Palavra-passe do OpenStreetMap",
+      "osm_username": "Nome da conta no OpenStreetMap",
       "password": "Palavra passe",
       "password_confirmation": "Repita a palavra passe",
       "phone": "Telefone:",
       "postcode": "código postal:",
-      "privacy_policy": "I accept paragraphs 1 and 2 of the data privacy agreement.",
-      "reset": "Reset",
+      "privacy_policy": "Eu aceito os parágrafos 1 e 2 do acordo de privacidade dos dados.",
+      "reset": "Limpar",
       "save": "Guardar",
       "street": "Rua:",
-      "terms": "I accept the terms of use.",
+      "terms": "Eu aceito os termos de utilização.",
       "type": "Tipo",
       "website": "Website",
       "wheelchair": "Acessibilidade para cadeira de rodas?",
       "wheelchair_description": "Comentário sobre a acessibilidade: ",
-      "wheelchair_toilet": "Wheelchair accessible toilet:"
+      "wheelchair_toilet": "Casa de banho acessível a cadeiras de rodas:"
     },
     "no": "Não",
     "required": "obrigatório",
@@ -744,16 +761,16 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
+      "description": "Wheelmap.org é um serviço na Internet para procurar, encontrar e marcar locais com acessibilidade a cadeiras de rodas. Ajude também a marcar locais públicos como bares, restaurantes, cinemas ou supermercados!",
       "homepage": "Homepage",
       "keywords": "lugares acessíveis a cadeira de rodas procurar indicador de procura",
       "search": "Procurar",
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "About Wheelmap",
+      "about_wheelmap": "Sobre o Wheelmap",
       "blog": "Blog",
-      "choose_language": "Choose language",
+      "choose_language": "Escolher o idioma",
       "contact": "Contacto",
       "feedback": "Feedbck",
       "home": "Iniciar",
@@ -763,13 +780,14 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       "login": "Entrar",
       "logout": "Sair",
       "map": "Mapa",
-      "newsletter": "Newsletter",
+      "newsletter": "Boletim de Notícias",
       "press": "Imprensa",
       "profile": "Perfil",
       "projects": "Envolva-se",
+      "report_problem": "Report a problem",
       "suggestions": "Sugestões",
       "what_is_barrier_free": "Qual o significado de \"acessível a cadeira de rodas\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "O que é o Wheelmap?"
     },
     "searchbar": {
       "add_place": "Adicionar outro lugar",
@@ -778,7 +796,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       "title_add_place": "Adicionar um novo lugar nesta posição agora!"
     },
     "tagline": "Lógotipo do Wheelmap",
-    "title": "Find wheelchair accessible places",
+    "title": "Procurar locais com acessibilidades a cadeiras de rodas",
     "toolbar": {
       "categories": "Categorias"
     }
@@ -807,21 +825,21 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "Mostrar em Wheelmap.org",
       "filter": {
         "category": "Categoria:",
-        "deselect_all": "Deselect all",
-        "select_all": "Select all",
+        "deselect_all": "Desselecionar tudo",
+        "select_all": "Selecionar tudo",
         "wheelchair": "Acessivel a cadeira de rodas? (O que significa isto?) "
       },
       "ie": {
         "action": {
-          "ignore": "Ignore",
-          "upgrade": "Update Browser"
+          "ignore": "Ignorar",
+          "upgrade": "Atualizar Navegador"
         },
         "warning": {
-          "headline": "We apologise!",
-          "message": "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
+          "headline": "Pedimos desculpa!",
+          "message": "Parece que está a usar o Internet Explorer. O Wheelmap necessita de um navegador que cumpra os padrões por forma a funcionar corretamente. Por favor considere usar um como o Firefox, Chrome, Safari ou Opera."
         }
       },
       "link": {
@@ -830,42 +848,42 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
         }
       },
       "overlay": {
-        "button": "Okay, let’s go!",
-        "categories": "Filter places by categories",
-        "filter": "Filter places by wheelchair accessibility",
-        "headline": "Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:",
-        "lookup": "Search for a specific place",
-        "secondary_headline": "Our traffic light system to mark the wheelchair accessibility of public places:"
+        "button": "OK, vamos lá!",
+        "categories": "Filtrar locais por categorias",
+        "filter": "Filtrar os locais por acessibilidade a cadeiras de rodas",
+        "headline": "Marque e encontre lugares acessíveis a cadeira de rodas com o Wheelmap.org - em todo o mundo e gratuitamente. É fácil:",
+        "lookup": "Procurar por um local específico",
+        "secondary_headline": "O nosso sistema de cores de semáforo para marcar os locais com acessibilidades a cadeiras de rodas:"
       },
       "popup": {
         "form": {
           "limited": "Parcialmente acessível por cadeira de rodas",
           "no": "Sem acesso a cadeiras de rodas",
-          "save": "Update",
+          "save": "Atualizar",
           "unknown": "Estado desconhecido",
-          "yes": "acessível a cadeira de rodas"
+          "yes": "Acessível a cadeira de rodas"
         },
-        "help": "Wheelchair accessible? (Help)",
-        "more": "more ..."
+        "help": "Acessível a cadeira de rodas? (Ajuda)",
+        "more": "mais..."
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "Aproxime a visualização para ver mais locais."
     }
   },
-  "how?": "How?",
+  "how?": "Como?",
   "landing_pages": {
     "index": {
       "wheelchair": {
         "limit": {
-          "headline": "All partially wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Todos os(as) %{type} parcialmente acessíveis a cadeiras de rodas em %{city} (%{count})"
         },
         "no": {
-          "headline": "All not wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Todos os(as) %{type} não acessíveis a cadeiras de rodas em %{city} (%{count})"
         },
         "unknown": {
-          "headline": "All %{type} in %{city} with unknown wheelchair status (%{count})"
+          "headline": "Todos os(as) %{type} sem informação de acessibilidade a cadeiras de rodas em %{city} (%{count})"
         },
         "yes": {
-          "headline": "All wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Todos os(as) %{type} acessíveis a cadeiras de rodas em %{city} (%{count})"
         }
       }
     }
@@ -879,17 +897,17 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": "Choose a category"
+      "prompt": "Escolha uma categoria"
     },
     "node": {
-      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
+      "info_edit_position": "A localização irá aparecer no Wheelmap como mostrado acima. Se o marcador não estiver no local correto, pode <a href=\"%{url}\">alterar a posição deste no site do OpenStreetMap.</a>",
       "mail": {
-        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
-        "subject": "[Wheelmap] Problem with %{headline}"
+        "body": "(Por favor escreva apenas em Inglês ou Alemão.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
+        "subject": "[Wheelmap] Problema com %{headline}"
       }
     },
     "node_type": {
-      "prompt": "Choose a type"
+      "prompt": "Escolha um tipo"
     }
   },
   "node": {
@@ -911,14 +929,14 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
     },
     "edit": {
       "header": {
-        "title": "Edit place: %{node} | wheelmap.org"
+        "title": "Editar local: %{node} | wheelmap.org"
       },
       "link": {
-        "large_map": "&laquo; Cancel"
+        "large_map": "&laquo; Cancelar"
       }
     },
     "errors": {
-      "default": "Oops something went wrong. We have been informed about this issue",
+      "default": "Opa! Algo correu mal. Este problema foi reportado automaticamente aos programadores",
       "not_authorized": "Desculpe, a autentificação falhou",
       "not_available": "Desculpe, mas esta página não está de momento acessível",
       "not_existent": "Desculpe, este lugar já não está mais acessível",
@@ -930,49 +948,49 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
     },
     "new": {
       "form": {
-        "legend": "Location of the place",
-        "location": "Please click on the map where the place is located!",
+        "legend": "Localização do local",
+        "location": "Por favor clique no mapa onde o local se encontra!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "Acessibilidade a cadeiras de rodas",
+            "title": "Informação sobre acecibilidade a cadeiras de rodas"
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
+            "help": "Pode mover o marcador para a localização correta no mapa.",
             "name": "Endereço",
-            "title": "Where is the place?"
+            "title": "Onde está o local?"
           },
           "contact": {
             "name": "Contacto",
-            "title": "Other contact information"
+            "title": "Outras informações de contacto"
           },
           "name_category": {
-            "name": "Name and place type",
-            "title": "Give us some initial information about your place:"
+            "name": "Nome e tipo de local",
+            "title": "Forneça-nos alguma informação inicial sobre o seu local:"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "Toda a informação está correta?"
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "Não foram encontrados locais similares.",
+            "go_edit": "Continuar com este local",
+            "go_new": "Não é nenhum dos locais acima...",
+            "name": "Locais similares",
+            "title": "Encontramos locais similares perto. É um destes?"
           }
         },
-        "title": "Add a place"
+        "title": "Adicionar um local"
       },
       "header": {
         "title": "Novo lugar | wheelmap.org"
       },
       "link": {
-        "large_map": "&laquo; Cancel"
+        "large_map": "&laquo; Cancelar"
       }
     },
     "node": {
       "link": {
-        "claim": "Do you work here?",
+        "claim": "Trabalha neste local?",
         "edit_node": "Editar lugar",
         "report_bug": "Report a problem"
       }
@@ -997,35 +1015,35 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       "upload": "Enviar"
     },
     "node_similar": {
-      "similar": "Similar places: %{name}"
+      "similar": "Locais similares: %{name}"
     },
     "node_status": {
-      "accessible_toilet": "Wheelchair accessible toilet:",
-      "premium": "%{name} says: this place is",
-      "wheelchair_accessibility": "Wheelchair accessibility:"
+      "accessible_toilet": "Casa de banho acessível a cadeiras de rodas:",
+      "premium": "%{name} diz: este local é",
+      "wheelchair_accessibility": "Acessibilidade a cadeiras de rodas:"
     },
     "node_streetview": {
-      "streetview": "Streetview:"
+      "streetview": "Vista da rua:"
     },
     "show": {
       "header": {
         "meta": {
-          "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
-          "title": "This place is on Wheelmap.org: %{name}"
+          "description": "Saiba se este local está marcado no Wheelmap.org como acessível a cadeiras de rodas. Ou adicione mais informação e fotografias do local.",
+          "title": "Este local está em Wheelmap.org: %{name}"
         },
-        "title": "Place: %{node} | wheelmap.org"
+        "title": "Local: %{node} | wheelmap.org"
       },
       "link": {
-        "back": "back",
+        "back": "voltar",
         "large_map": "Aumentar",
-        "listing": "All places of typ '%{type}' in %{city}",
-        "upload": "Upload image"
+        "listing": "Todos os locais do tipo '%{type}' em %{city}",
+        "upload": "Enviar imagem"
       },
-      "more_data_from": "There is more information about this place, validated by:",
+      "more_data_from": "Existe mais informação sobre este local, validada por:",
       "share": {
         "email": "E-mail",
         "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
+        "text": "Encontrei este local em Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1037,7 +1055,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       }
     },
     "update_wheelchair": {
-      "successfull": "The status for \"%{name}\" has been changed to \"%{status}\" and will be online shortly."
+      "successfull": "O estado de \"%{name}\" foi alterado para \"%{status}\" e estará disponível no site brevemente."
     }
   },
   "number": {
@@ -1106,17 +1124,17 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   "oauth": {
     "application": {
       "connect": {
-        "headline": "You need to connect your account with your OpenStreetMap account before you can create or modify places on Wheelmap.org."
+        "headline": "Tem de ligar a sua conta à conta que tenha no OpenStreetMap antes de poder criar ou alterar locais no Wheelmap.org."
       }
     },
     "callback": {
-      "notice": "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
+      "notice": "A sua conta do Wheelmap está ligada à sua conta %{user} no OpenStreetMap."
     }
   },
   "or": "ou",
   "place": {
-    "one": "%{count} place",
-    "other": "%{count} places"
+    "one": "%{count} local",
+    "other": "%{count} locais"
   },
   "poi": {
     "category": {
@@ -1124,11 +1142,11 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       "education": "Ecucação ",
       "food": "Comida",
       "government": "Governo",
-      "health": "Health",
+      "health": "Saúde",
       "leisure": "Prazer",
       "misc": "Outros",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "money_post": "Banco / Estação de Correios",
+      "public_transfer": "Transporte público",
       "shopping": "Shopping",
       "sport": "Desporto",
       "tourism": "Turismo",
@@ -1141,7 +1159,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
         "camp_site": "Acampamento",
         "caravan_site": "Sitio de caravana",
         "chalet": "Chalet",
-        "dormitory": "Dormitory",
+        "dormitory": "Residência universitária/dormitório",
         "guest_house": "Guest House",
         "hostel": "Pousada",
         "hotel": "Hotel",
@@ -1149,7 +1167,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       },
       "education": {
         "college": "Colégio",
-        "driving_school": "Driving school",
+        "driving_school": "Escola de condução",
         "kindergarten": "Jardim escola",
         "library": "Biblioteca",
         "museum": "Museu",
@@ -1162,59 +1180,59 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
         "cafe": "café",
         "drinking_water": "Agua potável",
         "fast_food": "Fast food",
-        "ice_cream": "Ice cream parlour",
+        "ice_cream": "Gelataria / geladaria",
         "pub": "Pub",
         "restaurant": "Restaurante"
       },
       "government": {
         "courthouse": "Tribunal",
         "embassy": "Embaixada",
-        "employment_agency": "Employment agency",
-        "government": "Government agency",
-        "police": "Police",
+        "employment_agency": "Agência de emprego",
+        "government": "Organismo governamental",
+        "police": "Polícia",
         "public_building": "Edificio público",
-        "townhall": "Town hall"
+        "townhall": "Câmara Municipal / Junta de Freguesia"
       },
       "health": {
-        "alternative": "Alternative medicine practitioner",
-        "dentist": "Dentist",
-        "doctors": "Doctor",
-        "hearing_aids": "Hearing aid dealer",
+        "alternative": "Praticante de medicinas alternativas",
+        "dentist": "Dentista",
+        "doctors": "Médico",
+        "hearing_aids": "Vendedor de aparelhos auditivos",
         "hospital": "Hospital",
-        "medical_supply": "Medical supplies",
-        "occupational_therapist": "Occupational therapist",
+        "medical_supply": "Equipamento médico",
+        "occupational_therapist": "Terapeuta ocupacional",
         "pharmacy": "Farmácia",
-        "physiotherapist": "Physiotherapist",
-        "psychotherapist": "Psychotherapist",
-        "social_facility": "Social facility",
-        "speech_therapist": "Speech therapist",
+        "physiotherapist": "Fisioterapeuta",
+        "psychotherapist": "Psicoterapeuta",
+        "social_facility": "Infraestruturas sociais",
+        "speech_therapist": "Terapeuta da fala",
         "veterinary": "Veterenário"
       },
       "leisure": {
         "arena": "Arena",
-        "brothel": "Brothel",
+        "brothel": "Bordel",
         "casino": "Casino",
         "cinema": "Cinema",
-        "community_centre": "Community centre",
+        "community_centre": "Centro comunitário",
         "gallery": "Galeria",
-        "massage": "Massage spa",
+        "massage": "SPA e massagens",
         "nightclub": "Clube Nocturno",
-        "playground": "Playground",
+        "playground": "Parque infantil",
         "sauna": "Sauna",
-        "stripclub": "Stripclub",
-        "tattoo": "Tattoo shop",
+        "stripclub": "Clube de striptease",
+        "tattoo": "Tatuador",
         "theatre": "Teatro",
         "zoo": "Zoológico"
       },
       "misc": {
-        "association": "Association",
-        "company": "Company (Office)",
-        "estate_agent": "Real estate agent",
-        "insurance": "Insurance",
-        "lawyer": "Lawyer",
-        "ngo": "Non-government organisation",
+        "association": "Associação",
+        "company": "Empresa (escritório)",
+        "estate_agent": "Imobiliária",
+        "insurance": "Seguradora",
+        "lawyer": "Advogado",
+        "ngo": "Organização não-governamental",
         "place_of_worship": "Lugar de oração ",
-        "political_party": "Political party office",
+        "political_party": "Sede/filial de partido político",
         "toilets": "Casa de banho"
       },
       "money_post": {
@@ -1228,7 +1246,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
         "aerodrome": "Aeroporto",
         "bicycle_parking": "Parque para bicicletas",
         "bicycle_rental": "Aluguer de bicicletas",
-        "boatyard": "Boat yard",
+        "boatyard": "Estaleiro naval",
         "bus_station": "Estação de Autocarros",
         "bus_stop": "Estação de Autocarros",
         "cable_car": "Teleférico",
@@ -1250,67 +1268,67 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       },
       "shopping": {
         "alcohol": "Licor",
-        "antiques": "Antiques",
-        "art": "Gallery shop",
+        "antiques": "Antiguidades",
+        "art": "Galeria de arte",
         "bakery": "Padaria",
-        "beauty": "Beauty salon",
+        "beauty": "Salão de beleza",
         "beverages": "Bebidas",
         "bicycle": "Loja de bicicletas",
         "books": "Livros",
         "butcher": "Talho",
-        "car_repair": "Car repair",
-        "car_shop": "Car shop",
-        "chemist": "Chemist / Drugstore",
+        "car_repair": "Oficina de automóveis",
+        "car_shop": "Loja de automóveis",
+        "chemist": "Parafarmácia",
         "clothes": "Roupa",
         "computer": "Computador",
-        "confectionery": "Candy store",
+        "confectionery": "Loja de guloseimas",
         "convenience": "Conveniência",
-        "copyshop": "Copy shop",
-        "deli": "Delicatessen",
+        "copyshop": "Loja de cópias/fotocópias",
+        "deli": "Loja de artigos finos e iguarias",
         "department_store": "Shopping Center",
         "doityourself": "Faça você mesmo",
         "dry_cleaning": "Limpeza a seco",
         "electronics": "Eletrónica",
-        "erotic": "Sex shop",
-        "fabric": "Fabric shop",
-        "farm_shop": "Farm shop",
+        "erotic": "Loja de artigos eróticos",
+        "fabric": "Loja de tecidos",
+        "farm_shop": "Loja de quinta/fazenda/produtos locais",
         "florist": "Florista",
-        "funeral_directors": "Funeral home",
+        "funeral_directors": "Funerária",
         "furniture": "Móvéis",
-        "garden_centre": "Garden centre",
-        "gift": "Gift shop",
-        "greengrocer": "Greengrocer",
+        "garden_centre": "Loja de jardinajem",
+        "gift": "Loja de lembranças/presentes",
+        "greengrocer": "Loja de frutas e verduras",
         "hairdresser": "Cabeleireiro",
         "hardware": "Hardware",
-        "interior_decoration": "Interior design shop",
-        "jewelry": "Jewelry",
+        "interior_decoration": "Loja de design de interiores",
+        "jewelry": "Joalharia",
         "kiosk": "Quisque",
         "laundry": "Lavandaria",
         "mall": "Shopping Center",
-        "mobile_phone": "Mobile phone shop",
-        "music": "Record store",
-        "musical_instrument": "Musical instrument shop",
-        "newsagent": "News agent",
+        "mobile_phone": "Loja de telemóveis",
+        "music": "Loja de música",
+        "musical_instrument": "Loja de instrumentos musicais",
+        "newsagent": "Banca de jornais e revistas",
         "optician": "Óptica",
-        "organic": "Organic shop",
-        "outdoor": "Outdoor supply",
-        "pet": "Pet shop",
-        "photo": "Photo",
-        "second_hand": "Second hand",
+        "organic": "Loja de produtos orgânicos",
+        "outdoor": "Loja de artigos para o ar livre",
+        "pet": "Loja de animais",
+        "photo": "Loja de fotografia/equipamento",
+        "second_hand": "Artigos em segunda mão",
         "shoes": "Sapatos",
-        "sports": "Sports",
-        "stationery": "Stationery",
+        "sports": "Artigos desportivos",
+        "stationery": "Artigos de escritório",
         "supermarket": "Supermercado",
-        "tailor": "Tailor",
-        "tea": "Tea supply",
-        "tobacco": "Tobacco shop",
-        "toys": "Toys",
-        "travel_agency": "Travel agency",
-        "variety_store": "Discount store",
-        "video": "Video rental store"
+        "tailor": "Alfaiate",
+        "tea": "Loja de chá",
+        "tobacco": "Tabacaria",
+        "toys": "Brinquedos",
+        "travel_agency": "Agência de viagens",
+        "variety_store": "Loja de descontos / preço fixo",
+        "video": "Videoclube"
       },
       "sport": {
-        "pitch": "Sports field",
+        "pitch": "Campo desportivo",
         "sports_centre": "Centro de desporto",
         "stadium": "Estádio",
         "swimming": "Nadar",
@@ -1424,22 +1442,22 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
+        "headline": "Desculpe, não conseguimos encontrar um local com o nome \"%{query}\".",
         "hint": {
-          "example": "<strong>Example:</strong> London, United Kingdom",
-          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
-          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
+          "example": "<strong>Exemplo:</strong> Lisboa, Portugal",
+          "info": "O nosso serviço de procura apenas funciona com a informação do nome e/ou endereço. Por isso, procure pelo nome do local ou pelo endereço do mesmo, isto é, nome da tua e/ou cidade. A procura por um tipo de local, isto é, restaurante ou cinema não funciona!",
+          "work_in_progress": "Nós trabalhamos arduamente para tornar a procura de locais mais fácil e mais intuitiva."
         },
         "try_this": {
-          "address": "Please provide more <strong>address details</strong>.",
-          "intro": "Try this:",
-          "spell_check": "Check the <strong>spelling</strong> of your input."
+          "address": "Por favor forneça mais <strong>detalhes do endereço</strong>.",
+          "intro": "Tente isto:",
+          "spell_check": "Confirme a <strong>ortografia</strong> que introduziu."
         }
       },
       "results": {
         "ticker": {
-          "one": "%{count} result:",
-          "other": "%{count} results:"
+          "one": "%{count} resultado:",
+          "other": "%{count} resultados:"
         }
       },
       "search": {
@@ -1448,19 +1466,19 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
-      "info": "Our search service was temporarily not available.",
-      "repeat_search": "Retry search"
+      "headline": "Desculpe, aconteceu algo de errado",
+      "info": "O nosso serviço de procura estava temporariamente indisponível.",
+      "repeat_search": "Procurar novamente"
     }
   },
   "splash": {
-    "countline": "%{count} places have already been marked.",
-    "headline": "Everyone can add wheelchair accessible places!",
+    "countline": "%{count} locais já foram marcados.",
+    "headline": "Qualquer pessoa pode adicionar locais com acessibilidade a cadeiras de rodas!",
     "start": "Iniciar",
-    "step1": "Click on a place you know",
-    "step2": "Mark it and click save",
-    "step3": "That's it! No registration necessary",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "step1": "Clique num local que conheça",
+    "step2": "Marque-o e clique em guardar",
+    "step3": "É isto! Não é necessário registar-se",
+    "what_is_wheelmap": "O que é o Wheelmap?"
   },
   "statistics": "Estatísticas",
   "support": {
@@ -1484,14 +1502,14 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
     "pm": "pm"
   },
   "toiletstatus": {
-    "no": "No wheelchair accessible toilet",
-    "unknown": "Toilet status unknown",
+    "no": "Sem casa de banho acessível a cadeiras de rodas",
+    "unknown": "Informação sobre acessibilidade da casa de banho desconhecida",
     "what_is": {
-      "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
-      "unknown": "Help out by marking the toilet status!",
-      "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      "no": "Largura mínima das portas/passagens: 90 cm (35 polegadas), área útil livre mínima: 150 x 150 cm (59 x 59 polegadas), sanita com altura adequada para cadeira de rodas, varões de apoio dobráveis e lavatório acessível.",
+      "unknown": "Ajude a indicar a acessibilidade da casa de banho!",
+      "yes": "Largura mínima das portas/passagens: 90 cm (35 polegadas), área útil livre mínima: 150 x 150 cm (59 x 59 polegadas), sanita com altura adequada para cadeira de rodas, varões de apoio dobráveis e lavatório acessível."
     },
-    "yes": "Wheelchair accessible toilet"
+    "yes": "Casa de banho acessível a cadeiras de rodas"
   },
   "user_sessions": {
     "create": {
@@ -1507,7 +1525,7 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
       "notice": "Adeus, até breve!"
     },
     "new": {
-      "email": "Email address",
+      "email": "Endereço de email",
       "login": "Log in",
       "login_with_twitter": "Log in com Twitter",
       "password": "Palavra passe",
@@ -1517,70 +1535,70 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   "users": {
     "after_signup_edit": {
       "welcome": {
-        "headline": "You are almost there! Now on to finalize your Wheelmap account:",
-        "set_password_for_mobile": "You have successfully registered with OpenStreetMap. Please choose an email address that you would like Wheelmap to use so we can keep you informed about your activities (for example the number of places you have marked). You can access this information on your \"Profile\".",
-        "text": "How can we get in touch with you? You can change this information later in your profile."
+        "headline": "Está quase lá! Agora sobre a finalizar a sua conta no Wheelmap:",
+        "set_password_for_mobile": "Registou-se com sucesso no OpenStreetMap. Por favor escolha um endereço de email que para que nós possamos informá-lo(a) sobre as suas atividades (por exemplo o número de locais que marcou). Pode aceder a esta informação no \"Perfil\" da sua conta.",
+        "text": "Como podemos contactá-lo(a)? Pode alterar esta informação mais tarde no perfil da sua conta."
       }
     },
     "edit": {
       "headline": {
-        "your_images": "Your uploaded images"
+        "your_images": "As suas imagens enviadas"
       }
     },
     "profile": {
       "edit": {
         "legends": {
-          "user_data": "Your account information"
+          "user_data": "Informação da sua conta"
         },
         "title": "Perfil"
       },
       "newsletter": {
-        "label": "Yes, keep me updated about Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
-        "title": "Newsletter"
+        "label": "Sim, enviar-me notícias do Wheelmap.",
+        "text": "Mantenha-se atualizado com o boletim de notícias do Wheelmap. Não se preocupe, não enviaremos spam. Receberá no máximo 1 notícia por mês.",
+        "title": "Boletim de Notícias"
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
+        "empty": "Ainda não enviou nenhuma fotografia.",
         "title": "Fotografias"
       },
       "show": {
         "greeting": {
-          "anonymously": "Hello there",
-          "personalized": "Hello %{name}"
+          "anonymously": "Olá",
+          "personalized": "Olá %{name}"
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "one": "%{count} fotografia enviada",
+            "other": "%{count} fotografias enviadas"
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "one": "%{count} local adicionado",
+            "other": "%{count} locais adicionados"
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "one": "%{count}  local editado",
+            "other": "%{count} locais editados"
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "one": "%{count} local marcado",
+            "other": "%{count} locais marcados"
           },
-          "text": "You have"
+          "text": "Tem"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
-        "title": "Overview"
+        "text_html": "Olá,<br>\nBem-vindo(a) ao Wheelmap.org! Estamos contentes por o/a ter a bordo! Pode consultar o nosso <a href=\"http://news.wheelmap.org/en/\">Blogue</a> ou as <a href=\"http://news.wheelmap.org/en/FAQ/\">Perguntas Frequentes</a> se quiser saber um pouco mais sobre o Wheelmap.org. Ou pode saber mais sobre os <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projetos</a> que oferecemos à volta do Wheelmap.org e como pode ajudar.<br>\nPara manter-se em contacto pode subscrever o nosso boletim mensal e seguir-nos no <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> e o <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Gostamos sempre de saber a opinião das pessoas!<br>\nE agora, bons mapeamentos!<br>\nA equipa do Wheelmap",
+        "title": "Visão geral"
       },
       "widget": {
-        "categories": "Show category filter",
+        "categories": "Mostrar filtro de categorias",
         "center": "Área do mapa",
-        "empty_center": "Search for center of map …",
+        "empty_center": "Procurar pelo centro do mapa...",
         "empty_provider": "Escolha um Fornecedor",
         "height": "Altura",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
-          "preview": "Preview",
+          "embed": "Código para incorporar",
+          "embed_explanation": "Pode alterar as especificações para a latitude (<code>lat</code>), longitude (<code>lon</code>) e nível de zoom (<code>zoom</code>) no código acima manualmente e portanto ajustar o segmento do mapa (widget) de acordo com a localização que pretenda mostrar.",
+          "general": "Crie o seu próprio widget Wheelmap e incorpore-o no seu sítio web ou blogue.",
+          "preview": "Prever",
           "settings": "Definições"
         },
         "providers": "Fornecedor",
@@ -1606,10 +1624,10 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
   },
   "wheelmap": {
     "footer": {
-      "a_project_of": "A project by",
-      "based_on": "Based on",
-      "become_a_supporter": "Become a supporter",
-      "main_supporter": "Main supporter"
+      "a_project_of": "Um projeto por",
+      "based_on": "Baseado em",
+      "become_a_supporter": "Torne-se um patrocinador",
+      "main_supporter": "Patrocinador principal"
     },
     "itunes": {
       "alt": "AppStore Logo",
@@ -1627,22 +1645,22 @@ I18n.translations["pt"] = I18n.extend((I18n.translations["pt"] || {}), {
     }
   },
   "will_paginate": {
-    "next_label": "Next &#8594;",
+    "next_label": "Seguinte &#8594;",
     "page_entries_info": {
-      "multi_page": "Displaying %{model} %{from} - %{to} of %{count} in total",
-      "multi_page_html": "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total",
+      "multi_page": "A mostrar %{model} %{from} - %{to} de %{count} no total",
+      "multi_page_html": "A mostrar %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> de <b>%{count}</b> no total",
       "single_page": {
-        "one": "Displaying 1 %{model}",
-        "other": "Displaying all %{count} %{model}",
-        "zero": "No %{model} found"
+        "one": "A mostrar 1 %{model}",
+        "other": "A mostrar todos os %{count} %{model}",
+        "zero": "Nenhum %{model} encontrado"
       },
       "single_page_html": {
-        "one": "Displaying <b>1</b> %{model}",
-        "other": "Displaying <b>all&nbsp;%{count}</b> %{model}",
-        "zero": "No %{model} found"
+        "one": "A mostrar <b>1</b> %{model}",
+        "other": "A mostrar <b>tudo&nbsp;%{count}</b> %{model}",
+        "zero": "Nenhum %{model} encontrado"
       }
     },
     "page_gap": "&hellip;",
-    "previous_label": "&#8592; Previous"
+    "previous_label": "&#8592; Anterior"
   }
 });

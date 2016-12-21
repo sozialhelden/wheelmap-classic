@@ -9,12 +9,17 @@ nb:
         phone: Telefon
         address_street: Gate
         address_city: By
+  community_support_form:
+    new:
+      form:
+        title: Rapporter et problem
   header:
     navigation:
       about_wheelmap: Om Wheelmap
       choose_language: Velg språk
       contact: Kontakt
       map: Kart
+      report_problem: Rapporter et problem
     toolbar:
       categories: Kategorier
   home:

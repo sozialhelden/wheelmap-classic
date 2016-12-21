@@ -314,6 +314,23 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     "close": "閉じる",
     "skip": "スキップ"
   },
+  "community_support_form": {
+    "new": {
+      "form": {
+        "describe": "English又はGermanでお書きください。",
+        "flash_after_submit": "お問い合わせを頂きありがとうございます。弊社サポートチームはなるべく早くご返信致します。",
+        "header_text_html": "ヘルプが必要な場合、まず<a href=\"https://news.wheelmap.org/en/faq/\">よくあるご質問</a>を確認してください。解決策が見つからない場合は弊社にて修正致しますので下記の質問にお答えください。",
+        "note": "Wheelmapは非営利団体が運営するオープンソースのプロジェクトであり、弊社はアプリ開発用のリソースを制限しておりますのでご了承ください。",
+        "questions": {
+          "a": "何をしましたか？",
+          "b": "何が起こることを期待していましたか？",
+          "c": "代わりに何が起こりましたか？"
+        },
+        "submit_button": "提出",
+        "title": "問題を報告"
+      }
+    }
+  },
   "date": {
     "abbr_day_names": [
       "日",
@@ -798,6 +815,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "press": "プレス",
       "profile": "プロフィール",
       "projects": "参加する",
+      "report_problem": "問題を報告",
       "suggestions": "提案",
       "tolk": "翻訳",
       "what_is_barrier_free": "\"車椅子で行ける(アクセシブル)\"とは？",

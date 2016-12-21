@@ -11,6 +11,10 @@ pt_PT:
         address_street: Rua
         address_postcode: Código Postal
         address_city: Cidade
+  community_support_form:
+    new:
+      form:
+        title: Reportar um problema
   faq:
     answers:
       0: Pode sempre altear o marcador de um lugar por si. Escolha apenas o marcador correto e "Guardar".
@@ -27,6 +31,7 @@ pt_PT:
       choose_language: Escolher língua
       contact: Contacto
       map: Mapa
+      report_problem: Reportar um problema
     toolbar:
       categories: Categorias
   home:

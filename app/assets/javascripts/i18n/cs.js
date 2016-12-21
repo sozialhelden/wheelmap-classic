@@ -317,6 +317,23 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
     "close": "zavřít",
     "skip": "přeskočit"
   },
+  "community_support_form": {
+    "new": {
+      "form": {
+        "describe": "Napište nám v angličtině nebo němčině, prosím.",
+        "flash_after_submit": "Děkujeme Vám, že jste nás kontaktoval. Náš podpůrný tým se Vám ozve hned jak to bude možné.",
+        "header_text_html": "Pokud potřebujete pomoc, nejdřív hledejte v <a href=\"https://news.wheelmap.org/en/faq/\">nejčastěji kladených otázkách</a>, prosím. Pokud v nich nenaleznete řešení Vašeho problému, odpovězte prosím na následovní otázky, abychom ho mohli odstranit.",
+        "note": "Nezapomeňte, že Wheelmap je projekt s otevřeným zdrojem a je provozován neziskovou organizací a na vývoj aplikace nemáme dostatek prostředků.",
+        "questions": {
+          "a": "Co jste dělal?",
+          "b": "Co jste čekal, že se stane?",
+          "c": "Co se ve skutečnosti událo?"
+        },
+        "submit_button": "Odeslat",
+        "title": "Nahlaste problém"
+      }
+    }
+  },
   "date": {
     "abbr_day_names": [
       "Ne",
@@ -764,6 +781,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       "press": "Tisk",
       "profile": "Profil",
       "projects": "Zapojte se",
+      "report_problem": "Nahlaste problém",
       "suggestions": "Návrhy",
       "what_is_barrier_free": "Co to znamená \"přístupné pro vozíčkáře\"?",
       "what_is_wheelmap": "Co je to Wheelmap?"

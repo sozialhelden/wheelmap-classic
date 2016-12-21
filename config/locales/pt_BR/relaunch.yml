@@ -12,6 +12,10 @@ pt_BR:
         address_housenumber: Número da casa
         address_postcode: CEP
         address_city: Cidade
+  community_support_form:
+    new:
+      form:
+        title: Relatar um problema
   faq:
     answers:
       0: Você sempre pode mudar a marcação dum lugar. Simplesmente escolhe a classificação certa e "Salvar" - pronto!
@@ -29,6 +33,7 @@ pt_BR:
       contact: Contato
       map: Mapa
       projects: Envolva-se
+      report_problem: Relatar um problema
     toolbar:
       categories: Categorias
     meta:

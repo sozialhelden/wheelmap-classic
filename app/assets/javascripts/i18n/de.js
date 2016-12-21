@@ -333,6 +333,23 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
     "close": "schließen",
     "skip": "Überspringen"
   },
+  "community_support_form": {
+    "new": {
+      "form": {
+        "describe": "Bitte schreibe uns in Deutsch oder Englisch.",
+        "flash_after_submit": "Vielen Dank, dass du uns kontaktiert hast! Unser Support-Team meldet sich so bald wie möglich bei dir zurück.",
+        "header_text_html": "Manchmal läuft etwas nicht rund. Bitte schaue dir unsere <a href=\"https://news.wheelmap.org/faq/\">häufig gestellten Fragen und Antworten (FAQs)</a> an, bevor du uns schreibst. Wenn du dort keine Hilfe für dein Problem findest, beantworte bitte die folgenden drei Fragen, damit wir das Problem lösen können.",
+        "note": "Bitte beachte: Die Wheelmap ist ein Projekt eines gemeinnützigen Vereins und wir haben nur begrenzte Ressourcen, um die App weiterzuentwickeln.",
+        "questions": {
+          "a": "Was genau hast du gemacht?",
+          "b": "Welches Ergebnis hättest du erwartet?",
+          "c": "Was ist stattdessen passiert?"
+        },
+        "submit_button": "Abschicken",
+        "title": "Problem melden"
+      }
+    }
+  },
   "date": {
     "abbr_day_names": [
       "So",
@@ -793,6 +810,7 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
       "press": "Presse",
       "profile": "Profil",
       "projects": "Mitmachen",
+      "report_problem": "Problem melden",
       "suggestions": "Anregungen",
       "what_is_barrier_free": "Was bedeutet „rollstuhlgerecht“?",
       "what_is_wheelmap": "Was ist Wheelmap?"

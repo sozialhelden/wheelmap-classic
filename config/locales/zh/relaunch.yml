@@ -1,7 +1,12 @@
 zh:
+  community_support_form:
+    new:
+      form:
+        title: 报告一个问题
   header:
     navigation:
       projects: 参与其中
+      report_problem: 报告一个问题
   nodes:
     new:
       form:

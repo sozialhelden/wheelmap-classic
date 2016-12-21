@@ -11,6 +11,10 @@ ca:
         address_street: Carrer
         address_postcode: Codi postal
         address_city: Ciutat
+  community_support_form:
+    new:
+      form:
+        title: Informa d'un problema
   faq:
     answers:
       0: Pots canviar el marcador d'un lloc tu mateix. Només cal que triïs el lloc correcte i "Desis"- fet!
@@ -28,6 +32,7 @@ ca:
       contact: Contactar
       map: Mapa
       projects: Ajuda'ns
+      report_problem: Informa d'un problema
     toolbar:
       categories: Categories
     meta:

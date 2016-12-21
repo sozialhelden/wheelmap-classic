@@ -9,6 +9,10 @@ sq_AL:
         phone: Telefon
         address_street: Rrugë
         address_city: Qytet
+  community_support_form:
+    new:
+      form:
+        title: Raporto një problem
   faq:
     answers:
       0: Ju mundeni gjithnjë të ndryshoni personalisht shenjimin e një vendi. Vetëm zgjidh shenjimin e saktë dhe "Ruaj" - u krye!
@@ -25,6 +29,7 @@ sq_AL:
       choose_language: Zgjidh gjuhёn
       contact: Kontakt
       map: Harta
+      report_problem: Raporto një problem
     toolbar:
       categories: Kategoritё
   home:

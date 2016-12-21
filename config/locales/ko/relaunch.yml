@@ -9,9 +9,14 @@ ko:
         phone: 전화번호
         address_street: 도로명
         address_city: 시/도
+  community_support_form:
+    new:
+      form:
+        title: 오류신고
   header:
     navigation:
       map: 지도
+      report_problem: 오류신고
   nodes:
     new:
       form:

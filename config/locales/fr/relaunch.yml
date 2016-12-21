@@ -12,6 +12,19 @@ fr:
         address_housenumber: Numéro de maison
         address_postcode: Code postal
         address_city: Ville
+  community_support_form:
+    new:
+      form:
+        title: Signaler un problème
+        header_text_html: "Veuillez tout d'abord consulter les <a href=\"https://news.wheelmap.org/en/faq/\">questions fréquemment posées</a> pour obtenir de l'aide. Si la solution à votre problème ne s'y trouve pas, n'hésitez pas à répondre aux questions suivantes afin que nous puissions le résoudre."
+        questions:
+          a: Qu'avez-vous fait ?
+          b: Qu'attendiez-vous qu'il se passe ?
+          c: Que s'est-t-il passé à la place ?
+        note: Notez que Wheelmap est un projet open source mené par une organisation à but non lucratif et que nous avons des ressources limitées pour le développement de l'application.
+        describe: Veuillez nous écrire en anglais ou en allemand.
+        flash_after_submit: Merci de nous avoir contactés. Notre équipe d'assistance reviendra vers vous dès que possible.
+        submit_button: Soumettre
   faq:
     answers:
       0: Vous pouvez toujours modifier le marquage d'un lieu vous-même. Choisissez juste le bon marquage et enregistrez - voilà !
@@ -29,6 +42,7 @@ fr:
       contact: Contact
       map: Carte
       projects: Participez
+      report_problem: Signaler un problème
     toolbar:
       categories: Catégories
     meta:

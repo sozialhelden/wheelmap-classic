@@ -10,6 +10,10 @@ tr:
         address_street: Sokak
         address_housenumber: Ev numarası
         address_city: Şehir
+  community_support_form:
+    new:
+      form:
+        title: 'Sorun bildir '
   header:
     navigation:
       about_wheelmap: Wheelmap Hakkında
@@ -17,6 +21,7 @@ tr:
       contact: İletişim
       map: Harita
       projects: Dahil olun
+      report_problem: 'Sorun bildir '
     toolbar:
       categories: Kategoriler
   home:

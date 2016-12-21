@@ -12,6 +12,10 @@ pl:
         address_housenumber: Numer domu
         address_postcode: Kod pocztowy
         address_city: Miasto
+  community_support_form:
+    new:
+      form:
+        title: Zgłoś problem
   faq:
     answers:
       0: "Możesz zawsze zmienić zaznaczenie twoich miejsc. Wybierz tylko prawy przycisk, \n\"zapisz\" i gotowe!"
@@ -31,9 +35,11 @@ pl:
       contact: Kontakt
       map: Mapa
       projects: Zaangażuj się
+      report_problem: Zgłoś problem
     toolbar:
       categories: Kategoria
     meta:
+      description: Wheelmap.org jest mapą online, na której możesz wyszukiwać i oznaczać miejsca dostępne dla osób na wózkach inwalidzkich. Zaangażuj się i dodawaj miejsca publiczne takie jak bary, restauracje, kina, supermarkety i inne!
       title: Wheelmap.org
   home:
     index:
@@ -44,15 +50,28 @@ pl:
         headline: 'Zaznacz i wyszukaj na mapie Wheelmap.org  miejsca przystosowane dla poruszających się na wózku inwalidzkim. To proste:'
         lookup: wyszukiwanie poprzez miejsce szczególne
         secondary_headline: 'Nasz system kolorów opisuje przystosowanie dla poruszających się na wózku inwalidzkim:'
+      embed_link: Pokaż na Wheelmap.org
+      zoom_alert: Powiększ, aby zobaczyć więcej miejsc.
   nodes:
     new:
       form:
+        title: Dodaj miejsce
         legend: lokalizacja miejsca
+        location: Klinij na mapie w punkt, gdzie miejsce jest zlokalizowane.
         section:
+          name_category:
+            name: Nazwa i rodzaj miejsca
+            title: "Podaj wstępne informacje o miejsu:"
           address:
             name: Adres
+            title: Gdzie jest to miejsce?
+            help: Możesz przesuwać marker do prawidłej lokalizacji miesjca na mapie.
           similar_nodes:
             name: Podobne miejsca
+            title: Znaleźliśmy podobne miejsca niedaleko. Czy to któreś z tych?
+            go_edit: Kontynuuj z tym miejscem
+            go_new: Jeśli to żadne z powyższych miejsc...
+            empty: Nie znaleziono podobnych miejsc
           accessibility:
             name: Dostępność dla osób na wózkach
           contact:
@@ -87,6 +106,7 @@ pl:
       share:
         email: Email
         facebook: Facebook
+        text: 'Znalazłem to miejsce Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
@@ -106,16 +126,36 @@ pl:
           few: '%{count} wyników:'
           other: '%{count} wyników:'
     timeout:
+      headline: Przepraszamy, coś poszło nie tak
       info: Usługa wyszukiwania była tymczasowo niedostępna
       repeat_search: ponów wyszukiwanie
   users:
     profile:
       newsletter:
         title: Newsletter
+        label: Tak, chcę otrzymywać bieżące informacje o Wheelmap.
+      show:
+        title: Przegląd
+        greeting:
+          anonymously: Witaj
+          personalized: Witaj %{name}
+        overview:
+          text: Masz
       photos:
         title: Zdjęcia
       edit:
         title: Profil
+        legends:
+          user_data: Informacje o Twoim koncie
       widget:
+        title: Widget
+        height: Wysokość
+        width: Szerokość
+        center: Obszr mapy
+        categories: Pokaż filtr kategorii
+        providers: Dostawca
+        empty_provider: Wybierz dostawcę
+        empty_center: Wyszukaj środka mapy...
         legends:
           settings: Ustawienia
+          preview: Podgląd

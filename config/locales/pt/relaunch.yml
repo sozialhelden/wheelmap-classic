@@ -7,27 +7,86 @@ pt:
         address: Endereço
         website: Website
         phone: Telefone
+        note: Nota
         address_street: Rua
         address_housenumber: Número de casa
         address_postcode: Código postal
         address_city: Cidade
+  community_support_form:
+    new:
+      form:
+        title: Report a problem
+        header_text_html: "Por favor consulte primeiro as <a href=\"https://news.wheelmap.org/en/faq/\">perguntas frequentes</a> para servir de ajuda. Se a solução para o seu problema não estiver descrito, por favor responda às seguintes questões para que nós possamos corrigir o problema."
+        questions:
+          a: O que fez?
+          b: O que era esperado que acontecece?
+          c: O que ocorreu em vez disso?
+        note: Note que o Wheelmap é um projecto de código-aberto administrado por uma organização sem fins lucrativos e temos recursos limitados para o desenvolvimento de aplicações.
+        describe: Por favor escreva-nos em Inglês Ou Alemão.
+        flash_after_submit: Obrigado por nos contactar. A nossa equipa de suporte irá tratar do problema mal possa.
+        submit_button: Enviar
+  faq:
+    answers:
+      0: Pode sempre alterar a marcação de um local. Basta escolher a marcação correta e "Guardar" - já está!
+      1: Como utilizador autenticado, pode adicionar / corrigir todos os detalhes de um local. Clique em "Editar" e corrija ou adicione a informação.
+      2: Pode adicionar mais informação (por ex. "Este local tem uma rampa móvel") na secção de comentários. Clique em "Editar" e "Adicionar comentário".
+    headline: Existe algum problema com este local?
+    questions:
+      0: O marcador está errado.
+      1: Os detalhes do local estão incorretos ou em falta.
+      2: Eu tenho mais informações sobre este local.
   header:
     navigation:
+      about_wheelmap: Sobre o Wheelmap
+      choose_language: Escolher o idioma
       contact: Contacto
       map: Mapa
       projects: Envolva-se
+      report_problem: Report a problem
     toolbar:
       categories: Categorias
     meta:
+      description: Wheelmap.org é um serviço na Internet para procurar, encontrar e marcar locais com acessibilidade a cadeiras de rodas. Ajude também a marcar locais públicos como bares, restaurantes, cinemas ou supermercados!
       title: Wheelmap.org
+  home:
+    index:
+      overlay:
+        button: OK, vamos lá!
+        categories: Filtrar locais por categorias
+        filter: Filtrar os locais por acessibilidade a cadeiras de rodas
+        headline: 'Marque e encontre lugares acessíveis a cadeira de rodas com o Wheelmap.org - em todo o mundo e gratuitamente. É fácil:'
+        lookup: Procurar por um local específico
+        secondary_headline: 'O nosso sistema de cores de semáforo para marcar os locais com acessibilidades a cadeiras de rodas:'
+      embed_link: Mostrar em Wheelmap.org
+      zoom_alert: Aproxime a visualização para ver mais locais.
   nodes:
     new:
       form:
+        title: Adicionar um local
+        legend: Localização do local
+        location: Por favor clique no mapa onde o local se encontra!
         section:
+          name_category:
+            name: Nome e tipo de local
+            title: "Forneça-nos alguma informação inicial sobre o seu local:"
           address:
             name: Endereço
+            title: Onde está o local?
+            help: Pode mover o marcador para a localização correta no mapa.
+          similar_nodes:
+            name: Locais similares
+            title: Encontramos locais similares perto. É um destes?
+            go_edit: Continuar com este local
+            go_new: Não é nenhum dos locais acima...
+            empty: Não foram encontrados locais similares.
+          accessibility:
+            name: Acessibilidade a cadeiras de rodas
+            title: Informação sobre acecibilidade a cadeiras de rodas
           contact:
             name: Contacto
+            title: Outras informações de contacto
+          overview:
+            title: Toda a informação está correta?
     node_data:
       address: 'Endereço:'
       contact_details: 'Detalhes de contacto:'
@@ -42,22 +101,89 @@ pt:
       add: Adicionar
       photos_of_this_place: 'Fotografias deste local:'
       upload: Enviar
+    node_similar:
+      similar: 'Locais similares: %{name}'
+    node_status:
+      accessible_toilet: 'Casa de banho acessível a cadeiras de rodas:'
+      premium: '%{name} diz: este local é'
+      wheelchair_accessibility: 'Acessibilidade a cadeiras de rodas:'
+    node_streetview:
+      streetview: 'Vista da rua:'
     show:
+      header:
+        meta:
+          description: Saiba se este local está marcado no Wheelmap.org como acessível a cadeiras de rodas. Ou adicione mais informação e fotografias do local.
+          title: 'Este local está em Wheelmap.org: %{name}'
       share:
         email: E-mail
         facebook: Facebook
+        text: 'Encontrei este local em Wheelmap.org: %{name}'
         twitter: Twitter
+  search:
+    index:
+      no-results:
+        headline: Desculpe, não conseguimos encontrar um local com o nome "%{query}".
+        hint:
+          example: <strong>Exemplo:</strong> Lisboa, Portugal
+          info: O nosso serviço de procura apenas funciona com a informação do nome e/ou endereço. Por isso, procure pelo nome do local ou pelo endereço do mesmo, isto é, nome da tua e/ou cidade. A procura por um tipo de local, isto é, restaurante ou cinema não funciona!
+          work_in_progress: Nós trabalhamos arduamente para tornar a procura de locais mais fácil e mais intuitiva.
+        try_this:
+          address: Por favor forneça mais <strong>detalhes do endereço</strong>.
+          intro: 'Tente isto:'
+          spell_check: Confirme a <strong>ortografia</strong> que introduziu.
+      results:
+        ticker:
+          one: '%{count} resultado:'
+          other: '%{count} resultados:'
+    timeout:
+      headline: Desculpe, aconteceu algo de errado
+      info: O nosso serviço de procura estava temporariamente indisponível.
+      repeat_search: Procurar novamente
   users:
     profile:
+      newsletter:
+        title: Boletim de Notícias
+        text: Mantenha-se atualizado com o boletim de notícias do Wheelmap. Não se preocupe, não enviaremos spam. Receberá no máximo 1 notícia por mês.
+        label: Sim, enviar-me notícias do Wheelmap.
+      show:
+        title: Visão geral
+        text_html: "Olá,<br>\nBem-vindo(a) ao Wheelmap.org! Estamos contentes por o/a ter a bordo! Pode consultar o nosso <a href=\"http://news.wheelmap.org/en/\">Blogue</a> ou as <a href=\"http://news.wheelmap.org/en/FAQ/\">Perguntas Frequentes</a> se quiser saber um pouco mais sobre o Wheelmap.org. Ou pode saber mais sobre os <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projetos</a> que oferecemos à volta do Wheelmap.org e como pode ajudar.<br>\nPara manter-se em contacto pode subscrever o nosso boletim mensal e seguir-nos no <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> e o <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Gostamos sempre de saber a opinião das pessoas!<br>\nE agora, bons mapeamentos!<br>\nA equipa do Wheelmap"
+        greeting:
+          anonymously: Olá
+          personalized: Olá %{name}
+        overview:
+          text: Tem
+          pois_marked:
+            one: '%{count} local marcado'
+            other: '%{count} locais marcados'
+          pois_added:
+            one: '%{count} local adicionado'
+            other: '%{count} locais adicionados'
+          pois_edited:
+            one: '%{count}  local editado'
+            other: '%{count} locais editados'
+          photos_uploaded:
+            one: '%{count} fotografia enviada'
+            other: '%{count} fotografias enviadas'
       photos:
         title: Fotografias
+        empty: Ainda não enviou nenhuma fotografia.
       edit:
         title: Perfil
+        legends:
+          user_data: Informação da sua conta
       widget:
+        title: Widget
         height: Altura
         width: Largura
         center: Área do mapa
+        categories: Mostrar filtro de categorias
         providers: Fornecedor
         empty_provider: Escolha um Fornecedor
+        empty_center: Procurar pelo centro do mapa...
         legends:
           settings: Definições
+          preview: Prever
+          embed: Código para incorporar
+          embed_explanation: Pode alterar as especificações para a latitude (<code>lat</code>), longitude (<code>lon</code>) e nível de zoom (<code>zoom</code>) no código acima manualmente e portanto ajustar o segmento do mapa (widget) de acordo com a localização que pretenda mostrar.
+          general: Crie o seu próprio widget Wheelmap e incorpore-o no seu sítio web ou blogue.

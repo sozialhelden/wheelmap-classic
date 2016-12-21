@@ -314,6 +314,23 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     "close": "stäng",
     "skip": "hoppa över"
   },
+  "community_support_form": {
+    "new": {
+      "form": {
+        "describe": "Vänligen skriv till oss på engelska eller tyska.",
+        "flash_after_submit": "Tack för att du kontaktar oss. Vårt supportteam kommer att återkomma till dig snarast möjligt.",
+        "header_text_html": "Vänligen se först <a href=\"https://news.wheelmap.org/en/faq/\">vanliga frågor</a> för hjälp. Om lösningen på ditt problem inte finns där, så var god besvara följande frågor så att vi kan lösa det.",
+        "note": "Notera att Wheelmap är ett projekt med öppen källkod drivet av en ideell organisation och vi har begränsade resurser för utveckling av appen.",
+        "questions": {
+          "a": "Vad gjorde du?",
+          "b": "Vad förväntade du dig skulle hända?",
+          "c": "Vad skedde istället?"
+        },
+        "submit_button": "Skicka in",
+        "title": "Rapportera ett problem"
+      }
+    }
+  },
   "date": {
     "abbr_day_names": [
       "Sön",
@@ -759,6 +776,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       "press": "Press",
       "profile": "Profil",
       "projects": "Bli inblandad",
+      "report_problem": "Rapportera ett problem",
       "suggestions": "Förslag",
       "what_is_barrier_free": "Vad betyder \"rullstolstillgänglig\"?",
       "what_is_wheelmap": "Lite om Wheelmap"
