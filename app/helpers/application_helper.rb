@@ -67,8 +67,8 @@ module ApplicationHelper
       uri.path = "/#{locale}/"
     elsif uri.path =~ /^\/tlh($|\/)/
       uri.path = uri.path.gsub(/^\/tlh($|\/)/, "/#{locale}/")
-    elsif uri.path =~ /^\/[a-z]{2}(-[a-zA-Z]{2})?($|\/)/ #/pt-TR/
-      uri.path = uri.path.gsub(/^\/\w{2}(-\w{2})?($|\/)/, "/#{locale}/")
+    elsif uri.path =~ /^\/[a-z]{2}(_[a-zA-Z]{2})?($|\/)/ # e.g. /pt-BR/
+      uri.path = uri.path.gsub(/^\/\w{2}(_\w{2})?($|\/)/, "/#{locale}/")
     else
       uri.path = uri.path.gsub(/^(.+?)$/, "/#{locale}" + '\1')
     end
