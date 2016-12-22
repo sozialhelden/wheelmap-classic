@@ -72,6 +72,3 @@ describe "Locale feature" do
     it_behaves_like "switch language manually", "zh_TW", '/zh_TW'
   end
 end
-
-
-# ar;bg;cs;da;de;el;en;es;fr;hu;is;it;ja;ko;lv;pl;pt;pt_BR;ru;sk;sv;tlh;tr;zh_TW
