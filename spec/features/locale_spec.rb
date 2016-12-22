@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-SUPPORTED_LANGUAGES = "de;en;es;fr;it;is"
+SUPPORTED_LANGUAGES = "ar;bg;cs;da;de;el;en;es;fr;hu;is;it;ja;ko;lv;pl;pt;pt_BR;ru;sk;sv;tlh;tr;zh_TW"
 
 shared_examples "switch language manually" do |language, url|
   describe "Switch language manually to #{language}" do
@@ -47,7 +47,31 @@ describe "Locale feature" do
     end
 
     it_behaves_like "switch language manually", "de", '/map'
-    it_behaves_like "switch language manually", "es", '/es'
     it_behaves_like "switch language manually", "en", '/en'
+    it_behaves_like "switch language manually", "ar", '/ar'
+    it_behaves_like "switch language manually", "bg", '/bg'
+    it_behaves_like "switch language manually", "cs", '/cs'
+    it_behaves_like "switch language manually", "da", '/da'
+    it_behaves_like "switch language manually", "el", '/el'
+    it_behaves_like "switch language manually", "es", '/es'
+    it_behaves_like "switch language manually", "fr", '/fr'
+    it_behaves_like "switch language manually", "hu", '/hu'
+    it_behaves_like "switch language manually", "is", '/is'
+    it_behaves_like "switch language manually", "it", '/it'
+    it_behaves_like "switch language manually", "ja", '/ja'
+    it_behaves_like "switch language manually", "ko", '/ko'
+    it_behaves_like "switch language manually", "lv", '/lv'
+    it_behaves_like "switch language manually", "pl", '/pl'
+    it_behaves_like "switch language manually", "pt", '/pt'
+    it_behaves_like "switch language manually", "pt_BR", '/pt_BR'
+    it_behaves_like "switch language manually", "ru", '/ru'
+    it_behaves_like "switch language manually", "sk", '/sk'
+    it_behaves_like "switch language manually", "sv", '/sv'
+    it_behaves_like "switch language manually", "tlh", '/tlh'
+    it_behaves_like "switch language manually", "tr", '/tr'
+    it_behaves_like "switch language manually", "zh_TW", '/zh_TW'
   end
 end
+
+
+# ar;bg;cs;da;de;el;en;es;fr;hu;is;it;ja;ko;lv;pl;pt;pt_BR;ru;sk;sv;tlh;tr;zh_TW
