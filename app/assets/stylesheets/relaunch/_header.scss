@@ -100,25 +100,10 @@
   }
 }
 
-select.language-select {
-  width: 120px;
-  height: 26px;
-  margin-top: 10px;
-  margin-bottom: 0px;
-  @include appearance(none);
-  line-height: 16px;
-  &:focus {
-    @include highlight(rgba(0, 0, 0, 0));
-  }
-  @media screen and (max-width: 767px) {
-    max-width: 50px;
-  }
-}
-
 div.language-select {
   .btn {
     @include border-radius(2px);
-    max-width: 120px;
+    max-width: 200px;
     color: #333;
     &:focus {
       @include highlight(rgba(0, 0, 0, 0));
@@ -144,8 +129,22 @@ div.language-select {
       border: none;
     }
     dt {
-      font-size: 12px;
+      font-size: 11px;
       padding: 2px 0 0 9px !important;
+    }
+  }
+  select.language-select {
+    max-width: 200px;
+    height: 26px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    @include appearance(none);
+    line-height: 16px;
+    &:focus {
+      @include highlight(rgba(0, 0, 0, 0));
+    }
+    @media screen and (max-width: 767px) {
+      max-width: 50px;
     }
   }
 }
@@ -154,7 +153,7 @@ nav {
   .nav-collapse {
     width: auto;
     position: absolute;
-    left: 50%;
+    left: 40%;
     margin-left: -240px;
     @media screen and (max-width: 980px) {
       position: relative;
@@ -174,7 +173,7 @@ nav {
           padding: 15px 1px 5px 1px;
           a {
             color: #666;
-            padding: 7px 7px 5px 7px;
+            padding: 5px;
             border: 1px solid transparent;
             &:visited {
               color: #666;
