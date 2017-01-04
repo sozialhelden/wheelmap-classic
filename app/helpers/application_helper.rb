@@ -160,11 +160,7 @@ module ApplicationHelper
   end
 
   def community_travelguide_url
-    if I18n.locale == :de
-      "//travelable.info/"
-    else
-      "//travelable.info/" # no multiple languages at the moment
-    end
+     "//travelable.info/"
   end
 
   def mailme_to(email_address, name = nil, html_options = {}, &block)
