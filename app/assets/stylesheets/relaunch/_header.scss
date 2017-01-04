@@ -100,6 +100,21 @@
   }
 }
 
+select.language-select {
+  max-width: 200px;
+  height: 26px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  @include appearance(none);
+  line-height: 16px;
+  &:focus {
+    @include highlight(rgba(0, 0, 0, 0));
+  }
+  @media screen and (max-width: 767px) {
+    max-width: 50px;
+  }
+}
+
 div.language-select {
   .btn {
     @include border-radius(2px);
@@ -131,20 +146,6 @@ div.language-select {
     dt {
       font-size: 12px;
       padding: 2px 0 0 9px !important;
-    }
-  }
-  select.language-select {
-    max-width: 200px;
-    height: 26px;
-    margin-top: 10px;
-    margin-bottom: 0px;
-    @include appearance(none);
-    line-height: 16px;
-    &:focus {
-      @include highlight(rgba(0, 0, 0, 0));
-    }
-    @media screen and (max-width: 767px) {
-      max-width: 50px;
     }
   }
 }
