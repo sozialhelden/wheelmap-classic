@@ -38,7 +38,6 @@ en:
       2: I have more information about this place.
   header:
     navigation:
-      about_wheelmap: About Wheelmap
       choose_language: Choose language
       contact: Contact
       map: Map
