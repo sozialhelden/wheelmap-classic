@@ -151,6 +151,22 @@ module ApplicationHelper
     end
   end
 
+  def community_faq_url
+    if I18n.locale == :de
+      "//news.wheelmap.org/faq/"
+    else
+      "//news.wheelmap.org/en/faq/"
+    end
+  end
+
+  def community_travelguide_url
+    if I18n.locale == :de
+      "//travelable.info/"
+    else
+      "//travelable.info/" # no multiple languages at the moment
+    end
+  end
+
   def mailme_to(email_address, name = nil, html_options = {}, &block)
 
     raise "mailme_to: Use native mail_to method with Rails 4.0 and later." if Rails.version.starts_with?("4.")
