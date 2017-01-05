@@ -24,6 +24,31 @@ describe "Locale feature" do
     I18n.locale = I18n.default_locale
   end
 
+  describe "switching from a locale containing underscore to a locale without", feature: true, js: true do
+    before do
+      visit "/pt_BR/map"
+      # There's a popup the first time we visit wheelmap.
+      # That needs to be clicked away first
+      using_wait_time 30 do
+        find('button.go').click
+      end
+      using_wait_time 10 do
+        find('.language-select').click
+      end
+      find("a", text: /\AEspañol\z/).click
+    end
+
+    after do
+      browser = Capybara.current_session.driver.browser
+      Rack::MockSession
+      browser.clear_cookies
+    end
+
+    it "loads correct locale path" do
+      expect(current_path).to match("/es/map")
+    end
+  end
+
   describe "Languages in wheelmap" do
     before do
       Capybara.current_session.driver.header("Accept-Language", SUPPORTED_LANGUAGES)
