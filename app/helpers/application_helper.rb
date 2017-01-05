@@ -152,7 +152,7 @@ module ApplicationHelper
   end
 
   def community_travelguide_url
-     "//travelable.info/"
+     "http://travelable.info/"
   end
 
   def mailme_to(email_address, name = nil, html_options = {}, &block)
