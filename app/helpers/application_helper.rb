@@ -135,14 +135,6 @@ module ApplicationHelper
     end
   end
 
-  def community_about_url
-    if I18n.locale == :de
-      "//news.wheelmap.org/faq"
-    else
-      "//news.wheelmap.org/en/faq"
-    end
-  end
-
   def community_newsletter_url
     if I18n.locale == :de
       "//news.wheelmap.org/kontakt/"
