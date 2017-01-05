@@ -101,7 +101,7 @@
 }
 
 select.language-select {
-  width: 120px;
+  max-width: 200px;
   height: 26px;
   margin-top: 10px;
   margin-bottom: 0px;
@@ -118,7 +118,7 @@ select.language-select {
 div.language-select {
   .btn {
     @include border-radius(2px);
-    max-width: 120px;
+    max-width: 200px;
     color: #333;
     &:focus {
       @include highlight(rgba(0, 0, 0, 0));
@@ -154,7 +154,7 @@ nav {
   .nav-collapse {
     width: auto;
     position: absolute;
-    left: 50%;
+    left: 40%;
     margin-left: -240px;
     @media screen and (max-width: 980px) {
       position: relative;
@@ -174,7 +174,7 @@ nav {
           padding: 15px 1px 5px 1px;
           a {
             color: #666;
-            padding: 7px 7px 5px 7px;
+            padding: 5px;
             border: 1px solid transparent;
             &:visited {
               color: #666;
