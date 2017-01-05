@@ -9,6 +9,7 @@ class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
 
     # Remove wheelchair tag if value is "unknown"
     tags.delete("wheelchair") if tags["wheelchair"] == 'unknown'
+    tags.delete("toilets:wheelchair") if tags["toilets:wheelchair"] == "unknown"
 
     client = Rosemary::OauthClient.new(user.access_token)
 

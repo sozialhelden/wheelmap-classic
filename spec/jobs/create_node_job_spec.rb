@@ -85,7 +85,7 @@ describe CreateNodeJob do
   context "unknown value" do
 
     subject {
-      CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'unknown', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
+      CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'unknown', 'toilets:wheelchair' => 'unknown', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
     }
 
     it "does not save wheelchair tag" do
@@ -97,6 +97,7 @@ describe CreateNodeJob do
         expect(node.lat).to eql 52.4
         expect(node.lon).to eql 13.0
         expect(node.tags['wheelchair']).to be_nil
+        expect(node.tags['toilets:wheelchair']).to be_nil
         expect(node.tags['amenity']).to eq 'bar'
         expect(node.tags['name']).to eq 'White horse'
       end
