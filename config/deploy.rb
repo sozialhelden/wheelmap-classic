@@ -76,7 +76,7 @@ namespace :deploy do
 
         # We need to link the existing shared `/var/apps/wheelmap/public/system` folder
         # into the new release.
-	      execute :ln, "-s", "#{deploy_path}/public/system", "#{release_path}/public/"
+        execute :ln, "-s", "#{deploy_path}/public/system", "#{release_path}/public/"
 
         # We create this file so the consul health check will pass. We can't use an
         # existing file since they are all unpredictably named.
