@@ -7,10 +7,10 @@ Vagrant.configure("2") do |config|
   # Expose a port so the application can be tested.
   config.vm.network "forwarded_port", guest: 3000, host: 3000
 
-  # Sync the folder in a way that isn't so slow with rails.
-  # Sync with `vagrant rsync`.
-  config.vm.synced_folder ".", "/vagrant", type: "rsync",
-    rsync__exclude: ["vendor/bundle/", "node_modules/"]
+  # Required for NFS to work, pick any local IP
+  config.vm.network :private_network, ip: '192.168.50.50'
+  # Use NFS for shared folders for better performance
+  config.vm.synced_folder '.', '/vagrant', nfs: true
 
   # Forwards the SSH agent so your keys work.
   config.ssh.forward_agent = true
@@ -42,9 +42,6 @@ Vagrant.configure("2") do |config|
 
     # Preconfigure mysql.
     export DEBIAN_FRONTEND=noninteractive #Prevents mysql installer to show set password dialogue
-    export MYSQL_ROOT_PASSWORD='root'
-    debconf-set-selections <<< "mysql-server-5.6 mysql-server/root_password password $MYSQL_ROOT_PASSWORD"
-    debconf-set-selections <<< "mysql-server-5.6 mysql-server/root_password_again password $MYSQL_ROOT_PASSWORD"
 
     # Install all dependencies
     apt-get install -y \
@@ -88,7 +85,7 @@ Vagrant.configure("2") do |config|
 
     # Seed everything
     bundle exec rake db:create:all
-    mysql -u root -proot wheelmap_development < db/structure.sql
+    mysql -u root wheelmap_development < db/structure.sql
     bundle exec rake db:seed
     curl -O http://download.geofabrik.de/europe/germany/berlin-latest.osm.bz2
     bzcat berlin-latest.osm.bz2 | bundle exec rake osm:import
