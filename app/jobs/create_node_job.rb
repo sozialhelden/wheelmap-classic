@@ -1,7 +1,7 @@
 require 'htmlentities'
 class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
-  WHEELCHAIR_TAG_KEY = 'wheelchair'
-  WHEELCHAIR_TOILET_TAG_KEY = 'toilets:wheelchair'
+  WHEELCHAIR_TAG_KEY = "wheelchair"
+  WHEELCHAIR_TOILET_TAG_KEY = "toilets:wheelchair"
 
   def self.enqueue(lat, lon, tags, user, source)
     raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
@@ -10,7 +10,7 @@ class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
     return unless Rails.env.production? || Rails.env.test?
 
     # Remove wheelchair tag if value is "unknown"
-    tags.delete(WHEELCHAIR_TAG_KEY) if tags[WHEELCHAIR_TAG_KEY] == 'unknown'
+    tags.delete(WHEELCHAIR_TAG_KEY) if tags[WHEELCHAIR_TAG_KEY] == "unknown"
     tags.delete(WHEELCHAIR_TOILET_TAG_KEY) if tags[WHEELCHAIR_TOILET_TAG_KEY] == "unknown"
 
     client = Rosemary::OauthClient.new(user.access_token)
