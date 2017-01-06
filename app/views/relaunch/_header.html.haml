@@ -41,7 +41,8 @@
           .list-wrapper
             %ul.inline
               %li= link_to t('header.navigation.map', :default => :en), root_path
-              %li= link_to t('header.navigation.travelguide', :default => :en), community_travelguide_url
+              - if I18n.locale == :de
+                %li= link_to t('header.navigation.travelguide', :default => :en), community_travelguide_url
               %li= link_to t('header.navigation.projects', :default => :en), community_projects_url
               %li= link_to t('header.navigation.blog', :default => :en), community_blog_url
               %li= link_to t('header.navigation.press', :default => :en), community_press_url
