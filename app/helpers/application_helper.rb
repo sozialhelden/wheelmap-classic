@@ -97,62 +97,62 @@ module ApplicationHelper
 
   def community_blog_url
     if I18n.locale == :de
-      "//news.wheelmap.org/#news"
+      "https://news.wheelmap.org/#news"
     else
-      "//news.wheelmap.org/en/#news"
+      "https://news.wheelmap.org/en/#news"
     end
   end
 
   def community_press_url
     if I18n.locale == :de
-      "//news.wheelmap.org/presse/"
+      "https://news.wheelmap.org/presse/"
     else
-      "//news.wheelmap.org/en/press/"
+      "https://news.wheelmap.org/en/press/"
     end
   end
 
   def community_contact_url
     if I18n.locale == :de
-      "//news.wheelmap.org/kontakt/"
+      "https://news.wheelmap.org/kontakt/"
     else
-      "//news.wheelmap.org/en/contact/"
+      "https://news.wheelmap.org/en/contact/"
     end
   end
 
   def community_projects_url
     if I18n.locale == :de
-      "//news.wheelmap.org/wheelmap-botschafter/"
+      "https://news.wheelmap.org/wheelmap-botschafter/"
     else
-      "//news.wheelmap.org/en/wheelmap-ambassador/"
+      "https://news.wheelmap.org/en/wheelmap-ambassador/"
     end
   end
 
   def community_imprint_url
     if I18n.locale == :de
-      "//news.wheelmap.org/impressum/"
+      "https://news.wheelmap.org/impressum/"
     else
-      "//news.wheelmap.org/en/imprint/"
+      "https://news.wheelmap.org/en/imprint/"
     end
   end
 
   def community_newsletter_url
     if I18n.locale == :de
-      "//news.wheelmap.org/kontakt/"
+      "https://news.wheelmap.org/kontakt/"
     else
-      "//news.wheelmap.org/contact/"
+      "https://news.wheelmap.org/contact/"
     end
   end
 
   def community_faq_url
     if I18n.locale == :de
-      "//news.wheelmap.org/faq/"
+      "https://news.wheelmap.org/faq/"
     else
-      "//news.wheelmap.org/en/faq/"
+      "https://news.wheelmap.org/en/faq/"
     end
   end
 
   def community_travelguide_url
-     "http://travelable.info/"
+     "https://travelable.info/"
   end
 
   def mailme_to(email_address, name = nil, html_options = {}, &block)
