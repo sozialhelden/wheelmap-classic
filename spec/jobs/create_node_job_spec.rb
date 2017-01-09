@@ -88,7 +88,7 @@ describe CreateNodeJob do
       CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'unknown', 'toilets:wheelchair' => 'unknown', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
     }
 
-    it "does not save wheelchair tag" do
+    it "does not save wheelchair and toilet:wheelchair tag" do
 
       api = double(:find_or_create_open_changeset => changeset)
       expect(Rosemary::Api).to receive(:new).and_return(api)
