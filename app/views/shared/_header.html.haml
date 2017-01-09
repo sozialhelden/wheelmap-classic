@@ -14,7 +14,6 @@
       = link_to t('devise.sign_out.headline'), destroy_admin_user_session_path
     - else
       = link_to t('devise.sign_in.headline'), new_user_session_path
-    = link_to t('header.navigation.what_is_wheelmap'), community_about_url
     = link_to t('header.navigation.press'), community_press_url
     = link_to t('header.navigation.imprint'), community_imprint_url
     = link_to t('header.navigation.feedback'), 'http://wheelmap.uservoice.com/forums/31554-general', :id => 'feedback_link', :rel => 'nofollow'
@@ -29,4 +28,3 @@
       .or-add-place
         .or= t('or')
         = link_to t('header.searchbar.add_place'), new_node_path, :class => 'button add-place', :id => 'createlink', :title => t('header.searchbar.title_add_place'), :rel => 'nofollow'
-
