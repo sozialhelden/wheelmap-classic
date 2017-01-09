@@ -139,7 +139,7 @@ module ApplicationHelper
     if I18n.locale == :de
       "https://news.wheelmap.org/kontakt/"
     else
-      "https://news.wheelmap.org/contact/"
+      "https://news.wheelmap.org/en/contact/"
     end
   end
 
