@@ -446,7 +446,19 @@ describe Api::NodesController do
              :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => @user.authentication_token})
         expect(response.status).to eql 202
       }.to change(Delayed::Job, :count).by(1)
+    end
 
+    it "creates node job with correct wheelchair attribute" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+      expect(CreateNodeJob).to receive(:enqueue) do |_lat, _lng, tags, _current_user, _source|
+        expect(tags['wheelchair']).to eq 'yes'
+        expect(tags['toilets:wheelchair']).to eq 'yes'
+      end
+      request.headers['X-API-KEY'] = @user.authentication_token
+      post(:create, {"name"=>"centro cultural vergueiro", "type"=>"community_centre", "lat"=>"-23.5711773", "lon"=>"-46.6402144", "wheelchair"=>"yes", "wheelchair_toilet"=>"yes", "category"=>"leisure", "locale"=>"pt"})
+      expect(response.status).to eq 202
     end
 
     it "should compose source from user agent" do
