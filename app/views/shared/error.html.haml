@@ -1,2 +1,6 @@
-%h1.center
-  = @message
+%div#wheelmap
+  %div.node-wrapper{ :style => "background-image: url(#{image_path("bg_error.jpg")}); min-height: 100vh; background-size: cover; background-position: center;"}
+    %div.node-container.container
+      %header.node-header.headline-gradient
+        %h1{itemprop: 'name', :style => "text-align: center" }
+          = @message
