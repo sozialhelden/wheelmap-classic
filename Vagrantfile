@@ -56,6 +56,7 @@ Vagrant.configure("2") do |config|
       libxml2-dev \
       zlib1g-dev \
       libmagick++-dev \
+      libpq-dev \
       vim \
       ruby \
       ruby-dev \
@@ -63,7 +64,7 @@ Vagrant.configure("2") do |config|
       npm
     gem install bundler
 
-    # Start MySQL
+    # Start MySQL?
     systemctl enable mysql
     systemctl start mysql
   SHELL
@@ -80,7 +81,7 @@ Vagrant.configure("2") do |config|
     cp config/database.SAMPLE.yml config/database.yml
 
     # Install dependencies
-    bundle install --path vendor/bundle
+    bundle install --path ~/bundle
     npm install
 
     # Seed everything
