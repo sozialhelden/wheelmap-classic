@@ -78,7 +78,7 @@ class PlanetReader
     if @to_be_deleted.size >= min_amount
       Poi.where(:osm_id => @to_be_deleted).delete_all
       for deletion in @to_be_deleted do
-        puts "Deleting POI #{deletion[0]}"
+        puts "Deleting POI #{deletion}"
       end
       @to_be_deleted = []
     end
