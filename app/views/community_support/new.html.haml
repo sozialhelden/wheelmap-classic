@@ -1,4 +1,4 @@
-.container-fluid
+.container-fluid#wheelmap
   .support-form
     %h1=t('community_support_form.new.form.title')
     %p=t('community_support_form.new.form.header_text_html')
@@ -12,3 +12,10 @@
       = f.input :email, hint: ""
       = f.input :message, as: :text , label: I18n.t('community_support_form.new.form.describe')
       = f.action :submit, as: :button, label: I18n.t('community_support_form.new.form.submit_button')
+
+- content_for :javascript do
+  = javascript_include_tag "jquery"
+  = javascript_include_tag "bootstrap"
+  = javascript_include_tag "bootstrap-select"
+  %script
+    $(document).ready(function () { $('.selectpicker').selectpicker(); });
