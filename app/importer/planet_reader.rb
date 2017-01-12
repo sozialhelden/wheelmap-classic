@@ -67,6 +67,9 @@ class PlanetReader
   def create_pois(min_amount=500)
     if @to_be_created.size >= min_amount
       Poi.import @columns, @to_be_created, :validate => false, :on_duplicate_key_update => @columns_without_create, :timestamps => false
+      for creation in @to_be_created do
+        puts "Creating POI #{creation[0]}"
+      end
       @to_be_created = []
     end
   end
@@ -74,6 +77,9 @@ class PlanetReader
   def flush_pois(min_amount=500)
     if @to_be_deleted.size >= min_amount
       Poi.where(:osm_id => @to_be_deleted).delete_all
+      for deletion in @to_be_deleted do
+        puts "Deleting POI #{deletion[0]}"
+      end
       @to_be_deleted = []
     end
   end
