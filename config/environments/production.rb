@@ -47,7 +47,7 @@ Wheelmap::Application.configure do
   # Use a different cache store in production
   # default is:
   # config.cache_store = :file_store, "tmp/cache/"
-  config.cache_store = :mem_cache_store, 'localhost', { :namespace => "wheelmap/#{Rails.env}/",
+  config.cache_store = :mem_cache_store, 'app-database', { :namespace => "wheelmap/#{Rails.env}/",
                                                         :c_threshold => 10_000,
                                                         :compression => true,
                                                         :debug => Rails.env.development?,
