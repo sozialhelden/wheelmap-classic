@@ -44,12 +44,13 @@ Wheelmap::Application.configure do
   # Use a different cache store in staging
   # default is:
   # config.cache_store = :file_store, "tmp/cache/"
-  config.cache_store = :mem_cache_store, 'localhost', { namespace: "wheelmap/#{Rails.env}/",
-                                                        c_threshold: 10_000,
-                                                        compression: true,
-                                                        debug: Rails.env.staging?,
-                                                        readonly: false,
-                                                        urlencode: false }
+  config.cache_store = :mem_cache_store, 'app-database', { :namespace => "wheelmap/#{Rails.env}/",
+                                                        :c_threshold => 10_000,
+                                                        :compression => true,
+                                                        :debug => Rails.env.staging?,
+                                                        :readonly => false,
+                                                        :urlencode => false
+                                                      }
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
