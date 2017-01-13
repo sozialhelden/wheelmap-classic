@@ -39,6 +39,7 @@ group :default do
   gem 'dalli'
   gem 'actionpack-page_caching', '~> 1.0', '>= 1.0.2'
 
+  gem 'rack-cors', :require => 'rack/cors'
   gem 'big_sitemap'
   gem 'unicorn'
   gem 'friendly_id', '~> 5.0.5'
