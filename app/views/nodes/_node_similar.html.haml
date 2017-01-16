@@ -9,5 +9,5 @@
           %span.distance
             = fa_icon "location-arrow"
             = "#{node_similar.distance_to_in_meter(s).round}m"
-%small
-  = link_to_landing_page(t("nodes.show.link.listing", :type => @node.node_type.localized_name, :city => @node.region.name), @node.region, @node.wheelchair, @node.node_type, :class => 'right') if @node.region
+  %small
+    = link_to_landing_page(t("nodes.show.link.listing", :type => @node.node_type.localized_name, :city => @node.region.name), @node.region, @node.wheelchair, @node.node_type, :class => 'right') if @node.region

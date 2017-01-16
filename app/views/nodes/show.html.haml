@@ -17,6 +17,7 @@
           = render partial: 'node_map', object: @node
           = render partial: 'node_data', object: @node
           = render partial: 'node_similar', object: @node
+          = render partial: 'node_nearby', object: @node
 
 - content_for :meta do
   = render_og_metadata(title: t('nodes.show.header.meta.title', name: @node.name), description: t('header.meta.description'), type: 'place', url: node_url(@node), image: image_path("wheely_big.jpg"))

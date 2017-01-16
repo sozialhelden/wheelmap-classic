@@ -1,0 +1,21 @@
+%section.node-nearby-locations-from-partners
+  %h2=t('.places-nearby')
+  %section.node-nearby-locations-from-partners-list
+
+- content_for :javascript do
+  :javascript
+    window.addEventListener("load", function load(event) {
+      window.removeEventListener("load", load, false); // remove listener, no longer needed
+      AccessibilityCloud = window['accessibility.cloud'].default;
+      AccessibilityCloud.token = '7f039b60e27a4d02b13c5ad79fbe9d7b';
+      AccessibilityCloud.locale = I18n.locale;
+      var element = document.querySelector('section.node-nearby-locations-from-partners-list');
+      var parameters = {
+        latitude: #{@node.lat},
+        longitude: #{@node.lon},
+        accuracy: 1000,
+        limit: 20,
+        excludeSourceIds: 'LiBTS67TjmBcXdEmX', // excludes Wheelmap's own PoIs from results
+      };
+      AccessibilityCloud.loadAndRenderPlaces(element, parameters);
+    }, false);
