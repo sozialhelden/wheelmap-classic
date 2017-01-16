@@ -15,7 +15,7 @@ describe Api::NodeTypesController do
       @category = FactoryGirl.create(:category)
       education_category = FactoryGirl.create(:category, :identifier => 'education')
       @node_type = FactoryGirl.create(:node_type, :category => @category)
-      education_node_type = FactoryGirl.create(:node_type, :category => education_category)
+      FactoryGirl.create(:node_type, :category => education_category)
       @categories = Category.all
       expect(@categories).not_to be_empty
     end
