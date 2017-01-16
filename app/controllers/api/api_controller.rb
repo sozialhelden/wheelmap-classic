@@ -1,3 +1,5 @@
+require 'float'
+
 class ActionController::UnpermittedValue < IndexError
   attr_reader :key, :value, :allowed_values
 
