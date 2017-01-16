@@ -13,7 +13,21 @@ describe Api::NodesController do
   describe 'index action' do
     before :each do
       Poi.delete_all
-      @nodes = [FactoryGirl.create(:poi, :osm_id => 1, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'}), FactoryGirl.create(:poi, :osm_id => 2, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})]
+      @category = FactoryGirl.create(:category, :identifier => 'education')
+      @nodes = [
+        FactoryGirl.create(:poi, category: @category, :osm_id => 1, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'}),
+        FactoryGirl.create(:poi, category: @category, :osm_id => 2, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'}),
+      ]
+    end
+
+    describe 'get nodes for category' do
+      before do
+        get(:index, category_id: @category.id, :api_key => @user.authentication_token)
+      end
+
+      it 'returns 200 status code' do
+        expect(response.status).to eq 200
+      end
     end
 
     describe 'format json' do
