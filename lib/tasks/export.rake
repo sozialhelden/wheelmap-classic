@@ -253,12 +253,14 @@ namespace :export do
 
     regions = Region.find_by_sql("SELECT id, name FROM regions WHERE parent_id IN (SELECT id FROM regions WHERE parent_id = 44) AND name NOT IN ('Bremen', 'Dresden', 'Hannover', 'Dortmund', 'Essen', 'Leipzig', 'Koeln', 'Stuttgart', 'Duesseldorf', 'Nuernberg', 'Duisburg', 'Bochum', 'Wuppertal', 'Bielefeld', 'Bonn', 'Frankfurt', 'Muenster');")
 
+    region_names = regions.take(3).map(&:name).join('_').gsub(/\s+/,"_")
+
     node_types = category_names.map do |category_name|
       category = Category.find_by(identifier: category_name)
       category.node_types.where.not(identifier: 'memorial')
     end.flatten.uniq.map(&:id).sort
 
-    CSV.open("streetspotr_#{region_names.take(3).join('_').gsub(/\s+/,"_")}.csv", "wb", :force_quotes => true) do |csv|
+    CSV.open("streetspotr_#{region_names}.csv", "wb", :force_quotes => true) do |csv|
       csv << ["Id","Name","Lat","Lon","Street","Housenumber","Postcode","City","Wheelchair","Type","Category"]
       Poi.unknown_accessibility.where(region_id: regions).where(node_type_id: node_types).order('version DESC').each do |poi|
         csv <<
