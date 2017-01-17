@@ -251,7 +251,7 @@ namespace :export do
   task :for_streetspotr_no_memorial_de => :environment do
     category_names  = ['food', 'shopping', 'accommodation', 'tourism']
 
-    regions = Region.find_by_sql("SELECT id, name FROM regions WHERE parent_id IN (SELECT id FROM regions WHERE parent_id = 44) AND name NOT IN ('Bremen', 'Dresden', 'Hannover', 'Dortmund', 'Essen', 'Leipzig', 'Koeln', 'Stuttgart', 'Duesseldorf', 'Nuernberg', 'Duisburg', 'Bochum', 'Wuppertal', 'Bielefeld', 'Bonn', 'Frankfurt', 'Muenster');")
+    regions = Region.find_by_sql("SELECT id, name FROM regions WHERE parent_id IN (SELECT id FROM regions WHERE parent_id = (SELECT id FROM regions WHERE name = 'Germany')) AND name NOT IN ('Bremen', 'Dresden', 'Hannover', 'Dortmund', 'Essen', 'Leipzig', 'Koeln', 'Stuttgart', 'Duesseldorf', 'Nuernberg', 'Duisburg', 'Bochum', 'Wuppertal', 'Bielefeld', 'Bonn', 'Frankfurt', 'Muenster');")
 
     region_names = regions.take(3).map(&:name).join('_').gsub(/\s+/,"_")
 
