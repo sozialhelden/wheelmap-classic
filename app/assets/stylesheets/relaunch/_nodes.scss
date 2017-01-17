@@ -232,6 +232,14 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 }
 
 .node-nearby-locations-from-partners {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+
+  &.has-results {
+    // display: block;
+    opacity: 1;
+  }
+
   ul {
     font-size: $baseFontSize;
     line-height: $baseLineHeight;
@@ -245,8 +253,9 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
 
   .ac-no-results {
     opacity: 0.4;
+    margin-bottom: 1em;
   }
-  
+
   .ac-result {
     padding: $baseFontSize / 2;
     padding-left: $baseFontSize * 2;
