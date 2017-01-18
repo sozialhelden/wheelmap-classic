@@ -246,6 +246,77 @@ namespace :export do
     end
   end
 
+  # For Further infos pls see: https://github.com/sozialhelden/wheelmap/issues/551
+  desc 'Export CSV nodes for streetspotr in Germany with specified categories and without node_type memorial'
+  task :for_streetspotr_no_memorial_de => :environment do
+    category_names  = ['food', 'shopping', 'accommodation', 'tourism']
+
+    regions = Region.find_by_sql("SELECT id, name FROM regions WHERE parent_id IN (SELECT id FROM regions WHERE parent_id = (SELECT id FROM regions WHERE name = 'Germany')) AND name NOT IN ('Berlin', 'Hamburg', 'Muenchen', 'Bremen', 'Dresden', 'Hannover', 'Dortmund', 'Essen', 'Leipzig', 'Koeln', 'Stuttgart', 'Duesseldorf', 'Nuernberg', 'Duisburg', 'Bochum', 'Wuppertal', 'Bielefeld', 'Bonn', 'Frankfurt', 'Muenster');")
+
+    region_names = regions.take(3).map(&:name).join('_').gsub(/\s+/,"_")
+
+    node_types = category_names.map do |category_name|
+      category = Category.find_by(identifier: category_name)
+      category.node_types.where.not(identifier: 'memorial')
+    end.flatten.uniq.map(&:id).sort
+
+    CSV.open("streetspotr_#{region_names}.csv", "wb", :force_quotes => true) do |csv|
+      csv << ["Id","Name","Lat","Lon","Street","Housenumber","Postcode","City","Wheelchair","Type","Category"]
+      Poi.unknown_accessibility.where(region_id: regions).where(node_type_id: node_types).order('version DESC').each do |poi|
+        csv <<
+          [
+            poi.id,
+            poi.name,
+            poi.lat,
+            poi.lon,
+            poi.street,
+            poi.housenumber,
+            poi.postcode,
+            poi.city,
+            poi.wheelchair,
+            poi.node_type.identifier,
+            poi.category.identifier
+          ]
+      end
+    end
+  end
+
+  # For Further infos pls see: https://github.com/sozialhelden/wheelmap/issues/551
+  desc 'Export CSV nodes for streetspotr in Germany with specified categories and without node_type memorial'
+  task :for_streetspotr_no_memorial_uk => :environment do
+    category_names  = ['food', 'shopping', 'accommodation', 'tourism']
+
+    regions = Region.find_by_sql("SELECT id, name, parent_id FROM regions WHERE parent_id IN (SELECT id FROM regions WHERE name IN (SELECT name FROM regions WHERE name IN ('West Midlands', 'East of London', 'South East England', 'Greater London', 'South West England','North East England', 'East Midlands', 'North West England', 'Dumfries and the Galloway', 'Edinburgh', 'Yorkshire and the Humber'))) AND NAME NOT IN ('Birmingham', 'London');")
+
+    region_names = regions.take(3).map(&:name).join('_').gsub(/\s+/,"_")
+
+    node_types = category_names.map do |category_name|
+      category = Category.find_by(identifier: category_name)
+      category.node_types.where.not(identifier: 'memorial')
+    end.flatten.uniq.map(&:id).sort
+
+    CSV.open("streetspotr_#{region_names}.csv", "wb", :force_quotes => true) do |csv|
+      csv << ["Id","Name","Lat","Lon","Street","Housenumber","Postcode","City","Wheelchair","Type","Category"]
+      Poi.unknown_accessibility.where(region_id: regions).where(node_type_id: node_types).order('version DESC').each do |poi|
+        csv <<
+          [
+            poi.id,
+            poi.name,
+            poi.lat,
+            poi.lon,
+            poi.street,
+            poi.housenumber,
+            poi.postcode,
+            poi.city,
+            poi.wheelchair,
+            poi.node_type.identifier,
+            poi.category.identifier
+          ]
+      end
+    end
+  end
+
+
   task :tags => :environment do
     puts "Tags = {"
     NodeType.order('osm_value ASC').all.each do |n|
