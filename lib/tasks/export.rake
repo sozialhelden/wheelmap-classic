@@ -282,7 +282,7 @@ namespace :export do
   end
 
   # For Further infos pls see: https://github.com/sozialhelden/wheelmap/issues/551
-  desc 'Export CSV nodes for streetspotr in Germany with specified categories and without node_type memorial'
+  desc 'Export CSV nodes for streetspotr in UK with specified categories and without node_type memorial'
   task :for_streetspotr_no_memorial_uk => :environment do
     category_names  = ['food', 'shopping', 'accommodation', 'tourism']
 
