@@ -8,4 +8,3 @@
           = link_to t('nodes.show.show-in-osm'), "http://openstreetmap.org/browse/way/#{node_streetview.osm_id.abs}"
         - else
           = link_to t('nodes.show.show-in-osm'), "http://openstreetmap.org/browse/node/#{node_streetview.osm_id}"
-  %p.osm-streetview#mapillary{ style: 'width: 640px; height: 480px;' }

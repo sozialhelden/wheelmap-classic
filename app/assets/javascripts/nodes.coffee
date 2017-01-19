@@ -276,6 +276,8 @@ if $dropzoneClickable.length > 0
       position: position
       pov: { heading: heading, pitch: 0 }
 
-  viewer = new Mapillary.Viewer('mapillary', 'YlpkQlEzaFh5R3JJUGRsX1hLTEhhdzo1ZmNjYzBmM2I0YWQyYTYx')
-  viewer.moveCloseTo(lat, lon)
+  mapillaryOptions =
+    component: false
 
+  viewer = new Mapillary.Viewer('mapillary', 'YlpkQlEzaFh5R3JJUGRsX1hLTEhhdzo1ZmNjYzBmM2I0YWQyYTYx', null, mapillaryOptions)
+  viewer.moveCloseTo(lat, lon)
