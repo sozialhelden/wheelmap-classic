@@ -131,6 +131,16 @@ describe Poi do
       p.send "wheelchair_toilet=", "yes"
       expect(p.tags["toilets:wheelchair"]).to eq("yes")
     end
+
+    it 'has wheelchair = no when passed via constructor' do
+      p = Poi.new("wheelchair" => "no")
+      expect(p.wheelchair).to eq("no")
+    end
+
+    it 'has wheelchair_toilet = no when passed via constructor' do
+      p = Poi.new("wheelchair_toilet" => "no")
+      expect(p.wheelchair_toilet).to eq("no")
+    end
   end
 
   context "json rendering" do

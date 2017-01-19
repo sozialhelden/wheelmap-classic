@@ -1,7 +1,7 @@
 class Api::NodeTypesController < Api::ApiController
   defaults :resource_class => NodeType
 
-  belongs_to :category, :optional => true
+  belongs_to :category, :optional => true, :class_name => 'Category'
 
   actions :index, :show
 
