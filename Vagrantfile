@@ -61,7 +61,8 @@ Vagrant.configure("2") do |config|
       ruby \
       ruby-dev \
       nodejs-legacy \
-      npm
+      npm \
+      phantomjs
     gem install bundler
 
     # Start MySQL?
@@ -70,6 +71,9 @@ Vagrant.configure("2") do |config|
   SHELL
 
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
+    # Encourage phantomjs to work (https://github.com/ariya/phantomjs/issues/14376)
+    echo "QT_QPA_PLATFORM=offscreen" >> ~/.profile
+
     # Move into the appropriate folder
     cd /vagrant
 
@@ -87,6 +91,7 @@ Vagrant.configure("2") do |config|
     # Seed everything
     bundle exec rake db:create:all
     mysql -u root wheelmap_development < db/structure.sql
+    mysql -u root wheelmap_test < db/structure.sql
     bundle exec rake db:seed
     curl -O http://download.geofabrik.de/europe/germany/berlin-latest.osm.bz2
     bzcat berlin-latest.osm.bz2 | bundle exec rake osm:import
