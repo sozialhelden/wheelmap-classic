@@ -758,6 +758,24 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   }
 }
 
+.osm-streetview {
+
+  &.invisible {
+    display: none;
+  }
+
+  &.visible {
+    display: block;
+    height: 480px;
+  }
+
+  #mapillary {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
 // @TODO This need to be set for every simliar forms not only for node edit
 .node-form {
   background-color: #F1F0EC;
