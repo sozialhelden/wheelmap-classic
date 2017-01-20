@@ -5,7 +5,7 @@ class Api::NodesController < Api::ApiController
 
   custom_actions :collection => :search, :member => :update_wheelchair
 
-  optional_belongs_to :category
+  optional_belongs_to :category, :class_name => 'Category'
   optional_belongs_to :node_type
 
   # Make sure user authenticates itself using an api_key

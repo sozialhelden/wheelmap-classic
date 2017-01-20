@@ -13,7 +13,21 @@ describe Api::NodesController do
   describe 'index action' do
     before :each do
       Poi.delete_all
-      @nodes = [FactoryGirl.create(:poi, :osm_id => 1, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'}), FactoryGirl.create(:poi, :osm_id => 2, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})]
+      @category = FactoryGirl.create(:category, :identifier => 'education')
+      @nodes = [
+        FactoryGirl.create(:poi, category: @category, :osm_id => 1, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'}),
+        FactoryGirl.create(:poi, category: @category, :osm_id => 2, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'}),
+      ]
+    end
+
+    describe 'get nodes for category' do
+      before do
+        get(:index, category_id: @category.id, :api_key => @user.authentication_token)
+      end
+
+      it 'returns 200 status code' do
+        expect(response.status).to eq 200
+      end
     end
 
     describe 'format json' do
@@ -446,7 +460,19 @@ describe Api::NodesController do
              :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => @user.authentication_token})
         expect(response.status).to eql 202
       }.to change(Delayed::Job, :count).by(1)
+    end
 
+    it "creates node job with correct wheelchair attribute" do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+      expect(CreateNodeJob).to receive(:enqueue) do |_lat, _lng, tags, _current_user, _source|
+        expect(tags['wheelchair']).to eq 'yes'
+        expect(tags['toilets:wheelchair']).to eq 'yes'
+      end
+      request.headers['X-API-KEY'] = @user.authentication_token
+      post(:create, {"name"=>"centro cultural vergueiro", "type"=>"community_centre", "lat"=>"-23.5711773", "lon"=>"-46.6402144", "wheelchair"=>"yes", "wheelchair_toilet"=>"yes", "category"=>"leisure", "locale"=>"pt"})
+      expect(response.status).to eq 202
     end
 
     it "should compose source from user agent" do
