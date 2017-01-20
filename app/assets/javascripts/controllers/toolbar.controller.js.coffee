@@ -45,7 +45,11 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
   ).property('@each.isActive')
 
   searchString: Ember.computed('queryString', ->
-    return decodeURIComponent(this.get('queryString').replace(/\+/g, ' '))
+    queryString = this.get('queryString')
+    if queryString?
+      return decodeURIComponent(queryString.replace(/\+/g, ' '))
+    else
+      return queryString
   )
 
   activeStatusFilters: ((key, activeStatusFilters)->
