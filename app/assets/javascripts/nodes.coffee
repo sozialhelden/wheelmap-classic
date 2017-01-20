@@ -277,4 +277,10 @@ if $dropzoneClickable.length > 0
       pov: { heading: heading, pitch: 0 }
 
   viewer = new Mapillary.Viewer('mapillary', 'YlpkQlEzaFh5R3JJUGRsX1hLTEhhdzo1ZmNjYzBmM2I0YWQyYTYx', null)
-  viewer.moveCloseTo(lat, lon)
+  viewer.moveCloseTo(lat, lon).then(->
+    mapillaryContainer = document.getElementById('mapillary')
+    mapillaryContainer.parentElement.classList.remove('invisible')
+    mapillaryContainer.parentElement.classList.add('visible')
+    viewer.resize()
+  , null).catch (err) ->
+    console.log err
