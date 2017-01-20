@@ -273,7 +273,7 @@ if $dropzoneClickable.length > 0
     heading = google.maps.geometry.spherical.computeHeading(data.location.latLng, position)
 
     streetView = new google.maps.StreetViewPanorama element,
-      position: position
+      pano: data.location.pano,
       pov: { heading: heading, pitch: 0 }
 
   viewer = new Mapillary.Viewer('mapillary', 'YlpkQlEzaFh5R3JJUGRsX1hLTEhhdzo1ZmNjYzBmM2I0YWQyYTYx', null)
