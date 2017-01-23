@@ -1,6 +1,6 @@
 #= require jquery
 #= require jquery_ujs
-#= require accessibility.cloud.1.2.8.min.js
+#= require accessibility.cloud.1.2.8.js
 #= require jquery/jquery.cookies.js
 #= require i18n.js
 #= require bootstrap-transition
