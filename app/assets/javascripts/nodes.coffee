@@ -16,6 +16,7 @@
 #= require jquery/jquery.magnific-popup.js
 #= require responsive-popover
 #= require dropzone
+#= require mapillary
 
 I18n.defaultLocale = 'en'
 I18n.locale = $('html').attr('lang')
@@ -275,3 +276,12 @@ if $dropzoneClickable.length > 0
     streetView = new google.maps.StreetViewPanorama element,
       pano: data.location.pano,
       pov: { heading: heading, pitch: 0 }
+
+  viewer = new Mapillary.Viewer('mapillary', 'YlpkQlEzaFh5R3JJUGRsX1hLTEhhdzo1ZmNjYzBmM2I0YWQyYTYx', null)
+  viewer.moveCloseTo(lat, lon).then(->
+    mapillaryContainer = document.getElementById('mapillary')
+    mapillaryContainer.parentElement.classList.remove('invisible')
+    mapillaryContainer.parentElement.classList.add('visible')
+    viewer.resize()
+  , null).catch (err) ->
+    console.log err
