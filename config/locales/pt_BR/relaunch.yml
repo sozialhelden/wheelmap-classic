@@ -28,11 +28,11 @@ pt_BR:
       2: Tenho mais informações sobre este lugar.
   header:
     navigation:
-      about_wheelmap: Sobre Wheelmap
       choose_language: Escolher idioma
       contact: Contato
       map: Mapa
       projects: Envolva-se
+      faq: Perguntas Frequentes
       report_problem: Relatar um problema
     toolbar:
       categories: Categorias

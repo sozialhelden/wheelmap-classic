@@ -37,11 +37,12 @@ cs:
       2: O tomto místě mám více informací.
   header:
     navigation:
-      about_wheelmap: O Wheelmap
       choose_language: Zvolte jazyk
       contact: Kontakt
       map: Mapa
+      travelguide: Cestovní průvodce
       projects: Zapojte se
+      faq: Často kladené dotazy
       report_problem: Nahlaste problém
     toolbar:
       categories: Kategorie
@@ -101,6 +102,7 @@ cs:
       add: Přidat
       photos_of_this_place: 'Fotky tohoto místa:'
       upload: Nahrát
+      alert: 'Upozornění: Vchod by měl být na fotografii jasně viditelný, aby bylo patrné následující: Jsou u vchodu schody? Jaká je přibližná výška schodu? Jak široké jsou dveře? Fotografie musí být ve formátu JPG nebo PNG a neměla by být větší než 10 MB.'
     node_similar:
       similar: 'Podobné místa:  %{name}'
     node_status:

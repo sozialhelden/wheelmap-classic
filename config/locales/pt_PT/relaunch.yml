@@ -27,7 +27,6 @@ pt_PT:
       2: Tenho mais informação sobre este lugar.
   header:
     navigation:
-      about_wheelmap: Sobre o Wheelmap
       choose_language: Escolher língua
       contact: Contacto
       map: Mapa

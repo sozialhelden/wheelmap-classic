@@ -37,11 +37,11 @@ ar:
       2: لدي مزيد من المعلومات عن هذا المكان.
   header:
     navigation:
-      about_wheelmap: حول ويل ماب
       choose_language: إختر اللغة
       contact: للإتصال
       map: خريطة
       projects: قم بالاشتراك
+      faq: الأسئلة الأكثر تكرارا
       report_problem: بلغ عن مشكلة
     toolbar:
       categories: التصنيفات

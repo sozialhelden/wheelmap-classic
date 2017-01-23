@@ -28,11 +28,11 @@ el:
       2: Έχω περισσότερες πληροφορίες σχετικά με αυτό το μέρος.
   header:
     navigation:
-      about_wheelmap: Σχετικά με το Wheelmap
       choose_language: Επιλογή γλώσσας
       contact: Επικοινωνία
       map: Χάρτης
       projects: Συμμετέχετε
+      faq: Συχνές ερωτήσεις
       report_problem: Report a problem
     toolbar:
       categories: Κατηγορίες

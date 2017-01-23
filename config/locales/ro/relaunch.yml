@@ -15,6 +15,7 @@ ro:
   header:
     navigation:
       projects: Implicați-vă
+      faq: Întrebări frecvente
       report_problem: Raportează probleme
   nodes:
     new:

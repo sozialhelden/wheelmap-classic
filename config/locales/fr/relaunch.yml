@@ -37,11 +37,12 @@ fr:
       2: J'ai d'autres informations sur ce lieu.
   header:
     navigation:
-      about_wheelmap: À propos de Wheelmap
       choose_language: Choisir une langue
       contact: Contact
       map: Carte
+      travelguide: Guide de voyage
       projects: Participez
+      faq: FAQ
       report_problem: Signaler un problème
     toolbar:
       categories: Catégories
@@ -101,6 +102,7 @@ fr:
       add: Ajouter
       photos_of_this_place: 'Photos de ce lieu :'
       upload: Téléverser
+      alert: 'Veuillez noter que l''entrée doit être parfaitement visible sur la photo afin de répondre aux questions suivantes : Y a-t-il des marches à l''entrée ? Quelle est la hauteur approximative des marches ? Quelle est la largeur de la porte ? La photo doit être au format JPG ou PNG et ne doit pas dépasser 10 Mo.'
     node_similar:
       similar: 'Lieux similaires : %{name}'
     node_status:

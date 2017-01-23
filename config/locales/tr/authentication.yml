@@ -1,86 +1,122 @@
 tr:
   devise:
     confirmations:
-      confirmed: "hesab başarılı bir şekilde onaylandı. "
-      send_instructions: "Bir kaç dakika içerisinde e-posta ile hesabınızı nasıl onaylanması gerektiğine dair talimat alacaksınız. "
+      confirmed: "E-posta adresiniz başarılı bir şekilde onaylandı."
+      link: "Onay talimatları size ulaşmadı mı?"
+      send_instructions: "Birkaç dakika içinde hesabınızı onaylamak için bir e-posta alacaksınız."
+      send_paranoid_instructions: "Eğer hesabınız varsa, birkaç dakika içinde hesabınızı nasıl onaylayacağınızı anlatan bir e-posta alacaksınız."
     destroy:
       confirm: "Emin misiniz?"
+      headline: "Hesabı sil"
       link: "Şimdi sil"
     edit:
       form:
         labels:
-          current_password: "Güncel parola <i> (yapmak istediğiniz değişikleri onaylamak için gerekir) </i>"
+          current_password: "Güncel şifre <i> (Yapmak istediğiniz değişikleri onaylamak için gereklidir) </i>"
           email: E-Posta
-          password: "Parola <i> (değiştirmek istemiyorsaniz boş bırakın) </i>"
-          password_confirmation: "Parolayı tekrarlayın"
-        submit: "Değişiklikeri kaydedin"
+          password: "Şifre <i> (Şifrenizi değiştirmek istemiyorsanız boş bırakın) </i>"
+          password_confirmation: "Şifreyi tekrar girin"
+        submit: "Değişiklikeri kaydet"
       headline: "Hesabı yönet"
     failure:
-      invalid: "Geçersiz eposta adresi veya parola"
-      invalid_token: "Geçersiz resmi tasdik belirli."
-      locked: "Hesabınız şu an kilitli."
-      unauthenticated: "Devam etmek için tekrar kaydolun."
-      unconfirmed: "Devam etmeden önce hesabınızı onaylamanız gerekir."
+      already_authenticated: "Zaten oturum açtınız."
+      inactive: "Hesabınız henüz etkinleştirilmedi."
+      invalid: "Geçersiz e-posta adresi veya şifre."
+      invalid_token: "Geçersiz kimlik doğrulama belirteci"
+      locked: "Hesabınız kilitli"
+      timeout: "Oturumunuz zaman aşımına uğradı, devam etmek için tekrar giriş yapın."
+      unauthenticated: "Devam etmek için giriş yapın veya kaydolun."
+      unconfirmed: "Devam etmek için hesabınızı onaylamanız gerekiyor."
     mailer:
       confirmation_instructions:
-        subject: "Onay talimatları"
+        landing_page: "Lütfen e-posta adresinize gönderilen linki tıklayın. Eğer bizden herhangi bir e-posta almadıysanız, lütfen öncelikle spam kutusunu kontrol edin, yoksa kayıt sayfasına geri dönün ve tekrar deneyin."
+        subject: "Hesabınızı etkinleştirmeye bir adım daha kaldı."
       reset_password_instructions:
-        subject: "parola talimatlarını sıfırla"
-    mandatory: "* zorunlu alan"
+        subject: "Şifre talimatlarını sıfırla"
+      unlock_instructions:
+        subject: "Kilit kaldırma talimatları"
+    mandatory: "* Doldurulması zorunlu alan"
     omniauth_callbacks:
-      failure: "%{kind} hesabınıza \"%{reason}\" dolayı yetki verilmemiştir."
-      success: "%{kind} hesab tarafından başarılı bir şekilde yetki verilmiştir. "
+      failure: "%{kind} yetkilendirmesi başarısız oldu. Hata: \"%{reason}\"."
+      permission_missing: "Gerekli izni vermediniz."
+      success: "%{kind} oturumu başarıyla açıldı."
     password_recovery:
       form:
         labels:
           email: E-Posta
-        submit: "Parolayı sıfırla"
+        submit: "Şifreyi sıfırla"
       headline: "Şifreni mi unuttun?"
     password_reset:
       email:
-        comment: "Parolanızı değiştirmek istemiyorsanız lütfen bu mesajı dikkate almayın <br> Parolanız bu linke tıklayana kadar değişmiyecektir. "
+        comment: "Şifrenizi değiştirmek istemiyorsanız lütfen bu mesajı dikkate almayın. <br/> Bu linke tıklayıp yeni şifre girmediğiniz sürece şifreniz değiştirilmeyecektir."
         headline: "Hoşgeldiniz %{email}"
-        link: "Parolayı değistir"
+        link: "Şifremi değistir"
+        text: "Şifrenizi değiştirmek için bir istek aldık. İsteği siz gönderdiyseniz, aşağıdaki linke tıklayın - yoksa bu mesajı dikkate almayın!"
       form:
         labels:
-          password: "Yeni parola"
-          password_confirmation: "Parolayı tekrar et"
-        submit: "Parolayı sıfırla"
-      headline: "Parolayı sıfırla"
+          password: "Yeni şifre"
+          password_confirmation: "Şifreyi tekrar gir"
+        submit: "Şifreyi sıfırla"
+      headline: "Şifreyi sıfırla"
     passwords:
-      link: "Parolayı unuttunuzmu?"
-      updated: "Parolanız başarılı bir şekilde değişmiştir. Yeni bir oturum açtınız. "
+      link: "Şifrenizi mi unuttunuz?"
+      send_instructions: "Birkaç dakika içinde şifrenizi nasıl sıfırlayacağınızı anlatan bir e-posta alacaksınız."
+      send_paranoid_instructions: "Eğer hesabınız varsa, birkaç dakika içinde şifrenizi nasıl sıfırlayacağınızı anlatan bir e-posta alacaksınız."
+      updated: "Şifreniz başarıyla değiştirildi, şu anda oturum açtınız"
+      updated_not_active: "Şifreniz başarıyla değiştirildi"
     registrations:
-      destroyed: "Hoşçakalın! Hesabınız başarılı bir şekilde iptal edilmiştir. Umariz sizi daha sonra tekrar görürüz."
-      inactive_signed_up: "Başarılı bir şekilde kaydoldunuz. Fakat biz sizi kayda alamadık, çünkü hesabınız %{reason}.  "
+      destroyed: "Hoşçakalın! Hesabınız başarıyla iptal edildi.  Yakında sizi tekrar görmeyi umuyoruz."
+      inactive_signed_up: "Başarılı bir şekilde kaydoldunuz, fakat oturum açılamadı. Engelleme sebebi: %{reason}.  "
       link: "Kaydol"
-      updated: "Hesabınızı başarılı bir şekilde güncelleştirdiniz. "
+      reasons:
+        inactive: aktif değil
+        locked: kilitli
+        unconfirmed: onaylanmadı
+      signed_up: "Başarılı bir şekilde kaydoldunuz. Size bir onay e-postası gönderildi."
+      updated: "Hesabınızı başarılı bir şekilde güncelleştirdiniz."
     sessions:
-      invalid: "Geçersiz e-posta veya parola"
+      inactive: "Hesabınız henüz etkinleştirilmedi"
+      invalid: "Geçersiz e-posta veya şifre."
       invalid_token: "Geçersiz resmi tasdik belirtisi. "
       link: "Oturumu aç"
-      locked: "Hesabınız kilitli."
-      signed_in: "Oturum başarılı açıldı"
-      signed_out: "Oturum basarılı kapandı "
-      unauthenticated: "Devam etmek için oturum açmanız gerekir."
-      unconfirmed: "Devam etmek için hesabınızı onaylayınız."
+      locked: "Hesabınız kilitli"
+      new:
+        no_osm_account: "OpenStreetMap hesabınız yok mu?"
+        osm_promo_text: "Wheelmap, OpenStreetMap (OSM) coğrafi verilerini kullanmaktadır. OpenStreetMap, sizin gibi insanlar tarafından oluşturulmuş ücretsiz bir dünya haritasıdır, işleyişi Wikipedia gibidir. Haritadaki yerleri düzenleyebilmek veya yenilerini oluşturmak için bir OpenStreetMap hesabı oluşturmanız ve oturum açmanız gerekir."
+        promo_text_thank_you: "Desteğiniz için çok teşekkür ederiz!"
+        sign_in_with: "%{kind} ile oturum aç"
+        sign_up_with_osm: "Şimdi kaydol."
+        wheelmap_promo_text: "Tekerlekli sandalye ile ulaşılabilen yerler hakkındaki bilgilerinizle, fiziksel engelli kişilerin günlük yaşantılarını daha iyi planlamasına yardımcı olabilirsiniz. Bu ayrıca OpenStreetMap içeriğinin daha ayrıntılı hale gelmesine yardımcı olacaktır."
+      signed_in: "Oturum açıldı"
+      signed_out: "Başarıyla çıkış yaptınız."
+      timeout: "Oturumunuz zaman aşımına uğradı, devam etmek için tekrar giriş yapın."
+      unauthenticated: "Devam etmek için giriş yapın veya kaydolun."
+      unconfirmed: "Devam etmek için hesabınızı onaylamanız gerekiyor."
     sign_in:
       form:
         labels:
           email: E-Posta
-          password: Parola
-          remember_me: "Kayıtlı kal?"
+          password: Şifre
+          remember_me: "Oturum açık kalsın mı?"
         submit: "Oturum aç"
       headline: "Oturum aç"
     sign_out:
       headline: "Oturumu kapat"
     sign_up:
+      email:
+        confirm_my_account: "Hesabımı onayla"
+        please_confirm: "Aşağıdaki linke tıklayarak hesabınızı onaylayabilirsiniz."
+        welcome: "Hoşgeldin %{email}!"
       form:
         labels:
           email: E-Posta
-          password: Parola
-          password_confirmation: "Parolayı tekrarla"
+          password: Şifre
+          password_confirmation: "Şifreyi tekrar gir"
+          wants_newsletter: "Evet, Wheelmap ile ilgili yeniliklerden beni haberdar edin, fakat bu ayda bir defadan fazla olmasın."
         submit: "Kaydol"
       headline: "Kaydol"
     unlocks:
-      unlocked: "Hesabınızın kilidi başarılı bir şekilde açılmıstır. Şu an kayıtlısınız."
+      link: "Kilit kaldırma talimatlarını almadınız mı?"
+      send_instructions: "Birkaç dakika içinde hesabınızın klidini nasıl kaldıracağınızı anlatan bir e-posta alacaksınız."
+      send_paranoid_instructions: "Eğer hesabınız varsa, birkaç dakika içinde hesabınızın kilidini nasıl kaldıracağınızı anlatan bir e-posta alacaksınız."
+      unlocked: "Hesabınızın kilidi başarılı bir şekilde kaldırılmıştır. Şu an oturum açtınız."

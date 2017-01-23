@@ -28,11 +28,11 @@ da:
       2: Jeg har mere information om dette sted.
   header:
     navigation:
-      about_wheelmap: Om Wheelmap
       choose_language: Vælg sprog
       contact: Kontakt
       map: Kort
       projects: Bliv involveret
+      faq: FAQ
       report_problem: Fejlrapporterer et problem
     toolbar:
       categories: kategorier

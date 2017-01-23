@@ -18,6 +18,7 @@ fi:
     navigation:
       map: Kartta
       projects: Osallistu
+      faq: UKK
       report_problem: Ilmoita viasta
   nodes:
     new:
