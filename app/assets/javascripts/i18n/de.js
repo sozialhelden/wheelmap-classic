@@ -798,6 +798,7 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
       "blog": "News",
       "choose_language": "Sprache wählen",
       "contact": "Kontakt",
+      "faq": "FAQ",
       "feedback": "Feedback",
       "home": "Start",
       "how_to_add_a_place": "Wie trage ich Orte ein?",
@@ -812,6 +813,7 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
       "projects": "Mitmachen",
       "report_problem": "Problem melden",
       "suggestions": "Anregungen",
+      "travelguide": "Reiseführer",
       "what_is_barrier_free": "Was bedeutet „rollstuhlgerecht“?",
       "what_is_wheelmap": "Was ist Wheelmap?"
     },

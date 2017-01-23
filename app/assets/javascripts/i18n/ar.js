@@ -760,10 +760,10 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "حول ويل ماب",
       "blog": "مدونة",
       "choose_language": "إختر اللغة",
       "contact": "للإتصال",
+      "faq": "الأسئلة الأكثر تكرارا",
       "feedback": "الآراء",
       "home": "ابدأ",
       "how_to_add_a_place": "كيف يمكنني اضافة مكان ؟",
@@ -778,6 +778,7 @@ I18n.translations["ar"] = I18n.extend((I18n.translations["ar"] || {}), {
       "projects": "قم بالاشتراك",
       "report_problem": "بلغ عن مشكلة",
       "suggestions": "الإقتراحات",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "ماذا تعني هذة الجملة \"إمكانية الوصول بالكرسي المتحرك\"؟",
       "what_is_wheelmap": "تعرف على ويل ماب ؟"
     },

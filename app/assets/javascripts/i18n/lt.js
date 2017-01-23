@@ -761,10 +761,10 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "Apie Wheelmap",
       "blog": "Naujienos",
       "choose_language": "Pasirinkti kalbą",
       "contact": "Kontaktai",
+      "faq": "FAQ",
       "feedback": "Atsiliepimai",
       "home": "Start",
       "how_to_add_a_place": "How do I add places?",
@@ -779,6 +779,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       "projects": "Get involved",
       "report_problem": "Pranešti apie problemą",
       "suggestions": "Pasiūlymai",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Ką reiškia \"prieinama neįgaliųjų vežimėliais\"?",
       "what_is_wheelmap": "Kas yra Wheelmap?"
     },

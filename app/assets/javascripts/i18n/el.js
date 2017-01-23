@@ -760,10 +760,10 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "Σχετικά με το Wheelmap",
       "blog": "Blog",
       "choose_language": "Επιλογή γλώσσας",
       "contact": "Επικοινωνία",
+      "faq": "Συχνές ερωτήσεις",
       "feedback": "Ανατροφοδότηση",
       "home": "Έναρξη",
       "how_to_add_a_place": "Πώς προσθέτω τοποθεσίες?",
@@ -778,6 +778,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "projects": "Συμμετέχετε",
       "report_problem": "Report a problem",
       "suggestions": "Προτάσεις",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Τι σημαίνει 'προσβάσιμο με αναπηρική καρέκλα'?",
       "what_is_wheelmap": "Τι είναι το Wheelmap?"
     },

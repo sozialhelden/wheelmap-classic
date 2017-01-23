@@ -768,10 +768,10 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "Acerca de Wheelmap",
       "blog": "Noticias",
       "choose_language": "Elija idioma",
       "contact": "Contacto",
+      "faq": "Preguntas Frecuentes",
       "feedback": "Comentarios",
       "home": "Empezar",
       "how_to_add_a_place": "¿Cómo agrego lugares?",
@@ -786,6 +786,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
       "projects": "Involúcrate",
       "report_problem": "Reportar un problema",
       "suggestions": "Sugerencias",
+      "travelguide": "Guía de viajes",
       "what_is_barrier_free": "¿Qué significa \"accesible para silla de ruedas\"?",
       "what_is_wheelmap": "¿Qué es Wheelmap?"
     },
@@ -1011,6 +1012,7 @@ I18n.translations["es"] = I18n.extend((I18n.translations["es"] || {}), {
     },
     "node_photos": {
       "add": "Agregar",
+      "alert": "Atención: la foto debería mostrar la entrada con total claridad para que se pueda ver si esta tiene peldaños, la altura de dichos peldaños y el ancho de la puerta. La fotografía debe estar en formato JPG o PNG, y no debería sobrepasar los 10 MG.",
       "photos_of_this_place": "Fotos de este lugar:",
       "upload": "Subir"
     },

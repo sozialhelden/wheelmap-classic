@@ -761,10 +761,10 @@ I18n.translations["ro"] = I18n.extend((I18n.translations["ro"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "About Wheelmap",
       "blog": "News",
       "choose_language": "Choose language",
       "contact": "Contact",
+      "faq": "Întrebări frecvente",
       "feedback": "Feedback",
       "home": "Start",
       "how_to_add_a_place": "How do I add places?",
@@ -779,6 +779,7 @@ I18n.translations["ro"] = I18n.extend((I18n.translations["ro"] || {}), {
       "projects": "Implicați-vă",
       "report_problem": "Raportează probleme",
       "suggestions": "Suggestions",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "What does \"wheelchair accessible\" mean?",
       "what_is_wheelmap": "What is Wheelmap?"
     },

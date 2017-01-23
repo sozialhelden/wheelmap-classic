@@ -788,10 +788,10 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "Про Wheelmap",
       "blog": "Новини",
       "choose_language": "Змінити мову",
       "contact": "Контакт",
+      "faq": "Питання, які часто задають",
       "feedback": "Відгуки",
       "home": "Старт",
       "how_to_add_a_place": "Як я можу додати місця?",
@@ -806,6 +806,7 @@ I18n.translations["uk"] = I18n.extend((I18n.translations["uk"] || {}), {
       "projects": "Долучитися",
       "report_problem": "Повідомити про проблему",
       "suggestions": "Пропозиції",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Що означає \"доступ для людей на інвалідних візках\"?",
       "what_is_wheelmap": "Що таке Wheelmap?"
     },

@@ -760,10 +760,10 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "關於 Wheelmap",
       "blog": "部落格",
       "choose_language": "選擇語言",
       "contact": "聯繫我們",
+      "faq": "常見問題",
       "feedback": "回饋",
       "home": "開始",
       "how_to_add_a_place": "如何新增地點？",
@@ -778,6 +778,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
       "projects": "參與其中",
       "report_problem": "回報一個問題",
       "suggestions": "建議",
+      "travelguide": "旅遊指南",
       "what_is_barrier_free": "「輪椅無障礙」是什麼意思？",
       "what_is_wheelmap": "Wheelmap 是什麼？"
     },
@@ -1003,6 +1004,7 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
     },
     "node_photos": {
       "add": "新增",
+      "alert": "請注意：照片應清楚呈現入口的樣貌，以顯示下列細節：入口有無台階？台階大概多高？門大概多寬？照片應為 JPG 或 PNG 格式，且不可超過 10 MB。",
       "photos_of_this_place": "這個地點的照片: ",
       "upload": "上傳"
     },

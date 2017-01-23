@@ -760,10 +760,10 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "About Wheelmap",
       "blog": "Blogg",
       "choose_language": "Choose language",
       "contact": "Contact",
+      "faq": "FAQ",
       "feedback": "Athugasemdir",
       "home": "Byrja",
       "how_to_add_a_place": "Hvernig bæti ég við stöðum?",
@@ -778,6 +778,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
       "projects": "Get involved",
       "report_problem": "Tilkynntu villu",
       "suggestions": "Uppástungur",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Hvað þýðir \"hjólastólaaðgengilegt\"?",
       "what_is_wheelmap": "What is Wheelmap?"
     },

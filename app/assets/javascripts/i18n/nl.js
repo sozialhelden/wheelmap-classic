@@ -758,10 +758,10 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "Over Wheelmap",
       "blog": "Blog",
       "choose_language": "Kies de taal",
       "contact": "Contact",
+      "faq": "FAQ",
       "feedback": "Feedback",
       "home": "Start",
       "how_to_add_a_place": "Hoe kan ik plaatsen toevoegen?",
@@ -776,6 +776,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "projects": "Doe mee",
       "report_problem": "Geef een probleem op",
       "suggestions": "Adviezen",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Wat betekend \"wheelchair accessible\"?",
       "what_is_wheelmap": "Wat is Wheelmap?"
     },

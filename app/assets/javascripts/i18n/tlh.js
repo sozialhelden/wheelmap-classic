@@ -760,10 +760,10 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "About Wheelmap",
       "blog": "QonoS",
       "choose_language": "Choose language",
       "contact": "Contact",
+      "faq": "FAQ",
       "feedback": "qechmey",
       "home": "tagh",
       "how_to_add_a_place": "chay' Daqmey vIchel?",
@@ -778,6 +778,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
       "projects": "Get involved",
       "report_problem": "Report a problem",
       "suggestions": "vay' chup",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "\"rutlhquS chawbogh Daq'e'\" DaQIjlaH'a'?",
       "what_is_wheelmap": "nuq 'oH wheelmap'e'?"
     },

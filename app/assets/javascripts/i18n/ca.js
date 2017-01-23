@@ -768,10 +768,10 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "Sobre Wheelmap",
       "blog": "Bloc",
       "choose_language": "Triar idioma",
       "contact": "Contactar",
+      "faq": "FAQ",
       "feedback": "Comentaris",
       "home": "Inicia",
       "how_to_add_a_place": "Com podeu afegir llocs?",
@@ -786,6 +786,7 @@ I18n.translations["ca"] = I18n.extend((I18n.translations["ca"] || {}), {
       "projects": "Ajuda'ns",
       "report_problem": "Informa d'un problema",
       "suggestions": "Suggerències",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Què significa «accessible amb cadira de rodes»?",
       "what_is_wheelmap": "Què és Wheelmap?"
     },

@@ -760,10 +760,10 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "About Wheelmap",
       "blog": "Blogs",
       "choose_language": "Choose language",
       "contact": "Contact",
+      "faq": "FAQ",
       "feedback": "Atsauksmes",
       "home": "Sākt",
       "how_to_add_a_place": "Ka es varu pievienot vietas?",
@@ -778,6 +778,7 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       "projects": "Get involved",
       "report_problem": "Ziņot par problēmu",
       "suggestions": "Ieteikumi",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Ko \"pieejams ar ratiņkrēslu\" nozīmē?",
       "what_is_wheelmap": "What is Wheelmap?"
     },

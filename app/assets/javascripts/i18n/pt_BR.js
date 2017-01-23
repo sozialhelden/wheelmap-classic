@@ -760,10 +760,10 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "Sobre Wheelmap",
       "blog": "Blog",
       "choose_language": "Escolher idioma",
       "contact": "Contato",
+      "faq": "Perguntas Frequentes",
       "feedback": "Feedback",
       "home": "Iniciar",
       "how_to_add_a_place": "Como adicionar lugares?",
@@ -778,6 +778,7 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
       "projects": "Envolva-se",
       "report_problem": "Relatar um problema",
       "suggestions": "Sugestões",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Qual o significado de \"acessível a cadeirantes\"?",
       "what_is_wheelmap": "O que é Wheelmap?"
     },

@@ -760,10 +760,10 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "A Wheelmapről",
       "blog": "Hírek",
       "choose_language": "Válassz nyelvet!",
       "contact": "Elérhetőség",
+      "faq": "GYIK",
       "feedback": "Visszajelzés",
       "home": "Indítás",
       "how_to_add_a_place": "Hogyan adhatok hozzá egy új helyet?",
@@ -778,6 +778,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
       "projects": "Kapcsolódj be",
       "report_problem": "Hiba jelentése",
       "suggestions": "Javaslatok",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Mit jelent a \"kerekesszékkel akadálymentes\"?",
       "what_is_wheelmap": "Mi a Wheelmap?"
     },
