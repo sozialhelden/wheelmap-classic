@@ -760,10 +760,10 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "Rreth Wheelmap",
       "blog": "Lajme",
       "choose_language": "Zgjidh gjuhёn",
       "contact": "Kontakt",
+      "faq": "FAQ",
       "feedback": "Reagim",
       "home": "Fillo",
       "how_to_add_a_place": "Si të shtoj vende?",
@@ -778,6 +778,7 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
       "projects": "Get involved",
       "report_problem": "Raporto një problem",
       "suggestions": "Sugjerime",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Çfarë do të thotë \"e aksesueshme në karrige me rrota\"?",
       "what_is_wheelmap": "What is Wheelmap?"
     },

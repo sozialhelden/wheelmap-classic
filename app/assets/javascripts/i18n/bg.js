@@ -760,10 +760,10 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "За Wheelmap",
       "blog": "Новини",
       "choose_language": "Избери език",
       "contact": "Контакт",
+      "faq": "Често Задавани Въпроси",
       "feedback": "Обратна връзка",
       "home": "Начало",
       "how_to_add_a_place": "Как се добавят места?",
@@ -778,6 +778,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
       "projects": "Включете се",
       "report_problem": "Съобщи за проблем",
       "suggestions": "Предложения",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Какво значи \"достъпно за инвалидни колички\"?",
       "what_is_wheelmap": "Какво е Wheelmap?"
     },

@@ -37,11 +37,12 @@ ja:
       2: この場所をより詳しく知っています。
   header:
     navigation:
-      about_wheelmap: Wheelmap について
       choose_language: 言語を選択
       contact: 連絡先
       map: 地図
+      travelguide: トラベルガイド
       projects: 参加する
+      faq: よくある質問
       report_problem: 問題を報告
     toolbar:
       categories: カテゴリ
@@ -101,6 +102,7 @@ ja:
       add: 追加
       photos_of_this_place: 'この場所の写真:'
       upload: アップロード
+      alert: 'ご注意ください: 次の点が明らかになるよう、写真には入り口がはっきりと写っている必要があります。1. 入り口に階段があるかどうか。2. 大体の段差（高さ）。3. ドアの広さ（横幅）。写真は JPG または PNG 形式とし、10 MB 以下のファイルに収めてください。'
     node_similar:
       similar: 'ここに似た場所: %{name}'
     node_status:

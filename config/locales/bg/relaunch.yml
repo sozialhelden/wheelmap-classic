@@ -26,11 +26,11 @@ bg:
       2: Имам повече информация за това място.
   header:
     navigation:
-      about_wheelmap: За Wheelmap
       choose_language: Избери език
       contact: Контакт
       map: Карта
       projects: Включете се
+      faq: Често Задавани Въпроси
       report_problem: Съобщи за проблем
     toolbar:
       categories: Категории

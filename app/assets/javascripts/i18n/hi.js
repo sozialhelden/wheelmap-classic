@@ -760,10 +760,10 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "About Wheelmap",
       "blog": "ब्लॅाग",
       "choose_language": "Choose language",
       "contact": "Contact",
+      "faq": "FAQ",
       "feedback": "राय, प्रतिक्रिया, फीडबैक ",
       "home": "शुरू करें, प्रारंभ",
       "how_to_add_a_place": "और स्थान कैसे जोड़े जाएं?",
@@ -778,6 +778,7 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
       "projects": "Get involved",
       "report_problem": "समस्या की रिपोर्ट कीजिए",
       "suggestions": "सुझाव\n",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "\"व्हीलचेयर सुलभ\" का मतलब क्या है?",
       "what_is_wheelmap": "What is Wheelmap?"
     },

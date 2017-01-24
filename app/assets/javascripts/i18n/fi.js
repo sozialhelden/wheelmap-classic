@@ -760,10 +760,10 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "About Wheelmap",
       "blog": "News",
       "choose_language": "Choose language",
       "contact": "Contact",
+      "faq": "UKK",
       "feedback": "Feedback",
       "home": "Start",
       "how_to_add_a_place": "How do I add places?",
@@ -778,6 +778,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
       "projects": "Osallistu",
       "report_problem": "Ilmoita viasta",
       "suggestions": "Suggestions",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "What does \"wheelchair accessible\" mean?",
       "what_is_wheelmap": "What is Wheelmap?"
     },

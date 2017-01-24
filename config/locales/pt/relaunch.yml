@@ -37,11 +37,12 @@ pt:
       2: Eu tenho mais informações sobre este local.
   header:
     navigation:
-      about_wheelmap: Sobre o Wheelmap
       choose_language: Escolher o idioma
       contact: Contacto
       map: Mapa
+      travelguide: Guia de viagem
       projects: Envolva-se
+      faq: Perguntas Frequentes
       report_problem: Report a problem
     toolbar:
       categories: Categorias
@@ -101,6 +102,7 @@ pt:
       add: Adicionar
       photos_of_this_place: 'Fotografias deste local:'
       upload: Enviar
+      alert: 'Tenha em atenção: a entrada deve ser claramente visível na foto para apresentar o seguinte: existem degraus na entrada? Qual é a altura aproximada do degrau? Qual é a largura da porta? A foto deve estar no formato JPEG ou PNG. Não deve ter um tamanho superior a 10 MB.'
     node_similar:
       similar: 'Locais similares: %{name}'
     node_status:

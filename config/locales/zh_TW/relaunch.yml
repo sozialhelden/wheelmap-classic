@@ -37,11 +37,12 @@ zh_TW:
       2: 我有關於這個地點的更多資訊。
   header:
     navigation:
-      about_wheelmap: 關於 Wheelmap
       choose_language: 選擇語言
       contact: 聯繫我們
       map: 地圖
+      travelguide: 旅遊指南
       projects: 參與其中
+      faq: 常見問題
       report_problem: 回報一個問題
     toolbar:
       categories: 分類
@@ -101,6 +102,7 @@ zh_TW:
       add: 新增
       photos_of_this_place: '這個地點的照片: '
       upload: 上傳
+      alert: '請注意：照片應清楚呈現入口的樣貌，以顯示下列細節：入口有無台階？台階大概多高？門大概多寬？照片應為 JPG 或 PNG 格式，且不可超過 10 MB。'
     node_similar:
       similar: '類似的地點: %{name}'
     node_status:

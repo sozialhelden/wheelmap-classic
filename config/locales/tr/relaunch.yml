@@ -3,77 +3,177 @@ tr:
     attributes:
       poi:
         name: İsim
-        type: Tip
+        type: Tür
         address: Adres
-        website: Internet Sitesi
+        website: Web sitesi
         phone: Telefon
+        note: Not
         address_street: Sokak
-        address_housenumber: Ev numarası
+        address_housenumber: Kapı No
+        address_postcode: Posta Kodu
         address_city: Şehir
   community_support_form:
     new:
       form:
-        title: 'Sorun bildir '
+        title: Sorun bildir
+        header_text_html: "Lütfen yardım için öncelikle <a href=\"https://news.wheelmap.org/en/faq/\">Sıkça Sorulan Sorular</a>'a göz atın. Eğer çözüm bulamadıysanız, lütfen aşağıdaki soruları cevaplayarak sorunu çözmemize yardımcı olun."
+        questions:
+          a: Ne yaptınız?
+          b: Ne olacağını bekliyordunuz?
+          c: Bunun yerine ne oldu?
+        note: Wheelmap, kar amacı gütmeyen bir kuruluş tarafından yürütülen açık kaynaklı bir projedir ve uygulama geliştirme için sınırlı kaynağımız olduğunu unutmayın.
+        describe: Lütfen bize İngilizce veye Almanca yazın.
+        flash_after_submit: Bizimle iletişime geçtiğiniz için teşekkürler. Destek ekibimiz en kısa sürede size geri dönecektir.
+        submit_button: Gönder
+  faq:
+    answers:
+      0: Bir mekanın işaretini her zaman değiştirebilirsiniz. Sadece doğru işaretleyin "Kaydet"i tıklayın - Hepsi bu!
+      1: Giriş yaptıktan sonra bir mekanın tüm bilgilerini ekleyebilir veya düzeltebilirsiniz. "Düzenle" tuşuna basarak bilgi ekleyin veya düzeltin.
+      2: Yorum bölümüne daha fazla bilgi ekleyebilirsiniz (ör. "Bu mekanda mobil bir rampa vardır"). "Düzenle"'yi ve "Yorum ekle"'yi tıklayın.
+    headline: Bu mekanla ilgili bir sorun mu var?
+    questions:
+      0: İşaret yanlış.
+      1: Mekan bilgileri yanlış veya eksik.
+      2: Bu mekanl hakkında daha fazla bilgiye sahibim
   header:
     navigation:
-      about_wheelmap: Wheelmap Hakkında
       choose_language: Dil seçin
       contact: İletişim
       map: Harita
-      projects: Dahil olun
-      report_problem: 'Sorun bildir '
+      travelguide: Gezi rehberi
+      projects: Sen de katıl
+      faq: SSS
+      report_problem: Sorun bildir
     toolbar:
       categories: Kategoriler
+    meta:
+      description: Wheelmap.org, tekerlekli sandalye erişimine uygun mekanları aramak, bulmak ve işaretlemek için kullanılan çevrimiçi bir haritadır. Barlar, restoranlar, sinemalar veya süpermarketler gibi herkese açık mekanları işaretleyerek sen de katıl!
+      title: Wheelmap.org
   home:
     index:
       overlay:
-        button: Pekala, gidelim!
-        categories: Yerleri kategorilere göre filtrele
-        filter: Yerleri tekerlekli sandalye erişilebilirliğine göre filtrele
-        headline: 'Tekerlekli sandalye erişilebilirliği olan yerleri Wheelmap.org ile işaretleyin ve bulun - dünya çapında ve ücretsiz. Oldukça kolay:'
-        lookup: Özel bir yeri ara
-        secondary_headline: 'Halka açık alanlarda tekerlekli sandalye erişilebilirliğini işaretlemek için trafik ışığı sistemimiz:'
+        button: Pekala, hadi başlayalım!
+        categories: Mekanları kategorilere göre filtrele
+        filter: Mekanları tekerlekli sandalye erişilebilirliğine göre filtrele
+        headline: 'Dünyanın her yerinde tekerlekli sandalye erişimine uygun mekanları Wheelmap.org ile ücretsiz olarak işaretleyin ve bulun. Çok kolay:'
+        lookup: Belirli bir mekan ara
+        secondary_headline: 'Halka açık mekanlarda tekerlekli sandalye erişilebilirliğini işaretlemek için trafik ışığı sistemimiz:'
+      embed_link: Wheelmap.org üzerinde göster
+      zoom_alert: Daha fazla yer görmek için yakınlaştırın
   nodes:
     new:
       form:
-        legend: Yerin konumu
+        title: Bir mekan ekle
+        legend: Mekanın konumu
+        location: Lütfen haritada mekanın bulunduğu konuma tıklayın!
         section:
+          name_category:
+            name: Mekanın adı ve türü
+            title: "Mekan hakkında bazı temel bilgileri girin"
           address:
             name: Adres
+            title: Mekan nerede?
+            help: İmleci haritada doğru konuma taşıyabilirsiniz.
+          similar_nodes:
+            name: Benzer mekanlar
+            title: Yakınlarda benzer mekanlar bulduk. Bunlardan biri mi?
+            go_edit: Bu mekanı seç
+            go_new: Bunlardan hiçbiri değil..
+            empty: Benzer bir mekan bulunamadı.
+          accessibility:
+            name: Tekerlekli sandalye erişilebilirliği
+            title: Tekerlekli sandalye erişilebilirliği hakkında bilgi
           contact:
             name: İletişim
+            title: Diğer iletişim bilgisi
+          overview:
+            title: Tüm bilgiler doğru mu?
+    node_data:
+      address: 'Adres:'
+      contact_details: 'İletişim detayları:'
     node_edit:
       details: Ayrıntılar
       edit: Düzenle
+    node_map:
+      map: 'Harita:'
+    node_note:
+      comment: 'Yorum:'
+    node_photos:
+      add: Ekle
+      photos_of_this_place: 'Mekan ait fotoğraflar:'
+      upload: Karşıya yükle
+      alert: 'Lütfen dikkat! Mekanın girişi fotoğrafta açıkça görünmelidir: Girişte basamak var mı? Basamak yüksekliği yaklaşık olarak ne kadar? Kapı ne kadar geniş? Fotoğraf JPG veya PNG formatında olmalıdır. 10 MB''tan büyük olmamalıdır.'
+    node_similar:
+      similar: 'Benzer mekanlar: %{name}'
+    node_status:
+      accessible_toilet: 'Tekerlekli sandalye erişimine uygun tuvalet:'
+      premium: '%{name} diyor ki: bu mekan '
+      wheelchair_accessibility: 'Tekerlekli sandalye erişilebilirliği:'
+    node_streetview:
+      streetview: 'Cadde görünümü:'
     show:
+      header:
+        meta:
+          description: Bu mekanın tekerlekli sandalye erişimine uygun olup olmadığını Wheelmap.org'dan öğrenebilirsiniz veya mekana ait fotoğraf ve daha fazla bilgi ekleyebilirsiniz.
+          title: 'Bu mekan Wheelmap.org''da mevcut: %{name}'
       share:
         email: E-posta
         facebook: Facebook
+        text: 'Bu mekanı Wheelmap.org''da buldum: %{name}'
         twitter: Twitter
   search:
     index:
       no-results:
+        headline: Üzgünüz, "%{query}" adıyla herhangi bir mekan bulamadık.
         hint:
           example: <strong>Örnek:</strong>  Londra, Birleşik Krallık
+          info: Arama servisimiz sadece isim ve/veya adres bilgileri ile çalışır. Bu nedenle lütfen mekanın adını veya adresini -ör. sokak adı ve/veya şehir- girerek arama yapınız.. Restoran veya sinema gibi mekan türünü girerek arama yapamazsınız!
+          work_in_progress: Gelecekte mekan aramayı daha kolay ve sezgisel hale getirmek için çok çalışıyoruz.
         try_this:
           address: Lütfen <strong>adresi detaylandırın</strong>.
           intro: 'Bunu deneyin:'
-          spell_check: Girdinizin <strong>imlasını</strong> kontrol edin.
+          spell_check: Aradığınız kelimeyi <strong>doğru yazıp yazmadığınızı</strong> kontrol edin.
       results:
         ticker:
           one: '%{count} sonuç:'
-          other: '%{count} sonuç:'
+          other: 'Sonuç %{count}:'
     timeout:
-      info: Arama hizmetimiz geçici olarak devredışı.
-      repeat_search: Yeniden ara
+      headline: Üzgünüz, bir şeyler ters gitti
+      info: Arama hizmetimiz geçici olarak servis dışı.
+      repeat_search: Tekrar ara
   users:
     profile:
       newsletter:
-        title: Haberler
+        title: Bülten
+        text: Wheelmap bülteni ile yeniliklerden haberdar olun. Merak etmeyin, ayda bir defa bilgilendirileceksiniz.
+        label: Evet, Wheelmap hakkında beni bilgilendirin.
+      show:
+        title: Genel bakış
+        text_html: "Merhaba,<br>\nWheelmap.org'a (tekrar) hoşgeldiniz! Sizi gördüğümüze sevindik! Wheelmap.org hakkında daha fazla bilgi almak isterseniz <a href=\"http://news.wheelmap.org/en/\">Blog</a> veya <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> sayfalarına göz atabilirsiniz. Ayrıca Wheelmap.org <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projelerini</a> inceleyebilir ve nasıl katılbileceğinizi öğrenebilirsiniz.<br>\nHaberdar olmak için aylık bültenimize kaydolabilir ve bizi <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> ve <a href=\"https://twitter.com/wheelmap\">Twitter</a> üzerinden takip edebilirsiniz.. Görüşlerinizi almak ve konuşmak için sizi bekliyoruz.!<br>\nVe şimdi mekanları işaretleme zamanı!<br>\nWheelmap Ekibi"
+        greeting:
+          anonymously: Merhaba
+          personalized: Merhaba %{name}
+        overview:
+          text: Sen
       photos:
         title: Fotoğraflar
+        empty: Henüz hiç fotoğraf yüklemediniz.
       edit:
         title: Profil
+        legends:
+          user_data: Hesap bilgileriniz
       widget:
+        title: Ekran aracı
+        height: Yükseklik
+        width: Genişlik
+        center: Harita alanı
+        categories: Kategori filtresini göster
+        providers: Sağlayıcı
+        empty_provider: Bir sağlayıcı seçiniz
+        empty_center: Harita merkezini ara...
         legends:
           settings: Ayarlar
+          preview: Önizleme
+          embed: Ekleme kodu
+          embed_explanation: Yukarıdaki kodda enlem (<code>lat</code>), boylam (<code>lon</code>) ve yakınlaştırma düzeyi (<code>zoom</code>) özelliklerini elle değiştirebilir ve böylece göstermek istediğiniz yere göre harita segmentini (widget'ı) ayarlayabilirsiniz.
+          general: Kendi Wheelmap widget'inizi oluşturun ve web sitenize veya blogunuza ekleyin.

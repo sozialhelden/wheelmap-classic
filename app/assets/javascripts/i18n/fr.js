@@ -768,10 +768,10 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "À propos de Wheelmap",
       "blog": "Nouvelles",
       "choose_language": "Choisir une langue",
       "contact": "Contact",
+      "faq": "FAQ",
       "feedback": "Commentaires",
       "home": "Démarrer",
       "how_to_add_a_place": "Comment ajouter des lieux ?",
@@ -786,6 +786,7 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
       "projects": "Participez",
       "report_problem": "Signaler un problème",
       "suggestions": "Suggestions",
+      "travelguide": "Guide de voyage",
       "what_is_barrier_free": "Que veut dire « accessible en fauteuil roulant » ?",
       "what_is_wheelmap": "Qu'est-ce que Wheelmap ?"
     },
@@ -1011,6 +1012,7 @@ I18n.translations["fr"] = I18n.extend((I18n.translations["fr"] || {}), {
     },
     "node_photos": {
       "add": "Ajouter",
+      "alert": "Veuillez noter que l'entrée doit être parfaitement visible sur la photo afin de répondre aux questions suivantes : Y a-t-il des marches à l'entrée ? Quelle est la hauteur approximative des marches ? Quelle est la largeur de la porte ? La photo doit être au format JPG ou PNG et ne doit pas dépasser 10 Mo.",
       "photos_of_this_place": "Photos de ce lieu :",
       "upload": "Téléverser"
     },

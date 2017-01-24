@@ -760,10 +760,10 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "About Wheelmap",
       "blog": "블로그",
       "choose_language": "Choose language",
       "contact": "Contact",
+      "faq": "FAQ",
       "feedback": "피드백",
       "home": "시작",
       "how_to_add_a_place": "새로운 장소를 어떻게 추가하나요?",
@@ -778,6 +778,7 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
       "projects": "Get involved",
       "report_problem": "오류신고",
       "suggestions": "제안",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "\"휠체어 접근가능\"은 무슨 뜻인가요?",
       "what_is_wheelmap": "What is Wheelmap?"
     },

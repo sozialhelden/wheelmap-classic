@@ -28,11 +28,11 @@ uk:
       2: Я маю додаткову інформацію про це місце.
   header:
     navigation:
-      about_wheelmap: Про Wheelmap
       choose_language: Змінити мову
       contact: Контакт
       map: Карта
       projects: Долучитися
+      faq: Питання, які часто задають
       report_problem: Повідомити про проблему
     toolbar:
       categories: Категорії

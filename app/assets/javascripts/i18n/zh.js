@@ -760,10 +760,10 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "About Wheelmap",
       "blog": "博客",
       "choose_language": "Choose language",
       "contact": "Contact",
+      "faq": "FAQ",
       "feedback": "反馈",
       "home": "开始",
       "how_to_add_a_place": "我怎样添加位置",
@@ -778,6 +778,7 @@ I18n.translations["zh"] = I18n.extend((I18n.translations["zh"] || {}), {
       "projects": "参与其中",
       "report_problem": "报告一个问题",
       "suggestions": "建议",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "“轮椅通道”是什么意思",
       "what_is_wheelmap": "What is Wheelmap?"
     },

@@ -28,11 +28,11 @@ hu:
       2: Több információval rendelkezem erről a helyről.
   header:
     navigation:
-      about_wheelmap: A Wheelmapről
       choose_language: Válassz nyelvet!
       contact: Elérhetőség
       map: Térkép
       projects: Kapcsolódj be
+      faq: GYIK
       report_problem: Hiba jelentése
     toolbar:
       categories: Kategóriák

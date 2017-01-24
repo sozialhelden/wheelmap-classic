@@ -37,11 +37,12 @@ it:
       2: Ho maggiori informazioni su questo posto.
   header:
     navigation:
-      about_wheelmap: Cos'è Wheelmap?
       choose_language: Scegli la lingua
       contact: Contatti
       map: Mappa
+      travelguide: Guida turistica
       projects: Partecipa
+      faq: FAQ
       report_problem: Segnala un problema
     toolbar:
       categories: Categorie
@@ -101,6 +102,7 @@ it:
       add: Aggiungi
       photos_of_this_place: 'Foto del posto:'
       upload: Carica
+      alert: 'Nota: l''ingresso deve essere chiaramente visibile in foto al fine da mostrare: 1) se ci sono gradini all''ingresso; 2) quanto è alto più o meno un gradino; 3) quanto è larga la porta. La foto deve essere in formato JPG o PNG. Non deve superare i 10 MB.'
     node_similar:
       similar: 'Posti simili: %{name}'
     node_status:

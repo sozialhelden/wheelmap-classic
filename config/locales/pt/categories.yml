@@ -21,7 +21,7 @@ pt:
         camp_site: "Acampamento"
         caravan_site: "Sitio de caravana"
         chalet: Chalet
-        dormitory: Residência universitária/dormitório
+        dormitory: Residência universitária / dormitório
         guest_house: "Guest House"
         hostel: Pousada
         hotel: Hotel
@@ -57,7 +57,7 @@ pt:
         doctors: Médico
         hearing_aids: "Vendedor de aparelhos auditivos"
         hospital: Hospital
-        medical_supply: "Equipamento médico"
+        medical_supply: "Equipamento médico / ortopédico"
         occupational_therapist: "Terapeuta ocupacional"
         pharmacy: Farmácia
         physiotherapist: Fisioterapeuta
@@ -88,7 +88,7 @@ pt:
         lawyer: Advogado
         ngo: "Organização não-governamental"
         place_of_worship: "Lugar de oração "
-        political_party: "Sede/filial de partido político"
+        political_party: "Sede / filial de partido político"
         toilets: Casa de banho
       money_post:
         atm: Caixa Multibanco
@@ -130,26 +130,26 @@ pt:
         books: Livros
         butcher: Talho
         car_repair: "Oficina de automóveis"
-        car_shop: "Loja de automóveis"
+        car_shop: "Loja de automóveis / stande"
         chemist: Parafarmácia
         clothes: Roupa
         computer: Computador
         confectionery: "Loja de guloseimas"
         convenience: Conveniência
-        copyshop: "Loja de cópias/fotocópias"
+        copyshop: "Loja de impressão / fotocópias"
         deli: Loja de artigos finos e iguarias
         department_store: "Shopping Center"
         doityourself: "Faça você mesmo"
         dry_cleaning: "Limpeza a seco"
         electronics: Eletrónica
-        erotic: "Loja de artigos eróticos"
+        erotic: "Loja de artigos eróticos / sex shop"
         fabric: "Loja de tecidos"
-        farm_shop: "Loja de quinta/fazenda/produtos locais"
+        farm_shop: "Loja de quinta / fazenda / produtos locais"
         florist: Florista
         funeral_directors: "Funerária"
         furniture: Móvéis
         garden_centre: "Loja de jardinajem"
-        gift: "Loja de lembranças/presentes"
+        gift: "Loja de lembranças e presentes"
         greengrocer: Loja de frutas e verduras
         hairdresser: Cabeleireiro
         hardware: Hardware
@@ -166,7 +166,7 @@ pt:
         organic: "Loja de produtos orgânicos"
         outdoor: "Loja de artigos para o ar livre"
         pet: "Loja de animais"
-        photo: Loja de fotografia/equipamento
+        photo: Loja de fotografia / equipamento
         second_hand: "Artigos em segunda mão"
         shoes: Sapatos
         sports: Artigos desportivos

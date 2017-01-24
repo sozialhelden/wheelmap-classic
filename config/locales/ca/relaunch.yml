@@ -27,7 +27,6 @@ ca:
       2: Tinc molta informació del lloc.
   header:
     navigation:
-      about_wheelmap: Sobre Wheelmap
       choose_language: Triar idioma
       contact: Contactar
       map: Mapa

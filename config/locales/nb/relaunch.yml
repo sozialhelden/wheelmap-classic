@@ -15,7 +15,6 @@ nb:
         title: Rapporter et problem
   header:
     navigation:
-      about_wheelmap: Om Wheelmap
       choose_language: Velg språk
       contact: Kontakt
       map: Kart

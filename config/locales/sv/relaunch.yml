@@ -37,11 +37,12 @@ sv:
       2: Jag har mer information om den här platsen
   header:
     navigation:
-      about_wheelmap: Om Wheelmap
       choose_language: Välj språk
       contact: Kontakt
       map: Karta
+      travelguide: Reseguide
       projects: Bli inblandad
+      faq: Frågor och svar
       report_problem: Rapportera ett problem
     toolbar:
       categories: Kategorier
@@ -101,6 +102,7 @@ sv:
       add: Lägg till
       photos_of_this_place: 'Fotografier på den här platsen:'
       upload: Överföring
+      alert: 'Obs! Ingången ska synas klart och tydligt på fotot för att kunna visa följande: Finns det trappsteg till ingången? Ungefär hur höga är trappstegen? Hur bred är dörren? Fotot måste vara i JPG- eller PNG-format. Filen får inte vara större än 10 MB.'
     node_similar:
       similar: 'Liknande platser: %{name}'
     node_status:

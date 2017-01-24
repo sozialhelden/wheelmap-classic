@@ -26,11 +26,11 @@ sk:
       2: Mám o tomto mieste viac informácií.
   header:
     navigation:
-      about_wheelmap: O Wheelmap
       choose_language: Zvoľte jazyk
       contact: Kontakt
       map: Mapa
       projects: Zapojte sa
+      faq: Najčastejšie otázky
       report_problem: Nahláste problém
     toolbar:
       categories: Kategórie

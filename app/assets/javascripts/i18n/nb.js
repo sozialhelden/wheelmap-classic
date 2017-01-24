@@ -760,10 +760,10 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "Om Wheelmap",
       "blog": "Blogg",
       "choose_language": "Velg språk",
       "contact": "Kontakt",
+      "faq": "FAQ",
       "feedback": "Tilbakemelding",
       "home": "Start",
       "how_to_add_a_place": "Hvordan legger jeg til steder?",
@@ -778,6 +778,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "projects": "Get involved",
       "report_problem": "Rapporter et problem",
       "suggestions": "Forslag",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Hva betyr \"rullestoltilgjengelig\"?",
       "what_is_wheelmap": "What is Wheelmap?"
     },

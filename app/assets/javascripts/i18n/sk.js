@@ -762,10 +762,10 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "O Wheelmap",
       "blog": "Novinky",
       "choose_language": "Zvoľte jazyk",
       "contact": "Kontakt",
+      "faq": "Najčastejšie otázky",
       "feedback": "Spätná väzba",
       "home": "Štart",
       "how_to_add_a_place": "Ako pridám miesta?",
@@ -780,6 +780,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       "projects": "Zapojte sa",
       "report_problem": "Nahláste problém",
       "suggestions": "Návrhy",
+      "travelguide": "Travel guide",
       "what_is_barrier_free": "Čo to znamená \"prístupné pre vozíčkarov\"?",
       "what_is_wheelmap": "Čo to je Wheelmap?"
     },

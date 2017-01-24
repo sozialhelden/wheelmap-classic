@@ -23,11 +23,11 @@ nl:
       2: Ik heb meer informatie over dit project.
   header:
     navigation:
-      about_wheelmap: Over Wheelmap
       choose_language: Kies de taal
       contact: Contact
       map: Plattegrond
       projects: Doe mee
+      faq: FAQ
       report_problem: Geef een probleem op
     toolbar:
       categories: Categorieën

@@ -788,10 +788,10 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "О Wheelmap",
       "blog": "Блог",
       "choose_language": "Выберите язык",
       "contact": "Контакты",
+      "faq": "Часто задаваемые вопросы",
       "feedback": "Отзыв",
       "home": "Старт",
       "how_to_add_a_place": "Как добавлять новые места?",
@@ -806,6 +806,7 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
       "projects": "Включайтесь",
       "report_problem": "Сообщить о проблеме",
       "suggestions": "Предложения",
+      "travelguide": "Путеводитель",
       "what_is_barrier_free": "Что значит \"доступно на кресле-коляске\"?",
       "what_is_wheelmap": "Что такое Wheelmap?"
     },
@@ -1033,6 +1034,7 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
     },
     "node_photos": {
       "add": "Добавить",
+      "alert": "Обратите внимание! Вход должен быть отчетливо виден на фотографии, чтобы можно было определить: есть ли на входе ступеньки, какова их примерная высота, насколько широка дверь. Фотография должна быть в формате JPG или PNG. Ее объем не должен превышать 10 МБ.",
       "photos_of_this_place": "Фото этого места:",
       "upload": "Загрузить"
     },

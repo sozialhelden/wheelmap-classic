@@ -799,10 +799,10 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "Wheelmap について",
       "blog": "ブログ",
       "choose_language": "言語を選択",
       "contact": "連絡先",
+      "faq": "よくある質問",
       "feedback": "ご意見",
       "home": "開始",
       "how_to_add_a_place": "場所の追加方法は？",
@@ -818,6 +818,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "report_problem": "問題を報告",
       "suggestions": "提案",
       "tolk": "翻訳",
+      "travelguide": "トラベルガイド",
       "what_is_barrier_free": "\"車椅子で行ける(アクセシブル)\"とは？",
       "what_is_wheelmap": "Wheelmap とは？"
     },
@@ -1043,6 +1044,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     },
     "node_photos": {
       "add": "追加",
+      "alert": "ご注意ください: 次の点が明らかになるよう、写真には入り口がはっきりと写っている必要があります。1. 入り口に階段があるかどうか。2. 大体の段差（高さ）。3. ドアの広さ（横幅）。写真は JPG または PNG 形式とし、10 MB 以下のファイルに収めてください。",
       "photos_of_this_place": "この場所の写真:",
       "upload": "アップロード"
     },

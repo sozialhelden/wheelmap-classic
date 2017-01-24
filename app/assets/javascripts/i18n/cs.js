@@ -765,10 +765,10 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "O Wheelmap",
       "blog": "Novinky",
       "choose_language": "Zvolte jazyk",
       "contact": "Kontakt",
+      "faq": "Často kladené dotazy",
       "feedback": "Zpětná vazba",
       "home": "Start",
       "how_to_add_a_place": "Jak přidám místa?",
@@ -783,6 +783,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
       "projects": "Zapojte se",
       "report_problem": "Nahlaste problém",
       "suggestions": "Návrhy",
+      "travelguide": "Cestovní průvodce",
       "what_is_barrier_free": "Co to znamená \"přístupné pro vozíčkáře\"?",
       "what_is_wheelmap": "Co je to Wheelmap?"
     },
@@ -1008,6 +1009,7 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
     },
     "node_photos": {
       "add": "Přidat",
+      "alert": "Upozornění: Vchod by měl být na fotografii jasně viditelný, aby bylo patrné následující: Jsou u vchodu schody? Jaká je přibližná výška schodu? Jak široké jsou dveře? Fotografie musí být ve formátu JPG nebo PNG a neměla by být větší než 10 MB.",
       "photos_of_this_place": "Fotky tohoto místa:",
       "upload": "Nahrát"
     },

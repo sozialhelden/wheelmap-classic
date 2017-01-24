@@ -1,5 +1,21 @@
 tr:
+  models:
+    category:
+      prompt: "Kategori seçin"
+    node_type:
+      prompt: "Tür seçin"
+    node:
+      info_edit_position: "Konum Wheelmap üzerinde yukarıdaki gibi görünecektir. Eğer yer işareti doğru noktada değilse, <a href=\"%{url}\">OpenSteetMap üzerinde konumu değiştirebilirsiniz.</a>"
+      mail:
+        subject: "[Wheelmap]  %{headline} ile ilgili sorun"
+        body: "(Lütfen sadece İngilizce veya Almanca yazınız.)\n\nMerhaba Sozialhelden,\nMekanla ilgili orun var: %{url}\n\nSorun:"
   actions:
+    send: Gönder
     save: Kaydet
     cancel: İptal
     next: Sıradaki
+  errors:
+    models:
+      node:
+        website:
+          invalid: "Web sitesi adresi geçerli değildir."

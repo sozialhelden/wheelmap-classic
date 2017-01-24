@@ -30,11 +30,11 @@ pl:
       2: Posiadam więcej informacji o tym miejscu.
   header:
     navigation:
-      about_wheelmap: O Wheelmap
       choose_language: Wybierz język
       contact: Kontakt
       map: Mapa
       projects: Zaangażuj się
+      faq: FAQ
       report_problem: Zgłoś problem
     toolbar:
       categories: Kategoria

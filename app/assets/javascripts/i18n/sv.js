@@ -760,10 +760,10 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "Om Wheelmap",
       "blog": "Nyheter",
       "choose_language": "Välj språk",
       "contact": "Kontakt",
+      "faq": "Frågor och svar",
       "feedback": "Återkoppling",
       "home": "Start",
       "how_to_add_a_place": "Hur lägger jag till platser?",
@@ -778,6 +778,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       "projects": "Bli inblandad",
       "report_problem": "Rapportera ett problem",
       "suggestions": "Förslag",
+      "travelguide": "Reseguide",
       "what_is_barrier_free": "Vad betyder \"rullstolstillgänglig\"?",
       "what_is_wheelmap": "Lite om Wheelmap"
     },
@@ -1003,6 +1004,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
     },
     "node_photos": {
       "add": "Lägg till",
+      "alert": "Obs! Ingången ska synas klart och tydligt på fotot för att kunna visa följande: Finns det trappsteg till ingången? Ungefär hur höga är trappstegen? Hur bred är dörren? Fotot måste vara i JPG- eller PNG-format. Filen får inte vara större än 10 MB.",
       "photos_of_this_place": "Fotografier på den här platsen:",
       "upload": "Överföring"
     },

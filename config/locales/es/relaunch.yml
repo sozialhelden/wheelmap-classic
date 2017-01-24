@@ -37,11 +37,12 @@ es:
       2: Tengo más información acerca de este lugar.
   header:
     navigation:
-      about_wheelmap: Acerca de Wheelmap
       choose_language: Elija idioma
       contact: Contacto
       map: Mapa
+      travelguide: Guía de viajes
       projects: Involúcrate
+      faq: Preguntas Frecuentes
       report_problem: Reportar un problema
     toolbar:
       categories: Categorías
@@ -101,6 +102,7 @@ es:
       add: Agregar
       photos_of_this_place: 'Fotos de este lugar:'
       upload: Subir
+      alert: 'Atención: la foto debería mostrar la entrada con total claridad para que se pueda ver si esta tiene peldaños, la altura de dichos peldaños y el ancho de la puerta. La fotografía debe estar en formato JPG o PNG, y no debería sobrepasar los 10 MG.'
     node_similar:
       similar: 'Lugares similares: %{name}'
     node_status:
