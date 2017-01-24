@@ -4,11 +4,12 @@ require 'poi_migration'
 describe "PoiMigration" do
 
   describe "migrates pois that are tagged as wheelchair_toilet" do
+    subject(:resulting_poi) { PoiMigration.convert(poi) }
     context "all toilet values are equal" do
+
       let(:poi) { FactoryGirl.build(:poi, tags: {"toilets:wheelchair" => "yes", "wheelchair_toilet" => "yes"}, toilet: true) }
 
       specify "wheelchair_toilet tag has been deleted" do
-        resulting_poi = PoiMigration.convert(poi)
         expect(resulting_poi.tags["wheelchair_toilet"]).to eq(nil)
       end
     end
@@ -17,14 +18,12 @@ describe "PoiMigration" do
       let(:poi) { FactoryGirl.build(:poi, tags: {"toilets:wheelchair" => "yes", "wheelchair_toilet" => "no"}, toilet: true) }
 
       specify "wheelchair_toilet tag has been deleted" do
-        resulting_poi = PoiMigration.convert(poi)
         expect(resulting_poi.tags["wheelchair_toilet"]).to eq(nil)
       end
     end
   
     context "toilets:wheelchair has different value than toilet & wheelchair_toilet" do
       let(:poi) { FactoryGirl.build(:poi, tags: {"toilets:wheelchair" => "no", "wheelchair_toilet" => "yes"}, toilet: true) }
-      subject(:resulting_poi) { PoiMigration.convert(poi) }
 
       specify "wheelchair_toilet tag has been deleted" do
         expect(resulting_poi.tags["wheelchair_toilet"]).to eq(nil)
