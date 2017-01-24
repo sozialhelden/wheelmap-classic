@@ -12,6 +12,14 @@ describe "PoiMigration" do
       specify "wheelchair_toilet tag has been deleted" do
         expect(resulting_poi.tags["wheelchair_toilet"]).to eq(nil)
       end
+
+      specify "toilets:wheelchair keeps its value" do
+        expect(resulting_poi.tags["toilets:wheelchair"]).to eq("yes")
+      end
+
+      specify "toilet keeps its value" do
+        expect(resulting_poi.toilet).to be true
+      end
     end
 
     context "wheelchair_toilet has different value than toilet & toilets:wheelchair" do
@@ -20,6 +28,15 @@ describe "PoiMigration" do
       specify "wheelchair_toilet tag has been deleted" do
         expect(resulting_poi.tags["wheelchair_toilet"]).to eq(nil)
       end
+
+      specify "toilets:wheelchair keeps its value" do
+        expect(resulting_poi.tags["toilets:wheelchair"]).to eq("yes")
+      end
+
+      specify "toilet keeps its value" do
+        expect(resulting_poi.toilet).to be true
+      end
+
     end
   
     context "toilets:wheelchair has different value than toilet & wheelchair_toilet" do
