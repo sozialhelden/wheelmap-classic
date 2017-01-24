@@ -12,5 +12,14 @@ describe "PoiMigration" do
         expect(resulting_poi.tags["wheelchair_toilet"]).to eq(nil)
       end
     end
+
+    context "wheelchair_toilet has different value than toilet & toilets:wheelchair" do
+      let(:poi) { FactoryGirl.build(:poi, tags: {"toilets:wheelchair" => "yes", "wheelchair_toilet" => "no"}, toilet: true) }
+
+      specify "wheelchair_toilet tag has been deleted" do
+        resulting_poi = PoiMigration.convert(poi)
+        expect(resulting_poi.tags["wheelchair_toilet"]).to eq(nil)
+      end
+    end
   end
 end
