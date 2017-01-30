@@ -117,6 +117,7 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
   gem 'syntax'
   gem 'email_spec'
+  gem 'json-schema', '~> 2.7'
 end
 
 group :production, :vagrant do

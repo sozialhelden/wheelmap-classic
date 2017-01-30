@@ -1,4 +1,5 @@
 require 'rails_helper'
+require 'json-schema'
 
 describe Api::NodesController do
 
@@ -506,6 +507,16 @@ describe Api::NodesController do
   end
 
   describe 'changes stream' do
+    def validate_schema(schema_file, json)
+      schema = JSON.parse(File.read(schema_file))
+      errors = JSON::Validator.fully_validate(schema, json)
+
+      return true if errors.empty?
+
+      errors.each { |error| STDOUT.puts error }
+      false
+    end
+
     def json_response
       JSON.parse(response.body)
     end
@@ -526,6 +537,10 @@ describe Api::NodesController do
 
       it "returns response format to be json" do
         expect(response.headers["Content-Type"]).to eql("application/json; charset=utf-8")
+      end
+
+      it "validates against node stream schema" do
+        expect(validate_schema("spec/schema/node_stream.json", json_response)).to be true
       end
 
       context "the JSON response" do
