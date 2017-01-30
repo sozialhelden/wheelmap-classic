@@ -10,6 +10,12 @@ module Api::Poi
       end
     end
 
+    api_accessible :changes_stream do |t|
+      t.add :osm_id
+      # t.add :action
+      # t.add :timestamp
+    end
+
     # Please do not edit, this is the current stable API JSON representation!!!
     api_accessible :simple do |t|
       t.add :name

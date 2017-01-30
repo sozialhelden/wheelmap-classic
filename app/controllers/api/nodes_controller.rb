@@ -192,8 +192,9 @@ class Api::NodesController < Api::ApiController
   end
 
   def changes
-    respond_to do |wants|
-      wants.json{ render :json => {:message => 'OK'}.to_json, :status => 200 }
+    pois = Poi.take(20)
+    respond_to do |format|
+      format.json { render_for_api :changes_stream, :json => pois, :status => 200 }
     end
   end
 

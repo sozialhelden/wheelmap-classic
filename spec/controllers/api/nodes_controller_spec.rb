@@ -506,16 +506,32 @@ describe Api::NodesController do
   end
 
   describe 'changes stream' do
+    def json_response
+      JSON.parse(response.body)
+    end
+
     context 'with API key' do
       before do
         @user.oauth_token = :a_token
         @user.oauth_secret = :a_secret
         @user.save!
+        create_list(:poi, 20, created_at: DateTime.now, updated_at: DateTime.now)
+        create_list(:poi, 5, created_at: 1.day.ago, updated_at: 1.day.ago)
         get(:changes, { :api_key => @user.authentication_token })
       end
 
       it "returns 200 status code" do
         expect(response.status).to eq(200)
+      end
+
+      it "returns response format to be json" do
+        expect(response.headers["Content-Type"]).to eql("application/json; charset=utf-8")
+      end
+
+      context "the JSON response" do
+        it "contains twenty entries" do
+          expect(json_response["pois"].length).to eq(20)
+        end
       end
     end
 
