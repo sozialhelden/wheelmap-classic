@@ -506,15 +506,27 @@ describe Api::NodesController do
   end
 
   describe 'changes stream' do
-    before do
-      @user.oauth_token = :a_token
-      @user.oauth_secret = :a_secret
-      @user.save!
-      get(:changes, { :api_key => @user.authentication_token })
+    context 'with API key' do
+      before do
+        @user.oauth_token = :a_token
+        @user.oauth_secret = :a_secret
+        @user.save!
+        get(:changes, { :api_key => @user.authentication_token })
+      end
+
+      it "returns 200 status code" do
+        expect(response.status).to eq(200)
+      end
     end
 
-    it "returns 200 status code" do
-      expect(response.status).to eq(200)
+    context 'without API key' do
+      before do
+        get(:changes)
+      end
+
+      it "returns 401 status code" do
+        expect(response.status).to eq(401)
+      end
     end
   end
 end
