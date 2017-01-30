@@ -535,15 +535,15 @@ describe Api::NodesController do
         expect(response.status).to eq(200)
       end
 
-      it "returns response format to be json" do
-        expect(response.headers["Content-Type"]).to eql("application/json; charset=utf-8")
-      end
-
-      it "validates against node stream schema" do
-        expect(validate_schema("spec/schema/node_stream.json", json_response)).to be true
-      end
-
       context "the JSON response" do
+        it "has correct content-type" do
+          expect(response.headers["Content-Type"]).to eql("application/json; charset=utf-8")
+        end
+
+        it "validates against node stream schema" do
+          expect(validate_schema("spec/schema/node_stream.json", json_response)).to be true
+        end
+
         it "contains twenty entries" do
           expect(json_response["pois"].length).to eq(20)
         end
