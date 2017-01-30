@@ -504,4 +504,17 @@ describe Api::NodesController do
       }.to change(Delayed::Job, :count).by(1)
     end
   end
+
+  describe 'changes stream' do
+    before do
+      @user.oauth_token = :a_token
+      @user.oauth_secret = :a_secret
+      @user.save!
+      get(:changes, { :api_key => @user.authentication_token })
+    end
+
+    it "returns 200 status code" do
+      expect(response.status).to eq(200)
+    end
+  end
 end

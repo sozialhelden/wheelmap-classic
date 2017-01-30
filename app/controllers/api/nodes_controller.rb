@@ -191,6 +191,12 @@ class Api::NodesController < Api::ApiController
     end
   end
 
+  def changes
+    respond_to do |wants|
+      wants.json{ render :json => {:message => 'OK'}.to_json, :status => 200 }
+    end
+  end
+
   protected
 
   def collection
