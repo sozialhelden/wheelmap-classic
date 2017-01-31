@@ -6,7 +6,7 @@ Wheelmap.MapSessionControllerMixin = Ember.Mixin.create
   latBinding: 'controllers.map.lat'
   lonBinding: 'controllers.map.lon'
   zoomBinding: 'controllers.map.zoom'
-  qBinding: 'controllers.toolbar.searchString'
+  qBinding: 'controllers.toolbar.queryString'
   bbox: null
   debugBinding: 'controllers.map.debug'
   nodeIdBinding: 'controllers.map.nodeId'

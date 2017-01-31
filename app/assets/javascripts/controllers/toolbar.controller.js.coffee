@@ -5,7 +5,7 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
 
   statusFilters: null
   toiletFilters: null
-  searchString: null
+  queryString: null
   itemController: 'category'
   sortProperties: ['name']
 
@@ -43,6 +43,14 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
 
     @filterBy('isActive')
   ).property('@each.isActive')
+
+  searchString: Ember.computed('queryString', ->
+    queryString = this.get('queryString')
+    if queryString?
+      return decodeURIComponent(queryString.replace(/\+/g, ' '))
+    else
+      return queryString
+  )
 
   activeStatusFilters: ((key, activeStatusFilters)->
     statusFilters = @get('statusFilters')
