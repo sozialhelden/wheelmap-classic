@@ -453,11 +453,11 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       "confirmed": "Váš účet bol úspešne overený.",
       "link": "You didn't receive confirmation instructions?",
       "send_instructions": "O niekoľko minút obdržíte email s inštrukciami ako potvrdiť vašu emailovú adresu.",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
+      "send_paranoid_instructions": "Ak už máte účet, o niekoľko minút obdržíte email s inštrukciami ako overiť Váš účet. "
     },
     "destroy": {
       "confirm": "Ste si istý?",
-      "headline": "Delete account",
+      "headline": "Zmazať účet.",
       "link": "Zmazať"
     },
     "edit": {
@@ -474,13 +474,13 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     },
     "failure": {
       "already_authenticated": "Už ste prihláseny.",
-      "inactive": "Your account has not been activated yet.",
+      "inactive": "Váš účet ešte nebol aktivovaný.",
       "invalid": "Nesprávny email alebo heslo.",
       "invalid_token": "Nesprávny overovací symbol.",
       "last_attempt": "You have one more attempt before your account will be locked.",
       "locked": "Váš účet je  uzamknutý.",
       "not_found_in_database": "Invalid email or password.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Vaše prihlásenie vypršalo, ak chcete pokračovať, prihláste sa, prosím znova.",
       "unauthenticated": "Musíte sa zaregistrovať alebo odhlásiť, potom možete pokračovať.",
       "unconfirmed": "Musíte potvrdiť svoj účet, potom možete pokračovať."
     },
@@ -567,7 +567,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       },
       "signed_in": "Prihlásenie úspešné.",
       "signed_out": "Odhlásenie úspešné.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Vaše prihlásenie vypršalo, ak chcete pokračovať, prihláste sa, prosím znova.",
       "unauthenticated": "Než budete môcť pokračovať musíte sa prihlásiť alebo si vytvoriť účet",
       "unconfirmed": "Než budete môcť pokračovať musíte potvrdiť svoj účet."
     },
@@ -1007,6 +1007,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     },
     "node_photos": {
       "add": "Pridať",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Fotky tohto miesta:",
       "upload": "Nahrať"
     },

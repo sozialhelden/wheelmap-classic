@@ -1039,6 +1039,7 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
     },
     "node_photos": {
       "add": "Hinzufügen",
+      "alert": "Bitte beachte: Auf dem Foto sollte der Eingangsbereich des Ortes gut zu erkennen sein. Soll heißen: Gibt es Stufen am Eingang? Wie hoch ist die Stufe ungefähr? Wie breit ist die Tür? Das Foto muss das Format JPG oder PNG haben. Die maximale Größe eines Fotos darf 10 MB nicht überschreiten.",
       "photos_of_this_place": "Fotos von diesem Ort:",
       "upload": "Hochladen"
     },

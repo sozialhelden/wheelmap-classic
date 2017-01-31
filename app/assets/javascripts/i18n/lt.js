@@ -1005,6 +1005,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
     },
     "node_photos": {
       "add": "Pridėti",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Šios vietos nuotraukos:",
       "upload": "Išsiųsti"
     },
