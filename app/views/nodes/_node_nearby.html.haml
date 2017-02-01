@@ -1,26 +1,28 @@
 %section.node-nearby-locations-from-partners
-  %h2=t('.places-nearby')
+  %h2=t('.places_nearby')
   %section.node-nearby-locations-from-partners-list
 
 - content_for :javascript do
   :javascript
-    window.addEventListener("load", function load(event) {
-      window.removeEventListener("load", load, false); // remove listener, no longer needed
+    window.addEventListener("DOMContentLoaded", function load(event) {
+      window.removeEventListener("DOMContentLoaded", load, false); // remove listener, no longer needed
       AccessibilityCloud = window['accessibility.cloud'].default;
-      AccessibilityCloud.token = '7f039b60e27a4d02b13c5ad79fbe9d7b';
-      AccessibilityCloud.locale = I18n.locale;
+      var accessibilityCloud = new AccessibilityCloud({
+        token: '27be4b5216aced82122d7cf8f69e4a07',
+        locale: I18n.locale,
+      });
       var containerElement = document.querySelector('section.node-nearby-locations-from-partners');
       var element = document.querySelector('section.node-nearby-locations-from-partners-list');
       var parameters = {
         latitude: #{@node.lat},
         longitude: #{@node.lon},
-        accuracy: 1000,
-        limit: 20,
-        excludeSourceIds: 'LiBTS67TjmBcXdEmX', // excludes Wheelmap's own PoIs from results
+        accuracy: 1000, // include places within 1 km radius
+        limit: 10,
+        excludeSourceIds: ['LiBTS67TjmBcXdEmX'], // excludes Wheelmap's own PoIs from results
       };
-      AccessibilityCloud.loadAndRenderPlaces(element, parameters).done((response) => {
-        if (response && response.features && response.features.length) {
-          containerElement.className = containerElement.className += ' has-results';
+      accessibilityCloud.loadAndRenderPlaces(element, parameters, function(error, response) {
+        if (!error && response && response.features && response.features.length) {
+          containerElement.classList.add('has-results');
         }
       });
     }, false);
