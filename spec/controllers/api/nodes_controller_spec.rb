@@ -522,13 +522,23 @@ describe Api::NodesController do
     end
 
     context 'with API key' do
+      date_today = DateTime.new(2016,2,1,20,0,0)
+      date_yesterday = DateTime.new(2016,1,31,20,0,0)
+
+      before :all do
+        Poi.delete_all
+        Timecop.travel(date_yesterday)
+        create_list(:poi, 5)
+        Timecop.travel(date_today)
+        create_list(:poi, 5)
+        Timecop.return
+      end
+
       before do
         @user.oauth_token = :a_token
         @user.oauth_secret = :a_secret
         @user.save!
-        create_list(:poi, 20, created_at: DateTime.now, updated_at: DateTime.now)
-        create_list(:poi, 5, created_at: 1.day.ago, updated_at: 1.day.ago)
-        get(:changes, { :api_key => @user.authentication_token })
+        get(:changes, { since: date_today.to_date.to_s, api_key: @user.authentication_token })
       end
 
       it "returns 200 status code" do
@@ -544,9 +554,15 @@ describe Api::NodesController do
           expect(validate_schema("spec/schema/node_stream.json", json_response)).to be true
         end
 
-        it "contains twenty entries" do
-          expect(json_response["pois"].length).to eq(20)
+        it "contains five entries" do
+          expect(json_response["pois"].length).to eq(5)
         end
+
+        it "contains node changes according to the given date" do
+          timestamps = json_response["pois"].map { |poi| DateTime.parse(poi["timestamp"]) }
+          expect(timestamps.all? { |timestamp| timestamp >= date_today.to_date }).to be true
+        end
+
       end
     end
 
@@ -557,6 +573,10 @@ describe Api::NodesController do
 
       it "returns 401 status code" do
         expect(response.status).to eq(401)
+      end
+
+      it "does not return any response data" do
+        expect(json_response["pois"]).to be nil
       end
     end
   end

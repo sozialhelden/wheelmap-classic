@@ -192,7 +192,8 @@ class Api::NodesController < Api::ApiController
   end
 
   def changes
-    pois = Poi.take(20)
+    timestamp = params[:since]
+    pois = Poi.where('updated_at >= ?', timestamp)
     respond_to do |format|
       format.json { render_for_api :changes_stream, :json => pois, :status => 200 }
     end
