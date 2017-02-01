@@ -534,35 +534,49 @@ describe Api::NodesController do
         Timecop.return
       end
 
-      before do
-        @user.oauth_token = :a_token
-        @user.oauth_secret = :a_secret
-        @user.save!
-        get(:changes, { since: date_today.to_date.to_s, api_key: @user.authentication_token })
+      context 'date in the past' do
+        before do
+          @user.oauth_token = :a_token
+          @user.oauth_secret = :a_secret
+          @user.save!
+          get(:changes, { since: date_today.to_date.to_s, api_key: @user.authentication_token })
+        end
+
+        it "returns 200 status code" do
+          expect(response.status).to eq(200)
+        end
+
+        context "the JSON response" do
+          it "has correct content-type" do
+            expect(response.headers["Content-Type"]).to eql("application/json; charset=utf-8")
+          end
+
+          it "validates against node stream schema" do
+            expect(validate_schema("spec/schema/node_stream.json", json_response)).to be true
+          end
+
+          it "contains five entries" do
+            expect(json_response["pois"].length).to eq(5)
+          end
+
+          it "contains node changes according to the given date" do
+            timestamps = json_response["pois"].map { |poi| DateTime.parse(poi["timestamp"]) }
+            expect(timestamps.all? { |timestamp| timestamp >= date_today.to_date }).to be true
+          end
+        end
       end
 
-      it "returns 200 status code" do
-        expect(response.status).to eq(200)
-      end
-
-      context "the JSON response" do
-        it "has correct content-type" do
-          expect(response.headers["Content-Type"]).to eql("application/json; charset=utf-8")
+      context 'dates in the future' do
+        before do
+          @user.oauth_token = :a_token
+          @user.oauth_secret = :a_secret
+          @user.save!
+          get(:changes, { since: (Date.today + 7.days).to_s, api_key: @user.authentication_token })
         end
 
-        it "validates against node stream schema" do
-          expect(validate_schema("spec/schema/node_stream.json", json_response)).to be true
+        it "result in an empty list" do
+          expect(json_response["pois"]).to be_empty
         end
-
-        it "contains five entries" do
-          expect(json_response["pois"].length).to eq(5)
-        end
-
-        it "contains node changes according to the given date" do
-          timestamps = json_response["pois"].map { |poi| DateTime.parse(poi["timestamp"]) }
-          expect(timestamps.all? { |timestamp| timestamp >= date_today.to_date }).to be true
-        end
-
       end
     end
 
