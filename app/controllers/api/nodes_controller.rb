@@ -191,6 +191,8 @@ class Api::NodesController < Api::ApiController
     end
   end
 
+  api :GET, "/nodes/changes", "Get node changes stream"
+  param :since, Date, :required => true, :desc => "Specifies start date"
   def changes
     timestamp = params[:since]
     pois = Poi.where('updated_at >= ?', timestamp)
