@@ -18,7 +18,7 @@ describe CategoriesController do
 
     describe 'the response' do
       it 'has categories' do
-        expect(json_response['categories'].length).to eq 1
+        expect(json_response['categories'].length).to be > 0
       end
     end
   end
