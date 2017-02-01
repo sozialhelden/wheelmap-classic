@@ -510,6 +510,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    timecop (0.8.1)
     transaction-simple (1.4.0.2)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -643,6 +644,7 @@ DEPENDENCIES
   test-unit (~> 3.0)
   therubyracer
   thin
+  timecop (~> 0.8.1)
   uglifier
   unicorn
   useragent (~> 0.16.8)

@@ -118,6 +118,7 @@ group :test do
   gem 'syntax'
   gem 'email_spec'
   gem 'json-schema', '~> 2.7'
+  gem 'timecop', '~> 0.8.1'
 end
 
 group :production, :vagrant do
