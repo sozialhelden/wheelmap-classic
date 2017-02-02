@@ -195,9 +195,15 @@ class Api::NodesController < Api::ApiController
   param :since, Date, :required => true, :desc => "Specifies start date"
   def changes
     timestamp = params[:since]
-    pois = Poi.where('updated_at >= ?', timestamp)
-    respond_to do |format|
-      format.json { render_for_api :changes_stream, :json => pois, :status => 200 }
+    if timestamp.nil?
+      respond_to do |format|
+        format.json { render :json => { :error => "Parameter 'since' required" }.to_json, :status => 400 }
+      end
+    else
+      pois = Poi.where('updated_at >= ?', timestamp)
+      respond_to do |format|
+        format.json { render_for_api :changes_stream, :json => pois, :status => 200 }
+      end
     end
   end
 

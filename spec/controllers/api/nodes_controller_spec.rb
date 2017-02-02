@@ -578,6 +578,23 @@ describe Api::NodesController do
           expect(json_response["pois"]).to be_empty
         end
       end
+
+      context 'without a date' do
+        before do
+          @user.oauth_token = :a_token
+          @user.oauth_secret = :a_secret
+          @user.save!
+          get(:changes, { api_key: @user.authentication_token })
+        end
+
+        it "returns 400 status code" do
+          expect(response.status).to eq 400
+        end
+
+        it "returns error message" do
+          expect(json_response["error"].length).to be > 0
+        end
+      end
     end
 
     context 'without API key' do
