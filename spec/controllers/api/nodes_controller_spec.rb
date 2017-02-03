@@ -555,14 +555,15 @@ describe Api::NodesController do
             expect(validate_schema("spec/schema/node_stream.json", json_response)).to be true
           end
 
-          it "contains five entries" do
-            expect(json_response["pois"].length).to eq(5)
+          it "contains five updated entries" do
+            expect(json_response["pois"].count { |poi| poi["action"] == "update"}).to eq(5)
           end
 
           it "contains node changes according to the given date" do
             timestamps = json_response["pois"].map { |poi| DateTime.parse(poi["timestamp"]) }
             expect(timestamps.all? { |timestamp| timestamp >= date_today.to_date }).to be true
           end
+
         end
       end
 
@@ -574,7 +575,7 @@ describe Api::NodesController do
           get(:changes, { since: (Date.today + 7.days).to_s, api_key: @user.authentication_token })
         end
 
-        it "result in an empty list" do
+        it "results in an empty list" do
           expect(json_response["pois"]).to be_empty
         end
       end
