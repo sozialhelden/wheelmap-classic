@@ -529,8 +529,10 @@ describe Api::NodesController do
         Poi.delete_all
         Timecop.travel(date_yesterday)
         create_list(:poi, 5)
+        create_list(:poi_log, 5)
         Timecop.travel(date_today)
         create_list(:poi, 5)
+        create_list(:poi_log, 5)
         Timecop.return
       end
 
@@ -557,6 +559,10 @@ describe Api::NodesController do
 
           it "contains five updated entries" do
             expect(json_response["pois"].count { |poi| poi["action"] == "update"}).to eq(5)
+          end
+
+          it "contains five deleted entries" do
+            expect(json_response["pois"].count { |poi| poi["action"] == "delete"}).to eq(5)
           end
 
           it "contains node changes according to the given date" do

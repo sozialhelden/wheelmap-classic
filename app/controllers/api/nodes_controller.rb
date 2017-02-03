@@ -200,9 +200,11 @@ class Api::NodesController < Api::ApiController
         format.json { render :json => { :error => "Parameter 'since' required" }.to_json, :status => 400 }
       end
     else
-      pois = Poi.where('updated_at >= ?', timestamp)
+      updated_pois = Poi.where('updated_at >= ?', timestamp)
+      deleted_pois = PoiLog.where('created_at >= ?', timestamp)
+      pois = (updated_pois + deleted_pois).to_a.sort { |a,b| a.updated_at <=> b.updated_at }
       respond_to do |format|
-        format.json { render_for_api :changes_stream, :json => pois, :status => 200 }
+        format.json { render_for_api :changes_stream, :json => pois, :root => :pois, :status => 200 }
       end
     end
   end
