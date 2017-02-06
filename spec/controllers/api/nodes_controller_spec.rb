@@ -521,6 +521,20 @@ describe Api::NodesController do
       JSON.parse(response.body)
     end
 
+    context 'poi logger' do
+      context 'for deleted pois' do
+        let(:poi) { create(:poi) }
+        before do
+          poi.destroy
+        end
+
+        it 'creates a new log entry for the deleted poi' do
+          log_entry = PoiLog.last
+          expect(log_entry.osm_id).to eq poi.osm_id
+        end
+      end
+    end
+
     context 'with API key' do
       date_today = DateTime.new(2016,2,1,20,0,0)
       date_yesterday = DateTime.new(2016,1,31,20,0,0)
@@ -569,7 +583,6 @@ describe Api::NodesController do
             timestamps = json_response["pois"].map { |poi| DateTime.parse(poi["timestamp"]) }
             expect(timestamps.all? { |timestamp| timestamp >= date_today.to_date }).to be true
           end
-
         end
       end
 
