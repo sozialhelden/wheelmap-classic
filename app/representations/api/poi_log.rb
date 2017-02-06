@@ -15,9 +15,5 @@ module Api::PoiLog
       t.add :action
       t.add lambda { |poi| poi.created_at }, :as => :timestamp
     end
-
-    def action
-      "delete"
-    end
 	end
 end

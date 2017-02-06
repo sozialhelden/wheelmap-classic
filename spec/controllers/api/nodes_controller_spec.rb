@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'json-schema'
 
 describe Api::NodesController do
 
@@ -522,15 +521,35 @@ describe Api::NodesController do
     end
 
     context 'poi logger' do
+      let(:poi) { create(:poi) }
+      let(:log_entry) { PoiLog.last }
+
       context 'for deleted pois' do
-        let(:poi) { create(:poi) }
         before do
           poi.destroy
         end
 
         it 'creates a new log entry for the deleted poi' do
-          log_entry = PoiLog.last
           expect(log_entry.osm_id).to eq poi.osm_id
+        end
+
+        it 'creates a new log entry with action = deleted' do
+          expect(log_entry.action).to eq('delete')
+        end
+      end
+
+      context 'for updated pois' do
+        before do
+          poi.wheelchair = 'yes'
+          poi.save
+        end
+
+        it 'creates a new log entry for the updated poi' do
+          expect(log_entry.osm_id).to eq poi.osm_id
+        end
+
+        it 'creates a new log entry with action = updated' do
+          expect(log_entry.action).to eq('update')
         end
       end
     end
