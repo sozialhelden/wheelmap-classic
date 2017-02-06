@@ -5,7 +5,6 @@
 - content_for :javascript do
   :javascript
     window.addEventListener("DOMContentLoaded", function load(event) {
-      window.removeEventListener("DOMContentLoaded", load, false); // remove listener, no longer needed
       AccessibilityCloud = window['accessibility.cloud'].default;
       var accessibilityCloud = new AccessibilityCloud({
         token: '27be4b5216aced82122d7cf8f69e4a07',
