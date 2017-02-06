@@ -200,9 +200,7 @@ class Api::NodesController < Api::ApiController
         format.json { render :json => { :error => "Parameter 'since' required" }.to_json, :status => 400 }
       end
     else
-      updated_pois = Poi.where('updated_at >= ?', timestamp)
-      deleted_pois = PoiLog.where('created_at >= ?', timestamp)
-      pois = (updated_pois + deleted_pois).to_a.sort { |a,b| a.updated_at <=> b.updated_at }
+      pois = PoiLog.where('created_at >= ?', timestamp)
       respond_to do |format|
         # We pass `:root => :pois` explicitly here because in case of an empty list
         # apparently acts_as_api is not able to figure out the desired value for the root element (which is `pois`) and defaults to `records`.

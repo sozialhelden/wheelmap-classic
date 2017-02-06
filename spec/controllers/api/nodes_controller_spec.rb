@@ -560,12 +560,13 @@ describe Api::NodesController do
 
       before :all do
         Poi.delete_all
+        PoiLog.delete_all
         Timecop.travel(date_yesterday)
-        create_list(:poi, 5)
-        create_list(:poi_log, 5)
+        create_list(:poi_log, 5, action: "update")
+        create_list(:poi_log, 5, action: "delete")
         Timecop.travel(date_today)
-        create_list(:poi, 5)
-        create_list(:poi_log, 5)
+        create_list(:poi_log, 5, action: "update")
+        create_list(:poi_log, 5, action: "delete")
         Timecop.return
       end
 

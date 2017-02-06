@@ -10,17 +10,6 @@ module Api::Poi
       end
     end
 
-    # API template for '/nodes/changes'
-    api_accessible :changes_stream do |t|
-      t.add :osm_id
-      t.add :action
-      t.add lambda { |poi| poi.updated_at }, :as => :timestamp
-    end
-
-    def action
-      "update"
-    end
-
     # Please do not edit, this is the current stable API JSON representation!!!
     api_accessible :simple do |t|
       t.add :name
