@@ -20,7 +20,7 @@
         excludeSourceIds: ['LiBTS67TjmBcXdEmX'], // excludes Wheelmap's own PoIs from results
       };
       accessibilityCloud.loadAndRenderPlaces(element, parameters, function(error, response) {
-        if (!error && response && response.features && response.features.length) {
+        if (!error && response && response.features && response.features.length > 0) {
           containerElement.classList.add('has-results');
         }
       });
