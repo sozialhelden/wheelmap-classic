@@ -1,0 +1,6 @@
+- content_for :javascript do
+  = javascript_include_tag "jquery"
+  = javascript_include_tag "bootstrap"
+  = javascript_include_tag "bootstrap-select"
+  %script
+    $(document).ready(function () { $('.selectpicker').selectpicker(); });
