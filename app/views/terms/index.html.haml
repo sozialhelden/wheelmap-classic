@@ -19,9 +19,4 @@
       = form.actions do
         = form.action :submit, :label => t('formtastic.labels.save')
 
-- content_for :javascript do
-  = javascript_include_tag "jquery"
-  = javascript_include_tag "bootstrap"
-  = javascript_include_tag "bootstrap-select"
-  %script
-    $(document).ready(function () { $('.selectpicker').selectpicker(); }); 
+= render :partial => 'shared/language_picker_styling'
