@@ -122,6 +122,7 @@ Wheelmap::Application.routes.draw do
       collection do
         get :search
         get :counts, :to => 'counter#index'
+        get :changes
       end
       member do
         put :update_wheelchair

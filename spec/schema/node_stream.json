@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Node Stream Response Schema",
+  "type": "object",
+  "required": ["pois"],
+  "properties": {
+    "pois": {
+      "type": "array",
+      "items": [
+        { "$ref": "#/definitions/node" }
+      ]
+    }
+  },
+  "definitions": {
+    "node": {
+      "type": "object",
+      "required": ["osm_id", "action", "timestamp"],
+      "additionalProperties": false,
+      "properties": {
+        "osm_id": {
+          "type": "integer"
+        },
+        "action": {
+          "enum": ["update", "delete"]
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

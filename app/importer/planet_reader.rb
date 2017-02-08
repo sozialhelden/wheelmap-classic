@@ -264,4 +264,3 @@ class PlanetReader
     end
   end
 end
-

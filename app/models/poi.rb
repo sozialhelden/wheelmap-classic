@@ -61,6 +61,8 @@ class Poi < ActiveRecord::Base
   before_save :set_status
   before_save :set_version
   before_save :set_updated_at
+  after_destroy :log_poi_destroy
+  after_update :log_poi_update
 
   # Spezielle Find-Methode fuer den Zugriff auf alle POIs in einer
   # Bounding-Box. Fruehere Versionen von GeoRuby hatten dazu etwas
@@ -528,6 +530,16 @@ class Poi < ActiveRecord::Base
   # Dummy methods to generate full image paths
   def controller
     ''
+  end
+
+  private
+
+  def log_poi_destroy
+    PoiLogger.log_delete(self)
+  end
+
+  def log_poi_update
+    PoiLogger.log_update(self)
   end
 
 end

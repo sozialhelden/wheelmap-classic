@@ -297,6 +297,8 @@ GEM
       railties (>= 3.2)
       sprockets-rails
     json (1.8.3)
+    json-schema (2.7.0)
+      addressable (>= 2.4)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -508,6 +510,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
+    timecop (0.8.1)
     transaction-simple (1.4.0.2)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -599,6 +602,7 @@ DEPENDENCIES
   inherited_resources (~> 1.6.0)
   jquery-rails (= 2.3.0)
   js-routes
+  json-schema (~> 2.7)
   kaminari (~> 0.14)
   kaminari-i18n
   launchy
@@ -640,6 +644,7 @@ DEPENDENCIES
   test-unit (~> 3.0)
   therubyracer
   thin
+  timecop (~> 0.8.1)
   uglifier
   unicorn
   useragent (~> 0.16.8)
