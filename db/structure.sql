@@ -325,7 +325,7 @@ CREATE TABLE `poi_logs` (
   `updated_at` datetime DEFAULT NULL,
   `action` varchar(255) DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -546,6 +546,7 @@ CREATE TABLE `users` (
   `reset_password_sent_at` datetime DEFAULT NULL,
   `toilet_counter` int(11) NOT NULL DEFAULT '0',
   `api_key` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `anonymous` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_users_on_authentication_token` (`authentication_token`),
   KEY `index_users_on_oauth_token` (`oauth_token`),
@@ -585,7 +586,7 @@ CREATE TABLE `widgets` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-07 13:45:26
+-- Dump completed on 2017-02-09  9:44:30
 INSERT INTO schema_migrations (version) VALUES ('20110107131649');
 
 INSERT INTO schema_migrations (version) VALUES ('20110114163727');
@@ -739,4 +740,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170202152914');
 INSERT INTO schema_migrations (version) VALUES ('20170206150119');
 
 INSERT INTO schema_migrations (version) VALUES ('20170207133358');
+
+INSERT INTO schema_migrations (version) VALUES ('20170209093420');
 
