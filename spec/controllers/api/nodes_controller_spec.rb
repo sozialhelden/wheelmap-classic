@@ -268,6 +268,15 @@ describe Api::NodesController do
       expect(response.body).to match(/Um Daten zu ändern benötigst Du einen OpenStreetMap Account./)
     end
 
+    it "should not update node when user is anonymous" do
+      wheelmap_visitor = create(:wheelmap_visitor)
+
+      expect {
+        put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => wheelmap_visitor.authentication_token})
+        expect(response.status).to eql 403
+      }.not_to change(Delayed::Job, :count)
+    end
+
     it "should not update node when params are missing or invalid" do
       @user.oauth_token = :a_token
       @user.oauth_secret = :a_secret
@@ -415,14 +424,14 @@ describe Api::NodesController do
 
   describe 'create action' do
 
-    it "access should be denied if api key is missing" do
+    specify "access should be denied if api key is missing" do
       expect{
         post(:create, {:name => 'Something new'})
       }.not_to change(Delayed::Job, :count)
       expect(response.status).to eql 401
     end
 
-    it "access should be denied if osm credentials are missing" do
+    specify "access should be denied if osm credentials are missing" do
       expect{
         post(:create, {:name => 'Something new', :api_key => @user.authentication_token})
       }.not_to change(Delayed::Job, :count)
@@ -448,6 +457,15 @@ describe Api::NodesController do
       expect {
         post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant"}, :wheelchair => 'no', :api_key => @user.authentication_token})
         expect(response.status).to eql 400
+      }.not_to change(Delayed::Job, :count)
+    end
+
+    it "should not create a new node when user is anonymous" do
+      wheelmap_visitor = create(:wheelmap_visitor)
+      expect {
+        post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant",
+                                                             :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => wheelmap_visitor.authentication_token})
+        expect(response.status).to eql 403
       }.not_to change(Delayed::Job, :count)
     end
 
