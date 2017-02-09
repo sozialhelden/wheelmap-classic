@@ -20,7 +20,12 @@
         excludeSourceIds: ['LiBTS67TjmBcXdEmX'], // excludes Wheelmap's own PoIs from results
       };
       accessibilityCloud.loadAndRenderPlaces(element, parameters, function(error, response) {
-        if (!error && response && response.features && response.features.length > 0) {
+        if (error) {
+          console.log('Could not load places from accessibility.cloud.');
+          return;
+        }
+        if (response && response.features && response.features.length > 0) {
+          // only show the widget if there is at least one result
           containerElement.classList.add('has-results');
         }
       });
