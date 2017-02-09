@@ -4,6 +4,7 @@ describe Api::NodesController do
 
   render_views
   fixtures :node_types
+  let(:wheelmap_visitor) { create(:wheelmap_visitor) }
 
   before :each do
     User.delete_all
@@ -135,6 +136,15 @@ describe Api::NodesController do
       expect(Delayed::Job.last.handler).to match(/wheelchair: 'no'/)
     end
 
+    it "should accept update wheelchair status for later processing when user is anonymous" do
+      expect {
+        put(:update_wheelchair, {:id => @node.id, :wheelchair => 'no', :api_key => wheelmap_visitor.authentication_token})
+        expect(response.status).to eql 202
+        expect(response.body).to match(/OK/)
+      }.to change(Delayed::Job, :count).by(1)
+      expect(Delayed::Job.last.handler).to match(/wheelchair: 'no'/)
+    end
+
     it "should not accept update wheelchair status for later processing if params are invalid" do
       expect {
         put(:update_wheelchair, {:id => @node.id, :wheelchair => 'invalid', :api_key => @user.authentication_token})
@@ -170,6 +180,15 @@ describe Api::NodesController do
       expect(Delayed::Job.last.handler).to match(/toilets:wheelchair: 'no'/)
     end
 
+    it "should accept update toilet status for later processing if user is anonymous" do
+      expect {
+        put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'no', :api_key => wheelmap_visitor.authentication_token})
+        expect(response.status).to eql 202
+        expect(response.body).to match(/OK/)
+      }.to change(Delayed::Job, :count).by(1)
+      expect(Delayed::Job.last.handler).to match(/toilets:wheelchair: 'no'/)
+    end
+
     it "should not accept update toilet status for later processing if params are invalid" do
       expect {
         put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'invalid', :api_key => @user.authentication_token})
@@ -199,7 +218,6 @@ describe Api::NodesController do
   describe 'as a node' do
 
     before :each do
-      @wheelmap_visitor = FactoryGirl.create(:authorized_user, :email => 'visitor@wheelmap.org')
       @user = FactoryGirl.create(:authorized_user, :email => 'chris@tucker.org')
       Poi.delete_all
       @node = FactoryGirl.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
@@ -212,7 +230,6 @@ describe Api::NodesController do
   describe 'as a way' do
 
     before :each do
-      @wheelmap_visitor = FactoryGirl.create(:authorized_user, :email => 'visitor@wheelmap.org')
       @user = FactoryGirl.create(:authorized_user, :email => 'chris@tucker.org')
       Poi.delete_all
       @node = FactoryGirl.create(:poi, :osm_id => (FactoryGirl.generate(:version) * -1), :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
@@ -269,7 +286,6 @@ describe Api::NodesController do
     end
 
     it "should not update node when user is anonymous" do
-      wheelmap_visitor = create(:wheelmap_visitor)
 
       expect {
         put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => wheelmap_visitor.authentication_token})
@@ -461,7 +477,6 @@ describe Api::NodesController do
     end
 
     it "should not create a new node when user is anonymous" do
-      wheelmap_visitor = create(:wheelmap_visitor)
       expect {
         post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant",
                                                              :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => wheelmap_visitor.authentication_token})
