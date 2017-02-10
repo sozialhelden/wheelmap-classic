@@ -3,6 +3,13 @@ class Api::PoiLogController < Api::ApiController
 
   actions :index
 
+  resource_description do
+    short 'Changes stream. Log of changed and deleted Pois'
+    error :code => 401, :desc => "Authorization Required", meta: { message: "Authentication failed or was not provided. Verify that you have sent valid credentials via an api_key parameter. A 'Www-Authenticate' challenge header will be sent with this type of error response." }
+    formats ['json', 'jsonp', 'xml']
+    param :api_key, String, desc: "You personal API key. Sign up for an account at http://wheelmap.org/users/sign_in", required: true
+  end
+
   api :GET, "/nodes/changes", "Get node changes stream"
   param :since, Date, :required => true, :desc => "Specifies start date"
   def index
