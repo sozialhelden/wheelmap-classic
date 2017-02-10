@@ -102,6 +102,56 @@ describe Api::PoiLogController do
           it "has meta key" do
             expect(json_response["meta"]).to_not be nil
           end
+
+          context 'the meta key' do
+            let(:meta) { json_response["meta"] }
+
+            it "has total pages" do
+              expect(meta["num_pages"]).to eq 1
+            end
+
+            it "has page" do
+              expect(meta["page"]).to eq 1
+            end
+
+            it "has item_count_total" do
+              expect(meta["item_count_total"]).to eq 10
+            end
+
+            it "has item_count" do
+              expect(meta["item_count"]).to eq 10
+            end
+          end
+        end
+      end
+
+      context "a paginated response" do
+        before do
+          get(:index, {
+            since: date_today.to_date.to_s,
+            per_page: 2,
+            page: 1,
+            api_key: user.authentication_token })
+        end
+
+        context "the JSON response" do
+          let(:meta) { json_response["meta"] }
+
+          it "has total pages" do
+            expect(meta["num_pages"]).to eq 5
+          end
+
+          it "has page" do
+            expect(meta["page"]).to eq 1
+          end
+
+          it "has item_count_total" do
+            expect(meta["item_count_total"]).to eq 10
+          end
+
+          it "has item_count" do
+            expect(meta["item_count"]).to eq 2
+          end
         end
       end
 
