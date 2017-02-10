@@ -98,6 +98,10 @@ describe Api::PoiLogController do
             timestamps = json_response["pois"].map { |poi| DateTime.parse(poi["timestamp"]) }
             expect(timestamps.all? { |timestamp| timestamp >= date_today.to_date }).to be true
           end
+
+          it "has meta key" do
+            expect(json_response["meta"]).to_not be nil
+          end
         end
       end
 

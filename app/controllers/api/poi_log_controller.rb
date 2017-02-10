@@ -22,7 +22,7 @@ class Api::PoiLogController < Api::ApiController
       index! do |format|
         # We pass `:root => :pois` explicitly here because in case of an empty list
         # apparently acts_as_api is not able to figure out the desired value for the root element (which is `pois`) and defaults to `records`.
-        format.json { render_for_api :changes_stream, :json => @poi_logs, :root => :pois, :status => 200 }
+        format.json { render_for_api :changes_stream, :json => @poi_logs, :root => :pois, meta: meta, :status => 200 }
       end
     end
   end
@@ -30,6 +30,25 @@ class Api::PoiLogController < Api::ApiController
   private
 
   def collection
-    @poi_logs ||= end_of_association_chain.where('created_at >= ?', @timestamp)
+    @poi_logs ||= end_of_association_chain
+                    .where('created_at >= ?', @timestamp)
+                    .paginate(:page => params[:page], :per_page => params[:per_page])
+  end
+
+  def meta
+    {
+      :conditions => {
+        :page => params[:page],
+        :per_page => params[:per_page],
+        :format => params[:format],
+        :locale => params[:locale] || I18n.locale
+      },
+      :meta => {
+        :page => params[:page],
+        :num_pages => collection.total_pages,
+        :item_count_total => collection.total_entries,
+        :item_count => collection.compact.size
+      }
+    }
   end
 end
