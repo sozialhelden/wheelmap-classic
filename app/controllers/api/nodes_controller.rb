@@ -191,24 +191,6 @@ class Api::NodesController < Api::ApiController
     end
   end
 
-  api :GET, "/nodes/changes", "Get node changes stream"
-  param :since, Date, :required => true, :desc => "Specifies start date"
-  def changes
-    timestamp = params[:since]
-    if timestamp.nil?
-      respond_to do |format|
-        format.json { render :json => { :error => "Parameter 'since' required" }.to_json, :status => 400 }
-      end
-    else
-      pois = PoiLog.where('created_at >= ?', timestamp)
-      respond_to do |format|
-        # We pass `:root => :pois` explicitly here because in case of an empty list
-        # apparently acts_as_api is not able to figure out the desired value for the root element (which is `pois`) and defaults to `records`.
-        format.json { render_for_api :changes_stream, :json => pois, :root => :pois, :status => 200 }
-      end
-    end
-  end
-
   protected
 
   def collection
