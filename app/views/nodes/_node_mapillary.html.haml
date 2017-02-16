@@ -1,2 +1,6 @@
+- content_for :javascript do
+  - javascript_include_tag 'https://unpkg.com/mapillary-js@2.4.0/dist/mapillary.min.js'
+- content_for :stylesheet do
+  - stylesheet_link_tag 'https://unpkg.com/mapillary-js@2.4.0/dist/mapillary.min.css'
 %section.osm-streetview.invisible
   #mapillary
