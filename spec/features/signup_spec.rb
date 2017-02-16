@@ -31,6 +31,10 @@ describe "Signup feature" do
     specify 'a new user exists' do
       expect(User.count).to eq 1
     end
+
+    specify "a user is not anonymous" do
+      expect(User.last.anonymous).to eq false
+    end
   end
 
   describe "I want to signup, too" do
@@ -42,6 +46,10 @@ describe "Signup feature" do
 
     specify "a user exists" do
       expect(User.count).to eq 1
+    end
+
+    specify "a user is not anonymous" do
+      expect(User.last.anonymous).to eq false
     end
   end
 
