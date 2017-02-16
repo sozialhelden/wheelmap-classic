@@ -12,4 +12,4 @@ test:
   password: osm_password
   oauth_secret: ''
   oauth_key: ''
-  oauth_site: 'http://api06.dev.openstreetmap.org'
+  oauth_site: 'https://master.apis.dev.openstreetmap.org/'
