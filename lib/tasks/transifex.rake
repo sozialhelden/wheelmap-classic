@@ -47,7 +47,7 @@ namespace :transifex do
       en_file = YAML.load_file("config/locales/en/#{file}")
       de_file = YAML.load_file("config/locales/de/#{file}")
 
-      en_tree = [en_file.keys.first]
+      en_tree = en_file[en_file.keys.first]
       de_tree = de_file[de_file.keys.first]
       unused_translation_keys = compare('en', en_tree, de_tree)
       puts unused_translation_keys
