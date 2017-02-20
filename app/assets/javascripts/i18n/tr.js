@@ -312,7 +312,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
   },
   "common": {
     "close": "kapatınız",
-    "skip": "atla"
+    "skip": "Atla"
   },
   "community_support_form": {
     "new": {
@@ -509,7 +509,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         },
         "submit": "Şifreyi sıfırla"
       },
-      "headline": "Şifreni mi unuttun?"
+      "headline": "Parolanızı mı unuttunuz?"
     },
     "password_reset": {
       "email": {
@@ -528,7 +528,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "headline": "Şifreyi sıfırla"
     },
     "passwords": {
-      "link": "Şifrenizi mi unuttunuz?",
+      "link": "Parolanızı mı unuttunuz?",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
       "send_instructions": "Birkaç dakika içinde şifrenizi nasıl sıfırlayacağınızı anlatan bir e-posta alacaksınız.",
       "send_paranoid_instructions": "Eğer hesabınız varsa, birkaç dakika içinde şifrenizi nasıl sıfırlayacağınızı anlatan bir e-posta alacaksınız.",
@@ -1534,7 +1534,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     "after_signup_edit": {
       "welcome": {
         "headline": "Neredeyse bitti! Şimdi Wheelmap hesabınızı tamamlamak için:",
-        "set_password_for_mobile": "OpenStreetMap'e başarıyla kayıt oldunuz. Wheelmap'ın kullanmasını istediğiniz bir e-posta adresi seçin, böylece faaliyetleriniz hakkında sizi bilgilendirebiliriz (örneğin işaretlediğiniz mekanların sayısı). Bu bilgiye \"Profil\" üzerinden ulaşabilirsiniz.",
+        "set_password_for_mobile": "OpenStreetMap'e başarıyla kaydoldunuz. Wheelmap'ın kullanmasını istediğiniz bir e-posta adresi seçin, böylece faaliyetleriniz hakkında sizi bilgilendirebiliriz (örneğin işaretlediğiniz mekanların sayısı). Bu bilgiye \"Profil\" üzerinden ulaşabilirsiniz.",
         "text": "Sizinle nasıl iletişime geçebiliriz? Bu bilgiyi daha sonra profilinizinden değiştirebilirsiniz."
       }
     },
@@ -1583,7 +1583,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
           },
           "text": "Sen"
         },
-        "text_html": "Merhaba,<br>\nWheelmap.org'a (tekrar) hoşgeldiniz! Sizi gördüğümüze sevindik! Wheelmap.org hakkında daha fazla bilgi almak isterseniz <a href=\"http://news.wheelmap.org/en/\">Blog</a> veya <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> sayfalarına göz atabilirsiniz. Ayrıca Wheelmap.org <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projelerini</a> inceleyebilir ve nasıl katılbileceğinizi öğrenebilirsiniz.<br>\nHaberdar olmak için aylık bültenimize kaydolabilir ve bizi <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> ve <a href=\"https://twitter.com/wheelmap\">Twitter</a> üzerinden takip edebilirsiniz.. Görüşlerinizi almak ve konuşmak için sizi bekliyoruz.!<br>\nVe şimdi mekanları işaretleme zamanı!<br>\nWheelmap Ekibi",
+        "text_html": "Merhaba,<br>\nWheelmap.org'a (tekrar) hoşgeldiniz! Sizi gördüğümüze sevindik! Wheelmap.org hakkında daha fazla bilgi almak isterseniz <a href=\"http://news.wheelmap.org/en/\">Blog</a> veya <a href=\"http://news.wheelmap.org/en/FAQ/\">SSS</a> sayfalarına göz atabilirsiniz. Ayrıca Wheelmap.org <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projelerini</a> inceleyebilir ve nasıl katılbileceğinizi öğrenebilirsiniz.<br>\nHaberdar olmak için aylık bültenimize kaydolabilir, bizi <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> ve <a href=\"https://twitter.com/wheelmap\">Twitter</a> üzerinden takip edebilirsiniz. Görüşlerinizi almak ve değerlendirmek için sizi bekliyoruz.!<br>\nVe şimdi mekanları işaretleme zamanı!<br>\nWheelmap Ekibi",
         "title": "Genel bakış"
       },
       "widget": {
@@ -1600,7 +1600,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
           "settings": "Ayarlar"
         },
         "providers": "Sağlayıcı",
-        "title": "Ekran aracı",
+        "title": "Widget",
         "width": "Genişlik"
       }
     }

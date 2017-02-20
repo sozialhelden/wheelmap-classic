@@ -2,6 +2,8 @@ nl:
   models:
     category:
       prompt: "Kies een categorie"
+    node:
+      info_edit_position: "De locatie zal op de Wheelmap verschijnen en bovenaan zichtbaar zijn. Wanneer de marker niet op de goede plek staat, kunt U  <a href=\"%{url}\"> de positie veranderen op de OpenStreetMap.</a>"
   actions:
     send: Verzenden
     save: Opslaan

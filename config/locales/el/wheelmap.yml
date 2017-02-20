@@ -291,6 +291,7 @@ el:
     destroy:
       notice: "Αντίο, ευχόμαστε να επιστρέψτε σύντομα!"
     new:
+      email: "Διεύθυνση του Email"
       login: "Σύνδεση"
       login_with_twitter: "Συνδεθείτε μέσω Τwitter"
       password: Κωδικός πρόσβασης

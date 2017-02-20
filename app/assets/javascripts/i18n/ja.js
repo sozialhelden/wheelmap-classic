@@ -308,7 +308,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "create": "新しい場所を追加",
       "edit": "場所を編集"
     },
-    "root": "Wheelmap"
+    "root": "wheelmap"
   },
   "common": {
     "close": "閉じる",
@@ -644,7 +644,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     "dynamic_format": "%{message}",
     "format": "%{attribute} %{message}",
     "messages": {
-      "accepted": "承認をしてください",
+      "accepted": "承認してください",
       "already_confirmed": "は既に確認済みです",
       "blank": "値を入力してください",
       "carrierwave_download_error": "could not be downloaded",
@@ -654,7 +654,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
       "empty": "値を入力してください",
       "equal_to": "正確に%{count} でなければなりません",
-      "even": "数値を入力してください",
+      "even": "偶数でなければなりません",
       "exclusion": "使用されていません",
       "expired": "有効期限が切れています、新しくリクエストしてください",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
@@ -664,7 +664,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "inclusion": "値が正しくありません",
       "invalid": "正しくありません",
       "less_than": "%{count} より小さくなければなりません",
-      "less_than_or_equal_to": "%{count}以下でなければなりません",
+      "less_than_or_equal_to": "%{count} 以下でなければなりません",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
       "not_a_number": "は数字ではありません",
@@ -675,7 +675,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "one": "An error prohibited to save a %{resource}:",
         "other": "%{resource} の保存時に %{count} 個のエラーが発生しました:"
       },
-      "odd": "奇数を入力してください",
+      "odd": "奇数でなければなりません",
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
@@ -733,9 +733,9 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
   },
   "form": {
     "show_fully_accessible_places": "車椅子可",
-    "show_limited_accessible_places": "部分的に車椅子でのアクセス可能です",
-    "show_places_without_status": "不明なステータス",
-    "show_unaccessible_places": "車椅子利用不可"
+    "show_limited_accessible_places": "車椅子一部可",
+    "show_places_without_status": "不明な状態",
+    "show_unaccessible_places": "車椅子不可"
   },
   "formtastic": {
     "cancel": "中止",
@@ -745,22 +745,22 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "lat": "地図上のマーカーを正しい位置に移動",
       "osm_username": "まだメンバーではありませんか？<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">今すぐOpenstreetmap のアカウントを作成</a> ",
       "password": "(変更しない場合は空白のまま)",
-      "phone": "例：+49 30 12345678",
+      "phone": "例: +49 30 123456-78",
       "website": "例: http://www.example.com"
     },
     "labels": {
       "category": "カテゴリ:",
       "centralkey": "中央キー：",
       "city": "都市:",
-      "create": "場所を作成する",
+      "create": "場所を作成",
       "email": "Eメール",
       "finish": "終了",
       "housenumber": "番地:",
       "lat": "緯度",
       "lon": "経度",
       "name": "名前:",
-      "osm_password": "OpenStreetMapのパスワード",
-      "osm_username": "OpenStreetMapのユーザー名",
+      "osm_password": "OSMパスワード",
+      "osm_username": "OSMアカウント",
       "password": "パスワード",
       "password_confirmation": "パスワード再入力",
       "phone": "電話:",
@@ -771,7 +771,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "street": "住所",
       "terms": "利用条件に同意します。",
       "type": "タイプ:",
-      "website": "ウェブサイト",
+      "website": "Website:",
       "wheelchair": "車椅子のアクセシビリティは？",
       "wheelchair_description": "アクセシビリティについてのコメント:",
       "wheelchair_toilet": "トイレへの車椅子アクセシビリティ:"
@@ -792,7 +792,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.orgは車椅子でアクセス可能な場所を探したり入力したりできるオンラインマップです。公共施設、バー、レストランや映画館、スーパーマーケットについて利用可否をマークしてぜひご参加ください",
+      "description": "車椅子で行ける場所を見つけよう - wheelmap.org",
       "homepage": "ホームページ",
       "keywords": "車椅子で行ける場所を見つけよう検索マーク",
       "search": "検索",
@@ -820,16 +820,16 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "tolk": "翻訳",
       "travelguide": "トラベルガイド",
       "what_is_barrier_free": "\"車椅子で行ける(アクセシブル)\"とは？",
-      "what_is_wheelmap": "Wheelmap とは？"
+      "what_is_wheelmap": "wheelmapとは？"
     },
     "searchbar": {
       "add_place": "別の場所を追加",
-      "find": "探す",
-      "placeholder": "場所を探す",
+      "find": "見つける",
+      "placeholder": "例. Sunset Boulevard L.A. or Brandenburg Gate Berlin ",
       "title_add_place": "今すぐこの位置に新しい場所を追加！"
     },
     "tagline": "Wheelmap ロゴ",
-    "title": "車椅子で行ける場所を見つけよう",
+    "title": "Wheelmap - 車椅子で行ける場所を見つけよう ",
     "toolbar": {
       "categories": "カテゴリ"
     }
@@ -872,7 +872,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         },
         "warning": {
           "headline": "ごめんなさい！",
-          "message": "Internet Explorerをご使用になられているようです。Wheelmapが正常に動作する為には、ウェブ標準準拠ブラウザが必要となります。どうかFirefox、Chrome、SafariまたはOperaの使用をご検討ください。"
+          "message": "Internet Explorerをお使いのようですね。Wheelmapを正しく使うには標準的な動作をするブラウザが必要です。Firefox, Chrome, Safari または Opera をお使いください。"
         }
       },
       "link": {
@@ -890,11 +890,11 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       },
       "popup": {
         "form": {
-          "limited": "部分的に車椅子でのアクセス可能です",
-          "no": "車椅子利用不可",
+          "limited": "車椅子一部可",
+          "no": "車椅子不可",
           "save": "保存",
-          "unknown": "不明なステータス",
-          "yes": "車椅子通行可"
+          "unknown": "不明",
+          "yes": "車椅子可"
         },
         "help": "車椅子で行けますか？ (ヘルプ)",
         "more": "詳細 ..."
@@ -945,12 +945,12 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
   },
   "node": {
     "address": {
-      "city": "%{city} %{postcode}",
+      "city": "%{postcode} %{city}",
       "street": "%{street} %{housenumber}"
     },
     "tags": {
       "phone": "電話:",
-      "website": "ウェブサイト"
+      "website": "Website:"
     }
   },
   "nodes": {
@@ -977,7 +977,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "param_missing": "検索する言葉を入れてください。"
     },
     "flash": {
-      "authorize_wheelmap": "データを変更するにはOpenStreetMapのアカウントが必要です。"
+      "authorize_wheelmap": "データを変更するためにはOpenStreetMapのアカウントが必要です。"
     },
     "new": {
       "form": {
@@ -1091,7 +1091,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       }
     },
     "update_wheelchair": {
-      "successfull": "\"%{name}\" のステータスは \"%{status} \" に変更されました。しばらくたったらオンラインで表示されます。"
+      "successfull": "\"%{name}\" のステータスは \"%{status} 車椅子利用可\" に変更されました。しばらくたったらオンラインで表示されます。"
     }
   },
   "number": {
@@ -1160,17 +1160,17 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
   "oauth": {
     "application": {
       "connect": {
-        "headline": "Wheelmap.org上で場所を作成したり、編集するためには、まずあなたのOpenStreetMapアカウントをWheelmapのアカウントに接続させなければなりません。"
+        "headline": "あなたのアカウントをOpenStreetMapアカウントと連携させるとwheelmap.orgで場所を作成したり変更したりすることができます。"
       }
     },
     "callback": {
-      "notice": "あなｔなおWheelmapアカウントがOpenStreetMapアカウント%{user}へと接続されました。"
+      "notice": "あなたのwheelmapアカウントは現在OpenStreetMapアカウント%{user}と連携しています。"
     }
   },
   "or": "or",
   "place": {
     "one": "%{count} 件の場所",
-    "other": "%{count} 個の場所"
+    "other": "%{count} 件の場所"
   },
   "poi": {
     "category": {
@@ -1566,7 +1566,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "notice": "さよなら、またお越しください！"
     },
     "new": {
-      "email": "メールアドレス",
+      "email": "Eメールアドレス",
       "login": "ログイン",
       "login_with_twitter": "Twitterでログイン",
       "password": "パスワード",
@@ -1658,14 +1658,14 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     }
   },
   "wheelchairstatus": {
-    "limited": "部分的に車椅子でのアクセス可能です",
+    "limited": "一部車椅子利用可",
     "no": "車椅子利用不可",
-    "unknown": "不明なステータス",
-    "yes": "車椅子通行可"
+    "unknown": "車椅子利用不明",
+    "yes": "完全に車椅子利用可"
   },
   "wheelmap": {
     "footer": {
-      "a_project_of": "プロジェクト運営：",
+      "a_project_of": "プロジェクト推進：",
       "based_on": "ベース地図：",
       "become_a_supporter": "サポーターになる",
       "main_supporter": "主なサポーター"
@@ -1679,10 +1679,10 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "title": "Wheelmap - 車椅子で行ける場所を見つけよう"
     },
     "what_is": {
-      "fully_accessible": "段差のない入り口。全ての部屋に段差なし。",
-      "limited_accessible": "入り口には最大7センチ(3インチ)の段差が一段あります。ほとんどの部屋には段差がありません。",
-      "not_accessible": "入り口には段差が1段または数段あり、お部屋はアクス不可能",
-      "unknown_accessible": "場所に印をつけることで助けてください。"
+      "fully_accessible": "入口には段差が無い、全ての部屋に段差が無い、車椅子でトイレに行ける",
+      "limited_accessible": "入口に段差がある(最大でも高さ7cmまで)、たいていの部屋には段差が無い、車椅子でトイレに行けない",
+      "not_accessible": "入口の段差が高いか複数あり、部屋に入れません",
+      "unknown_accessible": "この場所の印付けを手伝ってください！"
     }
   },
   "will_paginate": {

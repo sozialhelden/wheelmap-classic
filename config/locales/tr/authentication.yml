@@ -45,7 +45,7 @@ tr:
         labels:
           email: E-Posta
         submit: "Şifreyi sıfırla"
-      headline: "Şifreni mi unuttun?"
+      headline: "Parolanızı mı unuttunuz?"
     password_reset:
       email:
         comment: "Şifrenizi değiştirmek istemiyorsanız lütfen bu mesajı dikkate almayın. <br/> Bu linke tıklayıp yeni şifre girmediğiniz sürece şifreniz değiştirilmeyecektir."
@@ -59,7 +59,7 @@ tr:
         submit: "Şifreyi sıfırla"
       headline: "Şifreyi sıfırla"
     passwords:
-      link: "Şifrenizi mi unuttunuz?"
+      link: "Parolanızı mı unuttunuz?"
       send_instructions: "Birkaç dakika içinde şifrenizi nasıl sıfırlayacağınızı anlatan bir e-posta alacaksınız."
       send_paranoid_instructions: "Eğer hesabınız varsa, birkaç dakika içinde şifrenizi nasıl sıfırlayacağınızı anlatan bir e-posta alacaksınız."
       updated: "Şifreniz başarıyla değiştirildi, şu anda oturum açtınız"

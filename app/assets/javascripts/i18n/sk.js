@@ -893,17 +893,17 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": "Choose a category"
+      "prompt": "Zvoľte kategóriu"
     },
     "node": {
-      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
+      "info_edit_position": "Poloha sa zobrazí na Wheelmap tak ako ju vidíte vyššie. Ak značka nie je na správnom mieste, môžete <a href=\"%{url}\"> upraviť jej pozíciu na OpensStreetMap",
       "mail": {
         "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
-        "subject": "[Wheelmap] Problem with %{headline}"
+        "subject": "[Wheelmap] Problém s %{headline}"
       }
     },
     "node_type": {
-      "prompt": "Choose a type"
+      "prompt": "Zvoľte typ"
     }
   },
   "node": {

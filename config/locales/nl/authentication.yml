@@ -2,6 +2,7 @@ nl:
   devise:
     confirmations:
       confirmed: "Jouw email adres is succesvol bevestigd. Je bent nu aangemeld."
+      link: "Heeft U geen bevestigingsinstructies ontvangen?"
       send_instructions: "Je zal een email met de instructie voor jouw account bevestiging ontvangen. Dat duurt maar een paar minuten."
     destroy:
       confirm: "Ben je zeker?"

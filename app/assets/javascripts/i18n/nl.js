@@ -449,7 +449,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "Jouw email adres is succesvol bevestigd. Je bent nu aangemeld.",
-      "link": "You didn't receive confirmation instructions?",
+      "link": "Heeft U geen bevestigingsinstructies ontvangen?",
       "send_instructions": "Je zal een email met de instructie voor jouw account bevestiging ontvangen. Dat duurt maar een paar minuten.",
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
     },
@@ -891,7 +891,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "prompt": "Kies een categorie"
     },
     "node": {
-      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
+      "info_edit_position": "De locatie zal op de Wheelmap verschijnen en bovenaan zichtbaar zijn. Wanneer de marker niet op de goede plek staat, kunt U  <a href=\"%{url}\"> de positie veranderen op de OpenStreetMap.</a>",
       "mail": {
         "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
         "subject": "[Wheelmap] Problem with %{headline}"

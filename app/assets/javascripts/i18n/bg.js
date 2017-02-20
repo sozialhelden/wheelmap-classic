@@ -451,13 +451,13 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "Твоят акаунт беше потвърден успешно. Сега си регистриран.",
-      "link": "You didn't receive confirmation instructions?",
+      "link": "Не сте получили потвърждение на акаунта Ви?",
       "send_instructions": "Ще получиш и-мейл с инструкции за потвърждаване на акаунта ти до няколко минути.",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
+      "send_paranoid_instructions": "Ако акаунтът ти съществува, до няколко минути ще получиш и-мейл с инструкции как да го потвърдиш."
     },
     "destroy": {
       "confirm": "Сигурен ли си?",
-      "headline": "Delete account",
+      "headline": "Изтрий акаунта.",
       "link": "Изтрий сега"
     },
     "edit": {
@@ -474,32 +474,32 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
     },
     "failure": {
       "already_authenticated": "Вече си вътре.",
-      "inactive": "Your account has not been activated yet.",
+      "inactive": "Твоят акаунт още не е активиран.",
       "invalid": "Невалиден и-мейл или парола.",
       "invalid_token": "Невалиден код за активиране.",
       "last_attempt": "You have one more attempt before your account will be locked.",
       "locked": "Твоят акаунт е блокиран.",
       "not_found_in_database": "Invalid email or password.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Твоята сесия изтече, моля влез отново, за да продължиш.",
       "unauthenticated": "Трябва да влезеш или да се регистрираш, за да продължиш.",
       "unconfirmed": "Трябва да потвърдиш акаунта си, преди да продължиш."
     },
     "mailer": {
       "confirmation_instructions": {
-        "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
+        "landing_page": "Моля кликнете върху линка, който току що изпратихме на Вашия и-мейл. Ако не сте получили и-мейл от нас, моля проверете дали не е попаднал в спам. Ако не е там, върнете се към sign up страницата и опитайте пак. ",
         "subject": "Още една стъпка до активирането на акаунта ти"
       },
       "reset_password_instructions": {
         "subject": "Нови инструкции за парола"
       },
       "unlock_instructions": {
-        "subject": "Unlock instructions"
+        "subject": "Отключи инструкциите."
       }
     },
     "mandatory": "* Задължително поле",
     "omniauth_callbacks": {
       "failure": "Идентификацията с %{kind} е неуспешна. Грешка: \"%{reason}\".",
-      "permission_missing": "You did not grant the required permission.",
+      "permission_missing": "Не сте предоставили необходимото разрешение.",
       "success": "Успешно регистриран с %{kind}."
     },
     "password_recovery": {
@@ -516,7 +516,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "comment": "В случай, че не си искал нулиране на паролата, можеш да игнорираш този и-мейл. <br/> Твоята парола няма да бъде променена, освен ако не кликнеш върху линка по-горе и не зададеш нова парола.",
         "headline": "Добре дошъл/дошла %{email}",
         "link": "Смяна на парола",
-        "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
+        "text": "Получихме искане за смяна на Вашата парола. Ако това искане е изпратено от Вас, кликнете върху изпратения линк. Ако искането не е Ваше, игнорирайте това съобщение. "
       },
       "form": {
         "labels": {
@@ -530,8 +530,8 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
     "passwords": {
       "link": "Забравена парола?",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
-      "send_instructions": "You will receive an email with instructions on how to reset your password in a few minutes",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
+      "send_instructions": "До няколко минути ще получиш и-мейл с инструкции как да смениш паролата си.",
+      "send_paranoid_instructions": "Ако акаунтът ти съществува, до няколко минути ще получиш и-мейл с инструкции как да смениш паролата си.",
       "updated": "Паролата ти беше сменена успешно. Сега си вътре.",
       "updated_not_active": "Паролата ти беше сменена успешно."
     },
@@ -544,7 +544,7 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
         "locked": "заключено",
         "unconfirmed": "непотвърден"
       },
-      "signed_up": "You have signed up successfully. A you have been sent a confirmation email.",
+      "signed_up": "Регистрацията ти е успешна. Беше ти изпратен потвърждаващ и-мейл.",
       "signed_up_but_inactive": "You have signed up successfully. However, we could not sign you in because your account is not yet activated.",
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
@@ -552,22 +552,22 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
       "updated": "Ти актуализира акаунта си успешно."
     },
     "sessions": {
-      "inactive": "Your account has not been activated yet",
+      "inactive": "Твоят акаунт още не е активиран.",
       "invalid": "Невалиден и-мейл или парола.",
       "invalid_token": "Невалиден код за активиране.",
       "link": "Вход",
       "locked": "Твоят акаунт е блокиран.",
       "new": {
         "no_osm_account": "Нямаш регистрация в OpenStreetMap?",
-        "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
+        "osm_promo_text": "Wheelmap е базирана на геоданни от OpenStreetMap (OSM). OpenStreetMap е свободна карта за целия свят, създадена от хора като теб. Тя е като Википедия за карти. За да можеш да редактираш места или да добавяш нови, ти е необходим OpenStreetMap акаунт и трябва да си влязъл в него.  ",
         "promo_text_thank_you": "Благодарим за подкрепата!",
         "sign_in_with": " Влез с %{kind}",
         "sign_up_with_osm": "Регистрирай се сега.",
-        "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
+        "wheelmap_promo_text": "С твоята информация за места, достъпни с инвалидна количка, ти можеш да помогнеш на хора с физически увреждания да планират по-добре ежедневието си. Освен това това ще помогне OpenStreetMap да стане по-подробна. "
       },
       "signed_in": "Успешна регистрация.",
       "signed_out": "Излезе успешно.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Твоята сесия изтече, моля влез отново, за да продължиш.",
       "unauthenticated": "Трябва да се регистрираш или да влезеш, за да продължиш.",
       "unconfirmed": "Трябва да потвърдиш акаунта си, за да продължиш."
     },
@@ -596,16 +596,16 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
           "email": "Email",
           "password": "Парола",
           "password_confirmation": "Повтори паролата",
-          "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
+          "wants_newsletter": "Да, изпращайте ми актуализирана информация за Wheelmap - но не по-често от веднъж месечно."
         },
         "submit": "Регистрация"
       },
       "headline": "Регистрация"
     },
     "unlocks": {
-      "link": "You didn't receive unlock instructions?",
-      "send_instructions": "You will receive an email in a few minutes with instructions on how to unlock your account",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
+      "link": "Не сте получили инструкции за отключване на акаунта Ви?",
+      "send_instructions": "До няколко минути ще получиш и-мейл с инструкции как да отключиш акаунта си.",
+      "send_paranoid_instructions": "Ако акаунтът ти съществува, до няколко минути ще получиш и-мейл с инструкции как да отключиш акаунта си.",
       "unlocked": "Твоят акаунт беше отключен успешно. Вече си в профила си."
     }
   },

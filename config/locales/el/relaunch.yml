@@ -16,6 +16,12 @@ el:
     new:
       form:
         title: Report a problem
+        header_text_html: "Παρακαλώ πρώτα διαβάζετε <a href=\"https://news.wheelmap.org/en/faq/\">frequently asked questions</a> για βοήθεια. Αν δεν υπάρχει εκεί η λύση στο πρόβλημα σας, παρακαλώ απαντήστε τις ακόλουθες ερώτησεις για να μπορούμε να επιδιορθώσουμε αυτό."
+        questions:
+          a: 'Τι έχεις κάνει:'
+          b: 'Τι ήλπιζες να τύχει:'
+        describe: Παρακαλώ μας γράφετε στα Αγγλικά ή στα Γερμανικά.
+        submit_button: Υποβολή
   faq:
     answers:
       0: Μπορείτε πάντα να αλλάξετε την σήμανση της θέσης σας. Απλά επιλέξτε την σωστη σήμανση και "Αποθήκευση" - έγινε!
@@ -31,9 +37,10 @@ el:
       choose_language: Επιλογή γλώσσας
       contact: Επικοινωνία
       map: Χάρτης
+      travelguide: ταξιδιωτικός οδηγός
       projects: Συμμετέχετε
       faq: Συχνές ερωτήσεις
-      report_problem: Report a problem
+      report_problem: Αναφέρετε πρόβλημα
     toolbar:
       categories: Κατηγορίες
     meta:
@@ -50,16 +57,23 @@ el:
   nodes:
     new:
       form:
+        title: Προσθέτετε μέρος
         legend: Περιοχή του χώρου
         section:
+          name_category:
+            name: Όνομα και τύπος τοποθεσίας
+            title: "Δώστε μας αρχικές πληροφορίες σχετικά με το μέρος σου:"
           address:
             name: Διεύθυνση
+            title: Πού είναι το μέρος;
           similar_nodes:
             name: Παρόμοια μέρη
           accessibility:
             name: Πρόσβαση με αναπηρική καρέκλα
           contact:
             name: Επικοινωνία
+          overview:
+            title: Είναι όλες οι πληροφορίες σωστές;
     node_data:
       address: 'Διεύθυνση:'
       contact_details: 'Πληροφορίες επικοινωνίας:'
@@ -114,6 +128,10 @@ el:
     profile:
       newsletter:
         title: Ενημερωτικό Δελτίο
+      show:
+        title: Επισκόπηση
+        overview:
+          text: Έχετε
       photos:
         title: Φωτογραφίες
       edit:
