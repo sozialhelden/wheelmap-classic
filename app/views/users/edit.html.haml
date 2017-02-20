@@ -17,10 +17,10 @@
         = form.actions do
           = form.action :submit, label: t('formtastic.labels.save')
 
-      - if @user.authentication_token
+      - if @user.api_key
         = semantic_form_for :user, :url => reset_token_profile_path, html: { class: 'form-horizontal'},  :method => :post do |form|
           = form.inputs :name => 'API' do
-            = form.input :authentication_token, :input_html => {:readonly => :readonly}
+            = form.input :api_key, :input_html => {:readonly => :readonly}
 
           = form.actions do
             = form.action :submit, :label => t('formtastic.labels.reset')
