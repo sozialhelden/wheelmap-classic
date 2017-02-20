@@ -82,7 +82,7 @@ describe Api::MeasurementsController do
     describe 'image upload' do
       context 'with valid params' do
         before do
-          post(:create, :node_id => poi.id, :api_key => user.authentication_token, :photo => fixture_file_upload('/placeholder.jpg'))
+          post(:create, :node_id => poi.id, :api_key => user.api_key, :photo => fixture_file_upload('/placeholder.jpg'))
         end
 
         it 'creates a photo associated with the poi' do
@@ -108,7 +108,7 @@ describe Api::MeasurementsController do
 
       context 'with missing image' do
         before do
-          post(:create, :node_id => poi.id, :api_key => user.authentication_token)
+          post(:create, :node_id => poi.id, :api_key => user.api_key)
         end
 
         it 'returns 400 Bad Request' do
@@ -154,7 +154,7 @@ describe Api::MeasurementsController do
 
       context 'with non existant node' do
         before do
-          post(:create, :node_id => 999999, :api_key => user.authentication_token, :photo => fixture_file_upload('/placeholder.jpg'))
+          post(:create, :node_id => 999999, :api_key => user.api_key, :photo => fixture_file_upload('/placeholder.jpg'))
         end
 
         it 'returns 404' do
@@ -173,12 +173,12 @@ describe Api::MeasurementsController do
     let(:picture) { poi.photos.first }
 
     it 'returns 404 if the node is not available' do
-      post(:add_metadata, :node_id => 404, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_door_metadata)
+      post(:add_metadata, :node_id => 404, :measurement_id => picture.id, :api_key => user.api_key, :metadata => valid_door_metadata)
       expect(response.status).to eq 404
     end
 
     it 'returns 404 if the measurement is not available' do
-      post(:add_metadata, :node_id => poi.id, :measurement_id => 404, :api_key => user.authentication_token, :metadata => valid_door_metadata)
+      post(:add_metadata, :node_id => poi.id, :measurement_id => 404, :api_key => user.api_key, :metadata => valid_door_metadata)
       expect(response.status).to eq 404
     end
 
@@ -187,7 +187,7 @@ describe Api::MeasurementsController do
 
       context 'with all fields holding a value' do
         before do
-          post(:add_metadata, metadata: valid_door_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, format: :json)
+          post(:add_metadata, metadata: valid_door_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, format: :json)
         end
 
         it 'accepts valid json' do
@@ -225,7 +225,7 @@ describe Api::MeasurementsController do
         let(:data_point) { measurement.datapoints.first }
 
         before do
-          post(:add_metadata, metadata: door_metadata_with_empty_description, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, format: :json)
+          post(:add_metadata, metadata: door_metadata_with_empty_description, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, format: :json)
         end
 
         it 'returns 201 status code' do
@@ -250,7 +250,7 @@ describe Api::MeasurementsController do
         let(:data_point) { measurement.datapoints.first }
 
         before do
-          post(:add_metadata, metadata: door_metadata_without_description, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, format: :json)
+          post(:add_metadata, metadata: door_metadata_without_description, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, format: :json)
         end
 
         it 'returns 201 status code' do
@@ -326,32 +326,32 @@ describe Api::MeasurementsController do
         end
 
         it 'returns 422 when data_type is missing' do
-          post(:add_metadata, metadata: without_data_type, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+          post(:add_metadata, metadata: without_data_type, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key)
           expect(response.status).to eq 422
         end
 
         it 'returns 422 when data is missing' do
-          post(:add_metadata, metadata: without_data, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+          post(:add_metadata, metadata: without_data, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key)
           expect(response.status).to eq 422
         end
 
         it 'returns 422 when when width is missing' do
-          post(:add_metadata, metadata: without_width, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+          post(:add_metadata, metadata: without_width, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key)
           expect(response.status).to eq 422
         end
 
         it 'returns 422 when when width has the wrong value' do
-          post(:add_metadata, metadata: wrong_width_value, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+          post(:add_metadata, metadata: wrong_width_value, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key)
           expect(response.status).to eq 422
         end
 
         it 'returns 422 when wrong data key is passed' do
-          post(:add_metadata, metadata: wrong_data_argument, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+          post(:add_metadata, metadata: wrong_data_argument, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key)
           expect(response.status).to eq 422
         end
 
         it 'returns a list of errors' do
-          post(:add_metadata, metadata: wrong_data_argument, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token)
+          post(:add_metadata, metadata: wrong_data_argument, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key)
           errors = JSON.parse(response.body)
           expect(errors.has_key?('errors')).to be true
         end
@@ -363,11 +363,11 @@ describe Api::MeasurementsController do
 
       context 'width valid metadata' do
         before do
-          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_steps_metadata)
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, :metadata => valid_steps_metadata)
         end
 
         it 'accepts valid json' do
-          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_steps_metadata)
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, :metadata => valid_steps_metadata)
           expect(response.status).to eq 201
         end
 
@@ -408,7 +408,7 @@ describe Api::MeasurementsController do
         end
 
         it 'returns 422 when wrong key is passed' do
-          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => wrong_data_argument)
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, :metadata => wrong_data_argument)
           expect(response.status).to eq 422
         end
       end
@@ -417,7 +417,7 @@ describe Api::MeasurementsController do
     describe 'ramp' do
       context 'with valid metadata' do
         before do
-          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_ramp_metadata)
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, :metadata => valid_ramp_metadata)
         end
 
         it 'accepts valid json' do
@@ -462,12 +462,12 @@ describe Api::MeasurementsController do
         end
 
         it 'returns 422 when wrong key is passed' do
-          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => wrong_data_argument)
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, :metadata => wrong_data_argument)
           expect(response.status).to eq 422
         end
 
         it 'returns a list of errors' do
-          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => wrong_data_argument)
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, :metadata => wrong_data_argument)
           errors = JSON.parse(response.body)
           expect(errors.has_key?('errors')).to be true
         end
@@ -477,7 +477,7 @@ describe Api::MeasurementsController do
     describe 'toilets' do
       context 'with valid metadata' do
         before do
-          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => valid_toilet_metadata)
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, :metadata => valid_toilet_metadata)
         end
 
         it 'accepts valid json' do
@@ -563,27 +563,27 @@ describe Api::MeasurementsController do
         end
 
         it 'returns 422 when data is empty' do
-          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => with_empty_data)
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, :metadata => with_empty_data)
           expect(response.status).to eq 422
         end
 
         it 'returns 422 when width is missing' do
-          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => without_width)
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, :metadata => without_width)
           expect(response.status).to eq 422
         end
 
         it 'does not save a new measurement to database when width is missing' do
-          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => without_width)
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, :metadata => without_width)
           expect(picture.measurements.length).to eq 0
         end
 
         it 'returns 422 when invalid data point is passed' do
-          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => with_empty_data)
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, :metadata => with_empty_data)
           expect(response.status).to eq 422
         end
 
         it 'returns a list of errors' do
-          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.authentication_token, :metadata => with_empty_data)
+          post(:add_metadata, :node_id => poi.id, :measurement_id => picture.id, :api_key => user.api_key, :metadata => with_empty_data)
           errors = JSON.parse(response.body)
           expect(errors.has_key?('errors')).to be true
         end

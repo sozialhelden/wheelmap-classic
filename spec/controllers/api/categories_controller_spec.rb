@@ -28,7 +28,7 @@ describe Api::CategoriesController do
       describe 'accepted' do
 
         it "should save tracking parameter" do
-          get(:index, :api_key => user.authentication_token)
+          get(:index, :api_key => user.api_key)
           user.reload
           assert_equal 1, user.sign_in_count
         end
@@ -41,7 +41,7 @@ describe Api::CategoriesController do
         end
 
         it "should not save tracking parameter" do
-          get(:index, :api_key => user.authentication_token)
+          get(:index, :api_key => user.api_key)
           user.reload
           assert_equal 0, user.sign_in_count
         end
@@ -52,13 +52,13 @@ describe Api::CategoriesController do
 
       it "should render json when using accept header" do
         request.env['HTTP_ACCEPT'] = 'application/json'
-        get(:index, :api_key => user.authentication_token)
+        get(:index, :api_key => user.api_key)
         expect(response).to be_success
         expect(request.format.to_sym).to eql(:json)
       end
 
       it "should render json as default format" do
-        get(:index, :api_key => user.authentication_token)
+        get(:index, :api_key => user.api_key)
         expect(response).to be_success
         expect(request.format.to_sym).to eql(:json)
       end
@@ -71,7 +71,7 @@ describe Api::CategoriesController do
       end
 
       it "should render xml when using accept header" do
-        get(:index, :api_key => user.authentication_token)
+        get(:index, :api_key => user.api_key)
         expect(response).to be_success
         expect(request.format.to_sym).to eql(:xml)
       end

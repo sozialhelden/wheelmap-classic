@@ -10,7 +10,7 @@ describe Api::AssetsController do
     end
 
     before do
-      get :index, :api_key => user.authentication_token
+      get :index, :api_key => user.api_key
     end
 
     it 'returns http 200 success' do

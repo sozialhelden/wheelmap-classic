@@ -21,12 +21,12 @@ describe Api::NodeTypesController do
     end
 
     it 'returns 200 status code' do
-      get(:index, category_id: @category.id, :api_key => @user.authentication_token)
+      get(:index, category_id: @category.id, :api_key => @user.api_key)
       expect(response.status).to eq 200
     end
 
     it 'returns node types for the specified category' do
-      get(:index, category_id: @category.id, :api_key => @user.authentication_token)
+      get(:index, category_id: @category.id, :api_key => @user.api_key)
       json_response = JSON.parse(response.body)
       node_types = json_response['node_types']
       category_ids = node_types.map { |node_type| node_type['category_id'] }
@@ -37,13 +37,13 @@ describe Api::NodeTypesController do
 
       it "should render json when using accept header" do
         request.env['HTTP_ACCEPT'] = 'application/json'
-        get(:index, :api_key => @user.authentication_token)
+        get(:index, :api_key => @user.api_key)
         expect(response).to be_success
         expect(request.format.to_sym).to eql(:json)
       end
 
       it "should render json as default format" do
-        get(:index, :api_key => @user.authentication_token)
+        get(:index, :api_key => @user.api_key)
         expect(response).to be_success
         expect(request.format.to_sym).to eql(:json)
       end

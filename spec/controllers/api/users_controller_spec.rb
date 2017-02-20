@@ -37,37 +37,37 @@ describe Api::UsersController do
 
   it "should set terms accepted to true" do
     expect(@user.terms).to be_truthy
-    post :accept_terms, :terms_accepted => 'true', :api_key => @user.authentication_token
+    post :accept_terms, :terms_accepted => 'true', :api_key => @user.api_key
     expect(@user.reload.terms).to be_truthy
   end
 
   it "should set terms accepted to false" do
     expect(@user.terms).to be_truthy
-    post :accept_terms, :terms_accepted => 'false', :api_key => @user.authentication_token
+    post :accept_terms, :terms_accepted => 'false', :api_key => @user.api_key
     expect(@user.reload.terms).to be_falsey
   end
 
   it "should not set terms accepted if wrong value" do
     expect(@user.terms).to be_truthy
-    post :accept_terms, :terms_accepted => 'foo', :api_key => @user.authentication_token
+    post :accept_terms, :terms_accepted => 'foo', :api_key => @user.api_key
     expect(@user.reload.terms).to be_truthy
   end
 
   it "should set privacy accepted to true" do
     expect(@user.terms).to be_truthy
-    post :accept_terms, :privacy_accepted => 'true', :api_key => @user.authentication_token
+    post :accept_terms, :privacy_accepted => 'true', :api_key => @user.api_key
     expect(@user.reload.privacy_policy).to be_truthy
   end
 
   it "should set privacy accepted to false" do
     expect(@user.terms).to be_truthy
-    post :accept_terms, :privacy_accepted => 'false', :api_key => @user.authentication_token
+    post :accept_terms, :privacy_accepted => 'false', :api_key => @user.api_key
     expect(@user.reload.privacy_policy).to be_falsey
   end
 
   it "should not set privacy accepted if wrong value" do
     expect(@user.terms).to be_truthy
-    post :accept_terms, :privacy_accepted => 'foo', :api_key => @user.authentication_token
+    post :accept_terms, :privacy_accepted => 'foo', :api_key => @user.api_key
     expect(@user.reload.privacy_policy).to be_truthy
   end
 

@@ -160,7 +160,7 @@ class Api::ApiController < ApplicationController
 
   def authenticate_by_token
     api_key = params[:api_key] || request.headers["X-API-KEY"]
-    if api_key && @current_user = User.find_by_authentication_token(api_key)
+    if api_key && @current_user = User.find_by_api_key(api_key)
       sign_in(:user, current_user)
     end
     render_exception_without_notification(Exception.new('invalid API key.'), 401) unless current_user

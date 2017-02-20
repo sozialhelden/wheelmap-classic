@@ -22,7 +22,7 @@ describe Api::NodesController do
 
     describe 'get nodes for category' do
       before do
-        get(:index, category_id: @category.id, :api_key => @user.authentication_token)
+        get(:index, category_id: @category.id, :api_key => @user.api_key)
       end
 
       it 'returns 200 status code' do
@@ -39,24 +39,24 @@ describe Api::NodesController do
 
       it "should render json when using accept header" do
         request.env['HTTP_ACCEPT'] = 'application/json'
-        get(:index, :api_key => @user.authentication_token)
+        get(:index, :api_key => @user.api_key)
         expect(request.format.to_sym).to eql(:json)
       end
 
       it "should render json as default format" do
-        get(:index, :api_key => @user.authentication_token)
+        get(:index, :api_key => @user.api_key)
         expect(response).to be_success
         expect(request.format.to_sym).to eql(:json)
       end
 
       it "should render result object" do
-        get(:index, :api_key => @user.authentication_token)
+        get(:index, :api_key => @user.api_key)
         json = JSON.parse(response.body)
         expect(json['nodes']).not_to be_nil
       end
 
       it "should render conditions object" do
-        get(:index, :api_key => @user.authentication_token)
+        get(:index, :api_key => @user.api_key)
         json = JSON.parse(response.body)
         expect(json['conditions']).not_to be_nil
         p = json['conditions']
@@ -64,7 +64,7 @@ describe Api::NodesController do
       end
 
       it "should render meta object" do
-        get(:index, :api_key => @user.authentication_token)
+        get(:index, :api_key => @user.api_key)
         json = JSON.parse(response.body)
         expect(json['meta']).not_to be_nil
         p = json['meta']
@@ -73,7 +73,7 @@ describe Api::NodesController do
       end
 
       it "should render result object containing a node" do
-        get(:index, :api_key => @user.authentication_token)
+        get(:index, :api_key => @user.api_key)
         expect(response).to be_success
         json = JSON.parse(response.body)
         expect(json['nodes']).not_to be_empty
@@ -84,7 +84,7 @@ describe Api::NodesController do
       end
 
       it "should not contain more attributes than specified in API docs" do
-        get(:index, :api_key => @user.authentication_token)
+        get(:index, :api_key => @user.api_key)
         expect(response).to be_success
         json = JSON.parse(response.body)
         attribute_whitelist = %w{id lat lon node_type category name wheelchair wheelchair_description wheelchair_toilet city street housenumber postcode website phone}
@@ -104,16 +104,16 @@ describe Api::NodesController do
       end
 
       it "should render xml when using accept header" do
-        get(:index, :api_key => @user.authentication_token)
+        get(:index, :api_key => @user.api_key)
         expect(request.format.to_sym).to eql(:xml)
       end
 
       it "should render result object" do
-        get(:index, :api_key => @user.authentication_token)
+        get(:index, :api_key => @user.api_key)
         expect(response.body).to match(/<conditions>/)
       end
       it "should render params object" do
-        get(:index, :api_key => @user.authentication_token)
+        get(:index, :api_key => @user.api_key)
         expect(response.body).to match(/<meta>/)
       end
     end
@@ -128,7 +128,7 @@ describe Api::NodesController do
 
     it "should accept update wheelchair status for later processing if params are valid" do
       expect {
-        put(:update_wheelchair, {:id => @node.id, :wheelchair => 'no', :api_key => @user.authentication_token})
+        put(:update_wheelchair, {:id => @node.id, :wheelchair => 'no', :api_key => @user.api_key})
         expect(response.status).to eql 202
         expect(response.body).to match(/OK/)
       }.to change(Delayed::Job, :count).by(1)
@@ -137,19 +137,19 @@ describe Api::NodesController do
 
     it "should not accept update wheelchair status for later processing if params are invalid" do
       expect {
-        put(:update_wheelchair, {:id => @node.id, :wheelchair => 'invalid', :api_key => @user.authentication_token})
+        put(:update_wheelchair, {:id => @node.id, :wheelchair => 'invalid', :api_key => @user.api_key})
         expect(response.status).to eql 406
       }.to change(Delayed::Job, :count).by(0)
     end
 
     it "should compose source from user agent" do
-      put(:update_wheelchair, {:id => @node.id, :wheelchair => 'yes', :api_key => @user.authentication_token})
+      put(:update_wheelchair, {:id => @node.id, :wheelchair => 'yes', :api_key => @user.api_key})
       expect(assigns(:source)).to eql 'tag_android'
     end
 
     it "should compose source from user agent" do
       request.env['HTTP_USER_AGENT'] = 'Wheelmap iOS/1.2.4'
-      put(:update_wheelchair, {:id => @node.id, :wheelchair => 'yes', :api_key => @user.authentication_token})
+      put(:update_wheelchair, {:id => @node.id, :wheelchair => 'yes', :api_key => @user.api_key})
       expect(assigns(:source)).to eql 'tag_iphone'
     end
   end
@@ -163,7 +163,7 @@ describe Api::NodesController do
 
     it "should accept update toilet status for later processing if params are valid" do
       expect {
-        put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'no', :api_key => @user.authentication_token})
+        put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'no', :api_key => @user.api_key})
         expect(response.status).to eql 202
         expect(response.body).to match(/OK/)
       }.to change(Delayed::Job, :count).by(1)
@@ -172,26 +172,26 @@ describe Api::NodesController do
 
     it "should not accept update toilet status for later processing if params are invalid" do
       expect {
-        put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'invalid', :api_key => @user.authentication_token})
+        put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'invalid', :api_key => @user.api_key})
         expect(response.status).to eql 406
       }.to change(Delayed::Job, :count).by(0)
     end
 
     it "should not accept update toilet status for later processing if params are missing" do
       expect {
-        put(:update_toilet, {:id => @node.id, :api_key => @user.authentication_token})
+        put(:update_toilet, {:id => @node.id, :api_key => @user.api_key})
         expect(response.status).to eql 406
       }.to change(Delayed::Job, :count).by(0)
     end
 
     it "should compose source from user agent" do
-      put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'yes', :api_key => @user.authentication_token})
+      put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'yes', :api_key => @user.api_key})
       expect(assigns(:source)).to eql 'toilet_android'
     end
 
     it "should compose source from user agent" do
       request.env['HTTP_USER_AGENT'] = 'Wheelmap iOS/1.2.4'
-      put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'yes', :api_key => @user.authentication_token})
+      put(:update_toilet, {:id => @node.id, :wheelchair_toilet => 'yes', :api_key => @user.api_key})
       expect(assigns(:source)).to eql 'toilet_iphone'
     end
   end
@@ -225,28 +225,28 @@ describe Api::NodesController do
   describe 'search action' do
 
     it "should not fail when no search key is passed" do
-      get(:search, :api_key => @user.authentication_token)
+      get(:search, :api_key => @user.api_key)
       expect(response.status).to eql 200
     end
 
     it "should not fail when empty search key is passed" do
-      get(:search, :api_key => @user.authentication_token, :q => '')
+      get(:search, :api_key => @user.api_key, :q => '')
       expect(response.status).to eql 200
     end
 
     it "should use distance search when bbox is passed" do
-      get(:search, :api_key => @user.authentication_token, :q => 'name', :bbox => '13.377,52.515,13.383,52.518')
+      get(:search, :api_key => @user.api_key, :q => 'name', :bbox => '13.377,52.515,13.383,52.518')
       expect(response.status).to eql 200
     end
 
     it "should compose source from user agent" do
-      get(:search, :api_key => @user.authentication_token, :q => 'Berlin')
+      get(:search, :api_key => @user.api_key, :q => 'Berlin')
       expect(assigns(:source)).to eql 'search_android'
     end
 
     it "should compose source from user agent" do
       request.env['HTTP_USER_AGENT'] = 'Wheelmap iOS/1.2.4'
-      get(:search, :api_key => @user.authentication_token, :q => 'Berlin')
+      get(:search, :api_key => @user.api_key, :q => 'Berlin')
       expect(assigns(:source)).to eql 'search_iphone'
     end
 
@@ -263,7 +263,7 @@ describe Api::NodesController do
     end
 
     it "access should be denied if osm credentials are missing" do
-      put(:update, {:id => @node.id, :name => 'Something new', :api_key => @user.authentication_token, :locale => 'en'})
+      put(:update, {:id => @node.id, :name => 'Something new', :api_key => @user.api_key, :locale => 'en'})
       expect(response.status).to eql 403
       expect(response.body).to match(/Um Daten zu ändern benötigst Du einen OpenStreetMap Account./)
     end
@@ -276,7 +276,7 @@ describe Api::NodesController do
       expect(Poi).to receive(:find).with("#{@node.id}").and_return(@node)
       expect(@node).to receive(:valid?).and_return(false)
       expect {
-        put(:update, {:id => @node.id, :api_key => @user.authentication_token})
+        put(:update, {:id => @node.id, :api_key => @user.api_key})
         expect(response.status).to eql 400
       }.to change(Delayed::Job, :count).by(0)
 
@@ -290,7 +290,7 @@ describe Api::NodesController do
       @user.save!
 
       expect {
-        put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :wheelchair => 'no', :api_key => @user.authentication_token})
+        put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :wheelchair => 'no', :api_key => @user.api_key})
         expect(response.status).to eql 202
       }.to change(Delayed::Job, :count).by(1)
     end
@@ -301,7 +301,7 @@ describe Api::NodesController do
       @user.save!
 
       expect {
-        put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
+        put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.api_key})
         expect(response.status).to eql 202
       }.to change(Delayed::Job, :count).by(1)
     end
@@ -319,7 +319,7 @@ describe Api::NodesController do
                       :name => 'Cocktails on the rocks',
                       :wheelchair => 'no',
                       :phone => '30 123456',
-                      :api_key => @user.authentication_token
+                      :api_key => @user.api_key
                      })
          expect(response.status).to eql 202
        }.to change(Delayed::Job, :count).by(1)
@@ -338,7 +338,7 @@ describe Api::NodesController do
                       :name => 'Cocktails on the rocks',
                       :wheelchair => 'no',
                       :phone => '+49 30 123456',
-                      :api_key => @user.authentication_token
+                      :api_key => @user.api_key
                      })
         expect(response.status).to eql 202
       }.to change(Delayed::Job, :count).by(1)
@@ -357,7 +357,7 @@ describe Api::NodesController do
                       :name => 'Cocktails on the rocks',
                       :wheelchair => 'no',
                       :website => 'www.google.de',
-                      :api_key => @user.authentication_token
+                      :api_key => @user.api_key
                      })
          expect(response.status).to eql 400
        }.to change(Delayed::Job, :count).by(0)
@@ -376,7 +376,7 @@ describe Api::NodesController do
                       :name => 'Cocktails on the rocks',
                       :wheelchair => 'no',
                       :website => 'http://www.ferienwohnungen-bad-urach.de',
-                      :api_key => @user.authentication_token
+                      :api_key => @user.api_key
                      })
         expect(response.status).to eql 202
       }.to change(Delayed::Job, :count).by(1)
@@ -386,7 +386,7 @@ describe Api::NodesController do
       @user.oauth_token = :a_token
       @user.oauth_secret = :a_secret
       @user.save!
-      put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
+      put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.api_key})
       expect(assigns(:source)).to eql 'update_android'
     end
 
@@ -395,7 +395,7 @@ describe Api::NodesController do
       @user.oauth_secret = :a_secret
       @user.save!
       request.env['HTTP_USER_AGENT'] = 'Wheelmap iOS/1.2.4'
-      put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
+      put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.api_key})
       expect(assigns(:source)).to eql 'update_iphone'
     end
 
@@ -407,7 +407,7 @@ describe Api::NodesController do
       @node.osm_id = (@node.osm_id * -1)
       expect(Poi).to receive(:find).with("#{@node.osm_id}").and_return @node
       expect {
-        put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.authentication_token})
+        put(:update, {:id => @node.id, :lat => 52.0, :lon => 13.4, :type => 'bar', :name => 'Cocktails on the rocks', :wheelchair => 'no', :api_key => @user.api_key})
         expect(response.status).to eql 202
       }.to change(Delayed::Job, :count).by(1)
     end
@@ -424,7 +424,7 @@ describe Api::NodesController do
 
     it "access should be denied if osm credentials are missing" do
       expect{
-        post(:create, {:name => 'Something new', :api_key => @user.authentication_token})
+        post(:create, {:name => 'Something new', :api_key => @user.api_key})
       }.not_to change(Delayed::Job, :count)
       expect(response.status).to eql 403
       expect(response.body).to match(/Um Daten zu ändern benötigst Du einen OpenStreetMap Account./)
@@ -435,7 +435,7 @@ describe Api::NodesController do
       @user.oauth_secret = :a_secret
       @user.save!
       expect {
-        post(:create, {:lat => 52.0, :lon => 13.4, :api_key => @user.authentication_token,
+        post(:create, {:lat => 52.0, :lon => 13.4, :api_key => @user.api_key,
              :type => "foo", :tags => {"amenity"=>"restaurant"}})
         expect(response.status).to eql 400
       }.not_to change(Delayed::Job, :count)
@@ -446,7 +446,7 @@ describe Api::NodesController do
       @user.oauth_secret = :a_secret
       @user.save!
       expect {
-        post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant"}, :wheelchair => 'no', :api_key => @user.authentication_token})
+        post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant"}, :wheelchair => 'no', :api_key => @user.api_key})
         expect(response.status).to eql 400
       }.not_to change(Delayed::Job, :count)
     end
@@ -457,7 +457,7 @@ describe Api::NodesController do
       @user.save!
       expect {
         post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant",
-             :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => @user.authentication_token})
+             :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => @user.api_key})
         expect(response.status).to eql 202
       }.to change(Delayed::Job, :count).by(1)
     end
@@ -470,7 +470,7 @@ describe Api::NodesController do
         expect(tags['wheelchair']).to eq 'yes'
         expect(tags['toilets:wheelchair']).to eq 'yes'
       end
-      request.headers['X-API-KEY'] = @user.authentication_token
+      request.headers['X-API-KEY'] = @user.api_key
       post(:create, {"name"=>"centro cultural vergueiro", "type"=>"community_centre", "lat"=>"-23.5711773", "lon"=>"-46.6402144", "wheelchair"=>"yes", "wheelchair_toilet"=>"yes", "category"=>"leisure", "locale"=>"pt"})
       expect(response.status).to eq 202
     end
@@ -479,7 +479,7 @@ describe Api::NodesController do
       @user.oauth_token = :a_token
       @user.oauth_secret = :a_secret
       @user.save!
-      post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant", :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => @user.authentication_token})
+      post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant", :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => @user.api_key})
       expect(assigns(:source)).to eql 'create_android'
     end
 
@@ -488,7 +488,7 @@ describe Api::NodesController do
       @user.oauth_secret = :a_secret
       @user.save!
       request.env['HTTP_USER_AGENT'] = 'Wheelmap iOS/1.2.4'
-      post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant", :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => @user.authentication_token})
+      post(:create, {:lat => 52.0, :lon => 13.4, :tags => {"amenity"=>"restaurant", :name => 'Cocktails on the rocks'}, :wheelchair => 'no', :api_key => @user.api_key})
       expect(assigns(:source)).to eql 'create_iphone'
     end
 
@@ -500,7 +500,7 @@ describe Api::NodesController do
         post(:create, {"wheelchair_description"=>"", "type"=>"convenience",
           "street"=>nil, "name"=>"Kochhaus", "wheelchair"=>nil, "postcode"=>nil,
           "phone"=>nil, "city"=>nil, "website"=>nil, "lon"=>"13.35598468780518",
-          "lat"=>"52.48627569798567", "housenumber"=>nil, :api_key => @user.authentication_token})
+          "lat"=>"52.48627569798567", "housenumber"=>nil, :api_key => @user.api_key})
       }.to change(Delayed::Job, :count).by(1)
     end
   end

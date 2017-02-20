@@ -70,7 +70,7 @@ describe Api::PoiLogController do
 
       context 'date in the past' do
         before do
-          get(:index, { since: date_today.to_date.to_s, api_key: user.authentication_token })
+          get(:index, { since: date_today.to_date.to_s, api_key: user.api_key })
         end
 
         it "returns 200 status code" do
@@ -131,7 +131,7 @@ describe Api::PoiLogController do
             since: date_today.to_date.to_s,
             per_page: 2,
             page: 1,
-            api_key: user.authentication_token })
+            api_key: user.api_key })
         end
 
         context "the JSON response" do
@@ -157,7 +157,7 @@ describe Api::PoiLogController do
 
       context 'dates in the future' do
         before do
-          get(:index, { since: (Date.today + 7.days).to_s, api_key: user.authentication_token })
+          get(:index, { since: (Date.today + 7.days).to_s, api_key: user.api_key })
         end
 
         it "results in an empty list" do
@@ -167,7 +167,7 @@ describe Api::PoiLogController do
 
       context 'without a date' do
         before do
-          get(:index, { api_key: user.authentication_token })
+          get(:index, { api_key: user.api_key })
         end
 
         it "returns 400 status code" do
