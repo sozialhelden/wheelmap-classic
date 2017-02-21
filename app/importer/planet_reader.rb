@@ -76,7 +76,7 @@ class PlanetReader
 
   def flush_pois(min_amount=500)
     if @to_be_deleted.size >= min_amount
-      Poi.where(:osm_id => @to_be_deleted).delete_all
+      Poi.where(:osm_id => @to_be_deleted).destroy_all
       for deletion in @to_be_deleted do
         puts "Deleting POI #{deletion}"
       end

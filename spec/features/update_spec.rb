@@ -17,7 +17,7 @@ describe "Find, update and create nodes via API" do
   end
 
   before do
-    Poi.delete_all
+    Poi.destroy_all
 
     visit new_user_session_path
     visit '/users/auth/osm'
