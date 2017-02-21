@@ -10,6 +10,8 @@ class Api::NodesController < Api::ApiController
 
   # Make sure user authenticates itself using an api_key
   before_filter :authenticate_application!, :only => [:update, :create]
+  # A user cannot be anonymous if they want to create or update a node
+  before_filter :ensure_not_anonymous!, :only => [:create, :update]
 
   has_scope :bbox, :except => :search # we handle this manually
   has_scope :wheelchair, :except => :update
@@ -251,4 +253,12 @@ class Api::NodesController < Api::ApiController
     end
   end
 
+  def ensure_not_anonymous!
+    if current_user.anonymous?
+      respond_to do |format|
+        format.json { render :json => {:message => 'Cannot use anonymous user'}.to_json, :status => 403 }
+        format.xml  { render :xml  => {:message => 'Cannot use anonymous user'}.to_xml,  :status => 403 }
+      end
+    end
+  end
 end
