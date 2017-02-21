@@ -256,8 +256,8 @@ class Api::NodesController < Api::ApiController
   def ensure_not_anonymous!
     if current_user.anonymous?
       respond_to do |format|
-        format.json { render :json => {:message => 'Cannot use anonymous user'}.to_json, :status => 403 }
-        format.xml  { render :xml  => {:message => 'Cannot use anonymous user'}.to_xml,  :status => 403 }
+        format.json { render :json => {:message => 'You are not authorized to perform this action.'}.to_json, :status => 403 }
+        format.xml  { render :xml  => {:message => 'You are not authorized to perform this action.'}.to_xml,  :status => 403 }
       end
     end
   end
