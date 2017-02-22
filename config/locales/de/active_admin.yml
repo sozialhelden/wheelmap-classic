@@ -104,6 +104,7 @@ de:
       admin_user:
         invalid: Benutzername oder Kennwort nicht korrekt.
         unauthenticated: Bitte melden Sie sich als Administrator an.
+        not_found_in_database: Benutzername existiert nicht, bitte versuchen Sie eine andere E-Mail-Adresse.
     sessions:
       admin_user:
         signed_in: Erfolgreich als Administrator angemeldet.
