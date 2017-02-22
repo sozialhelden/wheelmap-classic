@@ -57,8 +57,8 @@ describe Api::PoiLogController do
       date_yesterday = DateTime.new(2016,1,31,20,0,0)
 
       before :all do
-        Poi.destroy_all
-        PoiLog.destroy_all
+        Poi.delete_all
+        PoiLog.delete_all
         Timecop.travel(date_yesterday)
         create_list(:poi_log, 5, action: "update")
         create_list(:poi_log, 5, action: "delete")
