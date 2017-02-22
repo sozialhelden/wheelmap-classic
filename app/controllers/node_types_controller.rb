@@ -8,11 +8,11 @@ class NodeTypesController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.json {
+      format.json do
         render json: {
-            node_types: @node_types.as_api_response(:ember)
+          node_types: @node_types.as_api_response(:ember)
         }
-      }
+      end
     end
   end
 

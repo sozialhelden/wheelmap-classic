@@ -30,7 +30,7 @@ Formtastic::FormBuilder.all_fields_required_by_default = true
 # '<abbr title="required">*</abbr>'. In other words, if you configure formtastic.required
 # in your locale, it will replace the abbr title properly. But if you don't want to use
 # abbr tag, you can simply give a string as below
-Formtastic::FormBuilder.required_string = "*"
+Formtastic::FormBuilder.required_string = '*'
 
 # Set the string that will be appended to the labels/fieldsets which are optional
 # Defaults to an empty string ("") and also accepts procs (see required_string above)
@@ -42,8 +42,8 @@ Formtastic::FormBuilder.required_string = "*"
 # Formtastic uses the following classes as default for hints, inline_errors and error list
 
 # If you override the class here, please ensure to override it in your stylesheets as well
-Formtastic::FormBuilder.default_hint_class = "inline-hints"
-Formtastic::FormBuilder.default_inline_error_class = "inline-errors"
+Formtastic::FormBuilder.default_hint_class = 'inline-hints'
+Formtastic::FormBuilder.default_inline_error_class = 'inline-errors'
 # Formtastic::FormBuilder.default_error_list_class = "errors"
 
 # Set the method to call on label text to transform or format it for human-friendly
@@ -54,7 +54,7 @@ Formtastic::FormBuilder.label_str_method = :titleize
 # for the text inside each @<option>@ tag or alongside each radio @<input>@. The first method
 # that is found on the object will be used.
 # Defaults to ["to_label", "display_name", "full_name", "name", "title", "username", "login", "value", "to_s"]
-Formtastic::FormBuilder.collection_label_methods = ["title_and_author", "display_name", "login", "to_s" ]
+Formtastic::FormBuilder.collection_label_methods = %w(title_and_author display_name login to_s)
 
 # Additionally, you can customize the order for specific types of inputs.
 # This is configured on a type basis and if a type is not found it will

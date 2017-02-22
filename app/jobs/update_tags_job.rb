@@ -1,9 +1,9 @@
 class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :source, :tags_to_delete)
-  WHEELCHAIR_TAG_KEY = 'wheelchair'
-  WHEELCHAIR_TOILET_TAG_KEY = 'toilets:wheelchair'
+  WHEELCHAIR_TAG_KEY = 'wheelchair'.freeze
+  WHEELCHAIR_TOILET_TAG_KEY = 'toilets:wheelchair'.freeze
 
-  def self.enqueue(element_id, type, tags, user, source, tags_to_delete={})
-    raise "user not app authorized" unless user.app_authorized? # implies user.access_token.present?
+  def self.enqueue(element_id, type, tags, user, source, tags_to_delete = {})
+    raise 'user not app authorized' unless user.app_authorized? # implies user.access_token.present?
 
     # Do not enqeue job if not in production or test environment
     return unless Rails.env.production? || Rails.env.test?
@@ -21,9 +21,9 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
   end
 
   def perform
-    raise ArgumentError.new("Client cannot be nil") if client.nil?
+    raise ArgumentError, 'Client cannot be nil' if client.nil?
 
-    logger.info "UpdateTagsJob -------------------------->"
+    logger.info 'UpdateTagsJob -------------------------->'
     logger.info "User DB ID: #{user.try(:id)} - User OSM ID: #{user.try(:osm_id)} - Element: #{element_id} - Tags: #{tags}"
 
     begin
@@ -31,17 +31,17 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
 
       element = element_to_compare.dup
       element.tags.merge!(tags)
-      tags_to_delete.each do |delete_key,delete_value|
-        element.tags.reject! do |key,value|
+      tags_to_delete.each do |delete_key, delete_value|
+        element.tags.reject! do |key, value|
           key == delete_key &&
-          value == delete_value
+            value == delete_value
         end
       end
 
       # This loop is only here to make tests fail, actually.
-      element.tags.each do |key,value|
-        tags_to_delete.each do |delete_key,delete_value|
-          raise "Tags to be deleted are still to be found." if element.tags.include?(delete_key) && element.tags[delete_key] == delete_value
+      element.tags.each do |_key, _value|
+        tags_to_delete.each do |delete_key, delete_value|
+          raise 'Tags to be deleted are still to be found.' if element.tags.include?(delete_key) && element.tags[delete_key] == delete_value
         end
       end
 
@@ -55,7 +55,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
         return
       end
 
-      changeset = api.find_or_create_open_changeset(user.changeset_id, "Modified via wheelmap.org")
+      changeset = api.find_or_create_open_changeset(user.changeset_id, 'Modified via wheelmap.org')
       user.update_attribute(:changeset_id, changeset.id)
 
       api.save(element, changeset)
@@ -65,7 +65,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     rescue Rosemary::Conflict => conflict
       logger.info "IGNORE: #{type}:#{element_id} nothing has changed! (conflict)"
       # These changes have already been made, so dismiss this update!
-      Airbrake.notify(conflict, :component => 'UpdateTagsJob#perform', :parameters => {:user => user.inspect, :element => element.inspect, :client => client})
+      Airbrake.notify(conflict, component: 'UpdateTagsJob#perform', parameters: { user: user.inspect, element: element.inspect, client: client })
     end
   end
 
@@ -89,29 +89,25 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     Delayed::Worker.logger
   end
 
-  def enqueue(job)
+  def enqueue(job); end
+
+  def before(job); end
+
+  def success(job); end
+
+  def error(_job, e)
+    logger.error 'ERROR: '
+    Airbrake.notify(e, action: 'perform',
+                       component: 'UpdateTagsJob',
+                       parameters: {
+                         user: user.inspect,
+                         element_id: element_id.inspect,
+                         type: type.inspect,
+                         client: client.inspect
+                       })
   end
 
-  def before(job)
-  end
-
-  def success(job)
-  end
-
-  def error(job, e)
-    logger.error "ERROR: "
-    Airbrake.notify(e, :action => 'perform',
-                              :component => 'UpdateTagsJob',
-                              :parameters => {
-                                :user => user.inspect,
-                                :element_id => element_id.inspect,
-                                :type => type.inspect,
-                                :client => client.inspect
-                              })
-  end
-
-  def after(job)
-  end
+  def after(job); end
 
   def update_wheelchair?
     # Check if the job updates the wheelchair tag only
@@ -124,17 +120,15 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
   end
 
   def update_poi!
-    begin
-      logger.info "SET poi to new wheelchair status: #{tags[WHEELCHAIR_TAG_KEY]}"
-      osm_id = element_id
-      osm_id = osm_id * -1 if type == 'way'
-      p = Poi.find osm_id
-      p.wheelchair = tags[WHEELCHAIR_TAG_KEY] if tags.has_key?(WHEELCHAIR_TAG_KEY)
-      p.wheelchair_toilet = tags[WHEELCHAIR_TOILET_TAG_KEY] if tags.has_key?(WHEELCHAIR_TOILET_TAG_KEY)
-      p.save(:validate => false)
-    rescue Exception => e
-      logger.error e.message
-      logger.error e.backtrace
-    end
+    logger.info "SET poi to new wheelchair status: #{tags[WHEELCHAIR_TAG_KEY]}"
+    osm_id = element_id
+    osm_id *= -1 if type == 'way'
+    p = Poi.find osm_id
+    p.wheelchair = tags[WHEELCHAIR_TAG_KEY] if tags.key?(WHEELCHAIR_TAG_KEY)
+    p.wheelchair_toilet = tags[WHEELCHAIR_TOILET_TAG_KEY] if tags.key?(WHEELCHAIR_TOILET_TAG_KEY)
+    p.save(validate: false)
+  rescue Exception => e
+    logger.error e.message
+    logger.error e.backtrace
   end
 end

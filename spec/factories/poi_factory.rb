@@ -1,7 +1,6 @@
 # Defines a new sequence
 
 FactoryGirl.define do
-
   sequence :name do |n|
     "a nice name #{n}"
   end
@@ -11,11 +10,11 @@ FactoryGirl.define do
   end
 
   factory :poi do
-    osm_id {FactoryGirl.generate :version}
+    osm_id { FactoryGirl.generate :version }
     lat 52.0
     lon 13.4
     version
-    tags { Hash.new()}
+    tags { Hash.new }
     name 'name'
     type 'bar'
     wheelchair 'yes'

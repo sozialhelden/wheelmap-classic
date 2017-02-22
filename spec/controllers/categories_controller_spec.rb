@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe CategoriesController do
-
   before do
     category = FactoryGirl.create(:category)
     FactoryGirl.create_list(:node_type, 4, category: category)

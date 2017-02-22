@@ -4,7 +4,7 @@ require 'rails/all'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  Bundler.require(*Rails.groups(assets: %w(development test)))
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
@@ -23,8 +23,8 @@ module Wheelmap
     # Only load the plugins named here, in the order given (default is alphabetical).
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
-    require  'rack_i18n_locale_switcher'
-#    require  'rack_request_logger'
+    require 'rack_i18n_locale_switcher'
+    #    require  'rack_request_logger'
     config.middleware.use(Rack::I18nLocaleSwitcher)
     config.i18n.fallbacks = true
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
@@ -38,7 +38,7 @@ module Wheelmap
       config.i18n.available_locales << locale unless config.i18n.available_locales.include?(locale)
     end
 
- #   config.middleware.use(Rack::RequestLogger)
+    #   config.middleware.use(Rack::RequestLogger)
 
     # Activate observers that should always be running.
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
@@ -47,9 +47,8 @@ module Wheelmap
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
 
-
     # Configure the default encoding used in templates for Ruby 1.9.
-    config.encoding = "utf-8"
+    config.encoding = 'utf-8'
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password, :password_confirmation, :old_password, :key, :secret, :oauth_token, :oauth_secret]
@@ -81,8 +80,7 @@ module Wheelmap
     config.browserify_rails.commandline_options = '-t babelify'
 
     config.to_prepare do
-      Devise::SessionsController.layout "relaunch"
+      Devise::SessionsController.layout 'relaunch'
     end
-
   end
 end

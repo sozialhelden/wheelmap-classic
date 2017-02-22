@@ -1,5 +1,4 @@
 ActiveAdmin.register Category do
-
   filter :identifier
 
   permit_params do
@@ -19,7 +18,7 @@ ActiveAdmin.register Category do
     selectable_column
     column :id
     column :identifier
-    column :name, :sortable => false
+    column :name, sortable: false
     actions
   end
 end

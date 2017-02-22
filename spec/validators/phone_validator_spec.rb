@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe PhoneValidator do
   let(:poi)       { FactoryGirl.build(:poi) }
-  let(:validator) { PhoneValidator.new({attributes: [:phone]}) }
+  let(:validator) { PhoneValidator.new(attributes: [:phone]) }
 
   context 'validation of unchanged phone number' do
     it 'passes' do

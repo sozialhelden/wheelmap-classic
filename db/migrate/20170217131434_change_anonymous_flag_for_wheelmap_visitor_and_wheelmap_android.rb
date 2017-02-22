@@ -1,6 +1,5 @@
 class ChangeAnonymousFlagForWheelmapVisitorAndWheelmapAndroid < ActiveRecord::Migration
-
-  EMAILS = [ 'visitor@wheelmap.org', 'android_app@wheelmap.org']
+  EMAILS = ['visitor@wheelmap.org', 'android_app@wheelmap.org'].freeze
 
   def up
     change_anonymous_flag(true)
@@ -11,7 +10,7 @@ class ChangeAnonymousFlagForWheelmapVisitorAndWheelmapAndroid < ActiveRecord::Mi
   end
 
   private
-  
+
   def change_anonymous_flag(anonymous_flag)
     users = User.where(email: EMAILS)
 

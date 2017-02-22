@@ -1,18 +1,18 @@
 require 'rails_helper'
 require 'shared_context/omniauth'
 
-describe "Find, update and create nodes via API" do
-  include_context "OmniAuth"
-  let(:poi)  { create(:poi, name: 'horst', osm_id: 345, region: nil, tags: {'foo' => 'bar'}) }
-  let!(:user) { create(:authorized_user, email: 'editor@wheelmap.org', password: '123456', password_confirmation: '123456', confirmed_at: "10.10.1999", osm_id: '174', oauth_token: "oauth_token", oauth_secret: "oauth_secret") }
+describe 'Find, update and create nodes via API' do
+  include_context 'OmniAuth'
+  let(:poi) { create(:poi, name: 'horst', osm_id: 345, region: nil, tags: { 'foo' => 'bar' }) }
+  let!(:user) { create(:authorized_user, email: 'editor@wheelmap.org', password: '123456', password_confirmation: '123456', confirmed_at: '10.10.1999', osm_id: '174', oauth_token: 'oauth_token', oauth_secret: 'oauth_secret') }
   let(:new_node_values) do
     {
-       node_street: 'Hühnerpfad',
-       node_housenumber: 99,
-       node_postcode: 11122,
-       node_city: 'Wienerwald',
-       node_website: 'http://wienerwald.de',
-       node_phone: '+49 800 123344'
+      node_street: 'Hühnerpfad',
+      node_housenumber: 99,
+      node_postcode: 11_122,
+      node_city: 'Wienerwald',
+      node_website: 'http://wienerwald.de',
+      node_phone: '+49 800 123344'
     }
   end
 
@@ -27,23 +27,23 @@ describe "Find, update and create nodes via API" do
 
   describe 'update a node' do
     before do
-      first(:link, "Bearbeiten").click
+      first(:link, 'Bearbeiten').click
       new_node_values.each do |field, value|
-        fill_in(field, :with => value)
+        fill_in(field, with: value)
       end
-      click_button "node_submit"
+      click_button 'node_submit'
     end
 
     specify "the current page is poi's page" do
       expect(page.current_path).to eq node_path(poi)
     end
 
-    specify "an update tags job has been enqueued" do
+    specify 'an update tags job has been enqueued' do
       expect(Delayed::Job.count).to be > 0
     end
 
     describe 'the job' do
-      let(:job) { YAML.load(Delayed::Job.last.handler) }
+      let(:job) { YAML.safe_load(Delayed::Job.last.handler) }
 
       it 'has element id' do
         expect(job.send('element_id')).to eq 345

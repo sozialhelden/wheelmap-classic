@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Api::ApiController do
-
   render_views
 
   let :user do
@@ -13,8 +12,8 @@ describe Api::ApiController do
   end
 
   describe 'index action' do
-    it "should show root api stuff" do
-      get(:index, :api_key => user.authentication_token)
+    it 'should show root api stuff' do
+      get(:index, api_key: user.authentication_token)
       expect(response.status).to eql 200
     end
   end

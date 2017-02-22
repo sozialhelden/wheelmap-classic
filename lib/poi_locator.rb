@@ -1,5 +1,4 @@
 class PoiLocator
-
   require 'rubygems'
   require 'rgeo'
 
@@ -9,8 +8,8 @@ class PoiLocator
 
   def initialize(parent_id = nil)
     @parent_id = parent_id
-    @factory = RGeo::Geos::Factory.create(:wkb_parser => :geos)
-    raise "No geos support installt. Make sure libgeos is installed and rgeo gem has native bindings" if @factory.nil?
+    @factory = RGeo::Geos::Factory.create(wkb_parser: :geos)
+    raise 'No geos support installt. Make sure libgeos is installed and rgeo gem has native bindings' if @factory.nil?
     @regions = load_regions(@parent_id)
     @index = generate_index
   end
@@ -19,7 +18,7 @@ class PoiLocator
     count_poi_in_region = 0
     count_poi_not_in_region = 0
     if @regions.empty?
-      puts "This region has no children regions, so we can skip."
+      puts 'This region has no children regions, so we can skip.'
       return
     end
 
@@ -28,7 +27,6 @@ class PoiLocator
       poi_regions = {}
       Poi.transaction do
         batch.each do |poi|
-
           # default: poi NOT matched in a region
           region_id = @parent_id
 
@@ -40,18 +38,16 @@ class PoiLocator
 
             # loop over all polygons and check them with "contains?" method
             @index[idx].each do |region|
-              if region[:geometry].contains?(poi.geom)
-                poi_regions[region[:id]] = [] if poi_regions[region[:id]].nil?
-                poi_regions[region[:id]] << poi.osm_id
-                # region_id = region[:id]
-                count_poi_in_region += 1
-              end
+              next unless region[:geometry].contains?(poi.geom)
+              poi_regions[region[:id]] = [] if poi_regions[region[:id]].nil?
+              poi_regions[region[:id]] << poi.osm_id
+              # region_id = region[:id]
+              count_poi_in_region += 1
             end
 
           else
             count_poi_not_in_region += 1
           end
-
         end
         # update table "pois" without callbacks
         poi_regions.delete(@parent_id) if poi_regions[@parent_id]
@@ -73,17 +69,16 @@ class PoiLocator
   private
 
   def region_ids
-    @regions.map{|r| r[:id]}
+    @regions.map { |r| r[:id] }
   end
 
   # generates an index hash
   # value contains an array of regions intersecting the rectangle
   def generate_index
-    index = Hash.new()
+    index = {}
 
     # iterates over all regions
     @regions.each do |region|
-
       # bounding box of region
       bounding_box = ::RGeo::Cartesian::BoundingBox.new(@factory)
       bounding_box.add(region[:geometry])
@@ -95,27 +90,25 @@ class PoiLocator
           # fill index with elements of bounding box
           idx = "#{x},#{y}"
 
-          if index[idx].nil?
-            index[idx] = Array.new()
-          end
+          index[idx] = [] if index[idx].nil?
           index[idx] << region
         end
       end
     end
-    return index
+    index
   end
 
   # load regions from database
   def load_regions(parent_id = nil)
-    rr = Array.new
+    rr = []
     Region.parent_id(parent_id).each do |db_region|
-      r = Hash.new
+      r = {}
 
       r[:geometry]   = db_region.grenze
       r[:id]         = db_region.id
       r[:name]       = db_region.name
       rr.push(r)
     end
-    return rr
+    rr
   end
 end

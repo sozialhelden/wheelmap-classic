@@ -1,11 +1,11 @@
 require 'rails_helper'
 
-SUPPORTED_LANGUAGES = "ar;bg;cs;da;de;el;en;es;fr;hu;is;it;ja;ko;lv;pl;pt;pt_BR;ru;sk;sv;tlh;tr;zh_TW"
+SUPPORTED_LANGUAGES = 'ar;bg;cs;da;de;el;en;es;fr;hu;is;it;ja;ko;lv;pl;pt;pt_BR;ru;sk;sv;tlh;tr;zh_TW'.freeze
 
-shared_examples "switch language manually" do |language, url|
+shared_examples 'switch language manually' do |language, url|
   describe "Switch language manually to #{language}" do
     before do
-      Capybara.current_session.driver.header("Accept-Language", SUPPORTED_LANGUAGES)
+      Capybara.current_session.driver.header('Accept-Language', SUPPORTED_LANGUAGES)
       visit url
     end
     it "has #{language} locale" do
@@ -14,7 +14,7 @@ shared_examples "switch language manually" do |language, url|
   end
 end
 
-describe "Locale feature" do
+describe 'Locale feature' do
   before do
     supported_languages = SUPPORTED_LANGUAGES.split(';')
     I18n.available_locales = supported_languages
@@ -24,9 +24,9 @@ describe "Locale feature" do
     I18n.locale = I18n.default_locale
   end
 
-  describe "switching from a locale containing underscore to a locale without", feature: true, js: true do
+  describe 'switching from a locale containing underscore to a locale without', feature: true, js: true do
     before do
-      visit "/pt_BR/map"
+      visit '/pt_BR/map'
       # There's a popup the first time we visit wheelmap.
       # That needs to be clicked away first
       using_wait_time 30 do
@@ -35,7 +35,7 @@ describe "Locale feature" do
       using_wait_time 10 do
         find('.language-select').click
       end
-      find("a", text: /\AEspañol\z/).click
+      find('a', text: /\AEspañol\z/).click
     end
 
     after do
@@ -44,56 +44,56 @@ describe "Locale feature" do
       browser.clear_cookies
     end
 
-    it "loads correct locale path" do
-      expect(current_path).to match("/es/map")
+    it 'loads correct locale path' do
+      expect(current_path).to match('/es/map')
     end
   end
 
-  describe "Languages in wheelmap" do
+  describe 'Languages in wheelmap' do
     before do
-      Capybara.current_session.driver.header("Accept-Language", SUPPORTED_LANGUAGES)
+      Capybara.current_session.driver.header('Accept-Language', SUPPORTED_LANGUAGES)
       visit '/map'
     end
 
-    describe "sets preferred language" do
-      let(:languages)  { "de-DE;de;en" }
+    describe 'sets preferred language' do
+      let(:languages) { 'de-DE;de;en' }
 
-      it "has locale :de" do
+      it 'has locale :de' do
         expect(I18n.locale).to eq :de
       end
     end
 
-    describe "has a fallback for default language when supported language is not available" do
-      let(:languages) { "be;pt" }
+    describe 'has a fallback for default language when supported language is not available' do
+      let(:languages) { 'be;pt' }
 
-      it "has locale :de" do
+      it 'has locale :de' do
         expect(I18n.locale).to eq :de
       end
     end
 
-    it_behaves_like "switch language manually", "de", '/map'
-    it_behaves_like "switch language manually", "en", '/en'
-    it_behaves_like "switch language manually", "ar", '/ar'
-    it_behaves_like "switch language manually", "bg", '/bg'
-    it_behaves_like "switch language manually", "cs", '/cs'
-    it_behaves_like "switch language manually", "da", '/da'
-    it_behaves_like "switch language manually", "el", '/el'
-    it_behaves_like "switch language manually", "es", '/es'
-    it_behaves_like "switch language manually", "fr", '/fr'
-    it_behaves_like "switch language manually", "hu", '/hu'
-    it_behaves_like "switch language manually", "is", '/is'
-    it_behaves_like "switch language manually", "it", '/it'
-    it_behaves_like "switch language manually", "ja", '/ja'
-    it_behaves_like "switch language manually", "ko", '/ko'
-    it_behaves_like "switch language manually", "lv", '/lv'
-    it_behaves_like "switch language manually", "pl", '/pl'
-    it_behaves_like "switch language manually", "pt", '/pt'
-    it_behaves_like "switch language manually", "pt_BR", '/pt_BR'
-    it_behaves_like "switch language manually", "ru", '/ru'
-    it_behaves_like "switch language manually", "sk", '/sk'
-    it_behaves_like "switch language manually", "sv", '/sv'
-    it_behaves_like "switch language manually", "tlh", '/tlh'
-    it_behaves_like "switch language manually", "tr", '/tr'
-    it_behaves_like "switch language manually", "zh_TW", '/zh_TW'
+    it_behaves_like 'switch language manually', 'de', '/map'
+    it_behaves_like 'switch language manually', 'en', '/en'
+    it_behaves_like 'switch language manually', 'ar', '/ar'
+    it_behaves_like 'switch language manually', 'bg', '/bg'
+    it_behaves_like 'switch language manually', 'cs', '/cs'
+    it_behaves_like 'switch language manually', 'da', '/da'
+    it_behaves_like 'switch language manually', 'el', '/el'
+    it_behaves_like 'switch language manually', 'es', '/es'
+    it_behaves_like 'switch language manually', 'fr', '/fr'
+    it_behaves_like 'switch language manually', 'hu', '/hu'
+    it_behaves_like 'switch language manually', 'is', '/is'
+    it_behaves_like 'switch language manually', 'it', '/it'
+    it_behaves_like 'switch language manually', 'ja', '/ja'
+    it_behaves_like 'switch language manually', 'ko', '/ko'
+    it_behaves_like 'switch language manually', 'lv', '/lv'
+    it_behaves_like 'switch language manually', 'pl', '/pl'
+    it_behaves_like 'switch language manually', 'pt', '/pt'
+    it_behaves_like 'switch language manually', 'pt_BR', '/pt_BR'
+    it_behaves_like 'switch language manually', 'ru', '/ru'
+    it_behaves_like 'switch language manually', 'sk', '/sk'
+    it_behaves_like 'switch language manually', 'sv', '/sv'
+    it_behaves_like 'switch language manually', 'tlh', '/tlh'
+    it_behaves_like 'switch language manually', 'tr', '/tr'
+    it_behaves_like 'switch language manually', 'zh_TW', '/zh_TW'
   end
 end

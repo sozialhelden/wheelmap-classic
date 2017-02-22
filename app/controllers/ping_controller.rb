@@ -1,6 +1,5 @@
 class PingController < ApplicationController
-  
   def index
-    render :text => 'OK'
+    render text: 'OK'
   end
 end

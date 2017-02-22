@@ -2,7 +2,6 @@ module Api::Widget
   extend ActiveSupport::Concern
 
   included do
-
     api_accessible :api_simple do |t|
       t.add :id
       t.add :api_key
@@ -16,6 +15,5 @@ module Api::Widget
       t.add :provider_id
       t.add :providers
     end
-
   end
 end

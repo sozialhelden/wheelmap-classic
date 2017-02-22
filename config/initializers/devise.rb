@@ -3,7 +3,7 @@
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = "noreply@wheelmap.org"
+  config.mailer_sender = 'noreply@wheelmap.org'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -30,7 +30,7 @@ Devise.setup do |config|
 
   # use custom osm provider and let him fetch the permissions granted, too:
   config.omniauth :osm, OpenStreetMapConfig.oauth_key, OpenStreetMapConfig.oauth_secret,
-    :fetch_permissions => true, :client_options => {:site => OpenStreetMapConfig.oauth_site }
+                  fetch_permissions: true, client_options: { site: OpenStreetMapConfig.oauth_site }
 
   config.secret_key = ENV['DEVISE_SECRET_KEY']
   # config.allow_insecure_token_lookup = true
@@ -130,7 +130,7 @@ Devise.setup do |config|
   # access, but formats like :xml or :json, should return 401.
   # If you have any extra navigational formats, like :iphone or :mobile, you
   # should add them to the navigational formats lists. Default is [:html]
-  config.navigational_formats = [ :html ]
+  config.navigational_formats = [:html]
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not (yet) supported by Devise,

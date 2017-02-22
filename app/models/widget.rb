@@ -11,7 +11,7 @@ class Widget < ActiveRecord::Base
   GEO_FACTORY = RGeo::Cartesian.factory
 
   def providers
-    self.user.providers
+    user.providers
   end
 
   def lat=(value)
@@ -19,7 +19,7 @@ class Widget < ActiveRecord::Base
   end
 
   def lat
-    self.center.y if self.center
+    center.y if center
   end
 
   def lon=(value)
@@ -27,11 +27,11 @@ class Widget < ActiveRecord::Base
   end
 
   def lon
-    self.center.x if self.center
+    center.x if center
   end
 
   def bounding_box
-    [self.south_east.y, self.north_west.y, self.south_east.x, self.north_west.x] if self.south_east && self.north_west
+    [south_east.y, north_west.y, south_east.x, north_west.x] if south_east && north_west
   end
 
   def bounding_box=(value)
@@ -42,8 +42,8 @@ class Widget < ActiveRecord::Base
   end
 
   def api_key
-    self.user.save
-    self.user.api_key
+    user.save
+    user.api_key
   end
 
   def default_values

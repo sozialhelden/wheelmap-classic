@@ -2,9 +2,7 @@ class CommunitySupportController < ApplicationController
   layout 'relaunch'
   def new
     @support_request = CommunitySupportRequest.new
-    if current_user
-      @support_request.email = current_user.email
-    end
+    @support_request.email = current_user.email if current_user
   end
 
   def create
@@ -26,7 +24,7 @@ class CommunitySupportController < ApplicationController
       flash[:notice] = I18n.t('community_support_form.new.form.flash_after_submit')
       redirect_to root_path
     else
-      render "new"
+      render 'new'
     end
   end
 

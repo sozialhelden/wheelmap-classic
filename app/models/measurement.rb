@@ -23,21 +23,21 @@ class Measurement < ActiveRecord::Base
   private
 
   def validate_door_point
-    return if datapoints.size == 0
-    errors.add(:datapoints, "door must have a width") if datapoints.first.property != 'width'
+    return if datapoints.empty?
+    errors.add(:datapoints, 'door must have a width') if datapoints.first.property != 'width'
   end
 
   def validate_step_point
-    return if datapoints.size == 0
-    errors.add(:datapoints, "steps must have a height") if datapoints.first.property != 'height'
+    return if datapoints.empty?
+    errors.add(:datapoints, 'steps must have a height') if datapoints.first.property != 'height'
   end
 
   def validate_toilet_points
-    errors.add(:datapoints, "toilet metadata requires three datapoints") if datapoints.size != 3
+    errors.add(:datapoints, 'toilet metadata requires three datapoints') if datapoints.size != 3
   end
 
   def validate_ramp_point
-    return if datapoints.size == 0
-    errors.add(:datapoints, "ramp must have an angle") if datapoints.first.property != 'angle'
+    return if datapoints.empty?
+    errors.add(:datapoints, 'ramp must have an angle') if datapoints.first.property != 'angle'
   end
 end
