@@ -53,7 +53,7 @@ describe PlanetReader do
   before :each do
     @category = FactoryGirl.create(:category, :identifier => 'food')
     @node_type = FactoryGirl.create(:node_type, :osm_key => 'amenity', :osm_value => 'restaurant', :category => @category)
-    Poi.destroy_all
+    Poi.delete_all
   end
 
   it "should import a new POI" do

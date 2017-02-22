@@ -3,8 +3,8 @@ require 'rails_helper'
 describe UpdateTagsJob do
 
   before do
-    Poi.destroy_all
-    User.destroy_all
+    Poi.delete_all
+    User.delete_all
   end
 
   let(:poi)       { FactoryGirl.create(:poi, :lat => 52.0, :lon => 13.0) }

@@ -7,13 +7,13 @@ describe Api::NodesController do
   let(:wheelmap_visitor) { create(:wheelmap_visitor) }
 
   before :each do
-    User.destroy_all
+    User.delete_all
     @user = FactoryGirl.create(:user)
   end
 
   describe 'index action' do
     before :each do
-      Poi.destroy_all
+      Poi.delete_all
       @category = FactoryGirl.create(:category, :identifier => 'education')
       @nodes = [
         FactoryGirl.create(:poi, category: @category, :osm_id => 1, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'}),
@@ -219,7 +219,7 @@ describe Api::NodesController do
 
     before :each do
       @user = FactoryGirl.create(:authorized_user, :email => 'chris@tucker.org')
-      Poi.destroy_all
+      Poi.delete_all
       @node = FactoryGirl.create(:poi, :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
     end
 
@@ -231,7 +231,7 @@ describe Api::NodesController do
 
     before :each do
       @user = FactoryGirl.create(:authorized_user, :email => 'chris@tucker.org')
-      Poi.destroy_all
+      Poi.delete_all
       @node = FactoryGirl.create(:poi, :osm_id => (FactoryGirl.generate(:version) * -1), :tags => {'wheelchair' => 'yes', 'name' => 'name', 'amenity' => 'bar'})
     end
 

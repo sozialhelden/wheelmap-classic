@@ -20,7 +20,7 @@ describe NodesController do
   fixtures :node_types
 
   before(:each) do
-    #Poi.destroy_all
+    #Poi.delete_all
 
     # default visitor user
     @base_url = "#{OpenStreetMapConfig.oauth_site}/api/0.6"
@@ -288,7 +288,7 @@ describe NodesController do
     }
 
     before(:each) do
-      Poi.destroy_all
+      Poi.delete_all
       request.env['HTTP_ACCEPT'] = 'application/json; subtype=geojson'
       @poi = FactoryGirl.create(:poi, :providers => [provider])
       2.times {
