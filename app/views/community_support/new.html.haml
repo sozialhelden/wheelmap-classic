@@ -13,4 +13,5 @@
       = f.input :message, as: :text , label: I18n.t('community_support_form.new.form.describe')
       = f.action :submit, as: :button, label: I18n.t('community_support_form.new.form.submit_button')
 
-= render :partial => 'shared/language_picker_styling'
+- content_for :javascript do
+  = javascript_include_tag "language_picker_styling"
