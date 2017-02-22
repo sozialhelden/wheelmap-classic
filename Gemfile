@@ -101,6 +101,7 @@ group :test, :development do
   gem 'pry-byebug', '~> 3.4'
   gem 'thin'
   gem 'simplecov', '~> 0.11.2'
+  gem 'rubocop', require: false
 end
 
 group :test do
