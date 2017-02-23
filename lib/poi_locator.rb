@@ -84,9 +84,8 @@ class PoiLocator
       bounding_box.add(region[:geometry])
 
       # iterates over x and y ranges of bounding box
-      for x in Integer(bounding_box.min_x)..Integer(bounding_box.max_x)
-        for y in Integer(bounding_box.min_y)..Integer(bounding_box.max_y)
-
+      (Integer(bounding_box.min_x)..Integer(bounding_box.max_x)).each do |x|
+        (Integer(bounding_box.min_y)..Integer(bounding_box.max_y)).each do |y|
           # fill index with elements of bounding box
           idx = "#{x},#{y}"
 

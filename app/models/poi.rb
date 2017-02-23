@@ -21,7 +21,7 @@ class Poi < ActiveRecord::Base
 
   attr_accessible :name, :type, :geom, :version, :wheelchair, :wheelchair_description, :wheelchair_toilet, :created_at, :updated_at, :status
   attr_accessible :lat, :lon, :id, :tags, :osm_id, :name, :node_type_id, :website, :phone, :photos_attributes, :toilet
-  attr_accessible *DELEGATED_ADDR_ATTRIBUTES
+  attr_accessible(*DELEGATED_ADDR_ATTRIBUTES)
 
   self.include_root_in_json = false
 

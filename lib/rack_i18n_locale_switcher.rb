@@ -14,7 +14,7 @@ module Rack
 
       if locale == I18n.default_locale
         session['locale'] = locale
-        path = request.fullpath.gsub(/\/#{locale}\b/, '')
+        path = request.fullpath.gsub(%r{\/#{locale}\b}, '')
         # ignore paths given with except option
         unless request.fullpath =~ %r{/api/}
           return [302, { 'Location' => "#{request.scheme}://#{request.host_with_port}#{path}" }, []]

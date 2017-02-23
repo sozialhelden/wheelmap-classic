@@ -7,11 +7,12 @@ module ApplicationHelper
   # Renders OpenGraph Meta tags for the given option to help facebook parse the website.
   def render_og_metadata(options = {})
     html = ''
-    options.reverse_merge(site_name: 'Wheelmap.org',
-                          type: 'website',
-                          url: request.url).reject do |_key, value|
+    nonblank_options = options.reverse_merge(site_name: 'Wheelmap.org',
+                                             type: 'website',
+                                             url: request.url).reject do |_key, value|
       value.blank?
-    end.each do |key, value|
+    end
+    nonblank_options.each do |key, value|
       if value.is_a? Array
         value.each do |element|
           html << tag(:meta, property: "og:#{key}", content: element) + "\n"
@@ -27,9 +28,10 @@ module ApplicationHelper
 
   def render_og_locationdata(options = {})
     html = ''
-    options.reject do |_key, value|
+    nonblank_options = options.reject do |_key, value|
       value.blank?
-    end.each do |key, value|
+    end
+    nonblank_options.each do |key, value|
       html << tag(:meta, property: "place:location:#{key}", content: value) + "\n"
     end
     html.html_safe

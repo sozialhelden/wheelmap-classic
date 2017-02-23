@@ -62,7 +62,7 @@ class PlanetReader
   def create_pois(min_amount = 500)
     if @to_be_created.size >= min_amount
       Poi.import @columns, @to_be_created, validate: false, on_duplicate_key_update: @columns_without_create, timestamps: false
-      for creation in @to_be_created do
+      @to_be_created.each do |creation|
         puts "Creating POI #{creation[0]}"
       end
       @to_be_created = []
