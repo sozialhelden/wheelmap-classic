@@ -68,7 +68,7 @@ class User < ActiveRecord::Base
   end
 
   def oauth_authorized?
-    !!(oauth_token && oauth_secret)
+    !(oauth_token && oauth_secret).nil?
   end
 
   def access_token

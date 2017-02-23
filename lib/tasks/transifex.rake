@@ -13,13 +13,11 @@ namespace :transifex do
     ref_cleanup.keys.each do |key|
       if ref_original[key].nil?
         unused_keys << "#{parent}.#{key}"
-      else
-        if ref_cleanup[key].class == Hash
-          unused_subkeys = compare(key, ref_cleanup[key], ref_original[key])
-          unless unused_subkeys.empty?
-            unused_subkeys.each do |subkey|
-              unused_keys << "#{parent}.#{subkey}"
-            end
+      elsif ref_cleanup[key].class == Hash
+        unused_subkeys = compare(key, ref_cleanup[key], ref_original[key])
+        unless unused_subkeys.empty?
+          unused_subkeys.each do |subkey|
+            unused_keys << "#{parent}.#{subkey}"
           end
         end
       end

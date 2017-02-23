@@ -7,7 +7,7 @@ namespace :log do
     STDIN.each_line do |line|
       if count > 0
         buffer << line
-        if !buffer.empty? && buffer.any? { |l| l.match /^Completed 401/ }
+        if !buffer.empty? && buffer.any? { |l| l.match(/^Completed 401/) }
           puts buffer.join(' ')
           buffer = []
         end
@@ -17,7 +17,7 @@ namespace :log do
         buffer = [] unless buffer.empty?
       end
       next unless line =~ /^Started/
-      if !!line.match(/^Started POST \"\/nodes\" for #{IP_REGEXP} at Fri Jun 15/)
+      unless line.match(%r{^Started POST \"\/nodes\" for #{IP_REGEXP} at Fri Jun 15}).nil?
         buffer << line
         count = 5
       end

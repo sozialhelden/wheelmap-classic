@@ -60,17 +60,17 @@ module ApplicationHelper
   def url_for_locale(url, locale)
     uri = URI.parse(url)
     # Ommit leading locale for default locale
-    uri.path = if uri.path =~ /^\/$/ # /
+    uri.path = if uri.path =~ %r{^\/$} # /
                  "/#{locale}/"
-               elsif uri.path =~ /^\/tlh($|\/)/
-                 uri.path.gsub(/^\/tlh($|\/)/, "/#{locale}/")
-               elsif uri.path =~ /^\/[a-z]{2}(_[a-zA-Z]{2})?($|\/)/ # e.g. "/pt_BR/"
-                 uri.path.gsub(/^\/[a-z]{2}(_[a-zA-Z]{2})?($|\/)/, "/#{locale}/")
+               elsif uri.path =~ %r{^\/tlh($|\/)}
+                 uri.path.gsub(%r{^\/tlh($|\/)}, "/#{locale}/")
+               elsif uri.path =~ %r/^\/[a-z]{2}(_[a-zA-Z]{2})?($|\/)/ # e.g. "/pt_BR/"
+                 uri.path.gsub(%r/^\/[a-z]{2}(_[a-zA-Z]{2})?($|\/)/, "/#{locale}/")
                else
                  uri.path.gsub(/^(.+?)$/, "/#{locale}" + '\1')
                end
     # remove trailing slash
-    uri.path = uri.path.gsub(/\/$/, '')
+    uri.path = uri.path.gsub(%r{\/$}, '')
     uri
   end
 
@@ -186,6 +186,6 @@ module ApplicationHelper
   end
 
   def christmas?
-    (Time.parse('1st December').to_i..Time.parse('27st December').to_i) === Time.now.to_i
+    (Time.parse('1st December').to_i..Time.parse('27st December').to_i) == Time.now.to_i
   end
 end

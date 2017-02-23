@@ -139,7 +139,8 @@ namespace :export do
       progressbar = ProgressBar.create(total: total_count, format: '%a |%b>%i|')
       Region.find('Germany').pois_of_children.where(node_type_id: node_types).find_each(start: Poi.lowest_id) do |poi|
         if poi.street.blank? || poi.housenumber.blank? || poi.city.blank? || poi.postcode.blank?
-          if result = Geocoder.search("#{poi.lat},#{poi.lon}").try(:first)
+          result = Geocoder.search("#{poi.lat},#{poi.lon}").try(:first)
+          if result
             poi.street = result.street if poi.street.blank?
             poi.housenumber = result.house_number if poi.housenumber.blank?
             poi.city = result.city if poi.city.blank?

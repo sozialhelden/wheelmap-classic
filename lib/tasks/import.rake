@@ -11,11 +11,12 @@ namespace :import do
     # headers = [:OSM_Id, :OSM_Type, :OSM_Name, :OSM_Rollstuhlstatus, :OSM_Latitude, :OSM_Longitude, :OSM_Strasse, :OSM_Hausnummer, :OSM_Stadt, :OSM_Plz, :AA_Direktlink, :AA_Ampel]
     CSV.foreach(file_name, force_quotes: true, headers: headers, encoding: 'ISO-8859-1') do |row|
       poi_id = row[:OSM_Id].to_i
-      if poi = (begin
-                  Poi.find(poi_id)
-                rescue
-                  nil
-                end)
+      poi = (begin
+        Poi.find(poi_id)
+      rescue
+        nil
+      end)
+      if poi
         next if (wheelchair = wheelchair_status_from(row[:AA_Ampel])) == 'unknown'
         provided_poi = ProvidedPoi.find_or_create_by_poi_id_and_provider_id(poi_id, provider.id)
         provided_poi.wheelchair = wheelchair

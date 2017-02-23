@@ -2,7 +2,7 @@
 # Set environment to development unless something else is specified
 env = ENV['RAILS_ENV'] || 'staging'
 
-worker_processes (env == 'production' ? 9 : 1)
+worker_processes env == 'production' ? 9 : 1
 base_dir = "/var/apps/wheelmap/#{env}/current"
 shared_path = "/var/apps/wheelmap/#{env}/shared"
 working_directory base_dir
@@ -21,7 +21,7 @@ if defined?(GC::Profiler) && GC::Profiler.respond_to?(:enable)
   GC::Profiler.enable
 end
 
-timeout (env == 'production' ? 300 : 30)
+timeout env == 'production' ? 300 : 30
 
 # This is where we specify the socket.
 # We will point the upstream Nginx module to this socket later on

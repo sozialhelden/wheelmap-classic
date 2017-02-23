@@ -153,8 +153,8 @@ class PlanetReader
         process_poi
         @processed += 1
 
-        if @processed % 1000 == 0
-          create_pois if @processed % 5000 == 0
+        if (@processed % 1000).zero?
+          create_pois if (@processed % 5000).zero?
           print("\rprocessed #{@processed / 1000}k nodes")
           STDOUT.flush
         end

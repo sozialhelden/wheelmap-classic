@@ -1,8 +1,14 @@
+# Several files use longer than 80char line length.
 Metrics/LineLength:
     Enabled: false
 
 Metrics/BlockLength:
   Enabled: false
 
+# Remove offenses related to not having file-level comments.
 Documentation:
+  Enabled: false
+
+# This is purely aesthetic and in many cases makes code more difficult to follow.
+Style/GuardClause:
   Enabled: false

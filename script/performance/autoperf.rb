@@ -27,8 +27,8 @@ class AutoPerf
     conf = {}
     open(config_file).each do |line|
       line.chomp
-      next if /^\#/.match(line)
-      next unless /\s*=\s*/.match(line)
+      next if line =~ /^\#/
+      next unless line =~ /\s*=\s*/
       param, value = line.split(/\s*=\s*/, 2)
       var_name = param.to_s.chomp.strip
       value = value.chomp.strip
