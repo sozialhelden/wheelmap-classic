@@ -90,11 +90,11 @@ class Api::NodesController < Api::ApiController
   param_group :collection
   def search
     # If bounding box is given: use distance search
-    if params[:bbox]
-      @nodes = end_of_association_chain.paginate(page: params[:page], per_page: params[:per_page]).distance_search(params[:q], params[:bbox], params[:page])
-    else
-      @nodes = end_of_association_chain.search_scope(params[:q]).paginate(page: params[:page], per_page: params[:per_page])
-    end
+    @nodes = if params[:bbox]
+               end_of_association_chain.paginate(page: params[:page], per_page: params[:per_page]).distance_search(params[:q], params[:bbox], params[:page])
+             else
+               end_of_association_chain.search_scope(params[:q]).paginate(page: params[:page], per_page: params[:per_page])
+             end
     respond_to do |format|
       format.xml      { render_for_api :simple, xml: @nodes, root: :nodes, meta: meta }
       format.json     { render_for_api :simple, json: @nodes, root: :nodes, meta: meta }

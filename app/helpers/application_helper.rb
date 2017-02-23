@@ -60,15 +60,15 @@ module ApplicationHelper
   def url_for_locale(url, locale)
     uri = URI.parse(url)
     # Ommit leading locale for default locale
-    if uri.path =~ /^\/$/ # /
-      uri.path = "/#{locale}/"
-    elsif uri.path =~ /^\/tlh($|\/)/
-      uri.path = uri.path.gsub(/^\/tlh($|\/)/, "/#{locale}/")
-    elsif uri.path =~ /^\/[a-z]{2}(_[a-zA-Z]{2})?($|\/)/ # e.g. "/pt_BR/"
-      uri.path = uri.path.gsub(/^\/[a-z]{2}(_[a-zA-Z]{2})?($|\/)/, "/#{locale}/")
-    else
-      uri.path = uri.path.gsub(/^(.+?)$/, "/#{locale}" + '\1')
-    end
+    uri.path = if uri.path =~ /^\/$/ # /
+                 "/#{locale}/"
+               elsif uri.path =~ /^\/tlh($|\/)/
+                 uri.path.gsub(/^\/tlh($|\/)/, "/#{locale}/")
+               elsif uri.path =~ /^\/[a-z]{2}(_[a-zA-Z]{2})?($|\/)/ # e.g. "/pt_BR/"
+                 uri.path.gsub(/^\/[a-z]{2}(_[a-zA-Z]{2})?($|\/)/, "/#{locale}/")
+               else
+                 uri.path.gsub(/^(.+?)$/, "/#{locale}" + '\1')
+               end
     # remove trailing slash
     uri.path = uri.path.gsub(/\/$/, '')
     uri

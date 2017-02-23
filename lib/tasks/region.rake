@@ -64,8 +64,8 @@ namespace :region do
       base_name = File.basename(wkt_file_name, '.wkt')
       region_name = base_name.tr('_', ' ')
       puts "importing: #{region_name} into parent #{parent.name}"
-      imported_region = nil
-      if imported_region = Region.find_by_name(region_name)
+      imported_region = Region.find_by_name(region_name)
+      if imported_region
         # First time import handling ony
         if imported_region.lft.nil? && imported_region.rgt.nil?
           root = parent

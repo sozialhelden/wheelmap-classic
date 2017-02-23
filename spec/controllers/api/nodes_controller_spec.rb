@@ -287,7 +287,7 @@ describe Api::NodesController do
       @user.oauth_secret = :a_secret
       @user.save!
 
-      expect(Poi).to receive(:find).with((@node.id).to_s).and_return(@node)
+      expect(Poi).to receive(:find).with(@node.id.to_s).and_return(@node)
       expect(@node).to receive(:valid?).and_return(false)
       expect do
         put(:update, id: @node.id, api_key: @user.authentication_token)
@@ -326,15 +326,14 @@ describe Api::NodesController do
 
       expect do
         put(:update,
-          id: @node.id,
-          lat: 52.0,
-          lon: 13.4,
-          type: 'bar',
-          name: 'Cocktails on the rocks',
-          wheelchair: 'no',
-          phone: '30 123456',
-          api_key: @user.authentication_token
-        )
+            id: @node.id,
+            lat: 52.0,
+            lon: 13.4,
+            type: 'bar',
+            name: 'Cocktails on the rocks',
+            wheelchair: 'no',
+            phone: '30 123456',
+            api_key: @user.authentication_token)
         expect(response.status).to eql 202
       end.to change(Delayed::Job, :count).by(1)
     end
@@ -344,16 +343,15 @@ describe Api::NodesController do
       @user.save!
 
       expect do
-        put(:update, 
-          id: @node.id,
-          lat: 52.0,
-          lon: 13.4,
-          type: 'bar',
-          name: 'Cocktails on the rocks',
-          wheelchair: 'no',
-          phone: '+49 30 123456',
-          api_key: @user.authentication_token
-        )
+        put(:update,
+            id: @node.id,
+            lat: 52.0,
+            lon: 13.4,
+            type: 'bar',
+            name: 'Cocktails on the rocks',
+            wheelchair: 'no',
+            phone: '+49 30 123456',
+            api_key: @user.authentication_token)
         expect(response.status).to eql 202
       end.to change(Delayed::Job, :count).by(1)
     end
@@ -365,15 +363,14 @@ describe Api::NodesController do
 
       expect do
         put(:update,
-          id: @node.id,
-          lat: 52.0,
-          lon: 13.4,
-          type: 'bar',
-          name: 'Cocktails on the rocks',
-          wheelchair: 'no',
-          website: 'www.google.de',
-          api_key: @user.authentication_token
-        )
+            id: @node.id,
+            lat: 52.0,
+            lon: 13.4,
+            type: 'bar',
+            name: 'Cocktails on the rocks',
+            wheelchair: 'no',
+            website: 'www.google.de',
+            api_key: @user.authentication_token)
         expect(response.status).to eql 400
       end.to change(Delayed::Job, :count).by(0)
     end
@@ -383,16 +380,15 @@ describe Api::NodesController do
       @user.save!
 
       expect do
-        put(:update, 
-          id: @node.id,
-          lat: 52.0,
-          lon: 13.4,
-          type: 'bar',
-          name: 'Cocktails on the rocks',
-          wheelchair: 'no',
-          website: 'http://www.ferienwohnungen-bad-urach.de',
-          api_key: @user.authentication_token
-        )
+        put(:update,
+            id: @node.id,
+            lat: 52.0,
+            lon: 13.4,
+            type: 'bar',
+            name: 'Cocktails on the rocks',
+            wheelchair: 'no',
+            website: 'http://www.ferienwohnungen-bad-urach.de',
+            api_key: @user.authentication_token)
         expect(response.status).to eql 202
       end.to change(Delayed::Job, :count).by(1)
     end
@@ -420,7 +416,7 @@ describe Api::NodesController do
       @user.save!
       # Ways are the same as Nodes but with negative id
       @node.osm_id = (@node.osm_id * -1)
-      expect(Poi).to receive(:find).with((@node.osm_id).to_s).and_return @node
+      expect(Poi).to receive(:find).with(@node.osm_id.to_s).and_return @node
       expect do
         put(:update, id: @node.id, lat: 52.0, lon: 13.4, type: 'bar', name: 'Cocktails on the rocks', wheelchair: 'no', api_key: @user.authentication_token)
         expect(response.status).to eql 202
@@ -449,8 +445,12 @@ describe Api::NodesController do
       @user.oauth_secret = :a_secret
       @user.save!
       expect do
-        post(:create, lat: 52.0, lon: 13.4, api_key: @user.authentication_token,
-                       type: 'foo', tags: { 'amenity' => 'restaurant' })
+        post(:create,
+             lat: 52.0,
+             lon: 13.4,
+             api_key: @user.authentication_token,
+             type: 'foo',
+             tags: { 'amenity' => 'restaurant' })
         expect(response.status).to eql 400
       end.not_to change(Delayed::Job, :count)
     end
@@ -460,15 +460,24 @@ describe Api::NodesController do
       @user.oauth_secret = :a_secret
       @user.save!
       expect do
-        post(:create, lat: 52.0, lon: 13.4, tags: { 'amenity' => 'restaurant' }, wheelchair: 'no', api_key: @user.authentication_token)
+        post(:create,
+             lat: 52.0,
+             lon: 13.4,
+             tags: { 'amenity' => 'restaurant' },
+             wheelchair: 'no',
+             api_key: @user.authentication_token)
         expect(response.status).to eql 400
       end.not_to change(Delayed::Job, :count)
     end
 
     it 'should not create a new node when user is anonymous' do
       expect do
-        post(:create, lat: 52.0, lon: 13.4, tags: { 'amenity' => 'restaurant',
-                                                             :name => 'Cocktails on the rocks' }, wheelchair: 'no', api_key: wheelmap_visitor.authentication_token)
+        post(:create,
+             lat: 52.0,
+             lon: 13.4,
+             tags: { amenity: 'restaurant', name: 'Cocktails on the rocks' },
+             wheelchair: 'no',
+             api_key: wheelmap_visitor.authentication_token)
         expect(response.status).to eql 403
       end.not_to change(Delayed::Job, :count)
     end
@@ -478,8 +487,12 @@ describe Api::NodesController do
       @user.oauth_secret = :a_secret
       @user.save!
       expect do
-        post(:create, lat: 52.0, lon: 13.4, tags: { 'amenity' => 'restaurant',
-                                                             :name => 'Cocktails on the rocks' }, wheelchair: 'no', api_key: @user.authentication_token)
+        post(:create,
+             lat: 52.0,
+             lon: 13.4,
+             tags: { amenity: 'restaurant', name: 'Cocktails on the rocks' },
+             wheelchair: 'no',
+             api_key: @user.authentication_token)
         expect(response.status).to eql 202
       end.to change(Delayed::Job, :count).by(1)
     end
@@ -493,7 +506,15 @@ describe Api::NodesController do
         expect(tags['toilets:wheelchair']).to eq 'yes'
       end
       request.headers['X-API-KEY'] = @user.authentication_token
-      post(:create, 'name' => 'centro cultural vergueiro', 'type' => 'community_centre', 'lat' => '-23.5711773', 'lon' => '-46.6402144', 'wheelchair' => 'yes', 'wheelchair_toilet' => 'yes', 'category' => 'leisure', 'locale' => 'pt')
+      post(:create,
+           name: 'centro cultural vergueiro',
+           type: 'community_centre',
+           lat: '-23.5711773',
+           lon: '-46.6402144',
+           wheelchair: 'yes',
+           wheelchair_toilet: 'yes',
+           category: 'leisure',
+           locale: 'pt')
       expect(response.status).to eq 202
     end
 
@@ -520,9 +541,9 @@ describe Api::NodesController do
       @user.save!
       expect do
         post(:create, 'wheelchair_description' => '', 'type' => 'convenience',
-                       'street' => nil, 'name' => 'Kochhaus', 'wheelchair' => nil, 'postcode' => nil,
-                       'phone' => nil, 'city' => nil, 'website' => nil, 'lon' => '13.35598468780518',
-                       'lat' => '52.48627569798567', 'housenumber' => nil, :api_key => @user.authentication_token)
+                      'street' => nil, 'name' => 'Kochhaus', 'wheelchair' => nil, 'postcode' => nil,
+                      'phone' => nil, 'city' => nil, 'website' => nil, 'lon' => '13.35598468780518',
+                      'lat' => '52.48627569798567', 'housenumber' => nil, :api_key => @user.authentication_token)
       end.to change(Delayed::Job, :count).by(1)
     end
   end

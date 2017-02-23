@@ -38,7 +38,7 @@ class AutoPerf
                       Regexp.last_match(1)
                     else
                       value
-                                end
+                    end
                   else
                     ''
                   end
