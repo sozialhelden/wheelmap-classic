@@ -325,14 +325,16 @@ describe Api::NodesController do
       @user.save!
 
       expect do
-        put(:update, id: @node.id,
-                      lat: 52.0,
-                      lon: 13.4,
-                      type: 'bar',
-                      name: 'Cocktails on the rocks',
-                      wheelchair: 'no',
-                      phone: '30 123456',
-                      api_key: @user.authentication_token})
+        put(:update,
+          id: @node.id,
+          lat: 52.0,
+          lon: 13.4,
+          type: 'bar',
+          name: 'Cocktails on the rocks',
+          wheelchair: 'no',
+          phone: '30 123456',
+          api_key: @user.authentication_token
+        )
         expect(response.status).to eql 202
       end.to change(Delayed::Job, :count).by(1)
     end
@@ -342,14 +344,16 @@ describe Api::NodesController do
       @user.save!
 
       expect do
-        put(:update, id: @node.id,
-                      lat: 52.0,
-                      lon: 13.4,
-                      type: 'bar',
-                      name: 'Cocktails on the rocks',
-                      wheelchair: 'no',
-                      phone: '+49 30 123456',
-                      api_key: @user.authentication_token})
+        put(:update, 
+          id: @node.id,
+          lat: 52.0,
+          lon: 13.4,
+          type: 'bar',
+          name: 'Cocktails on the rocks',
+          wheelchair: 'no',
+          phone: '+49 30 123456',
+          api_key: @user.authentication_token
+        )
         expect(response.status).to eql 202
       end.to change(Delayed::Job, :count).by(1)
     end
@@ -360,14 +364,16 @@ describe Api::NodesController do
       @user.save!
 
       expect do
-        put(:update, id: @node.id,
-                      lat: 52.0,
-                      lon: 13.4,
-                      type: 'bar',
-                      name: 'Cocktails on the rocks',
-                      wheelchair: 'no',
-                      website: 'www.google.de',
-                      api_key: @user.authentication_token})
+        put(:update,
+          id: @node.id,
+          lat: 52.0,
+          lon: 13.4,
+          type: 'bar',
+          name: 'Cocktails on the rocks',
+          wheelchair: 'no',
+          website: 'www.google.de',
+          api_key: @user.authentication_token
+        )
         expect(response.status).to eql 400
       end.to change(Delayed::Job, :count).by(0)
     end
@@ -377,14 +383,16 @@ describe Api::NodesController do
       @user.save!
 
       expect do
-        put(:update, id: @node.id,
-                      lat: 52.0,
-                      lon: 13.4,
-                      type: 'bar',
-                      name: 'Cocktails on the rocks',
-                      wheelchair: 'no',
-                      website: 'http://www.ferienwohnungen-bad-urach.de',
-                      api_key: @user.authentication_token})
+        put(:update, 
+          id: @node.id,
+          lat: 52.0,
+          lon: 13.4,
+          type: 'bar',
+          name: 'Cocktails on the rocks',
+          wheelchair: 'no',
+          website: 'http://www.ferienwohnungen-bad-urach.de',
+          api_key: @user.authentication_token
+        )
         expect(response.status).to eql 202
       end.to change(Delayed::Job, :count).by(1)
     end

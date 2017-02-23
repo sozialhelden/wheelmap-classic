@@ -43,7 +43,7 @@ describe 'Find, update and create nodes via API' do
     end
 
     describe 'the job' do
-      let(:job) { YAML.safe_load(Delayed::Job.last.handler) }
+      let(:job) { YAML.load(Delayed::Job.last.handler) }
 
       it 'has element id' do
         expect(job.send('element_id')).to eq 345

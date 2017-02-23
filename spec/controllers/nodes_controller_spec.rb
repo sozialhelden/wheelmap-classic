@@ -170,7 +170,7 @@ describe NodesController do
           put(:update, id: poi.osm_id, node: { wheelchair: 'yes', name: 'A nice place', node_type_id: node_type.id })
         end.to change(UpdateJob, :count).by(1)
         expect(response).to redirect_to(node_path(poi.osm_id))
-        job = YAML.safe_load(UpdateJob.last.handler)
+        job = YAML.load(UpdateJob.last.handler)
         expect(job.client.class).to eq(Rosemary::OauthClient)
         expect(job.element_id).to eq(poi.osm_id)
         expect(job.tags['wheelchair']).to eq('yes')
