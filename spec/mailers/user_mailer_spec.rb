@@ -13,7 +13,7 @@ describe UserMailer do
   describe 'User signed up' do
     it { is_expected.to deliver_to 'chuck@heartbreaker.com' }
     it { is_expected.to have_subject 'Willkommen bei wheelmap.org' }
-    it { is_expected.to have_body_text /herzlich Willkommen bei Wheelmap.org!/ }
+    it { is_expected.to have_body_text %r{herzlich Willkommen bei Wheelmap.org!} }
 
     # it "should contain link to disable notifications." do
     #   subject.should have_body_text(/http:\/\/flatst.dev\/en\/profile\/#{user.id}\/edit/)

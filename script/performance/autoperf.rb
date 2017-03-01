@@ -32,7 +32,6 @@ class AutoPerf
       param, value = line.split(/\s*=\s*/, 2)
       var_name = param.to_s.chomp.strip
       value = value.chomp.strip
-      new_value = ''
       new_value = if value
                     if value =~ /^['"](.*)['"]$/
                       Regexp.last_match(1)
