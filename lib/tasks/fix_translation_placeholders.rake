@@ -7,7 +7,7 @@ task fix_yml_placeholders: :environment do
     write_file = File.open(write_file_name, 'w')
     read_file = File.open(locale_file, 'r')
 
-    while line = read_file.gets
+    while (line = read_file.gets)
       write_file.puts line.gsub(/\{\{(.*?)\}\}/, '%{\1}')
     end
 

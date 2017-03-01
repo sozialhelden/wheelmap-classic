@@ -59,7 +59,10 @@ describe UpdateTagsJob do
     expect(Rosemary::Api).to receive(:new).and_return(api)
 
     expect(api).to receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
-    expect(api).to receive(:save) { |node, _| expect(node.lat).to eql 52.0; expect(node.lon).to eql 13.0 }
+    expect(api).to receive(:save) { |node, _|
+      expect(node.lat).to eql 52.0
+      expect(node.lon).to eql 13.0
+    }
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
     expect(failures).to eql 0

@@ -5,9 +5,8 @@ namespace :housekeeping do
     file = ENV['file']
     raise 'Run rake housekeeping:remove_queued_nodes file=<yourfile>' unless file
     File.open(file, 'r') do |f|
-      while line = f.readline
+      while (line = f.readline)
         next unless line =~ /<node/
-        id = '-5703'
         queued_node_id = line.gsub(/^.*?id=\"-(\d+)\".*?$/, '\1')
         queued_node = begin
                         QueuedNode.find(queued_node_id)
@@ -82,7 +81,6 @@ namespace :housekeeping do
     Poi.find_in_batches do |batch|
       Poi.transaction do
         batch.each do |node|
-          old_tags = node.tags.dup
           changed = false
           node.tags.each do |k, v|
             old_value = v

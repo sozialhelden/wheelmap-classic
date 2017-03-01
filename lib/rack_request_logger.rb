@@ -16,7 +16,6 @@ module Rack
         @logger.debug(headers.map { |k, v| "#{k}: #{v}" }.join("\n"))
 
         request = Rack::Request.new env
-        session = request.session
         @logger.debug('----------- REQUEST BODY (RAW_POST_DATA) -----------')
         @logger.debug(request.params.to_yaml)
       end

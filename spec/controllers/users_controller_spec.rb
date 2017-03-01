@@ -23,7 +23,7 @@ describe UsersController do
     expect(@user).not_to be_app_authorized
     post :authenticate, email: 'email@wheelmap.org', password: 'password'
     expect(response.code).to eq('403')
-    expect(response.body).to match /Application needs to be authorized/
+    expect(response.body).to match(/Application needs to be authorized/)
   end
 
   it 'should not authenticate user with wrong credentials' do

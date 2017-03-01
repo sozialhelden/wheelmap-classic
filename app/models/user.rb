@@ -112,7 +112,7 @@ class User < ActiveRecord::Base
 
   def create_authorized_api
     client = ::Rosemary::OauthClient.new(access_token)
-    api = ::Rosemary::Api.new(client)
+    ::Rosemary::Api.new(client)
   end
 
   def update_osm_id

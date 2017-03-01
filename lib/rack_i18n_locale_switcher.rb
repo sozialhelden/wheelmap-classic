@@ -41,9 +41,9 @@ module Rack
     end
 
     def extract_locale_from_path(request)
-      if request.path_info =~ /\/([a-z]{2}_[a-zA-Z]{2})($|\/)/
+      if request.path_info =~ %r/\/([a-z]{2}_[a-zA-Z]{2})($|\/)/
         Regexp.last_match(1) if is_available?(Regexp.last_match(1))
-      elsif request.path_info =~ /^\/([a-z]{2,3})($|\/)/
+      elsif request.path_info =~ %r/^\/([a-z]{2,3})($|\/)/
         Regexp.last_match(1) if is_available?(Regexp.last_match(1))
       end
     end
@@ -63,8 +63,8 @@ module Rack
     end
 
     def first_http_accept_language(env)
-      if lang = env['HTTP_ACCEPT_LANGUAGE']
-        lang = lang.split(',').map do |l|
+      if env['HTTP_ACCEPT_LANGUAGE']
+        lang = env['HTTP_ACCEPT_LANGUAGE'].split(',').map do |l|
           l += ';q=1.0' unless l =~ /;q=\d+\.\d+$/
           l.split(';q=')
         end.first
