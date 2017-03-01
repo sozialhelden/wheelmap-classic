@@ -24,4 +24,6 @@
             =t('.no_osm_account')
             = link_to t('.sign_up_with_osm'), register_osm_oauth_index_url
 
-= render :partial => 'shared/language_picker_styling'
+- content_for :javascript do
+  = javascript_include_tag 'language_picker_styling'
+  = javascript_include_tag "i18n/#{I18n.locale}"

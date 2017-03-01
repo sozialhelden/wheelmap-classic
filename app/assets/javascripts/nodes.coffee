@@ -12,7 +12,6 @@
 #= require bootstrap-popover
 #= require bootstrap-alert
 #= require bootstrap-select
-#
 #= require jquery/jquery.magnific-popup.js
 #= require responsive-popover
 #= require dropzone
