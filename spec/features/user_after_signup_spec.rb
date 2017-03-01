@@ -15,28 +15,6 @@ feature 'User feature after signup', js: true do
       visit after_signup_edit_profile_path
     end
 
-    context "when first_name, email & password are given " do
-      given!(:user) { FactoryGirl.create(:user,
-        first_name: 'horst',
-        email: 'horst@wheelmap.org',
-        password: 'password',
-        password_confirmation: 'password',
-        confirmed_at: '10.10.1999',
-        osm_id: 174
-      )}
-
-      # additional test
-      scenario "I want to finalize my signup and click on button without changing the email" do
-        within("#user_email_input") do
-          fill_in "user_email", with: ""
-        end
-        click_button 'Fertigstellen'
-        pending("Bug: 'Du bekommst in wenigen Minuten eine E-Mail mit einem Link' instead of 'Email muss ausgefüllt werden'")
-        fail
-        expect { raise StandardError, 'Email muss ausgefüllt werden' }.to raise_error('Email muss ausgefüllt werden')
-      end
-    end
-
     context "when first_name & email are given" do
       given!(:user) { FactoryGirl.create(:user,
         first_name: 'horst2',
@@ -47,14 +25,13 @@ feature 'User feature after signup', js: true do
         osm_id: 174
       )}
 
-      # Scenario: I set my password after signup
-      scenario "I set my password" do
+      # additional test
+      scenario "I want to finalize my signup and click on button without changing the email" do
         within("#user_email_input") do
-         fill_in "user_email", with: ""
+          fill_in "user_email", with: ""
         end
         click_button 'Fertigstellen'
-        skip("Bug: No password setting possible on after signup edit page. Needs correction!")
-        fail
+        expect(page.current_path).to eq(root_path)
       end
 
       # Scenario: I set my email after signup with existing password
@@ -88,18 +65,6 @@ feature 'User feature after signup', js: true do
         expect(last_email_sent).to deliver_to('peter@wheelmap.org')
         expect(last_email_sent).to have_subject("Willkommen bei wheelmap.org")
       end
-    end
-  end
-
-  describe "is not logged in" do
-    scenario "I set my email after signup without any prior password" do
-      pending("BUG: This test case needs a revision since '/users/password/new' is not used anymore")
-      expect(current_path).to eq(new_user_password_path)
-      # When I am on the new user password page
-      # When I fill in "E-Mail" with "horst@wheelmap.org"
-      # And I press "Passwort neu setzen"
-      # And PENDING: make cached flash testable
-      # And I should see "Du bekommst in wenigen Minuten eine E-Mail mit Informationen wie du dein Passwort neu setzen kannst."
     end
   end
 end

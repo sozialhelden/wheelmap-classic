@@ -35,8 +35,6 @@ de:
       models:
         user:
           attributes:
-            email:
-              blank: "muss ausgefüllt werden, wenn ein Passwort gesetzt wird"
             privacy_policy:
               accepted: "müssen akzeptiert werden"
             terms:
