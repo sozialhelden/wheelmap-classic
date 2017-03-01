@@ -12,7 +12,7 @@
 #= require bootstrap-popover
 #= require bootstrap-alert
 #= require bootstrap-select
-#
+#= require language_picker_styling.js
 #= require jquery/jquery.magnific-popup.js
 #= require responsive-popover
 #= require dropzone
