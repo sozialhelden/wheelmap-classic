@@ -2,13 +2,24 @@
 Metrics/LineLength:
     Enabled: false
 
-Metrics/BlockLength:
-  Enabled: false
-
 # Remove offenses related to not having file-level comments.
 Documentation:
   Enabled: false
 
 # This is purely aesthetic and in many cases makes code more difficult to follow.
 Style/GuardClause:
+  Enabled: false
+
+# This should be returned to default eventually
+Metrics/MethodLength:
+  Max: 35
+
+Metrics/BlockLength:
+  Enabled: false
+
+# An if statement (or unless or ?:) increases the complexity by one. An else branch does
+# not, since it doesn't add a decision point. The && operator (or keyword and) can be 
+# converted to a nested if statement, and ||/or is shorthand for a sequence of ifs, so 
+# they also add one. Loops can be said to have an exit condition, so they add one.
+Metrics/CyclomaticComplexity:
   Enabled: false
