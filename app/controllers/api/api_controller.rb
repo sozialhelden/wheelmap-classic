@@ -151,7 +151,7 @@ class Api::ApiController < ApplicationController
   attr_reader :current_user
 
   def authenticate_by_token
-    api_key = params[:api_key] || request.headers["X-API-KEY"]
+    api_key = params[:api_key] || request.headers['X-API-KEY']
     @current_user = User.find_by_authentication_token(api_key)
     return if api_key && @current_user
 

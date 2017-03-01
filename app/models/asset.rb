@@ -57,8 +57,6 @@ class Asset
     }
   end
 
-  def config; end
-
   def cache_key
     "assets/#{name}"
   end
