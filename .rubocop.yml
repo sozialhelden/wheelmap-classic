@@ -12,9 +12,12 @@ Style/GuardClause:
 
 # This should be returned to default eventually
 Metrics/MethodLength:
-  Max: 35
+  Enabled: false
 
 Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
   Enabled: false
 
 # An if statement (or unless or ?:) increases the complexity by one. An else branch does
@@ -22,4 +25,10 @@ Metrics/BlockLength:
 # converted to a nested if statement, and ||/or is shorthand for a sequence of ifs, so 
 # they also add one. Loops can be said to have an exit condition, so they add one.
 Metrics/CyclomaticComplexity:
+  Enabled: false
+
+# This cop checks that the ABC size of methods is not higher than the
+# configured maximum. The ABC size is based on assignments, branches
+# (method calls), and conditions. See http://c2.com/cgi/wiki?AbcMetric
+Metrics/AbcSize:
   Enabled: false
