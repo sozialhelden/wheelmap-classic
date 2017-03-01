@@ -137,9 +137,10 @@ namespace :housekeeping do
   task fix_ampersand: :environment do
     ampersand = '&#38;'
     Poi.where("tags LIKE '%#{ampersand}%'").find_each do |poi|
-      poi.tags.select do |_key, value|
+      tags_with_ampersands = poi.tags.select do |_key, value|
         value.include?(ampersand)
-      end.each do |key, value|
+      end
+      tags_with_ampersands.each do |key, value|
         poi.tags[key] = value.gsub(ampersand, '&')
       end
       poi.save(validate: false)

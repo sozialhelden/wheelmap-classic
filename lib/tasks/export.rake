@@ -8,7 +8,6 @@ namespace :export do
     raise 'Run rake export:category_nodes CATEGORY=sport' unless category_name
     category = Category.find_by_identifier(category_name)
     raise "Category #{category_name} not found!" unless category
-    csv_string = ''
     csv_string = CSV.generate(force_quotes: true) do |csv|
       csv << %w(osm_id lat lon Rollstuhlstatus Kommentar name Typ Strasse Hausnummer PLZ Stadt Telefon URL)
       category.pois.find_each do |poi|
@@ -47,7 +46,6 @@ namespace :export do
     raise 'Run rake export:region_nodes REGION=Berlin' unless region_name
     region = Region.find_by_name(region_name)
     raise "Region #{region_name} not found!" unless region
-    csv_string = ''
     csv_string = FasterCSV.generate(force_quotes: true) do |csv|
       csv << %w(osm_id lat lon Rollstuhlstatus Kommentar name Typ Strasse Hausnummer PLZ Stadt Telefon URL)
       Poi.including_category.within_region(region).find_each do |poi|
@@ -59,7 +57,6 @@ namespace :export do
 
   desc 'Export Categories and NodeTypes'
   task categories: :environment do
-    csv_string = ''
     csv_string = CSV.generate(force_quotes: true) do |csv|
       csv << ['wheelmap-Kategorien', 'wheelmap-Typen', 'OSM Key', 'OSM Value']
       Category.all.each do |category|
@@ -83,7 +80,6 @@ namespace :export do
 
   desc 'Export Categories and NodeTypes'
   task sorted_categories: :environment do
-    csv_string = ''
     csv_string = CSV.generate(force_quotes: true) do |csv|
       csv << ['wheelmap-Kategorien', 'wheelmap-Typen', 'OSM Key', 'OSM Value']
       Category.all.sort_by { |c| I18n.t("poi.category.#{c.identifier}") }.each do |category|
