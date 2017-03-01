@@ -213,6 +213,7 @@ And visit the website in your browser: `http://0.0.0.0:3000`
 
 Please also check our [wiki](https://github.com/sozialhelden/wheelmap/wiki), if you need more informations to specific topics and can't find them here, e.g. how to generate a sprite or how to test our app.
 
+API documentation can be generated with `bundle exec rake apipie:static` and will be found in `doc/`.
 
 ## IV. Code of Conduct
 

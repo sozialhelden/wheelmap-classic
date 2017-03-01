@@ -1,8 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<osm version="0.6" generator="Osmosis 0.39">
-  <node id="-776" version="0" timestamp="Fri Feb 24 10:53:32 +0100 2012" uid="1" user="" lat="-33.9570681" lon="18.4706255">
-    <tag k="name" v="Baxter Theatre Centre"/>
-    <tag k="wheelchair" v="yes"/>
-    <tag k="amenity" v="theatre"/>
-  </node>
-</osm>

@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<osm version="0.6" generator="Osmosis 0.39">
-  <node id="-902" version="0" timestamp="Fri Feb 24 10:53:32 +0100 2012" uid="1" user="" lat="51.36545" lon="10.86749">
-    <tag k="name" v="Sondershausen Freizeitpark Possen"/>
-    <tag k="wheelchair" v="yes"/>
-    <tag k="tourism" v="viewpoint"/>
-    <tag k="wheelchair:description" v="4 nicht kostenpflichtige Parkplätze, Rollstuhlwanderweg mit diversen Betätigungen, Rollstuhltoiette, Tiergehege"/>
-  </node>
-</osm>

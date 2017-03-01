@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<osm version="0.6" generator="Osmosis 0.39">
-  <node id="-5592" version="0" timestamp="Fri Feb 24 10:53:37 +0100 2012" uid="1" user="" lat="56.90321" lon="24.09502">
-    <tag k="name" v="Elite club Zelenka"/>
-    <tag k="wheelchair" v="yes"/>
-    <tag k="wheelchair:description" v="24-00 bar/night club"/>
-    <tag k="amenity" v="bar"/>
-  </node>
-</osm>
