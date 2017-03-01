@@ -50,7 +50,7 @@ class Api::PhotosController < Api::ApiController
                   Poi.find(params[:node_id])
                 else
                   current_user
-    end
+                end
   end
 
   def collection

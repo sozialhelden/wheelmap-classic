@@ -90,7 +90,7 @@ class ApplicationController < ActionController::Base
   end
 
   def mobile_app?
-    request.user_agent.start_with?('Wheelmap') || request.user_agent.start_with?('org.wheelmap.android')
+    request.user_agent.start_with?('Wheelmap', 'org.wheelmap.android')
   rescue
     false
   end
@@ -167,7 +167,7 @@ class ApplicationController < ActionController::Base
         Rails.logger.info "iOS User Agent: '#{@iphone_headers['User-Agent']}'"
         Rails.logger.info "iOS Install ID: '#{@iphone_headers['Install-Id']}'"
         iphone_counter = IphoneCounter.find_or_initialize_by(install_id: @iphone_headers['Install-Id'])
-        iphone_counter.app_version    = @iphone_headers['User-Agent'].gsub(/\AWheelmap( iOS)?\/(\d+\.?\d?.?\d*)(\s|.|\z)*/, '\2')
+        iphone_counter.app_version    = @iphone_headers['User-Agent'].gsub(%r{\AWheelmap( iOS)?\/(\d+\.?\d?.?\d*)(\s|.|\z)*}, '\2')
         iphone_counter.os_version     = @iphone_headers['Os-Version']
         iphone_counter.device_version = @iphone_headers['Device-Model'].try(:gsub, /,/, '_')
         iphone_counter.save if iphone_counter.new_record? || iphone_counter.changed?

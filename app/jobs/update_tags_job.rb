@@ -50,7 +50,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       comparison_value = (element_to_compare <=> element)
 
       # Ignore this job, as there are no changes to be saved
-      if comparison_value == 0
+      if comparison_value.zero?
         logger.info "IGNORE: #{type}:#{element_id} nothing has changed! (value comparison)"
         return
       end
