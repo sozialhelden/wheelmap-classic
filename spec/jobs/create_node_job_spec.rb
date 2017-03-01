@@ -25,7 +25,9 @@ describe CreateNodeJob do
       expect(node.tags['name']).to eq 'White horse'
       expect(node.tags['operator']).to eq 'Adolf Präg GmbH &amp; Co. KG'
     end
-    job = subject
+
+    subject
+
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
     expect(failures).to eql 0
@@ -36,7 +38,9 @@ describe CreateNodeJob do
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:create)
     expect_any_instance_of(User).to receive(:increment!).with(:create_counter)
-    job = subject
+
+    subject
+
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
     expect(failures).to eql 0
@@ -44,7 +48,7 @@ describe CreateNodeJob do
 
   it 'does not increment counter if terms not accepted' do
     user = FactoryGirl.create(:authorized_user, terms: false)
-    job = CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'yes', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
+    CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'yes', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
     api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:create)
@@ -60,7 +64,8 @@ describe CreateNodeJob do
     expect(api).to receive(:find_or_create_open_changeset).with(user.changeset_id, anything).and_return(changeset)
     expect(api).to receive(:create).with(anything, changeset)
 
-    job = subject
+    subject
+
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
     expect(failures).to eql 0
@@ -73,7 +78,8 @@ describe CreateNodeJob do
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:create)
 
-    job = subject
+    subject
+
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
     expect(failures).to eql 0
@@ -98,7 +104,9 @@ describe CreateNodeJob do
         expect(node.tags['amenity']).to eq 'bar'
         expect(node.tags['name']).to eq 'White horse'
       end
-      job = subject
+
+      subject
+
       successes, failures = Delayed::Worker.new.work_off
       expect(successes).to eql 1
       expect(failures).to eql 0

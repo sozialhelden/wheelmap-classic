@@ -12,10 +12,8 @@ describe UpdateTagsJob do
   let(:changeset) { Rosemary::Changeset.new(id: 12_345) }
   let(:unedited_node) { Rosemary::Node.new(tag: { 'addr:housenumber' => 10, 'amenity' => 'pub' }) }
 
-  subject { UpdateTagsJob.enqueue(poi.id.abs, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone') }
-
   it 'should fail the job when element cannot be found' do
-    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
+    UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
     api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:find_element).with('node', node.id.abs).and_raise(Rosemary::NotFound.new('NOT FOUND'))
@@ -26,7 +24,7 @@ describe UpdateTagsJob do
   end
 
   it 'should fail the job if api is not reachable' do
-    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
+    UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
     api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:find_element).with('node', node.id.abs).and_raise(Rosemary::Unavailable.new('Unavailable'))
@@ -37,7 +35,7 @@ describe UpdateTagsJob do
   end
 
   it 'should not update the node when nothing has been changed' do
-    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
+    UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
     unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
     api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
@@ -54,7 +52,7 @@ describe UpdateTagsJob do
 
     # change at least one tag to trigger the save action
     tags = poi.tags
-    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, tags.merge('access' => 'public'), user, 'update_iphone')
+    UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, tags.merge('access' => 'public'), user, 'update_iphone')
 
     unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
     api = double(find_or_create_open_changeset: changeset)
@@ -68,7 +66,7 @@ describe UpdateTagsJob do
   end
 
   it 'increments the counter' do
-    job = UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone')
+    UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone')
     api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:find_element).and_return(unedited_node)
@@ -81,7 +79,7 @@ describe UpdateTagsJob do
   end
 
   it 'updates tag counter' do
-    job = UpdateTagsJob.enqueue(poi.id.abs, 'node', { 'wheelchair' => 'no' }, user, 'update_iphone')
+    UpdateTagsJob.enqueue(poi.id.abs, 'node', { 'wheelchair' => 'no' }, user, 'update_iphone')
     api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:find_element).and_return(unedited_node)
@@ -93,7 +91,7 @@ describe UpdateTagsJob do
   end
 
   it 'does not update tag counter when node did not change' do
-    job = UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
+    UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
     unedited_node = Rosemary::Node.new(poi.to_osm_attributes)
     api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
@@ -107,7 +105,7 @@ describe UpdateTagsJob do
 
   it 'deletes tags from unedited node' do
     expect(unedited_node.tags['addr:housenumber']).not_to be_blank
-    job = UpdateTagsJob.enqueue(poi.id.abs, 'node', { 'wheelchair' => 'no' }, user, 'update_iphone', 'amenity' => 'pub')
+    UpdateTagsJob.enqueue(poi.id.abs, 'node', { 'wheelchair' => 'no' }, user, 'update_iphone', 'amenity' => 'pub')
     api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:find_element).and_return(unedited_node)
@@ -120,7 +118,7 @@ describe UpdateTagsJob do
   end
 
   it 'updates the tags' do
-    job = UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone')
+    UpdateTagsJob.enqueue(1, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone')
 
     api = double(find_or_create_open_changeset: changeset)
 
@@ -144,7 +142,9 @@ describe UpdateTagsJob do
       expect(node.tags['addr:housenumber']).to eql 99
       expect(another_changeset).to eq(changeset)
     end
-    job = subject
+
+    UpdateTagsJob.enqueue(poi.id.abs, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone')
+
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
     expect(failures).to eql 0
@@ -158,7 +158,8 @@ describe UpdateTagsJob do
     expect(api).to receive(:find_element).and_return(unedited_node)
     expect(api).to receive(:save)
 
-    job = subject
+    UpdateTagsJob.enqueue(poi.id.abs, 'node', { 'addr:housenumber' => 99 }, user, 'update_iphone')
+
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
     expect(failures).to eql 0
@@ -167,7 +168,7 @@ describe UpdateTagsJob do
   end
 
   it 'updates both toilet and wheelchair tag in one pass' do
-    job = UpdateTagsJob.enqueue(poi.osm_id, 'node', { 'wheelchair' => 'no', 'toilets:wheelchair' => 'no' }, user, 'update_iphone')
+    UpdateTagsJob.enqueue(poi.osm_id, 'node', { 'wheelchair' => 'no', 'toilets:wheelchair' => 'no' }, user, 'update_iphone')
     api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:find_element).and_return(node)
@@ -186,7 +187,7 @@ describe UpdateTagsJob do
       wheelchair_node.add_tags('wheelchair' => 'yes')
       expect(wheelchair_node.tags['wheelchair']).to eql 'yes'
 
-      job = UpdateTagsJob.enqueue(1, 'node', { 'wheelchair' => 'unknown', 'addr:housenumber' => 99 }, user, 'update_iphone')
+      UpdateTagsJob.enqueue(1, 'node', { 'wheelchair' => 'unknown', 'addr:housenumber' => 99 }, user, 'update_iphone')
 
       api = double(find_or_create_open_changeset: changeset)
 
@@ -204,7 +205,7 @@ describe UpdateTagsJob do
       wheelchair_node.add_tags('toilets:wheelchair' => 'yes')
       expect(wheelchair_node.tags['toilets:wheelchair']).to eql 'yes'
 
-      job = UpdateTagsJob.enqueue(1, 'node', { 'toilets:wheelchair' => 'unknown', 'addr:housenumber' => 99 }, user, 'update_iphone')
+      UpdateTagsJob.enqueue(1, 'node', { 'toilets:wheelchair' => 'unknown', 'addr:housenumber' => 99 }, user, 'update_iphone')
 
       api = double(find_or_create_open_changeset: changeset)
 
