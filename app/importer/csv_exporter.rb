@@ -51,11 +51,11 @@ class CsvExporter
       v = @decoder.decode(attributes['v'])
       @poi[:tags][k.to_sym] = v if @poi
     when 'node', 'way'
-      @poi = {  id: attributes['id'],
-                type: element,
-                lat: attributes['lon'],
-                lon: attributes['lat'],
-                tags: {} }
+      @poi = { id: attributes['id'],
+               type: element,
+               lat: attributes['lon'],
+               lon: attributes['lat'],
+               tags: {} }
 
     end
   end

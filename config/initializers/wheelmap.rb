@@ -1,5 +1,5 @@
 # encoding: UTF-8
-WheelchairStatus = [%w(yes limited no unknown)].freeze
+WheelchairStatus = %w(yes limited no unknown).freeze
 
 Languages = {
   'ar'    => 'العربية',

@@ -33,8 +33,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       element.tags.merge!(tags)
       tags_to_delete.each do |delete_key, delete_value|
         element.tags.reject! do |key, value|
-          key == delete_key &&
-            value == delete_value
+          key == delete_key && value == delete_value
         end
       end
 

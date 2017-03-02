@@ -12,6 +12,7 @@ begin
   def recent_specs(touched_since)
     recent_specs = FileList['app/**/*'].map do |path|
       next unless File.mtime(path) > touched_since
+
       spec = File.join('spec', File.dirname(path).split('/')[1..-1].join('/'),
                        "#{File.basename(path, '.*')}_spec.rb")
       spec if File.exist?(spec)

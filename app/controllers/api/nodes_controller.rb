@@ -223,12 +223,12 @@ class Api::NodesController < Api::ApiController
   end
 
   def check_for_way_id
-    if params[:id].to_i < 0
+    if params[:id].to_i < 0 # Way ids are negative
       respond_to do |wants|
         wants.json { render json: { error: 'This type of node is not editable' }.to_json, status: 406 }
         wants.xml {  render xml: { error: 'This type of node is not editable' }.to_xml, status: 406 }
       end
-    end # Way ids are negative
+    end
   end
 
   def wheelchair_param

@@ -308,10 +308,10 @@ class NodesController < ApplicationController
     query = { lang: I18n.locale, q: query, lat: lat, lon: lon }
     cache_key = "#{search_url}?#{query.to_param}"
 
-    #     # Read response from cache
-    #     if (body = Rails.cache.read(cache_key))
-    #       return body
-    #     end
+    # # Read response from cache
+    # if (body = Rails.cache.read(cache_key))
+    #   return body
+    # end
 
     Net::HTTP.new(search_url.host, search_url.port).start do |http|
       query_url = "#{search_url.path}?#{query.to_param}"
