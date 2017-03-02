@@ -6,8 +6,7 @@ class ActionDispatch::IntegrationTest
 
   # disable logger
   module NullPoltergeistLogger
-    def self.puts(*)
-    end
+    def self.puts(*); end
   end
 
   # Reset sessions and driver between tests
@@ -17,9 +16,10 @@ class ActionDispatch::IntegrationTest
   end
 
   # Driver setup to not fill output with logging
-  Capybara.register_driver :poltergeist do |app, options|
+  Capybara.register_driver :poltergeist do |app, _options|
     Capybara::Poltergeist::Driver.new(
-      app, options = { timeout: 30, phantomjs_logger: NullPoltergeistLogger })
+      app, options = { timeout: 30, phantomjs_logger: NullPoltergeistLogger }
+    )
   end
 
   Capybara.configure do |config|

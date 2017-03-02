@@ -4,6 +4,6 @@ class DropTableExperiments < ActiveRecord::Migration
   end
 
   def down
-    raise ActiveRecord::IrreversibleMigration.new("Cannot be rolled back.")
+    raise ActiveRecord::IrreversibleMigration, 'Cannot be rolled back.'
   end
 end

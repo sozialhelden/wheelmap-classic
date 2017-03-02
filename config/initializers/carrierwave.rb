@@ -1,6 +1,5 @@
 module CarrierWave
   module RMagick
-
     # Rotates the image based on the EXIF Orientation
     def fix_exif_rotation
       manipulate! do |img|
@@ -22,30 +21,29 @@ module CarrierWave
     # Reduces the quality of the image to the percentage given
     def quality(percentage)
       manipulate! do |img|
-        img.write(current_path){ self.quality = percentage }
+        img.write(current_path) { self.quality = percentage }
         img = yield(img) if block_given?
         img
       end
     end
 
-    def effectively_resize_to_fill(width, height, format = 'jpg', quality = 70)
+    def effectively_resize_to_fill(width, height, _format = 'jpg', quality = 70)
       resize_to_fill(width, height) do |img|
         img.auto_orient!
         img.strip!
-        img.write(current_path){ self.quality = quality }
+        img.write(current_path) { self.quality = quality }
         img
       end
     end
 
-    def effectively_resize_to_limit(width, height, format = 'jpg', quality = 70)
+    def effectively_resize_to_limit(width, height, _format = 'jpg', quality = 70)
       resize_to_limit(width, height) do |img|
         img.auto_orient!
         img.strip!
-        img.write(current_path){ self.quality = quality }
+        img.write(current_path) { self.quality = quality }
         img
       end
     end
-
   end
 end
 
@@ -57,7 +55,7 @@ if Rails.env.test?
 end
 
 CarrierWave.configure do |config|
-  config.permissions = 0644
-#  config.directory_permissions = 0755
+  config.permissions = 0o644
+  #  config.directory_permissions = 0755
   config.storage = :file
 end

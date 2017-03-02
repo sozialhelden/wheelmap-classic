@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Provider do
-
   subject do
     FactoryGirl.build(:provider)
   end

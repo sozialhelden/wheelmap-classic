@@ -1,5 +1,4 @@
 class Counter < ActiveRecord::Base
-
   def self.increment(attrib)
     today.increment!(attrib)
   end
@@ -9,6 +8,6 @@ class Counter < ActiveRecord::Base
   end
 
   def changed_within?(t)
-    self.updated_at > t.minutes.ago
+    updated_at > t.minutes.ago
   end
 end

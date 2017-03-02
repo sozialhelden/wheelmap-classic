@@ -1,6 +1,6 @@
 # encoding: UTF-8
 FactoryGirl.define do
-  factory :node, :class => Rosemary::Node do |node|
+  factory :node, class: Rosemary::Node do |node|
     node.name         'Irish time'
     node.lat          52.5073116
     node.lon          13.3901918
@@ -10,7 +10,7 @@ FactoryGirl.define do
     node.street       'Friedrichstraße'
     node.housenumber  207
     node.city         'Berlin'
-    node.postcode     10969
+    node.postcode     10_969
     node.type         'pub'
   end
 end

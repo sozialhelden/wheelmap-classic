@@ -1,7 +1,6 @@
 # encoding: utf-8
 
 class LogoUploader < CarrierWave::Uploader::Base
-
   # Include RMagick or MiniMagick support:
   include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -10,7 +9,7 @@ class LogoUploader < CarrierWave::Uploader::Base
   storage :file
   # storage :fog
 
-  process :convert => 'png'
+  process convert: 'png'
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -27,17 +26,17 @@ class LogoUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  process :convert => 'png'
+  process convert: 'png'
   #
   # def scale(width, height)
   #   # do something
   # end
 
   # Create different versions of your uploaded files:
-  version "iphone" do
-    process :effectively_resize_to_limit => [44, 44, 'png', 100]
+  version 'iphone' do
+    process effectively_resize_to_limit: [44, 44, 'png', 100]
 
-    def full_filename(for_file = model.image.file)
+    def full_filename(_for_file = model.image.file)
       "#{model.name.parameterize}@2x.png"
     end
   end
@@ -53,5 +52,4 @@ class LogoUploader < CarrierWave::Uploader::Base
   def filename
     "#{model.name.parameterize}.png" if original_filename
   end
-
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 # Feature: Search
-feature "Search Feature", type: :feature, js: true do
+feature 'Search Feature', type: :feature, js: true do
   background do
     # Given I am on the home page
     visit root_path
@@ -15,7 +15,7 @@ feature "Search Feature", type: :feature, js: true do
     end
   end
 
-  describe "Simple search" do
+  describe 'Simple search' do
     # And I search for "Herborn"
     it "is possible to search for 'Herborn'" do
       expect(page).to have_css('input#search')

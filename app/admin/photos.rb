@@ -1,10 +1,10 @@
 ActiveAdmin.register Photo do
-  belongs_to :poi,  :optional => true
-  belongs_to :user, :optional => true
-  belongs_to :region, :optional => true
+  belongs_to :poi,  optional: true
+  belongs_to :user, optional: true
+  belongs_to :region, optional: true
 
-  filter :user_id, :as => :numeric
-  filter :poi_id, :as => :numeric
+  filter :user_id, as: :numeric
+  filter :poi_id, as: :numeric
   filter :taken_at
   filter :created_at
 
@@ -32,7 +32,7 @@ ActiveAdmin.register Photo do
           ].join(',<br/>').html_safe
         end
       else
-        "MISSING"
+        'MISSING'
       end
     end
     column :taken_at

@@ -10,19 +10,19 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_ab_tester
 
-  before_filter :store_iphone_stats, :if => [:get_request?, :mobile_app?]
+  before_filter :store_iphone_stats, if: [:get_request?, :mobile_app?]
 
   before_filter :set_geoip_cookie
 
-  rescue_from Errno::ETIMEDOUT, :with => :timeout
-  rescue_from Timeout::Error,   :with => :timeout
-  rescue_from Net::ReadTimeout, :with => :timeout
+  rescue_from Errno::ETIMEDOUT, with: :timeout
+  rescue_from Timeout::Error,   with: :timeout
+  rescue_from Net::ReadTimeout, with: :timeout
 
   protected
 
   def set_geoip_cookie
-    cookies['geoip_lat'] = request.headers["HTTP_GEOIP_LATITUDE"]
-    cookies['geoip_lon'] = request.headers["HTTP_GEOIP_LONGITUDE"]
+    cookies['geoip_lat'] = request.headers['HTTP_GEOIP_LATITUDE']
+    cookies['geoip_lon'] = request.headers['HTTP_GEOIP_LONGITUDE']
   end
 
   def user_is_a_bot?
@@ -34,22 +34,21 @@ class ApplicationController < ActionController::Base
     redirect_to request.fullpath.gsub(match, '') if request.fullpath =~ match
   end
 
-  def default_url_options(options = nil)
-    {:locale => I18n.locale}
+  def default_url_options(_options = nil)
+    { locale: I18n.locale }
   end
 
   def authenticate_terms!
-
     current_user.errors.add(:terms, :accepted) unless current_user.terms
     current_user.errors.add(:privacy_policy, :accepted) unless current_user.privacy_policy
     unless current_user.errors.empty?
       respond_to do |format|
-        format.html{
+        format.html do
           flash[:alert] = current_user.errors.full_messages.to_sentence
           redirect_to terms_path
-        }
-        format.json{render_exception(Exception.new(current_user.errors.full_messages.to_sentence), 403)}
-        format.xml{render_exception(Exception.new(current_user.errors.full_messages.to_sentence), 403)}
+        end
+        format.json { render_exception(Exception.new(current_user.errors.full_messages.to_sentence), 403) }
+        format.xml { render_exception(Exception.new(current_user.errors.full_messages.to_sentence), 403) }
       end
     end
   end
@@ -57,15 +56,15 @@ class ApplicationController < ActionController::Base
   def authenticate_application!
     unless current_user.app_authorized?
       if mobile_app?
-        render :json => {:id => current_user.id, :message => 'Application needs to be authorized', :url => edit_profile_url}.to_json, :status => 403
+        render json: { id: current_user.id, message: 'Application needs to be authorized', url: edit_profile_url }.to_json, status: 403
       else
         respond_to do |format|
-          format.html{
+          format.html do
             flash[:alert] = I18n.t('nodes.flash.authorize_wheelmap')
             redirect_to edit_profile_path
-          }
-          format.json{render_exception(Exception.new(I18n.t('nodes.flash.authorize_wheelmap')), 403)}
-          format.xml{render_exception(Exception.new(I18n.t('nodes.flash.authorize_wheelmap')), 403)}
+          end
+          format.json { render_exception(Exception.new(I18n.t('nodes.flash.authorize_wheelmap')), 403) }
+          format.xml { render_exception(Exception.new(I18n.t('nodes.flash.authorize_wheelmap')), 403) }
         end
       end
     end
@@ -91,11 +90,15 @@ class ApplicationController < ActionController::Base
   end
 
   def mobile_app?
-    request.user_agent.start_with?('Wheelmap') || request.user_agent.start_with?('org.wheelmap.android') rescue false
+    request.user_agent.start_with?('Wheelmap', 'org.wheelmap.android')
+  rescue
+    false
   end
 
   def iphone?
-    request.user_agent.downcase.include?('ios') rescue false
+    request.user_agent.downcase.include?('ios')
+  rescue
+    false
   end
 
   def default_user
@@ -103,17 +106,17 @@ class ApplicationController < ActionController::Base
   end
 
   def timeout(exception)
-    Airbrake.notify(exception,:component => self.class.name, :parameters => params)
+    Airbrake.notify(exception, component: self.class.name, parameters: params)
 
     @message = I18n.t('nodes.errors.not_available')
-    render :template => 'shared/error', :status => 503
+    render template: 'shared/error', status: 503
   end
 
   def error(exception)
-    Airbrake.notify(exception,:component => self.class.name, :parameters => params)
+    Airbrake.notify(exception, component: self.class.name, parameters: params)
 
     @message = I18n.t('nodes.errors.default')
-    render :template => 'shared/error', :status => 400
+    render template: 'shared/error', status: 400
   end
 
   def set_ab_tester
@@ -128,24 +131,24 @@ class ApplicationController < ActionController::Base
 
   def authenticate_mobile_user
     unless @user = User.authenticate(params[:email], params[:password])
-      render :text => 'Authorization failed', :status => 400
+      render text: 'Authorization failed', status: 400
     end
   end
 
   def authenticate_mobile_app
     unless @user.app_authorized?
-      render :json => {:id => @user.id, :message => 'Application needs to be authorized', :url => edit_profile_url}.to_json, :status => 403
+      render json: { id: @user.id, message: 'Application needs to be authorized', url: edit_profile_url }.to_json, status: 403
     end
   end
 
-  def not_found(exception)
+  def not_found(_exception)
     # Airbrake.notify(exception,:component => self.class.name, :parameters => params)
     @message = I18n.t('nodes.errors.not_found')
-    render :template => 'shared/error', :status => 404
+    render template: 'shared/error', status: 404
   end
 
   def check_update_wheelchair_params
-    render( :text => 'Params missing', :status => 406 ) if params[:wheelchair].blank?
+    render(text: 'Params missing', status: 406) if params[:wheelchair].blank?
   end
 
   def get_request?
@@ -154,21 +157,20 @@ class ApplicationController < ActionController::Base
 
   def store_iphone_stats
     if iphone?
-      @iphone_headers ||= request.env.inject({}) do |h, (k, v)|
+      @iphone_headers ||= request.env.each_with_object({}) do |(k, v), h|
         if k =~ /^(HTTP|CONTENT)_/
-          h[k.sub(/^HTTP_/, '').dasherize.gsub(/([^\-]+)/) { $1.capitalize }] = v
+          h[k.sub(/^HTTP_/, '').dasherize.gsub(/([^\-]+)/) { Regexp.last_match(1).capitalize }] = v
         end
-        h
       end
 
       unless @iphone_headers.empty?
         Rails.logger.info "iOS User Agent: '#{@iphone_headers['User-Agent']}'"
         Rails.logger.info "iOS Install ID: '#{@iphone_headers['Install-Id']}'"
         iphone_counter = IphoneCounter.find_or_initialize_by(install_id: @iphone_headers['Install-Id'])
-        iphone_counter.app_version    = @iphone_headers['User-Agent'].gsub(/\AWheelmap( iOS)?\/(\d+\.?\d?.?\d*)(\s|.|\z)*/, '\2')
+        iphone_counter.app_version    = @iphone_headers['User-Agent'].gsub(%r{\AWheelmap( iOS)?\/(\d+\.?\d?.?\d*)(\s|.|\z)*}, '\2')
         iphone_counter.os_version     = @iphone_headers['Os-Version']
         iphone_counter.device_version = @iphone_headers['Device-Model'].try(:gsub, /,/, '_')
-        iphone_counter.save if iphone_counter.new_record? or iphone_counter.changed?
+        iphone_counter.save if iphone_counter.new_record? || iphone_counter.changed?
       end
     end
   end
@@ -180,6 +182,4 @@ class ApplicationController < ActionController::Base
   def track_event(params)
     flash[:track] = params
   end
-
-
 end

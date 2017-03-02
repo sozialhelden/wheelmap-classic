@@ -9,9 +9,9 @@ class Datapoint < ActiveRecord::Base
     return new({}) if form_params.nil?
     property_name = form_params.keys.first
     params = {
-      "property" => property_name,
-      "value" => form_params[property_name],
-      "unit" => unit(property_name)
+      'property' => property_name,
+      'value' => form_params[property_name],
+      'unit' => unit(property_name)
     }
     new(params)
   end
@@ -20,12 +20,12 @@ class Datapoint < ActiveRecord::Base
 
   def self.unit(property_name)
     case property_name
-    when "angle"
-      "degrees"
-    when "area"
-      "square meters"
+    when 'angle'
+      'degrees'
+    when 'area'
+      'square meters'
     else
-      "meters"
+      'meters'
     end
   end
 end

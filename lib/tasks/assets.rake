@@ -1,8 +1,8 @@
 namespace :assets do
   desc 'Create a zip file containing icons and markers'
   task :create_zip do
-    %w{marker icons}.each do |zip_name|
-      cmd=<<-EOF
+    %w(marker icons).each do |zip_name|
+      cmd = <<-EOF
         cd #{Rails.root.join('app', 'assets', 'images')}
         zip -9 -q -r #{Rails.root.join('public', zip_name)} #{zip_name}
       EOF
@@ -14,14 +14,14 @@ namespace :assets do
   task :fix_image_names do
     src = ENV['src'] || '/Users/christoph/Downloads/wheelmapicons2/'
     mapping = {
-      :parkinggarage => :parking,
-      :beergarden => :biergarten,
-      :movierental => :cinema,
-      :laterne => :lantern,
-      :stripclub2 => :stripclub,
-      :chemistry => :chemist,
-      :schreibwaren_web => :stationery,
-      :carrepair => :car_repair
+      parkinggarage: :parking,
+      beergarden: :biergarten,
+      movierental: :cinema,
+      laterne: :lantern,
+      stripclub2: :stripclub,
+      chemistry: :chemist,
+      schreibwaren_web: :stationery,
+      carrepair: :car_repair
     }
     mapping.each do |old_name, new_name|
       puts "checking: #{old_name} => #{new_name}"
@@ -37,8 +37,7 @@ namespace :assets do
   end
 
   desc 'Resize icons from map icon set.'
-  task :resize_icons => :environment do
-
+  task resize_icons: :environment do
     src = ENV['src'] || '/Users/christoph/Downloads/wheelmapicons2/'
     NodeType.all.each do |node_type|
       name = File.basename(node_type.icon, '.png')
@@ -50,11 +49,10 @@ namespace :assets do
       convert #{src}icons_white/#{node_type.icon} -strip -gravity SOUTH -crop 22x22+0+0 -scale 44x44+0+0 #{Rails.root.join('public', 'icons_white', name)}@2x.png;
       EOT
     end
-
   end
 
   desc 'Resize marker from map icon set.'
-  task :resize_marker => :environment do
+  task resize_marker: :environment do
     src = ENV['src'] || '/Users/christoph/Downloads/wheelmapicons2/marker_yes/'
     wheelchair = ENV['wheelchair'] || 'yes'
     NodeType.all.each do |node_type|
@@ -63,5 +61,4 @@ namespace :assets do
       EOT
     end
   end
-
 end

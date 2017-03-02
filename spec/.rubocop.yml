@@ -1,0 +1,5 @@
+inherit_from: ../.rubocop.yml
+
+# Some tests rely on `.load` and there isn't a real security risk here since it's tests.
+Security/YAMLLoad:
+    Enabled: false

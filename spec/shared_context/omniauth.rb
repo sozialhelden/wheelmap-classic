@@ -1,4 +1,4 @@
-shared_context "OmniAuth" do
+shared_context 'OmniAuth' do
   before do
     OmniAuth.config.test_mode = true
 
@@ -11,7 +11,7 @@ shared_context "OmniAuth" do
         'secret' => 'secret'
       },
       'info' => {
-        'permissions' => ['allow_read_prefs', 'allow_write_api']
+        'permissions' => %w(allow_read_prefs allow_write_api)
       }
     )
   end

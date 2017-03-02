@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
-
   include AuthenticateUserFromToken
 
-  skip_before_filter :verify_authenticity_token, :only => :authenticate
+  skip_before_filter :verify_authenticity_token, only: :authenticate
 
-  before_filter :authenticate_user!,        :except => [:authenticate, :signed_in]
-  before_filter :authenticate_mobile_user,  :only => :authenticate
-  before_filter :authenticate_mobile_app,   :only => :authenticate
+  before_filter :authenticate_user!,        except: [:authenticate, :signed_in]
+  before_filter :authenticate_mobile_user,  only: :authenticate
+  before_filter :authenticate_mobile_app,   only: :authenticate
 
-  before_filter :remove_password_from_params_if_blank, :only => :update
+  before_filter :remove_password_from_params_if_blank, only: :update
 
-  rescue_from OAuth::Unauthorized, :with => :unauthorized
+  rescue_from OAuth::Unauthorized, with: :unauthorized
 
   def show
     @user = current_user
@@ -29,13 +28,13 @@ class UsersController < ApplicationController
     @user.attributes = user_params
     email_changed = @user.email_changed?
     if @user.save
-      flash[:notice] = t('flash.actions.update.notice', :resource_name => User.model_name.human)
+      flash[:notice] = t('flash.actions.update.notice', resource_name: User.model_name.human)
       flash[:notice] = t('devise.confirmations.send_instructions') if email_changed
-      sign_in(@user, :bypass => true)
+      sign_in(@user, bypass: true)
       redirect_to edit_profile_path
     else
       flash.now[:alert] = @user.errors.full_messages.to_sentence
-      render :action => 'edit'
+      render action: 'edit'
     end
   end
 
@@ -49,12 +48,12 @@ class UsersController < ApplicationController
   end
 
   def signed_in
-    render :json => (current_user ? true : false).to_json, :status => 200
+    render json: (current_user ? true : false).to_json, status: 200
   end
 
   def signed_in_token
-      @user = current_user
-      render :template => 'users/after_signup_success'
+    @user = current_user
+    render template: 'users/after_signup_success'
   end
 
   def after_signup_edit
@@ -72,17 +71,17 @@ class UsersController < ApplicationController
       redirect_to after_sign_in_path_for(:user)
     else
       flash.now[:alert] = @user.errors.full_messages.to_sentence
-      render :template => 'users/after_signup_edit'
+      render template: 'users/after_signup_edit'
     end
   end
 
   def authenticate
-    render :json => {:id => @user.id}.to_json, :status => 200
+    render json: { id: @user.id }.to_json, status: 200
   end
 
   def terms
-    @accepted = (params[:user][:terms] == "1")
-    @privacy_accepted = (params[:user][:privacy_policy] == "1")
+    @accepted = (params[:user][:terms] == '1')
+    @privacy_accepted = (params[:user][:privacy_policy] == '1')
 
     # TERMS ACCEPTED?
     if @accepted
@@ -100,13 +99,12 @@ class UsersController < ApplicationController
       current_user.errors.add(:privacy_policy, :accepted)
     end
 
-
     if current_user.errors.empty?
-      current_user.save(:validation => false)
+      current_user.save(validation: false)
       redirect_to session.delete(:user_return_to) || :back
     else
       flash.now[:alert] = current_user.errors.full_messages.to_sentence
-      render :template => 'terms/index'
+      render template: 'terms/index'
     end
   end
 
@@ -115,7 +113,7 @@ class UsersController < ApplicationController
     # generates a new token.
     current_user.update_attribute(:authentication_token, nil)
     redirect_to edit_profile_path
-    return
+    nil
   end
 
   protected
@@ -134,20 +132,18 @@ class UsersController < ApplicationController
 
   def authenticate_mobile_user
     unless @user = User.authenticate(params[:email], params[:password])
-      render :text => 'Authorization failed', :status => 400
+      render text: 'Authorization failed', status: 400
     end
   end
 
   def authenticate_mobile_app
     unless @user.app_authorized?
-      render :json => {:id => @user.id, :message => 'Application needs to be authorized', :url => edit_profile_url}.to_json, :status => 403
+      render json: { id: @user.id, message: 'Application needs to be authorized', url: edit_profile_url }.to_json, status: 403
     end
   end
 
   def remove_password_from_params_if_blank
-    if user_params[:password].blank?
-      params[:user].delete(:password)
-    end
+    params[:user].delete(:password) if user_params[:password].blank?
 
     if user_params[:password_confirmation].blank?
       params[:user].delete(:password_confirmation)
@@ -159,5 +155,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
-
 end

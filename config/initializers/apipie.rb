@@ -1,8 +1,8 @@
 Apipie.configure do |config|
-  config.app_name                = "Wheelmap API"
+  config.app_name = 'Wheelmap API'
   config.copyright = "&copy; #{Date.today.year} Sozialhelden e.V."
-  config.api_base_url            = "/api"
-  config.doc_base_url            = "/apidoc"
+  config.api_base_url            = '/api'
+  config.doc_base_url            = '/apidoc'
   config.languages = ['en']
   config.default_locale = 'en'
   config.use_cache = Rails.env.production? || Rails.env.staging?

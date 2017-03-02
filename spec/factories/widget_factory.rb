@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :widget do |w|
     w.height 480
     w.width  360
@@ -7,5 +6,4 @@ FactoryGirl.define do
     lon 13.4
     w.categories false
   end
-
 end

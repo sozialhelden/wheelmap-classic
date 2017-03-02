@@ -1,6 +1,6 @@
 class NodesController < ApplicationController
-  SIMILAR_URL = "http://photon.komoot.de/api"
-  USER_AGENT = "Wheelmap, (http://wheelmap.org)"
+  SIMILAR_URL = 'http://photon.komoot.de/api'.freeze
+  USER_AGENT = 'Wheelmap, (http://wheelmap.org)'.freeze
   SIMILAR_MAX_DISTANCE = 200
 
   require 'float'
@@ -13,34 +13,36 @@ class NodesController < ApplicationController
 
   skip_before_filter :verify_authenticity_token
 
-  before_filter :authenticate_user!,              :only => [:new, :create, :edit, :update, :validate]
-  before_filter :authenticate_application!,       :only => [:new, :create, :edit, :update, :validate]
-  # TODO reenable feature terms
-  before_filter :authenticate_terms!,             :only => [:new, :create, :edit, :update, :validate], :unless => :mobile_app?
-  before_filter :check_create_params,             :only => :create
-  before_filter :check_update_params,             :only => :update
-  before_filter :check_update_wheelchair_params,  :only => :update_wheelchair
-  before_filter :check_limit,                     :only => [:tiles, :index]
-  before_filter :convert_xyz,                     :only => :tiles
-  before_filter :convert_legacy_bbox,             :only => :index
-  before_filter :load_custom_node,                :only => :index
+  before_filter :authenticate_user!,              only: [:new, :create, :edit, :update, :validate]
+  before_filter :authenticate_application!,       only: [:new, :create, :edit, :update, :validate]
+  # TODO: reenable feature terms
+  before_filter :authenticate_terms!,             only: [:new, :create, :edit, :update, :validate], unless: :mobile_app?
+  before_filter :check_create_params,             only: :create
+  before_filter :check_update_params,             only: :update
+  before_filter :check_update_wheelchair_params,  only: :update_wheelchair
+  before_filter :check_limit,                     only: [:tiles, :index]
+  before_filter :convert_xyz,                     only: :tiles
+  before_filter :convert_legacy_bbox,             only: :index
+  before_filter :load_custom_node,                only: :index
 
   # Manually compress geojson output
-  after_filter :compress,                         :only => :index, :if => lambda {|c| c.request.format.try(:geojson?)}
+  after_filter :compress,                         only: :index, if: ->(c) { c.request.format.try(:geojson?) }
 
-  rescue_from ActiveRecord::RecordNotFound, :with => :not_found
-  rescue_from Rosemary::Gone,               :with => :gone
-  rescue_from Rosemary::Unavailable,        :with => :timeout
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+  rescue_from Rosemary::Gone,               with: :gone
+  rescue_from Rosemary::Unavailable,        with: :timeout
 
   def tiles
-    expires_in 1.minute, :public => true
+    expires_in 1.minute, public: true
 
-    @debug = params.has_key?(:debug)
+    @debug = params.key?(:debug)
 
-    @places = Poi.within_bbox(@left, @bottom, @right, @top)
-                  .including_category
-                  .including_region
-                  .including_providers.limit(@limit) if @left
+    if @left
+      @places = Poi.within_bbox(@left, @bottom, @right, @top)
+                   .including_category
+                   .including_region
+                   .including_providers.limit(@limit)
+    end
 
     # If a node_id is given and could be found, make sure it is included in the collection
     if @custom_node && !@places.map(&:osm_id).include?(params[:node_id])
@@ -48,19 +50,21 @@ class NodesController < ApplicationController
     end
 
     respond_to do |wants|
-      wants.geojson{
+      wants.geojson do
         render content_type: 'application/json; subtype=geojson; charset=utf-8', template: 'nodes/index'
-      }
-      wants.html{ redirect_to root_path }
+      end
+      wants.html { redirect_to root_path }
     end
   end
 
   # Legacy controller for old bounding box requests for the legacy iphone API
   def index
-    @places = Poi.within_bbox(@left, @bottom, @right, @top)
-                  .including_category
-                  .including_region
-                  .including_providers.limit(@limit) if @left
+    if @left
+      @places = Poi.within_bbox(@left, @bottom, @right, @top)
+                   .including_category
+                   .including_region
+                   .including_providers.limit(@limit)
+    end
 
     # If a node_id is given and could be found, make sure it is included in the collection
     if @custom_node && !@places.map(&:osm_id).include?(params[:node_id])
@@ -68,8 +72,8 @@ class NodesController < ApplicationController
     end
 
     respond_to do |wants|
-      wants.js{ render :json => @places.as_api_response(:iphone).to_json }
-      wants.html{ redirect_to root_path }
+      wants.js { render json: @places.as_api_response(:iphone).to_json }
+      wants.html { redirect_to root_path }
     end
   end
 
@@ -79,7 +83,7 @@ class NodesController < ApplicationController
 
     respond_to do |wants|
       wants.html
-      wants.json{ render_node_json }
+      wants.json { render_node_json }
     end
   end
 
@@ -89,23 +93,23 @@ class NodesController < ApplicationController
 
   def update_wheelchair
     @node = Poi.find(params[:id])
-    updating_user = (user_signed_in? && current_user.app_authorized?) ? current_user : wheelmap_visitor
+    updating_user = user_signed_in? && current_user.app_authorized? ? current_user : wheelmap_visitor
     UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, { 'wheelchair' => params[:wheelchair] }, updating_user, source('tag'))
 
     respond_to do |wants|
-      wants.js{ render :json => {:message => t('nodes.update_wheelchair.successfull', :status => t("wheelchairstatus.#{params[:wheelchair]}"), :name => @node.headline), :wheelchair => params[:wheelchair] }.to_json}
-      wants.html{ render :text => t('nodes.update_wheelchair.successfull') }
+      wants.js { render json: { message: t('nodes.update_wheelchair.successfull', status: t("wheelchairstatus.#{params[:wheelchair]}"), name: @node.headline), wheelchair: params[:wheelchair] }.to_json }
+      wants.html { render text: t('nodes.update_wheelchair.successfull') }
     end
   end
 
   def update_toilet
     @node = Poi.find(params[:id])
-    updating_user = (user_signed_in? && current_user.app_authorized?) ? current_user : wheelmap_visitor
+    updating_user = user_signed_in? && current_user.app_authorized? ? current_user : wheelmap_visitor
     UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, { 'toilets:wheelchair' => params[:toilet] }, updating_user, source('toilet'))
 
     respond_to do |wants|
-      wants.js{ render :json => {:message => t('nodes.update_wheelchair.successfull', :status => t("toiletstatus.#{params[:toilet]}"), :name => @node.headline), :toilet => params[:toilet] }.to_json}
-      wants.html{ render :text => t('nodes.update_toilet.successfull') }
+      wants.js { render json: { message: t('nodes.update_wheelchair.successfull', status: t("toiletstatus.#{params[:toilet]}"), name: @node.headline), toilet: params[:toilet] }.to_json }
+      wants.html { render text: t('nodes.update_toilet.successfull') }
     end
   end
 
@@ -117,30 +121,29 @@ class NodesController < ApplicationController
       UpdateTagsJob.enqueue(@node.osm_id.abs, @node.osm_type, @node.tags, current_user, source('update'), @node.tags_to_be_deleted)
 
       respond_to do |wants|
-        wants.js   { render :text => 'OK' }
+        wants.js   { render text: 'OK' }
         wants.json { render_node_json }
 
-        wants.html {
+        wants.html do
           flash[:track]  = "'Data', 'Update', '#{@node.wheelchair}'"
           flash[:notice] = I18n.t('nodes.update.flash.successfull')
           redirect_to node_path(@node)
-        }
+        end
       end
     else
       respond_to do |wants|
         wants.js   { render text: 'FAIL', status: 406 }
         wants.json { render json: { errors: @node.errors }, status: 406 }
 
-        wants.html {
+        wants.html do
           flash[:error] = I18n.t('nodes.update.flash.not_successfull')
           render action: :edit
-        }
+        end
       end
     end
   end
 
-  def new
-  end
+  def new; end
 
   def validate
     node = Poi.new(params[:node])
@@ -162,24 +165,23 @@ class NodesController < ApplicationController
     if @node.valid?
       CreateNodeJob.enqueue(@node.lat, @node.lon, @node.tags, current_user, source('create'))
 
-      flash[:track]  = "'Data', 'Create', '#{@node.wheelchair}'"
+      flash[:track] = "'Data', 'Create', '#{@node.wheelchair}'"
       flash[:view] = '/nodes/created'
       flash[:notice] = I18n.t('nodes.create.flash.successfull')
 
       respond_to do |wants|
-        wants.json{ render :status => 200, :json => {} } # iphone wants 200. nothing more.
-        wants.html{ redirect_to root_path(:layers => 'BT', :lat => @node.lat, :lon => @node.lon, :zoom => 18) }
+        wants.json { render status: 200, json: {} } # iphone wants 200. nothing more.
+        wants.html { redirect_to root_path(layers: 'BT', lat: @node.lat, lon: @node.lon, zoom: 18) }
       end
     else
-      render :action => :new, status: 406
+      render action: :new, status: 406
     end
   end
 
   helper_method :prepare_nodes
   helper_method :generate_json
 
-  def claim
-  end
+  def claim; end
 
   def popover
     @node = Poi.find(params[:id])
@@ -190,30 +192,34 @@ class NodesController < ApplicationController
 
   # If a node_id is given additionally, make sure it is loaded
   def load_custom_node
-    if !params[:node_id].blank?
-      @custom_node = Poi.find(params[:node_id]) rescue nil
+    unless params[:node_id].blank?
+      @custom_node = begin
+                       Poi.find(params[:node_id])
+                     rescue
+                       nil
+                     end
     end
   end
 
   def load_and_instantiate_nodes
-    params[:provider_id].present? ? @places.where(:providers => {:id => params[:provider_id]}) : @places
+    params[:provider_id].present? ? @places.where(providers: { id: params[:provider_id] }) : @places
   end
-  add_method_tracer :load_and_instantiate_nodes, "Custom/load_and_instantiate_nodes"
+  add_method_tracer :load_and_instantiate_nodes, 'Custom/load_and_instantiate_nodes'
 
   def prepare_nodes
     load_and_instantiate_nodes.map(&:to_geojson)
   end
-  add_method_tracer :prepare_nodes, "Custom/prepare_nodes"
+  add_method_tracer :prepare_nodes, 'Custom/prepare_nodes'
 
   def generate_json(h)
-    Yajl::Encoder.encode(h, :pretty => (false && Rails.env.development?))
+    Yajl::Encoder.encode(h, pretty: (false && Rails.env.development?))
   end
-  add_method_tracer :generate_json, "Custom/generate_json"
+  add_method_tracer :generate_json, 'Custom/generate_json'
 
-  def gone(exception)
-#   Airbrake.notify(exception,:component => self.class.name, :parameters => params)
+  def gone(_exception)
+    #   Airbrake.notify(exception,:component => self.class.name, :parameters => params)
     @message = I18n.t('nodes.errors.not_existent')
-    render :template => 'shared/error', :status => 410
+    render template: 'shared/error', status: 410
   end
 
   def set_default_user
@@ -221,15 +227,15 @@ class NodesController < ApplicationController
   end
 
   def block_way_updates
-    render( :text => 'Can not update ways', :status => 406 ) if params[:id].to_i <= 0
+    render(text: 'Can not update ways', status: 406) if params[:id].to_i <= 0
   end
 
   def check_update_params
-    render( :text => 'Params missing', :status => 406 ) if params[:node].blank?
+    render(text: 'Params missing', status: 406) if params[:node].blank?
   end
 
   def check_create_params
-    render( :text => 'Params missing', :status => 406 ) if params[:node].blank?
+    render(text: 'Params missing', status: 406) if params[:node].blank?
   end
 
   def check_limit
@@ -237,55 +243,55 @@ class NodesController < ApplicationController
     # Allow max 1000 Pois per request.
     @limit = [@limit, 1000].min
   end
-  add_method_tracer :check_limit, "Custom/check_limit"
+  add_method_tracer :check_limit, 'Custom/check_limit'
 
   def convert_xyz
     if params[:x].present? && params[:y].present? && params[:z].present?
       @left, @bottom, @right, @top = tile2bbox(params[:x].to_f, params[:y].to_f, params[:z].to_f)
     end
   end
-  add_method_tracer :convert_xyz, "Custom/convert_xyz"
+  add_method_tracer :convert_xyz, 'Custom/convert_xyz'
 
   def convert_legacy_bbox
     params[:bbox] ||= '13.395536804199,52.516078290477,13.404463195801,52.517321704317'
 
     @left, @bottom, @right, @top = params[:bbox].split(',').map(&:to_f)
   end
-  add_method_tracer :convert_legacy_bbox, "Custom/convert_legacy_bbox"
+  add_method_tracer :convert_legacy_bbox, 'Custom/convert_legacy_bbox'
 
   def xyz_cache_key
-    'xyz_cache_' + [params[:x], params[:y], params[:z]].join('_') + (params.has_key?(:debug) ? '_debug' : '')
+    'xyz_cache_' + [params[:x], params[:y], params[:z]].join('_') + (params.key?(:debug) ? '_debug' : '')
   end
 
   helper_method :xyz_cache_key
 
   def render_node_json
-    render :status => 200, :json => {
+    render status: 200, json: {
       node: @node.as_api_response(:ember),
       node_types: [@node.node_type.as_api_response(:ember)]
     }
   end
 
-  def source(prefix='tag')
-    @source ||= [prefix,mobile_app? ? 'iphone' : 'website'].join('_')
+  def source(prefix = 'tag')
+    @source ||= [prefix, mobile_app? ? 'iphone' : 'website'].join('_')
   end
 
   def compress
-    if self.request.env['HTTP_ACCEPT_ENCODING'] and self.request.env['HTTP_ACCEPT_ENCODING'].match(/gzip/)
-      if self.response.headers["Content-Transfer-Encoding"] != 'binary'
+    if request.env['HTTP_ACCEPT_ENCODING'] && request.env['HTTP_ACCEPT_ENCODING'].match(/gzip/)
+      if response.headers['Content-Transfer-Encoding'] != 'binary'
         begin
           ostream = StringIO.new
           gz = Zlib::GzipWriter.new(ostream)
-          gz.write(self.response.body)
-          self.response.body = ostream.string
-          self.response.headers['Content-Encoding'] = 'gzip'
+          gz.write(response.body)
+          response.body = ostream.string
+          response.headers['Content-Encoding'] = 'gzip'
         ensure
           gz.close
         end
       end
     end
   end
-  add_method_tracer :compress, "Custom/compress"
+  add_method_tracer :compress, 'Custom/compress'
 
   def controller
     self
@@ -302,16 +308,14 @@ class NodesController < ApplicationController
     query = { lang: I18n.locale, q: query, lat: lat, lon: lon }
     cache_key = "#{search_url}?#{query.to_param}"
 
-=begin
-    # Read response from cache
-    if (body = Rails.cache.read(cache_key))
-      return body
-    end
-=end
+    # # Read response from cache
+    # if (body = Rails.cache.read(cache_key))
+    #   return body
+    # end
 
     Net::HTTP.new(search_url.host, search_url.port).start do |http|
       query_url = "#{search_url.path}?#{query.to_param}"
-      req = Net::HTTP::Get.new(query_url, { 'User-Agent' => USER_AGENT })
+      req = Net::HTTP::Get.new(query_url, 'User-Agent' => USER_AGENT)
       resp = http.request(req)
       body = resp.body
 
@@ -330,7 +334,7 @@ class NodesController < ApplicationController
             center.distance(poi.geom).abs <= SIMILAR_MAX_DISTANCE
           end
 
-          valid_ids = valid_pois.collect { |poi| poi.id }
+          valid_ids = valid_pois.collect(&:id)
 
           data[:features].keep_if do |feature|
             valid_ids.include? feature[:properties][:osm_id]

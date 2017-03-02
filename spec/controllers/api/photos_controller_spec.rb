@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Api::PhotosController do
-
   before :all do
     User.delete_all
   end
@@ -15,55 +14,52 @@ describe Api::PhotosController do
   end
 
   let :photo do
-    FactoryGirl.create(:photo, :user => user, :poi => poi)
+    FactoryGirl.create(:photo, user: user, poi: poi)
   end
 
   context 'index action' do
-
     before :each do
       3.times do
-        FactoryGirl.create(:photo, :user => user, :poi => poi)
+        FactoryGirl.create(:photo, user: user, poi: poi)
       end
     end
 
-    it "should scope photos to given node" do
+    it 'should scope photos to given node' do
       expect(subject).to receive(:parent).and_return(poi)
       expect(poi).to receive(:photos).and_return(Photo.all)
-      get(:index, :node_id => poi.id, :api_key => user.authentication_token)
+      get(:index, node_id: poi.id, api_key: user.authentication_token)
       expect(response).to be_success
     end
 
-    it "should scope photos to given user" do
+    it 'should scope photos to given user' do
       expect(subject).to receive(:parent).and_return(user)
       expect(user).to receive(:photos).and_return(Photo.all)
-      get(:index, :url => api_user_photos_path, :api_key => user.authentication_token)
+      get(:index, url: api_user_photos_path, api_key: user.authentication_token)
       expect(response).to be_success
     end
 
     context 'format json' do
-
-      it "should render json when using accept header" do
+      it 'should render json when using accept header' do
         request.env['HTTP_ACCEPT'] = 'application/json'
-        get(:index, :node_id => poi.id, :api_key => user.authentication_token)
+        get(:index, node_id: poi.id, api_key: user.authentication_token)
         expect(response).to be_success
         expect(request.format.to_sym).to eql(:json)
       end
 
-      it "should render json as default format" do
-        get(:index, :node_id => poi.id, :api_key => user.authentication_token)
+      it 'should render json as default format' do
+        get(:index, node_id: poi.id, api_key: user.authentication_token)
         expect(response).to be_success
         expect(request.format.to_sym).to eql(:json)
       end
     end
 
     context 'format xml' do
-
       before :each do
         request.env['HTTP_ACCEPT'] = 'application/xml'
       end
 
-      it "should render xml when using accept header" do
-        get(:index, :node_id => poi.id, :api_key => user.authentication_token)
+      it 'should render xml when using accept header' do
+        get(:index, node_id: poi.id, api_key: user.authentication_token)
         expect(response).to be_success
         expect(request.format.to_sym).to eql(:xml)
       end
@@ -71,17 +67,16 @@ describe Api::PhotosController do
   end
 
   context 'create action' do
-
     before :each do
       user.save!
       poi.save!
     end
 
-    it "is possible to upload images for a given node" do
-      expect {
-        post(:create, :node_id => poi.id, :api_key => user.authentication_token, :photo => fixture_file_upload('/placeholder.jpg'))
+    it 'is possible to upload images for a given node' do
+      expect do
+        post(:create, node_id: poi.id, api_key: user.authentication_token, photo: fixture_file_upload('/placeholder.jpg'))
         expect(response.status).to eql 201
-      }.to change(Photo, :count).by(1)
+      end.to change(Photo, :count).by(1)
     end
   end
 
@@ -94,30 +89,29 @@ describe Api::PhotosController do
       FactoryGirl.create(:photo)
     end
 
-    it "is possible to delete images for a given node" do
-      delete(:destroy, :id => photo.id, :node_id => poi.id, :api_key => user.authentication_token)
-      expect(response.code).to eql "200"
+    it 'is possible to delete images for a given node' do
+      delete(:destroy, id: photo.id, node_id: poi.id, api_key: user.authentication_token)
+      expect(response.code).to eql '200'
     end
 
-    it "is possible to delete images for a given user" do
-      delete(:destroy, :id => photo.id, :url => api_user_photo_path(photo), :api_key => user.authentication_token)
-      expect(response.code).to eql "200"
+    it 'is possible to delete images for a given user' do
+      delete(:destroy, id: photo.id, url: api_user_photo_path(photo), api_key: user.authentication_token)
+      expect(response.code).to eql '200'
     end
 
-    it "is not possible to delete an image, which does not belong to given node" do
-      delete(:destroy, :id => another_photo.id, :node_id => poi.id, :api_key => user.authentication_token)
-      expect(response.code).to eql "403"
+    it 'is not possible to delete an image, which does not belong to given node' do
+      delete(:destroy, id: another_photo.id, node_id: poi.id, api_key: user.authentication_token)
+      expect(response.code).to eql '403'
     end
 
-    it "is not possible to delete an image, which does not belong to given user" do
-      delete(:destroy, :id => another_photo.id, :url => api_user_photo_path(another_photo), :api_key => user.authentication_token)
-      expect(response.code).to eql "403"
+    it 'is not possible to delete an image, which does not belong to given user' do
+      delete(:destroy, id: another_photo.id, url: api_user_photo_path(another_photo), api_key: user.authentication_token)
+      expect(response.code).to eql '403'
     end
 
-    it "is not possible to delete an image, which belongs to a node, but not to the current user" do
-      delete(:destroy, :id => another_photo.id, :node_id => another_photo.poi.id, :api_key => user.authentication_token)
-      expect(response.code).to eql "403"
+    it 'is not possible to delete an image, which belongs to a node, but not to the current user' do
+      delete(:destroy, id: another_photo.id, node_id: another_photo.poi.id, api_key: user.authentication_token)
+      expect(response.code).to eql '403'
     end
   end
-
 end

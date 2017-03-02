@@ -17,8 +17,8 @@
 #   runner "AnotherModel.prune_old_records"
 # end
 # Learn more: http://github.com/javan/whenever
-job_type :command_without_output, "cd :path && :task"
-set :output, File.join(File.expand_path(File.dirname(__FILE__)),"..", "log", "cron_log.log")
+job_type :command_without_output, 'cd :path && :task'
+set :output, File.join(File.expand_path(File.dirname(__FILE__)), '..', 'log', 'cron_log.log')
 
 case ENV['RAILS_ENV']
 when 'production'
@@ -31,26 +31,26 @@ when 'production'
 
   every '* * * * *' do
     set :job_template, "bash -l -c ':job'"
-    rake "report:minutely"
+    rake 'report:minutely'
   end
 
-  every :sunday, :at => '2:30 am' do
+  every :sunday, at: '2:30 am' do
     set :job_template, "bash -l -c ':job'"
-    rake "sitemap:generate"
+    rake 'sitemap:generate'
   end
 
   every '12 * * * *' do
     set :job_template, "bash -l -c ':job'"
-    rake "poi:locate"
+    rake 'poi:locate'
   end
 
   every '*/30 * * * *' do
     set :job_template, "bash -l -c ':job'"
-    rake "report:hourly"
+    rake 'report:hourly'
   end
 
-  every :day, :at => '0:20am' do
+  every :day, at: '0:20am' do
     set :job_template, "bash -l -c ':job'"
-    rake "db:backup"
+    rake 'db:backup'
   end
 end
