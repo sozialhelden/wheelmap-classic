@@ -838,6 +838,10 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
     width: 100%;
     @include box-sizing(border-box);
   }
+
+  .invisible {
+    display: none;
+  }
 }
 
 .osm-streetview {

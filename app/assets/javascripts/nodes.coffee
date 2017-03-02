@@ -267,6 +267,8 @@ if $dropzoneClickable.length > 0
 
   streetViewService.getPanorama streetViewLocationRequest, (data, status) ->
     unless status == google.maps.StreetViewStatus.OK
+      streetViewContainer = document.getElementById('streetview')
+      streetViewContainer.classList.add('invisible')
       return
 
     heading = google.maps.geometry.spherical.computeHeading(data.location.latLng, position)
