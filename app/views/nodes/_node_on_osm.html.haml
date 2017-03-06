@@ -1,0 +1,8 @@
+%section.node-osm
+  .pull-right
+    %p
+      %small
+        - if node_on_osm.osm_id < 0
+          = link_to t('nodes.show.show-in-osm'), "http://openstreetmap.org/browse/way/#{node_on_osm.osm_id.abs}"
+        - else
+          = link_to t('nodes.show.show-in-osm'), "http://openstreetmap.org/browse/node/#{node_on_osm.osm_id}"
