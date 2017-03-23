@@ -7,13 +7,24 @@ sk:
         address: Adresa
         website: Webovská stránka
         phone: Telefón
+        note: Poznámky
         address_street: Ulica
         address_housenumber: Číslo domu
+        address_postcode: PSČ
         address_city: Mesto
   community_support_form:
     new:
       form:
         title: Nahláste problém
+        header_text_html: "Ak potrebuje pomôcť, pozrite sa, prosím, najprv na <a href=\"https://news.wheelmap.org/sk/faq/\">často kladené otázky</a>. Ak tam nenájdete informácie riešiace Váš problém, odpovedzte nám, prosím, na nasledujúce otázky, aby sme to mohli opraviť. "
+        questions:
+          a: Čo ste urobili?
+          b: Aký výsledok Ste očakávali?
+          c: Čo sa stalo namiesto toho?
+        note: Prosím, majte na vedomí, že toto je projekt typu open-source, ktorý je spravovaný neziskovou organizáciou a máme obmedzené zdroje pre vývoj tejto aplikácie.
+        describe: Prosím píšte nám iba po anglicky a po nemecky.
+        flash_after_submit: Ďakujeme za správu. Niekto z nášho podporného tímu sa Vám ozve hneď ako to bude možné.
+        submit_button: Odoslať
   faq:
     answers:
       0: Sami môžete kedykoľvek zmeniť označenie miesta. Jednoducho vyberte správne označenie a dajte "Uložiť" - hotovo!
@@ -29,12 +40,14 @@ sk:
       choose_language: Zvoľte jazyk
       contact: Kontakt
       map: Mapa
+      travelguide: Cestovný sprievodca
       projects: Zapojte sa
       faq: Najčastejšie otázky
       report_problem: Nahláste problém
     toolbar:
       categories: Kategórie
     meta:
+      description: Wheelmap.org je online mapa určená na vyhľadávania a označovanie miest prístupných pre vozíčkarov. Zapojte sa označením verejným miest akými sú barym reštaurácie, kiná alebo supermarkety!
       title: Wheelmap.org
   home:
     index:
@@ -45,6 +58,7 @@ sk:
         headline: 'Označujte a hľadajte miesta prístupné pre vozíčkarov na Wheelmap.org - na celom svete a zadarmo. Je to jednoduché:'
         lookup: Hľadať konkrétne miesto
         secondary_headline: 'Náš semaforový systém na označenie prístupnosti verejných objektov pre vozíčkarov:'
+      embed_link: Ukázať na Wheelmap.org
   nodes:
     new:
       form:

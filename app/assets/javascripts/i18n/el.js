@@ -317,16 +317,16 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
   "community_support_form": {
     "new": {
       "form": {
-        "describe": "Please write to us in English or German.",
+        "describe": "Παρακαλώ μας γράφετε στα Αγγλικά ή στα Γερμανικά.",
         "flash_after_submit": "Thank you for contacting us. Our support team will get back to you as soon as possible.",
-        "header_text_html": "Please check the <a href=\"https://news.wheelmap.org/en/faq/\">frequently asked questions</a> for help first. If the solution to your problem is not there, please answer the following questions so we can fix it.",
+        "header_text_html": "Παρακαλώ πρώτα διαβάζετε <a href=\"https://news.wheelmap.org/en/faq/\">frequently asked questions</a> για βοήθεια. Αν δεν υπάρχει εκεί η λύση στο πρόβλημα σας, παρακαλώ απαντήστε τις ακόλουθες ερώτησεις για να μπορούμε να επιδιορθώσουμε αυτό.",
         "note": "Note that Wheelmap is an open-source project run by a non-profit organization and we have limited resources for the app development.",
         "questions": {
-          "a": "What did you do?",
-          "b": "What did you expect would happen?",
-          "c": "What happened instead?"
+          "a": "Τι έχεις κάνει:",
+          "b": "Τι ήλπιζες να τύχει:",
+          "c": "Τι συνέβη αντ' αυτού;"
         },
-        "submit_button": "Submit",
+        "submit_button": "Υποβολή",
         "title": "Report a problem"
       }
     }
@@ -451,12 +451,12 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "Ο λογαριασμός σάς επιβεβαιώθηκε με επιτυχία. Είστε συνδεδεμένος.",
-      "link": "You didn't receive confirmation instructions?",
+      "link": "Δεν λάβατε οδηνγίες για την επιβεβαίωση;",
       "send_instructions": "Θα λάβετε ένα Email με οδηγίες για το πως επιβεβαιώνετε τον λογαριασμό σας άμεσα.",
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
     },
     "destroy": {
-      "confirm": "Are you sure?",
+      "confirm": "Είστε σίγουρος/η;",
       "headline": "Delete account",
       "link": "Διαγραφή τώρα"
     },
@@ -474,7 +474,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
     },
     "failure": {
       "already_authenticated": "Είσαστε ήδη συνδεδεμένοι.",
-      "inactive": "Your account has not been activated yet.",
+      "inactive": "Ο λογαριασμός σας δεν έχει ενεργοποιηθεί ακόμη.",
       "invalid": "Μη έγκυρο email ή κωδικός.",
       "invalid_token": "Άκυρη πιστοποίηση αυθεντικότητας.",
       "last_attempt": "You have one more attempt before your account will be locked.",
@@ -615,15 +615,15 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
     "messages": {
       "accepted": "must be accepted",
       "already_confirmed": "Έχει ήδη επιβεβαιωθεί,παρακαλώ δοκιμάστε εκ νέου να συνδεθείτε",
-      "blank": "must be filled in",
+      "blank": "Πρέπει να συμπληρωθεί",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
       "carrierwave_processing_error": "failed to be processed",
       "confirmation": "Δεν αντιστοιχεί με την επιβεβαίωση",
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
-      "empty": "must be filled in",
+      "empty": "Πρέπει να συμπληρωθεί",
       "equal_to": "Πρέπει να είναι ακριβώς %{count}",
-      "even": "must be an even number",
+      "even": "Πρέπει να είναι ένας ζυγός αριθμός.",
       "exclusion": "Είναι δεσμευμένο",
       "expired": "έληξε, ζητήστε ένα νέο",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
@@ -776,9 +776,9 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "press": "Press",
       "profile": "προφίλ",
       "projects": "Συμμετέχετε",
-      "report_problem": "Report a problem",
+      "report_problem": "Αναφέρετε πρόβλημα",
       "suggestions": "Προτάσεις",
-      "travelguide": "Travel guide",
+      "travelguide": "ταξιδιωτικός οδηγός",
       "what_is_barrier_free": "Τι σημαίνει 'προσβάσιμο με αναπηρική καρέκλα'?",
       "what_is_wheelmap": "Τι είναι το Wheelmap?"
     },
@@ -951,18 +951,18 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
           "address": {
             "help": "You can move the marker to the correct location on the map.",
             "name": "Διεύθυνση",
-            "title": "Where is the place?"
+            "title": "Πού είναι το μέρος;"
           },
           "contact": {
             "name": "Επικοινωνία",
             "title": "Other contact information"
           },
           "name_category": {
-            "name": "Name and place type",
-            "title": "Give us some initial information about your place:"
+            "name": "Όνομα και τύπος τοποθεσίας",
+            "title": "Δώστε μας αρχικές πληροφορίες σχετικά με το μέρος σου:"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "Είναι όλες οι πληροφορίες σωστές;"
           },
           "similar_nodes": {
             "empty": "No similar places were found.",
@@ -972,7 +972,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
-        "title": "Add a place"
+        "title": "Προσθέτετε μέρος"
       },
       "header": {
         "title": "Νέα τοποθεσία | wheelmap.org "
@@ -1519,7 +1519,7 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
       "notice": "Αντίο, ευχόμαστε να επιστρέψτε σύντομα!"
     },
     "new": {
-      "email": "Email address",
+      "email": "Διεύθυνση του Email",
       "login": "Σύνδεση",
       "login_with_twitter": "Συνδεθείτε μέσω Τwitter",
       "password": "Κωδικός πρόσβασης",
@@ -1577,10 +1577,10 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
             "one": "marked %{count} place",
             "other": "marked %{count} places"
           },
-          "text": "You have"
+          "text": "Έχετε"
         },
         "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
-        "title": "Overview"
+        "title": "Επισκόπηση"
       },
       "widget": {
         "categories": "Show category filter",

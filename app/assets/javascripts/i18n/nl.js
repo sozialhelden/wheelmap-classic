@@ -189,7 +189,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "address_postcode": "Postcode",
         "address_street": "Straat",
         "name": "Naam",
-        "note": "Note",
+        "note": "Notitie",
         "phone": "Telefoon",
         "type": "Type",
         "website": "Website"
@@ -317,16 +317,16 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   "community_support_form": {
     "new": {
       "form": {
-        "describe": "Please write to us in English or German.",
-        "flash_after_submit": "Thank you for contacting us. Our support team will get back to you as soon as possible.",
+        "describe": "Schrijf ons alsjeblieft in het Engels of Duits.",
+        "flash_after_submit": "Bedankt dat je contact met ons opnam. Onze klantenservice zal zo snel mogelijk contact met je opnemen.",
         "header_text_html": "Please check the <a href=\"https://news.wheelmap.org/en/faq/\">frequently asked questions</a> for help first. If the solution to your problem is not there, please answer the following questions so we can fix it.",
-        "note": "Note that Wheelmap is an open-source project run by a non-profit organization and we have limited resources for the app development.",
+        "note": "Wheelmap is een open-source project gerund door een non-profit organisatie en we hebben beperkte middelen om onze app te ontwikkelen.",
         "questions": {
-          "a": "What did you do?",
-          "b": "What did you expect would happen?",
-          "c": "What happened instead?"
+          "a": "Wat heb je gedaan?",
+          "b": "Wat verwachtte je dat er zou gebeuren?",
+          "c": "Wat gebeurde er echt?"
         },
-        "submit_button": "Submit",
+        "submit_button": "Verstuur",
         "title": "Geef een probleem op"
       }
     }
@@ -449,13 +449,13 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "Jouw email adres is succesvol bevestigd. Je bent nu aangemeld.",
-      "link": "You didn't receive confirmation instructions?",
+      "link": "Heb je de bevestiging instructie niet ontvangen?",
       "send_instructions": "Je zal een email met de instructie voor jouw account bevestiging ontvangen. Dat duurt maar een paar minuten.",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
+      "send_paranoid_instructions": "Als uw account bestaat, zult u binnen een paar minuten een email ontvangen met instructies, hoe u uw account kunt bevestigen."
     },
     "destroy": {
       "confirm": "Ben je zeker?",
-      "headline": "Delete account",
+      "headline": "Verwijder account",
       "link": "Nu verwijderen"
     },
     "edit": {
@@ -491,7 +491,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "subject": "Reset wachtwoord aanwijzing"
       },
       "unlock_instructions": {
-        "subject": "Unlock instructions"
+        "subject": "Instructies vrijgeven. "
       }
     },
     "mandatory": "* nodig",
@@ -542,7 +542,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "locked": "geblokkeerd",
         "unconfirmed": "onbevestigd"
       },
-      "signed_up": "You have signed up successfully. A you have been sent a confirmation email.",
+      "signed_up": "Je bent succesvol ingeschreven. Inmiddels heb je een bevestigingsemail ontvangen.",
       "signed_up_but_inactive": "You have signed up successfully. However, we could not sign you in because your account is not yet activated.",
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
@@ -550,7 +550,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "updated": "Jouw account is succesvol geactualiseerd."
     },
     "sessions": {
-      "inactive": "Your account has not been activated yet",
+      "inactive": "Je account is nog niet geactiveerd.",
       "invalid": "Ongeldig email of wachtwoord.",
       "invalid_token": "Ongeldig authentificatie bewijs",
       "link": "Aanmelden",
@@ -561,7 +561,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         "promo_text_thank_you": "Dank je wel voor je ondersteuning!",
         "sign_in_with": "Log in met %{kind}",
         "sign_up_with_osm": "Registreer je nu.",
-        "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
+        "wheelmap_promo_text": "Met jouw kennis over rolstoeltoegankelijke plekken kun je helpen om mensen met een handicap hun dag beter te kunnen laten plannen. Ook help je OpenStreetMap meer gedetailleerd te maken."
       },
       "signed_in": "Succesvol aangemeld",
       "signed_out": "Succesvol uitgelogd",
@@ -594,7 +594,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
           "email": "Email",
           "password": "Wachtwoord",
           "password_confirmation": "Herhaal wachtwoord",
-          "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
+          "wants_newsletter": "Ja, houd me op de hoogte over Wheelmap - maar niet meer dan eens per maand."
         },
         "submit": "Aanmelden"
       },
@@ -602,8 +602,8 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     },
     "unlocks": {
       "link": "You didn't receive unlock instructions?",
-      "send_instructions": "You will receive an email in a few minutes with instructions on how to unlock your account",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
+      "send_instructions": "Binnen een paar minuten ontvang je een email met instructies hoe je je account kunt ontgrendelen.",
+      "send_paranoid_instructions": "Als je account bestaat, zul je binnen een paar minuten een email ontvangen met instructies hoe je je account kunt ontgrendelen.",
       "unlocked": "Jouw account werd succesvol vrijgegeven. Je bent nu ingeloggd."
     }
   },
@@ -654,7 +654,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": "Website address is not valid."
+          "invalid": "Website adres is niet gevonden."
         }
       }
     },
@@ -674,8 +674,8 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     },
     "headline": "Is er een probleem met deze plaats?",
     "questions": {
-      "0": "The marking is wrong.",
-      "1": "The details of the place are incorrect or missing.",
+      "0": "De markering is foutief.",
+      "1": "De details van de plek zijn niet correct or missen.",
       "2": "Ik heb meer informatie over dit project."
     }
   },
@@ -776,7 +776,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "projects": "Doe mee",
       "report_problem": "Geef een probleem op",
       "suggestions": "Adviezen",
-      "travelguide": "Travel guide",
+      "travelguide": "Reisgids",
       "what_is_barrier_free": "Wat betekend \"wheelchair accessible\"?",
       "what_is_wheelmap": "Wat is Wheelmap?"
     },
@@ -816,7 +816,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "Laat zien op Wheelmap.org",
       "filter": {
         "category": "Kies categorie",
         "deselect_all": "Los de hele selectie op",
@@ -891,14 +891,14 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "prompt": "Kies een categorie"
     },
     "node": {
-      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
+      "info_edit_position": "De locatie zal op de Wheelmap verschijnen en bovenaan zichtbaar zijn. Wanneer de marker niet op de goede plek staat, kunt U  <a href=\"%{url}\"> de positie veranderen op de OpenStreetMap.</a>",
       "mail": {
-        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
-        "subject": "[Wheelmap] Problem with %{headline}"
+        "body": "(Schrijft alleen in het Engels of Duits.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
+        "subject": "[Wheelmap] Probleem met %{headline}"
       }
     },
     "node_type": {
-      "prompt": "Choose a type"
+      "prompt": "Kies een type"
     }
   },
   "node": {
@@ -940,37 +940,37 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     "new": {
       "form": {
         "legend": "locatie",
-        "location": "Please click on the map where the place is located!",
+        "location": "Klik op de plattegrond waar de plek zich bevind.",
         "section": {
           "accessibility": {
             "name": "Rolstoel toegankelijkheid",
-            "title": "Information on wheelchair accessibility"
+            "title": "Informatie over rolstoeltoegankelijkheid"
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
+            "help": "Je kan de marker verplaatsen naar de juiste locatie op de plattegrond.",
             "name": "Adres",
-            "title": "Where is the place?"
+            "title": "Waar is de plek?"
           },
           "contact": {
             "name": "Contact",
-            "title": "Other contact information"
+            "title": "Andere contactinformatie"
           },
           "name_category": {
             "name": "Naam en locatie type",
             "title": "Give us some initial information about your place:"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "Is alle informatie correct?"
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
+            "empty": "Er zijn geen vergelijkbare plekken gevonden.",
+            "go_edit": "Ga verder met deze plek",
+            "go_new": "Het is geen van de bovengenoemde locaties...",
             "name": "Vergelijkbare plaatsen",
-            "title": "We found similar places nearby. Is it one of these?"
+            "title": "We vonden vergelijkbare plekken in de buurt. Is het één van deze?"
           }
         },
-        "title": "Add a place"
+        "title": "Voeg een plek toe"
       },
       "header": {
         "title": "Nieuwe plaats | wheelmap.org"
@@ -1011,7 +1011,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     },
     "node_status": {
       "accessible_toilet": "Rolstoeltoegankelijk toilet:",
-      "premium": "%{name} says: this place is",
+      "premium": "%{name} zegt: deze plek is",
       "wheelchair_accessibility": "Rolstoel toegankelijkheid:"
     },
     "node_streetview": {
@@ -1021,7 +1021,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "header": {
         "meta": {
           "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
-          "title": "This place is on Wheelmap.org: %{name}"
+          "title": "Deze plek is op Wheelmap.org: %{name}"
         },
         "title": "Plaats:  %{node} | wheelmap.org"
       },
@@ -1035,7 +1035,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       "share": {
         "email": "E-mail",
         "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
+        "text": "Ik vond deze plek op Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
@@ -1120,7 +1120,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       }
     },
     "callback": {
-      "notice": "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
+      "notice": "Je Wheelmap account is nu gekoppeld met de OpenStreetMap account %{user}."
     }
   },
   "or": "of",
@@ -1434,11 +1434,11 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
+        "headline": "Sorry, we konden de plek genaamd \"%{query}\" niet vinden. ",
         "hint": {
           "example": "<strong>Bijvoorbeeld:</strong> London, United Kingdom",
           "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
-          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
+          "work_in_progress": "We werken er hard aan om in de toekomst het zoeken naar plekken gemakkelijker en meer intuïtief te maken."
         },
         "try_this": {
           "address": "Geef a.u.b. meer <strong>adres gegevens</strong>.",
@@ -1458,7 +1458,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
+      "headline": "Sorry, er ging iets fout.",
       "info": "Onze zoekdienst was tijdelijk buiten werk.",
       "repeat_search": "Herhaal de zoekopdracht"
     }
@@ -1497,8 +1497,8 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     "no": "WC niet rolstoeltoegankelijk",
     "unknown": "Status van de toilet is onbekend",
     "what_is": {
-      "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
-      "unknown": "Help out by marking the toilet status!",
+      "no": "Deuropening breedte minimaal 90 cm (35 in), vrij vloeroppervlak minimaal 150 x 150 cm (59 x 59 in), rolstoeltoegankelijk toilet, toiletbeugels en een te bereiken wastafel. ",
+      "unknown": "Help ons door de status van het toilet te markeren!",
       "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
     },
     "yes": "Rolstoeltoegankelijk toilet"
@@ -1527,8 +1527,8 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
   "users": {
     "after_signup_edit": {
       "welcome": {
-        "headline": "You are almost there! Now on to finalize your Wheelmap account:",
-        "set_password_for_mobile": "You have successfully registered with OpenStreetMap. Please choose an email address that you would like Wheelmap to use so we can keep you informed about your activities (for example the number of places you have marked). You can access this information on your \"Profile\".",
+        "headline": "Je bent er bijna! Ga door met het afronden van je Wheelmap account:",
+        "set_password_for_mobile": "Je hebt je succesvol geregistreerd op OpenStreetMap. Kies een emailadres dat je voor Wheelmap wil gebruiken zodat we je op de hoogte kunnen houden van je activiteiten (bijvoorbeeld het aantal plaatsen dat je hebt gemarkeerd). Je kunt deze informatie inzien via je \"Profiel\".",
         "text": "Hoe kunnen wij contact met je opnemen? Je kan deze informatie later in je profiel veranderen."
       }
     },
@@ -1540,22 +1540,22 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
     "profile": {
       "edit": {
         "legends": {
-          "user_data": "Your account information"
+          "user_data": "Je accountinformatie"
         },
         "title": "Profiel"
       },
       "newsletter": {
-        "label": "Yes, keep me updated about Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
+        "label": "Ja, houd me op de hoogte over Wheelmap.",
+        "text": "Blijf op de hoogte met de Wheelmap nieuwsbrief. Geen zorgen, we zullen je geen spam sturen. Maximaal eens per maand sturen we je een bericht.",
         "title": "Nieuwsbrief"
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
+        "empty": "Je hebt nog geen foto's upgeload.",
         "title": "Foto's "
       },
       "show": {
         "greeting": {
-          "anonymously": "Hello there",
+          "anonymously": "Hallo daar",
           "personalized": "Dag %{name}"
         },
         "overview": {
@@ -1575,17 +1575,17 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
             "one": "marked %{count} place",
             "other": "marked %{count} places"
           },
-          "text": "You have"
+          "text": "Je hebt"
         },
         "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
-        "title": "Overview"
+        "title": "Overzicht"
       },
       "widget": {
-        "categories": "Show category filter",
+        "categories": "Geef categoriefilter weer",
         "center": "Map area",
         "empty_center": "Search for center of map …",
         "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "height": "Hoogte",
         "legends": {
           "embed": "Embed code",
           "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
@@ -1595,7 +1595,7 @@ I18n.translations["nl"] = I18n.extend((I18n.translations["nl"] || {}), {
         },
         "providers": "Provider",
         "title": "Widget",
-        "width": "Width"
+        "width": "Breedte"
       }
     }
   },

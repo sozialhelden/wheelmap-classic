@@ -17,8 +17,11 @@ el:
     format: "%{attribute} %{message} "
     messages:
       already_confirmed: "Έχει ήδη επιβεβαιωθεί,παρακαλώ δοκιμάστε εκ νέου να συνδεθείτε"
+      blank: "Πρέπει να συμπληρωθεί"
       confirmation: "Δεν αντιστοιχεί με την επιβεβαίωση"
+      empty: "Πρέπει να συμπληρωθεί"
       equal_to: "Πρέπει να είναι ακριβώς %{count}"
+      even: "Πρέπει να είναι ένας ζυγός αριθμός."
       exclusion: "Είναι δεσμευμένο"
       expired: "έληξε, ζητήστε ένα νέο"
       greater_than: "Πρέπει να είναι μεγαλύτερο από %{count} "
@@ -291,6 +294,7 @@ el:
     destroy:
       notice: "Αντίο, ευχόμαστε να επιστρέψτε σύντομα!"
     new:
+      email: "Διεύθυνση του Email"
       login: "Σύνδεση"
       login_with_twitter: "Συνδεθείτε μέσω Τwitter"
       password: Κωδικός πρόσβασης

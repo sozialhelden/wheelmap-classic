@@ -1566,24 +1566,24 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "one": "%{count} fotoğraf yüklendi",
+            "other": "%{count} fotoğraf yüklendi"
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "one": "%{count} mekan eklendi",
+            "other": "%{count} mekan eklendi"
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "one": "%{count} mekan düzenlendi",
+            "other": "%{count} mekan düzenlendi"
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "one": "%{count} mekan işaretlendi",
+            "other": "%{count} mekan işaretlendi"
           },
           "text": "Sen"
         },
-        "text_html": "Merhaba,<br>\nWheelmap.org'a (tekrar) hoşgeldiniz! Sizi gördüğümüze sevindik! Wheelmap.org hakkında daha fazla bilgi almak isterseniz <a href=\"http://news.wheelmap.org/en/\">Blog</a> veya <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> sayfalarına göz atabilirsiniz. Ayrıca Wheelmap.org <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projelerini</a> inceleyebilir ve nasıl katılbileceğinizi öğrenebilirsiniz.<br>\nHaberdar olmak için aylık bültenimize kaydolabilir ve bizi <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> ve <a href=\"https://twitter.com/wheelmap\">Twitter</a> üzerinden takip edebilirsiniz.. Görüşlerinizi almak ve konuşmak için sizi bekliyoruz.!<br>\nVe şimdi mekanları işaretleme zamanı!<br>\nWheelmap Ekibi",
+        "text_html": "Merhaba,<br>\nWheelmap.org'a (tekrar) hoşgeldiniz! Sizi gördüğümüze sevindik! Wheelmap.org hakkında daha fazla bilgi almak isterseniz <a href=\"http://news.wheelmap.org/en/\">Blog</a> veya <a href=\"http://news.wheelmap.org/en/FAQ/\">SSS</a> sayfalarına göz atabilirsiniz. Ayrıca Wheelmap.org <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projelerini</a> inceleyebilir ve nasıl katılbileceğinizi öğrenebilirsiniz.<br>\nHaberdar olmak için aylık bültenimize kaydolabilir, bizi <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> ve <a href=\"https://twitter.com/wheelmap\">Twitter</a> üzerinden takip edebilirsiniz. Görüşlerinizi almak ve değerlendirmek için sizi bekliyoruz.!<br>\nVe şimdi mekanları işaretleme zamanı!<br>\nWheelmap Ekibi",
         "title": "Genel bakış"
       },
       "widget": {
@@ -1600,7 +1600,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
           "settings": "Ayarlar"
         },
         "providers": "Sağlayıcı",
-        "title": "Ekran aracı",
+        "title": "Widget",
         "width": "Genişlik"
       }
     }

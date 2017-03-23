@@ -16,15 +16,21 @@ pl:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
+      accepted: "musi być zaakceptowane"
       already_confirmed: "zostało już potwierdzone"
+      blank: "musi być wypełnione"
       confirmation: "nie można potwierdzić"
+      empty: "musi być wypełnione"
       equal_to: "musi wynosić dokładnie %{count}"
+      even: "musi być liczbą parzystą"
       exclusion: "jest zarezerwowany"
       expired: "utrata ważności, poproś o nowy"
       greater_than: "musi być większe niż %{count}"
+      greater_than_or_equal_to: "musi być równe lub większe niż %{count}"
       inclusion: "wartość nieważna "
       invalid: "nieważny"
       less_than: "musi wynosić mniej niż %{count}"
+      less_than_or_equal_to: "musi być równe lub mniejsze niż %{count}"
       not_a_number: "nie jest liczbą"
       not_an_integer: "musi być liczbą całkowitą"
       not_found: "nie został odnaleziony"
@@ -32,7 +38,9 @@ pl:
       not_saved:
         one: "błąd nie pozwolił zapisać %{resource}: "
         few: "%{count} błędy nie pozwoliły zapisać %{resource}:"
+        many: "%{count} błędów nie pozwoliło zapisać %{resource}:"
         other: "%{count} błędów nie pozwoliło zapisać %{resource}:"
+      odd: "musi być liczbą nieparzystą"
       taken: "jest już zajęte"
       too_long: "jest za długie (nie więcej niż %{count} znaków)"
       too_short: "jest za krótkie (nie mniej niż %{count} znaków)"
@@ -42,6 +50,7 @@ pl:
       header:
         one: "Obiekt %{model} nie został zapisany, wystąpił błąd "
         few: "Obiekt %{model} nie został zapisany, wystąpiły %{count} błędy"
+        many: "Obiekt %{model} nie został zapisany, wystąpiły %{count} błędy"
         other: "Obiekt %{model} nie został zapisany, wystąpiły %{count} błędy"
   flash:
     actions:
@@ -62,20 +71,25 @@ pl:
     show_unaccessible_places: "Niedostępne dla osób na wózkach"
   formtastic:
     hints:
+      email: "Traktujemy Twój adres poufnie. Obiecujemy nie wysłać spamu!"
       lat: "Przesuń znacznik na mapie w poprawne miejsce"
       osm_username: "Nie jesteś jeszcze członkiem? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Utwórz konto w serwisie Openstreetmap teraz</a>"
       password: "(zostaw to pole puste, jeśli nie chcesz go zmieniać)"
+      phone: "Na przykład: +49 30 12345678"
       website: "Na przykład: http://www.example.com"
     labels:
       category: "Kategoria:"
       centralkey: "Klucz uniwersalny:"
       city: "Miasto:"
+      create: "Stwórz miejsce"
       email: Email
       finish: Koniec
       housenumber: "Nr:"
       lat: Szerokość geograficzna
       lon: Długość geograficzna
       name: "Nazwisko:"
+      osm_password: "Hasło OpenStreetMap"
+      osm_username: "Nazwa konta OpenStreetMap"
       password: Hasło
       password_confirmation: "Powtórz hasło"
       phone: "Telefon:"
@@ -121,6 +135,7 @@ pl:
       placeholder: "np. Sunset Boulevard L.A. lub Brandenburg Gate Berlin"
       title_add_place: "Dodaj nowe miejsce dla tej pozycji!"
     tagline: "Logo wheelmap"
+    title: "Znajdź miejsca przystosowane dla wózków inwalidzkich."
   helpers:
     select:
       prompt: "Wybierz"
@@ -141,6 +156,7 @@ pl:
           upgrade: "Zaktualizuj przegladarkę"
         warning:
           headline: "Przepraszamy!"
+          message: "Wygląda na to, że używasz Internet Explorer. Wheelmap wymaga przeglądarki zgodnej ze standardami. Prosimy, rozważ użycie Firefox, Chrome, Safari lub Opery."
       link:
         node:
           create: "Dodaj nowe miejsce"
@@ -157,6 +173,10 @@ pl:
   landing_pages:
     index:
       wheelchair:
+        limit:
+          headline: "Częściowo przystosowane dla osób na wózkach inwalidzkich %{type} in %{city} (%{count})"
+        'no':
+          headline: "Nieprzystosowane dla osób na wózkach inwalidzkich %{type} in %{city} (%{count})"
         unknown:
           headline: "Wszystkie %{type} w %{city} z nieznanym statusem dostępności dla osób na wózkach (%{count})"
         'yes':
@@ -183,6 +203,7 @@ pl:
       link:
         large_map: "&laquo; Anuluj"
     errors:
+      default: "Ups, coś poszło nie tak. Zostaliśmy poinformowani o tym problemie"
       not_authorized: "Przepraszamy, autoryzacja nie powiodła się"
       not_available: "Przepraszamy, strona jest chwilowo niedostępna"
       not_existent: "Przepraszamy, to miejsce nie jest już dostępne."
@@ -208,6 +229,7 @@ pl:
         large_map: Powiększ
         listing: "Wszystkie miejsca typu '%{type}' w %{city}"
         upload: "Dodaj obraz"
+      more_data_from: "Istnieje więcej informacji o tym miejscu, zatwierdzonych przez:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -240,15 +262,23 @@ pl:
           byte:
             one: bajt
             few: bajtów
+            many: bajtów
             other: bajtów
           gb: GB
           kb: KB
           mb: MB
           tb: TB
+  oauth:
+    application:
+      connect:
+        headline: "Aby tworzyć lub modyfikować miejsca na Wheelmap.org, musisz połączyć swoje konto z kontem OpenStreetMap."
+    callback:
+      notice: "Twoje konto Wheelmap jest teraz połączone z kontem OpenStreetMap %{user}."
   or: lub
   place:
     one: "%{count} miejsce"
     few: "%{count} miejsc"
+    many: "%{count} miejsc"
     other: "%{count} miejsc"
   profile:
     edit:
@@ -289,8 +319,13 @@ pl:
       short: "%d %b %H:%M"
     pm: po południu
   toiletstatus:
+    'no': "Toaleta nieprzystosowana dla wózków"
     unknown: "Status toalety nieznany"
     'yes': "Toaleta przystosowana dla wózków"
+    what_is:
+      'no': "Wewnętrzna minimalna szerokość drzwi to 90cm (35 cali), wolna powierzchnia manewrowa min. 150 x 150 cm (59 x 59), wysokość deski klozetowej odpowiednia dla wózków inwalidzkich, składane uchwyty oraz dostępna umywalka. "
+      'yes': "Wewnętrzna minimalna szerokość drzwi to 90cm (35 cali), wolna powierzchnia manewrowa min. 150 x 150 cm (59 x 59), wysokość deski klozetowej odpowiednia dla wózków inwalidzkich, składane uchwyty oraz dostępna umywalka. "
+      unknown: "Pomóż oznaczając status toalety!"
   user_sessions:
     create:
       activation:
@@ -301,6 +336,7 @@ pl:
     destroy:
       notice: "Do zobaczenia, wróć tutaj wkrótce!"
     new:
+      email: "Adres e-mail"
       login: "Zaloguj się"
       login_with_twitter: "Zaloguj się kontem z Twittera"
       password: Hasło
@@ -308,6 +344,8 @@ pl:
   users:
     after_signup_edit:
       welcome:
+        headline: "Jesteś prawie u celu! Teraz sfinalizuj swoje konto Wheelmap:"
+        set_password_for_mobile: "Udało Ci się zarejestrować z OpenStreetMap. Proszę wybierz adres e-mail, z którego chcesz korzystać z Wheelmap, dzięki czemu możemy na bieżąco informować Cię o naszych działaniach (na przykład liczba oznaczonych miejsc). Możesz uzyskać dostęp do tych informacji w zakładce \"Profil\"."
         text: "Jak możemy się z Tobą skontaktować? Tę informację będziesz mógł później edytować."
     edit:
       headline:

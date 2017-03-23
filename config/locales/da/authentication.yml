@@ -2,6 +2,7 @@ da:
   devise:
     confirmations:
       confirmed: "Din konto er nu aktiveret. Og du er nu logget ind."
+      link: "Har du ikke modtaget bekræftelsesinstruktionerne?"
       send_instructions: "I løbet af få minutter vil du modtage en e-mail med instrukser om aktivering af din konto."
     destroy:
       confirm: "Er du sikker?"

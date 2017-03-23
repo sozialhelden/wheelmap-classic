@@ -4,7 +4,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     "cancel": "Prerušiť",
     "next": "Ďalej",
     "save": "Uložiť",
-    "send": "Send"
+    "send": "Odoslané"
   },
   "active_admin": {
     "access_denied": {
@@ -186,10 +186,10 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         "address": "Adresa",
         "address_city": "Mesto",
         "address_housenumber": "Číslo domu",
-        "address_postcode": "Postcode",
+        "address_postcode": "PSČ",
         "address_street": "Ulica",
         "name": "Meno",
-        "note": "Note",
+        "note": "Poznámky",
         "phone": "Telefón",
         "type": "Typ",
         "website": "Webovská stránka"
@@ -317,16 +317,16 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
   "community_support_form": {
     "new": {
       "form": {
-        "describe": "Please write to us in English or German.",
-        "flash_after_submit": "Thank you for contacting us. Our support team will get back to you as soon as possible.",
-        "header_text_html": "Please check the <a href=\"https://news.wheelmap.org/en/faq/\">frequently asked questions</a> for help first. If the solution to your problem is not there, please answer the following questions so we can fix it.",
-        "note": "Note that Wheelmap is an open-source project run by a non-profit organization and we have limited resources for the app development.",
+        "describe": "Prosím píšte nám iba po anglicky a po nemecky.",
+        "flash_after_submit": "Ďakujeme za správu. Niekto z nášho podporného tímu sa Vám ozve hneď ako to bude možné.",
+        "header_text_html": "Ak potrebuje pomôcť, pozrite sa, prosím, najprv na <a href=\"https://news.wheelmap.org/sk/faq/\">často kladené otázky</a>. Ak tam nenájdete informácie riešiace Váš problém, odpovedzte nám, prosím, na nasledujúce otázky, aby sme to mohli opraviť. ",
+        "note": "Prosím, majte na vedomí, že toto je projekt typu open-source, ktorý je spravovaný neziskovou organizáciou a máme obmedzené zdroje pre vývoj tejto aplikácie.",
         "questions": {
-          "a": "What did you do?",
-          "b": "What did you expect would happen?",
-          "c": "What happened instead?"
+          "a": "Čo ste urobili?",
+          "b": "Aký výsledok Ste očakávali?",
+          "c": "Čo sa stalo namiesto toho?"
         },
-        "submit_button": "Submit",
+        "submit_button": "Odoslať",
         "title": "Nahláste problém"
       }
     }
@@ -613,27 +613,27 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     "dynamic_format": "%{message}",
     "format": "%{attribute} %{message}",
     "messages": {
-      "accepted": "must be accepted",
+      "accepted": "súhlas je nevyhnutný",
       "already_confirmed": "bol už potvrdený, skúste sa prihlásiť",
-      "blank": "must be filled in",
+      "blank": "musí byť vyplnené",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
       "carrierwave_processing_error": "failed to be processed",
       "confirmation": "nebolo potvrdené",
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
-      "empty": "must be filled in",
+      "empty": "je potrebné vyplniť",
       "equal_to": "sa musí rovnať %{count}",
-      "even": "must be an even number",
+      "even": "musí byť párne číslo",
       "exclusion": "je vyhradené pre iný účel",
       "expired": "expiroval, prosím, vyžiadajte si nový",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
       "extension_white_list_error": "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}",
       "greater_than": "musí byť väčšie ako %{count}",
-      "greater_than_or_equal_to": "must be greater than or equal to %{count}",
+      "greater_than_or_equal_to": "musí byť väčšie alebo rovnaké ako %{count}",
       "inclusion": "nie je v zozname povolených hodnôt",
       "invalid": "nie je platná hodnota",
       "less_than": "musí byť menšie ako %{count}",
-      "less_than_or_equal_to": "must be less than or equal to %{count}",
+      "less_than_or_equal_to": "musí byť menšie alebo rovnaké ako %{count}",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
       "not_a_number": "nie je číslo",
@@ -645,7 +645,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         "one": "%{count} chyba zabránila uloženiu %{resource}:",
         "other": "%{count} chýb zabránilo uloženiu %{resource}:"
       },
-      "odd": "must be an odd number",
+      "odd": "musí byť nepárne číslo",
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
@@ -657,7 +657,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": "Website address is not valid."
+          "invalid": "Adresa webovej stránky nie je platná."
         }
       }
     },
@@ -710,26 +710,26 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
   },
   "formtastic": {
     "hints": {
-      "email": "We treat your address confidentially. We promise not to send you spam!",
+      "email": "S tvojou adresou zaobchádzame dôverne. Sľubujeme, že Vám nebudeme posielať spam.",
       "lat": "Pohnite značkou na mape aby ste opravili polohu",
       "osm_username": "Nie ste ešte členom? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Vytvorte si účet na OpenStreetMap</a>",
       "password": "(nechajte prázdne ak nechcete zmeniť)",
-      "phone": "For example: +49 30 12345678",
+      "phone": "Napríklad:  +421 00 12345678",
       "website": "Napríklad: http://www.example.com"
     },
     "labels": {
       "category": "Kategória:",
       "centralkey": "Spoločný kľúč:",
       "city": "Mesto:",
-      "create": "Create a place",
+      "create": "Vytvoriť miesto",
       "email": "E-mail",
       "finish": "Dokončiť",
       "housenumber": "Číslo:",
       "lat": "Zemepisná šírka",
       "lon": "Zemepisná dĺžka",
       "name": "Meno:",
-      "osm_password": "OpenStreetMap password",
-      "osm_username": "OpenStreetMap account name",
+      "osm_password": "OpenStreetMap heslo",
+      "osm_username": "OpenStreetMap prihlasovacie meno",
       "password": "Heslo",
       "password_confirmation": "Zopakujte heslo",
       "phone": "Telefón:",
@@ -755,7 +755,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
+      "description": "Wheelmap.org je online mapa určená na vyhľadávania a označovanie miest prístupných pre vozíčkarov. Zapojte sa označením verejným miest akými sú barym reštaurácie, kiná alebo supermarkety!",
       "homepage": "Domovská stránka",
       "keywords": "miesta prístupné pre vozíčkarov hľadať označovať",
       "search": "Hľadať",
@@ -780,7 +780,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       "projects": "Zapojte sa",
       "report_problem": "Nahláste problém",
       "suggestions": "Návrhy",
-      "travelguide": "Travel guide",
+      "travelguide": "Cestovný sprievodca",
       "what_is_barrier_free": "Čo to znamená \"prístupné pre vozíčkarov\"?",
       "what_is_wheelmap": "Čo to je Wheelmap?"
     },
@@ -791,7 +791,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       "title_add_place": "Pridajte sem nové miesto!"
     },
     "tagline": "Logo Wheelmap",
-    "title": "Find wheelchair accessible places",
+    "title": "Nájdi miesta s bezbariérovým prístupom",
     "toolbar": {
       "categories": "Kategórie"
     }
@@ -821,7 +821,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "Ukázať na Wheelmap.org",
       "filter": {
         "category": "Vyberte kategóriu",
         "deselect_all": "Skryť všetko",
@@ -835,7 +835,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         },
         "warning": {
           "headline": "Ospravedlňujeme sa!",
-          "message": "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
+          "message": "Zdá sa, že používate Internet Explorer. Wheelmap potrebuje pre správne fungovanie prehliadač spĺňajúci štandardné kritériá. Prosím, zvážte použitie niektorého z nasledujúcich prehliadačov: Firefox, Chrome, Safari alebo Opera."
         }
       },
       "link": {
@@ -870,10 +870,10 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     "index": {
       "wheelchair": {
         "limit": {
-          "headline": "All partially wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Všetky %{type} čiastočne prístupné pre vozíčkarov v %{city} (%{count})"
         },
         "no": {
-          "headline": "All not wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Všetky %{type}  neprístupné pre vozíčkarov v %{city} (%{count})"
         },
         "unknown": {
           "headline": "Všetky %{type} v meste %{city} s neznámou dostupnosťou pre vozíčkarov (%{count})\n"
@@ -893,17 +893,17 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": "Choose a category"
+      "prompt": "Zvoľte kategóriu"
     },
     "node": {
-      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
+      "info_edit_position": "Poloha sa zobrazí na Wheelmap tak ako ju vidíte vyššie. Ak značka nie je na správnom mieste, môžete <a href=\"%{url}\"> upraviť jej pozíciu na OpensStreetMap",
       "mail": {
-        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
-        "subject": "[Wheelmap] Problem with %{headline}"
+        "body": "(Prosím, píšte iba po anglicky alebo po nemecky.)\n\n\nAhoj Sozialhelden,\nniečo je zle s polohou : %{url}\n\nProblém je:",
+        "subject": "[Wheelmap] Problém s %{headline}"
       }
     },
     "node_type": {
-      "prompt": "Choose a type"
+      "prompt": "Zvoľte typ"
     }
   },
   "node": {
@@ -932,7 +932,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       }
     },
     "errors": {
-      "default": "Oops something went wrong. We have been informed about this issue",
+      "default": "Hups, niečo sa škaredo pokazilo. Už sme o tom boli informovaný.",
       "not_authorized": "Prihlásenie bolo neúspešné",
       "not_available": "Ospravedlňujeme sa, táto stránka je dočasne nedostupná.",
       "not_existent": "Prepáčte, ale toto miesto už nie je dostupné.",
@@ -1036,7 +1036,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
         "listing": "Všetky miesta typu  '%{type}' v %{city}",
         "upload": "Nahrať obrázok"
       },
-      "more_data_from": "There is more information about this place, validated by:",
+      "more_data_from": "Viac informácii o tomto mieste, overené:",
       "share": {
         "email": "E-mail",
         "facebook": "Facebook",
@@ -1122,11 +1122,11 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
   "oauth": {
     "application": {
       "connect": {
-        "headline": "You need to connect your account with your OpenStreetMap account before you can create or modify places on Wheelmap.org."
+        "headline": "Aby ste mohli pridať alebo upraviť miesto na Wheelmap, musíte spojiť Vaše kontko s kontom na OpenStreetmap."
       }
     },
     "callback": {
-      "notice": "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
+      "notice": "Vaše Wheelmap konto je teraz prepojené s kontom OpenStreetMap %{user}."
     }
   },
   "or": "alebo",
@@ -1504,9 +1504,9 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     "no": "Toaleta neprístupná pre invalidné vozíky",
     "unknown": "Stav WC neznámy",
     "what_is": {
-      "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
-      "unknown": "Help out by marking the toilet status!",
-      "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      "no": "Vnútorná šírka vchodu je min. 90 cm (35 in),  plocha voľného priestoru je min. 150 cm x 150 cm (59 x 59 palcov),  toaleta je vo výške invalidného vozíka, sklápacie držadlá, vyhovujúce umývadlo.",
+      "unknown": "Pomôžte označením stavu toalety!",
+      "yes": "Vnútorná šírka vchodu je min. 90 cm (35 in),  plocha voľného priestoru je min. 150 cm x 150 cm (59 x 59 palcov),  toaleta je vo výške invalidného vozíka, sklápacie držadlá, vyhovujúce umývadlo."
     },
     "yes": "Toaleta prístupná pre invalidné vozíky"
   },
@@ -1524,7 +1524,7 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
       "notice": "Dovidenia, zase sa vráťte. "
     },
     "new": {
-      "email": "Email address",
+      "email": "Emailová adresa",
       "login": "Prihlásiť sa",
       "login_with_twitter": "Prihláste sa cez Twitter",
       "password": "Heslo",
@@ -1534,8 +1534,8 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
   "users": {
     "after_signup_edit": {
       "welcome": {
-        "headline": "You are almost there! Now on to finalize your Wheelmap account:",
-        "set_password_for_mobile": "You have successfully registered with OpenStreetMap. Please choose an email address that you would like Wheelmap to use so we can keep you informed about your activities (for example the number of places you have marked). You can access this information on your \"Profile\".",
+        "headline": "Skoro hotovo! Dokončite teraz vaše konto na Wheelmap:",
+        "set_password_for_mobile": "Boli ste úspešne zaregistrovaný na OpenStreetMap. Prosím zvoľte emailovú adresu, na ktorú si prajete, aby Vám Wheelmap posielal informácieo Vašich aktivitách (napríklad o počte Vami označených miest). Nájdete to v záložke \"Profil\".",
         "text": "Ako vás môžeme kontaktovať? Tieto údaje môžete kedykoľvek zmeniť na svojom profile."
       }
     },

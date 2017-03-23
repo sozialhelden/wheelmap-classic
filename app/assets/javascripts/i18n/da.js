@@ -451,7 +451,7 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "Din konto er nu aktiveret. Og du er nu logget ind.",
-      "link": "You didn't receive confirmation instructions?",
+      "link": "Har du ikke modtaget bekræftelsesinstruktionerne?",
       "send_instructions": "I løbet af få minutter vil du modtage en e-mail med instrukser om aktivering af din konto.",
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
     },
@@ -613,15 +613,15 @@ I18n.translations["da"] = I18n.extend((I18n.translations["da"] || {}), {
     "dynamic_format": "%{message}",
     "format": "%{attribute} %{message}",
     "messages": {
-      "accepted": "must be accepted",
+      "accepted": "skal være accepteret",
       "already_confirmed": "var allerede bekræftet, prøv at logge ind",
-      "blank": "must be filled in",
+      "blank": "skal være udfyldt",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
       "carrierwave_processing_error": "failed to be processed",
       "confirmation": "stemmer ikke overens med bekræftelse",
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
-      "empty": "must be filled in",
+      "empty": "skal være udfyldt",
       "equal_to": "skal være lig med %{count}",
       "even": "must be an even number",
       "exclusion": "er reserveret",

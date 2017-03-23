@@ -476,7 +476,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
     },
     "failure": {
       "already_authenticated": "Jesteś już zalogowany.",
-      "inactive": "Twoje konto nie zostało jeszcze  aktywowane.",
+      "inactive": "Twoje konto nie zostało jeszcze aktywowane.",
       "invalid": "Niepoprawny adres email lub hasło.",
       "invalid_token": "Niepoprawny token.",
       "last_attempt": "You have one more attempt before your account will be locked.",
@@ -488,7 +488,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
     },
     "mailer": {
       "confirmation_instructions": {
-        "landing_page": "Proszę kliknąć w link przesłany właśnie na Twój adres email. Jeśli email nie dotarł, proszę sprawdzić folder ze spamem. Jeśli email rzeczywiście nie dotarł, proszę wrócić do strony rejestracji spróbować ponownie.",
+        "landing_page": "Proszę kliknąć w link przesłany właśnie na Twój adres email. Jeśli email nie dotarł, proszę sprawdzić folder ze spamem. Jeśli email rzeczywiście nie dotarł, proszę wrócić do strony rejestracji i spróbować ponownie.",
         "subject": "Jeszcze tylko jeden krok do aktywacji twojego konta"
       },
       "reset_password_instructions": {
@@ -518,7 +518,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "comment": "Jeżeli nie próbowałeś zmienić hasła, zignoruj ten e-mail.<br/>Twoje hasło nie zostanie zmienione, dopóki nie klikniesz w link powyżej i nie ustawisz nowego hasła.",
         "headline": "Witaj %{email}",
         "link": "Zmień moje hasło",
-        "text": "Otrzymaliśmy żądanie zmiany hasła. Jeśli to Ty, kliknij w następujący link. W innym wypadku - zignoruj tę wiadomość."
+        "text": "Otrzymaliśmy żądanie zmiany hasła. Jeśli to Ty, kliknij w poniższy link. W innym wypadku - zignoruj tę wiadomość."
       },
       "form": {
         "labels": {
@@ -532,7 +532,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
     "passwords": {
       "link": "Zapomniałeś hasła?",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
-      "send_instructions": "Wkrótce powinieneś otrzymać email z instrukcją, jak zresetować hasło.",
+      "send_instructions": "Wkrótce otrzymasz email z instrukcją, jak zresetować hasło.",
       "send_paranoid_instructions": "Jeśli twoje konto istnieje, za kilka minut otrzymasz email z instrukcją, jak zresetować hasło.",
       "updated": "Hasło zostało pomyślnie zmienione, jesteś teraz zalogowany.",
       "updated_not_active": "Twoje hasło zostało zmienione"
@@ -554,14 +554,14 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       "updated": "Konto zostało pomyślnie zaktualizowane."
     },
     "sessions": {
-      "inactive": "Twoje konto nie zostało jeszcze  aktywowane.",
+      "inactive": "Twoje konto nie zostało jeszcze aktywowane.",
       "invalid": "Niepoprawny adres e-mail lub hasło",
       "invalid_token": "Nieprawidłowy token autoryzacji",
       "link": "Zaloguj się",
       "locked": "Twoje konto jest zablokowane",
       "new": {
         "no_osm_account": "Nie masz konta w OpenStreetMap?",
-        "osm_promo_text": "Wheelmap bazuje na danych mapowych OpenStreetMap (OSM). OpenStreetMap jest bezpłatną mapą świata, tworzoną przez ludzi takich jak Ty. Jest jak Wikipedia dla map. Aby móc zmieniać lub tworzyć miejsca, musisz posiadać konto na OpenStreetMap i być na nim zalogowany.",
+        "osm_promo_text": "Wheelmap bazuje na danych przestrzennych OpenStreetMap (OSM). OpenStreetMap jest bezpłatną mapą świata, tworzoną przez ludzi takich jak Ty. Jest jak Wikipedia dla map. Aby móc zmieniać lub tworzyć miejsca, musisz posiadać konto na OpenStreetMap i być na nim zalogowany.",
         "promo_text_thank_you": "Dziękujemy z Twoje wsparcie!",
         "sign_in_with": "Zaloguj się za pomocą %{kind}",
         "sign_up_with_osm": "Zarejestruj się.",
@@ -598,7 +598,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
           "email": "E-mail",
           "password": "Hasło",
           "password_confirmation": "Powtórz hasło",
-          "wants_newsletter": "Tak, chcę otrzymywać bieżące informacje o Wheelmap - ale proszę, nie więcej niż raz na miesiąc."
+          "wants_newsletter": "Tak, chcę otrzymywać bieżące informacje o Wheelmap - ale proszę, nie więcej niż raz w miesiącu."
         },
         "submit": "Zarejestruj się"
       },
@@ -615,27 +615,27 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
     "dynamic_format": "%{message}",
     "format": "%{attribute} %{message}",
     "messages": {
-      "accepted": "must be accepted",
+      "accepted": "musi być zaakceptowane",
       "already_confirmed": "zostało już potwierdzone",
-      "blank": "must be filled in",
+      "blank": "musi być wypełnione",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
       "carrierwave_processing_error": "failed to be processed",
       "confirmation": "nie można potwierdzić",
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
-      "empty": "must be filled in",
+      "empty": "musi być wypełnione",
       "equal_to": "musi wynosić dokładnie %{count}",
-      "even": "must be an even number",
+      "even": "musi być liczbą parzystą",
       "exclusion": "jest zarezerwowany",
       "expired": "utrata ważności, poproś o nowy",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
       "extension_white_list_error": "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}",
       "greater_than": "musi być większe niż %{count}",
-      "greater_than_or_equal_to": "must be greater than or equal to %{count}",
+      "greater_than_or_equal_to": "musi być równe lub większe niż %{count}",
       "inclusion": "wartość nieważna ",
       "invalid": "nieważny",
       "less_than": "musi wynosić mniej niż %{count}",
-      "less_than_or_equal_to": "must be less than or equal to %{count}",
+      "less_than_or_equal_to": "musi być równe lub mniejsze niż %{count}",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
       "not_a_number": "nie jest liczbą",
@@ -644,10 +644,11 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       "not_locked": "nie został zablokowany",
       "not_saved": {
         "few": "%{count} błędy nie pozwoliły zapisać %{resource}:",
+        "many": "%{count} błędów nie pozwoliło zapisać %{resource}:",
         "one": "błąd nie pozwolił zapisać %{resource}: ",
         "other": "%{count} błędów nie pozwoliło zapisać %{resource}:"
       },
-      "odd": "must be an odd number",
+      "odd": "musi być liczbą nieparzystą",
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
@@ -667,6 +668,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       "body": "Nastąpiły problemy z następującymi polami:",
       "header": {
         "few": "Obiekt %{model} nie został zapisany, wystąpiły %{count} błędy",
+        "many": "Obiekt %{model} nie został zapisany, wystąpiły %{count} błędy",
         "one": "Obiekt %{model} nie został zapisany, wystąpił błąd ",
         "other": "Obiekt %{model} nie został zapisany, wystąpiły %{count} błędy"
       }
@@ -713,26 +715,26 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
   "formtastic": {
     "create": "Utwórz %{model}",
     "hints": {
-      "email": "We treat your address confidentially. We promise not to send you spam!",
+      "email": "Traktujemy Twój adres poufnie. Obiecujemy nie wysłać spamu!",
       "lat": "Przesuń znacznik na mapie w poprawne miejsce",
       "osm_username": "Nie jesteś jeszcze członkiem? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Utwórz konto w serwisie Openstreetmap teraz</a>",
       "password": "(zostaw to pole puste, jeśli nie chcesz go zmieniać)",
-      "phone": "For example: +49 30 12345678",
+      "phone": "Na przykład: +49 30 12345678",
       "website": "Na przykład: http://www.example.com"
     },
     "labels": {
       "category": "Kategoria:",
       "centralkey": "Klucz uniwersalny:",
       "city": "Miasto:",
-      "create": "Create a place",
+      "create": "Stwórz miejsce",
       "email": "Email",
       "finish": "Koniec",
       "housenumber": "Nr:",
       "lat": "Szerokość geograficzna",
       "lon": "Długość geograficzna",
       "name": "Nazwisko:",
-      "osm_password": "OpenStreetMap password",
-      "osm_username": "OpenStreetMap account name",
+      "osm_password": "Hasło OpenStreetMap",
+      "osm_username": "Nazwa konta OpenStreetMap",
       "password": "Hasło",
       "password_confirmation": "Powtórz hasło",
       "phone": "Telefon:",
@@ -795,7 +797,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       "title_add_place": "Dodaj nowe miejsce dla tej pozycji!"
     },
     "tagline": "Logo wheelmap",
-    "title": "Find wheelchair accessible places",
+    "title": "Znajdź miejsca przystosowane dla wózków inwalidzkich.",
     "toolbar": {
       "categories": "Kategoria"
     }
@@ -839,7 +841,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         },
         "warning": {
           "headline": "Przepraszamy!",
-          "message": "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
+          "message": "Wygląda na to, że używasz Internet Explorer. Wheelmap wymaga przeglądarki zgodnej ze standardami. Prosimy, rozważ użycie Firefox, Chrome, Safari lub Opery."
         }
       },
       "link": {
@@ -874,10 +876,10 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
     "index": {
       "wheelchair": {
         "limit": {
-          "headline": "All partially wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Częściowo przystosowane dla osób na wózkach inwalidzkich %{type} in %{city} (%{count})"
         },
         "no": {
-          "headline": "All not wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Nieprzystosowane dla osób na wózkach inwalidzkich %{type} in %{city} (%{count})"
         },
         "unknown": {
           "headline": "Wszystkie %{type} w %{city} z nieznanym statusem dostępności dla osób na wózkach (%{count})"
@@ -936,7 +938,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       }
     },
     "errors": {
-      "default": "Oops something went wrong. We have been informed about this issue",
+      "default": "Ups, coś poszło nie tak. Zostaliśmy poinformowani o tym problemie",
       "not_authorized": "Przepraszamy, autoryzacja nie powiodła się",
       "not_available": "Przepraszamy, strona jest chwilowo niedostępna",
       "not_existent": "Przepraszamy, to miejsce nie jest już dostępne.",
@@ -1040,7 +1042,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "listing": "Wszystkie miejsca typu '%{type}' w %{city}",
         "upload": "Dodaj obraz"
       },
-      "more_data_from": "There is more information about this place, validated by:",
+      "more_data_from": "Istnieje więcej informacji o tym miejscu, zatwierdzonych przez:",
       "share": {
         "email": "Email",
         "facebook": "Facebook",
@@ -1101,6 +1103,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         "units": {
           "byte": {
             "few": "bajtów",
+            "many": "bajtów",
             "one": "bajt",
             "other": "bajtów"
           },
@@ -1126,16 +1129,17 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
   "oauth": {
     "application": {
       "connect": {
-        "headline": "You need to connect your account with your OpenStreetMap account before you can create or modify places on Wheelmap.org."
+        "headline": "Aby tworzyć lub modyfikować miejsca na Wheelmap.org, musisz połączyć swoje konto z kontem OpenStreetMap."
       }
     },
     "callback": {
-      "notice": "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
+      "notice": "Twoje konto Wheelmap jest teraz połączone z kontem OpenStreetMap %{user}."
     }
   },
   "or": "lub",
   "place": {
     "few": "%{count} miejsc",
+    "many": "%{count} miejsc",
     "one": "%{count} miejsce",
     "other": "%{count} miejsc"
   },
@@ -1506,12 +1510,12 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
     "pm": "po południu"
   },
   "toiletstatus": {
-    "no": "No wheelchair accessible toilet",
+    "no": "Toaleta nieprzystosowana dla wózków",
     "unknown": "Status toalety nieznany",
     "what_is": {
-      "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
-      "unknown": "Help out by marking the toilet status!",
-      "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      "no": "Wewnętrzna minimalna szerokość drzwi to 90cm (35 cali), wolna powierzchnia manewrowa min. 150 x 150 cm (59 x 59), wysokość deski klozetowej odpowiednia dla wózków inwalidzkich, składane uchwyty oraz dostępna umywalka. ",
+      "unknown": "Pomóż oznaczając status toalety!",
+      "yes": "Wewnętrzna minimalna szerokość drzwi to 90cm (35 cali), wolna powierzchnia manewrowa min. 150 x 150 cm (59 x 59), wysokość deski klozetowej odpowiednia dla wózków inwalidzkich, składane uchwyty oraz dostępna umywalka. "
     },
     "yes": "Toaleta przystosowana dla wózków"
   },
@@ -1529,7 +1533,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       "notice": "Do zobaczenia, wróć tutaj wkrótce!"
     },
     "new": {
-      "email": "Email address",
+      "email": "Adres e-mail",
       "login": "Zaloguj się",
       "login_with_twitter": "Zaloguj się kontem z Twittera",
       "password": "Hasło",
@@ -1539,8 +1543,8 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
   "users": {
     "after_signup_edit": {
       "welcome": {
-        "headline": "You are almost there! Now on to finalize your Wheelmap account:",
-        "set_password_for_mobile": "You have successfully registered with OpenStreetMap. Please choose an email address that you would like Wheelmap to use so we can keep you informed about your activities (for example the number of places you have marked). You can access this information on your \"Profile\".",
+        "headline": "Jesteś prawie u celu! Teraz sfinalizuj swoje konto Wheelmap:",
+        "set_password_for_mobile": "Udało Ci się zarejestrować z OpenStreetMap. Proszę wybierz adres e-mail, z którego chcesz korzystać z Wheelmap, dzięki czemu możemy na bieżąco informować Cię o naszych działaniach (na przykład liczba oznaczonych miejsc). Możesz uzyskać dostęp do tych informacji w zakładce \"Profil\".",
         "text": "Jak możemy się z Tobą skontaktować? Tę informację będziesz mógł później edytować."
       }
     },

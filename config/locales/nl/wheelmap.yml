@@ -262,6 +262,9 @@ nl:
           kb: KB
           mb: MB
           tb: TB
+  oauth:
+    callback:
+      notice: "Je Wheelmap account is nu gekoppeld met de OpenStreetMap account %{user}."
   or: of
   place:
     one: "%{count} plaats"
@@ -308,6 +311,9 @@ nl:
     'no': "WC niet rolstoeltoegankelijk"
     unknown: "Status van de toilet is onbekend"
     'yes': "Rolstoeltoegankelijk toilet"
+    what_is:
+      'no': "Deuropening breedte minimaal 90 cm (35 in), vrij vloeroppervlak minimaal 150 x 150 cm (59 x 59 in), rolstoeltoegankelijk toilet, toiletbeugels en een te bereiken wastafel. "
+      unknown: "Help ons door de status van het toilet te markeren!"
   user_sessions:
     create:
       activation:
@@ -326,6 +332,8 @@ nl:
   users:
     after_signup_edit:
       welcome:
+        headline: "Je bent er bijna! Ga door met het afronden van je Wheelmap account:"
+        set_password_for_mobile: "Je hebt je succesvol geregistreerd op OpenStreetMap. Kies een emailadres dat je voor Wheelmap wil gebruiken zodat we je op de hoogte kunnen houden van je activiteiten (bijvoorbeeld het aantal plaatsen dat je hebt gemarkeerd). Je kunt deze informatie inzien via je \"Profiel\"."
         text: "Hoe kunnen wij contact met je opnemen? Je kan deze informatie later in je profiel veranderen."
     edit:
       headline:
