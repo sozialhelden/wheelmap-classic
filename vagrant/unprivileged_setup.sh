@@ -4,7 +4,7 @@
 echo "export QT_QPA_PLATFORM=offscreen" >> ~/.profile
 
 # Move into the appropriate folder
-cd /vagrant
+cd /vagrant || exit
 
 # Shuffle around configuration files.
 cp config/secrets.sample.yml config/secrets.yml
