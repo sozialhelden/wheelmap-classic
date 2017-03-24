@@ -1,10 +1,3 @@
 %section.node-streetview
   %h2=t('.streetview')
   %p.node-streetview-viewport#streetview{ 'data-lat': node_streetview.lat, 'data-lon': node_streetview.lon }
-  .pull-right
-    %p
-      %small
-        - if node_streetview.osm_id < 0
-          = link_to t('nodes.show.show-in-osm'), "http://openstreetmap.org/browse/way/#{node_streetview.osm_id.abs}"
-        - else
-          = link_to t('nodes.show.show-in-osm'), "http://openstreetmap.org/browse/node/#{node_streetview.osm_id}"

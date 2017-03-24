@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe LandingPagesController do
-  let(:region)    { FactoryGirl::create(:region) }
-  let(:node_type) { FactoryGirl::create(:node_type) }
+  let(:region)    { FactoryGirl.create(:region) }
+  let(:node_type) { FactoryGirl.create(:node_type) }
   describe 'GET /index' do
     context 'with existing region' do
       before do

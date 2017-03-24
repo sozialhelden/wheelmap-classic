@@ -4,13 +4,12 @@ describe Api::AssetsController do
   let(:user) { FactoryGirl.create(:user) }
 
   describe 'index action' do
-
     def json_response
       JSON.parse(response.body)
     end
 
     before do
-      get :index, :api_key => user.authentication_token
+      get :index, api_key: user.authentication_token
     end
 
     it 'returns http 200 success' do
@@ -18,23 +17,23 @@ describe Api::AssetsController do
     end
 
     it 'returns valid json' do
-      expect {
+      expect do
         json_response
-      }.to_not raise_error
+      end.to_not raise_error
     end
 
     describe 'the json response' do
       let(:assets) { json_response['assets'] }
 
       describe 'marker' do
-        let(:marker) { assets.find { |asset| asset['name'] == 'marker' }}
+        let(:marker) { assets.find { |asset| asset['name'] == 'marker' } }
         it 'has correct url' do
           expect(marker['url']).to eq 'https://localhost:3000/marker.zip'
         end
       end
 
       describe 'icons' do
-        let(:icons) { assets.find { |asset| asset['name'] == 'icons' }}
+        let(:icons) { assets.find { |asset| asset['name'] == 'icons' } }
         it 'has correct url' do
           expect(icons['url']).to eq 'https://localhost:3000/icons.zip'
         end

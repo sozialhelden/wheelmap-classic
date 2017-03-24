@@ -1,5 +1,4 @@
 ActiveAdmin.register Region do
-
   filter :name
   filter :created_at
   filter :updated_at
@@ -28,9 +27,7 @@ ActiveAdmin.register Region do
   show do |r|
     attributes_table do
       row :parent do
-        if !r.parent.nil?
-          link_to(r.parent.name, admin_region_path(r.parent))
-        end
+        link_to(r.parent.name, admin_region_path(r.parent)) unless r.parent.nil?
       end
       row :id
       row :name
@@ -71,5 +68,4 @@ ActiveAdmin.register Region do
     end
     f.actions
   end
-
 end

@@ -1,14 +1,13 @@
 require 'rails_helper'
 
 describe Photo do
-
   subject { FactoryGirl.build :photo }
 
-  it "should create a valid photo" do
+  it 'should create a valid photo' do
     expect(subject).to be_valid
   end
 
-  it "should extract date time at creation" do
+  it 'should extract date time at creation' do
     expect(subject).to receive(:extract_date_time)
     subject.save
   end
@@ -22,5 +21,4 @@ describe Photo do
     it { is_expected.to validate_presence_of :poi_id }
     it { is_expected.to validate_presence_of :user_id }
   end
-
 end

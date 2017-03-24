@@ -1,11 +1,10 @@
 class IphoneCounter < ActiveRecord::Base
-
-  validates :install_id, :uniqueness => true
+  validates :install_id, uniqueness: true
 
   before_save :remove_whitespace
 
   def self.outdated
-    self.where(["created_at < ?", 30.days.ago])
+    where(['created_at < ?', 30.days.ago])
   end
 
   def self.unique_installs
@@ -14,25 +13,22 @@ class IphoneCounter < ActiveRecord::Base
 
   def self.device_versions
     versions = select('*, COUNT(id) AS counter').group('device_version')
-    versions.inject({}) do |memo, v|
+    versions.each_with_object({}) do |v, memo|
       memo[v.device_version] = v.counter unless v.device_version.blank?
-      memo
     end
   end
 
   def self.os_versions
     versions = select('*, COUNT(id) AS counter').group('os_version')
-    versions.inject({}) do |memo, v|
+    versions.each_with_object({}) do |v, memo|
       memo[v.os_version] = v.counter unless v.os_version.blank?
-      memo
     end
   end
 
   def self.app_versions
     versions = select('*, COUNT(id) AS counter').group('app_version')
-    versions.inject({}) do |memo, v|
+    versions.each_with_object({}) do |v, memo|
       memo[v.app_version] = v.counter unless v.app_version.blank?
-      memo
     end
   end
 
@@ -41,9 +37,9 @@ class IphoneCounter < ActiveRecord::Base
   end
 
   def remove_whitespace
-    app_version    =  app_version.strip    unless app_version.blank?
-    device_version =  device_version.strip unless device_version.blank?
-    install_id     =  install_id.strip     unless install_id.blank?
-    os_version     =  os_version.strip     unless os_version.blank?
+    self.app_version    =  app_version.strip    unless app_version.blank?
+    self.device_version =  device_version.strip unless device_version.blank?
+    self.install_id     =  install_id.strip     unless install_id.blank?
+    self.os_version     =  os_version.strip     unless os_version.blank?
   end
 end

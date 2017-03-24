@@ -6,13 +6,12 @@ Wheelmap::Application.configure do
   # since you don't have to restart the webserver when you make code changes.
   config.cache_classes = false
 
-  config.cache_store = :mem_cache_store, 'localhost', { :namespace => "wheelmap/#{Rails.env}/",
-                                                        :c_threshold => 10_000,
-                                                        :compression => true,
-                                                        :debug => Rails.env.development?,
-                                                        :readonly => false,
-                                                        :urlencode => false
-                                                      }
+  config.cache_store = :mem_cache_store, 'localhost', { namespace: "wheelmap/#{Rails.env}/",
+                                                        c_threshold: 10_000,
+                                                        compression: true,
+                                                        debug: Rails.env.development?,
+                                                        readonly: false,
+                                                        urlencode: false }
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
@@ -25,7 +24,7 @@ Wheelmap::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => '0.0.0.0:3000' }
+  config.action_mailer.default_url_options = { host: '0.0.0.0:3000' }
 
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
@@ -46,6 +45,4 @@ Wheelmap::Application.configure do
   config.assets.digest = false
 
   config.ember.variant = :development
-
 end
-

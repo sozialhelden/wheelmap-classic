@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe CategoriesController do
-
   before do
     category = FactoryGirl.create(:category)
     FactoryGirl.create_list(:node_type, 4, category: category)
@@ -18,7 +17,7 @@ describe CategoriesController do
 
     describe 'the response' do
       it 'has categories' do
-        expect(json_response['categories'].length).to eq 1
+        expect(json_response['categories'].length).to be > 0
       end
     end
   end

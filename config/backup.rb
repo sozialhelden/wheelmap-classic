@@ -6,20 +6,19 @@
 #
 # $ backup perform -t my_backup [-c <path_to_configuration_file>]
 
-database_yml = File.expand_path('../database.yml',  __FILE__)
+database_yml = File.expand_path('../database.yml', __FILE__)
 RAILS_ENV    = ENV['RAILS_ENV'] || 'development'
 
 require 'yaml'
 config = YAML.load_file(database_yml)
 
 Backup::Model.new(:my_backup, 'Database backup of wheelmap.org') do
-
   database MySQL do |db|
-    db.name               = config[RAILS_ENV]["database"]
-    db.username           = config[RAILS_ENV]["username"]
-    db.password           = config[RAILS_ENV]["password"]
-    db.host               = config[RAILS_ENV]["host"]
-    db.port               = config[RAILS_ENV]["port"]
+    db.name               = config[RAILS_ENV]['database']
+    db.username           = config[RAILS_ENV]['username']
+    db.password           = config[RAILS_ENV]['password']
+    db.host               = config[RAILS_ENV]['host']
+    db.port               = config[RAILS_ENV]['port']
     db.skip_tables        = ['pois']
   end
 
@@ -35,7 +34,7 @@ Backup::Model.new(:my_backup, 'Database backup of wheelmap.org') do
   # Local (Copy) [Storage]
   #
   store_with Local do |local|
-    local.path       = "tmp/var/backups/"
+    local.path       = 'tmp/var/backups/'
     local.keep       = 5
   end
 

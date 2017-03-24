@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe ProvidedPoi do
-
   subject do
     FactoryGirl.build(:provided_poi)
   end
@@ -21,6 +20,6 @@ describe ProvidedPoi do
       subject.save!
     end
 
-    it { is_expected.to validate_uniqueness_of(:poi_id).scoped_to(:provider_id)}
+    it { is_expected.to validate_uniqueness_of(:poi_id).scoped_to(:provider_id) }
   end
 end

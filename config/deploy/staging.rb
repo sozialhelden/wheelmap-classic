@@ -1,7 +1,7 @@
 # Settings for delayed job
 set :delayed_job_server_role, :worker
-set :delayed_job_args, "-p wheelmap_staging"
-set :rails_env, "staging" #added for delayed job
+set :delayed_job_args, '-p wheelmap_staging'
+set :rails_env, 'staging' # added for delayed job
 
 set :stage, :staging
 set :deploy_to, "/var/apps/#{fetch(:application)}/#{fetch(:stage)}"
@@ -9,7 +9,7 @@ set :deploy_to, "/var/apps/#{fetch(:application)}/#{fetch(:stage)}"
 set :branch, ENV['BRANCH'] || 'master'
 set :rev, proc { `git rev-parse --short #{fetch(:branch)}`.chomp }
 
-set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
+set :whenever_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
 
 # Simple Role Syntax
 # ==================
@@ -17,10 +17,10 @@ set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 # is considered to be the first unless any hosts have the primary
 # property set.  Don't declare `role :all`, it's a meta role.
 
-role :app,    %w{176.9.63.171}
-role :web,    %w{176.9.63.171}
-role :db,     %w{176.9.63.171}
-role :worker, %w{176.9.63.171}
+role :app,    %w(176.9.63.171)
+role :web,    %w(176.9.63.171)
+role :db,     %w(176.9.63.171)
+role :worker, %w(176.9.63.171)
 
 # Extended Server Syntax
 # ======================
@@ -28,8 +28,7 @@ role :worker, %w{176.9.63.171}
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '176.9.63.171', user: 'rails', roles: %w{web app}, my_property: :my_value
-
+server '176.9.63.171', user: 'rails', roles: %w(web app), my_property: :my_value
 
 # Custom SSH Options
 # ==================
@@ -38,13 +37,13 @@ server '176.9.63.171', user: 'rails', roles: %w{web app}, my_property: :my_value
 #
 # Global options
 # --------------
-set :ssh_options, {
-  keys: %w(~/.ssh/wheelmap_rsa),
-  forward_agent: true,
-  config: true,
-  port: 22022
-  # auth_methods: %w(password)
-}
+set :ssh_options,
+    keys: %w(~/.ssh/wheelmap_rsa),
+    forward_agent: true,
+    config: true,
+    port: 22_022
+# auth_methods: %w(password)
+
 #
 # And/or per server (overrides global)
 # ------------------------------------

@@ -1,6 +1,6 @@
 #= require jquery
 #= require jquery_ujs
-#= require accessibility.cloud.1.2.8.js
+#= require accessibility.cloud.2.2.0.min.js
 #= require jquery/jquery.cookies.js
 #= require i18n.js
 #= require bootstrap-transition
@@ -12,11 +12,9 @@
 #= require bootstrap-popover
 #= require bootstrap-alert
 #= require bootstrap-select
-#
 #= require jquery/jquery.magnific-popup.js
 #= require responsive-popover
 #= require dropzone
-#= require mapillary
 
 I18n.defaultLocale = 'en'
 I18n.locale = $('html').attr('lang')
@@ -269,6 +267,9 @@ if $dropzoneClickable.length > 0
 
   streetViewService.getPanorama streetViewLocationRequest, (data, status) ->
     unless status == google.maps.StreetViewStatus.OK
+      nodeStreetView = document.getElementsByClassName('node-streetview')
+      return if nodeStreetView.length == 0
+      nodeStreetView[0].classList.add('invisible')
       return
 
     heading = google.maps.geometry.spherical.computeHeading(data.location.latLng, position)

@@ -1,9 +1,7 @@
 class TermsController < ApplicationController
-
   before_filter :store_location
   layout 'relaunch'
-  def index
-  end
+  def index; end
 
   protected
 

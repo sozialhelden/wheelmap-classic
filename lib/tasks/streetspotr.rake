@@ -1,5 +1,4 @@
 namespace :streetspotr do
-
   desc 'Check data from StreetSpotr'
   task :check do
     csv_file = ENV['file']
@@ -31,7 +30,7 @@ namespace :streetspotr do
   end
 
   desc 'Import data from StreetSpotr'
-  task :import => :environment do
+  task import: :environment do
     csv_file = ENV['file']
     raise 'Usage: bundle exec rake streetspotr:import file=<your_csv_file>' unless csv_file
 
@@ -57,7 +56,11 @@ namespace :streetspotr do
         p.save
       else
         # Find the POI
-        poi = Poi.find(osm_id.to_i) rescue nil
+        poi = begin
+                Poi.find(osm_id.to_i)
+              rescue
+                nil
+              end
 
         unless poi
           puts 'Skipped: Removed POI.'
@@ -114,7 +117,7 @@ namespace :streetspotr do
   end
 
   def read_status(row, key)
-    if row.has_key? key
+    if row.key? key
       status = row[key].to_s.strip.downcase
 
       return 'yes' if %w(yes ja).include? status
@@ -124,7 +127,7 @@ namespace :streetspotr do
     key_yes = (key.to_s + '_yes').to_sym
     key_no = (key.to_s + '_no').to_sym
 
-    if row.has_key? key_yes and row.has_key? key_no
+    if row.key?(key_yes) && row.key?(key_no)
       status_yes = !row[key_yes].to_i.zero?
       status_no = !row[key_no].to_i.zero?
 
@@ -133,7 +136,7 @@ namespace :streetspotr do
       return 'unknown'
     end
 
-    raise "Cannot read value for #{key.to_s}."
+    raise "Cannot read value for #{key}."
   end
 
   def photo(node, row)
@@ -149,17 +152,17 @@ namespace :streetspotr do
   def minimal_status(stati)
     return 'no' if stati.include?('no')
     return 'limited' if stati.include?('limited')
-    return stati.first
+    stati.first
   end
 
-  def wheelchair_status(has_step, indoor)
-    # TODO Add the indoor again when the Streetspotr questions got fixed
+  def wheelchair_status(has_step, _indoor)
+    # TODO: Add the indoor again when the Streetspotr questions got fixed
     return 'no' if has_step == 'yes'
-    return 'unknown'
+    'unknown'
   end
 
   def wheelchair_toilet(status, toilet)
     return 'unknown' if status == 'unknown'
-    return toilet
+    toilet
   end
 end

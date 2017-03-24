@@ -17,13 +17,13 @@ describe NodeTypesController do
     end
 
     context 'with ids' do
-      let(:node_types) { FactoryGirl::create_list(:node_type, 5) }
-      let(:ids) {
+      let(:node_types) { FactoryGirl.create_list(:node_type, 5) }
+      let(:ids) do
         [
           node_types.first.id,
           node_types.last.id
         ]
-      }
+      end
       before do
         get :index, ids: ids, format: :json
       end
@@ -39,7 +39,7 @@ describe NodeTypesController do
   end
 
   describe 'GET show/:id' do
-    let(:node_types) { FactoryGirl::create_list(:node_type, 5) }
+    let(:node_types) { FactoryGirl.create_list(:node_type, 5) }
     before do
       get :show, id: node_types.first.id, format: :json
     end

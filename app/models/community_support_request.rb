@@ -1,7 +1,7 @@
 class CommunitySupportRequest
   include ActiveModel::Validations
   attr_accessor :name, :email, :message, :osm_username, :is_logged_in,
-    :last_zoom_level, :latitude, :longitude, :wheelchair_status_filters, :category_filters, :toilet_filters
+                :last_zoom_level, :latitude, :longitude, :wheelchair_status_filters, :category_filters, :toilet_filters
 
   validates_presence_of :name, :email, :message
   validates :email, format: { with: /@/ }
@@ -53,14 +53,14 @@ class CommunitySupportRequest
     if filters
       filters
     else
-      ["Alle aktiv"]
+      ['Alle aktiv']
     end
   end
 
   def localize_status_filters(filters)
     return ['Alle aktiviert'] if filters.nil?
 
-    return ['Keine aktiv'] if filters.length == 0
+    return ['Keine aktiv'] if filters.empty?
 
     filters.map do |filter|
       case filter.downcase

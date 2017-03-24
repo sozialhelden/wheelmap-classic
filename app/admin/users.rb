@@ -1,5 +1,4 @@
 ActiveAdmin.register User do
-
   scope :wants_newsletter
   scope :no_osm_id
   scope :no_oauth_token
@@ -9,7 +8,7 @@ ActiveAdmin.register User do
   filter :first_name
   filter :last_name
   filter :email
-  filter :wants_newsletter, :as => :check_boxes
+  filter :wants_newsletter, as: :check_boxes
   filter :sign_in_count
   filter :current_sign_in_at
   filter :current_sign_in_ip
@@ -24,8 +23,7 @@ ActiveAdmin.register User do
   filter :created_at
   filter :updated_at
   filter :accepted_at
-  filter :providers, :collection => Provider.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}
-
+  filter :providers, collection: Provider.all.each_with_object([]) { |r, memo| memo << [r.name, r.id]; }
 
   controller do
     def update
@@ -52,7 +50,7 @@ ActiveAdmin.register User do
         link_to u.osm_username, "#{OpenStreetMapConfig.oauth_site}/user/#{u.osm_username}"
       end
     end
-    column :photos, :sortable => :photos_count do |u|
+    column :photos, sortable: :photos_count do |u|
       link_to u.photos.count, admin_user_photos_path(u) if u.photos.count > 0
     end
     column :sign_in_count
@@ -66,15 +64,15 @@ ActiveAdmin.register User do
     f.inputs do
       f.input :first_name
       f.input :last_name
-      f.input :email, :input_html => { :readonly => true }, :hint => false
+      f.input :email, input_html: { readonly: true }, hint: false
       f.input :wants_newsletter
     end
-    f.inputs "OSM" do
-      f.input :osm_id, :label => 'OSM ID'
-      f.input :osm_username, :label => 'OSM Username', :hint => false
+    f.inputs 'OSM' do
+      f.input :osm_id, label: 'OSM ID'
+      f.input :osm_username, label: 'OSM Username', hint: false
     end
-    f.inputs "Providers" do
-      f.input :providers, :collection => Provider.all.inject([]){|memo,r| memo << [r.name, r.id]; memo}
+    f.inputs 'Providers' do
+      f.input :providers, collection: Provider.all.each_with_object([]) { |r, memo| memo << [r.name, r.id]; }
     end
     f.actions
   end

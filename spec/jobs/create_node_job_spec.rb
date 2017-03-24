@@ -1,20 +1,19 @@
 require 'rails_helper'
 
 describe CreateNodeJob do
-
   before do
     User.delete_all
   end
 
   let(:user)      { FactoryGirl.create(:authorized_user) }
-  let(:changeset) { Rosemary::Changeset.new(:id => 12345, :open? => true) }
+  let(:changeset) { Rosemary::Changeset.new(id: 12_345, open?: true) }
 
-  subject {
+  subject do
     CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'yes', 'toilets:wheelchair' => 'yes', 'amenity' => 'bar', 'name' => 'White horse', 'operator' => 'Adolf Präg GmbH & Co. KG' }, user, 'create_iphone')
-  }
+  end
 
-  it "should create a Node" do
-    api = double(:find_or_create_open_changeset => changeset)
+  it 'should create a Node' do
+    api = double(find_or_create_open_changeset: changeset)
 
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:create) do |node, _|
@@ -26,27 +25,31 @@ describe CreateNodeJob do
       expect(node.tags['name']).to eq 'White horse'
       expect(node.tags['operator']).to eq 'Adolf Präg GmbH &amp; Co. KG'
     end
-    job = subject
+
+    subject
+
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
     expect(failures).to eql 0
   end
 
-  it "increments the counter" do
-    api = double(:find_or_create_open_changeset => changeset)
+  it 'increments the counter' do
+    api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:create)
     expect_any_instance_of(User).to receive(:increment!).with(:create_counter)
-    job = subject
+
+    subject
+
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
     expect(failures).to eql 0
   end
 
-  it "does not increment counter if terms not accepted" do
-    user = FactoryGirl.create(:authorized_user, :terms => false)
-    job = CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'yes', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
-    api = double(:find_or_create_open_changeset => changeset)
+  it 'does not increment counter if terms not accepted' do
+    user = FactoryGirl.create(:authorized_user, terms: false)
+    CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'yes', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
+    api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:create)
     expect_any_instance_of(User).not_to receive(:increment!)
@@ -55,27 +58,28 @@ describe CreateNodeJob do
     expect(failures).to eql 0
   end
 
+  it 'tries to find a changeset for the user' do
+    expect(Rosemary::Api).to receive(:new).and_return(api = double)
 
-  it "tries to find a changeset for the user" do
-    expect(Rosemary::Api).to receive(:new).and_return(api = double())
+    expect(api).to receive(:find_or_create_open_changeset).with(user.changeset_id, anything).and_return(changeset)
+    expect(api).to receive(:create).with(anything, changeset)
 
-    expect(api).to receive(:find_or_create_open_changeset).with(user.changeset_id, anything()).and_return(changeset)
-    expect(api).to receive(:create).with(anything(), changeset)
+    subject
 
-    job = subject
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
     expect(failures).to eql 0
   end
 
   it "updates the users' changeset id" do
-    api = double(:find_or_create_open_changeset => changeset)
+    api = double(find_or_create_open_changeset: changeset)
     user.changeset_id = changeset.id + 1
 
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:create)
 
-    job = subject
+    subject
+
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
     expect(failures).to eql 0
@@ -83,15 +87,13 @@ describe CreateNodeJob do
     expect(user.reload.changeset_id).to eq(changeset.id)
   end
 
-  context "unknown value" do
-
-    subject {
+  context 'unknown value' do
+    subject do
       CreateNodeJob.enqueue(52.4, 13.0, { 'wheelchair' => 'unknown', 'toilets:wheelchair' => 'unknown', 'amenity' => 'bar', 'name' => 'White horse' }, user, 'create_iphone')
-    }
+    end
 
-    it "does not save wheelchair and toilet:wheelchair tag" do
-
-      api = double(:find_or_create_open_changeset => changeset)
+    it 'does not save wheelchair and toilet:wheelchair tag' do
+      api = double(find_or_create_open_changeset: changeset)
       expect(Rosemary::Api).to receive(:new).and_return(api)
 
       expect(api).to receive(:create) do |node, _|
@@ -102,14 +104,12 @@ describe CreateNodeJob do
         expect(node.tags['amenity']).to eq 'bar'
         expect(node.tags['name']).to eq 'White horse'
       end
-      job = subject
+
+      subject
+
       successes, failures = Delayed::Worker.new.work_off
       expect(successes).to eql 1
       expect(failures).to eql 0
     end
-
-
   end
-
-
 end

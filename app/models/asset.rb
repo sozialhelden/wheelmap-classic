@@ -1,12 +1,10 @@
 require 'acts_as_api'
 class Asset
-
   Asset.extend ActsAsApi::Base
 
   include ActionView::Helpers::TagHelper
   include ActionView::Helpers::UrlHelper
   include ActionView::Helpers::AssetTagHelper
-
 
   attr_accessor :id, :name
 
@@ -14,8 +12,8 @@ class Asset
 
   # @TODO Move to controller layer
   def around_api_response(api_template)
-    custom_cache_key = "api_response_#{self.cache_key}_#{api_template.to_s}"
-    Rails.cache.fetch(custom_cache_key, :expires_in => 1.day) do
+    custom_cache_key = "api_response_#{cache_key}_#{api_template}"
+    Rails.cache.fetch(custom_cache_key, expires_in: 1.day) do
       yield
     end
   end
@@ -28,14 +26,14 @@ class Asset
     template.add :url
   end
 
-  def initialize(attribs={})
+  def initialize(attribs = {})
     attribs.each do |key, value|
-      self.send("#{key}=", value)
+      send("#{key}=", value)
     end
   end
 
   def url
-    asset_path("/#{name}.zip", { protocol: :https })
+    asset_path("/#{name}.zip", protocol: :https)
   end
 
   def file_name
@@ -47,19 +45,16 @@ class Asset
   end
 
   def license
-    "cc-by-sa"
+    'cc-by-sa'
   end
 
-  def as_json(options={})
+  def as_json(_options = {})
     {
-      :type => name,
-      :url => url,
-      :license => "cc-by-sa",
-      :modified_at => modified_at.to_i
+      type: name,
+      url: url,
+      license: 'cc-by-sa',
+      modified_at: modified_at.to_i
     }
-  end
-
-  def config
   end
 
   def cache_key
@@ -71,11 +66,8 @@ class Asset
     Wheelmap::Application.config.action_controller
   end
 
-
   # Dummy methods to generate full image paths
   def controller
     ''
   end
-
-
 end

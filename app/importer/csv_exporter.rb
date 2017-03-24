@@ -5,18 +5,17 @@ require 'libxml'
 require 'htmlentities'
 
 class CsvExporter
-
   include LibXML::XML::SaxParser::Callbacks
 
   # Konstruktor.
   #
-  def initialize(instream_or_infile=STDIN, outfile='wheelmap.csv' )
+  def initialize(instream_or_infile = STDIN, outfile = 'wheelmap.csv')
     @start_time = Time.now
     @processed = 0
     @parser = instream_or_infile.is_a?(String) ? LibXML::XML::SaxParser.file(instream_or_infile) : LibXML::XML::SaxParser.io(instream_or_infile, encoding: XML::Encoding::UTF_8)
     @parser.callbacks = self
-    @output = CSV.open(outfile, 'w', :force_quotes => true)
-    @output << ["OSM ID", "OSM TYPE", "Name", "Kategorie", "Rollstuhlstatus", "lat", "lon", "Strasse", "Hausnummer", "Stadt", "Postleitzahl"]
+    @output = CSV.open(outfile, 'w', force_quotes: true)
+    @output << ['OSM ID', 'OSM TYPE', 'Name', 'Kategorie', 'Rollstuhlstatus', 'lat', 'lon', 'Strasse', 'Hausnummer', 'Stadt', 'Postleitzahl']
     @decoder = HTMLEntities.new(:expanded)
   end
 
@@ -31,17 +30,15 @@ class CsvExporter
   # Hauptmethode. Liest die Datei und verarbeitet sie.
   #
   def load
-    begin
-      @parser.parse
-    rescue Exception => e
-      puts e.message
-      puts e.backtrace
-    ensure
-      sleep 1
-      @duration = (Time.now - @start_time).to_i
-      puts "\nProcessed #{@processed} nodes in #{@duration}s ~= #{@processed/@duration}/s"
-      @output.close
-    end
+    @parser.parse
+  rescue Exception => e
+    puts e.message
+    puts e.backtrace
+  ensure
+    sleep 1
+    @duration = (Time.now - @start_time).to_i
+    puts "\nProcessed #{@processed} nodes in #{@duration}s ~= #{@processed / @duration}/s"
+    @output.close
   end
 
   # Callback-Methode des XML-Parsers.
@@ -54,15 +51,12 @@ class CsvExporter
       v = @decoder.decode(attributes['v'])
       @poi[:tags][k.to_sym] = v if @poi
     when 'node', 'way'
-      @poi = {  :id   => attributes['id'],
-                :type => element,
-                :lat  => attributes['lon'],
-                :lon  => attributes['lat'],
-                :tags => {}
-             }
+      @poi = { id: attributes['id'],
+               type: element,
+               lat: attributes['lon'],
+               lon: attributes['lat'],
+               tags: {} }
 
-    else
-      # ignore all other nodes
     end
   end
 
@@ -92,4 +86,3 @@ class CsvExporter
     # TODO: write line to csv
   end
 end
-
