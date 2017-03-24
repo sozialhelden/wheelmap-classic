@@ -319,16 +319,16 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
   "community_support_form": {
     "new": {
       "form": {
-        "describe": "Please write to us in English or German.",
-        "flash_after_submit": "Thank you for contacting us. Our support team will get back to you as soon as possible.",
-        "header_text_html": "Please check the <a href=\"https://news.wheelmap.org/en/faq/\">frequently asked questions</a> for help first. If the solution to your problem is not there, please answer the following questions so we can fix it.",
-        "note": "Note that Wheelmap is an open-source project run by a non-profit organization and we have limited resources for the app development.",
+        "describe": "Proszę pisz do nas w języku angielskim lub niemieckim.",
+        "flash_after_submit": "Dziękujemy za skontaktowanie się z nami. Nasz zespół pomocy technicznej skontaktuję się z Tobą tak szybko jak to możliwe.",
+        "header_text_html": "Proszę sprawdź <a href=\"https://news.wheelmap.org/en/faq/\">często zadawane pytania</a> w celu uzyskania pierwszej pomocy. Jeśli nie ma tam rozwiązania problemu, odpowiedź na następujące pytania, żebyśmy mogli go rozwiązać.",
+        "note": "Zauważ, że Wheelmap jest projektem open-source, prowadzonym przez organizację non-profit, przez co mamy ograniczone środki na rozwój aplikacji.",
         "questions": {
-          "a": "What did you do?",
-          "b": "What did you expect would happen?",
-          "c": "What happened instead?"
+          "a": "Co zrobiłeś?",
+          "b": "Jaki był spodziewany efekt?",
+          "c": "Co się wydarzyło w zamian?"
         },
-        "submit_button": "Submit",
+        "submit_button": "Zatwierdź",
         "title": "Zgłoś problem"
       }
     }
@@ -786,7 +786,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       "projects": "Zaangażuj się",
       "report_problem": "Zgłoś problem",
       "suggestions": "Sugestie",
-      "travelguide": "Travel guide",
+      "travelguide": "Przewodnik turystyczny",
       "what_is_barrier_free": "Co to znaczy \"dostępne dla osób na wózkach\"?",
       "what_is_wheelmap": "Co to jest Wheelmap?"
     },
@@ -951,34 +951,34 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
     "new": {
       "form": {
         "legend": "lokalizacja miejsca",
-        "location": "Klinij na mapie w punkt, gdzie miejsce jest zlokalizowane.",
+        "location": "Klinij na mapie w punkt, gdzie znajduje się miejsce.",
         "section": {
           "accessibility": {
             "name": "Dostępność dla osób na wózkach",
-            "title": "Information on wheelchair accessibility"
+            "title": "Informacje na temat dostępności dla wózków inwalidzkich"
           },
           "address": {
-            "help": "Możesz przesuwać marker do prawidłej lokalizacji miesjca na mapie.",
+            "help": "Możesz przesunąć znacznik do prawidłowej lokalizacji miesjca na mapie.",
             "name": "Adres",
             "title": "Gdzie jest to miejsce?"
           },
           "contact": {
             "name": "Kontakt",
-            "title": "Other contact information"
+            "title": "Inne dane kontaktowe"
           },
           "name_category": {
             "name": "Nazwa i rodzaj miejsca",
             "title": "Podaj wstępne informacje o miejsu:"
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "Czy wszystkie dane są prawidłowe?"
           },
           "similar_nodes": {
             "empty": "Nie znaleziono podobnych miejsc",
             "go_edit": "Kontynuuj z tym miejscem",
             "go_new": "Jeśli to żadne z powyższych miejsc...",
             "name": "Podobne miejsca",
-            "title": "Znaleźliśmy podobne miejsca niedaleko. Czy to któreś z tych?"
+            "title": "Znaleźliśmy podobne miejsca niedaleko. Czy to któreś z nich?"
           }
         },
         "title": "Dodaj miejsce"
@@ -1013,7 +1013,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
     },
     "node_photos": {
       "add": "Dodaj",
-      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
+      "alert": "Uwaga: Wejście powinno być wyraźnie widoczne na zdjęciu w celu wykazania, co następuje: Czy są jakieś stopnie przy wejściu? Mniej więcej jak wysoki jest stopień? Jak szerokie są drzwi? Zdjęcie musi być w formacie JPG lub PNG. Nie powinno być większe niż 10 MB.",
       "photos_of_this_place": "Obrazy dla tego miejsca",
       "upload": "Załaduj"
     },
@@ -1464,6 +1464,7 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       "results": {
         "ticker": {
           "few": "%{count} wyników:",
+          "many": "%{count} wyników:",
           "one": "%{count} wynik:",
           "other": "%{count} wyników:"
         }
@@ -1562,11 +1563,11 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
       },
       "newsletter": {
         "label": "Tak, chcę otrzymywać bieżące informacje o Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
+        "text": "Bądź na bieżąco z biuletynem Wheelmap. Bez obaw, nie będziemy Cię spamować. Dostaniesz od nas wiadomość najwyżej raz w miesiącu.",
         "title": "Newsletter"
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
+        "empty": "Nie przesłano jeszcze żadnych zdjęć.",
         "title": "Zdjęcia"
       },
       "show": {
@@ -1576,36 +1577,44 @@ I18n.translations["pl"] = I18n.extend((I18n.translations["pl"] || {}), {
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "few": "przesłane % {count} zdjęcia",
+            "many": "przesłanych % {count} zdjęć",
+            "one": "przesłane % {count} zdjęcie",
+            "other": "przesłanych % {count} zdjęć"
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "few": "dodane %{count} miejsca",
+            "many": "dodanych %{count} miejsc",
+            "one": "dodane %{count} miejsce",
+            "other": "dodanych %{count} miejsc"
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "few": "zedytowane % {count} miejsca",
+            "many": "zedytowanych % {count} miejsc",
+            "one": "zedytowane % {count} miejsce",
+            "other": "zedytowanych % {count} miejsc"
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "few": "oznaczone %{count} miejsca",
+            "many": "oznaczonych %{count} miejsc",
+            "one": "oznaczone %{count} miejsce",
+            "other": "oznaczonych %{count} miejsc"
           },
           "text": "Masz"
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
+        "text_html": "Witaj,<br>\nMiło Cię widzieć (znów) na Wheelmap.org! Cieszy nas, że jesteś na pokładzie! Możesz przejrzeć nasz <a href=\"http://news.wheelmap.org/en/\">blog</a> lub <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a>  jeśli chcesz poznać Wheelmap.org nieco lepiej. Możesz też dowiedzieć się więcej o <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projektach</a> które oferujemy na Wheelmap.org i to, jak możesz się zaangażować.<br>\nAby pozostać w kontakcie możesz zapisać się do naszego comiesięcznego newslettera i śledzić nas na <a href=\"https://www.facebook.com/wheelmap\">Facebooku </a> i na <a href=\"https://twitter.com/wheelmap\">Twitterze </a>.  Czekamy na Twoje opinie i rozpoczęcie rozmowy!<br>\nA teraz, miłego mapowania!<br>\nTwój Zespół Wheelmap",
         "title": "Przegląd"
       },
       "widget": {
         "categories": "Pokaż filtr kategorii",
-        "center": "Obszr mapy",
-        "empty_center": "Wyszukaj środka mapy...",
+        "center": "Obszar mapy",
+        "empty_center": "Wyszukaj środek mapy...",
         "empty_provider": "Wybierz dostawcę",
         "height": "Wysokość",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
+          "embed": "Kod osadzenia",
+          "embed_explanation": "Istnieje możliwość zmiany specyfikacji dotyczących szerokości geograficznej (<code>lat</code>), długości geograficznej (<code>lon</code>) i poziomu powiększenia (<code>zoom</code>) ręcznie w kodzie, który znajduje się powyżej, a tym samym dostosowania segmentu mapy (widget) w zależności od lokalizacji, którą chcesz wyświetlić.",
+          "general": "Stwórz swój własny widżet Wheelmap i umieść go na swojej stronie internetowej lub blogu.",
           "preview": "Podgląd",
           "settings": "Ustawienia"
         },
