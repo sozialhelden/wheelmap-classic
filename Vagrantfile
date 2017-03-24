@@ -72,7 +72,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     # Encourage phantomjs to work (https://github.com/ariya/phantomjs/issues/14376)
-    echo "QT_QPA_PLATFORM=offscreen" >> ~/.profile
+    echo "export QT_QPA_PLATFORM=offscreen" >> ~/.profile
 
     # Move into the appropriate folder
     cd /vagrant
