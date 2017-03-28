@@ -8,19 +8,33 @@ nb:
         website: Nettside
         phone: Telefon
         address_street: Gate
+        address_housenumber: Husnummer
+        address_postcode: Postnummer
         address_city: By
   community_support_form:
     new:
       form:
         title: Rapporter et problem
+        questions:
+          a: Hva gjorde du?
+          b: Hva forventet du skulle skje?
+          c: Hva skjedde i stedet?
+        describe: Vennligst skriv til oss på Engelsk eller Tysk.
+        submit_button: Send inn
+  faq:
+    questions:
+      0: Markeringen er feil.
   header:
     navigation:
       choose_language: Velg språk
       contact: Kontakt
       map: Kart
+      projects: Bli involvert
       report_problem: Rapporter et problem
     toolbar:
       categories: Kategorier
+    meta:
+      title: Wheelmap.org
   home:
     index:
       overlay:
@@ -30,17 +44,23 @@ nb:
         headline: 'Merk og finn rullestol tilgjenglige steder med Wheelmap.org - verdenrundt helt gratis. Det er enkelt'
         lookup: Søk etter et bestemt sted
         secondary_headline: 'Vårt trafikk lys system for å merke rullestol tiljgenligheten av offentlig steder'
+      embed_link: Vis på Wheelmap.org
   nodes:
     new:
       form:
         section:
           address:
             name: Adresse
+            title: Hvor er stedet?
+          similar_nodes:
+            name: Lignende steder
           contact:
             name: Kontakt
     node_edit:
       details: Detaljer
       edit: Rediger
+    node_photos:
+      add: Legg til
     show:
       share:
         email: Email

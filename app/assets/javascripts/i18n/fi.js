@@ -297,10 +297,10 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
   },
   "application": {
     "require_no_user": {
-      "notice": "You’re already logged in…"
+      "notice": "Olet jo sisäänkirjautuneena..."
     },
     "require_user": {
-      "notice": "You must be logged in to see this page."
+      "notice": "Sinun täytyy olla sisäänkirjautuneena nähdäksesi tämän sivun."
     }
   },
   "breadcrumbs": {
@@ -466,7 +466,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
           "current_password": "Current password <i>(we need it to confirm your changes)</i>",
           "email": "Sähköposti",
           "password": "Password <i>(leave empty if you don\\'t want to change it)</i>",
-          "password_confirmation": "Repeat password"
+          "password_confirmation": "Salasana uudelleen"
         },
         "submit": "Tallenna muutokset"
       },
@@ -521,7 +521,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
       "form": {
         "labels": {
           "password": "New password",
-          "password_confirmation": "Repeat password"
+          "password_confirmation": "Salasana uudelleen"
         },
         "submit": "Reset password"
       },
@@ -595,7 +595,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
         "labels": {
           "email": "Sähköposti",
           "password": "Salasana",
-          "password_confirmation": "Repeat password",
+          "password_confirmation": "Salasana uudelleen",
           "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
         },
         "submit": "Luo tunnus"
@@ -613,7 +613,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
     "dynamic_format": "%{message}",
     "format": "%{attribute} %{message}",
     "messages": {
-      "accepted": "must be accepted",
+      "accepted": "Täytyy olla hyväksytty",
       "already_confirmed": "has already been confirmed",
       "blank": "must be filled in",
       "carrierwave_download_error": "could not be downloaded",
@@ -696,12 +696,12 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
     },
     "photos": {
       "destroy": {
-        "notice": "Image was successfully deleted"
+        "notice": "Kuva on poistettu onnistuneesti "
       }
     }
   },
   "form": {
-    "show_fully_accessible_places": "Wheelchair accessible",
+    "show_fully_accessible_places": "Saavutettava pyörätuolilla",
     "show_limited_accessible_places": "Osittain esteetön pääsy pyörätuolilla ",
     "show_places_without_status": "Tuntematon status",
     "show_unaccessible_places": "Ei saavutettavissa pyörätuolilla"
@@ -725,13 +725,13 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
       "housenumber": "No:",
       "lat": "Latitude",
       "lon": "Longitude",
-      "name": "Name:",
-      "osm_password": "OpenStreetMap password",
-      "osm_username": "OpenStreetMap account name",
+      "name": "Nimi:",
+      "osm_password": "OpenStreetMap salasana",
+      "osm_username": "OpenStreetMap tilin nimi",
       "password": "Salasana",
-      "password_confirmation": "Repeat password",
-      "phone": "Telephone:",
-      "postcode": "Post code:",
+      "password_confirmation": "Salasana uudelleen",
+      "phone": "Puhelin",
+      "postcode": "Postinumero",
       "privacy_policy": "Hyväksyn tietosuojasopimuksen pykälät 1 ja 2.",
       "reset": "Reset",
       "save": "Tallenna",
@@ -1004,6 +1004,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
     },
     "node_photos": {
       "add": "Add",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Photos of this place:",
       "upload": "Upload"
     },

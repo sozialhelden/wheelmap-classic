@@ -16,6 +16,15 @@ pl:
     new:
       form:
         title: Zgłoś problem
+        header_text_html: "Proszę sprawdź <a href=\"https://news.wheelmap.org/en/faq/\">często zadawane pytania</a> w celu uzyskania pierwszej pomocy. Jeśli nie ma tam rozwiązania problemu, odpowiedź na następujące pytania, żebyśmy mogli go rozwiązać."
+        questions:
+          a: Co zrobiłeś?
+          b: Jaki był spodziewany efekt?
+          c: Co się wydarzyło w zamian?
+        note: Zauważ, że Wheelmap jest projektem open-source, prowadzonym przez organizację non-profit, przez co mamy ograniczone środki na rozwój aplikacji.
+        describe: Proszę pisz do nas w języku angielskim lub niemieckim.
+        flash_after_submit: Dziękujemy za skontaktowanie się z nami. Nasz zespół pomocy technicznej skontaktuję się z Tobą tak szybko jak to możliwe.
+        submit_button: Zatwierdź
   faq:
     answers:
       0: "Możesz zawsze zmienić zaznaczenie twoich miejsc. Wybierz tylko prawy przycisk, \n\"zapisz\" i gotowe!"
@@ -33,6 +42,7 @@ pl:
       choose_language: Wybierz język
       contact: Kontakt
       map: Mapa
+      travelguide: Przewodnik turystyczny
       projects: Zaangażuj się
       faq: FAQ
       report_problem: Zgłoś problem
@@ -57,7 +67,7 @@ pl:
       form:
         title: Dodaj miejsce
         legend: lokalizacja miejsca
-        location: Klinij na mapie w punkt, gdzie miejsce jest zlokalizowane.
+        location: Klinij na mapie w punkt, gdzie znajduje się miejsce.
         section:
           name_category:
             name: Nazwa i rodzaj miejsca
@@ -65,17 +75,21 @@ pl:
           address:
             name: Adres
             title: Gdzie jest to miejsce?
-            help: Możesz przesuwać marker do prawidłej lokalizacji miesjca na mapie.
+            help: Możesz przesunąć znacznik do prawidłowej lokalizacji miesjca na mapie.
           similar_nodes:
             name: Podobne miejsca
-            title: Znaleźliśmy podobne miejsca niedaleko. Czy to któreś z tych?
+            title: Znaleźliśmy podobne miejsca niedaleko. Czy to któreś z nich?
             go_edit: Kontynuuj z tym miejscem
             go_new: Jeśli to żadne z powyższych miejsc...
             empty: Nie znaleziono podobnych miejsc
           accessibility:
             name: Dostępność dla osób na wózkach
+            title: Informacje na temat dostępności dla wózków inwalidzkich
           contact:
             name: Kontakt
+            title: Inne dane kontaktowe
+          overview:
+            title: Czy wszystkie dane są prawidłowe?
     node_data:
       address: 'Adres:'
       contact_details: 'Dane kontaktowe:'
@@ -90,6 +104,7 @@ pl:
       add: Dodaj
       photos_of_this_place: 'Obrazy dla tego miejsca'
       upload: Załaduj
+      alert: 'Uwaga: Wejście powinno być wyraźnie widoczne na zdjęciu w celu wykazania, co następuje: Czy są jakieś stopnie przy wejściu? Mniej więcej jak wysoki jest stopień? Jak szerokie są drzwi? Zdjęcie musi być w formacie JPG lub PNG. Nie powinno być większe niż 10 MB.'
     node_similar:
       similar: 'podobne miejsca: %{name}'
     node_status:
@@ -124,6 +139,7 @@ pl:
         ticker:
           one: '%{count} wynik:'
           few: '%{count} wyników:'
+          many: '%{count} wyników:'
           other: '%{count} wyników:'
     timeout:
       headline: Przepraszamy, coś poszło nie tak
@@ -133,16 +149,39 @@ pl:
     profile:
       newsletter:
         title: Newsletter
+        text: Bądź na bieżąco z biuletynem Wheelmap. Bez obaw, nie będziemy Cię spamować. Dostaniesz od nas wiadomość najwyżej raz w miesiącu.
         label: Tak, chcę otrzymywać bieżące informacje o Wheelmap.
       show:
         title: Przegląd
+        text_html: "Witaj,<br>\nMiło Cię widzieć (znów) na Wheelmap.org! Cieszy nas, że jesteś na pokładzie! Możesz przejrzeć nasz <a href=\"http://news.wheelmap.org/en/\">blog</a> lub <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a>  jeśli chcesz poznać Wheelmap.org nieco lepiej. Możesz też dowiedzieć się więcej o <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projektach</a> które oferujemy na Wheelmap.org i to, jak możesz się zaangażować.<br>\nAby pozostać w kontakcie możesz zapisać się do naszego comiesięcznego newslettera i śledzić nas na <a href=\"https://www.facebook.com/wheelmap\">Facebooku </a> i na <a href=\"https://twitter.com/wheelmap\">Twitterze </a>.  Czekamy na Twoje opinie i rozpoczęcie rozmowy!<br>\nA teraz, miłego mapowania!<br>\nTwój Zespół Wheelmap"
         greeting:
           anonymously: Witaj
           personalized: Witaj %{name}
         overview:
           text: Masz
+          pois_marked:
+            one: 'oznaczone %{count} miejsce'
+            few: 'oznaczone %{count} miejsca'
+            many: 'oznaczonych %{count} miejsc'
+            other: 'oznaczonych %{count} miejsc'
+          pois_added:
+            one: 'dodane %{count} miejsce'
+            few: 'dodane %{count} miejsca'
+            many: 'dodanych %{count} miejsc'
+            other: 'dodanych %{count} miejsc'
+          pois_edited:
+            one: 'zedytowane % {count} miejsce'
+            few: 'zedytowane % {count} miejsca'
+            many: 'zedytowanych % {count} miejsc'
+            other: 'zedytowanych % {count} miejsc'
+          photos_uploaded:
+            one: 'przesłane % {count} zdjęcie'
+            few: 'przesłane % {count} zdjęcia'
+            many: 'przesłanych % {count} zdjęć'
+            other: 'przesłanych % {count} zdjęć'
       photos:
         title: Zdjęcia
+        empty: Nie przesłano jeszcze żadnych zdjęć.
       edit:
         title: Profil
         legends:
@@ -151,11 +190,14 @@ pl:
         title: Widget
         height: Wysokość
         width: Szerokość
-        center: Obszr mapy
+        center: Obszar mapy
         categories: Pokaż filtr kategorii
         providers: Dostawca
         empty_provider: Wybierz dostawcę
-        empty_center: Wyszukaj środka mapy...
+        empty_center: Wyszukaj środek mapy...
         legends:
           settings: Ustawienia
           preview: Podgląd
+          embed: Kod osadzenia
+          embed_explanation: Istnieje możliwość zmiany specyfikacji dotyczących szerokości geograficznej (<code>lat</code>), długości geograficznej (<code>lon</code>) i poziomu powiększenia (<code>zoom</code>) ręcznie w kodzie, który znajduje się powyżej, a tym samym dostosowania segmentu mapy (widget) w zależności od lokalizacji, którą chcesz wyświetlić.
+          general: Stwórz swój własny widżet Wheelmap i umieść go na swojej stronie internetowej lub blogu.

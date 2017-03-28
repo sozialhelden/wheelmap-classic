@@ -3,8 +3,10 @@ sk:
     confirmations:
       confirmed: "Váš účet bol úspešne overený."
       send_instructions: "O niekoľko minút obdržíte email s inštrukciami ako potvrdiť vašu emailovú adresu."
+      send_paranoid_instructions: "Ak už máte účet, o niekoľko minút obdržíte email s inštrukciami ako overiť Váš účet. "
     destroy:
       confirm: "Ste si istý?"
+      headline: "Zmazať účet."
       link: "Zmazať"
     edit:
       form:
@@ -17,9 +19,11 @@ sk:
       headline: "Zmeniť účet"
     failure:
       already_authenticated: "Už ste prihláseny."
+      inactive: "Váš účet ešte nebol aktivovaný."
       invalid: "Nesprávny email alebo heslo."
       invalid_token: "Nesprávny overovací symbol."
       locked: "Váš účet je  uzamknutý."
+      timeout: "Vaše prihlásenie vypršalo, ak chcete pokračovať, prihláste sa, prosím znova."
       unauthenticated: "Musíte sa zaregistrovať alebo odhlásiť, potom možete pokračovať."
       unconfirmed: "Musíte potvrdiť svoj účet, potom možete pokračovať."
     mailer:
@@ -73,6 +77,7 @@ sk:
         sign_up_with_osm: "Registrujte sa."
       signed_in: "Prihlásenie úspešné."
       signed_out: "Odhlásenie úspešné."
+      timeout: "Vaše prihlásenie vypršalo, ak chcete pokračovať, prihláste sa, prosím znova."
       unauthenticated: "Než budete môcť pokračovať musíte sa prihlásiť alebo si vytvoriť účet"
       unconfirmed: "Než budete môcť pokračovať musíte potvrdiť svoj účet."
     sign_in:

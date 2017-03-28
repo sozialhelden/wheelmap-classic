@@ -16,15 +16,21 @@ sk:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
+      accepted: "súhlas je nevyhnutný"
       already_confirmed: "bol už potvrdený, skúste sa prihlásiť"
+      blank: "musí byť vyplnené"
       confirmation: "nebolo potvrdené"
+      empty: "je potrebné vyplniť"
       equal_to: "sa musí rovnať %{count}"
+      even: "musí byť párne číslo"
       exclusion: "je vyhradené pre iný účel"
       expired: "expiroval, prosím, vyžiadajte si nový"
       greater_than: "musí byť väčšie ako %{count}"
+      greater_than_or_equal_to: "musí byť väčšie alebo rovnaké ako %{count}"
       inclusion: "nie je v zozname povolených hodnôt"
       invalid: "nie je platná hodnota"
       less_than: "musí byť menšie ako %{count}"
+      less_than_or_equal_to: "musí byť menšie alebo rovnaké ako %{count}"
       not_a_number: "nie je číslo"
       not_an_integer: "musí byť celé číslo"
       not_found: "nenájdeny"
@@ -33,6 +39,7 @@ sk:
         one: "%{count} chyba zabránila uloženiu %{resource}:"
         few: "%{count} chyby zabránili uloženiu %{resource}:"
         other: "%{count} chýb zabránilo uloženiu %{resource}:"
+      odd: "musí byť nepárne číslo"
       taken: "ste už použili"
       too_long: "je príliš dlhá/ý (max. %{count} znakov)"
       too_short: "je príliš krátky/a (min. %{count} znakov)"
@@ -62,20 +69,25 @@ sk:
     show_unaccessible_places: "Bez bezbariérového prístupu"
   formtastic:
     hints:
+      email: "S tvojou adresou zaobchádzame dôverne. Sľubujeme, že Vám nebudeme posielať spam."
       lat: "Pohnite značkou na mape aby ste opravili polohu"
       osm_username: "Nie ste ešte členom? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Vytvorte si účet na OpenStreetMap</a>"
       password: "(nechajte prázdne ak nechcete zmeniť)"
+      phone: "Napríklad:  +421 00 12345678"
       website: "Napríklad: http://www.example.com"
     labels:
       category: "Kategória:"
       centralkey: "Spoločný kľúč:"
       city: "Mesto:"
+      create: "Vytvoriť miesto"
       email: E-mail
       finish: Dokončiť
       housenumber: "Číslo:"
       lat: Zemepisná šírka
       lon: Zemepisná dĺžka
       name: "Meno:"
+      osm_password: "OpenStreetMap heslo"
+      osm_username: "OpenStreetMap prihlasovacie meno"
       password: Heslo
       password_confirmation: "Zopakujte heslo"
       phone: "Telefón:"
@@ -121,6 +133,7 @@ sk:
       placeholder: "Hľadajte miesta"
       title_add_place: "Pridajte sem nové miesto!"
     tagline: "Logo Wheelmap"
+    title: "Nájdi miesta s bezbariérovým prístupom"
   helpers:
     select:
       prompt: "Prosím vyberte si"
@@ -141,6 +154,7 @@ sk:
           upgrade: "Aktualizovať prehliadač"
         warning:
           headline: "Ospravedlňujeme sa!"
+          message: "Zdá sa, že používate Internet Explorer. Wheelmap potrebuje pre správne fungovanie prehliadač spĺňajúci štandardné kritériá. Prosím, zvážte použitie niektorého z nasledujúcich prehliadačov: Firefox, Chrome, Safari alebo Opera."
       link:
         node:
           create: "Pridať nové miesto"
@@ -157,6 +171,10 @@ sk:
   landing_pages:
     index:
       wheelchair:
+        limit:
+          headline: "Všetky %{type} čiastočne prístupné pre vozíčkarov v %{city} (%{count})"
+        'no':
+          headline: "Všetky %{type}  neprístupné pre vozíčkarov v %{city} (%{count})"
         unknown:
           headline: "Všetky %{type} v meste %{city} s neznámou dostupnosťou pre vozíčkarov (%{count})\n"
         'yes':
@@ -183,6 +201,7 @@ sk:
       link:
         large_map: "&laquo; Zrušiť"
     errors:
+      default: "Hups, niečo sa škaredo pokazilo. Už sme o tom boli informovaný."
       not_authorized: "Prihlásenie bolo neúspešné"
       not_available: "Ospravedlňujeme sa, táto stránka je dočasne nedostupná."
       not_existent: "Prepáčte, ale toto miesto už nie je dostupné."
@@ -208,6 +227,7 @@ sk:
         large_map: Zväčšiť
         listing: "Všetky miesta typu  '%{type}' v %{city}"
         upload: "Nahrať obrázok"
+      more_data_from: "Viac informácii o tomto mieste, overené:"
       show-in-osm: OpenStreetMap
     update:
       flash:
@@ -245,6 +265,12 @@ sk:
           kb: KB
           mb: MB
           tb: TB
+  oauth:
+    application:
+      connect:
+        headline: "Aby ste mohli pridať alebo upraviť miesto na Wheelmap, musíte spojiť Vaše kontko s kontom na OpenStreetmap."
+    callback:
+      notice: "Vaše Wheelmap konto je teraz prepojené s kontom OpenStreetMap %{user}."
   or: alebo
   place:
     one: "%{count} miesto"
@@ -292,6 +318,10 @@ sk:
     'no': "Toaleta neprístupná pre invalidné vozíky"
     unknown: "Stav WC neznámy"
     'yes': "Toaleta prístupná pre invalidné vozíky"
+    what_is:
+      'no': "Vnútorná šírka vchodu je min. 90 cm (35 in),  plocha voľného priestoru je min. 150 cm x 150 cm (59 x 59 palcov),  toaleta je vo výške invalidného vozíka, sklápacie držadlá, vyhovujúce umývadlo."
+      'yes': "Vnútorná šírka vchodu je min. 90 cm (35 in),  plocha voľného priestoru je min. 150 cm x 150 cm (59 x 59 palcov),  toaleta je vo výške invalidného vozíka, sklápacie držadlá, vyhovujúce umývadlo."
+      unknown: "Pomôžte označením stavu toalety!"
   user_sessions:
     create:
       activation:
@@ -302,6 +332,7 @@ sk:
     destroy:
       notice: "Dovidenia, zase sa vráťte. "
     new:
+      email: "Emailová adresa"
       login: "Prihlásiť sa"
       login_with_twitter: "Prihláste sa cez Twitter"
       password: Heslo
@@ -309,6 +340,8 @@ sk:
   users:
     after_signup_edit:
       welcome:
+        headline: "Skoro hotovo! Dokončite teraz vaše konto na Wheelmap:"
+        set_password_for_mobile: "Boli ste úspešne zaregistrovaný na OpenStreetMap. Prosím zvoľte emailovú adresu, na ktorú si prajete, aby Vám Wheelmap posielal informácieo Vašich aktivitách (napríklad o počte Vami označených miest). Nájdete to v záložke \"Profil\"."
         text: "Ako vás môžeme kontaktovať? Tieto údaje môžete kedykoľvek zmeniť na svojom profile."
     edit:
       headline:

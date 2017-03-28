@@ -20,7 +20,7 @@ pl:
       headline: "Edytuj konto"
     failure:
       already_authenticated: "Jesteś już zalogowany."
-      inactive: "Twoje konto nie zostało jeszcze  aktywowane."
+      inactive: "Twoje konto nie zostało jeszcze aktywowane."
       invalid: "Niepoprawny adres email lub hasło."
       invalid_token: "Niepoprawny token."
       locked: "Twoje konto jest zablokowane."
@@ -29,7 +29,7 @@ pl:
       unconfirmed: "Aby kontynuować, potwierdź konto."
     mailer:
       confirmation_instructions:
-        landing_page: "Proszę kliknąć w link przesłany właśnie na Twój adres email. Jeśli email nie dotarł, proszę sprawdzić folder ze spamem. Jeśli email rzeczywiście nie dotarł, proszę wrócić do strony rejestracji spróbować ponownie."
+        landing_page: "Proszę kliknąć w link przesłany właśnie na Twój adres email. Jeśli email nie dotarł, proszę sprawdzić folder ze spamem. Jeśli email rzeczywiście nie dotarł, proszę wrócić do strony rejestracji i spróbować ponownie."
         subject: "Jeszcze tylko jeden krok do aktywacji twojego konta"
       reset_password_instructions:
         subject: "Instrukcja ustawienia nowego hasła"
@@ -51,7 +51,7 @@ pl:
         comment: "Jeżeli nie próbowałeś zmienić hasła, zignoruj ten e-mail.<br/>Twoje hasło nie zostanie zmienione, dopóki nie klikniesz w link powyżej i nie ustawisz nowego hasła."
         headline: "Witaj %{email}"
         link: "Zmień moje hasło"
-        text: "Otrzymaliśmy żądanie zmiany hasła. Jeśli to Ty, kliknij w następujący link. W innym wypadku - zignoruj tę wiadomość."
+        text: "Otrzymaliśmy żądanie zmiany hasła. Jeśli to Ty, kliknij w poniższy link. W innym wypadku - zignoruj tę wiadomość."
       form:
         labels:
           password: "Nowe hasło"
@@ -60,7 +60,7 @@ pl:
       headline: "Ustaw nowe hasło"
     passwords:
       link: "Zapomniałeś hasła?"
-      send_instructions: "Wkrótce powinieneś otrzymać email z instrukcją, jak zresetować hasło."
+      send_instructions: "Wkrótce otrzymasz email z instrukcją, jak zresetować hasło."
       send_paranoid_instructions: "Jeśli twoje konto istnieje, za kilka minut otrzymasz email z instrukcją, jak zresetować hasło."
       updated: "Hasło zostało pomyślnie zmienione, jesteś teraz zalogowany."
       updated_not_active: "Twoje hasło zostało zmienione"
@@ -75,14 +75,14 @@ pl:
       signed_up: "Rejestracja zakończyła się pomyślnie. Wysłaliśmy Ci email z potwierdzeniem."
       updated: "Konto zostało pomyślnie zaktualizowane."
     sessions:
-      inactive: "Twoje konto nie zostało jeszcze  aktywowane."
+      inactive: "Twoje konto nie zostało jeszcze aktywowane."
       invalid: "Niepoprawny adres e-mail lub hasło"
       invalid_token: "Nieprawidłowy token autoryzacji"
       link: "Zaloguj się"
       locked: "Twoje konto jest zablokowane"
       new:
         no_osm_account: "Nie masz konta w OpenStreetMap?"
-        osm_promo_text: "Wheelmap bazuje na danych mapowych OpenStreetMap (OSM). OpenStreetMap jest bezpłatną mapą świata, tworzoną przez ludzi takich jak Ty. Jest jak Wikipedia dla map. Aby móc zmieniać lub tworzyć miejsca, musisz posiadać konto na OpenStreetMap i być na nim zalogowany."
+        osm_promo_text: "Wheelmap bazuje na danych przestrzennych OpenStreetMap (OSM). OpenStreetMap jest bezpłatną mapą świata, tworzoną przez ludzi takich jak Ty. Jest jak Wikipedia dla map. Aby móc zmieniać lub tworzyć miejsca, musisz posiadać konto na OpenStreetMap i być na nim zalogowany."
         promo_text_thank_you: "Dziękujemy z Twoje wsparcie!"
         sign_in_with: "Zaloguj się za pomocą %{kind}"
         sign_up_with_osm: "Zarejestruj się."
@@ -112,7 +112,7 @@ pl:
           email: E-mail
           password: Hasło
           password_confirmation: "Powtórz hasło"
-          wants_newsletter: "Tak, chcę otrzymywać bieżące informacje o Wheelmap - ale proszę, nie więcej niż raz na miesiąc."
+          wants_newsletter: "Tak, chcę otrzymywać bieżące informacje o Wheelmap - ale proszę, nie więcej niż raz w miesiącu."
         submit: "Zarejestruj się"
       headline: "Zarejestruj się"
     unlocks:

@@ -4,12 +4,17 @@ fi:
       form:
         labels:
           email: Sähköposti
+          password_confirmation: "Salasana uudelleen"
         submit: "Tallenna muutokset"
     password_recovery:
       form:
         labels:
           email: Sähköposti
       headline: "Unohditko salasanasi?"
+    password_reset:
+      form:
+        labels:
+          password_confirmation: "Salasana uudelleen"
     passwords:
       link: "Unohditko salasanasi?"
     registrations:
@@ -26,5 +31,6 @@ fi:
         labels:
           email: Sähköposti
           password: Salasana
+          password_confirmation: "Salasana uudelleen"
         submit: "Luo tunnus"
       headline: "Luo tunnus"

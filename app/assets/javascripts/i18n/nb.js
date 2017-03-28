@@ -185,8 +185,8 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "poi": {
         "address": "Adresse",
         "address_city": "By",
-        "address_housenumber": "House number",
-        "address_postcode": "Postcode",
+        "address_housenumber": "Husnummer",
+        "address_postcode": "Postnummer",
         "address_street": "Gate",
         "name": "Navn",
         "note": "Note",
@@ -317,16 +317,16 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
   "community_support_form": {
     "new": {
       "form": {
-        "describe": "Please write to us in English or German.",
+        "describe": "Vennligst skriv til oss på Engelsk eller Tysk.",
         "flash_after_submit": "Thank you for contacting us. Our support team will get back to you as soon as possible.",
         "header_text_html": "Please check the <a href=\"https://news.wheelmap.org/en/faq/\">frequently asked questions</a> for help first. If the solution to your problem is not there, please answer the following questions so we can fix it.",
         "note": "Note that Wheelmap is an open-source project run by a non-profit organization and we have limited resources for the app development.",
         "questions": {
-          "a": "What did you do?",
-          "b": "What did you expect would happen?",
-          "c": "What happened instead?"
+          "a": "Hva gjorde du?",
+          "b": "Hva forventet du skulle skje?",
+          "c": "Hva skjedde i stedet?"
         },
-        "submit_button": "Submit",
+        "submit_button": "Send inn",
         "title": "Rapporter et problem"
       }
     }
@@ -450,21 +450,21 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
   },
   "devise": {
     "confirmations": {
-      "confirmed": "Epostadressen din har blitt bekreftet.",
-      "link": "You didn't receive confirmation instructions?",
-      "send_instructions": "Du vil i løpet av noen minutter motta en epost med en lenke til bruk for å bekrefte epostadressen din.",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
+      "confirmed": "E-postadressen din har blitt bekreftet.",
+      "link": "Mottok du ikke instruksjoner for bekreftelse?",
+      "send_instructions": "Du vil i løpet av noen minutter motta en e-post med en lenke til bruk for å bekrefte e-postadressen din.",
+      "send_paranoid_instructions": "Hvis kontoen din eksisterer, vil du få en e-post med instruksjoner på hvordan du kan bekrefte kontoen din i løpet av noen minutter."
     },
     "destroy": {
       "confirm": "Er du sikker?",
-      "headline": "Delete account",
+      "headline": "Slett konto",
       "link": "Slett nå"
     },
     "edit": {
       "form": {
         "labels": {
           "current_password": "Nåværende passord <i>(vi trenger det for å bekrefte endringen)</i>",
-          "email": "Epost",
+          "email": "E-post",
           "password": "Passord <i>(La den stå tom hvis du ikke vil endre)</i>",
           "password_confirmation": "Gjenta passord"
         },
@@ -474,38 +474,38 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
     },
     "failure": {
       "already_authenticated": "Du har allerede logget deg på.",
-      "inactive": "Your account has not been activated yet.",
-      "invalid": "Epost eller passord er ikke gyldig.",
+      "inactive": "Din konto er foreløpig ikke aktivert.",
+      "invalid": "E-post eller passord er ikke gyldig.",
       "invalid_token": "Ugyldig autentifisering.",
       "last_attempt": "You have one more attempt before your account will be locked.",
       "locked": "Din konto er låst",
       "not_found_in_database": "Invalid email or password.",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Økten din er utløpt, vennligst logg på igjen for å fortsette.",
       "unauthenticated": "Du må logge på eller registrere deg for å kunne fortsette",
       "unconfirmed": "Du må bekrefte kontoen din for å kunne fortsette."
     },
     "mailer": {
       "confirmation_instructions": {
-        "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
+        "landing_page": "Vennligst klikk på linken vi akkurat sendte til din e-postaddresse. Hvis du ikke har mottatt noe fra oss, vennligst sjekk om den har havnet i søppelpost-mappen. Hvis den ikke finnes der, gå tilbake til registreringssiden, og prøv igjen.",
         "subject": "En siste steg for å aktivere kontoen"
       },
       "reset_password_instructions": {
         "subject": "Innstruksjoner for nullstilling av passord"
       },
       "unlock_instructions": {
-        "subject": "Unlock instructions"
+        "subject": "Intruksjoner for gjenåpning av konto"
       }
     },
     "mandatory": "* Påkrevd",
     "omniauth_callbacks": {
       "failure": "Kunne ikke autorisere deg med %{kind}. Feilmelding: \"%{reason}\".",
-      "permission_missing": "You did not grant the required permission.",
+      "permission_missing": "Du har ikke gitt de nødvendige tillatelsene.",
       "success": "Vellykket autorisering fra %{kind}."
     },
     "password_recovery": {
       "form": {
         "labels": {
-          "email": "Epost"
+          "email": "E-post"
         },
         "submit": "Nullstill passord"
       },
@@ -513,10 +513,10 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
     },
     "password_reset": {
       "email": {
-        "comment": "Hvis du ikke bestilte tilbakestilling av passord, bare ignorer denne epost. Ditt passord vil ikke bli endret med mindre du klikker på linken over og lager et nytt passord.",
+        "comment": "Hvis du ikke forespurte tilbakestilling av passord, bare ignorer denne e-posten. Ditt passord vil ikke bli endret med mindre du klikker på linken over og lager et nytt passord.",
         "headline": "Velkommen  %{email}",
         "link": "Endre passordet",
-        "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
+        "text": "Vi har mottatt en forespørsel om bytte av passordet ditt. Hvis forespørselen kom fra deg, trykk på linken -  hvis ikke, vennligst ignorer dette!"
       },
       "form": {
         "labels": {
@@ -530,8 +530,8 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
     "passwords": {
       "link": "Glemt passord?",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
-      "send_instructions": "You will receive an email with instructions on how to reset your password in a few minutes",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
+      "send_instructions": "Du vil om få minutter motta en e-post med instruksjoner for hvordan du nullstiller passordet ditt",
+      "send_paranoid_instructions": "Hvis kontoen eksisterer vil du om noen minutter motta en e-post med en veiledning for tilbakestilling av passordet ditt",
       "updated": "Ditt passord ble endret, du er nå pålogget",
       "updated_not_active": "Passordet ditt har blitt endret"
     },
@@ -544,7 +544,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
         "locked": "Låst",
         "unconfirmed": "Ubrekreftet"
       },
-      "signed_up": "You have signed up successfully. A you have been sent a confirmation email.",
+      "signed_up": "Din registrering var vellykket. En bekreftelse vil bli sendt til din e-postadresse.",
       "signed_up_but_inactive": "You have signed up successfully. However, we could not sign you in because your account is not yet activated.",
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
@@ -552,29 +552,29 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "updated": "Din profil er nå oppdatert."
     },
     "sessions": {
-      "inactive": "Your account has not been activated yet",
-      "invalid": "Feil epost eller passord.",
+      "inactive": "Din konto er foreløpig ikke aktivert",
+      "invalid": "Feil e-post eller passord.",
       "invalid_token": "Ugyldig autorisasjon",
       "link": "Logg på",
       "locked": "Din konto er låst",
       "new": {
         "no_osm_account": "Ingen OpenStreetMap-konto?",
-        "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
+        "osm_promo_text": "Wheelmap er basert på geodata fra OpenStreetMap (OSM). OpenStreetMap er et gratis verdenskart, laget av personer som deg. Det minner om Wikipedia, bare for kart. For å redigere steder eller opprette nye steder trenger du en OpenStreetMap-konto og må være logget inn med den.",
         "promo_text_thank_you": "Tusen takk for din støtte!",
         "sign_in_with": "Logg på med %{kind}\n",
         "sign_up_with_osm": "Registrer nå.",
-        "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
+        "wheelmap_promo_text": "Med din kunnskap om rullestoltilgjengelige steder bidrar du til at folk med nedsatt funksjon lettere kan organisere hverdagen sin. Dette gjør også OpenStreetMap betraktelig mer detaljert."
       },
       "signed_in": "Du er nå innlogget",
       "signed_out": "Du er nå logget av",
-      "timeout": "Your session has expired, please sign in again to continue.",
+      "timeout": "Økten din er utløpt, vennligst logg på igjen for å fortsette.",
       "unauthenticated": "Du må logge deg på eller registrere deg før du kan fortsette",
       "unconfirmed": "Du må bekrefte kontoen før du kan fortsette"
     },
     "sign_in": {
       "form": {
         "labels": {
-          "email": "Epost",
+          "email": "E-post",
           "password": "Passord",
           "remember_me": "Forbli innlogget?"
         },
@@ -593,19 +593,19 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       },
       "form": {
         "labels": {
-          "email": "Epost",
+          "email": "E-post",
           "password": "Passord",
           "password_confirmation": "Gjenta passord",
-          "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
+          "wants_newsletter": "Vennligst hold meg oppdatert om Wheelmap - men ikke mer enn en gang per måned."
         },
         "submit": "Registrer"
       },
       "headline": "Registrer"
     },
     "unlocks": {
-      "link": "You didn't receive unlock instructions?",
-      "send_instructions": "You will receive an email in a few minutes with instructions on how to unlock your account",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
+      "link": "Mottok du ikke instruksjoner for gjenåpning?",
+      "send_instructions": "Du vil i løpet av få minutter motta en e-post med instruksjoner om hvordan du kan gjenåpne din konto.",
+      "send_paranoid_instructions": "Hvis kontoen eksisterer, vil du i løpet av få minutter motta en e-post med instruksjoner om hvordan du kan låse opp kontoen din",
       "unlocked": "Din konto er gjenåpnet. Du er nå pålogget."
     }
   },
@@ -676,7 +676,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
     },
     "headline": "Is there a problem with this place?",
     "questions": {
-      "0": "The marking is wrong.",
+      "0": "Markeringen er feil.",
       "1": "The details of the place are incorrect or missing.",
       "2": "I have more information about this place."
     }
@@ -775,7 +775,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "newsletter": "Nyhetsbrev",
       "press": "Presse",
       "profile": "Profile",
-      "projects": "Get involved",
+      "projects": "Bli involvert",
       "report_problem": "Rapporter et problem",
       "suggestions": "Forslag",
       "travelguide": "Travel guide",
@@ -818,7 +818,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "Vis på Wheelmap.org",
       "filter": {
         "category": "Velg kategori",
         "deselect_all": "Deselect all",
@@ -951,7 +951,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
           "address": {
             "help": "You can move the marker to the correct location on the map.",
             "name": "Adresse",
-            "title": "Where is the place?"
+            "title": "Hvor er stedet?"
           },
           "contact": {
             "name": "Kontakt",
@@ -968,7 +968,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
             "empty": "No similar places were found.",
             "go_edit": "Continue with this place",
             "go_new": "It is none of the places above …",
-            "name": "Similar places",
+            "name": "Lignende steder",
             "title": "We found similar places nearby. Is it one of these?"
           }
         },
@@ -1003,7 +1003,8 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "comment": "Comment:"
     },
     "node_photos": {
-      "add": "Add",
+      "add": "Legg til",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Photos of this place:",
       "upload": "Upload"
     },
@@ -1139,7 +1140,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "leisure": "Kultur & Fritid",
       "misc": "Diverse",
       "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
+      "public_transfer": "Offentlig transport",
       "shopping": "Butikker",
       "sport": "Sport",
       "tourism": "Turisme",
@@ -1160,7 +1161,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       },
       "education": {
         "college": "Høyskole",
-        "driving_school": "Driving school",
+        "driving_school": "Kjøreskole",
         "kindergarten": "Barnehage",
         "library": "Bibliotek",
         "museum": "Museum",
@@ -1188,14 +1189,14 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       },
       "health": {
         "alternative": "Alternative medicine practitioner",
-        "dentist": "Dentist",
-        "doctors": "Doctor",
+        "dentist": "Tannlege",
+        "doctors": "Doktor",
         "hearing_aids": "Høreapparatforhandler",
         "hospital": "Sykehus",
         "medical_supply": "Apotek",
         "occupational_therapist": "Occupational therapist",
         "pharmacy": "Apotek",
-        "physiotherapist": "Physiotherapist",
+        "physiotherapist": "Fysioterapeut ",
         "psychotherapist": "Psychotherapist",
         "social_facility": "Fellesområde",
         "speech_therapist": "Speech therapist",
@@ -1204,7 +1205,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "leisure": {
         "arena": "Arena",
         "brothel": "Bordell",
-        "casino": "Casino",
+        "casino": "Kasino",
         "cinema": "Kino",
         "community_centre": "Community centre",
         "gallery": "Galleri",
@@ -1221,7 +1222,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
         "association": "Association",
         "company": "Bedrift (kontor)",
         "estate_agent": "Real estate agent",
-        "insurance": "Insurance",
+        "insurance": "Forsikring",
         "lawyer": "Advokat",
         "ngo": "Non-government organisation",
         "place_of_worship": "Bønnerom / stillerom",
@@ -1264,7 +1265,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
         "antiques": "Antiques",
         "art": "Gallery shop",
         "bakery": "Bakeri",
-        "beauty": "Beauty salon",
+        "beauty": "Skjønnhetssalong",
         "beverages": "Forfriskninger",
         "bicycle": "Sykkelbutikk",
         "books": "Bøker",
@@ -1274,7 +1275,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
         "chemist": "Chemist / Drugstore",
         "clothes": "Klær",
         "computer": "Datamaskin",
-        "confectionery": "Candy store",
+        "confectionery": "Godteributikk",
         "convenience": "Nærbutikk",
         "copyshop": "Copy shop",
         "deli": "Delicatessen",
@@ -1298,7 +1299,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
         "kiosk": "Kiosk",
         "laundry": "Vask",
         "mall": "Kjøpesenter",
-        "mobile_phone": "Mobile phone shop",
+        "mobile_phone": "Mobiltelefonbutikk",
         "music": "Record store",
         "musical_instrument": "Musical instrument shop",
         "newsagent": "News agent",
@@ -1312,7 +1313,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
         "sports": "Sport",
         "stationery": "Skrivesaker",
         "supermarket": "Dagligvare",
-        "tailor": "Tailor",
+        "tailor": "Skredder",
         "tea": "Tea supply",
         "tobacco": "Tobacco shop",
         "toys": "Toys",

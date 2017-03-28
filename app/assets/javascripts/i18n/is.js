@@ -1004,6 +1004,7 @@ I18n.translations["is"] = I18n.extend((I18n.translations["is"] || {}), {
     },
     "node_photos": {
       "add": "Add",
+      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
       "photos_of_this_place": "Photos of this place:",
       "upload": "Upload"
     },

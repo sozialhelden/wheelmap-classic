@@ -7,25 +7,38 @@ nl:
         address: Adres
         website: Website
         phone: Telefoon
+        note: Notitie
         address_street: Straat
         address_housenumber: Huisnummer
+        address_postcode: Postcode
         address_city: Stad
   community_support_form:
     new:
       form:
         title: Geef een probleem op
+        questions:
+          a: Wat heb je gedaan?
+          b: Wat verwachtte je dat er zou gebeuren?
+          c: Wat gebeurde er echt?
+        note: Wheelmap is een open-source project gerund door een non-profit organisatie en we hebben beperkte middelen om onze app te ontwikkelen.
+        describe: Schrijf ons alsjeblieft in het Engels of Duits.
+        flash_after_submit: Bedankt dat je contact met ons opnam. Onze klantenservice zal zo snel mogelijk contact met je opnemen.
+        submit_button: Verstuur
   faq:
     answers:
       0: U kunt altijd de markering van een plaats zelf veranderen. Kies gewoon de juiste markering en "Save" - klaar!
       2: U kunt meer informatie (bvb "Deze plaats heeft een mobiele helling") in de commentaar sectie toevoegen. Klik op "Edit" en "add comment"
     headline: Is er een probleem met deze plaats?
     questions:
+      0: De markering is foutief.
+      1: De details van de plek zijn niet correct or missen.
       2: Ik heb meer informatie over dit project.
   header:
     navigation:
       choose_language: Kies de taal
       contact: Contact
       map: Plattegrond
+      travelguide: Reisgids
       projects: Doe mee
       faq: FAQ
       report_problem: Geef een probleem op
@@ -42,22 +55,35 @@ nl:
         headline: 'Markeer en vind rolstoel toegankelijke plaatsen met Wheelmap.org - wereldwijd en gratis. Het is makkelijk:'
         lookup: Zoek een speciale plaats
         secondary_headline: 'Ons stoplicht systeem om de rolstoel toegankelijke openbare ruimtes te markeren:'
+      embed_link: Laat zien op Wheelmap.org
       zoom_alert: Inzoomen om meer locaties te zien.
   nodes:
     new:
       form:
+        title: Voeg een plek toe
         legend: locatie
+        location: Klik op de plattegrond waar de plek zich bevind.
         section:
           name_category:
             name: Naam en locatie type
           address:
             name: Adres
+            title: Waar is de plek?
+            help: Je kan de marker verplaatsen naar de juiste locatie op de plattegrond.
           similar_nodes:
             name: Vergelijkbare plaatsen
+            title: We vonden vergelijkbare plekken in de buurt. Is het één van deze?
+            go_edit: Ga verder met deze plek
+            go_new: Het is geen van de bovengenoemde locaties...
+            empty: Er zijn geen vergelijkbare plekken gevonden.
           accessibility:
             name: Rolstoel toegankelijkheid
+            title: Informatie over rolstoeltoegankelijkheid
           contact:
             name: Contact
+            title: Andere contactinformatie
+          overview:
+            title: Is alle informatie correct?
     node_data:
       address: 'Adres:'
       contact_details: 'Contactgegevens:'
@@ -76,19 +102,26 @@ nl:
       similar: 'Vergelijkbare plaatsen: %{name}'
     node_status:
       accessible_toilet: 'Rolstoeltoegankelijk toilet:'
+      premium: '%{name} zegt: deze plek is'
       wheelchair_accessibility: 'Rolstoel toegankelijkheid:'
     node_streetview:
       streetview: 'Streetview:'
     show:
+      header:
+        meta:
+          title: 'Deze plek is op Wheelmap.org: %{name}'
       share:
         email: E-mail
         facebook: Facebook
+        text: 'Ik vond deze plek op Wheelmap.org: %{name}'
         twitter: Twitter
   search:
     index:
       no-results:
+        headline: 'Sorry, we konden de plek genaamd "%{query}" niet vinden. '
         hint:
           example: <strong>Bijvoorbeeld:</strong> London, United Kingdom
+          work_in_progress: We werken er hard aan om in de toekomst het zoeken naar plekken gemakkelijker en meer intuïtief te maken.
         try_this:
           address: Geef a.u.b. meer <strong>adres gegevens</strong>.
           intro: 'Probeer dit'
@@ -98,19 +131,34 @@ nl:
           one: '%{count} resultaat'
           other: '%{count} resultaat:'
     timeout:
+      headline: Sorry, er ging iets fout.
       info: Onze zoekdienst was tijdelijk buiten werk.
       repeat_search: Herhaal de zoekopdracht
   users:
     profile:
       newsletter:
         title: Nieuwsbrief
+        text: Blijf op de hoogte met de Wheelmap nieuwsbrief. Geen zorgen, we zullen je geen spam sturen. Maximaal eens per maand sturen we je een bericht.
+        label: Ja, houd me op de hoogte over Wheelmap.
       show:
+        title: Overzicht
         greeting:
+          anonymously: Hallo daar
           personalized: Dag %{name}
+        overview:
+          text: Je hebt
       photos:
         title: 'Foto''s '
+        empty: Je hebt nog geen foto's upgeload.
       edit:
         title: Profiel
+        legends:
+          user_data: Je accountinformatie
       widget:
+        title: Widget
+        height: Hoogte
+        width: Breedte
+        categories: Geef categoriefilter weer
         legends:
           settings: Instellingen
+          preview: Preview

@@ -1,11 +1,24 @@
 fi:
+  application:
+    require_no_user:
+      notice: "Olet jo sisäänkirjautuneena..."
+    require_user:
+      notice: "Sinun täytyy olla sisäänkirjautuneena nähdäksesi tämän sivun."
   breadcrumbs:
     node:
       create: "Lisää uusi paikka"
     root: Wheelmap
   common:
     close: Sulje
+  errors:
+    messages:
+      accepted: "Täytyy olla hyväksytty"
+  flash:
+    photos:
+      destroy:
+        notice: "Kuva on poistettu onnistuneesti "
   form:
+    show_fully_accessible_places: "Saavutettava pyörätuolilla"
     show_limited_accessible_places: "Osittain esteetön pääsy pyörätuolilla "
     show_places_without_status: "Tuntematon status"
     show_unaccessible_places: "Ei saavutettavissa pyörätuolilla"
@@ -13,7 +26,13 @@ fi:
     labels:
       city: "Kaupunki"
       email: Sähköposti
+      name: "Nimi:"
+      osm_password: "OpenStreetMap salasana"
+      osm_username: "OpenStreetMap tilin nimi"
       password: Salasana
+      password_confirmation: "Salasana uudelleen"
+      phone: "Puhelin"
+      postcode: "Postinumero"
       privacy_policy: "Hyväksyn tietosuojasopimuksen pykälät 1 ja 2."
       save: Tallenna
       street: "Katu:"

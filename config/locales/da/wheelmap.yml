@@ -16,8 +16,11 @@ da:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
+      accepted: "skal være accepteret"
       already_confirmed: "var allerede bekræftet, prøv at logge ind"
+      blank: "skal være udfyldt"
       confirmation: "stemmer ikke overens med bekræftelse"
+      empty: "skal være udfyldt"
       equal_to: "skal være lig med %{count}"
       exclusion: "er reserveret"
       expired: "udløbet, bed venligst om en ny"

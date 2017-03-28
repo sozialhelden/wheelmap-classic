@@ -2,9 +2,12 @@ nl:
   devise:
     confirmations:
       confirmed: "Jouw email adres is succesvol bevestigd. Je bent nu aangemeld."
+      link: "Heb je de bevestiging instructie niet ontvangen?"
       send_instructions: "Je zal een email met de instructie voor jouw account bevestiging ontvangen. Dat duurt maar een paar minuten."
+      send_paranoid_instructions: "Als uw account bestaat, zult u binnen een paar minuten een email ontvangen met instructies, hoe u uw account kunt bevestigen."
     destroy:
       confirm: "Ben je zeker?"
+      headline: "Verwijder account"
       link: "Nu verwijderen"
     edit:
       form:
@@ -29,6 +32,8 @@ nl:
         subject: "Een stap nog om jouw account te activeren"
       reset_password_instructions:
         subject: "Reset wachtwoord aanwijzing"
+      unlock_instructions:
+        subject: "Instructies vrijgeven. "
     mandatory: "* nodig"
     omniauth_callbacks:
       failure: "Autorisatie met  %{kind} mislukte. Fout: \"%{reason}\"."
@@ -62,8 +67,10 @@ nl:
         inactive: inactief
         locked: geblokkeerd
         unconfirmed: onbevestigd
+      signed_up: "Je bent succesvol ingeschreven. Inmiddels heb je een bevestigingsemail ontvangen."
       updated: "Jouw account is succesvol geactualiseerd."
     sessions:
+      inactive: "Je account is nog niet geactiveerd."
       invalid: "Ongeldig email of wachtwoord."
       invalid_token: "Ongeldig authentificatie bewijs"
       link: "Aanmelden"
@@ -73,6 +80,7 @@ nl:
         promo_text_thank_you: "Dank je wel voor je ondersteuning!"
         sign_in_with: "Log in met %{kind}"
         sign_up_with_osm: "Registreer je nu."
+        wheelmap_promo_text: "Met jouw kennis over rolstoeltoegankelijke plekken kun je helpen om mensen met een handicap hun dag beter te kunnen laten plannen. Ook help je OpenStreetMap meer gedetailleerd te maken."
       signed_in: "Succesvol aangemeld"
       signed_out: "Succesvol uitgelogd"
       timeout: "Jouw sessie is afgelopen, alsjeblieft weer inlogggen om door te gaan."
@@ -98,7 +106,10 @@ nl:
           email: Email
           password: Wachtwoord
           password_confirmation: "Herhaal wachtwoord"
+          wants_newsletter: "Ja, houd me op de hoogte over Wheelmap - maar niet meer dan eens per maand."
         submit: "Aanmelden"
       headline: "Aanmelden"
     unlocks:
+      send_instructions: "Binnen een paar minuten ontvang je een email met instructies hoe je je account kunt ontgrendelen."
+      send_paranoid_instructions: "Als je account bestaat, zul je binnen een paar minuten een email ontvangen met instructies hoe je je account kunt ontgrendelen."
       unlocked: "Jouw account werd succesvol vrijgegeven. Je bent nu ingeloggd."

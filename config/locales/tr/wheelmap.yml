@@ -11,7 +11,7 @@ tr:
     root: Wheelmap
   common:
     close: kapatınız
-    skip: atla
+    skip: Atla
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
@@ -337,7 +337,7 @@ tr:
     after_signup_edit:
       welcome:
         headline: "Neredeyse bitti! Şimdi Wheelmap hesabınızı tamamlamak için:"
-        set_password_for_mobile: "OpenStreetMap'e başarıyla kayıt oldunuz. Wheelmap'ın kullanmasını istediğiniz bir e-posta adresi seçin, böylece faaliyetleriniz hakkında sizi bilgilendirebiliriz (örneğin işaretlediğiniz mekanların sayısı). Bu bilgiye \"Profil\" üzerinden ulaşabilirsiniz."
+        set_password_for_mobile: "OpenStreetMap'e başarıyla kaydoldunuz. Wheelmap'ın kullanmasını istediğiniz bir e-posta adresi seçin, böylece faaliyetleriniz hakkında sizi bilgilendirebiliriz (örneğin işaretlediğiniz mekanların sayısı). Bu bilgiye \"Profil\" üzerinden ulaşabilirsiniz."
         text: "Sizinle nasıl iletişime geçebiliriz? Bu bilgiyi daha sonra profilinizinden değiştirebilirsiniz."
     edit:
       headline:

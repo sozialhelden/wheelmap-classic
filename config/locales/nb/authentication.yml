@@ -1,47 +1,57 @@
 nb:
   devise:
     confirmations:
-      confirmed: "Epostadressen din har blitt bekreftet."
-      send_instructions: "Du vil i løpet av noen minutter motta en epost med en lenke til bruk for å bekrefte epostadressen din."
+      confirmed: "E-postadressen din har blitt bekreftet."
+      link: "Mottok du ikke instruksjoner for bekreftelse?"
+      send_instructions: "Du vil i løpet av noen minutter motta en e-post med en lenke til bruk for å bekrefte e-postadressen din."
+      send_paranoid_instructions: "Hvis kontoen din eksisterer, vil du få en e-post med instruksjoner på hvordan du kan bekrefte kontoen din i løpet av noen minutter."
     destroy:
       confirm: "Er du sikker?"
+      headline: "Slett konto"
       link: "Slett nå"
     edit:
       form:
         labels:
           current_password: "Nåværende passord <i>(vi trenger det for å bekrefte endringen)</i>"
-          email: Epost
+          email: E-post
           password: "Passord <i>(La den stå tom hvis du ikke vil endre)</i>"
           password_confirmation: "Gjenta passord"
         submit: "Lagre endringer"
       headline: "Rediger konto"
     failure:
       already_authenticated: "Du har allerede logget deg på."
-      invalid: "Epost eller passord er ikke gyldig."
+      inactive: "Din konto er foreløpig ikke aktivert."
+      invalid: "E-post eller passord er ikke gyldig."
       invalid_token: "Ugyldig autentifisering."
       locked: "Din konto er låst"
+      timeout: "Økten din er utløpt, vennligst logg på igjen for å fortsette."
       unauthenticated: "Du må logge på eller registrere deg for å kunne fortsette"
       unconfirmed: "Du må bekrefte kontoen din for å kunne fortsette."
     mailer:
       confirmation_instructions:
+        landing_page: "Vennligst klikk på linken vi akkurat sendte til din e-postaddresse. Hvis du ikke har mottatt noe fra oss, vennligst sjekk om den har havnet i søppelpost-mappen. Hvis den ikke finnes der, gå tilbake til registreringssiden, og prøv igjen."
         subject: "En siste steg for å aktivere kontoen"
       reset_password_instructions:
         subject: "Innstruksjoner for nullstilling av passord"
+      unlock_instructions:
+        subject: "Intruksjoner for gjenåpning av konto"
     mandatory: "* Påkrevd"
     omniauth_callbacks:
       failure: "Kunne ikke autorisere deg med %{kind}. Feilmelding: \"%{reason}\"."
+      permission_missing: "Du har ikke gitt de nødvendige tillatelsene."
       success: "Vellykket autorisering fra %{kind}."
     password_recovery:
       form:
         labels:
-          email: Epost
+          email: E-post
         submit: "Nullstill passord"
       headline: "Forgot password?"
     password_reset:
       email:
-        comment: "Hvis du ikke bestilte tilbakestilling av passord, bare ignorer denne epost. Ditt passord vil ikke bli endret med mindre du klikker på linken over og lager et nytt passord."
+        comment: "Hvis du ikke forespurte tilbakestilling av passord, bare ignorer denne e-posten. Ditt passord vil ikke bli endret med mindre du klikker på linken over og lager et nytt passord."
         headline: "Velkommen  %{email}"
         link: "Endre passordet"
+        text: "Vi har mottatt en forespørsel om bytte av passordet ditt. Hvis forespørselen kom fra deg, trykk på linken -  hvis ikke, vennligst ignorer dette!"
       form:
         labels:
           password: "Nytt passord"
@@ -50,6 +60,8 @@ nb:
       headline: "Tilbakestill passord"
     passwords:
       link: "Glemt passord?"
+      send_instructions: "Du vil om få minutter motta en e-post med instruksjoner for hvordan du nullstiller passordet ditt"
+      send_paranoid_instructions: "Hvis kontoen eksisterer vil du om noen minutter motta en e-post med en veiledning for tilbakestilling av passordet ditt"
       updated: "Ditt passord ble endret, du er nå pålogget"
       updated_not_active: "Passordet ditt har blitt endret"
     registrations:
@@ -60,25 +72,30 @@ nb:
         inactive: inaktiv
         locked: Låst
         unconfirmed: Ubrekreftet
+      signed_up: "Din registrering var vellykket. En bekreftelse vil bli sendt til din e-postadresse."
       updated: "Din profil er nå oppdatert."
     sessions:
-      invalid: "Feil epost eller passord."
+      inactive: "Din konto er foreløpig ikke aktivert"
+      invalid: "Feil e-post eller passord."
       invalid_token: "Ugyldig autorisasjon"
       link: "Logg på"
       locked: "Din konto er låst"
       new:
         no_osm_account: "Ingen OpenStreetMap-konto?"
+        osm_promo_text: "Wheelmap er basert på geodata fra OpenStreetMap (OSM). OpenStreetMap er et gratis verdenskart, laget av personer som deg. Det minner om Wikipedia, bare for kart. For å redigere steder eller opprette nye steder trenger du en OpenStreetMap-konto og må være logget inn med den."
         promo_text_thank_you: "Tusen takk for din støtte!"
         sign_in_with: "Logg på med %{kind}\n"
         sign_up_with_osm: "Registrer nå."
+        wheelmap_promo_text: "Med din kunnskap om rullestoltilgjengelige steder bidrar du til at folk med nedsatt funksjon lettere kan organisere hverdagen sin. Dette gjør også OpenStreetMap betraktelig mer detaljert."
       signed_in: "Du er nå innlogget"
       signed_out: "Du er nå logget av"
+      timeout: "Økten din er utløpt, vennligst logg på igjen for å fortsette."
       unauthenticated: "Du må logge deg på eller registrere deg før du kan fortsette"
       unconfirmed: "Du må bekrefte kontoen før du kan fortsette"
     sign_in:
       form:
         labels:
-          email: Epost
+          email: E-post
           password: Passord
           remember_me: "Forbli innlogget?"
         submit: "Logg inn"
@@ -92,10 +109,14 @@ nb:
         welcome: "Velkommen %{email}!"
       form:
         labels:
-          email: Epost
+          email: E-post
           password: Passord
           password_confirmation: "Gjenta passord"
+          wants_newsletter: "Vennligst hold meg oppdatert om Wheelmap - men ikke mer enn en gang per måned."
         submit: "Registrer"
       headline: "Registrer"
     unlocks:
+      link: "Mottok du ikke instruksjoner for gjenåpning?"
+      send_instructions: "Du vil i løpet av få minutter motta en e-post med instruksjoner om hvordan du kan gjenåpne din konto."
+      send_paranoid_instructions: "Hvis kontoen eksisterer, vil du i løpet av få minutter motta en e-post med instruksjoner om hvordan du kan låse opp kontoen din"
       unlocked: "Din konto er gjenåpnet. Du er nå pålogget."

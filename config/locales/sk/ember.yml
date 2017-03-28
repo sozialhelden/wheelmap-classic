@@ -1,5 +1,21 @@
 sk:
+  models:
+    category:
+      prompt: "Zvoľte kategóriu"
+    node_type:
+      prompt: "Zvoľte typ"
+    node:
+      info_edit_position: "Poloha sa zobrazí na Wheelmap tak ako ju vidíte vyššie. Ak značka nie je na správnom mieste, môžete <a href=\"%{url}\"> upraviť jej pozíciu na OpensStreetMap"
+      mail:
+        subject: "[Wheelmap] Problém s %{headline}"
+        body: "(Prosím, píšte iba po anglicky alebo po nemecky.)\n\n\nAhoj Sozialhelden,\nniečo je zle s polohou : %{url}\n\nProblém je:"
   actions:
+    send: Odoslané
     save: Uložiť
     cancel: Prerušiť
     next: Ďalej
+  errors:
+    models:
+      node:
+        website:
+          invalid: "Adresa webovej stránky nie je platná."
