@@ -7,8 +7,15 @@ Wheelmap.org is an online map to search, find and mark wheelchair-accessible pla
 
 This Repository is the source code of the website [Wheelmap.org](http://wheelmap.org/).
 
-## I. Installation
+### Development Environment
 
+A `Vagrantfile` is bundled for convenience. It is the easiest way to get started testing or developing wheelmap. It will set up the application entirely and configure it for use inside the box. Please note it imports data for Berlin only to say time.
+
+To use this just navigate into the Wheelmap directory and run `vagrant up`. After it is completed you can enter the box with `vagrant ssh`. You'll find a current copy of the repository at `/vagrant`, `cd` into it then you can start the server with `bundle exec rails server`, visit it at `localhost:3000`.
+
+**If you use the `vagrant` box you do not need to worry about the rest of the setup below It is all done for you.**
+
+## I. Installation
 
 ### Requirements
 
