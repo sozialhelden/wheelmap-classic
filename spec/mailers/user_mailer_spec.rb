@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe UserMailer do
   let :user do
-    FactoryGirl.create(:user, email: 'chuck@heartbreaker.com')
+    FactoryGirl.create(:user, email: 'test@example.org')
   end
 
   subject do
@@ -11,7 +11,7 @@ describe UserMailer do
   end
 
   describe 'User signed up' do
-    it { is_expected.to deliver_to 'chuck@heartbreaker.com' }
+    it { is_expected.to deliver_to 'test@example.org' }
     it { is_expected.to have_subject 'Willkommen bei wheelmap.org' }
     it { is_expected.to have_body_text(/herzlich Willkommen bei Wheelmap.org!/) }
 
