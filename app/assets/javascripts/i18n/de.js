@@ -425,17 +425,17 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
         "other": "etwa %{count} Jahre"
       },
       "almost_x_years": {
-        "one": "fast 1 Jahr",
-        "other": "fast %{count} Jahre"
+        "one": "almost 1 year",
+        "other": "almost %{count} years"
       },
       "half_a_minute": "eine halbe Minute",
       "less_than_x_minutes": {
-        "one": "weniger als eine Minute",
-        "other": "weniger als %{count} Minuten"
+        "one": "less than a minute",
+        "other": "less than %{count} minutes"
       },
       "less_than_x_seconds": {
-        "one": "weniger als eine Sekunde",
-        "other": "weniger als %{count} Sekunden"
+        "one": "less than 1 second",
+        "other": "less than %{count} seconds"
       },
       "over_x_years": {
         "one": "mehr als 1 Jahr",
@@ -459,12 +459,12 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
       }
     },
     "prompts": {
-      "day": "Tag",
-      "hour": "Stunde",
+      "day": "Day",
+      "hour": "Hour",
       "minute": "Minute",
-      "month": "Monat",
-      "second": "Sekunde",
-      "year": "Jahr"
+      "month": "Month",
+      "second": "Seconds",
+      "year": "Year"
     }
   },
   "devise": {
@@ -494,6 +494,7 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
     "failure": {
       "admin_user": {
         "invalid": "Benutzername oder Kennwort nicht korrekt.",
+        "not_found_in_database": "Benutzername existiert nicht, bitte versuchen Sie eine andere E-Mail-Adresse.",
         "unauthenticated": "Bitte melden Sie sich als Administrator an."
       },
       "already_authenticated": "Du bist bereits angemeldet.",
@@ -794,7 +795,6 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "about_wheelmap": "Über Wheelmap",
       "blog": "News",
       "choose_language": "Sprache wählen",
       "contact": "Kontakt",

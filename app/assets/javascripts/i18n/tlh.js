@@ -720,7 +720,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
       "centralkey": "Central key:",
       "city": "veng:",
       "create": "Daq chen",
-      "email": " jabbI'ID",
+      "email": "jabbI'ID",
       "finish": "Finish",
       "housenumber": "ghobe':",
       "lat": "Latitude",
@@ -1621,7 +1621,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
     "limited": "loQ naw'laH rutlhquS",
     "no": "naw'laHbe' rutlhquS",
     "unknown": "rutlhquS chaw Daq 'e' Sovbe'lu' ",
-    "yes": "naw'laHbej rutlhquS"
+    "yes": "naw'laH rutlhquS"
   },
   "wheelmap": {
     "footer": {

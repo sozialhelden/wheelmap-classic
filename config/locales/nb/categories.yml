@@ -8,6 +8,7 @@ nb:
       health: Helsehjelp
       leisure: Kultur & Fritid
       misc: Diverse
+      public_transfer: "Offentlig transport"
       shopping: Butikker
       sport: Sport
       tourism: Turisme
@@ -25,6 +26,7 @@ nb:
         motel: Motel
       education:
         college: Høyskole
+        driving_school: "Kjøreskole"
         kindergarten: Barnehage
         library: Bibliotek
         museum: Museum
@@ -44,15 +46,19 @@ nb:
         police: Politi
         public_building: "Offentlig byggning"
       health:
+        dentist: Tannlege
+        doctors: Doktor
         hearing_aids: "Høreapparatforhandler"
         hospital: Sykehus
         medical_supply: "Apotek"
         pharmacy: Apotek
+        physiotherapist: 'Fysioterapeut '
         social_facility: "Fellesområde"
         veterinary: Vetrinær
       leisure:
         arena: Arena
         brothel: Bordell
+        casino: Kasino
         cinema: Kino
         gallery: Galleri
         nightclub: Nattklubb
@@ -63,6 +69,7 @@ nb:
         zoo: Dyrepark
       misc:
         company: "Bedrift (kontor)"
+        insurance: Forsikring
         lawyer: Advokat
         place_of_worship: "Bønnerom / stillerom"
         toilets: Toaletter
@@ -97,6 +104,7 @@ nb:
       shopping:
         alcohol: Brennevin
         bakery: Bakeri
+        beauty: "Skjønnhetssalong"
         beverages: Forfriskninger
         bicycle: "Sykkelbutikk"
         books: Bøker
@@ -105,6 +113,7 @@ nb:
         car_shop: "Bilbutikk"
         clothes: Klær
         computer: Datamaskin
+        confectionery: "Godteributikk"
         convenience: Nærbutikk
         department_store: "Varemagasin"
         doityourself: "Gjør det selv"
@@ -117,6 +126,7 @@ nb:
         kiosk: Kiosk
         laundry: Vask
         mall: "Kjøpesenter"
+        mobile_phone: "Mobiltelefonbutikk"
         optician: Optiker
         photo: Foto
         second_hand: "Brukt"
@@ -124,6 +134,7 @@ nb:
         sports: Sport
         stationery: Skrivesaker
         supermarket: Dagligvare
+        tailor: Skredder
         video: "Videoutleie"
       sport:
         sports_centre: "Sportssenter"
