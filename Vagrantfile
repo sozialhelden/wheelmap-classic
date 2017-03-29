@@ -10,7 +10,7 @@ Vagrant.configure("2") do |config|
   # Required for NFS to work, pick any local IP
   config.vm.network :private_network, ip: '192.168.50.50'
   # Use NFS for shared folders for better performance
-  config.vm.synced_folder '..', '/vagrant', nfs: true
+  config.vm.synced_folder '.', '/vagrant', nfs: true
 
   # Forwards the SSH agent so your keys work.
   config.ssh.forward_agent = true
@@ -27,6 +27,6 @@ Vagrant.configure("2") do |config|
   end
 
   # Provision the necessary dependencies.
-  config.vm.provision "shell", path: "privileged_setup.sh"
-  config.vm.provision "shell", path: "unprivileged_setup.sh", privileged: false
+  config.vm.provision "shell", path: "vagrant/privileged_setup.sh"
+  config.vm.provision "shell", path: "vagrant/unprivileged_setup.sh", privileged: false
 end
