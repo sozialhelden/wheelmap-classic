@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.6.16, for debian-linux-gnu (x86_64)
 --
--- Host: localhost    Database: wheelmap_test
+-- Host: localhost    Database: wheelmap_development
 -- ------------------------------------------------------
 -- Server version	5.6.16-1~exp1
 
@@ -586,7 +586,7 @@ CREATE TABLE `widgets` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-02-09 10:38:40
+-- Dump completed on 2017-03-29 10:32:03
 INSERT INTO schema_migrations (version) VALUES ('20110107131649');
 
 INSERT INTO schema_migrations (version) VALUES ('20110114163727');
@@ -742,4 +742,6 @@ INSERT INTO schema_migrations (version) VALUES ('20170206150119');
 INSERT INTO schema_migrations (version) VALUES ('20170207133358');
 
 INSERT INTO schema_migrations (version) VALUES ('20170209093420');
+
+INSERT INTO schema_migrations (version) VALUES ('20170217131434');
 
