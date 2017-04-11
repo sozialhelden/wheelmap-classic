@@ -35,7 +35,7 @@ namespace :streetspotr do
     raise 'Usage: bundle exec rake streetspotr:import file=<your_csv_file>' unless csv_file
 
     poi = nil
-    provider = Provider.find_or_create_by_name('Streetspotr')
+    provider = Provider.find_or_create_by(name: 'Streetspotr')
 
     wheelchair_stati = Hash.new(0)
     toilet_stati = Hash.new(0)
