@@ -86,7 +86,7 @@ namespace :streetspotr do
         wheelchair_stati[status.to_sym] += 1
         toilet_stati[toilet.to_sym] += 1
 
-        provided_poi = ProvidedPoi.find_or_initialize_by_poi_id_and_provider_id(poi.id, provider.id)
+        provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
         provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
         provided_poi.wheelchair_toilet = minimal_status([provided_poi.wheelchair_toilet, status].compact.uniq)
         provided_poi.save
