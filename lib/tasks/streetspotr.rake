@@ -155,10 +155,18 @@ namespace :streetspotr do
     stati.first
   end
 
-  def wheelchair_status(has_step, _indoor)
-    # TODO: Add the indoor again when the Streetspotr questions got fixed
-    return 'no' if has_step == 'yes'
-    'unknown'
+  def wheelchair_status(has_step, indoor)
+    if has_step == 'yes' && indoor == 'yes'
+      return 'no'
+    elsif has_step == 'yes' && indoor == 'no'
+      return 'no'
+    elsif has_step == 'no' && indoor == 'yes'
+      return 'limited'
+    elsif has_step == 'no' && indoor == 'no'
+      return 'yes'
+    else
+      return 'unknown'
+    end
   end
 
   def wheelchair_toilet(status, toilet)
