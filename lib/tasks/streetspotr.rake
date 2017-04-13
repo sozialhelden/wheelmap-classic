@@ -120,8 +120,15 @@ namespace :streetspotr do
     if row.key? key
       status = row[key].to_s.strip.downcase
 
-      return 'yes' if %w(yes ja).include? status
-      return 'no'
+      if %w(yes ja).include? status
+        return 'yes'
+      elsif %w(limited teilweise).include? status
+        return 'limited'
+      elsif %w(no nein).include? status
+        return 'no'
+      else
+        return 'unknown'
+      end
     end
 
     key_yes = (key.to_s + '_yes').to_sym
