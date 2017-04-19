@@ -94,8 +94,6 @@ namespace :streetspotr do
         p = photo(poi, row)
         p.save
       end
-
-      sleep 0.1
     end
 
     puts
