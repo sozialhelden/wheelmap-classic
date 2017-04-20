@@ -41,7 +41,9 @@ namespace :streetspotr do
     toilet_stati = Hash.new(0)
     skipped = Hash.new(0)
 
-    CSV.foreach(csv_file, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
+    UTF8_TO_ASCII_CONVERTER = ->(str) { str.encode('ascii-8bit', invalid: :replace, undef: :replace, replace: '') }
+
+    CSV.foreach(csv_file, encoding: 'utf-8', converters: UTF8_TO_ASCII_CONVERTER, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       osm_id = row[:refid]
 
       # Blank line (only photo)
