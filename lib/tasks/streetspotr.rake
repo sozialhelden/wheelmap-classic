@@ -48,24 +48,28 @@ namespace :streetspotr do
 
       # Blank line (only photo)
       if osm_id.blank?
-        unless poi
-          puts 'Skipped: Invalid Photo Line.'
+        if poi == nil
+          puts "Skipped: Removed POI (osm_id is blank and POI is nil)."
+          skipped[:removed] += 1
           next
         end
 
         # OSM id is blank (multiple photos per POI)
         p = photo(poi, row)
         p.save
+        puts "Photo without osm_id saved!"
       else
+
         # Find the POI
         poi = begin
                 Poi.find(osm_id.to_i)
               rescue
+                puts "Couldn't find POI with 'osm_id'=#{osm_id}"
                 nil
               end
 
-        unless poi
-          puts 'Skipped: Removed POI.'
+        if poi == nil
+          puts "Skipped: Invalid Photo Line (osm_id #{osm_id} is not blank but POI is nil)"
           skipped[:removed] += 1
           next
         end
@@ -95,6 +99,7 @@ namespace :streetspotr do
 
         p = photo(poi, row)
         p.save
+        puts "Photo with osm_id #{osm_id} saved!"
       end
     end
 
@@ -138,12 +143,16 @@ namespace :streetspotr do
       status_yes = !row[key_yes].to_i.zero?
       status_no = !row[key_no].to_i.zero?
 
-      return 'yes' if status_yes
-      return 'no' if status_no
-      return 'unknown'
+      if status_yes
+        return 'yes'
+      elsif status_no
+        return 'no'
+      else
+        return 'unknown'
+      end
     end
 
-    raise "Cannot read value for #{key}."
+    raise "Cannot read value for #{key}"
   end
 
   def photo(node, row)
@@ -174,10 +183,17 @@ namespace :streetspotr do
     else
       return 'unknown'
     end
+    status
   end
 
   def wheelchair_toilet(status, toilet)
-    return 'unknown' if status == 'unknown'
+    if status == 'yes'
+      return 'yes'
+    elsif status == 'no'
+      return 'no'
+    else
+      return 'unknown'
+    end
     toilet
   end
 end
