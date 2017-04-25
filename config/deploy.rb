@@ -25,7 +25,7 @@ set :pty, true
 # Default value for :linked_files is []
 set :linked_files, %w{ config/database.yml config/open_street_map.yml config/metrics.yml config/librato.yml config/newrelic.yml .env config/secrets.yml}
 
-set :bundle_roles, [:app, :worker]
+set :bundle_roles, [:app, :worker, :importer]
 set :bundle_without, %w{ development test metrics deployment }.join(' ')
 set :bundle_jobs, 4
 set :bundle_binstubs, -> { shared_path.join('bin') }
@@ -75,7 +75,7 @@ namespace :deploy do
 
         # We need to link the existing shared `/var/apps/wheelmap/public/system` folder
         # into the new release.
-        execute :ln, "-s", "#{deploy_path}/public/system", "#{release_path}/public/"
+        execute :ln, "-s", "#{deploy_path}/public/system/uploads", "#{release_path}/public/system"
 
         # We create this file so the consul health check will pass. We can't use an
         # existing file since they are all unpredictably named.
