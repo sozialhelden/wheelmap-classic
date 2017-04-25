@@ -8,6 +8,7 @@ SHAPE_FILE = "#{VAR_DIR}/shapes.osc".freeze
 STATE_FILE = "#{WORKING_DIR}/state.txt".freeze
 BACKUP_FILE = "#{WORKING_DIR}/state.old".freeze
 DOWNLOAD_LOCK = "#{WORKING_DIR}/download.lock".freeze
+MAKE_OSC_DIR = "/var/apps/make_osc/".freeze
 
 require 'rake'
 
@@ -55,7 +56,7 @@ end
 
 def get_new_shape_replication_files
   puts "INFO: Fetching shape changes."
-  system "#{MAKE_OSC} -d >> #{SHAPE_FILE}"
+  system "BUNDLE_GEMFILE=#{MAKE_OSC_DIR}/Gemfile bundle exec #{MAKE_OSC_DIR}/make_osc.rb -d >> #{SHAPE_FILE}"
 end
 
 def merge_replication_files
