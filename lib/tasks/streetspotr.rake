@@ -35,6 +35,8 @@ namespace :streetspotr do
     raise 'Usage: bundle exec rake streetspotr:import file=<your_csv_file>' unless csv_file
 
     poi = nil
+    count = 0
+    processed = []
     provider = Provider.find_or_create_by(name: 'Streetspotr')
 
     wheelchair_stati = Hash.new(0)
@@ -95,7 +97,10 @@ namespace :streetspotr do
         provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
         provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
         provided_poi.wheelchair_toilet = minimal_status([provided_poi.wheelchair_toilet, status].compact.uniq)
-        provided_poi.save
+        provided_poi.url = row[:photo_url]
+        provided_poi.save!
+        processed << provided_poi.id
+        count += 1
 
         p = photo(poi, row)
         p.save
