@@ -34,7 +34,11 @@ apt-get install -y \
   ruby-dev \
   nodejs-legacy \
   npm \
-  phantomjs
+  phantomjs \
+  libffi-dev \
+  libgeos-dev \
+  libproj-dev \
+  libgdal-dev
 
 gem install bundler
 
