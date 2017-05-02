@@ -1,4 +1,6 @@
 namespace :streetspotr do
+  include ActionView::Helpers::TextHelper
+
   desc 'Check data from StreetSpotr'
   task :check do
     csv_file = ENV['file']
@@ -31,6 +33,7 @@ namespace :streetspotr do
 
   desc 'Import data from StreetSpotr'
   task import: :environment do
+
     csv_file = ENV['file']
     raise 'Usage: bundle exec rake streetspotr:import file=<your_csv_file>' unless csv_file
 
@@ -165,7 +168,14 @@ namespace :streetspotr do
     photo_caption = row[:photo_caption]
     new_photo = node.photos.build
     new_photo.remote_image_url = photo_url
-    new_photo.caption = photo_caption unless photo_caption.blank?
+
+    if photo_caption != nil && photo_caption.length > 255
+      new_photo_caption_string = truncate(photo_caption, length: 255, omission: " (...)")
+      puts "OMITTED PHOTO CAPTION: #{new_photo_caption_string}"
+      new_photo.caption = new_photo_caption_string
+    else
+      new_photo.caption = photo_caption
+    end
     new_photo.user = User.wheelmap_visitor
     new_photo
   end
