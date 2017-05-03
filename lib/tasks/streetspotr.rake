@@ -54,7 +54,7 @@ namespace :streetspotr do
       # Blank line (only photo)
       if osm_id.blank?
         if poi == nil
-          puts "Skipped: Removed POI (osm_id is blank and POI is nil)."
+          puts "Skipped: No import for current POI (osm_id is blank and POI is nil)."
           skipped[:removed] += 1
           next
         end
@@ -114,7 +114,7 @@ namespace :streetspotr do
     puts
     puts "Wheelchair: Yes: #{wheelchair_stati[:yes]}, Limited: #{wheelchair_stati[:limited]}, No: #{wheelchair_stati[:no]}, Unknown #{wheelchair_stati[:unknown]}."
     puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
-    puts "Skipped: Unknown: #{skipped[:unknown]}, Removed: #{skipped[:removed]}."
+    puts "Skipped: Unknown: #{skipped[:unknown]}, Not imported: #{skipped[:removed]}."
   end
 
   def has_step(row)
