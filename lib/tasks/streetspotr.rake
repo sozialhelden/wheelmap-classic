@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 namespace :streetspotr do
   include ActionView::Helpers::TextHelper
 
@@ -46,9 +48,10 @@ namespace :streetspotr do
     toilet_stati = Hash.new(0)
     skipped = Hash.new(0)
 
-    UTF8_TO_ASCII_CONVERTER = ->(str) { str.encode('ascii-8bit', invalid: :replace, undef: :replace, replace: '') }
+    # Remove all 4-byte characters (e.g. emoji) in strings
+    UTF8_TO_UTF8MB4_CONVERTER = ->(str) { str.each_char.select { |char| char.bytesize < 4 }.join }
 
-    CSV.foreach(csv_file, encoding: 'utf-8', converters: UTF8_TO_ASCII_CONVERTER, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
+    CSV.foreach(csv_file, converters: UTF8_TO_UTF8MB4_CONVERTER, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       osm_id = row[:refid]
 
       # Blank line (only photo)
