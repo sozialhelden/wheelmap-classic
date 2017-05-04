@@ -87,7 +87,7 @@ namespace :streetspotr do
         indoor = indoor(row)
 
         status = wheelchair_status(step, indoor)
-        toilet = wheelchair_toilet(status, toilet)
+        toilet = wheelchair_toilet(toilet)
 
         puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> Status: #{status}, Toilet: #{toilet}."
 
@@ -102,7 +102,7 @@ namespace :streetspotr do
 
         provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
         provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
-        provided_poi.wheelchair_toilet = minimal_status([provided_poi.wheelchair_toilet, status].compact.uniq)
+        provided_poi.wheelchair_toilet = minimal_status([provided_poi.wheelchair_toilet].compact.uniq)
         provided_poi.url = row[:photo_url]
         provided_poi.save!
         processed << provided_poi.id
@@ -208,10 +208,10 @@ namespace :streetspotr do
     status
   end
 
-  def wheelchair_toilet(status, toilet)
-    if status == 'yes'
+  def wheelchair_toilet(toilet)
+    if toilet == 'yes'
       return 'yes'
-    elsif status == 'no'
+    elsif toilet == 'no'
       return 'no'
     else
       return 'unknown'
