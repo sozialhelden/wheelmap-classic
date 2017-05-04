@@ -48,8 +48,8 @@ namespace :streetspotr do
     toilet_stati = Hash.new(0)
     skipped = Hash.new(0)
 
-    # Remove all 4-byte characters (e.g. emoji) in strings
-    UTF8_TO_UTF8MB4_CONVERTER = ->(str) { str.each_char.select { |char| char.bytesize < 4 }.join }
+    # Remove 4-byte characters (e.g. emoji) in strings
+    UTF8_TO_UTF8MB4_CONVERTER = ->(str) { str.encode('utf-8', invalid: :replace, undef: :replace, replace: '').each_char.select { |char| char.bytesize < 4 }.join }
 
     CSV.foreach(csv_file, converters: UTF8_TO_UTF8MB4_CONVERTER, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       osm_id = row[:refid]
