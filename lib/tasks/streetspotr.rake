@@ -46,6 +46,7 @@ namespace :streetspotr do
     wheelchair_stati = Hash.new(0)
     toilet_stati = Hash.new(0)
     skipped = Hash.new(0)
+    imported = Hash.new(0)
 
     # Remove 4-byte characters (e.g. emoji) in strings
     UTF8_TO_UTF8MB4_CONVERTER = ->(str) { str.encode('utf-8', invalid: :replace, undef: :replace, replace: '').each_char.select { |char| char.bytesize < 4 }.join }
@@ -72,7 +73,7 @@ namespace :streetspotr do
         else
           p = photo(poi, row)
           p.save!
-          count += 1
+          imported[:photo] += 1
           puts "Photo: Photo without ref_id saved!!!"
         end
       else
@@ -118,13 +119,13 @@ namespace :streetspotr do
         else
           p = photo(poi, row)
           p.save!
-          count += 1
+          imported[:photo] += 1
           provided_poi.url = row[:photo_url]
+          imported[:provided_poi] += 1
           puts "Photo: Photo with ref_id #{osm_id} saved!"
         end
 
         provided_poi.save!
-        count += 1
         puts "Provided Poi: #{provided_poi.id} saved!"
       end
     end
@@ -132,6 +133,7 @@ namespace :streetspotr do
     puts
     puts "Wheelchair: Yes: #{wheelchair_stati[:yes]}, Limited: #{wheelchair_stati[:limited]}, No: #{wheelchair_stati[:no]}, Unknown #{wheelchair_stati[:unknown]}."
     puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
+    puts "Saved: Photos: #{imported[:photo]}, Saved: ProvidedPoi: #{imported[:provided_poi]}."
     puts "Skipped: Unknown: #{skipped[:unknown]}, Skipped: Not imported: #{skipped[:removed]}."
   end
 
