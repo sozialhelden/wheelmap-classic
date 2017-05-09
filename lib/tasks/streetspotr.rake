@@ -41,7 +41,6 @@ namespace :streetspotr do
 
     poi = nil
     count = 0
-    processed = []
     provider = Provider.find_or_create_by(name: 'Streetspotr')
 
     wheelchair_stati = Hash.new(0)
@@ -57,27 +56,32 @@ namespace :streetspotr do
       # Blank line (only photo)
       if osm_id.blank?
         if poi == nil
-          puts "Skipped: No import for current POI (osm_id is blank and POI is nil)."
+          puts "Skipped: No POI import (ref_id is blank and POI is nil)."
           skipped[:removed] += 1
           next
         end
 
-        # OSM id is blank (multiple photos per POI)
-        p = photo(poi, row)
-        p.save
-        puts "Photo without osm_id saved!"
+        # Find the photo
+        image = Photo.find_by(source_url: row[:photo_url])
+
+        # Check for photo duplicates
+        if image
+          puts "Skipped: Photo #{image.id} already imported."
+          skipped[:removed] += 1
+          next
+        else
+          p = photo(poi, row)
+          p.save!
+          count += 1
+          puts "Photo: Photo without ref_id saved!!!"
+        end
       else
 
         # Find the POI
-        poi = begin
-                Poi.find(osm_id.to_i)
-              rescue
-                puts "Couldn't find POI with 'osm_id'=#{osm_id}"
-                nil
-              end
+        poi = Poi.find_by(osm_id: osm_id)
 
         if poi == nil
-          puts "Skipped: Invalid Photo Line (osm_id #{osm_id} is not blank but POI is nil)"
+          puts "Skipped: POI for ref_id #{osm_id} not found."
           skipped[:removed] += 1
           next
         end
@@ -94,6 +98,7 @@ namespace :streetspotr do
         if status == 'unknown'
           puts 'Skipped: Unknown Status.'
           skipped[:unknown] += 1
+          count += 1
           next
         end
 
@@ -103,27 +108,31 @@ namespace :streetspotr do
         provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
         provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
         provided_poi.wheelchair_toilet = minimal_status([provided_poi.wheelchair_toilet].compact.uniq)
-        provided_poi.save!
-        processed << provided_poi.id
-        count += 1
-        puts "Provided Poi: #{provided_poi.id} saved!"
 
+        # Find the photo
         image = Photo.find_by(source_url: row[:photo_url])
 
         if image
-          puts "Skipped. Photo already imported."
+          puts "Skipped: Photo #{image.id} already imported."
+          skipped[:removed] += 1
         else
           p = photo(poi, row)
-          p.save
-          puts "Photo with osm_id #{osm_id} saved!"
+          p.save!
+          count += 1
+          provided_poi.url = row[:photo_url]
+          puts "Photo: Photo with ref_id #{osm_id} saved!"
         end
+
+        provided_poi.save!
+        count += 1
+        puts "Provided Poi: #{provided_poi.id} saved!"
       end
     end
 
     puts
     puts "Wheelchair: Yes: #{wheelchair_stati[:yes]}, Limited: #{wheelchair_stati[:limited]}, No: #{wheelchair_stati[:no]}, Unknown #{wheelchair_stati[:unknown]}."
     puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
-    puts "Skipped: Unknown: #{skipped[:unknown]}, Not imported: #{skipped[:removed]}."
+    puts "Skipped: Unknown: #{skipped[:unknown]}, Skipped: Not imported: #{skipped[:removed]}."
   end
 
   def has_step(row)
