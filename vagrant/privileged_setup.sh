@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+set -e
 
 update-locale LC_ALL=en_US.utf8
 
@@ -30,15 +31,19 @@ apt-get install -y \
   libmagick++-dev \
   libpq-dev \
   vim \
-  ruby \
-  ruby-dev \
   nodejs-legacy \
   npm \
+  pgp \
   phantomjs \
   libffi-dev \
   libgeos-dev \
   libproj-dev \
   libgdal-dev
+
+# Install RVM
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+curl -sSL https://get.rvm.io | bash -s stable --ruby=2.2.2
+source /usr/local/rvm/scripts/rvm
 
 gem install bundler
 

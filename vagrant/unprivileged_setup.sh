@@ -1,4 +1,8 @@
-#!/bin/sh
+#!/bin/bash
+set -e
+
+# RVM
+source /usr/local/rvm/scripts/rvm
 
 # Encourage phantomjs to work (https://github.com/ariya/phantomjs/issues/14376)
 echo "export QT_QPA_PLATFORM=offscreen" >> ~/.profile
