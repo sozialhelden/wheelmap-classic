@@ -103,14 +103,20 @@ namespace :streetspotr do
         provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
         provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
         provided_poi.wheelchair_toilet = minimal_status([provided_poi.wheelchair_toilet].compact.uniq)
-        provided_poi.url = row[:photo_url]
         provided_poi.save!
         processed << provided_poi.id
         count += 1
+        puts "Provided Poi: #{provided_poi.id} saved!"
 
-        p = photo(poi, row)
-        p.save
-        puts "Photo with osm_id #{osm_id} saved!"
+        image = Photo.find_by(source_url: row[:photo_url])
+
+        if image
+          puts "Skipped. Photo already imported."
+        else
+          p = photo(poi, row)
+          p.save
+          puts "Photo with osm_id #{osm_id} saved!"
+        end
       end
     end
 
@@ -171,6 +177,7 @@ namespace :streetspotr do
     photo_caption = row[:photo_caption]
     new_photo = node.photos.build
     new_photo.remote_image_url = photo_url
+    new_photo.source_url = photo_url
 
     unless photo_caption.blank?
       # Omit photo captions that are longer than 255 varchar
@@ -182,10 +189,10 @@ namespace :streetspotr do
         new_photo.caption = photo_caption
       end
     end
-
     new_photo.user = User.wheelmap_visitor
     new_photo
   end
+
 
   def minimal_status(stati)
     return 'no' if stati.include?('no')
