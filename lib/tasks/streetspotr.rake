@@ -113,6 +113,7 @@ namespace :streetspotr do
         # Find the photo
         image = Photo.find_by(source_url: row[:photo_url])
 
+        # Check for photo duplicates
         if image
           puts "Skipped: Photo #{image.id} already imported."
           skipped[:removed] += 1
@@ -133,7 +134,7 @@ namespace :streetspotr do
     puts
     puts "Wheelchair: Yes: #{wheelchair_stati[:yes]}, Limited: #{wheelchair_stati[:limited]}, No: #{wheelchair_stati[:no]}, Unknown #{wheelchair_stati[:unknown]}."
     puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
-    puts "Saved: Photos: #{imported[:photo]}, Saved: ProvidedPoi: #{imported[:provided_poi]}."
+    puts "Saved: Photos: #{imported[:photo]}, Connected: ProvidedPoi: #{imported[:provided_poi]}."
     puts "Skipped: Unknown: #{skipped[:unknown]}, Skipped: Not imported: #{skipped[:removed]}."
   end
 
