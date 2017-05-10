@@ -52,89 +52,73 @@ namespace :streetspotr do
     UTF8_TO_UTF8MB4_CONVERTER = ->(str) { str.encode('utf-8', invalid: :replace, undef: :replace, replace: '').each_char.select { |char| char.bytesize < 4 }.join }
 
     CSV.foreach(csv_file, converters: UTF8_TO_UTF8MB4_CONVERTER, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
-      osm_id = row[:refid]
+      osm_id = row[:attr_id]
 
-      # Blank line (only photo)
       if osm_id.blank?
-        if poi == nil
-          puts "Skipped: No POI import (ref_id is blank and POI is nil)."
-          skipped[:removed] += 1
-          next
-        end
-
-        # Find the photo
-        image = Photo.find_by(source_url: row[:photo_url])
-
-        # Check for photo duplicates
-        if image
-          puts "Skipped: Photo #{image.id} already imported."
-          skipped[:removed] += 1
-          next
-        else
-          p = photo(poi, row)
-          p.save!
-          imported[:photo] += 1
-          puts "Photo: Photo without ref_id saved!!!"
-        end
+        puts "Skipped: No import - osm_id can't be blank!"
+        skipped[:removed] += 1
+        next
       else
 
         # Find the POI
         poi = Poi.find_by(osm_id: osm_id)
 
         if poi == nil
-          puts "Skipped: POI for ref_id #{osm_id} not found."
+          puts "Skipped: POI for osm_id #{osm_id} not found."
           skipped[:removed] += 1
           next
-        end
-
-        step = has_step(row)
-        toilet = toilet(row)
-        indoor = indoor(row)
-
-        status = wheelchair_status(step, indoor)
-        toilet = wheelchair_toilet(toilet)
-
-        puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> Status: #{status}, Toilet: #{toilet}."
-
-        if status == 'unknown'
-          puts 'Skipped: Unknown Status.'
-          skipped[:unknown] += 1
-          count += 1
-          next
-        end
-
-        wheelchair_stati[status.to_sym] += 1
-        toilet_stati[toilet.to_sym] += 1
-
-        provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
-        provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
-        provided_poi.wheelchair_toilet = minimal_status([provided_poi.wheelchair_toilet].compact.uniq)
-
-        # Find the photo
-        image = Photo.find_by(source_url: row[:photo_url])
-
-        # Check for photo duplicates
-        if image
-          puts "Skipped: Photo #{image.id} already imported."
-          skipped[:removed] += 1
         else
-          p = photo(poi, row)
-          p.save!
-          imported[:photo] += 1
-          provided_poi.url = row[:photo_url]
-          imported[:provided_poi] += 1
-          puts "Photo: Photo with ref_id #{osm_id} saved!"
-        end
 
-        provided_poi.save!
-        puts "Provided Poi: #{provided_poi.id} saved!"
+          step = has_step(row)
+          toilet = toilet(row)
+          indoor = indoor(row)
+
+          status = wheelchair_status(step, indoor)
+          toilet = wheelchair_toilet(toilet)
+
+          puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> Status: #{status}, Toilet: #{toilet}."
+
+          if status == 'unknown'
+            puts 'Skipped: Unknown Status.'
+            skipped[:unknown] += 1
+            count += 1
+            next
+          end
+
+          wheelchair_stati[status.to_sym] += 1
+          toilet_stati[toilet.to_sym] += 1
+
+          provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
+          provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
+          provided_poi.wheelchair_toilet = minimal_status([provided_poi.wheelchair_toilet].compact.uniq)
+
+          # Find the photo
+          image = Photo.find_by(source_url: row[:photo_url])
+
+          # Check for photo duplicates
+          if image
+            puts "Skipped: Photo #{image.id} already imported."
+            skipped[:removed] += 1
+          else
+            p = photo(poi, row)
+            p.save!
+            imported[:photo] += 1
+            provided_poi.url = row[:photo_url]
+            imported[:provided_poi] += 1
+            puts "Photo: Photo with osm_id #{osm_id} saved!"
+          end
+
+          provided_poi.save!
+          puts "Provided Poi: #{provided_poi.id} saved!"
+
+        end
       end
     end
 
     puts
     puts "Wheelchair: Yes: #{wheelchair_stati[:yes]}, Limited: #{wheelchair_stati[:limited]}, No: #{wheelchair_stati[:no]}, Unknown #{wheelchair_stati[:unknown]}."
     puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
-    puts "Saved: Photos: #{imported[:photo]}, Connected: ProvidedPoi: #{imported[:provided_poi]}."
+    puts "Newly Saved: Photos: #{imported[:photo]}, Newly Connected: ProvidedPoi: #{imported[:provided_poi]}."
     puts "Skipped: Unknown: #{skipped[:unknown]}, Skipped: Not imported: #{skipped[:removed]}."
   end
 
