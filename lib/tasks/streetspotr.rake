@@ -55,20 +55,42 @@ namespace :streetspotr do
       osm_id = row[:attr_id]
 
       if osm_id.blank?
-        puts "Skipped: No import - osm_id can't be blank!"
-        skipped[:removed] += 1
-        next
-      else
+        unless poi
+          puts "Skipped: No import (osm_id blank and POI not found)!"
+          skipped[:removed] += 1
+          next
+        else
+          provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
 
+          # Find the photo
+          image = Photo.find_by(source_url: row[:photo_url])
+
+          # Check for photo duplicates
+          if image
+            puts "Skipped: PHOTO #{image.id} already imported."
+            skipped[:removed] += 1
+            next
+          else
+            p = photo(poi, row)
+            p.save!
+            imported[:photo] += 1
+            provided_poi.url = row[:photo_url]
+            imported[:provided_poi] += 1
+            puts "Success: PHOTO for poi_id #{poi.id} saved!"
+
+            provided_poi.save!
+            puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
+          end
+        end
+      else
         # Find the POI
         poi = Poi.find_by(osm_id: osm_id)
 
-        if poi == nil
+        unless poi
           puts "Skipped: POI for osm_id #{osm_id} not found."
           skipped[:removed] += 1
           next
         else
-
           step = has_step(row)
           toilet = toilet(row)
           indoor = indoor(row)
@@ -97,7 +119,7 @@ namespace :streetspotr do
 
           # Check for photo duplicates
           if image
-            puts "Skipped: Photo #{image.id} already imported."
+            puts "Skipped: PHOTO #{image.id} already imported."
             skipped[:removed] += 1
           else
             p = photo(poi, row)
@@ -105,11 +127,11 @@ namespace :streetspotr do
             imported[:photo] += 1
             provided_poi.url = row[:photo_url]
             imported[:provided_poi] += 1
-            puts "Photo: Photo with osm_id #{osm_id} saved!"
+            puts "Success: PHOTO for poi_id #{poi.id} saved!"
           end
 
           provided_poi.save!
-          puts "Provided Poi: #{provided_poi.id} saved!"
+          puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
 
         end
       end
