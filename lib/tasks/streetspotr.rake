@@ -12,15 +12,15 @@ namespace :streetspotr do
     toilet_stati = Hash.new(0)
 
     CSV.foreach(csv_file, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
-      id = row[:refid]
-      next if id.blank?
+      osm_id = row[:attr_id]
+      next if osm_id.blank?
 
       step = has_step(row)
       toilet = toilet(row)
       indoor = indoor(row)
 
       status = wheelchair_status(step, indoor)
-      toilet = wheelchair_toilet(status, toilet)
+      toilet = wheelchair_toilet(toilet)
 
       puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> Status: #{status}, Toilet: #{toilet}."
 
