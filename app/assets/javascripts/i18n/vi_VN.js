@@ -1030,7 +1030,7 @@ I18n.translations["vi_VN"] = I18n.extend((I18n.translations["vi_VN"] || {}), {
       "link": {
         "back": "back",
         "large_map": "Enlarge",
-        "listing": "All places of typ '%{type}' in %{city}",
+        "listing": "All places of type '%{type}' in %{city}",
         "upload": "Upload image"
       },
       "more_data_from": "There is more information about this place, validated by:",

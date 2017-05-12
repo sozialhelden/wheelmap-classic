@@ -1031,7 +1031,7 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
       "link": {
         "back": "atgal",
         "large_map": "Enlarge",
-        "listing": "All places of typ '%{type}' in %{city}",
+        "listing": "All places of type '%{type}' in %{city}",
         "upload": "Išsiųsti paveikslą"
       },
       "more_data_from": "There is more information about this place, validated by:",

@@ -1031,7 +1031,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
         "back": "back",
         "edit_node": "Daq choH",
         "large_map": "tInmoH",
-        "listing": "All places of typ '%{type}' in %{city}",
+        "listing": "All places of type '%{type}' in %{city}",
         "report_bug": "Report a problem",
         "upload": "Upload image"
       },
