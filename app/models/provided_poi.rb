@@ -10,7 +10,7 @@ class ProvidedPoi < ActiveRecord::Base
   def self.import(provider_id, csv_file)
     provider = Provider.find(provider_id)
     success_count = 0
-    CSV.parse(csv_file.force_encoding('UTF-8'), headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
+    CSV.parse(csv_file.force_encoding('UTF-8'), headers: true, header_converters: :symbol, col_sep: ';') do |row|
       osm_id = row[:osm_id].to_i
       osm_id = row[:osm_type] == 'way' ? osm_id * -1 : osm_id
       provided_poi = provider.provided_pois.where(poi_id: osm_id).first_or_initialize
