@@ -18,6 +18,7 @@ export DEBIAN_FRONTEND=noninteractive #Prevents mysql installer to show set pass
 
 # Install all dependencies
 apt-get install -y \
+  ntp \
   git \
   imagemagick \
   mysql-server-5.6 \
