@@ -201,7 +201,7 @@ namespace :streetspotr do
       # Truncate photo captions that are longer than 255 varchar
       if photo_caption.length > 255
         new_photo_caption_string = truncate(photo_caption, length: 255, omission: " (...)")
-        puts "OMITTED PHOTO CAPTION: #{new_photo_caption_string}"
+        puts "TRUNCATED PHOTO CAPTION: #{new_photo_caption_string}"
         new_photo.caption = new_photo_caption_string
       else
         new_photo.caption = photo_caption
