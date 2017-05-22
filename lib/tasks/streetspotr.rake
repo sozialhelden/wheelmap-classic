@@ -12,7 +12,7 @@ namespace :streetspotr do
     toilet_stati = Hash.new(0)
 
     CSV.foreach(csv_file, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
-      osm_id = row[:attr_id]
+      osm_id = row[:osm_id]
       next if osm_id.blank?
 
       step = has_step(row)
@@ -52,7 +52,7 @@ namespace :streetspotr do
     UTF8_TO_UTF8MB4_CONVERTER = ->(str) { str.encode('utf-8', invalid: :replace, undef: :replace, replace: '').each_char.select { |char| char.bytesize < 4 }.join }
 
     CSV.foreach(csv_file, converters: UTF8_TO_UTF8MB4_CONVERTER, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
-      osm_id = row[:attr_id]
+      osm_id = row[:osm_id]
 
       if osm_id.blank?
         unless poi
