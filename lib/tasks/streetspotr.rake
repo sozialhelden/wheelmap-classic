@@ -73,12 +73,14 @@ namespace :streetspotr do
           else
             p = photo(poi, row)
             p.save!
+            count += 1
             imported[:photo] += 1
-            provided_poi.url = row[:photo_url]
-            imported[:provided_poi] += 1
-            puts "Success: PHOTO for poi_id #{poi.id} saved!"
 
+            provided_poi.url = row[:photo_url]
+            puts "Success: PHOTO for poi_id #{poi.id} saved!"
             provided_poi.save!
+            count += 1
+            imported[:provided_poi] += 1
             puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
           end
         end
@@ -103,7 +105,6 @@ namespace :streetspotr do
           if status == 'unknown'
             puts 'Skipped: Unknown Status.'
             skipped[:unknown] += 1
-            count += 1
             next
           end
 
@@ -124,6 +125,7 @@ namespace :streetspotr do
           else
             p = photo(poi, row)
             p.save!
+            count += 1
             imported[:photo] += 1
             provided_poi.url = row[:photo_url]
             imported[:provided_poi] += 1
@@ -131,6 +133,7 @@ namespace :streetspotr do
           end
 
           provided_poi.save!
+          count += 1
           puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
 
         end
@@ -142,6 +145,7 @@ namespace :streetspotr do
     puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
     puts "Newly Saved: Photos: #{imported[:photo]}, Newly Connected: ProvidedPoi: #{imported[:provided_poi]}."
     puts "Skipped: Unknown: #{skipped[:unknown]}, Skipped: Not imported: #{skipped[:removed]}."
+    puts "Successful Saved Actions: #{count} counted."
   end
 
   def has_step(row)
