@@ -222,6 +222,8 @@ namespace :streetspotr do
     stati.first
   end
 
+  # has_step => Does the place have a step higher than 7cm at the entrance?
+  # indoor => Are all rooms indoors wheelchair-accessible?
   def wheelchair_status(has_step, indoor)
     if has_step == 'yes' && indoor == 'yes'
       return 'no'
@@ -237,6 +239,7 @@ namespace :streetspotr do
     status
   end
 
+  # toilet => Is the place wheelchair_toilet accessible?
   def wheelchair_toilet(toilet)
     if toilet == 'yes'
       return 'yes'
