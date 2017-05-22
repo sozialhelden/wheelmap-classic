@@ -112,7 +112,7 @@ namespace :streetspotr do
 
           provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
           provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
-          provided_poi.wheelchair_toilet = minimal_status([provided_poi.wheelchair_toilet].compact.uniq)
+          provided_poi.wheelchair_toilet = toilet
 
           # Find the photo
           image = Photo.find_by(source_url: row[:photo_url])
