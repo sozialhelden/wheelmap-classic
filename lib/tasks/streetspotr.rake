@@ -104,12 +104,6 @@ namespace :streetspotr do
 
           puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> Status: #{status}, Toilet: #{toilet}."
 
-          if status == 'unknown'
-            puts 'Skipped: Unknown Status.'
-            skipped[:unknown] += 1
-            next
-          end
-
           wheelchair_stati[status.to_sym] += 1
           toilet_stati[toilet.to_sym] += 1
 
@@ -146,7 +140,7 @@ namespace :streetspotr do
     puts "Wheelchair: Yes: #{wheelchair_stati[:yes]}, Limited: #{wheelchair_stati[:limited]}, No: #{wheelchair_stati[:no]}, Unknown #{wheelchair_stati[:unknown]}."
     puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
     puts "SAVED: Photos: #{saved[:photo]}, ProvidedPois: #{saved[:provided_poi]}."
-    puts "SKIPPED: Unknown: #{skipped[:unknown]}, Photos: #{skipped[:photo]}, ProvidedPois: #{skipped[:provided_poi]}."
+    puts "SKIPPED: Photos: #{skipped[:photo]}, ProvidedPois: #{skipped[:provided_poi]}."
     puts "TOTAL SAVED ACTIONS: #{count}."
   end
 
