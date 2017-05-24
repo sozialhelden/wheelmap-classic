@@ -48,7 +48,7 @@ namespace :streetspotr do
     wheelchair_stati = Hash.new(0)
     toilet_stati = Hash.new(0)
     skipped = Hash.new(0)
-    imported = Hash.new(0)
+    saved = Hash.new(0)
 
     # Remove 4-byte characters (e.g. emoji) in strings
     UTF8_TO_UTF8MB4_CONVERTER = ->(str) { str.encode('utf-8', invalid: :replace, undef: :replace, replace: '').each_char.select { |char| char.bytesize < 4 }.join }
@@ -58,8 +58,8 @@ namespace :streetspotr do
 
       if osm_id.blank?
         unless poi
-          puts "Skipped: No import (osm_id blank and POI not found)!"
-          skipped[:removed] += 1
+          puts "Skipped: osm_id blank and POI not found!"
+          skipped[:provided_poi] += 1
           next
         else
           provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
@@ -69,20 +69,20 @@ namespace :streetspotr do
 
           # Check for photo duplicates
           if image
-            puts "Skipped: PHOTO #{image.id} already imported."
-            skipped[:removed] += 1
+            puts "Skipped: PHOTO #{image.id} already exists."
+            skipped[:photo] += 1
             next
           else
             p = photo(poi, row)
             p.save!
             count += 1
-            imported[:photo] += 1
+            saved[:photo] += 1
 
             provided_poi.url = row[:photo_url]
             puts "Success: PHOTO for poi_id #{poi.id} saved!"
             provided_poi.save!
             count += 1
-            imported[:provided_poi] += 1
+            saved[:provided_poi] += 1
             puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
           end
         end
@@ -92,7 +92,7 @@ namespace :streetspotr do
 
         unless poi
           puts "Skipped: POI for osm_id #{osm_id} not found."
-          skipped[:removed] += 1
+          skipped[:provided_poi] += 1
           next
         else
           step = has_step(row)
@@ -122,15 +122,15 @@ namespace :streetspotr do
 
           # Check for photo duplicates
           if image
-            puts "Skipped: PHOTO #{image.id} already imported."
-            skipped[:removed] += 1
+            puts "Skipped: PHOTO #{image.id} already exist."
+            skipped[:photo] += 1
           else
             p = photo(poi, row)
             p.save!
             count += 1
-            imported[:photo] += 1
+            saved[:photo] += 1
             provided_poi.url = row[:photo_url]
-            imported[:provided_poi] += 1
+            saved[:provided_poi] += 1
             puts "Success: PHOTO for poi_id #{poi.id} saved!"
           end
 
@@ -145,9 +145,9 @@ namespace :streetspotr do
     puts
     puts "Wheelchair: Yes: #{wheelchair_stati[:yes]}, Limited: #{wheelchair_stati[:limited]}, No: #{wheelchair_stati[:no]}, Unknown #{wheelchair_stati[:unknown]}."
     puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
-    puts "Newly Saved: Photos: #{imported[:photo]}, Newly Connected: ProvidedPoi: #{imported[:provided_poi]}."
-    puts "Skipped: Unknown: #{skipped[:unknown]}, Skipped: Not imported: #{skipped[:removed]}."
-    puts "Successful Saved Actions: #{count} counted."
+    puts "SAVED: Photos: #{saved[:photo]}, ProvidedPois: #{saved[:provided_poi]}."
+    puts "SKIPPED: Unknown: #{skipped[:unknown]}, Photos: #{skipped[:photo]}, ProvidedPois: #{skipped[:provided_poi]}."
+    puts "TOTAL SAVED ACTIONS: #{count}."
   end
 
   def has_step(row)
