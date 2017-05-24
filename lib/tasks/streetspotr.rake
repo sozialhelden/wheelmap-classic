@@ -39,7 +39,9 @@ namespace :streetspotr do
     csv_file = ENV['file']
     raise 'Usage: bundle exec rake streetspotr:import file=<your_csv_file>' unless csv_file
 
+    # Set to nil for records that have multiple entries sharing one osm_id
     poi = nil
+    # Counter for save actions in total
     count = 0
     provider = Provider.find_or_create_by(name: 'Streetspotr')
 
