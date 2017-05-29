@@ -77,14 +77,12 @@ namespace :streetspotr do
             p.save!
             count += 1
             saved[:photo] += 1
-
-            provided_poi.url = row[:photo_url]
             puts "Success: PHOTO for osm_id #{poi.id} saved!"
-            provided_poi.save!
-            count += 1
-            saved[:provided_poi] += 1
-            puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
           end
+          provided_poi.save!
+          count += 1
+          saved[:provided_poi] += 1
+          puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
         end
       else
         # Find the POI
@@ -124,13 +122,12 @@ namespace :streetspotr do
             p.save!
             count += 1
             saved[:photo] += 1
-            provided_poi.url = row[:photo_url]
-            saved[:provided_poi] += 1
             puts "Success: PHOTO for osm_id #{poi.id} saved!"
           end
 
           provided_poi.save!
           count += 1
+          saved[:provided_poi] += 1
           puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
         end
       end
