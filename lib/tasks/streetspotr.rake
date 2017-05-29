@@ -108,7 +108,7 @@ namespace :streetspotr do
           toilet_stati[toilet.to_sym] += 1
 
           provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
-          provided_poi.wheelchair = minimal_status([provided_poi.wheelchair, status].compact.uniq)
+          provided_poi.wheelchair = status
           provided_poi.wheelchair_toilet = toilet
 
           # Find the photo
@@ -211,13 +211,6 @@ namespace :streetspotr do
     end
     new_photo.user = User.wheelmap_visitor
     new_photo
-  end
-
-
-  def minimal_status(stati)
-    return 'no' if stati.include?('no')
-    return 'limited' if stati.include?('limited')
-    stati.first
   end
 
   # has_step => Does the place have a step higher than 7cm at the entrance?
