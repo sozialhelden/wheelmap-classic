@@ -118,6 +118,7 @@ namespace :streetspotr do
           if image
             puts "Skipped: PHOTO #{image.id} already exists."
             skipped[:photo] += 1
+            next
           else
             p = photo(poi, row)
             p.save!
