@@ -79,7 +79,7 @@ namespace :streetspotr do
             saved[:photo] += 1
 
             provided_poi.url = row[:photo_url]
-            puts "Success: PHOTO for poi_id #{poi.id} saved!"
+            puts "Success: PHOTO for osm_id #{poi.id} saved!"
             provided_poi.save!
             count += 1
             saved[:provided_poi] += 1
@@ -116,7 +116,7 @@ namespace :streetspotr do
 
           # Check for photo duplicates
           if image
-            puts "Skipped: PHOTO #{image.id} already exist."
+            puts "Skipped: PHOTO #{image.id} already exists."
             skipped[:photo] += 1
           else
             p = photo(poi, row)
@@ -125,13 +125,12 @@ namespace :streetspotr do
             saved[:photo] += 1
             provided_poi.url = row[:photo_url]
             saved[:provided_poi] += 1
-            puts "Success: PHOTO for poi_id #{poi.id} saved!"
+            puts "Success: PHOTO for osm_id #{poi.id} saved!"
           end
 
           provided_poi.save!
           count += 1
           puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
-
         end
       end
     end
@@ -139,9 +138,12 @@ namespace :streetspotr do
     puts
     puts "Wheelchair: Yes: #{wheelchair_stati[:yes]}, Limited: #{wheelchair_stati[:limited]}, No: #{wheelchair_stati[:no]}, Unknown #{wheelchair_stati[:unknown]}."
     puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
-    puts "SAVED: Photos: #{saved[:photo]}, ProvidedPois: #{saved[:provided_poi]}."
-    puts "SKIPPED: Photos: #{skipped[:photo]}, ProvidedPois: #{skipped[:provided_poi]}."
-    puts "TOTAL SAVED ACTIONS: #{count}."
+    puts
+    pp = ProvidedPoi.all
+    puts "EXISTING: ProvidedPois: #{pp.count}."
+    puts "SKIPPED: Photos: #{skipped[:photo]}, Provided Pois: #{skipped[:provided_poi]}."
+    puts "SAVE ACTIONS: Photos: #{saved[:photo]}, Provided Pois: #{saved[:provided_poi]}"
+    puts "TOTAL SUCCESSFUL SAVE ACTIONS: #{count}."
   end
 
   def has_step(row)
