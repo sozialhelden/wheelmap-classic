@@ -38,10 +38,18 @@ namespace :streetspotr do
       @skipped[:photo] += 1
       @count += 1
     else
-      puts "A new photo would be saved."
+      puts "Success: A new photo would be saved."
       @saved[:photo] += 1
       @count += 1
     end
+  end
+
+  def find_or_initialize_provided_poi(poi, provider)
+    provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
+    provided_poi.save!
+    @count += 1
+    @saved[:provided_poi] += 1
+    puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
   end
 
   @count = 0
@@ -53,18 +61,16 @@ namespace :streetspotr do
     csv_file = ENV['file']
     raise 'Usage: bundle exec rake streetspotr:check file=<your_csv_file>' unless csv_file
 
-    wheelchair_stati = Hash.new(0)
-    toilet_stati = Hash.new(0)
-
     current_poi = nil
     previous_poi = nil
 
     CSV.foreach(csv_file, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       osm_id = row[:osm_id]
 
-      if osm_id.blank? # 1
+      # Loop through CSV and check if record has osm_id
+      if osm_id.blank?
         unless previous_poi
-          puts "A POI would be skipped."
+          puts "Skipped: The POI would be skipped."
           next
         else
           current_poi = previous_poi
@@ -75,7 +81,7 @@ namespace :streetspotr do
         current_poi = Poi.find_by(osm_id: osm_id)
 
         unless current_poi
-          puts "A POI would be skipped."
+          puts "Skipped: The POI #{osm_id} would be skipped."
           next
         end
       end
@@ -121,12 +127,8 @@ namespace :streetspotr do
           @skipped[:provided_poi] += 1
           next
         else
-          provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
+          find_or_initialize_provided_poi(poi, provider)
           photo_check(poi,row)
-          provided_poi.save!
-          @count += 1
-          @saved[:provided_poi] += 1
-          puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
         end
       else
         # Find the POI
@@ -137,12 +139,8 @@ namespace :streetspotr do
           @skipped[:provided_poi] += 1
           next
         else
-          provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
+          find_or_initialize_provided_poi(poi, provider)
           photo_check(poi,row)
-          provided_poi.save!
-          @count += 1
-          @saved[:provided_poi] += 1
-          puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
         end
       end
     end
