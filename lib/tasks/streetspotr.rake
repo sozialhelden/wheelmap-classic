@@ -3,34 +3,93 @@
 namespace :streetspotr do
   include ActionView::Helpers::TextHelper
 
+  def photo(poi, row)
+    photo_url = row[:photo_url]
+    new_photo = poi.photos.build
+    new_photo.remote_image_url = photo_url
+    new_photo.source_url = photo_url
+    new_photo.user = User.wheelmap_visitor
+    new_photo
+  end
+
+  def photo_check(poi, row)
+    image = Photo.find_by(source_url: row[:photo_url])
+
+    # Check for photo duplicates
+    if image
+      puts "Skipped: PHOTO #{image.id} already exists."
+      @skipped[:photo] += 1
+      @count += 1
+    else
+      p = photo(poi, row)
+      p.save!
+      @count += 1
+      @saved[:photo] += 1
+      puts "Success: PHOTO for osm_id #{poi.id} saved!"
+    end
+  end
+
+  def photo_check_dryrun(current_poi, row)
+    image = Photo.find_by(source_url: row[:photo_url])
+
+    # Check for photo duplicates
+    if image
+      puts "Skipped: PHOTO #{image.id} already exists."
+      @skipped[:photo] += 1
+      @count += 1
+    else
+      puts "A new photo would be saved."
+      @saved[:photo] += 1
+      @count += 1
+    end
+  end
+
+  @count = 0
+  @skipped = Hash.new(0)
+  @saved = Hash.new(0)
+
   desc 'Check data from StreetSpotr'
-  task :check do
+  task check: :environment do
     csv_file = ENV['file']
     raise 'Usage: bundle exec rake streetspotr:check file=<your_csv_file>' unless csv_file
 
     wheelchair_stati = Hash.new(0)
     toilet_stati = Hash.new(0)
 
+    current_poi = nil
+    previous_poi = nil
+
     CSV.foreach(csv_file, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       osm_id = row[:osm_id]
-      next if osm_id.blank?
 
-      step = has_step(row)
-      toilet = toilet(row)
-      indoor = indoor(row)
+      if osm_id.blank? # 1
+        unless previous_poi
+          puts "A POI would be skipped."
+          next
+        else
+          current_poi = previous_poi
+        end
 
-      status = wheelchair_status(step, indoor)
-      toilet = wheelchair_toilet(toilet)
+      else
+        # Find the POI
+        current_poi = Poi.find_by(osm_id: osm_id)
 
-      puts "Step: #{step}, Toilet: #{toilet}, Indoor: #{indoor} -> Status: #{status}, Toilet: #{toilet}."
+        unless current_poi
+          puts "A POI would be skipped."
+          next
+        end
+      end
 
-      wheelchair_stati[status.to_sym] += 1
-      toilet_stati[toilet.to_sym] += 1
+      photo_check_dryrun(current_poi,row)
+      previous_poi = current_poi
     end
 
     puts
-    puts "Wheelchair: Yes: #{wheelchair_stati[:yes]}, Limited: #{wheelchair_stati[:limited]}, No: #{wheelchair_stati[:no]}, Unknown #{wheelchair_stati[:unknown]}."
-    puts "Toilet: Yes: #{toilet_stati[:yes]}, No: #{toilet_stati[:no]}, Unknown #{toilet_stati[:unknown]}."
+    pp = ProvidedPoi.all
+    puts "EXISTING: ProvidedPois: #{pp.count}."
+    puts "WOULD SKIP: Photos: #{@skipped[:photo]}"
+    puts "WOULD SAVE ACTIONS: Photos: #{@saved[:photo]}"
+    puts "WOULD TOTAL SAVE ACTIONS: #{@count}."
   end
 
   desc 'Import data from StreetSpotr'
@@ -54,31 +113,6 @@ namespace :streetspotr do
 
     CSV.foreach(csv_file, converters: UTF8_TO_UTF8MB4_CONVERTER, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       osm_id = row[:osm_id]
-
-      def photo(node, row)
-        photo_url = row[:photo_url]
-        new_photo = node.photos.build
-        new_photo.remote_image_url = photo_url
-        new_photo.source_url = photo_url
-        new_photo.user = User.wheelmap_visitor
-        new_photo
-      end
-
-      def photo_check(poi, row)
-        image = Photo.find_by(source_url: row[:photo_url])
-
-        # Check for photo duplicates
-        if image
-          puts "Skipped: PHOTO #{image.id} already exists."
-          @skipped[:photo] += 1
-        else
-          p = photo(poi, row)
-          p.save!
-          @count += 1
-          @saved[:photo] += 1
-          puts "Success: PHOTO for osm_id #{poi.id} saved!"
-        end
-      end
 
       # Loop through CSV and check if record has osm_id
       if osm_id.blank?
