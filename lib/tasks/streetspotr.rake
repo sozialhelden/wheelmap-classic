@@ -3,55 +3,6 @@
 namespace :streetspotr do
   include ActionView::Helpers::TextHelper
 
-  def photo(poi, row)
-    photo_url = row[:photo_url]
-    new_photo = poi.photos.build
-    new_photo.remote_image_url = photo_url
-    new_photo.source_url = photo_url
-    new_photo.user = User.wheelmap_visitor
-    new_photo
-  end
-
-  def photo_check(poi, row)
-    image = Photo.find_by(source_url: row[:photo_url])
-
-    # Check for photo duplicates
-    if image
-      puts "Skipped: PHOTO #{image.id} already exists."
-      @skipped[:photo] += 1
-      @count += 1
-    else
-      p = photo(poi, row)
-      p.save!
-      @count += 1
-      @saved[:photo] += 1
-      puts "Success: PHOTO for osm_id #{poi.id} saved!"
-    end
-  end
-
-  def photo_check_dryrun(current_poi, row)
-    image = Photo.find_by(source_url: row[:photo_url])
-
-    # Check for photo duplicates
-    if image
-      puts "Skipped: PHOTO #{image.id} already exists."
-      @skipped[:photo] += 1
-      @count += 1
-    else
-      puts "Success: A new photo would be saved."
-      @saved[:photo] += 1
-      @count += 1
-    end
-  end
-
-  def find_or_initialize_provided_poi(poi, provider)
-    provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
-    provided_poi.save!
-    @count += 1
-    @saved[:provided_poi] += 1
-    puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
-  end
-
   @count = 0
   @skipped = Hash.new(0)
   @saved = Hash.new(0)
@@ -86,8 +37,7 @@ namespace :streetspotr do
         end
       end
 
-      photo_check_dryrun(current_poi,row)
-      previous_poi = current_poi
+      photo_check_dryrun(row)
     end
 
     puts
@@ -96,6 +46,8 @@ namespace :streetspotr do
     puts "WOULD SKIP: Photos: #{@skipped[:photo]}"
     puts "WOULD SAVE ACTIONS: Photos: #{@saved[:photo]}"
     puts "WOULD TOTAL SAVE ACTIONS: #{@count}."
+
+    previous_poi = current_poi
   end
 
   desc 'Import data from StreetSpotr'
@@ -105,7 +57,8 @@ namespace :streetspotr do
     raise 'Usage: bundle exec rake streetspotr:import file=<your_csv_file>' unless csv_file
 
     # Set to nil for records that have multiple entries sharing one osm_id
-    poi = nil
+    current_poi = nil
+    previous_poi = nil
     # Counter for save actions in total
     @count = 0
 
@@ -122,33 +75,87 @@ namespace :streetspotr do
 
       # Loop through CSV and check if record has osm_id
       if osm_id.blank?
-        unless poi
+        unless previous_poi
           puts "Skipped: osm_id blank and POI not found!"
           @skipped[:provided_poi] += 1
           next
         else
-          find_or_initialize_provided_poi(poi, provider)
-          photo_check(poi,row)
+          current_poi = previous_poi
+          find_or_initialize_provided_poi(current_poi, provider)
+          photo_check(current_poi,row)
         end
       else
         # Find the POI
-        poi = Poi.find_by(osm_id: osm_id)
+        current_poi = Poi.find_by(osm_id: osm_id)
 
-        unless poi
+        unless current_poi
           puts "Skipped: POI for osm_id #{osm_id} not found."
           @skipped[:provided_poi] += 1
           next
         else
-          find_or_initialize_provided_poi(poi, provider)
-          photo_check(poi,row)
+          find_or_initialize_provided_poi(current_poi, provider)
+          photo_check(current_poi,row)
         end
       end
     end
+
     puts
     pp = ProvidedPoi.all
     puts "EXISTING: ProvidedPois: #{pp.count}."
     puts "SKIPPED: Photos: #{@skipped[:photo]}, Provided Pois: #{@skipped[:provided_poi]}."
     puts "SAVE ACTIONS: Photos: #{@saved[:photo]}, Provided Pois: #{@saved[:provided_poi]}"
     puts "TOTAL SUCCESSFUL SAVE ACTIONS: #{@count}."
+
+    previous_poi = current_poi
   end
+
+  def photo(poi, row)
+    photo_url = row[:photo_url]
+    new_photo = poi.photos.build
+    new_photo.remote_image_url = photo_url
+    new_photo.source_url = photo_url
+    new_photo.user = User.wheelmap_visitor
+    new_photo
+  end
+
+  def photo_check(poi, row)
+    image = Photo.find_by(source_url: row[:photo_url])
+
+    # Check for photo duplicates
+    if image
+      puts "Skipped: PHOTO #{image.id} already exists."
+      @skipped[:photo] += 1
+      @count += 1
+    else
+      p = photo(poi, row)
+      p.save!
+      @count += 1
+      @saved[:photo] += 1
+      puts "Success: PHOTO for osm_id #{poi.id} saved!"
+    end
+  end
+
+  def photo_check_dryrun(row)
+    image = Photo.find_by(source_url: row[:photo_url])
+
+    # Check for photo duplicates
+    if image
+      puts "Skipped: PHOTO #{image.id} already exists."
+      @skipped[:photo] += 1
+      @count += 1
+    else
+      puts "Success: A new photo would be saved."
+      @saved[:photo] += 1
+      @count += 1
+    end
+  end
+
+  def find_or_initialize_provided_poi(poi, provider)
+    provided_poi = ProvidedPoi.find_or_initialize_by(poi_id: poi.id, provider_id: provider.id)
+    provided_poi.save!
+    @count += 1
+    @saved[:provided_poi] += 1
+    puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
+  end
+
 end
