@@ -46,7 +46,8 @@ namespace :streetspotr do
 
     puts
     pp = ProvidedPoi.all
-    puts "EXISTING: ProvidedPois: #{pp.count}."
+    photos = Photo.all
+    puts "EXISTING: ProvidedPois: #{pp.count}, Photos: #{photos.count}."
     puts "WOULD SKIP: Photos: #{@skipped[:photo]}, ProvidedPois: #{@skipped[:provided_poi]}"
     puts "WOULD SAVE ACTIONS: Photos: #{@saved[:photo]}, ProvidedPois: #{@saved[:provided_poi]}"
     puts "WOULD TOTAL SAVE ACTIONS: #{@count}."
@@ -104,7 +105,8 @@ namespace :streetspotr do
 
     puts
     pp = ProvidedPoi.all
-    puts "EXISTING: ProvidedPois: #{pp.count}."
+    photos = Photo.all
+    puts "EXISTING: ProvidedPois: #{pp.count}, Photos: #{photos.count}."
     puts "SKIPPED: Photos: #{@skipped[:photo]}, Provided Pois: #{@skipped[:provided_poi]}."
     puts "SAVE ACTIONS: Photos: #{@saved[:photo]}, Provided Pois: #{@saved[:provided_poi]}"
     puts "TOTAL SUCCESSFUL SAVE ACTIONS: #{@count}."
