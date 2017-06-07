@@ -106,6 +106,10 @@ class User < ActiveRecord::Base
     find_by_email('visitor@wheelmap.org')
   end
 
+  def self.wheelmap_streetspotr
+    find_by_email('developers@sozialhelden.de')
+  end
+
   def inactive_message
     I18n.t('devise.failure.unconfirmed')
   end

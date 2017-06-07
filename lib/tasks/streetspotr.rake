@@ -119,7 +119,7 @@ namespace :streetspotr do
     new_photo = poi.photos.build
     new_photo.remote_image_url = photo_url
     new_photo.source_url = photo_url
-    new_photo.user = User.wheelmap_visitor
+    new_photo.user = User.wheelmap_streetspotr # user must exist in the DB
     new_photo
   end
 
