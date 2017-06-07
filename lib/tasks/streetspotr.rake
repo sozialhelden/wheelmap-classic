@@ -3,10 +3,6 @@
 namespace :streetspotr do
   include ActionView::Helpers::TextHelper
 
-  @count = 0
-  @skipped = Hash.new(0)
-  @saved = Hash.new(0)
-
   desc 'Check data from StreetSpotr'
   task check: :environment do
     csv_file = ENV['file']
@@ -15,6 +11,11 @@ namespace :streetspotr do
     current_poi = nil
     previous_poi = nil
 
+    @count = 0
+    @skipped = Hash.new(0)
+    @saved = Hash.new(0)
+    provider = Provider.find_or_initialize_by(name: 'Streetspotr')
+
     CSV.foreach(csv_file, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       osm_id = row[:osm_id]
 
@@ -22,29 +23,32 @@ namespace :streetspotr do
       if osm_id.blank?
         unless previous_poi
           puts "Skipped: The POI would be skipped."
+          @skipped[:provided_poi] += 1
           next
         else
           current_poi = previous_poi
+          find_provided_poi(current_poi, provider)
         end
-
       else
         # Find the POI
         current_poi = Poi.find_by(osm_id: osm_id)
 
         unless current_poi
           puts "Skipped: The POI #{osm_id} would be skipped."
+          @skipped[:provided_poi] += 1
           next
+        else
+          find_provided_poi(current_poi, provider)
         end
       end
-
       photo_check_dryrun(row)
     end
 
     puts
     pp = ProvidedPoi.all
     puts "EXISTING: ProvidedPois: #{pp.count}."
-    puts "WOULD SKIP: Photos: #{@skipped[:photo]}"
-    puts "WOULD SAVE ACTIONS: Photos: #{@saved[:photo]}"
+    puts "WOULD SKIP: Photos: #{@skipped[:photo]}, ProvidedPois: #{@skipped[:provided_poi]}"
+    puts "WOULD SAVE ACTIONS: Photos: #{@saved[:photo]}, ProvidedPois: #{@saved[:provided_poi]}"
     puts "WOULD TOTAL SAVE ACTIONS: #{@count}."
 
     previous_poi = current_poi
@@ -59,11 +63,10 @@ namespace :streetspotr do
     # Set to nil for records that have multiple entries sharing one osm_id
     current_poi = nil
     previous_poi = nil
-    # Counter for save actions in total
-    @count = 0
-
     provider = Provider.find_or_create_by(name: 'Streetspotr')
 
+    # Counter for save actions in total
+    @count = 0
     @skipped = Hash.new(0)
     @saved = Hash.new(0)
 
@@ -158,4 +161,10 @@ namespace :streetspotr do
     puts "Success: Provided Poi with provided_poi_id #{provided_poi.id} saved!"
   end
 
+  def find_provided_poi(poi, provider)
+    provided_poi = ProvidedPoi.find_by(poi_id: poi.id, provider_id: provider.id)
+    @count += 1
+    @saved[:provided_poi] += 1
+    puts "Success: Provided Poi would be saved!"
+  end
 end
