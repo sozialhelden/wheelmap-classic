@@ -79,6 +79,7 @@
     font-size: $baseFontSize;
     display: block;
     color: lighten($gray, 20%);
+    word-wrap: break-word;
 
     .strong {
       font-size: $fontSizeLarge;
