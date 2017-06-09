@@ -30,16 +30,15 @@ namespace :streetspotr do
           find_provided_poi(current_poi, provider)
         end
       else
-        # Find the POI
-        current_poi = Poi.find_by(osm_id: osm_id)
-
-        unless current_poi
+        begin
+          # Find the POI
+          current_poi = Poi.find_by!(osm_id: osm_id)
+        rescue ActiveRecord::RecordNotFound
           puts "Skipped: The POI #{osm_id} would be skipped."
           @skipped[:provided_poi] += 1
           next
-        else
-          find_provided_poi(current_poi, provider)
         end
+        find_provided_poi(current_poi, provider)
       end
       photo_check_dryrun(row)
     end
@@ -89,17 +88,17 @@ namespace :streetspotr do
           photo_check(current_poi,row)
         end
       else
-        # Find the POI
-        current_poi = Poi.find_by(osm_id: osm_id)
-
-        unless current_poi
+        begin
+          # Find the POI
+          current_poi = Poi.find_by!(osm_id: osm_id)
+        rescue ActiveRecord::RecordNotFound
           puts "Skipped: POI for osm_id #{osm_id} not found."
           @skipped[:provided_poi] += 1
           next
-        else
-          find_or_initialize_provided_poi(current_poi, provider)
-          photo_check(current_poi,row)
         end
+
+        find_or_initialize_provided_poi(current_poi, provider)
+        photo_check(current_poi,row)
       end
     end
 
