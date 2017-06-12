@@ -38,6 +38,10 @@ stderr_path "#{shared_path}/log/unicorn.stderr.log"
 # application processing begins.
 check_client_connection true
 
+before_exec do |server|
+  ENV['BUNDLE_GEMFILE'] = "#{base_dir}/Gemfile"
+end
+
 before_fork do |server, _worker|
   # This option works in together with preload_app true setting
   # What is does is prevent the master process from holding
