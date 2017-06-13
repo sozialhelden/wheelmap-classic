@@ -39,6 +39,7 @@ namespace :streetspotr do
           next
         end
         find_provided_poi(current_poi, provider)
+        previous_poi = current_poi
       end
       photo_check_dryrun(row)
     end
@@ -50,8 +51,6 @@ namespace :streetspotr do
     puts "WOULD SKIP: Photos: #{@skipped[:photo]}, ProvidedPois: #{@skipped[:provided_poi]}"
     puts "WOULD SAVE ACTIONS: Photos: #{@saved[:photo]}, ProvidedPois: #{@saved[:provided_poi]}"
     puts "WOULD TOTAL SAVE ACTIONS: #{@count}."
-
-    previous_poi = current_poi
   end
 
   desc 'Import data from StreetSpotr'
@@ -99,6 +98,7 @@ namespace :streetspotr do
 
         find_or_initialize_provided_poi(current_poi, provider)
         photo_check(current_poi,row)
+        previous_poi = current_poi
       end
     end
 
@@ -109,8 +109,6 @@ namespace :streetspotr do
     puts "SKIPPED: Photos: #{@skipped[:photo]}, Provided Pois: #{@skipped[:provided_poi]}."
     puts "SAVE ACTIONS: Photos: #{@saved[:photo]}, Provided Pois: #{@saved[:provided_poi]}"
     puts "TOTAL SUCCESSFUL SAVE ACTIONS: #{@count}."
-
-    previous_poi = current_poi
   end
 
   def photo(poi, row)
