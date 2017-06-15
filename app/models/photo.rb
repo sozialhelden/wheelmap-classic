@@ -3,7 +3,7 @@ class Photo < ActiveRecord::Base
   include ActionView::Helpers::UrlHelper
   include ActionView::Helpers::AssetTagHelper
 
-  attr_accessible :image, :taken_at
+  attr_accessible :image, :taken_at, :source_url
   belongs_to :poi
   belongs_to :user, counter_cache: true
   mount_uploader :image, PhotoUploader
