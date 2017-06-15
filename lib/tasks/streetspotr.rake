@@ -12,8 +12,7 @@ namespace :streetspotr do
     end
 
     # Set to nil for records that have multiple entries sharing one osm_id
-    current_poi = nil
-    previous_poi = nil
+    poi = nil
     provider = Provider.find_or_create_by(name: 'Streetspotr')
 
     @saved = Hash.new(0)
@@ -30,37 +29,35 @@ namespace :streetspotr do
 
     CSV.foreach(csv_file, converters: UTF8_TO_UTF8MB4_CONVERTER, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       osm_id = row[:osm_id]
-
       # Loop through CSV and check if record has osm_id
       if osm_id.blank?
-        unless previous_poi
+        unless poi
           puts "Skipped: osm_id blank and POI not found!"
           @not_found[:poi_and_osm_id] += 1
           next
-        else
-          current_poi = previous_poi
         end
       else
         begin
           # Find the POI
-          current_poi = Poi.find_by!(osm_id: osm_id)
+          poi = Poi.find_by!(osm_id: osm_id)
         rescue ActiveRecord::RecordNotFound
           puts "Skipped: POI for osm_id #{osm_id} not found."
           @not_found[:poi] += 1
+          poi = nil
           next
         end
       end
-      ProvidedPoi.send(method, poi_id: current_poi.id, provider_id: provider.id) do |pp|
+
+      ProvidedPoi.send(method, poi_id: poi.id, provider_id: provider.id) do |pp|
         @saved[:provided_poi] += 1
       end
 
       Photo.send(method, source_url: row[:photo_url]) do |p|
-        p.poi = current_poi
+        p.poi = poi
         p.remote_image_url = p.source_url
         p.user = User.wheelmap_visitor
         @saved[:photo] += 1
       end
-      previous_poi = current_poi
     end
 
     puts
