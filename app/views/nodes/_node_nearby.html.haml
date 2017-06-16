@@ -2,23 +2,24 @@
   %h2=t('.places_nearby')
   %section.node-nearby-locations-from-partners-list
 
-- content_for :javascript do
-  :javascript
-    window.onAccessibilityCloudLoaded = function (AccessibilityCloud) {
-      var containerElement = document.querySelector('section.node-nearby-locations-from-partners');
-      var element = document.querySelector('section.node-nearby-locations-from-partners-list');
-      AccessibilityCloud.render(element, {
-        token: '27be4b5216aced82122d7cf8f69e4a07',
-        locale: document.getElementsByTagName('html')[0].getAttribute('lang'),
-        requestParameters: {
-          latitude: #{@node.lat},
-          longitude: #{@node.lon},
-          accuracy: 1000, // include places within 1 km radius
-          limit: 10,
-          excludeSourceIds: ['LiBTS67TjmBcXdEmX'], // excludes Wheelmap's own PoIs from results
-        },
-        onSuccess: function() {
-          containerElement.classList.add('has-results');
-        }
-      });
-    }
+:javascript
+  window.onAccessibilityCloudLoaded = function (AccessibilityCloud) {
+    var containerElement = document.querySelector('section.node-nearby-locations-from-partners');
+    var element = document.querySelector('section.node-nearby-locations-from-partners-list');
+    AccessibilityCloud.render(element, {
+      token: '27be4b5216aced82122d7cf8f69e4a07',
+      locale: document.getElementsByTagName('html')[0].getAttribute('lang'),
+      requestParameters: {
+        latitude: #{@node.lat},
+        longitude: #{@node.lon},
+        accuracy: 1000, // include places within 1 km radius
+        limit: 10,
+        excludeSourceIds: ['LiBTS67TjmBcXdEmX'], // excludes Wheelmap's own PoIs from results
+      },
+      onSuccess: function() {
+        containerElement.classList.add('has-results');
+      }
+    });
+  }
+
+%script{type:"text/javascript", integrity: "sha384-JB8vgUWMMtbXpvZ9XOVIM+9XGqGhC0KExgoge8mCxuKSD9KzN6idJ6je0vEy4ezM", crossorigin: "anonymous", async: true, defer: true, src: "https://cdn.jsdelivr.net/gh/sozialhelden/accessibility-cloud-js@3.2.1/build/example/accessibility.cloud-3.2.1-21a6710d.min.js"}

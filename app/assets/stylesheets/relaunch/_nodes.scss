@@ -1,4 +1,5 @@
 @import "bootstrap/mixins";
+@import "accessibility.cloud-3.2.1-2350f78a";
 
 $border-color: darken($orange-gray, 5%);
 
@@ -308,6 +309,11 @@ $node-photos-width: (100% - $node-photos-gutter * $node-photos-columns) / $node-
   .ac-licenses {
     font-size: $fontSizeSmall;
     color: lighten($yellow-gray, 30%);
+    margin-bottom: 1em;
+  }
+
+  .ac-licenses a {
+    font-size: $fontSizeSmall;
   }
 
   .ac-result dt {
