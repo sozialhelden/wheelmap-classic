@@ -48,45 +48,14 @@ namespace :streetspotr do
         end
       end
 
-<<<<<<< HEAD
-  def photo(poi, row)
-    photo_url = row[:photo_url]
-    new_photo = poi.photos.build
-    new_photo.remote_image_url = photo_url
-    new_photo.source_url = photo_url
-    new_photo.user = User.wheelmap_streetspotr # user must exist in the DB
-    new_photo
-  end
-
-  def photo_check(poi, row)
-    image = Photo.find_by(source_url: row[:photo_url])
-
-    # Check for photo duplicates
-    if image
-      puts "Skipped: PHOTO #{image.id} already exists."
-      @skipped[:photo] += 1
-      @count += 1
-    else
-      p = photo(poi, row)
-      p.save!
-      @count += 1
-      @saved[:photo] += 1
-      puts "Success: PHOTO for osm_id #{poi.id} saved!"
-    end
-  end
-
-  def photo_check_dryrun(row)
-    image = Photo.find_by(source_url: row[:photo_url])
-=======
       ProvidedPoi.send(method, poi_id: poi.id, provider_id: provider.id) do |pp|
         @saved[:provided_poi] += 1
       end
->>>>>>> 2015e798294da31dc61008fc0fccb722687f0057
 
       Photo.send(method, source_url: row[:photo_url]) do |p|
         p.poi = poi
         p.remote_image_url = p.source_url
-        p.user = User.wheelmap_visitor
+        p.user = User.wheelmap_streetspotr # user must exist in the DB
         @saved[:photo] += 1
       end
     end
