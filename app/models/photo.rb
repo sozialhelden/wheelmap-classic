@@ -7,6 +7,8 @@ class Photo < ActiveRecord::Base
   belongs_to :poi
   belongs_to :user, counter_cache: true
   mount_uploader :image, PhotoUploader
+  # This process is being used for Carierwave backgrounder delayed jobs for staging and production. 
+  # Comment out this line to see the uploaded images immediately in dev mode.
   process_in_background :image
 
   before_create :extract_date_time

@@ -55,7 +55,7 @@ namespace :streetspotr do
       Photo.send(method, source_url: row[:photo_url]) do |p|
         p.poi = poi
         p.remote_image_url = p.source_url
-        p.user = User.wheelmap_visitor
+        p.user = User.wheelmap_streetspotr # user must exist in the DB
         @saved[:photo] += 1
       end
     end

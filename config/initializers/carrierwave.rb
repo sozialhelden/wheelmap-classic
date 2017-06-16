@@ -47,15 +47,9 @@ module CarrierWave
   end
 end
 
-if Rails.env.test?
   CarrierWave.configure do |config|
+    config.permissions = 0o644
     config.storage = :file
-    config.enable_processing = false
+    # Change to true to see the images immediately in dev and test mode (comment out :process_in_background 'app/models/photo.rb' as well)
+    config.enable_processing = Rails.env.production? || Rails.env.staging?
   end
-end
-
-CarrierWave.configure do |config|
-  config.permissions = 0o644
-  #  config.directory_permissions = 0755
-  config.storage = :file
-end
