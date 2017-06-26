@@ -323,6 +323,7 @@ class Poi < ActiveRecord::Base
                     'wheelchair_toilet' => wheelchair_toilet,
                     'id'         => osm_id,
                     'category'   => category.try(:identifier) || '',
+                    'node_type'  => node_type.try(:identifier) || '',
                     'icon'       => icon,
                     'name'       => name,
                     'sponsor'    => sponsored? ? sponsor : nil }
