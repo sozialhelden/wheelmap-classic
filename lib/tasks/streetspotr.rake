@@ -29,6 +29,7 @@ namespace :streetspotr do
 
     CSV.foreach(csv_file, converters: UTF8_TO_UTF8MB4_CONVERTER, headers: true, header_converters: :symbol, col_sep: ';', row_sep: :auto) do |row|
       osm_id = row[:osm_id]
+
       # Loop through CSV and check if record has osm_id
       if osm_id.blank?
         unless poi
@@ -40,6 +41,8 @@ namespace :streetspotr do
         begin
           # Find the POI
           poi = Poi.find_by!(osm_id: osm_id)
+           # Print osm_id for errors handling
+          puts "osm_id: #{osm_id}"
         rescue ActiveRecord::RecordNotFound
           puts "Skipped: POI for osm_id #{osm_id} not found."
           @not_found[:poi] += 1

@@ -7,7 +7,7 @@ class Photo < ActiveRecord::Base
   belongs_to :poi
   belongs_to :user, counter_cache: true
   mount_uploader :image, PhotoUploader
-  # This process is being used for Carierwave backgrounder delayed jobs for staging and production. 
+  # This process is being used for Carierwave backgrounder delayed jobs for staging and production.
   # Comment out this line to see the uploaded images immediately in dev mode.
   process_in_background :image
 
@@ -51,8 +51,18 @@ class Photo < ActiveRecord::Base
 
   def extract_date_time
     self.taken_at = begin
-                      EXIFR::JPEG.new(image.path).date_time
-                    rescue
+                      exif_date_time = EXIFR::JPEG.new(image.path).date_time
+                      date_time_regex = /^\d{4}(:|-|\/)\d{2}(:|-|\/)\d{2}\s\d+(:)\d{2}(:)\d{2}\s\+\d{4,}\$/
+
+                      # Allowed date formats: '2017:04:22 03:00:22 +0200', '2017-06-08 13:40:32 +0200', '2017/06/08 1:40:32 +0200'
+                      if date_time_regex.match(exif_date_time.to_s)
+                         exif_date_time
+                      else
+                        puts "EXIF date_time format '#{exif_date_time}' is not supported."
+                        exif_date_time = nil
+                      end
+                    rescue StandardError => e
+                      puts "EXIF date_time error message: #{e}"
                       nil
                     end
   end
