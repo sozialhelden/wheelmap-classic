@@ -51,19 +51,11 @@ class Photo < ActiveRecord::Base
 
   def extract_date_time
     self.taken_at = begin
-                      exif_date_time = EXIFR::JPEG.new(image.path).date_time
-                      date_time_regex = /^\d{4}(:|-|\/)\d{2}(:|-|\/)\d{2}\s\d+(:)\d{2}(:)\d{2}\s\+\d{4,}\$/
-
-                      # Allowed date formats: '2017:04:22 03:00:22 +0200', '2017-06-08 13:40:32 +0200', '2017/06/08 1:40:32 +0200'
-                      if date_time_regex.match(exif_date_time.to_s)
-                         exif_date_time
-                      else
-                        puts "EXIF date_time format '#{exif_date_time}' is not supported."
-                        exif_date_time = nil
-                      end
+                      exif_date_time = EXIFR::JPEG.new(image.path).date_time.to_s
+                      DateTime.parse(exif_date_time)
                     rescue StandardError => e
-                      puts "EXIF date_time error message: #{e}"
-                      nil
+                      puts "EXIF date_time format '#{exif_date_time}' is not supported: #{e}"
+                      exif_date_time = nil
                     end
   end
 
