@@ -8,6 +8,7 @@ SHAPE_FILE = "#{VAR_DIR}/shapes.osc".freeze
 STATE_FILE = "#{WORKING_DIR}/state.txt".freeze
 BACKUP_FILE = "#{WORKING_DIR}/state.old".freeze
 DOWNLOAD_LOCK = "#{WORKING_DIR}/download.lock".freeze
+MAKE_OSC_DIR = "/var/apps/make_osc/".freeze
 
 require 'rake'
 
@@ -54,9 +55,8 @@ def get_new_replication_file
 end
 
 def get_new_shape_replication_files
-  puts 'INFO: Fetching shape changes.'
-  system "ssh -p 22022 osm@176.9.63.171 \"ruby make_osc.rb -d\" 2> /dev/null >> #{SHAPE_FILE}"
-  puts "INFO: Downloaded #{File.size(SHAPE_FILE)} bytes"
+  puts "INFO: Fetching shape changes."
+  system "BUNDLE_GEMFILE=#{MAKE_OSC_DIR}/Gemfile bundle exec #{MAKE_OSC_DIR}/make_osc.rb -d >> #{SHAPE_FILE}"
 end
 
 def merge_replication_files

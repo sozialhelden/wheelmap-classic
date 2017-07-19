@@ -40,42 +40,45 @@ Wheelmap::Application.configure do
   # config.force_ssl = true
 
   # See everything in the log (default is :info)
-  config.log_level = :info
+  config.log_level = :warn
 
-  config.logger = Logger.new('log/production.log', 3, 1_073_741_824) # 1GB
+  config.logger = Logger.new($stdout)
 
   # Use a different cache store in production
   # default is:
   # config.cache_store = :file_store, "tmp/cache/"
-  config.cache_store = :mem_cache_store, 'localhost', { namespace: "wheelmap/#{Rails.env}/",
-                                                        c_threshold: 10_000,
-                                                        compression: true,
-                                                        debug: Rails.env.development?,
-                                                        readonly: false,
-                                                        urlencode: false }
+  config.cache_store = :mem_cache_store, 'app-database', { :namespace => "wheelmap/#{Rails.env}/",
+                                                        :c_threshold => 10_000,
+                                                        :compression => true,
+                                                        :debug => Rails.env.development?,
+                                                        :readonly => false,
+                                                        :urlencode => false
+                                                      }
+
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
   config.serve_static_assets = false
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
-  config.action_controller.asset_host = 'asset%d.wheelmap.org'
+  config.action_controller.asset_host = "new-production-asset.wheelmap.org"
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'wheelmap.org' }
+  config.action_mailer.default_url_options = {
+    :host => 'wheelmap.org',
+    :from => 'noreply@wheelmap.org',
+  }
 
   config.action_mailer.smtp_settings = {
-    address: 'mail.wheelmap.org',
-    enable_starttls_auto: false,
-    port: 25,
-    domain: 'wheelmap.org',
-    authentication: :login,
-    user_name: Rails.application.secrets.mail_user,
-    password: Rails.application.secrets.mail_password
-
+    :authentication => :plain,
+    :address        => 'smtp.mailgun.org',
+    :port           => 587,
+    :domain         => 'mg.wheelmap.org',
+    :user_name      => Rails.application.secrets.mail_user,
+    :password       => Rails.application.secrets.mail_password
   }
 
   # Enable threaded mode

@@ -3,17 +3,17 @@ module Rack
   # especially to investigate XML stuff going through the API
   class RequestLogger
     def initialize(app)
-      @logger = ::Logger.new(Rails.root.join('log/rack_requests.log'))
+      @logger = ::Logger.new($stdout)
       @app = app
     end
 
     def call(env)
       if env['HTTP_USER_AGENT'] =~ /Wheelmap/
-        @logger.debug('>>>>>>>>>>>>>>>>>>>>>>>>>>')
+        @logger.debug(">>>>>>>>>>>>>>>>>>>>>>>>>>")
         @logger.debug("#{Time.now.utc} new request:")
-        @logger.debug('----------- REQUEST HEADERS -----------')
-        headers = env.select { |k, _v| k =~ /^HTTP_/ } || []
-        @logger.debug(headers.map { |k, v| "#{k}: #{v}" }.join("\n"))
+        @logger.debug("----------- REQUEST HEADERS -----------")
+        headers = env.select { |k, v| k =~ /^HTTP_/ } || []
+        @logger.debug(headers.map { |k, v| "#{k}: #{v}"}.join("\n"))
 
         request = Rack::Request.new env
         @logger.debug('----------- REQUEST BODY (RAW_POST_DATA) -----------')

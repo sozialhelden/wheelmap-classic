@@ -2,9 +2,9 @@
 # Set environment to development unless something else is specified
 env = ENV['RAILS_ENV'] || 'staging'
 
-worker_processes env == 'production' ? 9 : 1
-base_dir = "/var/apps/wheelmap/#{env}/current"
-shared_path = "/var/apps/wheelmap/#{env}/shared"
+worker_processes 4
+base_dir = "/var/apps/wheelmap/current"
+shared_path = "/var/apps/wheelmap/shared"
 working_directory base_dir
 
 # This loads the application in the master process before forking
@@ -23,15 +23,13 @@ end
 
 timeout env == 'production' ? 300 : 30
 
-# This is where we specify the socket.
-# We will point the upstream Nginx module to this socket later on
-listen "#{shared_path}/unicorn.sock", backlog: 1024
+listen 3000, :backlog => 1024
 
 pid "#{shared_path}/pids/unicorn.pid"
 
-# Set the path of the log files inside the log folder of the testapp
-stdout_path "#{shared_path}/log/unicorn.stdout.log"
-stderr_path "#{shared_path}/log/unicorn.stderr.log"
+## Set the path of the log files inside the log folder of the testapp
+#stdout_path "#{shared_path}/log/unicorn.stdout.log"
+#stderr_path "#{shared_path}/log/unicorn.stderr.log"
 
 # The new check_client_connection option allows unicorn to detect
 # most disconnected local clients before potentially expensive

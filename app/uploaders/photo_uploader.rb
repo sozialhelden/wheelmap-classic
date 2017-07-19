@@ -18,7 +18,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     File.join('system', 'uploads', model.class.to_s.underscore, subdirs)
-    # File.join('uploads', model.class.to_s.underscore, mounted_as.to_s, subdirs)
+  end
+  def cache_dir
+    File.join('system', 'uploads', 'tmp', model.class.to_s.underscore)
   end
 
   def subdirs

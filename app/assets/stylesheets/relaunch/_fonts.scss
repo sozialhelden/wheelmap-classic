@@ -3,6 +3,6 @@ $helvetica_light: 'HelveticaNeue-Light','Helvetica Neue Light','Helvetica Neue',
 
 @font-face {
   font-family: 'EntypoRegular';
-  src: url('entypo.eot');
-  src: url('entypo.eot?#iefix') format("embedded-opentype"), url('entypo.woff') format("woff"), url('entypo.ttf') format("truetype"), url('entypo.svg#EntypoRegular') format("svg");
+  src: asset-url('entypo.eot');
+  src: asset-url('entypo.eot?#iefix') format("embedded-opentype"), asset-url('entypo.woff') format("woff"), asset-url('entypo.ttf') format("truetype"), asset-url('entypo.svg#EntypoRegular') format("svg");
 }
