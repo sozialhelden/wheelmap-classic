@@ -24,8 +24,11 @@ module Wheelmap
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
     require 'rack_i18n_locale_switcher'
+    require 'rack_serve_react_app'
     #    require  'rack_request_logger'
+    config.middleware.unshift(Rack::ServeReactApp)
     config.middleware.use(Rack::I18nLocaleSwitcher)
+
     config.i18n.fallbacks = true
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.default_locale = :de
