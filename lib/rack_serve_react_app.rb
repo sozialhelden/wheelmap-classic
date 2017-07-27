@@ -8,7 +8,7 @@ module Rack
       request = Rack::Request.new(env)
       if request.path.match(/^\/beta/)
         headers = { 'content-type': 'text/html; charset=utf-8' }
-        [200, headers, ::File.read(Rails.root.join('public', 'frontend', 'index.html'))]
+        [200, headers, ::File.read(Rails.root.join('public', 'beta', 'index.html'))]
       else
         @app.call(env)
       end
