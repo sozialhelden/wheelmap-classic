@@ -129,6 +129,9 @@ Ubuntu
 $ sudo npm install -g phantomjs-prebuilt
 ```
 
+_Note: Please follow these [installation instructions](https://github.com/ariya/phantomjs/issues/14376#issuecomment-246310115) if you get `
+QXcbConnection: Could not connect to display` error._
+
 #### Clone the app from Github:
 
 ```
