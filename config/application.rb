@@ -24,6 +24,7 @@ module Wheelmap
     # :all can be used as a placeholder for all plugins not explicitly named.
     # config.plugins = [ :exception_notification, :ssl_requirement, :all ]
     require 'rack_i18n_locale_switcher'
+
     #    require  'rack_request_logger'
     config.middleware.use(Rack::I18nLocaleSwitcher)
     config.i18n.fallbacks = true

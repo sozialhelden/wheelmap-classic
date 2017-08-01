@@ -171,4 +171,5 @@ Wheelmap::Application.routes.draw do
 
   get '/dashboard', to: redirect('https://metrics.librato.com/share/dashboards/3wf885ot?duration=604800')
   get '/',          to: redirect('/map'), as: 'roooot'
+  match '/beta', to: 'react#index', via: [:get]
 end
