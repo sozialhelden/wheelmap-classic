@@ -11,23 +11,6 @@ describe UpdateTagsJob do
   let(:user)      { FactoryGirl.create(:authorized_user) }
   let(:changeset) { Rosemary::Changeset.new(id: 12_345) }
   let(:unedited_node) { Rosemary::Node.new(tag: { 'addr:housenumber' => 10, 'amenity' => 'pub' }) }
-  let(:updated_poi) { FactoryGirl.create(:poi, tags: {
-                        "name": "Sakana",
-                        "amenity": "restaurant",
-                        "cuisine": "japanese",
-                        "addr:city": "Berlin",
-                        "wheelchair": "no",
-                        "addr:street": "Pestalozzistraße",
-                        "addr:suburb": "Charlottenburg",
-                        "addr:country": "DE",
-                        "addr:postcode": "10625",
-                        "addr:housenumber": "106",
-                        "wheelchair:description": "Stufe am Eingang, aber rollstuhlgerechtes WC"
-                        }
-                      )
-                    }
-  let(:updated_node) { Rosemary::Node.new(tag: { 'wheelchair:description'=> 'Stufe am Eingang, aber rollstuhlgerechtes WC' }) }
-  # let(:updated_node) { Rosemary::Node.new(tag: {}) }
 
   it 'should fail the job when element cannot be found' do
     UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
@@ -150,23 +133,24 @@ describe UpdateTagsJob do
     expect(failures).to eql 0
   end
 
-  it 'returns wheelchair tags data from osm' do
+  it 'updates and returns wheelchair description tags' do
     example_poi = FactoryGirl.build(:poi)
     example_poi.tags = { 'name' => 'name' }
     example_poi.save!
+    tags = { 'wheelchair:description' => 'Stufe am Eingang, aber rollstuhlgerechtes WC' }
 
-    UpdateTagsJob.enqueue(example_poi.id.abs, example_poi.osm_type, example_poi.tags, user, 'update_iphone', {'wheelchair:description' => true })
+    example_node = Rosemary::Node.new(tag: { 'wheelchair:description'=> 'Stufe am Eingang, aber rollstuhlgerechtes WC' })
+    UpdateTagsJob.enqueue(example_poi.id.abs, example_poi.osm_type, tags, user, 'update_iphone')
     api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
-    expect(api).to receive(:find_element).and_return(updated_node)
-    expect(api).to receive(:update).and_return(changeset)
-    expect(api).to receive(:save) { |node, _|
-      # expect(node.tags["wheelchair:description"]).to eql 'Stufe am Eingang, aber rollstuhlgerechtes WC'
-      # expect(node.id.abs).to eq(26735763)
-    }
-    # expect(api).to receive(:save) { |node, _| expect(node.tags['wheelchair:description']).to eql 'Stufe am Eingang, aber rollstuhlgerechtes WC' }
+    expect(api).to receive(:find_element).and_return(example_node)
+    expect(api).to receive(:save) do |node, _|
+      expect(node.tags['wheelchair:description']).to eql 'Stufe am Eingang, aber rollstuhlgerechtes WC'
+    end
+
     successes, failures = Delayed::Worker.new.work_off
-    binding.pry
+    example_poi.reload
+    expect(example_poi.wheelchair_description).to eq('Stufe am Eingang, aber rollstuhlgerechtes WC')
     expect(successes).to eql  1
     expect(failures).to eql 0
   end
