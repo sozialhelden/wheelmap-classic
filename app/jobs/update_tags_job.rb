@@ -27,6 +27,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     logger.info "User DB ID: #{user.try(:id)} - User OSM ID: #{user.try(:osm_id)} - Element: #{element_id} - Tags: #{tags}"
 
     begin
+      # binding.pry
       element_to_compare = api.find_element(type, element_id)
 
       element = element_to_compare.dup
@@ -38,6 +39,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       end
 
       # This loop is only here to make tests fail, actually.
+      # binding.pry
       element.tags.each do |_key, _value|
         tags_to_delete.each do |delete_key, delete_value|
           raise 'Tags to be deleted are still to be found.' if element.tags.include?(delete_key) && element.tags[delete_key] == delete_value
@@ -47,7 +49,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       # Use spaceship operator for comparision:
       # as "element == element_to_compare" is false because of object_id
       comparison_value = (element_to_compare <=> element)
-
+      # binding.pry
       # Ignore this job, as there are no changes to be saved
       if comparison_value.zero?
         logger.info "IGNORE: #{type}:#{element_id} nothing has changed! (value comparison)"
@@ -57,6 +59,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       changeset = api.find_or_create_open_changeset(user.changeset_id, 'Modified via wheelmap.org')
       user.update_attribute(:changeset_id, changeset.id)
 
+      # binding.pry
       api.save(element, changeset)
       Counter.increment(source)
       increment_user_counter!

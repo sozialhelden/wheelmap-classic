@@ -11,6 +11,23 @@ describe UpdateTagsJob do
   let(:user)      { FactoryGirl.create(:authorized_user) }
   let(:changeset) { Rosemary::Changeset.new(id: 12_345) }
   let(:unedited_node) { Rosemary::Node.new(tag: { 'addr:housenumber' => 10, 'amenity' => 'pub' }) }
+  let(:updated_poi) { FactoryGirl.create(:poi, tags: {
+                        "name": "Sakana",
+                        "amenity": "restaurant",
+                        "cuisine": "japanese",
+                        "addr:city": "Berlin",
+                        "wheelchair": "no",
+                        "addr:street": "Pestalozzistraße",
+                        "addr:suburb": "Charlottenburg",
+                        "addr:country": "DE",
+                        "addr:postcode": "10625",
+                        "addr:housenumber": "106",
+                        "wheelchair:description": "Stufe am Eingang, aber rollstuhlgerechtes WC"
+                        }
+                      )
+                    }
+  let(:updated_node) { Rosemary::Node.new(tag: { 'wheelchair:description'=> 'Stufe am Eingang, aber rollstuhlgerechtes WC' }) }
+  # let(:updated_node) { Rosemary::Node.new(tag: {}) }
 
   it 'should fail the job when element cannot be found' do
     UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone')
@@ -42,7 +59,7 @@ describe UpdateTagsJob do
     expect(api).to receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
     expect(api).not_to receive(:save)
     successes, failures = Delayed::Worker.new.work_off
-    expect(successes).to eql 1
+    expect(successes).to eql  1
     expect(failures).to eql 0
   end
 
@@ -130,6 +147,23 @@ describe UpdateTagsJob do
     expect(api).to receive(:save) { |node, _| expect(node.tags['addr:housenumber']).to eql 99 }
     successes, failures = Delayed::Worker.new.work_off
     expect(successes).to eql 1
+    expect(failures).to eql 0
+  end
+
+  it 'returns wheelchair tags data from osm' do
+    UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone', {'wheelchair:description' => true })
+    api = double(find_or_create_open_changeset: changeset)
+    expect(Rosemary::Api).to receive(:new).and_return(api)
+    expect(api).to receive(:find_element).and_return(updated_node)
+    expect(api).to receive(:update).and_return(changeset)
+    expect(api).to receive(:save) { |node, _|
+      # expect(node.tags["wheelchair:description"]).to eql 'Stufe am Eingang, aber rollstuhlgerechtes WC'
+      # expect(node.id.abs).to eq(26735763)
+    }
+    # expect(api).to receive(:save) { |node, _| expect(node.tags['wheelchair:description']).to eql 'Stufe am Eingang, aber rollstuhlgerechtes WC' }
+    successes, failures = Delayed::Worker.new.work_off
+    binding.pry
+    expect(successes).to eql  1
     expect(failures).to eql 0
   end
 
