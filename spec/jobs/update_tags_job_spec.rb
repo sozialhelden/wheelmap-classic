@@ -151,7 +151,11 @@ describe UpdateTagsJob do
   end
 
   it 'returns wheelchair tags data from osm' do
-    UpdateTagsJob.enqueue(poi.id.abs, poi.osm_type, poi.tags, user, 'update_iphone', {'wheelchair:description' => true })
+    example_poi = FactoryGirl.build(:poi)
+    example_poi.tags = { 'name' => 'name' }
+    example_poi.save!
+
+    UpdateTagsJob.enqueue(example_poi.id.abs, example_poi.osm_type, example_poi.tags, user, 'update_iphone', {'wheelchair:description' => true })
     api = double(find_or_create_open_changeset: changeset)
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:find_element).and_return(updated_node)
