@@ -28,7 +28,6 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
 
     begin
       element_to_compare = api.find_element(type, element_id)
-
       element = element_to_compare.dup
       element.tags.merge!(tags)
       tags_to_delete.each do |delete_key, delete_value|
@@ -125,6 +124,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     p = Poi.find osm_id
     p.wheelchair = tags[WHEELCHAIR_TAG_KEY] if tags.key?(WHEELCHAIR_TAG_KEY)
     p.wheelchair_toilet = tags[WHEELCHAIR_TOILET_TAG_KEY] if tags.key?(WHEELCHAIR_TOILET_TAG_KEY)
+    p.wheelchair_description = tags['wheelchair:description'] if tags.key?('wheelchair:description')
     p.save(validate: false)
   rescue Exception => e
     logger.error e.message
