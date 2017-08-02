@@ -42,7 +42,7 @@ describe UpdateTagsJob do
     expect(api).to receive(:find_element).with('node', node.id.abs).and_return(unedited_node)
     expect(api).not_to receive(:save)
     successes, failures = Delayed::Worker.new.work_off
-    expect(successes).to eql  1
+    expect(successes).to eql 1
     expect(failures).to eql 0
   end
 
@@ -133,7 +133,7 @@ describe UpdateTagsJob do
     expect(failures).to eql 0
   end
 
-  it 'compares and updates wheelchair description tag' do
+  it 'updates wheelchair description tag' do
     example_poi = FactoryGirl.build(:poi)
     example_poi.tags = { 'name' => 'name' }
     example_poi.save!
@@ -151,7 +151,7 @@ describe UpdateTagsJob do
     successes, failures = Delayed::Worker.new.work_off
     example_poi.reload
     expect(example_poi.wheelchair_description).to eq('Keine Rampe hohe Treppen')
-    expect(successes).to eql  1
+    expect(successes).to eql 1
     expect(failures).to eql 0
   end
 
