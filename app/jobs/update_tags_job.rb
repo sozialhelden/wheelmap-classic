@@ -128,6 +128,7 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
     p = Poi.find osm_id
     p.wheelchair = tags[WHEELCHAIR_TAG_KEY] if tags.key?(WHEELCHAIR_TAG_KEY)
     p.wheelchair_toilet = tags[WHEELCHAIR_TOILET_TAG_KEY] if tags.key?(WHEELCHAIR_TOILET_TAG_KEY)
+    p.wheelchair_description = tags['wheelchair:description'] if tags.key?('wheelchair:description')
     p.save(validate: false)
   rescue Exception => e
     logger.error e.message

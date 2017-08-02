@@ -133,11 +133,11 @@ describe UpdateTagsJob do
     expect(failures).to eql 0
   end
 
-  it 'updates and returns wheelchair description tags' do
+  it 'compares and updates wheelchair description tag' do
     example_poi = FactoryGirl.build(:poi)
     example_poi.tags = { 'name' => 'name' }
     example_poi.save!
-    tags = { 'wheelchair:description' => 'Stufe am Eingang, aber rollstuhlgerechtes WC' }
+    tags = { 'wheelchair:description' => 'Keine Rampe hohe Treppen' }
 
     example_node = Rosemary::Node.new(tag: { 'wheelchair:description'=> 'Stufe am Eingang, aber rollstuhlgerechtes WC' })
     UpdateTagsJob.enqueue(example_poi.id.abs, example_poi.osm_type, tags, user, 'update_iphone')
@@ -145,12 +145,12 @@ describe UpdateTagsJob do
     expect(Rosemary::Api).to receive(:new).and_return(api)
     expect(api).to receive(:find_element).and_return(example_node)
     expect(api).to receive(:save) do |node, _|
-      expect(node.tags['wheelchair:description']).to eql 'Stufe am Eingang, aber rollstuhlgerechtes WC'
+      expect(node.tags['wheelchair:description']).to eql 'Keine Rampe hohe Treppen'
     end
 
     successes, failures = Delayed::Worker.new.work_off
     example_poi.reload
-    expect(example_poi.wheelchair_description).to eq('Stufe am Eingang, aber rollstuhlgerechtes WC')
+    expect(example_poi.wheelchair_description).to eq('Keine Rampe hohe Treppen')
     expect(successes).to eql  1
     expect(failures).to eql 0
   end
