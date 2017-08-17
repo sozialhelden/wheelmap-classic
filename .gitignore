@@ -20,6 +20,7 @@ public/assets
 public/sitemap*
 public/system/sitemap*
 public/system/uploads*
+public/beta
 vendor/bundle
 vendor/cache
 node_modules
