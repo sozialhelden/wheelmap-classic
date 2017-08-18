@@ -999,6 +999,9 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
     "node_map": {
       "map": "Map:"
     },
+    "node_nearby": {
+      "places_nearby": "Places nearby:"
+    },
     "node_note": {
       "comment": "Comment:"
     },

@@ -995,6 +995,9 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
     "node_map": {
       "map": "Térkép:"
     },
+    "node_nearby": {
+      "places_nearby": "Places nearby:"
+    },
     "node_note": {
       "comment": "Megjegyzés:"
     },

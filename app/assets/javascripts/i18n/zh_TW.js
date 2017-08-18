@@ -999,6 +999,9 @@ I18n.translations["zh_TW"] = I18n.extend((I18n.translations["zh_TW"] || {}), {
     "node_map": {
       "map": "地圖:"
     },
+    "node_nearby": {
+      "places_nearby": "Places nearby:"
+    },
     "node_note": {
       "comment": "註解:"
     },
