@@ -15,6 +15,8 @@
     "browserify": "^12.0.1",
     "browserify-incremental": "^3.1.1",
     "classnames": "^2.2.3",
+    "expect": "^1.20.2",
+    "expect-immutable": "0.0.3",
     "history": "^2.0.0",
     "immutable": "^3.7.6",
     "isomorphic-fetch": "^2.2.1",
