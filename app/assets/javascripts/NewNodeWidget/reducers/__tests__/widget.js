@@ -1,6 +1,7 @@
 import { Map, List } from 'immutable';
 import expect from 'expect';
 import expectImmutable from 'expect-immutable';
+
 import { ADDRESS } from '../../models/sections';
 import * as actions from '../../actions';
 import Node from '../../../common/models/Node';
