@@ -999,6 +999,9 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
     "node_map": {
       "map": "Hartë:"
     },
+    "node_nearby": {
+      "places_nearby": "Places nearby:"
+    },
     "node_note": {
       "comment": "Koment:"
     },

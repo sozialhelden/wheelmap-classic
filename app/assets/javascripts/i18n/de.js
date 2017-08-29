@@ -1034,6 +1034,9 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
     "node_map": {
       "map": "Karte:"
     },
+    "node_nearby": {
+      "places_nearby": "Orte in der Nähe:"
+    },
     "node_note": {
       "comment": "Nutzerkommentar:"
     },

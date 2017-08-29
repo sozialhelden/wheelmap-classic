@@ -999,6 +999,9 @@ I18n.translations["el"] = I18n.extend((I18n.translations["el"] || {}), {
     "node_map": {
       "map": "Χάρτης:"
     },
+    "node_nearby": {
+      "places_nearby": "Places nearby:"
+    },
     "node_note": {
       "comment": "Σχόλιο:"
     },

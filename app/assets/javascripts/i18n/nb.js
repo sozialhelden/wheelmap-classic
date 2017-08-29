@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
   "actions": {
     "cancel": "Avbryt",
-    "next": "Next",
+    "next": "Neste",
     "save": "Lagre",
     "send": "Send"
   },
@@ -305,7 +305,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
   },
   "breadcrumbs": {
     "node": {
-      "create": "Add a new place",
+      "create": "Legg til et nytt sted",
       "edit": "Rediger stedet"
     },
     "root": "Wheelmap"
@@ -613,27 +613,27 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
     "dynamic_format": "%{message}",
     "format": "%{attribute} %{message}",
     "messages": {
-      "accepted": "must be accepted",
+      "accepted": "må aksepteres",
       "already_confirmed": "er allerede bekreftet",
-      "blank": "must be filled in",
+      "blank": "må fylles inn",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
       "carrierwave_processing_error": "failed to be processed",
       "confirmation": "passer ikke bekreftelsen",
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
-      "empty": "must be filled in",
+      "empty": "må fylles inn",
       "equal_to": "må være lik %{count}",
-      "even": "must be an even number",
+      "even": "må være et partall",
       "exclusion": "er reservert",
       "expired": "Utgått, vennligst be om ny",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
       "extension_white_list_error": "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}",
       "greater_than": "må være større enn %{count}",
-      "greater_than_or_equal_to": "must be greater than or equal to %{count}",
+      "greater_than_or_equal_to": "må være større eller det samme som %{count}",
       "inclusion": "ikke akseptert verdi",
       "invalid": "er ugyldig",
       "less_than": "må være mindre enn %{count}",
-      "less_than_or_equal_to": "must be less than or equal to %{count}",
+      "less_than_or_equal_to": "må være mindre eller det samme som %{count}",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
       "not_a_number": "er ikke et tall",
@@ -644,7 +644,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
         "one": "En feil gjorde at %{resource} ikke kunne lagres:",
         "other": "%{count} feil gjorde at %{resource} ikke kunne lagres:"
       },
-      "odd": "must be an odd number",
+      "odd": "må være et oddetall",
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
@@ -656,7 +656,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
     "models": {
       "node": {
         "website": {
-          "invalid": "Website address is not valid."
+          "invalid": "Nettadressen er ikke gyldig."
         }
       }
     },
@@ -696,38 +696,38 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
     },
     "photos": {
       "destroy": {
-        "notice": "Image was successfully deleted"
+        "notice": "Bildet ble slettet"
       }
     }
   },
   "form": {
     "show_fully_accessible_places": "Rullestoltilgjengelig",
-    "show_limited_accessible_places": "Partially wheelchair accessible",
-    "show_places_without_status": "Unknown status",
+    "show_limited_accessible_places": "Delvis rullestol-tilgjengelig",
+    "show_places_without_status": "Ukjent status",
     "show_unaccessible_places": "Ingen rulletstoltilgjengeliget"
   },
   "formtastic": {
     "hints": {
-      "email": "We treat your address confidentially. We promise not to send you spam!",
+      "email": "Vi behandler adressen din med respekt. Vi lover å ikke sende deg søppelpost!",
       "lat": "Flytt markøren på kartet til riktig sted",
       "osm_username": "Fortsatt ikke medlem? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Opprett en OpenStreetMap-konto nå</a>\n",
       "password": "(La den stå tom, hvis du ikke vil endre den)",
-      "phone": "For example: +49 30 12345678",
+      "phone": "For eksempel: +47 12248322",
       "website": "For eksempel: http://www.example.com"
     },
     "labels": {
       "category": "Kategori:",
       "centralkey": "Sentral tast:",
       "city": "By:",
-      "create": "Create a place",
+      "create": "Legg til et sted",
       "email": "Email",
       "finish": "Mål",
       "housenumber": "Nummer:",
       "lat": "Breddegrad",
       "lon": "Lengdegrad",
       "name": "Navn:",
-      "osm_password": "OpenStreetMap password",
-      "osm_username": "OpenStreetMap account name",
+      "osm_password": "OpenStreetMap passord",
+      "osm_username": "OpenStreetMap brukernavn",
       "password": "Passord",
       "password_confirmation": "Gjenta passord",
       "phone": "Telefon:",
@@ -741,7 +741,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "website": "Webside:",
       "wheelchair": "Rullestoltilgjenglighet?",
       "wheelchair_description": "Kommentar om tilgjengelighet:",
-      "wheelchair_toilet": "Wheelchair accessible toilet:"
+      "wheelchair_toilet": "Rullestol-tilgjengelig toalett:"
     },
     "titles": {
       "basic": "Generell data",
@@ -774,13 +774,13 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "map": "Kart",
       "newsletter": "Nyhetsbrev",
       "press": "Presse",
-      "profile": "Profile",
+      "profile": "Profil",
       "projects": "Bli involvert",
       "report_problem": "Rapporter et problem",
       "suggestions": "Forslag",
       "travelguide": "Travel guide",
       "what_is_barrier_free": "Hva betyr \"rullestoltilgjengelig\"?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "what_is_wheelmap": "Hva er Wheelmap?"
     },
     "searchbar": {
       "add_place": "Legg til nytt sted",
@@ -789,7 +789,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "title_add_place": "Legg til nytt sted her nå!"
     },
     "tagline": "Wheelmap logo",
-    "title": "Find wheelchair accessible places",
+    "title": "Finn rullestol-tilgjengelige steder",
     "toolbar": {
       "categories": "Kategorier"
     }
@@ -821,8 +821,8 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "embed_link": "Vis på Wheelmap.org",
       "filter": {
         "category": "Velg kategori",
-        "deselect_all": "Deselect all",
-        "select_all": "Select all",
+        "deselect_all": "Fjern merking av alle",
+        "select_all": "Velg alle",
         "wheelchair": "Rullestoltilgjengelig?"
       },
       "ie": {
@@ -832,12 +832,12 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
         },
         "warning": {
           "headline": "Vi beklager!",
-          "message": "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
+          "message": "Det ser ut som at du bruker Internet Explorer. Wheelmap trenger en kompatibel nettleser for å kunne fungere ordentlig. Vennligst vurder å bytte til Firefox, Chrome, Safari eller Opera."
         }
       },
       "link": {
         "node": {
-          "create": "Add a new place"
+          "create": "Legg til et nytt sted"
         }
       },
       "overlay": {
@@ -850,10 +850,10 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       },
       "popup": {
         "form": {
-          "limited": "Partially wheelchair accessible",
+          "limited": "Delvis rullestol-tilgjengelig",
           "no": "Ingen rulletstoltilgjengeliget",
           "save": "Oppdater",
-          "unknown": "Unknown status",
+          "unknown": "Ukjent status",
           "yes": "Rullestoltilgjengelig"
         },
         "help": "Rullestoltilgjengelig? (hjelp)",
@@ -867,16 +867,16 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
     "index": {
       "wheelchair": {
         "limit": {
-          "headline": "All partially wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Alle delvis rullestol-tilgjengelige %{type} i %{city} (%{count})"
         },
         "no": {
-          "headline": "All not wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Ikke rullestol-tilgjengelige %{type} i %{city} (%{count})"
         },
         "unknown": {
           "headline": "Alle %{type} i %{city} med ukjent rullestol status (%{count})"
         },
         "yes": {
-          "headline": "Alle rullestoltilgjenglige %{type} i %{city} (%{count})"
+          "headline": "Alle rullestoltilgjengelige %{type} i %{city} (%{count})"
         }
       }
     }
@@ -890,17 +890,17 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
   },
   "models": {
     "category": {
-      "prompt": "Choose a category"
+      "prompt": "Velg en kategori"
     },
     "node": {
-      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
+      "info_edit_position": "Stedet vil vises på Wheelmap som vist over. Hvis markøren ikke er plassert riktig, kan du <a href=\"%{url}\">endre det på OpenStreetMap.</a>",
       "mail": {
-        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
-        "subject": "[Wheelmap] Problem with %{headline}"
+        "body": "(Skriv vennligst på Engelsk eller Tysk.)\n\nHei Sozialhelden,\nNoe er galt med stedet: %{url}\n\nProblemet er:",
+        "subject": "[Wheelmap] Problem med %{headline}"
       }
     },
     "node_type": {
-      "prompt": "Choose a type"
+      "prompt": "Velg en type"
     }
   },
   "node": {
@@ -929,7 +929,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       }
     },
     "errors": {
-      "default": "Oops something went wrong. We have been informed about this issue",
+      "default": "Oops, noe gikk galt. Vi er blitt informert om denne feilen, og prøver og fikse den fortest mulig",
       "not_authorized": "Beklager, pålogging feilet",
       "not_available": "Beklager, denne siden er midlertidig ikke tilgjenglig.",
       "not_existent": "Beklager, men dette stedet er ikke lenger tilgjengelig.",
@@ -999,6 +999,9 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
     "node_map": {
       "map": "Map:"
     },
+    "node_nearby": {
+      "places_nearby": "Places nearby:"
+    },
     "node_note": {
       "comment": "Comment:"
     },
@@ -1031,9 +1034,9 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
         "back": "tilbake",
         "large_map": "Forstørr",
         "listing": "Alle steder av typen '%{type}' i %{city}",
-        "upload": "Upload image"
+        "upload": "Last opp bilde"
       },
-      "more_data_from": "There is more information about this place, validated by:",
+      "more_data_from": "Det er mer informasjon om dette stedet, godkjent av:",
       "share": {
         "email": "Email",
         "facebook": "Facebook",
@@ -1118,11 +1121,11 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
   "oauth": {
     "application": {
       "connect": {
-        "headline": "You need to connect your account with your OpenStreetMap account before you can create or modify places on Wheelmap.org."
+        "headline": "Du trenger å koble kontoen din sammen med OpenStreetMap-kontoen din før du kan lage eller endre steder på Wheelmap.org."
       }
     },
     "callback": {
-      "notice": "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
+      "notice": "Wheelmap-kontoen din er nå koblet til OpenStreetMap kontoen %{user}."
     }
   },
   "or": "eller",
@@ -1472,7 +1475,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
     "step1": "Klikk på et sted du kjenner",
     "step2": "Merk den og klikk lagre",
     "step3": "Det var alt. Ingen registrering nødvendig",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "what_is_wheelmap": "Hva er Wheelmap?"
   },
   "statistics": "Statistikk",
   "support": {
@@ -1496,14 +1499,14 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
     "pm": "pm"
   },
   "toiletstatus": {
-    "no": "No wheelchair accessible toilet",
-    "unknown": "Toilet status unknown",
+    "no": "Ingen rullestol-tilgjengelige toaletter",
+    "unknown": "Toalett-status ukjent",
     "what_is": {
-      "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
-      "unknown": "Help out by marking the toilet status!",
-      "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      "no": "Dørbredde på minst 90 cm (35 in), ryddig gulvplass på minst 150 x 150 cm (59 x 59 in), rullestol-høyde på toalettet, armstøtter og lett tilgjengelig håndvask.",
+      "unknown": "Hjelp andre ved å markere status på toaletter!",
+      "yes": "Dørbredde på minst 90 cm (35 in), ryddig gulvplass på minst 150 x 150 cm (59 x 59 in), rullestol-høyde på toalettet, armstøtter og lett tilgjengelig håndvask."
     },
-    "yes": "Wheelchair accessible toilet"
+    "yes": "Rullestol-tilgjengelige toalett"
   },
   "user_sessions": {
     "create": {
@@ -1519,7 +1522,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "notice": "Hadet, kom snart tilbake"
     },
     "new": {
-      "email": "Email address",
+      "email": "E-postadresse",
       "login": "Logg inn",
       "login_with_twitter": "Logg på med Twitter",
       "password": "Passord",
@@ -1529,14 +1532,14 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
   "users": {
     "after_signup_edit": {
       "welcome": {
-        "headline": "You are almost there! Now on to finalize your Wheelmap account:",
-        "set_password_for_mobile": "You have successfully registered with OpenStreetMap. Please choose an email address that you would like Wheelmap to use so we can keep you informed about your activities (for example the number of places you have marked). You can access this information on your \"Profile\".",
+        "headline": "Du er nesten i mål! Nå må du ferdigstille Wheelmap-kontoen din:",
+        "set_password_for_mobile": "Registreringen din på OpenStreetMap var vellykket. Vennligst velg en e-postadresse du vil vi skal bruke til å oppdatere deg med informasjon om aktiviteter (f. eks. antall steder du har markert). Du kan få tilgang til denne informasjonen i profilen din.",
         "text": "Hvordan kan vi få kontakt med deg? Du kan endre denne informasjonen i profilen din senere."
       }
     },
     "edit": {
       "headline": {
-        "your_images": "Your uploaded images"
+        "your_images": "Dine opplastede bilder"
       }
     },
     "profile": {
@@ -1611,9 +1614,9 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
     }
   },
   "wheelchairstatus": {
-    "limited": "Partially wheelchair accessible",
+    "limited": "Delvis rullestol-tilgjengelig",
     "no": "Ingen rulletstoltilgjengeliget",
-    "unknown": "Unknown status",
+    "unknown": "Ukjent status",
     "yes": "Rullestoltilgjengelig"
   },
   "wheelmap": {
@@ -1635,7 +1638,7 @@ I18n.translations["nb"] = I18n.extend((I18n.translations["nb"] || {}), {
       "fully_accessible": "Inngangspartiet er uten terskel, alle rom uten terskel.",
       "limited_accessible": "Inngang har steg (maks. høyde 7 cm, 3 tommers), de fleste rom er terskelfri.",
       "not_accessible": "Inngang har terkel eller flere steg, rommene er utilgjengelige.",
-      "unknown_accessible": "Help out by marking places!"
+      "unknown_accessible": "Hjelp andre ved å markere steder!"
     }
   },
   "will_paginate": {

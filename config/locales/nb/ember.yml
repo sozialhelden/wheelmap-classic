@@ -1,4 +1,21 @@
 nb:
+  models:
+    category:
+      prompt: "Velg en kategori"
+    node_type:
+      prompt: "Velg en type"
+    node:
+      info_edit_position: "Stedet vil vises på Wheelmap som vist over. Hvis markøren ikke er plassert riktig, kan du <a href=\"%{url}\">endre det på OpenStreetMap.</a>"
+      mail:
+        subject: "[Wheelmap] Problem med %{headline}"
+        body: "(Skriv vennligst på Engelsk eller Tysk.)\n\nHei Sozialhelden,\nNoe er galt med stedet: %{url}\n\nProblemet er:"
   actions:
+    send: Send
     save: Lagre
     cancel: Avbryt
+    next: Neste
+  errors:
+    models:
+      node:
+        website:
+          invalid: "Nettadressen er ikke gyldig."

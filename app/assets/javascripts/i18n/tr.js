@@ -2,7 +2,7 @@ I18n.translations || (I18n.translations = {});
 I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
   "actions": {
     "cancel": "İptal",
-    "next": "Sıradaki",
+    "next": "Sonraki adım",
     "save": "Kaydet",
     "send": "Gönder"
   },
@@ -297,22 +297,22 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
   },
   "application": {
     "require_no_user": {
-      "notice": "Sayfaya kayıtlısınız"
+      "notice": "Zaten oturum açtınız..."
     },
     "require_user": {
-      "notice": "Bu sayfayı görmek icin yeni bir oturum açın."
+      "notice": "Bu sayfayı görmek için oturum açmalısınız."
     }
   },
   "breadcrumbs": {
     "node": {
       "create": "Yeni bir mekan ekle",
-      "edit": "yeri/ alanı şekilendiriniz"
+      "edit": "Mekanı düzenle"
     },
     "root": "Wheelmap"
   },
   "common": {
-    "close": "kapatınız",
-    "skip": "Atla"
+    "close": "kapat",
+    "skip": "atla"
   },
   "community_support_form": {
     "new": {
@@ -614,7 +614,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     "format": "%{attribute} %{message}",
     "messages": {
       "accepted": "kabul edilmelidir",
-      "already_confirmed": "tasdiklendi, lütfen kayıt olmayı deneyin\n",
+      "already_confirmed": "zaten onaylandı.",
       "blank": "doldurulmalıdır",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
@@ -624,7 +624,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "empty": "doldurulmalıdır",
       "equal_to": "tam olarak %{count} olmalı",
       "even": "çift sayı olmalıdır",
-      "exclusion": "ayırtılmış",
+      "exclusion": "rezerve edilmiş",
       "expired": "zamanaşımına uğramış, lütfen tekrar deneyin",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
       "extension_white_list_error": "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}",
@@ -637,12 +637,12 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
       "not_a_number": "bu bir numara değildir",
-      "not_an_integer": "Tamsayı olması gerekir",
+      "not_an_integer": "tamsayı olması gerekir",
       "not_found": "bulunamadı",
-      "not_locked": "Kilitli değildi",
+      "not_locked": "kilitli değildi",
       "not_saved": {
-        "one": "1 error prohibited this %{resource} from being saved:",
-        "other": "%{count} errors prohibited this %{resource} from being saved:"
+        "one": "%{resource}:içinde bir hata kaydedilmedi.",
+        "other": "%{resource}içinde%{count}hata kayıt edilmedi."
       },
       "odd": "tek sayı olmalıdır",
       "other_than": "must be other than %{count}",
@@ -703,8 +703,8 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
   "form": {
     "show_fully_accessible_places": "tekerlekli sandalye ile ulaşılır",
     "show_limited_accessible_places": "Tekerlekli sandalyeyle kısmen erişilebilir",
-    "show_places_without_status": "Bilinmeyen durum",
-    "show_unaccessible_places": "Tekerlekli sandalye erişilebilirliği yok"
+    "show_places_without_status": "Durumu bilinmiyor",
+    "show_unaccessible_places": "Tekerlekli sandalye erişimine uygun değil"
   },
   "formtastic": {
     "cancel": "İptal",
@@ -721,17 +721,17 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "category": "Tabaka:",
       "centralkey": "Merkez anahtarı:",
       "city": "Şehir",
-      "create": "Bir mekan oluşturun",
+      "create": "Bir mekan ekleyin",
       "email": "E-posta",
       "finish": "Bitir",
       "housenumber": "No:",
       "lat": "Enlem",
       "lon": "Boylam",
       "name": "Isim",
-      "osm_password": "OpenStreetMap parolası",
+      "osm_password": "OpenStreetMap şifresi",
       "osm_username": "OpenStreetMap kullanıcı adı",
-      "password": "Parola",
-      "password_confirmation": "Parolayi tekrarlayınız",
+      "password": "Şifre",
+      "password_confirmation": "Şifreyi tekrar girin",
       "phone": "Telefon:",
       "postcode": "Posta Kodu",
       "privacy_policy": "Veri güvenliği anlaşmasının 1. ve 2. paragrafını kabul ediyorum.",
@@ -776,11 +776,11 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "home": "Başlat",
       "how_to_add_a_place": "Yeni mekan/alan nasıl eklenir?",
       "imprint": "Künye",
-      "logged_in_as": "- olarak kayıtlı kal: ",
+      "logged_in_as": "Giriş yaptınız:",
       "login": "Oturum aç",
       "logout": "Oturumu kapat",
       "map": "Harita",
-      "newsletter": "Haberler",
+      "newsletter": "Bülten",
       "press": "Basın",
       "profile": "Profil",
       "projects": "Sen de katıl",
@@ -825,7 +825,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "embed_link": "Wheelmap.org üzerinde göster",
       "filter": {
         "category": "Tabaka:",
-        "deselect_all": "Tümünün işaretini kaldır",
+        "deselect_all": "Tüm işaretleri kaldır",
         "select_all": "Tümünü işaretle",
         "wheelchair": "Tekerlekli sandalye için ulaşılırmı?"
       },
@@ -841,7 +841,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       },
       "link": {
         "node": {
-          "create": "Yeni bir yer ekle"
+          "create": "Yeni bir mekan ekle"
         }
       },
       "overlay": {
@@ -854,11 +854,11 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       },
       "popup": {
         "form": {
-          "limited": "Tekerlekli sandalyeyle kısmen erişilebilir",
-          "no": "Tekerlekli sandalye erişilebilirliği yok",
+          "limited": "Tekerlekli sandalye erişimine kısmen uygun",
+          "no": "Tekerlekli sandalye erişimine uygun değil",
           "save": "Değişiklikeri kaydedin",
-          "unknown": "Bilinmeyen durum",
-          "yes": "tekerlekli sandalye ile ulaşılır"
+          "unknown": "Durumu bilinmiyor",
+          "yes": "tekerlekli sandalye erişimine uygun"
         },
         "help": "Tekerlekli sandalye için ulaşılırmı? (Yardım)",
         "more": "daha fazla..."
@@ -871,7 +871,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     "index": {
       "wheelchair": {
         "limit": {
-          "headline": "%{city} (% {count}) içinde %{type} kısmen tekerlekli sandalye ile erişilebilir durumdadır."
+          "headline": "%{city} (% {count}) içinde %{type} tekerlekli sandalye erişimine kısmen uygundur."
         },
         "no": {
           "headline": "%{city} (% {count}) içinde %{type} tekerlekli sandalye erişimine uygun değil"
@@ -899,7 +899,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     "node": {
       "info_edit_position": "Konum Wheelmap üzerinde yukarıdaki gibi görünecektir. Eğer yer işareti doğru noktada değilse, <a href=\"%{url}\">OpenSteetMap üzerinde konumu değiştirebilirsiniz.</a>",
       "mail": {
-        "body": "(Lütfen sadece İngilizce veya Almanca yazınız.)\n\nMerhaba Sozialhelden,\nMekanla ilgili orun var: %{url}\n\nSorun:",
+        "body": "(Lütfen sadece İngilizce veya Almanca yazınız.)\n\nMerhaba Sozialhelden,\nMekanla ilgili yanlış bir şeyler var: %{url}\n\nSorun:",
         "subject": "[Wheelmap]  %{headline} ile ilgili sorun"
       }
     },
@@ -921,7 +921,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     "create": {
       "flash": {
         "not_successfull": "Ooops, verileriniz yanlış veya yetersizdi",
-        "successfull": "Teşekkür ederiz, bildirileriniz basarili bir şekilde kaydedildi ve kısa sürede internet sitesinde sunulacak."
+        "successfull": "Teşekkür ederiz, bildirileriniz başarılı bir şekilde kaydedildi ve en kısa zamanda web sitesinde yayınlanacaktır."
       }
     },
     "edit": {
@@ -929,7 +929,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         "title": "Alan veya mekan düzenle: %{node} | wheelmap.org"
       },
       "link": {
-        "large_map": "&laquo; iptal et"
+        "large_map": "&laquo; İptal"
       }
     },
     "errors": {
@@ -1003,6 +1003,9 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     "node_map": {
       "map": "Harita:"
     },
+    "node_nearby": {
+      "places_nearby": "Places nearby:"
+    },
     "node_note": {
       "comment": "Yorum:"
     },
@@ -1034,7 +1037,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "link": {
         "back": "geri",
         "large_map": "Genişlet",
-        "listing": "%{city} içinde mekanların türü '%{type}' ",
+        "listing": "%{city} şehrinde mekanların türü '%{type}' ",
         "upload": "Görsel yükleyin"
       },
       "more_data_from": "Burası hakkında daha fazla bilgi var, bilgi girişini yapan: ",
@@ -1049,7 +1052,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     "update": {
       "flash": {
         "not_successfull": "Oops, verileriniz yanlış veya eksik.",
-        "successfull": "Teşekkür ederiz, tesciliniz başarılı bir şekilde kayıtlanmıştır ve kısa bir süre sonra online olacak."
+        "successfull": "Teşekkür ederiz, kaydınız yapıldı ve hesabınız kısa bir süre sonra aktif hale gelecektir."
       }
     },
     "update_wheelchair": {
@@ -1122,7 +1125,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
   "oauth": {
     "application": {
       "connect": {
-        "headline": "Wheelmap.org'a mekan eklemek ve değişiklik yapabilmeniz için için hesabınızı OpenStreetMap hesabınıza bağlamanız gerekmektedir."
+        "headline": "Wheelmap.org'a mekan eklemek ve değişiklik yapabilmeniz için hesabınızı OpenStreetMap hesabınıza bağlamanız gerekmektedir."
       }
     },
     "callback": {
@@ -1357,9 +1360,9 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     "edit": {
       "application": {
         "oauth": {
-          "connected": "Statü: bağlantı var",
+          "connected": "Durum: Bağlantı var",
           "grant": "Şimdi bağlan",
-          "not_connected": "Statü: Bağlantı yok",
+          "not_connected": "Durum: Bağlantı yok",
           "revoke": "Bağlantıyı kesmek"
         }
       },
@@ -1471,10 +1474,10 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
   },
   "splash": {
     "countline": "%{count} yer zaten işaretlendi.",
-    "headline": "Herkes tekerlekli sandalye erişilebilirliği olan yerleri işaretleyebilir!",
+    "headline": "Herkes tekerlekli sandalye erişimine uygun yerleri işaretleyebilir!",
     "start": "Başlat",
-    "step1": "Bildiğiniz bir yere tıklayın",
-    "step2": "İşaretleyin ve kaydete tıklayın",
+    "step1": "Bildiğiniz bir mekana tıklayın",
+    "step2": "Mekanı işaretleyin ve kaydete tıklayın",
     "step3": "İşte bu! Kaydolmak gerekmiyor",
     "what_is_wheelmap": "Wheelmap nedir?"
   },
@@ -1515,7 +1518,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
         "notice": "Hesabınız şimdi aktive edildi!"
       },
       "error": {
-        "notice": "E-Posta ve parola birbirine uymuyor"
+        "notice": "E-posta ve şifre uyuşmuyor."
       },
       "notice": "Oturum açtınız!"
     },
@@ -1526,7 +1529,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "email": "E-posta adresi",
       "login": "Oturum aç",
       "login_with_twitter": "Twitter ile oturum aç",
-      "password": "Parola",
+      "password": "Şifre",
       "remember_me": "Kayıtlı kal"
     }
   },
@@ -1540,7 +1543,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     },
     "edit": {
       "headline": {
-        "your_images": "Yüklenmiş görselleriniz."
+        "your_images": "Yüklediğiniz görseller."
       }
     },
     "profile": {
@@ -1615,17 +1618,17 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
     }
   },
   "wheelchairstatus": {
-    "limited": "Tekerlekli sandalyeyle kısmen erişilebilir",
-    "no": "Tekerlekli sandalye erişilebilirliği yok",
-    "unknown": "Bilinmeyen durum",
-    "yes": "tekerlekli sandalye ile ulaşılır"
+    "limited": "Tekerlekli sandalye erişimine kısmen uygun",
+    "no": "Tekerlekli sandalye erişimine uygun değil",
+    "unknown": "Durumu bilinmiyor",
+    "yes": "Tekerlekli sandalye erişimine uygun"
   },
   "wheelmap": {
     "footer": {
       "a_project_of": "Proje",
       "based_on": "Altyapı",
-      "become_a_supporter": "Bir destekçi olun",
-      "main_supporter": "Ana destekçi"
+      "become_a_supporter": "Sponsor olun",
+      "main_supporter": "Ana sponsor"
     },
     "itunes": {
       "alt": "AppStore Logo",
@@ -1639,7 +1642,7 @@ I18n.translations["tr"] = I18n.extend((I18n.translations["tr"] || {}), {
       "fully_accessible": "Girişte merdiven yok, tüm odalar merdivensiz.",
       "limited_accessible": "Girişte max. yüksekliği 7cm (3 inç) olan bir merdiven var. Çoğu odalar merdivensiz.",
       "not_accessible": "Girişte bir veya birkaç basamak var, odalar erişilebilir değil.",
-      "unknown_accessible": "Yerleri işaretleyerek yardımda bulunun!"
+      "unknown_accessible": "Mekanları işaretleyerek yardımda bulunun!"
     }
   },
   "will_paginate": {

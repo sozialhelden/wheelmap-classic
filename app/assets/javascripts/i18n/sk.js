@@ -1002,6 +1002,9 @@ I18n.translations["sk"] = I18n.extend((I18n.translations["sk"] || {}), {
     "node_map": {
       "map": "Mapa:"
     },
+    "node_nearby": {
+      "places_nearby": "Places nearby:"
+    },
     "node_note": {
       "comment": "Komentár:"
     },

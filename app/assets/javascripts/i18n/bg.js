@@ -999,6 +999,9 @@ I18n.translations["bg"] = I18n.extend((I18n.translations["bg"] || {}), {
     "node_map": {
       "map": "Карта:"
     },
+    "node_nearby": {
+      "places_nearby": "Places nearby:"
+    },
     "node_note": {
       "comment": "Коментар:"
     },
