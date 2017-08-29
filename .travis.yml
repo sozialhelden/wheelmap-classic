@@ -1,6 +1,6 @@
 language: ruby
 env:
-  - TRAVIS_NODE_VERSION="8"
+  - TRAVIS_NODE_VERSION="5"
 cache:
   bundler: true
   directories:
