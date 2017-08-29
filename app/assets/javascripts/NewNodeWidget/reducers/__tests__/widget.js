@@ -1,9 +1,13 @@
-import { List, Map } from 'immutable';
+import { Map, List } from 'immutable';
+import expect from 'expect';
+import expectImmutable from 'expect-immutable';
 
 import { ADDRESS } from '../../models/sections';
 import * as actions from '../../actions';
 import Node from '../../../common/models/Node';
 import widgetReducer, { DEFAULT_STATE } from '../widget';
+
+expect.extend(expectImmutable);
 
 jest.unmock('../widget');
 jest.unmock('../../actions');
