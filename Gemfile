@@ -13,6 +13,7 @@ group :default do
 
   gem 'acts_as_api'
   gem 'airbrake', '~> 5.5'
+  gem 'airbrake-ruby', '~> 1.5'
   gem 'daemons'
   gem 'delayed_job'
   gem 'delayed_job_active_record'

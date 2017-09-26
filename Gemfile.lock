@@ -562,6 +562,7 @@ DEPENDENCIES
   activeresource
   acts_as_api
   airbrake (~> 5.5)
+  airbrake-ruby (~> 1.5)
   apipie-rails
   awesome_nested_set (~> 3.1)
   backup
