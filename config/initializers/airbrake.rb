@@ -1,5 +1,9 @@
+require 'airbrake-ruby'
+
 Airbrake.configure do |config|
-  config.api_key = ENV['airbrake_api_key']
+  config.project_id = ENV['AIRBRAKE_PROJECT_ID']
+  config.project_key = ENV['AIRBRAKE_API_KEY']
+  config.environment = Rails.env
   config.ignore << 'Rosemary::Conflict'
   config.ignore << 'Rosemary::ServerError'
   config.ignore << 'Rosemary::Gone'
