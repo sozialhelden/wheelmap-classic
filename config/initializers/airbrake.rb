@@ -10,13 +10,18 @@ Airbrake.configure do |config|
   config.blacklist_keys = [/password/i, /authorization/i]
   config.logger = Rails.logger
 
+  # Do not notify if exception is one of the following
   Airbrake.add_filter do |notice|
-    notice.ignore! if notice.stash[:exception].is_a?([
+    if notice.stash[:exception].is_a?([
       'Rosemary::Conflict',
       'Rosemary::ServerError',
       'Rosemary::Gone',
       'Rosemary::Unavailable',
       'Net::ReadTimeout'
     ])
+      notice.ignore!
+    else
+      Aibrake.notify(notice)
+    end
   end
 end
