@@ -12,13 +12,15 @@ Airbrake.configure do |config|
 
   # Do not notify if exception is one of the following
   Airbrake.add_filter do |notice|
-    if notice.stash[:exception].is_a?([
+    ignored_exceptions = [
       'Rosemary::Conflict',
       'Rosemary::ServerError',
       'Rosemary::Gone',
       'Rosemary::Unavailable',
       'Net::ReadTimeout'
-    ])
+    ]
+
+    if ignored_exceptions.include?(notice.stash[:exception].to_s)
       notice.ignore!
     else
       Aibrake.notify(notice)
