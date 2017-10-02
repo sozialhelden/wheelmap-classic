@@ -20,7 +20,7 @@ require 'capistrano/npm'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
 require 'capistrano/deploytags'
-require 'airbrake/capistrano3'
+require 'airbrake/capistrano/tasks'
 require 'new_relic/recipes'
 require 'whenever/capistrano'
 

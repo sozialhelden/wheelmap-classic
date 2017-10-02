@@ -12,7 +12,8 @@ group :default do
   gem 'rgeo-activerecord', '~> 1.2.0'
 
   gem 'acts_as_api'
-  gem 'airbrake', '~> 4.1'
+  gem 'airbrake', '~> 5.5'
+  gem 'airbrake-ruby', '~> 1.5'
   gem 'daemons'
   gem 'delayed_job'
   gem 'delayed_job_active_record'
