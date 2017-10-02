@@ -20,7 +20,7 @@ Airbrake.configure do |config|
       'Net::ReadTimeout'
     ]
 
-    if ignored_exceptions.include?(notice.stash[:exception].to_s)
+    if ignored_exceptions.include?(notice.stash[:exception].class.to_s)
       notice.ignore!
     else
       Aibrake.notify(notice)
