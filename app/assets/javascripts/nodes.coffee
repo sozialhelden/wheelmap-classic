@@ -160,8 +160,6 @@ csrfToken = $('meta[name="csrf-token"]').attr('content')
 
 $('.selectpicker').selectpicker();
 
-$('#allianz').show() if I18n.locale == 'de' and $('article#node').data('category') == 'sport'
-
 $('[data-toggle="status-submit"]').click (e) ->
   e.preventDefault()
 
