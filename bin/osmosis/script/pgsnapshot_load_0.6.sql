@@ -1,3 +1,6 @@
+-- Allow data loss (but not corruption) in the case of a power outage. This is okay because we need to re-run the script anyways.
+SET synchronous_commit TO OFF;
+
 -- Drop all primary keys and indexes to improve load speed.
 ALTER TABLE nodes DROP CONSTRAINT pk_nodes;
 ALTER TABLE ways DROP CONSTRAINT pk_ways;
@@ -10,9 +13,13 @@ DROP INDEX idx_relation_members_member_id_and_type;
 DROP INDEX idx_ways_bbox;
 DROP INDEX idx_ways_linestring;
 
--- Comment these out if the COPY files include bbox or linestring column values.
-SELECT DropGeometryColumn('ways', 'bbox');
-SELECT DropGeometryColumn('ways', 'linestring');
+-- Uncomment these out if bbox or linestring columns are needed and the COPY
+-- files do not include them. If you want these columns you should use the
+-- enableBboxBuilder or enableLinestringBuilder options to --write-pgsql-dump
+-- as they are faster than the following SQL.
+
+/*SELECT DropGeometryColumn('ways', 'bbox');
+SELECT DropGeometryColumn('ways', 'linestring');*/
 
 -- Import the table data from the data files using the fast COPY method.
 \copy users FROM 'users.txt'
@@ -32,33 +39,44 @@ CREATE INDEX idx_nodes_geom ON nodes USING gist (geom);
 CREATE INDEX idx_way_nodes_node_id ON way_nodes USING btree (node_id);
 CREATE INDEX idx_relation_members_member_id_and_type ON relation_members USING btree (member_id, member_type);
 
--- Comment these out if the COPY files include bbox or linestring column values.
-SELECT AddGeometryColumn('ways', 'bbox', 4326, 'GEOMETRY', 2);
-SELECT AddGeometryColumn('ways', 'linestring', 4326, 'GEOMETRY', 2);
+ALTER TABLE ONLY nodes CLUSTER ON idx_nodes_geom;
+ALTER TABLE ONLY way_nodes CLUSTER ON pk_way_nodes;
+ALTER TABLE ONLY relation_members CLUSTER ON pk_relation_members;
 
--- Comment these out if the COPY files include bbox or linestring column values.
+-- Uncomment these if bbox or linestring columns are needed and the COPY files do not include them.
+
 -- Update the bbox column of the way table.
+/*SELECT AddGeometryColumn('ways', 'bbox', 4326, 'GEOMETRY', 2);
 UPDATE ways SET bbox = (
-	SELECT Envelope(Collect(geom))
+	SELECT ST_Envelope(ST_Collect(geom))
 	FROM nodes JOIN way_nodes ON way_nodes.node_id = nodes.id
 	WHERE way_nodes.way_id = ways.id
-);
+);*/
+
 -- Update the linestring column of the way table.
+/*SELECT AddGeometryColumn('ways', 'linestring', 4326, 'GEOMETRY', 2);
 UPDATE ways w SET linestring = (
-	SELECT MakeLine(c.geom) AS way_line FROM (
+	SELECT ST_MakeLine(c.geom) AS way_line FROM (
 		SELECT n.geom AS geom
 		FROM nodes n INNER JOIN way_nodes wn ON n.id = wn.node_id
 		WHERE (wn.way_id = w.id) ORDER BY wn.sequence_id
 	) c
-);
+);*/
 
--- Index the way bounding box column.
+-- Index the way bounding box column. If you don't have one of these columns, comment out the index
 CREATE INDEX idx_ways_bbox ON ways USING gist (bbox);
 CREATE INDEX idx_ways_linestring ON ways USING gist (linestring);
 
--- Update all clustered tables because it doesn't happen implicitly.
-CLUSTER nodes USING idx_nodes_geom;
-CLUSTER ways USING idx_ways_linestring;
+ALTER TABLE ONLY ways CLUSTER ON idx_ways_bbox;
+ALTER TABLE ONLY ways CLUSTER ON idx_ways_linestring;
+
+-- Optional: CLUSTER imported tables. CLUSTER takes a significant amount of time to run and a 
+-- significant amount of free disk space but speeds up some queries.
+
+--CLUSTER nodes;
+--CLUSTER ways;
+
+-- It is not necessary to CLUSTER way_nodes or relation_members after the initial load but you might want to do so later on
 
 -- Perform database maintenance due to large database changes.
-VACUUM ANALYZE;
+ANALYZE;
