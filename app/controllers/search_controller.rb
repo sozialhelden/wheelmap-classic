@@ -16,7 +16,7 @@ class SearchController < ApplicationController
     @search_url = URI.parse(URL)
     @http = Net::HTTP.new(@search_url.host, @search_url.port)
     @http.use_ssl = true
-    @http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    @http.verify_mode = OpenSSL::SSL::VERIFY_PEER
     @http.read_timeout = 2
     @http.open_timeout = 2
     @query = DEFAULT_PARAMS.reverse_merge('accept-language': I18n.locale, q: params[:q])
