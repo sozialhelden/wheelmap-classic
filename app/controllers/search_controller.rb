@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-  URL = 'http://nominatim.openstreetmap.org/search'.freeze
+  URL = 'https://nominatim.openstreetmap.org/search'.freeze
   # URL = "http://open.mapquestapi.com/nominatim/v1/search"
   DEFAULT_PARAMS = { limit: 10, email: 'info@wheelmap.org', dedupe: '1' }.freeze
   USERAGENT = 'Wheelmap v1.0, (http://wheelmap.org)'.freeze
