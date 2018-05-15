@@ -1,4 +1,4 @@
--- Database creation script for the snapshot PostgreSQL schema.
+-- Database creation script for the simple PostgreSQL schema.
 
 -- Drop all tables if they exist.
 DROP TABLE IF EXISTS actions;
@@ -108,15 +108,9 @@ CREATE INDEX idx_way_nodes_node_id ON way_nodes USING btree (node_id);
 CREATE INDEX idx_relation_members_member_id_and_type ON relation_members USING btree (member_id, member_type);
 
 
--- Set to cluster nodes by geographical location.
-ALTER TABLE ONLY nodes CLUSTER ON idx_nodes_geom;
+-- Cluster tables by geographical location.
+CLUSTER nodes USING idx_nodes_geom;
 
--- Set to cluster the tables showing relationship by parent ID and sequence
-ALTER TABLE ONLY way_nodes CLUSTER ON pk_way_nodes;
-ALTER TABLE ONLY relation_members CLUSTER ON pk_relation_members;
-
--- There are no sensible CLUSTER orders for users or relations.
--- Depending on geometry columns different clustings of ways may be desired.
 
 -- Create the function that provides "unnest" functionality while remaining compatible with 8.3.
 CREATE OR REPLACE FUNCTION unnest_bbox_way_nodes() RETURNS void AS $$
@@ -142,29 +136,3 @@ DECLARE
 BEGIN
 END;
 $$ LANGUAGE plpgsql;
-
--- Manually set statistics for the way_nodes and relation_members table
--- Postgres gets horrible counts of distinct values by sampling random pages
--- and can be off by an 1-2 orders of magnitude
-
--- Size of the ways table / size of the way_nodes table
-ALTER TABLE way_nodes ALTER COLUMN way_id SET (n_distinct = -0.08);
-
--- Size of the nodes table / size of the way_nodes table * 0.998
--- 0.998 is a factor for nodes not in ways
-ALTER TABLE way_nodes ALTER COLUMN node_id SET (n_distinct = -0.83);
-
--- API allows a maximum of 2000 nodes/way. Unlikely to impact query plans.
-ALTER TABLE way_nodes ALTER COLUMN sequence_id SET (n_distinct = 2000);
-
--- Size of the relations table / size of the relation_members table
-ALTER TABLE relation_members ALTER COLUMN relation_id SET (n_distinct = -0.09);
-
--- Based on June 2013 data
-ALTER TABLE relation_members ALTER COLUMN member_id SET (n_distinct = -0.62);
-
--- Based on June 2013 data. Unlikely to impact query plans.
-ALTER TABLE relation_members ALTER COLUMN member_role SET (n_distinct = 6500);
-
--- Based on June 2013 data. Unlikely to impact query plans.
-ALTER TABLE relation_members ALTER COLUMN sequence_id SET (n_distinct = 10000);

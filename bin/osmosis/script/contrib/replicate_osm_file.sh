@@ -23,13 +23,11 @@ CMD="osmosis -q"
 # Launch the osmosis process.
 $CMD --read-change-interval $WORKING_DIRECTORY --read-xml $OSM_FILE --apply-change --bounding-box left=$LEFT bottom=$BOTTOM right=$RIGHT top=$TOP --write-xml $TEMP_OSM_FILE
 
-STATUS=$?
-
 # Verify that osmosis ran successfully.
-if [ "$STATUS" -ne "0" ]; then
+if [ "$?" -ne "0" ]; then
 	
 	echo "Osmosis failed, aborting."
-	exit $STATUS
+	exit -1
 	
 fi
 

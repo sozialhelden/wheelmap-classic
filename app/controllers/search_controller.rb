@@ -1,5 +1,5 @@
 class SearchController < ApplicationController
-  URL = 'https://nominatim.openstreetmap.org/search'.freeze
+  URL = 'http://nominatim.openstreetmap.org/search'.freeze
   # URL = "http://open.mapquestapi.com/nominatim/v1/search"
   DEFAULT_PARAMS = { limit: 10, email: 'info@wheelmap.org', dedupe: '1' }.freeze
   USERAGENT = 'Wheelmap v1.0, (http://wheelmap.org)'.freeze
@@ -15,8 +15,6 @@ class SearchController < ApplicationController
   def index
     @search_url = URI.parse(URL)
     @http = Net::HTTP.new(@search_url.host, @search_url.port)
-    @http.use_ssl = true
-    @http.verify_mode = OpenSSL::SSL::VERIFY_PEER
     @http.read_timeout = 2
     @http.open_timeout = 2
     @query = DEFAULT_PARAMS.reverse_merge('accept-language': I18n.locale, q: params[:q])

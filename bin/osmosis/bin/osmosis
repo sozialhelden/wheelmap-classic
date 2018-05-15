@@ -4,6 +4,7 @@
 # JAVACMD - The java command to launch osmosis.
 # JAVACMD_OPTIONS - The options to append to the java command, typically used to modify jvm settings such as max memory.
 # OSMOSIS_OPTIONS - The options to apply to all osmosis invocations, typically used to add plugins or make quiet operation the default.
+JAVACMD_OPTIONS="-server -Xmx1G"
 
 if [ -f /etc/osmosis ] ; then
   . /etc/osmosis
@@ -73,7 +74,7 @@ osmosis --read-xml file="planetin.osm" --write-xml file="planetout.osm"
 
 osmosis --read-xml file="planetin.osm" outPipe.0="mypipe" --write-xml file="planetout.osm" inPipe.0="mypipe"
 
-Full usage details are available at: http://wiki.openstreetmap.org/wiki/Osmosis/Detailed_Usage
+Full usage details are available at: http://wiki.openstreetmap.org/wiki/Osmosis/DetailedUsage
 
 EOF
 exit 1
@@ -89,6 +90,6 @@ cd "$saveddir"
 MYAPP_CLASSPATH=$MYAPP_HOME/lib/default/plexus-classworlds-*.jar
 
 MAINCLASS=org.codehaus.classworlds.Launcher
-EXEC="$JAVACMD $JAVACMD_OPTIONS -cp $MYAPP_CLASSPATH -Dapp.home=$MYAPP_HOME -Dclassworlds.conf=$MYAPP_HOME/config/plexus.conf  $MAINCLASS $OSMOSIS_OPTIONS"
+EXEC="$JAVACMD $JAVACMD_OPTIONS -cp $MYAPP_CLASSPATH -Dapp.home=$MYAPP_HOME -Dclassworlds.conf=$MYAPP_HOME/config/plexus.conf  $MAINCLASS $OSMOSIS_OPTIONS $@"
 
-exec $EXEC "$@"
+exec $EXEC
