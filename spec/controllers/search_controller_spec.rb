@@ -3,7 +3,7 @@ require 'rexml/document'
 
 describe SearchController do
   before :each do
-    @search_api_url = 'http://nominatim.openstreetmap.org/search?q=Leipziger+Strasse%2C+Berlin&format=xml&limit=10&accept-language=de&dedupe=1&email=info%40wheelmap.org'
+    @search_api_url = 'https://nominatim.openstreetmap.org/search?q=Leipziger+Strasse%2C+Berlin&format=xml&limit=10&accept-language=de&dedupe=1&email=info%40wheelmap.org'
 
     stub_request(:get, @search_api_url)
       .to_return(status: 200, body: File.read("#{Rails.root}/spec/fixtures/search.xml"))
