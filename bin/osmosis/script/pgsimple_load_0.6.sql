@@ -46,13 +46,13 @@ SELECT AddGeometryColumn('ways', 'linestring', 4326, 'GEOMETRY', 2);
 -- Comment these out if the COPY files include bbox or linestring column values.
 -- Update the bbox column of the way table.
 UPDATE ways SET bbox = (
-	SELECT Envelope(Collect(geom))
+	SELECT ST_Envelope(ST_Collect(geom))
 	FROM nodes JOIN way_nodes ON way_nodes.node_id = nodes.id
 	WHERE way_nodes.way_id = ways.id
 );
 -- Update the linestring column of the way table.
 UPDATE ways w SET linestring = (
-	SELECT MakeLine(c.geom) AS way_line FROM (
+	SELECT ST_MakeLine(c.geom) AS way_line FROM (
 		SELECT n.geom AS geom
 		FROM nodes n INNER JOIN way_nodes wn ON n.id = wn.node_id
 		WHERE (wn.way_id = w.id) ORDER BY wn.sequence_id

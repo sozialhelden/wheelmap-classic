@@ -11,12 +11,12 @@ REM # OSMOSIS_OPTIONS - The options to apply to all osmosis invocations, typical
 REM if [ -f /etc/osmosis ] ; then
 REM   . /etc/osmosis
 REM fi
-IF EXIST %ALLUSERSPROFILE%\osmosis.bat CALL %ALLUSERSPROFILE%\osmosis.bat
+IF EXIST "%ALLUSERSPROFILE%\osmosis.bat" CALL "%ALLUSERSPROFILE%\osmosis.bat"
 
 REM if [ -f "$HOME/.osmosis" ] ; then
 REM   . "$HOME/.osmosis"
 REM fi
-IF EXIST %USERPROFILE%\osmosis.bat CALL %USERPROFILE%\osmosis.bat
+IF EXIST "%USERPROFILE%\osmosis.bat" CALL "%USERPROFILE%\osmosis.bat"
 
 
 REM if [ -z "$JAVACMD" ] ; then
@@ -29,13 +29,13 @@ REM Set "SAVEDIR" to the current directory
 set SAVEDIR=%CD%
 set MYAPP_HOME=%~dp0..
 REM Now make the MYAPP_HOME path absolute
-cd %MYAPP_HOME%
+cd /D %MYAPP_HOME%
 set MYAPP_HOME=%CD%
 REM Change back to the original directory
-cd %SAVEDIR%
+cd /D %SAVEDIR%
 
 set MAINCLASS=org.codehaus.classworlds.Launcher
-set PLEXUS_CP=%MYAPP_HOME%\lib\default\plexus-classworlds-2.2.2.jar
-SET EXEC=%JAVACMD% %JAVACMD_OPTIONS% -cp "%PLEXUS_CP%" -Dapp.home="%MYAPP_HOME%" -Dclassworlds.conf="%MYAPP_HOME%\config\plexus.conf" %MAINCLASS%  %OSMOSIS_OPTIONS% %*
+set PLEXUS_CP=%MYAPP_HOME%\lib\default\plexus-classworlds-2.5.2.jar
+SET EXEC="%JAVACMD%" %JAVACMD_OPTIONS% -cp "%PLEXUS_CP%" -Dapp.home="%MYAPP_HOME%" -Dclassworlds.conf="%MYAPP_HOME%\config\plexus.conf" %MAINCLASS%  %OSMOSIS_OPTIONS% %*
 
 %EXEC%
