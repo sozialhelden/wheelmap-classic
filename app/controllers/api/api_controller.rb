@@ -144,7 +144,6 @@ class Api::ApiController < ApplicationController
   alias render_exception_without_notification render_exception
   define_method(:render_exception) do |*args|
     Rails.logger.error 'NOTIFY HOPTOAD!'
-    Airbrake.notify(args[0], component: self.class.name, parameters: params)
     send('render_exception_without_notification', *args)
   end
 
