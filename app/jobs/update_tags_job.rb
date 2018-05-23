@@ -62,8 +62,6 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
       update_poi!
     rescue Rosemary::Conflict => conflict
       logger.info "IGNORE: #{type}:#{element_id} nothing has changed! (conflict)"
-      # These changes have already been made, so dismiss this update!
-      Airbrake.notify(conflict, component: 'UpdateTagsJob#perform', parameters: { user: user.inspect, element: element.inspect, client: client })
     end
   end
 
@@ -95,14 +93,6 @@ class UpdateTagsJob < Struct.new(:element_id, :type, :tags, :user, :client, :sou
 
   def error(_job, e)
     logger.error 'ERROR: '
-    Airbrake.notify(e, action: 'perform',
-                       component: 'UpdateTagsJob',
-                       parameters: {
-                         user: user.inspect,
-                         element_id: element_id.inspect,
-                         type: type.inspect,
-                         client: client.inspect
-                       })
   end
 
   def after(job); end

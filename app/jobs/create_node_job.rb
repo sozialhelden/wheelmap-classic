@@ -59,15 +59,7 @@ class CreateNodeJob < Struct.new(:lat, :lon, :tags, :user, :client, :source)
 
   def success(job); end
 
-  def error(_job, e)
-    Airbrake.notify(e, action: 'perform',
-                       component: 'CreateNodeJob',
-                       parameters: {
-                         node: node.inspect,
-                         user: user.inspect,
-                         client: client.inspect
-                       })
-  end
+  def error(_job, e); end
 
   def after(job); end
 end
