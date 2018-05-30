@@ -79,8 +79,6 @@ class SearchController < ApplicationController
   end
 
   def timeout(exception)
-    Airbrake.notify(exception, component: self.class.name, parameters: params)
-
     render template: 'search/timeout', status: 503
   end
 end

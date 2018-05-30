@@ -98,6 +98,5 @@ namespace :deploy do
     end
   end
 
-  after :finished, 'airbrake:deploy'
   after :finished, 'newrelic:notice_deployment'
 end
