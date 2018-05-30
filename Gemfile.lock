@@ -76,9 +76,6 @@ GEM
       rack (>= 1.1.0)
     addressable (2.4.0)
     aggregate (0.2.2)
-    airbrake (5.8.1)
-      airbrake-ruby (~> 1.8)
-    airbrake-ruby (1.8.0)
     apipie-rails (0.3.6)
       json
     arbre (1.0.3)
