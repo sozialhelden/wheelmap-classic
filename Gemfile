@@ -80,7 +80,7 @@ group :default do
   gem 'compass'
   gem 'compass-colors'
   gem 'compass-rails', '~> 3.0.2'
-  gem 'jquery-rails', '2.3.0'
+  gem 'jquery-ui-rails', '~> 5.0.5'
   gem 'sass', '~>3.3' # >= 3.3 is needed for BEM syntax
   gem 'sass-rails'
   gem 'sprockets-es6', '~> 0.9.0'
