@@ -217,7 +217,6 @@ class NodesController < ApplicationController
   add_method_tracer :generate_json, 'Custom/generate_json'
 
   def gone(_exception)
-    #   Airbrake.notify(exception,:component => self.class.name, :parameters => params)
     @message = I18n.t('nodes.errors.not_existent')
     render template: 'shared/error', status: 410
   end

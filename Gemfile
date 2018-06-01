@@ -12,8 +12,6 @@ group :default do
   gem 'rgeo-activerecord', '~> 1.2.0'
 
   gem 'acts_as_api'
-  gem 'airbrake', '~> 5.5'
-  gem 'airbrake-ruby', '~> 1.5'
   gem 'daemons'
   gem 'delayed_job'
   gem 'delayed_job_active_record'
@@ -81,7 +79,7 @@ group :default do
   gem 'coffee-rails'
   gem 'compass'
   gem 'compass-colors'
-  gem 'compass-rails'
+  gem 'compass-rails', '~> 3.0.2'
   gem 'jquery-rails', '2.3.0'
   gem 'sass', '~>3.3' # >= 3.3 is needed for BEM syntax
   gem 'sass-rails'
