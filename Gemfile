@@ -124,10 +124,10 @@ group :production, :vagrant do
 end
 
 group :development do
-  gem 'capistrano', '>= 3.1.0'
-  gem 'capistrano-bundler',                 require: false
-  gem 'capistrano-deploytags', '~> 1.0.0',  require: false
-  gem 'capistrano-npm',                     require: false
-  gem 'capistrano-rails',                   require: false
-  gem 'capistrano-rbenv',                   require: false
+  gem 'capistrano', '~>3.4'
+  gem 'capistrano-deploytags', '~> 1.0', '>= 1.0.6',   require: false # depends on Capistrano '>= 3.2.0' and '<= 3.4.x'
+  gem 'capistrano-bundler',                            require: false
+  gem 'capistrano-npm',                                require: false
+  gem 'capistrano-rails',                              require: false
+  gem 'capistrano-rbenv',                              require: false
 end
