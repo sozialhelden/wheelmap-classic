@@ -774,6 +774,7 @@ I18n.translations["ko"] = I18n.extend((I18n.translations["ko"] || {}), {
       "map": "지도",
       "newsletter": "뉴스레터",
       "press": "언론사",
+      "privacy": "Privacy Policy",
       "profile": "프로필",
       "projects": "Get involved",
       "report_problem": "오류신고",

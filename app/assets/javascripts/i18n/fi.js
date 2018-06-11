@@ -774,6 +774,7 @@ I18n.translations["fi"] = I18n.extend((I18n.translations["fi"] || {}), {
       "map": "Kartta",
       "newsletter": "Newsletter",
       "press": "Press",
+      "privacy": "Privacy Policy",
       "profile": "Profile",
       "projects": "Osallistu",
       "report_problem": "Ilmoita viasta",

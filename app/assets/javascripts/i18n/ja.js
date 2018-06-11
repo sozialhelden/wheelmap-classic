@@ -308,7 +308,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "create": "新しい場所を追加",
       "edit": "場所を編集"
     },
-    "root": "Wheelmap"
+    "root": "wheelmap"
   },
   "common": {
     "close": "閉じる",
@@ -482,13 +482,13 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
   "devise": {
     "confirmations": {
       "confirmed": "あなたのアカウントは確認できました。現在サイインしています。",
-      "link": "確認手順を受け取っていませんか？",
+      "link": "確認メールが届きませんか？",
       "send_instructions": "数分であなたのアカウントを確認する手順がメールで届きます。",
       "send_paranoid_instructions": "もしあなたのアカウントが存在していれば、数分後にあなたのアカウントを確認するメールが届くでしょう"
     },
     "destroy": {
       "confirm": "本当によろしいですか？",
-      "headline": "アカウントを削除",
+      "headline": "アカウントを削除する",
       "link": "今すぐ削除"
     },
     "edit": {
@@ -505,13 +505,13 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     },
     "failure": {
       "already_authenticated": "あなたはサインイン済です。",
-      "inactive": "あなたのアカウントはまだ有効化されていません。",
+      "inactive": "あなたのアカウントはまだ有効になっていません",
       "invalid": "メールアドレスかパスワードが違います。",
       "invalid_token": "認証トークンが違います。",
       "last_attempt": "You have one more attempt before your account will be locked.",
       "locked": "あなたのアカウントはロックされました。",
       "not_found_in_database": "Invalid email or password.",
-      "timeout": "セッションの有効期限が切れています、サイインして続けてください。",
+      "timeout": "セッション有効期限切れです。もう一度サイインしてから続けてください。",
       "unauthenticated": "続けるにはログインか登録が必要です。",
       "unconfirmed": "続ける前にアカウントを確認してください。"
     },
@@ -547,7 +547,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "comment": "あなたがパスワード変更を要求した記憶が無い場合は、このメールは無視してください<br/>あなたのパスワードはこのリンクをクリックしなければ変更されません。",
         "headline": "ようこそ %{email} さん",
         "link": "パスワードを変更",
-        "text": "誰かがあなたのパスワード変更を要求しました。次のリンクをクリックして変更できます。"
+        "text": "パスワード変更のリクエストを受け取りました。リクエストを行った場合には、以下のリンクをクリックしてください - そうでない場合にはこのメッセージは無視して頂いて結構です!"
       },
       "form": {
         "labels": {
@@ -561,7 +561,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     "passwords": {
       "link": "パスワードを忘れた？",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
-      "send_instructions": "数分でパスワードのリセット手順が書かれたメールが届きます。",
+      "send_instructions": "パスワードのリセット手順が記載されたEメールが数分で送信されます",
       "send_paranoid_instructions": "あなたのアカウントが現存する場合には、パスワードのリセット手順が記載されたEメールが数分で送信されます",
       "updated": "あなたのパスワードは変更されました。現在サイインしています。",
       "updated_not_active": "パスワードが変更されました"
@@ -575,7 +575,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "locked": "ロック済",
         "unconfirmed": "未確認"
       },
-      "signed_up": "サインアップが完了しました。有効化されればあなたのメールアドレス宛てに確認メールが送信されます。",
+      "signed_up": "登録が完了しました!　確認メールが送信されました。",
       "signed_up_but_inactive": "You have signed up successfully. However, we could not sign you in because your account is not yet activated.",
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
@@ -583,7 +583,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "updated": "あなたのアカウントは更新されました。"
     },
     "sessions": {
-      "inactive": "あなたのアカウントはまだ有効化されていません。",
+      "inactive": "あなたのアカウントはまだ有効になっていません",
       "invalid": "Eメールまたはパスワードが違います。",
       "invalid_token": "不正な認証トークン。",
       "link": "サインイン",
@@ -627,7 +627,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
           "email": "Eメール",
           "password": "パスワード",
           "password_confirmation": "パスワード再入力",
-          "wants_newsletter": "はい、wheelmapの最新情報を送ってください。（ただし月１回）"
+          "wants_newsletter": "はい、Wheelmapに関する最新情報を希望します - しかし1か月に1度のみお願いします。"
         },
         "submit": "登録"
       },
@@ -635,7 +635,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     },
     "unlocks": {
       "link": "アンロック手順が届きませんでしたか？",
-      "send_instructions": "数分でアンロック手順を書いたメールが届きます。",
+      "send_instructions": "アカウントのロック解除手順が記載されたEメールが数分以内に送信されます",
       "send_paranoid_instructions": "あなたのアカウントが現存する場合には、アカウントのロック解除手順が記載されたEメールが数分で送信されます",
       "unlocked": "アカウントはアンロックされました。あなたは現在サイインしています。"
     }
@@ -644,7 +644,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     "dynamic_format": "%{message}",
     "format": "%{attribute} %{message}",
     "messages": {
-      "accepted": "承認をしてください",
+      "accepted": "承認してください",
       "already_confirmed": "は既に確認済みです",
       "blank": "値を入力してください",
       "carrierwave_download_error": "could not be downloaded",
@@ -654,7 +654,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
       "empty": "値を入力してください",
       "equal_to": "正確に%{count} でなければなりません",
-      "even": "数値を入力してください",
+      "even": "偶数でなければなりません",
       "exclusion": "使用されていません",
       "expired": "有効期限が切れています、新しくリクエストしてください",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
@@ -664,7 +664,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "inclusion": "値が正しくありません",
       "invalid": "正しくありません",
       "less_than": "%{count} より小さくなければなりません",
-      "less_than_or_equal_to": "%{count}以下でなければなりません",
+      "less_than_or_equal_to": "%{count} 以下でなければなりません",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
       "not_a_number": "は数字ではありません",
@@ -675,7 +675,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "one": "An error prohibited to save a %{resource}:",
         "other": "%{resource} の保存時に %{count} 個のエラーが発生しました:"
       },
-      "odd": "奇数を入力してください",
+      "odd": "奇数でなければなりません",
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
@@ -733,9 +733,9 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
   },
   "form": {
     "show_fully_accessible_places": "車椅子可",
-    "show_limited_accessible_places": "部分的に車椅子でのアクセス可能です",
-    "show_places_without_status": "不明なステータス",
-    "show_unaccessible_places": "車椅子利用不可"
+    "show_limited_accessible_places": "車椅子一部可",
+    "show_places_without_status": "不明な状態",
+    "show_unaccessible_places": "車椅子不可"
   },
   "formtastic": {
     "cancel": "中止",
@@ -745,22 +745,22 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "lat": "地図上のマーカーを正しい位置に移動",
       "osm_username": "まだメンバーではありませんか？<a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">今すぐOpenstreetmap のアカウントを作成</a> ",
       "password": "(変更しない場合は空白のまま)",
-      "phone": "例：+49 30 12345678",
+      "phone": "例: +49 30 123456-78",
       "website": "例: http://www.example.com"
     },
     "labels": {
       "category": "カテゴリ:",
       "centralkey": "中央キー：",
       "city": "都市:",
-      "create": "場所を作成する",
+      "create": "場所を作成",
       "email": "Eメール",
       "finish": "終了",
       "housenumber": "番地:",
       "lat": "緯度",
       "lon": "経度",
       "name": "名前:",
-      "osm_password": "OpenStreetMapのパスワード",
-      "osm_username": "OpenStreetMapのユーザー名",
+      "osm_password": "OSMパスワード",
+      "osm_username": "OSMアカウント",
       "password": "パスワード",
       "password_confirmation": "パスワード再入力",
       "phone": "電話:",
@@ -771,7 +771,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "street": "住所",
       "terms": "利用条件に同意します。",
       "type": "タイプ:",
-      "website": "ウェブサイト",
+      "website": "Website:",
       "wheelchair": "車椅子のアクセシビリティは？",
       "wheelchair_description": "アクセシビリティについてのコメント:",
       "wheelchair_toilet": "トイレへの車椅子アクセシビリティ:"
@@ -813,6 +813,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "map": "地図",
       "newsletter": "ニュースレター",
       "press": "プレス",
+      "privacy": "Privacy Policy",
       "profile": "プロフィール",
       "projects": "参加する",
       "report_problem": "問題を報告",
@@ -820,16 +821,16 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "tolk": "翻訳",
       "travelguide": "トラベルガイド",
       "what_is_barrier_free": "\"車椅子で行ける(アクセシブル)\"とは？",
-      "what_is_wheelmap": "Wheelmap とは？"
+      "what_is_wheelmap": "wheelmapとは？"
     },
     "searchbar": {
       "add_place": "別の場所を追加",
-      "find": "探す",
-      "placeholder": "場所を探す",
+      "find": "見つける",
+      "placeholder": "例. Sunset Boulevard L.A. or Brandenburg Gate Berlin ",
       "title_add_place": "今すぐこの位置に新しい場所を追加！"
     },
     "tagline": "Wheelmap ロゴ",
-    "title": "車椅子で行ける場所を見つけよう",
+    "title": "Wheelmap - 車椅子で行ける場所を見つけよう ",
     "toolbar": {
       "categories": "カテゴリ"
     }
@@ -872,7 +873,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         },
         "warning": {
           "headline": "ごめんなさい！",
-          "message": "Internet Explorerをご使用になられているようです。Wheelmapが正常に動作する為には、ウェブ標準準拠ブラウザが必要となります。どうかFirefox、Chrome、SafariまたはOperaの使用をご検討ください。"
+          "message": "Internet Explorerをお使いのようですね。Wheelmapを正しく使うには標準的な動作をするブラウザが必要です。Firefox, Chrome, Safari または Opera をお使いください。"
         }
       },
       "link": {
@@ -890,11 +891,11 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       },
       "popup": {
         "form": {
-          "limited": "部分的に車椅子でのアクセス可能です",
-          "no": "車椅子利用不可",
+          "limited": "車椅子一部可",
+          "no": "車椅子不可",
           "save": "保存",
-          "unknown": "不明なステータス",
-          "yes": "車椅子通行可"
+          "unknown": "不明",
+          "yes": "車椅子可"
         },
         "help": "車椅子で行けますか？ (ヘルプ)",
         "more": "詳細 ..."
@@ -945,12 +946,12 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
   },
   "node": {
     "address": {
-      "city": "%{city} %{postcode}",
+      "city": "%{postcode} %{city}",
       "street": "%{street} %{housenumber}"
     },
     "tags": {
       "phone": "電話:",
-      "website": "ウェブサイト"
+      "website": "Website:"
     }
   },
   "nodes": {
@@ -977,7 +978,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "param_missing": "検索する言葉を入れてください。"
     },
     "flash": {
-      "authorize_wheelmap": "データを変更するにはOpenStreetMapのアカウントが必要です。"
+      "authorize_wheelmap": "データを変更するためにはOpenStreetMapのアカウントが必要です。"
     },
     "new": {
       "form": {
@@ -1094,7 +1095,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       }
     },
     "update_wheelchair": {
-      "successfull": "\"%{name}\" のステータスは \"%{status} \" に変更されました。しばらくたったらオンラインで表示されます。"
+      "successfull": "\"%{name}\" のステータスは \"%{status} 車椅子利用可\" に変更されました。しばらくたったらオンラインで表示されます。"
     }
   },
   "number": {
@@ -1163,17 +1164,17 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
   "oauth": {
     "application": {
       "connect": {
-        "headline": "Wheelmap.org上で場所を作成したり、編集するためには、まずあなたのOpenStreetMapアカウントをWheelmapのアカウントに接続させなければなりません。"
+        "headline": "あなたのアカウントをOpenStreetMapアカウントと連携させるとwheelmap.orgで場所を作成したり変更したりすることができます。"
       }
     },
     "callback": {
-      "notice": "あなｔなおWheelmapアカウントがOpenStreetMapアカウント%{user}へと接続されました。"
+      "notice": "あなたのwheelmapアカウントは現在OpenStreetMapアカウント%{user}と連携しています。"
     }
   },
   "or": "or",
   "place": {
     "one": "%{count} 件の場所",
-    "other": "%{count} 個の場所"
+    "other": "%{count} 件の場所"
   },
   "poi": {
     "category": {
@@ -1184,8 +1185,8 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "health": "健康",
       "leisure": "娯楽",
       "misc": "その他",
-      "money_post": "銀行 & 郵便局",
-      "public_transfer": "公共輸送",
+      "money_post": "銀行/郵便局",
+      "public_transfer": "公共交通機関",
       "shopping": "買い物",
       "sport": "スポーツ",
       "tourism": "観光",
@@ -1199,8 +1200,8 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "caravan_site": "カーキャンプ場",
         "chalet": "山小屋",
         "dormitory": "寄宿舎",
-        "guest_house": "ゲストハウス",
-        "hostel": "ホステル",
+        "guest_house": "ゲストハウス/旅館",
+        "hostel": "ホステル/カプセル",
         "hotel": "ホテル",
         "motel": "モーテル"
       },
@@ -1209,18 +1210,18 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "driving_school": "自動車学校",
         "kindergarten": "幼稚園",
         "library": "図書館",
-        "museum": "博物館",
+        "museum": "博物館・美術館",
         "school": "学校",
         "university": "大学"
       },
       "food": {
-        "bar": "バー",
+        "bar": "バー・スナック",
         "biergarten": "ビアガーデン",
         "cafe": "カフェ",
         "drinking_water": "水道",
         "fast_food": "ファストフード",
         "ice_cream": "アイスクリームパーラー",
-        "pub": "パブ",
+        "pub": "パブ/居酒屋",
         "restaurant": "レストラン"
       },
       "government": {
@@ -1230,7 +1231,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "government": "政府機関",
         "police": "警察",
         "public_building": "公共施設",
-        "townhall": "役場"
+        "townhall": "市町村役場"
       },
       "health": {
         "alternative": "代替医療施設",
@@ -1255,7 +1256,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "community_centre": "コミュニティセンター",
         "gallery": "ギャラリー",
         "massage": "マッサージ・スパ",
-        "nightclub": "ナイトクラブ",
+        "nightclub": "ナイトクラブ/ディスコ",
         "playground": "子どもの遊び場",
         "sauna": "サウナ",
         "stripclub": "ストリップクラブ",
@@ -1273,7 +1274,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "lawyer": "法律家",
         "ngo": "NGO",
         "pharmacy": "薬局",
-        "place_of_worship": "寺社礼拝所",
+        "place_of_worship": "寺社・礼拝所",
         "political_party": "政党事務所 ",
         "toilets": "トイレ",
         "veterinary": "獣医"
@@ -1289,7 +1290,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "aerodrome": "空港",
         "bicycle_parking": "駐輪場",
         "bicycle_rental": "レンタサイクル",
-        "boatyard": "ボート場",
+        "boatyard": "ボート管理場",
         "bus_station": "バスターミナル",
         "bus_stop": "バス停",
         "cable_car": "ケーブルカー",
@@ -1303,7 +1304,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "light_rail": "ライトレール",
         "parking": "駐車場",
         "parking_aisle": "駐車場通路",
-        "platform": "プラットフォーム",
+        "platform": "プラットホーム",
         "station": "地下鉄",
         "subway_entrance": "地下鉄入口",
         "terminal": "空港ターミナル",
@@ -1338,7 +1339,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "florist": "花屋",
         "funeral_directors": "死体安置所",
         "furniture": "家具屋",
-        "garden_centre": "ガーデニング店",
+        "garden_centre": "園芸店",
         "gift": "ギフトショップ",
         "greengrocer": "八百屋",
         "hairdresser": "美容院",
@@ -1375,7 +1376,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
         "sports_centre": "スポーツセンター",
         "stadium": "スタジアム",
         "swimming": "水泳",
-        "swimming_pool": "スイミングプール"
+        "swimming_pool": "水泳プール"
       },
       "tourism": {
         "archaeological_site": "遺跡",
@@ -1569,7 +1570,7 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "notice": "さよなら、またお越しください！"
     },
     "new": {
-      "email": "メールアドレス",
+      "email": "Eメールアドレス",
       "login": "ログイン",
       "login_with_twitter": "Twitterでログイン",
       "password": "パスワード",
@@ -1661,14 +1662,14 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
     }
   },
   "wheelchairstatus": {
-    "limited": "部分的に車椅子でのアクセス可能です",
+    "limited": "一部車椅子利用可",
     "no": "車椅子利用不可",
-    "unknown": "不明なステータス",
-    "yes": "車椅子通行可"
+    "unknown": "車椅子利用不明",
+    "yes": "完全に車椅子利用可"
   },
   "wheelmap": {
     "footer": {
-      "a_project_of": "プロジェクト運営：",
+      "a_project_of": "プロジェクト推進：",
       "based_on": "ベース地図：",
       "become_a_supporter": "サポーターになる",
       "main_supporter": "主なサポーター"
@@ -1682,10 +1683,10 @@ I18n.translations["ja"] = I18n.extend((I18n.translations["ja"] || {}), {
       "title": "Wheelmap - 車椅子で行ける場所を見つけよう"
     },
     "what_is": {
-      "fully_accessible": "段差のない入り口。全ての部屋に段差なし。",
-      "limited_accessible": "入り口には最大7センチ(3インチ)の段差が一段あります。ほとんどの部屋には段差がありません。",
-      "not_accessible": "入り口には段差が1段または数段あり、お部屋はアクス不可能",
-      "unknown_accessible": "場所に印をつけることで助けてください。"
+      "fully_accessible": "入口には段差が無い、全ての部屋に段差が無い、車椅子でトイレに行ける",
+      "limited_accessible": "入口に段差がある(最大でも高さ7cmまで)、たいていの部屋には段差が無い、車椅子でトイレに行けない",
+      "not_accessible": "入口の段差が高いか複数あり、部屋に入れません",
+      "unknown_accessible": "この場所の印付けを手伝ってください！"
     }
   },
   "will_paginate": {
