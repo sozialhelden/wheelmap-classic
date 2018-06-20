@@ -774,6 +774,7 @@ I18n.translations["pt_BR"] = I18n.extend((I18n.translations["pt_BR"] || {}), {
       "map": "Mapa",
       "newsletter": "Newsletter",
       "press": "Imprensa",
+      "privacy": "Privacy Policy",
       "profile": "Perfis",
       "projects": "Envolva-se",
       "report_problem": "Relatar um problema",

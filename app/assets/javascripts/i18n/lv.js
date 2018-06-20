@@ -774,6 +774,7 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       "map": "Map",
       "newsletter": "Paziņojumi par jaunumiem",
       "press": "Presei",
+      "privacy": "Privacy Policy",
       "profile": "Profils",
       "projects": "Get involved",
       "report_problem": "Ziņot par problēmu",

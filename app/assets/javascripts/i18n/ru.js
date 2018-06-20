@@ -802,6 +802,7 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
       "map": "Карта",
       "newsletter": "Подписаться на обновления",
       "press": "Пресса",
+      "privacy": "Privacy Policy",
       "profile": "Профиль",
       "projects": "Включайтесь",
       "report_problem": "Сообщить о проблеме",

@@ -774,6 +774,7 @@ I18n.translations["sq_AL"] = I18n.extend((I18n.translations["sq_AL"] || {}), {
       "map": "Harta",
       "newsletter": "Fletushkë",
       "press": "Shtypi",
+      "privacy": "Privacy Policy",
       "profile": "Profil",
       "projects": "Get involved",
       "report_problem": "Raporto një problem",

@@ -774,6 +774,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
       "map": "Térkép",
       "newsletter": "Hírlevél",
       "press": "Sajtó",
+      "privacy": "Privacy Policy",
       "profile": "Profil",
       "projects": "Kapcsolódj be",
       "report_problem": "Hiba jelentése",

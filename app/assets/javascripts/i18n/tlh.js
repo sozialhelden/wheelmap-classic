@@ -720,7 +720,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
       "centralkey": "Central key:",
       "city": "veng:",
       "create": "Daq chen",
-      "email": "jabbI'ID",
+      "email": " jabbI'ID",
       "finish": "Finish",
       "housenumber": "ghobe':",
       "lat": "Latitude",
@@ -774,6 +774,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
       "map": "Map",
       "newsletter": "Newsletter",
       "press": "Press",
+      "privacy": "Privacy Policy",
       "profile": "Profile",
       "projects": "Get involved",
       "report_problem": "Report a problem",
@@ -1624,7 +1625,7 @@ I18n.translations["tlh"] = I18n.extend((I18n.translations["tlh"] || {}), {
     "limited": "loQ naw'laH rutlhquS",
     "no": "naw'laHbe' rutlhquS",
     "unknown": "rutlhquS chaw Daq 'e' Sovbe'lu' ",
-    "yes": "naw'laH rutlhquS"
+    "yes": "naw'laHbej rutlhquS"
   },
   "wheelmap": {
     "footer": {

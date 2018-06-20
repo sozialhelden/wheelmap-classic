@@ -774,6 +774,7 @@ I18n.translations["nqo"] = I18n.extend((I18n.translations["nqo"] || {}), {
       "map": "ߔߊ߬ߔߘߊ",
       "newsletter": "Newsletter",
       "press": "Press",
+      "privacy": "Privacy Policy",
       "profile": "Profile",
       "projects": "Get involved",
       "report_problem": "Report a problem",

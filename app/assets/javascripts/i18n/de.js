@@ -809,6 +809,7 @@ I18n.translations["de"] = I18n.extend((I18n.translations["de"] || {}), {
       "map": "Karte",
       "newsletter": "Newsletter",
       "press": "Presse",
+      "privacy": "Datenschutzbedingungen",
       "profile": "Profil",
       "projects": "Mitmachen",
       "report_problem": "Problem melden",

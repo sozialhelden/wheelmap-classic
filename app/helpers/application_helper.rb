@@ -134,6 +134,14 @@ module ApplicationHelper
     end
   end
 
+  def community_privacy_url
+    if I18n.locale == :de
+      'https://news.wheelmap.org/datenschutzbestimmungen/'
+    else
+      'https://news.wheelmap.org/en/privacy/'
+    end
+  end
+
   def community_newsletter_url
     if I18n.locale == :de
       'https://news.wheelmap.org/kontakt/'
