@@ -1,195 +1,191 @@
----
-en:
+mn:
   activerecord:
     attributes:
       poi:
-        name: Name
-        type: Type
-        address: Address
-        website: Website
-        phone: Phone
-        note: Note
-        address_street: Street
-        address_housenumber: House number
-        address_postcode: Postcode
-        address_city: City
+        name: Нэр
+        type: Төрөл
+        address: Хаяг
+        website: Вэбсайт
+        phone: Утасны дугаар
+        note: Тэмдэглэл
+        address_street: Гудамж
+        address_housenumber: Гэрийн хаяг
+        address_postcode: Шуудангийн хаяг
+        address_city: Хот
   community_support_form:
     new:
       form:
-        title: Report a problem
-        header_text_html: "Please check the <a href=\"https://news.wheelmap.org/en/faq/\">frequently asked questions</a> for help first. If the solution to your problem is not there, please answer the following questions so we can fix it."
+        title: 'Асуудлыг мэдэгдэх '
+        header_text_html: "Эхлээд та асуултынхаа хариултыг <a href=\"https://news.wheelmap.org/en/faq/\">Түгээмэл Асуулт Хариулт</a> хэсгээс хайна уу. Хэрвээ таны асуудлыг шийдэх шийдэл олдоогүй бол, та дараах асуултанд хариулна уу. "
         questions:
-          a: What did you do?
-          b: What did you expect would happen?
-          c: What happened instead?
-        note: Note that Wheelmap is an open-source project run by a non-profit organization and we have limited resources for the app development.
-        describe: Please write to us in English or German.
-        flash_after_submit: Thank you for contacting us. Our support team will get back to you as soon as possible.
-        submit_button: Submit
+          a: Та юу хийсэн бэ?
+          b: Та юу болно хэмээн хүлээж байсан бэ?
+          c: Үүний оронд юу болсон бэ?
+        note: 'Wheelmap бол ашгийн бус байгууллагын нээлттэй эх үүсвэртэй төсөл бөгөөд аппликэйшн хөгжүүлэгчдэд хязгаарлагдмал нөөцтэй болно. '
+        describe: Англи эсвэл Герман хэлээр бичнэ үү.
+        flash_after_submit: 'Бидэнтэй холбогдсонд баярлалаа. Бид таньтай удахгүй эргэн холбогдох болно. '
+        submit_button: 'Хүргүүлэх '
   faq:
     answers:
-      0: You can always change the marking of a place yourself. Just choose the right marking and "Save" - done!
-      1: As a logged in user you can add / correct all the details of a place. Click on "Edit" and correct or add information in the mask.
-      2: You can add further information (e.g. "This place has a mobile ramp") in the comment section. Click on "Edit" and "Add comment".
-    headline: Is there a problem with this place?
+      0: Та өөрийн тэмдэглэсэн газраа өөрөө өөрчилөх боломжтой. Зөвхөн сонголтоо зөв хийж хадгална уу !
+      1: Та хэрэглэгчийн эрхээр нэвтрэн орж өөрийн тэмтэглэсэн газар болон түүнтэй холбоотой бүх нарийвчилсан өөрчлөлтүүдийг хийх боломжтой. "Засварлах" гэсэн цэсийг сонгон нэмэлт мэдээлэл болон засварлах мэдээллээ оруулна уу.
+      2: 'Та санал сэтгэгдлийн хэсэгт нэмэлт мэдээлэл  (жишээ нь: "Энэ газар зөөврийн налуу замтай") оруулж болно. "Засварлах" болон "Сэтгэгдэл нэмэх" хэсгийг сонгоно уу. '
+    headline: Энэ газартай холбоотой ямар нэгэн асуудал байна уу?
     questions:
-      0: The marking is wrong.
-      1: The details of the place are incorrect or missing.
-      2: I have more information about this place.
+      0: 'Тэмдэгэгээ буруу байна. '
+      1: Энэ газрын талаарх дэлгэрэнгүй мэдээлэл буруу эсвэл дутуу байна.
+      2: 'Надад энэ газрын талаар дэлгэрэнгүй мэдээлэл байна. '
   header:
     navigation:
-      choose_language: Choose language
-      contact: Contact
-      map: Map
-      travelguide: Travel guide
-      projects: Get involved
-      faq: FAQ
-      report_problem: Report a problem
-      privacy: Privacy Policy
+      choose_language: Хэлээ сонгоно уу.
+      contact: 'Холбоо барих '
+      map: Газарзүйн зураглал
+      travelguide: 'Аялалын хөтөч '
+      projects: 'Элслээ '
+      faq: Түгээмэл Асуулт Хариулт
+      report_problem: 'Асуудлыг мэдэгдэх '
     toolbar:
-      categories: Categories
+      categories: Ангилал
     meta:
-      description: Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!
+      description: Wheelmap.org бол тэргэнцэрт хүртээмжтэй газруудыг хайх, олох болон тэмдэглэх цахим газарзүйн зураглал юм. Бидэнтэй нэгдэж уушийн газар, зоогийн газар, кино театр болон худалдааны төв гэх мэт өөрийн үйлчлүүлж буй олон нийтийн газруудыг тэмдэглээрэй!
       title: Wheelmap.org
   home:
     index:
       overlay:
-        button: Okay, let’s go!
-        categories: Filter places by categories
-        filter: Filter places by wheelchair accessibility
-        headline: 'Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:'
-        lookup: Search for a specific place
-        secondary_headline: 'Our traffic light system to mark the wheelchair accessibility of public places:'
-      embed_link: Show on Wheelmap.org
-      zoom_alert: Zoom in closer to see more places.
+        button: Эхэлцгээе!
+        categories: Ангилалаар газруудыг шүүж харуулах
+        filter: Тэргэнцэрт хүртээмжтэй газруудыг шүүж харуулах
+        headline: 'Дэлхий даяар хүн бүр чөлөөтэй ашиглаж болох Wheelmap.org сайт дээр тэргэнцэрт хүртээмжтэй газруудыг хайж ол бас тэмдэглэ. Энэ үнэхээр амархан. '
+        lookup: Тусгай газруудыг хайх
+        secondary_headline: 'Олон нийтийн тэргэнцэрт хүртээмжтэй газруудыг тэмдэглэхэд бид замын хөдөлгөөний гэрлэн дохионы системийг ашигладаг. '
+      embed_link: Wheelmap.org дээр харуул
+      zoom_alert: 'Илүү олон газрыг харахын тулд томруулж хар '
   nodes:
     new:
       form:
-        title: Add a place
-        legend: Location of the place
-        location: Please click on the map where the place is located!
+        title: 'Газар нэмэх '
+        legend: 'Газрын байршил '
+        location: Газрын байршилийг газарзүйн зураглал дээр харуул!
         section:
           name_category:
-            name: Name and place type
-            title: "Give us some initial information about your place:"
+            name: 'Газрын төрөл болон нэр '
+            title: "Тэмдэглэсэн газрынхаа анхдагч мэдээллийг бидэнд өгнө үү: "
           address:
-            name: Address
-            title: Where is the place?
-            help: You can move the marker to the correct location on the map.
+            name: Хаяг
+            title: Газар хаана байрладаг вэ?
+            help: 'Та газарзүйн зураглал дээр тэмдэглэсэн газрынхаа тэмдэглэгчийг зөв байршилд шилжүүлэх боломжтой. '
           similar_nodes:
-            name: Similar places
-            title: We found similar places nearby. Is it one of these?
-            go_edit: Continue with this place
-            go_new: It is none of the places above …
-            empty: No similar places were found.
+            name: Адилхан газар
+            title: Бид ойролцоо ижил төстэй газар оллоо. Энэ тэргээрийн нэг хэсэг нь үү?
+            go_edit: Энэ газрыг үргэлжлүүл
+            go_new: Энэ дээрх газруудын нэг биш байна ...
+            empty: Ижил газрууд олдсонгүй.
           accessibility:
-            name: Wheelchair accessibility
-            title: Information on wheelchair accessibility
+            name: Тэргэнцэрт хүртээмжтэй
+            title: Тэргэнцэрт хүртээмжтэй гэсэн мэдээлэл
           contact:
-            name: Contact
-            title: Other contact information
+            name: 'Холбоо барих '
+            title: Бусад холбоо барих мэдээлэл
           overview:
-            title: Is all the information correct?
+            title: Эдгээр мэдээллүүд нь зөв үү?
     node_data:
-      address: 'Address:'
-      contact_details: 'Contact details:'
+      address: 'Хаяг:'
+      contact_details: 'Холбоо барих мэдээлэл:'
     node_edit:
-      details: Details
-      edit: Edit
+      details: Нарийвчилсан мэдээлэл
+      edit: Засварлах
     node_map:
-      map: 'Map:'
+      map: 'Газарзүйн зураглал:'
     node_note:
-      comment: 'Comment:'
+      comment: 'Сэтгэгдэл:'
     node_photos:
-      add: Add
-      photos_of_this_place: 'Photos of this place:'
-      upload: Upload
-      alert: 'Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.'
+      add: Нэмэх
+      photos_of_this_place: 'Энэ газрын зурагнууд:'
+      upload: 'Хуулах '
+      alert: 'Мэдэгдэл: Орох гарах гарцын зураг нь дараах зүйлсийг маш тод харуулсан байх ёстой. Орох гарах гарц шаттай эсэх? Хаалга хэр өргөн эсэх? Босгоны өндөр ойролцоогоор? Зураг нь JPG эсвэл PNG хувилбартай байх ёстой. Мөн 10 MB хэмжээнээс хэтрэхгүй байх хэрэгтэй. '
     node_similar:
-      similar: 'Similar places: %{name}'
-    node_nearby:
-      places_nearby: 'Places nearby:'
+      similar: 'Адилхан газрууд %{name}'
     node_status:
-      accessible_toilet: 'Wheelchair accessible toilet:'
-      premium: '%{name} says: this place is'
-      wheelchair_accessibility: 'Wheelchair accessibility:'
+      accessible_toilet: 'Тэргэнцэрт хүртээмжтэй ариун цэврийн өрөө:'
+      premium: '%{name} Өгүүлэмж: Энэ газар бол '
+      wheelchair_accessibility: 'Тэргэнцэрт хүртээмжтэй: '
     node_streetview:
-      streetview: 'Streetview:'
+      streetview: 'Гудамжны харагдах байдал:'
     show:
       header:
         meta:
-          description: Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.
-          title: 'This place is on Wheelmap.org: %{name}'
+          description: 'Хэрвээ энэ газар нь тэргэнцэрт хүртээмжтэй бол Wheelmap.org сайт дээрээс олдох болно. Эсвэл дэлгэрэнгүй мэдээлэл болон зурагнуудыг нэмнэ үү. '
+          title: 'Энэ газар нь Wheelmap.org сайт дээр байна: %{name}'
       share:
-        email: Email
+        email: 'Цахим хаяг '
         facebook: Facebook
-        text: 'I found this place on Wheelmap.org: %{name}'
+        text: 'Энэ газар нь Wheelmap.org сайт дээр олдлоо: %{name}'
         twitter: Twitter
   search:
     index:
       no-results:
-        headline: Sorry, we couldn’t find a place called "%{query}".
+        headline: Уучлаарай, энэ нэршлээр ямар нэгэн газар олдсонгүй "%{query}"
         hint:
-          example: <strong>Example:</strong> London, United Kingdom
-          info: Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!
-          work_in_progress: We work hard to make searching for places easier and more intuitive in the future.
+          example: '<strong>Жишээ нь:</strong> Лондон, Нэгдсэн Улс '
+          info: 'Манай хайлтын систем нь нэр эсвэл хаягын мэдээлэл оруулсан нөхцөлд ажиллах болно. Мөн нэр болон хаягаар зэрэг хайлт хийж болно. жишээ нь: хот болон гудамжны нэр. Харин дараах байдлаар хайлт хийвэл ажиллахгүй болохыг анхаарна уу! Газрын төрлөөр, жишээ нь: зоогийн газар, кино театр гэх мэт '
+          work_in_progress: 'Бид хайлтын системээ илүү хялбар ирээдүйн шаардлагад нийцсэн болгох тал дээр шаргуу ажиллаж байна. '
         try_this:
-          address: Please provide more <strong>address details</strong>.
-          intro: 'Try this:'
-          spell_check: Check the <strong>spelling</strong> of your input.
+          address: Нарийвчилсан <strong>хаягжилтийн мэдээллийг</strong> дэлгэрэнгүй өгнө үү.
+          intro: 'Үүнийг туршаад үзнэ үү: '
+          spell_check: 'Та <strong>үсгийн алдаагаа</strong> шалгана уу. '
       results:
         ticker:
-          one: '%{count} result:'
-          other: '%{count} results:'
+          one: '%{count}үр дүн:'
+          other: '%{count}үр дүнгүүд: '
     timeout:
-      headline: Sorry, something went wrong
-      info: Our search service was temporarily not available.
-      repeat_search: Retry search
+      headline: 'Уучлаарай, зарим нэгэн зүйлс буруу байна '
+      info: 'Манай хайлтын үйлчилгээ түр хугацаагаар ажиллахгүй болохыг анхаарна уу. '
+      repeat_search: Дахин хайлт хийнэ үү
   users:
     profile:
       newsletter:
-        title: Newsletter
-        text: Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.
-        label: Yes, keep me updated about Wheelmap.
+        title: 'Мэдээллийн самбар '
+        text: 'Wheelmap мэдээ мэдээлэлтэй хамт байгаарай. Санаа зоволтгүй, бид танд ямар нэгэн хохирол учруулахгүй. Хамгийн ихдээ сардаа ганц удаа биднээс мэдээ мэдээлэл хүлээж авах болно. '
+        label: Тийм, wheelmap - ийн тухайд намайг шинэчилнэ үү.
       show:
-        title: Overview
-        text_html: "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team"
+        title: 'Ерөнхий байдлаар харах '
+        text_html: "Сайн байна уу,<br>\n Wheelmap.org! –т (эргэн) тавтай морил! Бид таньтай хамтран ажиллах болсондоо баяртай байна! Та бидний <a href=\"http://news.wheelmap.org/en/\">Блог</a> эсвэл <a href=\"http://news.wheelmap.org/en/FAQ/\">Тогтмол асуулт хариулт</a> хэсгээр нэвтэрч болно. Хэрвээ та Wheelmap.org сайтын талаарү ихийг мэдэхийг, эсвэл <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">төслийн</a> талаар илүү ихийг сурахыг хүсвэл бид тань руу Wheelmap.org! сайтад хэрхэн ажиллах талаар зааварчилгаа илгээх болно. <br>\n Та бидэнтэй холбоотой байж биднийг олон нийтийн сүлжээ болох <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> болон <a href=\"https://twitter.com/wheelmap\">Twitter</a> -т дагаснаар бидний гаргадаг сар тутмын мэдээ мэдээллүүдийг хүлээж авах болно. Бид таньтай холбоо тогтоон, таны санаа бодлыг сонсохдоо таатай байх болно. <br>\n Та одоо зураглалаа тааваараа хийж болно!<br>\n Газарзүйн зураглалын баг "
         greeting:
-          anonymously: Hello there
-          personalized: Hello %{name}
+          anonymously: 'Сайн байна уу '
+          personalized: Сайн байна уу %{name}
         overview:
-          text: You have
+          text: 'Танд бий '
           pois_marked:
-            one: 'marked %{count} place'
-            other: 'marked %{count} places'
+            one: 'тэмдэглэгдсэн %{count}газрууд '
+            other: 'тэмдэглэгдсэн %{count}газрууд '
           pois_added:
-            one: 'added %{count} place'
-            other: 'added %{count} places'
+            one: 'нэмэгдсэн %{count}газрууд '
+            other: 'нэмэгдсэн %{count} газрууд '
           pois_edited:
-            one: 'edited %{count} place'
-            other: 'edited %{count} places'
+            one: 'засварлагдсан %{count}газрууд '
+            other: 'засварлагдсан %{count}газрууд '
           photos_uploaded:
-            one: 'uploaded %{count} photo'
-            other: 'uploaded %{count} photos'
+            one: 'татаж оруулсан %{count} зурагнууд '
+            other: 'татаж оруулсан %{count} зурагнууд '
       photos:
-        title: Photos
-        empty: You haven't uploaded any photos yet.
+        title: Зураг
+        empty: Та одоогоор ямар нэгэн зураг оруулаагүй байна.
       edit:
-        title: Profile
+        title: Хувийн хэрэг
         legends:
-          user_data: Your account information
+          user_data: Таны бүртгэлийн тухай мэдээлэл
       widget:
-        title: Widget
-        height: Height
-        width: Width
-        center: Map area
-        categories: Show category filter
-        providers: Provider
-        empty_provider: Choose a Provider
-        empty_center: Search for center of map …
+        title: 'Виджет '
+        height: Өндрийн хэмжээ
+        width: 'Өргөний хэмжээ '
+        center: 'Газрын зургийн талбар '
+        categories: Ангилалаар шүүж харах
+        providers: 'Нийлүүлэгч '
+        empty_provider: 'Нийлүүлэгчийг сонгох '
+        empty_center: Газрын зургийн төвөөс эхлэн хайлт хийх ...
         legends:
-          settings: Settings
-          preview: Preview
-          embed: Embed code
-          embed_explanation: You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.
-          general: Create your own Wheelmap widget and embed it in your website or blog.
+          settings: Тохиргоо
+          preview: Урьдчилан харах
+          embed: Суулгасан код
+          embed_explanation: 'Та өөрийн харахыг хүссэн газрыг байршлийн дагуу буюу уртраг (<code>lat</code>), өргөрөг (<code>lon</code>) болон томруулж, жижигрүүлэх (<code>zoom</code>) байдлаар газарзүйн нарийвчилсан (виджет) тохиргоо хийж харах боломжтой. '
+          general: 'Та өөрийн Wheelmap виджетийг бий болгон түүнийгээ өөрийн вэбсайт болон блогтоо оруулж болно. '

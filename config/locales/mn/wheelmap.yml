@@ -1,263 +1,262 @@
----
-en:
+mn:
   application:
     require_no_user:
-      notice: "You’re already logged in…"
+      notice: "Та нэвтэрсэн байна..."
     require_user:
-      notice: "You must be logged in to see this page."
+      notice: "Та энэ хуудсыг харахын тулд заавал нэвтэрсэн байх ёстой."
   breadcrumbs:
     node:
-      create: "Add a new place"
-      edit: "Edit place"
-    root: Wheelmap
+      create: "Шинэ газар нэмэх "
+      edit: "Газрыг засварлах"
+    root: Тэргэнцэртэй иргэд зорчих газрын зураглал
   common:
-    close: close
-    skip: skip
+    close: Ойрхон
+    skip: Алгасах
   errors:
     dynamic_format: "%{message}"
     format: "%{attribute} %{message}"
     messages:
-      accepted: "must be accepted"
-      already_confirmed: "has already been confirmed"
-      blank: "must be filled in"
-      confirmation: "doesn't match confirmation"
-      empty: "must be filled in"
-      equal_to: "must be exactly %{count}"
-      even: "must be an even number"
-      exclusion: "is reserved"
-      expired: "expired, please request a new one"
-      greater_than: "must be greater than %{count}"
-      greater_than_or_equal_to: "must be greater than or equal to %{count}"
-      inclusion: "not a valid value"
-      invalid: "not valid"
-      less_than: "must be less than %{count}"
-      less_than_or_equal_to: "must be less than or equal to %{count}"
-      not_a_number: "is not a number"
-      not_an_integer: "must be an integer"
-      not_found: "was not found"
-      not_locked: "was not locked"
+      accepted: "Хүлээн зөвшөөрсөн байх ёстой"
+      already_confirmed: "Баталгаажсан байна"
+      blank: "  Бөглөсөн байх ёстой "
+      confirmation: "Өгөгдөл тохирсонгүй "
+      empty: "  Бөглөсөн байх ёстой "
+      equal_to: "Таарч байх ёстой %{count}"
+      even: "Тоо байх ёстой "
+      exclusion: "Нөөцлөгдсөн "
+      expired: "Хугацаа дууссан байна, шинээр хүсэлтээ илгээнэ үү "
+      greater_than: "Их байх ёстой %{count}"
+      greater_than_or_equal_to: "Тэнцүү эсвэл их байх ёстой %{count}"
+      inclusion: "Хүчин төгөлдөр бус үнэлэмж байна"
+      invalid: "Хүчин төгөлдөр бус байна"
+      less_than: "Бага байх ёстой %{count}"
+      less_than_or_equal_to: "Тэнцүү эсвэл бага байх ёстой %{count}"
+      not_a_number: "Тоон утга биш байна"
+      not_an_integer: "Бүхэл тоо байх ёстой "
+      not_found: "Илэрцгүй байна"
+      not_locked: "Түгжигдээгүй байна"
       not_saved:
-        one: "An error prohibited to save a %{resource}:"
-        other: "%{count} errors prohibited to save a %{resource}:"
-      odd: "must be an odd number"
-      taken: "has already been taken"
-      too_long: "is too long (not more than %{count} characters)"
-      too_short: "is too short (not less than %{count} characters)"
-      wrong_length: "is the wrong length (should be %{count} characters)"
+        one: "хадгалахыг хориглоно %{resource}:"
+        other: "%{count} хадгалахыг хориглоно %{resource}:"
+      odd: "Сондгой тоо байх ёстой "
+      taken: "Өгөгдсөн байна "
+      too_long: "Энэ хэтэрхий урт байна (%{count} үүнээс хэтрүүлэхгүй байх)"
+      too_short: "Энэ хэтэрхий богино байна (%{count} үүнээс багадуулахгүй байх)"
+      wrong_length: "Уртын хэмжээ буруу байна (%{count} өгөгдөл байх хэрэгтэй)"
     template:
-      body: "There were problems with the following fields:"
+      body: "Дараах талбаруудад асуудал гарсан байна"
       header:
-        one: "1 error prohibited this %{model} from being saved"
-        other: "%{count} errors prohibited this %{model} from being saved"
+        one: "1 адлаа нь %{model} хадгалахад саад болж байна"
+        other: "%{count} алдаанууд нь %{model} үүнийг хадгалахад  саад болж байна "
   flash:
     actions:
       create:
-        notice: "%{resource_name} was successfully created"
+        notice: "%{resource_name} амжилттай үүсгэлээ"
       destroy:
-        alert: "%{resource_name} could not be removed"
-        notice: "%{resource_name} was successfully deleted"
+        alert: "%{resource_name} арилгаж чадахгүй байна"
+        notice: "%{resource_name} амжилттай устгагдлаа"
       update:
-        notice: "%{resource_name} was successfully updated"
+        notice: "%{resource_name} амжилттай шинэчлэгдлээ"
     photos:
       destroy:
-        notice: "Image was successfully deleted"
+        notice: "Зураг амжилттай устгагдсан байна"
   form:
-    show_fully_accessible_places: "Wheelchair accessible"
-    show_limited_accessible_places: "Partially wheelchair accessible"
-    show_places_without_status: "Unknown status"
-    show_unaccessible_places: "Not wheelchair accessible"
+    show_fully_accessible_places: "Тэргэнцэрт хүртээмжтэй"
+    show_limited_accessible_places: "Хэсэгчилсэн газрууд тэргэнцэрт хүртээмжтэй"
+    show_places_without_status: "Таниулаагүй өгөгдөл байна "
+    show_unaccessible_places: "Тэргэнцэрт хүртээмжтэй бус "
   formtastic:
     hints:
-      email: "We treat your address confidentially. We promise not to send you spam!"
-      lat: "Move the marker on the map to the correct position"
-      osm_username: "Not a member yet? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>"
-      password: "(leave empty if you don't want to change it)"
-      phone: "For example: +49 30 12345678"
-      website: "For example: http://www.example.com"
+      email: "Бид таны хаягийг итгэлтэйгээр байршуулах хэрэгтэй байна. Бид тань руу ямар нэгэн вирус илгээхгүй гэдгийг амлаж байна  "
+      lat: "Газарзүйн зураглал дээр байрлах тэмдэглэгчийг зөв байршил руу шилжүүлэх "
+      osm_username: "Та хараахан гишүүнээр элсээгүй байна уу? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Та яг одоо OpenStreetMap бүртгэл үүсгэнэ үү</a>"
+      password: "(Хэрвээ та өөрчлөхийг хүсэхгүй байгаа бол энэхүү зайг хоосон үлдээнэ үү)"
+      phone: "Жишээ нь: +49 30 12345678"
+      website: "Жишээ нь: http://www.example.com"
     labels:
-      category: "Category:"
-      centralkey: "Central key:"
-      city: "City:"
-      create: "Create a place"
-      email: Email
-      finish: Finish
-      housenumber: "No:"
-      lat: Latitude
-      lon: Longitude
-      name: "Name:"
-      osm_password: "OpenStreetMap password"
-      osm_username: "OpenStreetMap account name"
-      password: Password
-      password_confirmation: "Repeat password"
-      phone: "Telephone:"
-      postcode: "Post code:"
-      privacy_policy: "I accept paragraphs 1 and 2 of the data privacy agreement."
-      reset: Reset
-      save: Save
-      street: "Street:"
-      terms: "I accept the terms of use."
-      type: "Type:"
-      website: "Website:"
-      wheelchair: "Wheelchair accessibility?"
-      wheelchair_description: "Accessibility comment:"
-      wheelchair_toilet: "Wheelchair accessible toilet:"
+      category: "Ангилал:"
+      centralkey: "Гол утга:"
+      city: "Хот:"
+      create: "Газар шинээр нээх "
+      email: 'Цахим хаяг '
+      finish: Дуусгах
+      housenumber: "Үгүй:"
+      lat: Өндөрийн хэмжээ
+      lon: Уртын хэмжээ
+      name: "Нэр:"
+      osm_password: "OpenStreetMap нууц үг"
+      osm_username: "OpenStreetMap хэрэглэгчийн нэр "
+      password: Нууц үг
+      password_confirmation: "Нууц үгийг давтах "
+      phone: "Харилцах утасны дугаар:"
+      postcode: "Шуудангийн хайрцаг:"
+      privacy_policy: "Би гэрээний хувийн мэдээлэл нууцлах 1 болон 2-р зүйлийг зөвшөөрч байна "
+      reset: 'Дахин шинэчилэх '
+      save: Хадгалах
+      street: "Гудамж: "
+      terms: "Би хэрэглэгчийн мөрдөх гэрээний нөхцлийг хүлээн зөвшөөрч байна"
+      type: "Төрөл:"
+      website: "Цахим хуудас:"
+      wheelchair: "Тэргэнцэрт хүртээмжтэй юу?"
+      wheelchair_description: "Хүртээмжийн талаарх сэтгэгдэл:"
+      wheelchair_toilet: "Тэргэнцэрт хүртээмжтэй ариун цэврийн өрөө:"
     titles:
-      basic: "Basic data"
-      optional: "More information <span class=\"addition\">(all fields are optional)</span>"
+      basic: "Үндсэн мэдээлэл"
+      optional: "Илүү их мэдээлэл <span class=\"addition\">(бүх газар сонголтоор)</span>"
   global:
-    form_validation_error: "Please note the errors listed below"
+    form_validation_error: "Дараах алдаануудыг анхаарна уу"
   header:
     meta:
-      homepage: "Home page"
-      keywords: "wheelchair accessible places find search mark"
-      search: Search
+      homepage: "Нүүр хуудас "
+      keywords: "Тэргэнцэрт хүртээмжтэй газруудыг олох хайлтын тэмдэглэгээ"
+      search: Хайлт
     navigation:
-      blog: News
-      feedback: Feedback
-      home: Start
-      how_to_add_a_place: "How do I add places?"
-      imprint: Imprint
-      logged_in_as: "Logged in as:"
-      login: "Log in"
-      logout: "Log out"
-      newsletter: Newsletter
-      press: Press
-      profile: Profile
-      suggestions: Suggestions
-      what_is_barrier_free: "What does \"wheelchair accessible\" mean?"
-      what_is_wheelmap: "What is Wheelmap?"
+      blog: Мэдээ
+      feedback: 'Хариу '
+      home: 'Эхлэх '
+      how_to_add_a_place: "Би хэрхэн газар нэмэх вэ?"
+      imprint: 'Тэмдэглэх '
+      logged_in_as: "Дараах байдлаар нэвтэрсэн байна:"
+      login: "Нэвтрэх"
+      logout: "Гарах"
+      newsletter: 'Мэдээллийн самбар '
+      press: Хэвлэл
+      profile: Хувийн хэрэг
+      suggestions: 'Санал хүсэлтүүд '
+      what_is_barrier_free: "\"Тэргэнцэрт хүртээмжтэй\" гэдэг нь юу гэсэн утгатай вэ?"
+      what_is_wheelmap: "Wheelmap гэж юу вэ?"
     searchbar:
-      add_place: "Add another place"
-      find: Find
-      placeholder: "Search for a place"
-      title_add_place: "Add a new place at this position now!"
-    tagline: "Wheelmap logo"
-    title: "Find wheelchair accessible places"
+      add_place: "Өөр газар нэмэх"
+      find: Хайх
+      placeholder: "Тухайн газрыг хайх"
+      title_add_place: "Яг одоо энэ байршилд шинэ газар нэмэх!"
+    tagline: "Wheelmap лого "
+    title: "Тэргэнцэр хүртээмжтэй газруудыг олох "
   helpers:
     select:
-      prompt: "Please choose"
+      prompt: "Сонголтоо хийнэ үү"
     submit:
-      create: "create %{model}"
-      submit: "save %{model}"
-      update: "update %{model}"
+      create: "үүсгэх %{model}"
+      submit: "хадгалах %{model}"
+      update: "шинэчилэх %{model}"
   home:
     index:
       filter:
-        category: "Choose category"
-        deselect_all: "Deselect all"
-        select_all: "Select all"
-        wheelchair: "Wheelchair accessible?"
+        category: "Ангилалаа сонгоно уу"
+        deselect_all: "Бүгдийг дахин сонго"
+        select_all: "Бүгдийг сонго"
+        wheelchair: "Тэргэнцэрт хүртээмжтэй юу?"
       ie:
         action:
-          ignore: Ignore
-          upgrade: "Update Browser"
+          ignore: 'Хэрэгсэхгүй болгох '
+          upgrade: "Хөтөч шинэчлэл"
         warning:
-          headline: "We apologise!"
-          message: "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
+          headline: "Биднийг өршөөнө үү!"
+          message: "Та интернэт хөтчийг ашиглаж байна. Wheelmap нь стандартад нийцсэн хөтчүүдийг ашиглахыг шаарддаг. Firefox, Chrome, Safari эсвэл Opera зэрэг хөтчүүдийг ашиглана уу. "
       link:
         node:
-          create: "Add a new place"
+          create: "Шинэ газар нэмэх "
       popup:
         form:
-          limited: "Partially wheelchair accessible"
-          'no': "Not wheelchair accessible"
-          save: Update
-          unknown: "Unknown status"
-          'yes': "Wheelchair accessible"
-        help: "Wheelchair accessible? (Help)"
-        more: "more ..."
-  how?: How?
+          limited: "Тэргэнцэрт хэсэгчилсэн хүртээмжтэй "
+          'no': "Тэргэнцэрт хүртээмжтэй бус"
+          save: 'Шинэчилэх '
+          unknown: "Таниулаагүй өгөгдөл байна"
+          'yes': "Тэргэнцэрт хүртээмжтэй "
+        help: "Тэргэнцэрт хүртээмжтэй юу? (Тусламж)"
+        more: "цааш ... "
+  how?: Хэрхэн?
   landing_pages:
     index:
       wheelchair:
         limit:
-          headline: "All partially wheelchair accessible %{type} in %{city} (%{count})"
+          headline: "Тэргэнцэрт хэсэгчилсэн хүртээмжтэй бүх %{type} %{city} -д (%{count})    "
         'no':
-          headline: "All not wheelchair accessible %{type} in %{city} (%{count})"
+          headline: "Тэргэнцэрт хүртээмжгүй бүх %{type} %{city} -д (%{count}) "
         unknown:
-          headline: "All %{type} in %{city} with unknown wheelchair status (%{count})"
+          headline: "Бүх %{type}дараах %{city}хотуудад тэргэнцэрт хүртээмжтэй эсэх нь тодорхой бус (%{count}) "
         'yes':
-          headline: "All wheelchair accessible %{type} in %{city} (%{count})"
+          headline: "Тэргэнцэрт хүртээмжтэй бүх %{type} нь %{city} -д (%{count}) "
   layouts:
     application:
       banner:
-        alt: "A project by Sozialhelden.de"
+        alt: "Sozialhelden.de төсөл нь"
   node:
     address:
-      city: "%{city} %{postcode}"
-      street: "%{housenumber} %{street}"
+      city: "%{city}%{postcode}"
+      street: "%{housenumber}%{street}"
     tags:
-      phone: "Phone:"
-      website: "Website:"
+      phone: "Утасны дугаар:"
+      website: "Цахим хуудас: "
   nodes:
     create:
       flash:
-        not_successfull: "Oops, your input was either incorrect or incomplete"
-        successfull: "Thank you, your submission was saved successfully and will be online shortly."
+        not_successfull: "Уучлаарай, таны өгөгдөл буруу эсвэл бүрэн биш байна"
+        successfull: "Баярлалаа, таны хүсэлт амжилттай хадгалагдаж онлайн хэлбэрээр байршилаа."
     edit:
       header:
-        title: "Edit place: %{node} | wheelmap.org"
+        title: "Газарт засвар хийх: %{node} wheelmap.org"
       link:
-        large_map: "&laquo; Cancel"
+        large_map: "&laquo; Цуцлах"
     errors:
-      default: "Oops something went wrong. We have been informed about this issue"
-      not_authorized: "Sorry, authentication failed"
-      not_available: "Sorry, this page is temporarily not available."
-      not_existent: "Sorry, this place is not available anymore."
-      not_found: "Sorry, page not found."
-      param_missing: "Please provide a search term"
+      default: "Уучлаарай, ямар нэгэн зүйл буруу байна. Бид энэ асуудлын талаар мэдэгдсэн болно."
+      not_authorized: "Уучлаарай, нэвтрэлт амжилтгүй боллоо"
+      not_available: "Уучлаарай, энэ хуудас түр хугацаагаар идэвхгүй байна."
+      not_existent: "Уучлаарай, энэ газар ашиглалтнаас гарсан байна."
+      not_found: "Уучлаарай, хуудас олдсонгүй."
+      param_missing: "Хайлтын нөхцлийг сайжруулна уу "
     flash:
-      authorize_wheelmap: "You need an OpenStreetMap account to modify data"
+      authorize_wheelmap: " Мэдээлэлдээ өөрчлөлт оруулахад тань OpenStreetMap хэрэглэгчийн бүртгэл хэрэгтэй "
     new:
       header:
-        title: "New place | wheelmap.org"
+        title: "Шинэ газар | wheelmap.org"
       link:
-        large_map: "&laquo; Cancel"
+        large_map: "&laquo; Цуцлах "
     node:
       link:
-        claim: "Do you work here?"
-        edit_node: "Edit place"
-        report_bug: "Report a problem"
+        claim: "Та энд ажилладаг уу?"
+        edit_node: "Газрыг засварлах"
+        report_bug: "Асуудлыг мэдэгдэх "
     show:
       header:
-        title: "Place: %{node} | wheelmap.org"
+        title: "Газар: %{node}Wheelmap.org "
       link:
-        back: back
-        large_map: Enlarge
-        listing: "All places of typ '%{type}' in %{city}"
-        upload: "Upload image"
-      more_data_from: "There is more information about this place, validated by:"
+        back: Буцах
+        large_map: Томруулах
+        listing: "Бүх газар дараах төрлөөр '%{type}' %{city}-д"
+        upload: "Зураг хуулах "
+      more_data_from: "Энд тухайн газрын талаар илүү мэдээлэл байгаа ба дараах байдлаар баталгаажсан болно:"
       show-in-osm: OpenStreetMap
     update:
       flash:
-        not_successfull: "Oops, your input was either incorrect or incomplete"
-        successfull: "Thank you, your submission was saved successfully and will be online shortly."
+        not_successfull: "Уучлаарай, таны өгөгдөл буруу эсвэл бүрэн биш байна "
+        successfull: "Баярлалаа, таны хүсэлт амжилттай хадгалагдаж онлайн хэлбэрээр байршилаа. "
     update_wheelchair:
-      successfull: "The status for \"%{name}\" has been changed to \"%{status}\" and will be online shortly."
+      successfull: "Төрөл нь \"%{name}\" байсан бөгөөд \"%{status}\" болж өөрчлөгдөж онлайн хэлбэрт шилжлээ. "
   number:
     currency:
       format:
-        delimiter: ","
+        delimiter: ", "
         format: "%u%n"
         separator: "."
         unit: $
     format:
-      delimiter: ","
-      separator: "."
+      delimiter: ", "
+      separator: ". "
     human:
       decimal_units:
-        format: "%n %u"
+        format: "%n%u"
         units:
-          billion: Billion
-          million: Million
-          quadrillion: Quadrillion
-          thousand: Thousand
-          trillion: Trillion
+          billion: 'Тэрбум '
+          million: Сая
+          quadrillion: Квадрилион
+          thousand: Мянга
+          trillion: Их наяд
       storage_units:
-        format: "%n %u"
+        format: "%n%u "
         units:
           byte:
-            one: Byte
+            one: 'Byte '
             other: Bytes
           gb: GB
           kb: KB
@@ -266,117 +265,117 @@ en:
   oauth:
     application:
       connect:
-        headline: "You need to connect your account with your OpenStreetMap account before you can create or modify places on Wheelmap.org."
+        headline: "Wheelmap.org хуудсанд шинээр газар нэмэх болон тохируулга хийхээсээ өмнө та OpenStreetMap хэрэглэгчийн эрхээрээ нэвтрэн орох хэрэгтэй. "
     callback:
-      notice: "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
-  or: or
+      notice: "Таны Wheelmap хэрэглэгчийн эрх OpenStreetMap - тай холбогдсон байна %{user}."
+  or: 'эсвэл '
   place:
-    one: "%{count} place"
-    other: "%{count} places"
+    one: "%{count} газрууд"
+    other: "%{count} газрууд  "
   profile:
     edit:
       application:
         oauth:
-          connected: "Status: connected"
-          grant: "Connect now"
-          not_connected: "Status: Not connected"
-          revoke: Disconnect
-      headline: "Edit your profile"
+          connected: "Төлөв: холбогдсон"
+          grant: "Холбогдоно уу "
+          not_connected: "Төлөв: Холбогдоогүй "
+          revoke: 'Салгах '
+      headline: "Профайл тохиргоо хийх "
   search:
     index:
       search:
-        for: "Searching for \"%{q}\""
-        not_found: "No places could be found!"
+        for: "Хайлт хийж байна \"%{q}\""
+        not_found: "Хайсан газар олдсонгүй!"
   splash:
-    countline: "%{count} places have already been marked."
-    headline: "Everyone can add wheelchair accessible places!"
-    start: Start
-    step1: "Click on a place you know"
-    step2: "Mark it and click save"
-    step3: "That's it! No registration necessary"
-    what_is_wheelmap: "What is Wheelmap?"
-  statistics: Statistics
+    countline: "%{count} газрууд  тэмдэглэгдсэн байна. "
+    headline: "Хүн бүр тэргэнцэрт хүртээмжтэй газруудыг нэмэх боломжтой!"
+    start: Эхлэх
+    step1: "Өөрийн мэдэх газраа сонгоно уу"
+    step2: "Тэмдэглээд дараа нь хадгалах гэсэн товчлуурыг дарна уу"
+    step3: "Энэ хангалттай! Бүртгүүлэх шаардлагагүй "
+    what_is_wheelmap: "Wheelmap гэж юу вэ? "
+  statistics: Үзүүлэлтүүд
   support:
     array:
-      last_word_connector: " and "
-      sentence_connector: and
-      two_words_connector: " and "
-      words_connector: ","
+      last_word_connector: "мөн"
+      sentence_connector: бас
+      two_words_connector: "түүнчлэн "
+      words_connector: ", "
     select:
-      prompt: "Please select"
+      prompt: "Сонголтоо хийнэ үү"
   time:
     am: am
     formats:
-      default: "%a, %d %b %Y %H:%M:%S %z"
-      long: "%B %d, %Y %H:%M"
-      short: "%d %b %H:%M"
+      default: "%a,%d%b %Y %H:%M:%S %z "
+      long: "%B %d, %Y %H:%M "
+      short: "%d%b %H:%M "
     pm: pm
   toiletstatus:
-    'no': "No wheelchair accessible toilet"
-    unknown: "Toilet status unknown"
-    'yes': "Wheelchair accessible toilet"
+    'no': "Тэргэнцэрт хүртээмжгүй ариун цэврийн өрөө"
+    unknown: "Ариун цэврийн өрөөний төлөв мэдэгдэхгүй байна"
+    'yes': "Тэргэнцэрт хүртээмжтэй ариун цэврийн өрөө "
     what_is:
-      'no': "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
-      'yes': "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
-      unknown: "Help out by marking the toilet status!"
+      'no': "Хаалганы дотор өргөн хамгийн багадаа 90см (35инч), шалны цэвэр хэмжээ хамгийн багадаа 150 x 150 см (59 x 59инч), суултуур болон тэргэнцэрийн өндрийн хэмжээ адил түвшинд байх, эвхэгддэг хашлагууд болон гар бариултай буюу хүртээмжтэй ванн "
+      'yes': "Хаалганы дотор өргөн хамгийн багадаа 90см (35инч), шалны цэвэр хэмжээ хамгийн багадаа 150 x 150 см (59 x 59инч), суултуур болон тэргэнцэрийн өндрийн хэмжээ адил түвшинд байх, эвхэгддэг хашлагууд болон гар бариултай буюу хүртээмжтэй ванн"
+      unknown: "Ариун цэврийн өрөөний төлөвийг тогтооход туслана уу!"
   user_sessions:
     create:
       activation:
-        notice: "Your account is activated now!"
+        notice: "Таны бүртгэл идэвхижлээ!"
       error:
-        notice: "Email and password don't match."
-      notice: "You're in!"
+        notice: "Имэйл хаяг болон нууц үг таарахгүй байна."
+      notice: "Та нэвтэрсэн байна!"
     destroy:
-      notice: "Bye, come back soon!"
+      notice: "Баяртай, удахгүй эргэн уулзъя! "
     new:
-      email: "Email address"
-      login: "Log in"
-      login_with_twitter: "Log in with Twitter"
-      password: Password
-      remember_me: "Stay logged in"
+      email: "Имэйл хаяг"
+      login: "Нэвтрэх "
+      login_with_twitter: "Twitter хаягаар нэвтрэх "
+      password: 'Нууц үг '
+      remember_me: "Нэвтэрсэн хэвээр байна"
   users:
     after_signup_edit:
       welcome:
-        headline: "You are almost there! Now on to finalize your Wheelmap account:"
-        set_password_for_mobile: "You have successfully registered with OpenStreetMap. Please choose an email address that you would like Wheelmap to use so we can keep you informed about your activities (for example the number of places you have marked). You can access this information on your \"Profile\"."
-        text: "How can we get in touch with you? You can change this information later in your profile."
+        headline: "Та бараг хүрлээ! Одоо та Wheelmap хэрэглэгчийн бүртгэлээ дуусгана уу:"
+        set_password_for_mobile: "Та OpenStreetMap -д амжилттай бүртгэгдлээ. Та  Wheelmap-д өөрийн мэйл хаягийг бүртггүүлснээр бид таны үйл ажиллагааг цаг алдалгүй мэдэгдэж байх болно. (жишээ нь: таны тэмдэглэсэн газрын тоо). Мөн та энэ мэдээллийг өөрийн \"Профайл\" дээрээ хүлээн авах боломжой. "
+        text: "Бид таньтай хэрхэн холбоотой байх вэ? Та энэ мэдээллийг дараа нь өөрийн Профайл дээрээ өөрчлөх боломжтой."
     edit:
       headline:
-        your_images: "Your uploaded images"
+        your_images: "Таны байршуулсан зурагнууд"
   wheelchairstatus:
-    limited: "Partially wheelchair accessible"
-    'no': "Not wheelchair accessible"
-    unknown: "Unknown status"
-    'yes': "Wheelchair accessible"
+    limited: "Хэсэгчилсэн газрууд тэргэнцэрт хүртээмжтэй"
+    'no': "Тэргэнцэрт хүртээмжтэй бус "
+    unknown: "Таниулаагүй өгөгдөл байна "
+    'yes': "Тэргэнцэрт хүртээмжтэй"
   wheelmap:
     footer:
-      a_project_of: "A project by"
-      based_on: "Based on"
-      become_a_supporter: "Become a supporter"
-      main_supporter: "Main supporter"
+      a_project_of: "Төслөөр "
+      based_on: "Суурилсан "
+      become_a_supporter: "Дэмжигч болох "
+      main_supporter: "Үндсэн дэмжигч "
     itunes:
       alt: "AppStore Logo"
-      title: "Download the iPhone App now!"
+      title: "IPhone App яг одоо татаж авах  "
     logo:
-      alt: "Wheelmap Logo - find wheelchair accessible places"
-      title: "Wheelmap - find wheelchair accessible places"
+      alt: "Wheelmap Logo - тэргэнцэрт хүртээмжтэй газруудыг хайх "
+      title: "Wheelmap - тэргэнцэрт хүртээмжтэй газруудыг хайх"
     what_is:
-      fully_accessible: "Entrance without steps, all rooms without steps."
-      limited_accessible: "Entrance has one step with max. height 7cm (3 in), most rooms are without steps."
-      not_accessible: "Entrance has a step or several steps, rooms are not accessible."
-      unknown_accessible: "Help out by marking places!"
+      fully_accessible: "Нэвтрэх орц, гарц гишгүүргүй; бүх өрөө гишгүүргүй"
+      limited_accessible: "Нэвтрэх орц, гарц хамгийн ихдээ ганц шаттай. Өндөр нь 7см (3инч), ихэнх өрөөнүүд гишгүүргүй "
+      not_accessible: "Нэвтрэх орц, гарц гишгүүртэй ба цөөн хэдэн гишгүүртэй, өрөөнүүд хүртээмжтэй бус."
+      unknown_accessible: "Газар тэмдэглэхэд туслах! "
   will_paginate:
-    next_label: "Next &#8594;"
+    next_label: "Дараа &#8594 "
     page_entries_info:
-      multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
-      multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
+      multi_page: "Дэлгэцэнд %{count}-н %{model}-г %{from} - %{to}хоорондох байдлаар харуулж байна"
+      multi_page_html: "Дэлгэцэнд %{model}-г  <b>%{count}</b>-н байдлаар<b>%{from}&nbsp;-&nbsp;%{to}</b> хооронд харуулж байна "
       single_page:
-        one: "Displaying 1 %{model}"
-        other: "Displaying all %{count} %{model}"
-        zero: "No %{model} found"
+        one: "Дэлгэцэнд 1 %{model} харуулж байна "
+        other: "Бүх %{count} %{model} дэлгэцэнд харуулж байна"
+        zero: "%{model} олдсонгүй "
       single_page_html:
-        one: "Displaying <b>1</b> %{model}"
-        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
-        zero: "No %{model} found"
-    page_gap: "&hellip;"
-    previous_label: "&#8592; Previous"
+        one: "Дэлгэцэнд <b>1</b> %{model} харуулж байна "
+        other: "Дэлгэцэнд харуулж байна <b>all&nbsp; %{count}</b>%{model}"
+        zero: "%{model} олдсонгүй"
+    page_gap: "&hellip; "
+    previous_label: "&#8592; Previous "

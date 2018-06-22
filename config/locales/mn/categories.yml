@@ -1,205 +1,204 @@
----
-en:
+mn:
   poi:
     category:
-      accommodation: Accomodation
-      education: Education
-      food: Food
-      government: Government
-      health: Health
-      leisure: Leisure
-      misc: Miscellaneous
-      money_post: "Bank / Post office"
-      public_transfer: "Public transport"
-      shopping: Shopping
-      sport: Sport
-      tourism: Tourism
-      unknown: Unknown
+      accommodation: Байр, сууц
+      education: Боловсрол
+      food: Хоол, хүнс
+      government: 'Засгийн газар '
+      health: Эрүүл мэнд
+      leisure: Чөлөөт цаг
+      misc: Нэмэлт зүйлс
+      money_post: "Банк / Шуудан"
+      public_transfer: "Нийтийн тээвэр"
+      shopping: Дэлгүүр
+      sport: Спорт
+      tourism: Аялал жуулчлал
+      unknown: 'Танигдаагүй '
     name:
       accommodation:
-        beach_resort: "Beach hotel"
-        bed_and_breakfast: "Bed and breakfast"
-        camp_site: "Camp site"
-        caravan_site: "Caravan site"
-        chalet: Chalet
-        dormitory: Dormitory
-        guest_house: "Guest house"
-        hostel: Hostel
-        hotel: Hotel
-        motel: Motel
+        beach_resort: "Далайн эргийн зочид буудал"
+        bed_and_breakfast: "Ор ба өглөөний цай"
+        camp_site: "Майхан"
+        caravan_site: "Чиргүүл "
+        chalet: Дүнзэн байшин
+        dormitory: Олон ортой унтлагын өрөө
+        guest_house: "Зочид буудаллах байшин "
+        hostel: Дэн буудал
+        hotel: Зочид буудал
+        motel: Гэр буудал
       education:
-        college: College
-        driving_school: "Driving school"
-        kindergarten: Kindergarten
-        library: Library
-        museum: Museum
-        school: School
-        university: University
+        college: Коллеж
+        driving_school: "Жолооны курс"
+        kindergarten: Цэцэрлэг
+        library: Номын сан
+        museum: Музей
+        school: Сургууль
+        university: Их сургууль
       food:
-        bar: Bar
-        biergarten: Biergarten
-        cafe: Cafe
-        drinking_water: "Drinking water"
-        fast_food: "Fast Food"
-        ice_cream: "Ice cream parlour"
-        pub: Pub
-        restaurant: Restaurant
+        bar: Баар
+        biergarten: Цэцэрлэгт хүрээлэн
+        cafe: Кафе
+        drinking_water: "Уух ус "
+        fast_food: "Түргэн хоол"
+        ice_cream: "Зайрмаг худалдаалах газар"
+        pub: Уушийн газар
+        restaurant: Зоогийн газар
       government:
-        courthouse: Courthouse
-        embassy: Embassy
-        employment_agency: "Employment agency"
-        government: "Government agency"
-        police: Police
-        public_building: "Public building"
-        townhall: Town hall
+        courthouse: Шүүхийн байр
+        embassy: 'Элчин '
+        employment_agency: "Хөдөлмөр зуучлалын газар"
+        government: "Засгийн газрын агентлаг "
+        police: Цагдаа
+        public_building: "Олон нийтийн байгууламж "
+        townhall: Хотын захиргаа
       health:
-        alternative: "Alternative medicine practitioner"
-        dentist: Dentist
-        doctors: Doctor
-        hearing_aids: "Hearing aid dealer"
-        hospital: Hospital
-        medical_supply: "Medical supplies"
-        occupational_therapist: "Occupational therapist"
-        pharmacy: Pharmacy
-        physiotherapist: Physiotherapist
-        psychotherapist: Psychotherapist
-        social_facility: "Social facility"
-        speech_therapist: "Speech therapist"
-        veterinary: Veterinary
+        alternative: "Уламжлалт эмчилгээ"
+        dentist: Шүдний эмч
+        doctors: 'Эмч '
+        hearing_aids: "Сонсголын туслах хэрэглэгдэхүүн худалдаалагч "
+        hospital: Эмнэлэг
+        medical_supply: "Эм ханган нийлүүлэгч "
+        occupational_therapist: "Хөдөлгөөн засалч "
+        pharmacy: Эмийн сан
+        physiotherapist: 'Физик эмчилгээний эмч '
+        psychotherapist: 'Сэтгэлзүйч '
+        social_facility: "Нийгмийн үйлчилгээний газар"
+        speech_therapist: "Яриа засалч "
+        veterinary: 'Амьтдын эмч '
       leisure:
-        arena: Arena
-        brothel: Brothel
-        casino: Casino
-        cinema: Cinema
-        community_centre: "Community centre"
-        gallery: Gallery
-        massage: "Massage spa"
-        nightclub: Nightclub
-        playground: Playground
-        sauna: Sauna
-        stripclub: Stripclub
-        tattoo: "Tattoo shop"
-        theatre: Theatre
-        zoo: Zoo
+        arena: 'Төв цэнгэлдэх '
+        brothel: 'Эмсийн хүрээлэн '
+        casino: Казино
+        cinema: 'Кино театр '
+        community_centre: "Олон нийтийн төв "
+        gallery: 'Үзэсгэлэн '
+        massage: "Алжаал тайлах газар"
+        nightclub: Шөнийн цэнгээний газар
+        playground: Тоглоомын талбай
+        sauna: Саун
+        stripclub: Тайчигч клуб
+        tattoo: "Шивээсний дэлгүүр"
+        theatre: Театр
+        zoo: Амьтны хүрээлэн
       misc:
-        association: Association
-        company: "Company (Office)"
-        estate_agent: "Real estate agent"
-        insurance: Insurance
-        lawyer: Lawyer
-        ngo: "Non-government organisation"
-        place_of_worship: "Place of worship"
-        political_party: "Political party office"
-        toilets: Toilets
+        association: Холбоо
+        company: "Хувийн хэвшил (Office)"
+        estate_agent: "Үл хөдлөх хөрөнгө зуучын газар"
+        insurance: Даатгал
+        lawyer: Хуульч
+        ngo: "Төрийн Бус Байгууллага"
+        place_of_worship: "Мөргөлийн газар"
+        political_party: "Улс төрийн намын байр"
+        toilets: Аруин цэврийн өрөө
       money_post:
-        atm: ATM
-        bank: Bank
-        bureau_de_change: "Bureau de change"
-        post_box: "Post box"
-        post_office: "Post office"
+        atm: АТМ
+        bank: Банк
+        bureau_de_change: "Валют арилжааны газар "
+        post_box: "Шуудангийн хайрцаг"
+        post_office: "Шуудан "
       public_transfer:
-        aerodrome: Airport
-        bicycle_parking: "Bicycle parking"
-        bicycle_rental: "Bicycle rental"
-        boatyard: Boat yard
-        bus_station: "Bus station"
-        bus_stop: "Bus stop"
-        cable_car: "Cable car"
-        car_rental: "Car rental"
-        car_sharing: "Car sharing"
-        chair_lift: "Chair lift"
-        ferry: Ferry
-        ferry_terminal: "Ferry terminal"
-        fuel: "Gas station"
-        halt: Halt
-        light_rail: "Light rail"
-        parking: Parking
-        parking_aisle: "Parking aisle"
-        platform: Platform
-        station: "Train station"
-        subway_entrance: "Subway entrance"
-        terminal: "Airport terminal"
-        tram_stop: "Tram stop"
+        aerodrome: Нисэх онгоцны буудал
+        bicycle_parking: "Дугуйн зогсоол"
+        bicycle_rental: "Дугуй түрээсийн газар"
+        boatyard: Усан онгоцны зогсоол
+        bus_station: "Автобусны буудал"
+        bus_stop: "Автобусны зогсоол"
+        cable_car: "Тралейбус"
+        car_rental: "Машин түрээсийн газар"
+        car_sharing: "Албан бус такси үйлчилгээ"
+        chair_lift: "Өргөгч сандал "
+        ferry: Сүйх тэрэг
+        ferry_terminal: "Сүйх тэрэгний зогсоол"
+        fuel: "Түлш түгээгүүрийн газар"
+        halt: Зогсоол
+        light_rail: "Гэрэлт зам "
+        parking: Машины зогсоол
+        parking_aisle: "Онгоцны буудлын зогсоол"
+        platform: Платформ
+        station: "Галт тэрэгний буудал"
+        subway_entrance: "Метроны нэвтрэх гарц "
+        terminal: "Нисэх онгоцны тавцан "
+        tram_stop: "Трамвайн зогсоол"
       shopping:
-        alcohol: Liquor
-        antiques: Antiques
-        art: "Gallery shop"
-        bakery: Bakery
-        beauty: "Beauty salon"
-        beverages: Beverages
-        bicycle: "Bike shop"
-        books: Books
-        butcher: Butcher
-        car_repair: "Car repair"
-        car_shop: "Car shop"
-        chemist: Chemist / Drugstore
-        clothes: Clothes
-        computer: Computer
-        confectionery: "Candy store"
-        convenience: Convenience
-        copyshop: "Copy shop"
-        deli: Delicatessen
-        department_store: "Department store"
-        doityourself: "Do it yourself"
-        dry_cleaning: "Dry cleaning"
-        electronics: Electronics
-        erotic: "Sex shop"
-        fabric: "Fabric shop"
-        farm_shop: "Farm shop"
-        florist: Florist
-        funeral_directors: "Funeral home"
-        furniture: Furniture
-        garden_centre: "Garden centre"
-        gift: "Gift shop"
-        greengrocer: Greengrocer
-        hairdresser: Hairdresser
-        hardware: Hardware
-        interior_decoration: "Interior design shop"
-        jewelry: Jewelry
-        kiosk: Kiosk
-        laundry: Laundry
-        mall: "Shopping centre"
-        mobile_phone: "Mobile phone shop"
-        music: "Record store"
-        musical_instrument: "Musical instrument shop"
-        newsagent: "News agent"
-        optician: Optician
-        organic: "Organic shop"
-        outdoor: "Outdoor supply"
-        pet: "Pet shop"
-        photo: Photo
-        second_hand: "Second hand"
-        shoes: Shoes
-        sports: Sports
-        stationery: Stationery
-        supermarket: Supermarket
-        tailor: Tailor
-        tea: "Tea supply"
-        tobacco: "Tobacco shop"
-        toys: Toys
-        travel_agency: "Travel agency"
-        variety_store: "Discount store"
-        video: "Video rental store"
+        alcohol: 'Архи худалдаалах цэг '
+        antiques: 'Эртний эдлэлийн дэлгүүр '
+        art: "Галлирей дэлгүүр"
+        bakery: 'Бэйкери '
+        beauty: "Гоо сайхны салон "
+        beverages: 'Ундаа '
+        bicycle: "Моторт дугуйн дэлгүүр"
+        books: Номын худалдаа
+        butcher: Мах худалдаалах цэг
+        car_repair: "Машин засварын газар"
+        car_shop: "Машин худалдааны газар"
+        chemist: 'Эмийн сан '
+        clothes: Хувцас
+        computer: 'Компьютер '
+        confectionery: "Чихрийн дэлгүүр"
+        convenience: Түргэн үйлчилгээний цэг
+        copyshop: "Канон, принтэр "
+        deli: 'Мухлаг '
+        department_store: "Их дэлгүүр "
+        doityourself: "Өөрөө өөртөө үйлчилэх цэг"
+        dry_cleaning: "Хуурай хими цэвэрлэгээ"
+        electronics: 'Электрон бараа '
+        erotic: "Секс хэрэгсэлийн дэлгүүр"
+        fabric: "Бөс даавууны дэлгүүр "
+        farm_shop: "Хөдөө аж ахуйн тоног төхөөрөмж худалдааны газар"
+        florist: 'Цэцгийн худалдаа '
+        funeral_directors: "Оршуулгын газар "
+        furniture: 'Тавилгын худалдаа '
+        garden_centre: "Цэцэрлэгт хүрээлэн "
+        gift: "Бэлэг дурсгалын дэлгүүр "
+        greengrocer: 'Жимс ногооны худалдаа '
+        hairdresser: 'Үсчин '
+        hardware: 'Компьютерийн сэлбэг худалдаа '
+        interior_decoration: "Дотоод засал чимэглэлийн дэлгүүр "
+        jewelry: 'Үнэт эдлэлийн дэлгүүр '
+        kiosk: Нийтийн хоолны газар
+        laundry: 'Хувцас цэвэрлэгээний үйлчилгээ '
+        mall: "Худалдааны төв "
+        mobile_phone: "Гар утасны дэлгүүр "
+        music: "Дуу бичлэг худалдаалах дэлгүүр"
+        musical_instrument: "Хөгжмийн зэмсгийн дэлгүүр "
+        newsagent: "Мэдээний агентлаг "
+        optician: 'Хараазүйн эмч '
+        organic: "Органик бүтээгдэхүүний дэлгүүр "
+        outdoor: "Аялал зугаалгын хэрэгсэл нийлүүлэгч "
+        pet: "Амьтны дэлгүүр "
+        photo: 'Зураг '
+        second_hand: "Гар дамжсан худалдаа"
+        shoes: 'Гутал '
+        sports: Спорт
+        stationery: 'Бичиг хэргийн дэлгүүр '
+        supermarket: Супермаркет
+        tailor: 'Оёдолчин '
+        tea: "Цай нийлүүлэгч"
+        tobacco: "Тамхины дэлгүүр"
+        toys: Тоглоом
+        travel_agency: "Аялалын агентлаг"
+        variety_store: "Хямдралтай худалдааны дэлгүүр"
+        video: "Видео түрээсийн газар"
       sport:
-        pitch: "Sports field"
-        sports_centre: "Sports centre"
-        stadium: Stadium
-        swimming: Swimming
-        swimming_pool: "Swimming pool"
+        pitch: "Спортын талбай "
+        sports_centre: "Спортын төв"
+        stadium: 'Стадион '
+        swimming: 'Усан спорт '
+        swimming_pool: "Усан сан "
       tourism:
-        archaeological_site: "Archaeological site"
-        arts_centre: "Arts centre"
-        artwork: Artwork
-        attraction: Attraction
-        battlefield: Battlefield
-        beach: Beach
-        beacon: Lighthouse
-        castle: Castle
-        cave_entrance: "Cave entrance"
-        information: "Tourist information"
-        memorial: Memorial
-        theme_park: "Theme park"
-        tower: Tower
-        viewpoint: "View point"
+        archaeological_site: "Археологийн бүс "
+        arts_centre: "Урлагын төв "
+        artwork: Урлагын бүтээл
+        attraction: Хүмүүсийн очих дуртай газар
+        battlefield: 'Дайны талбар '
+        beach: Далайн эрэг
+        beacon: Гэрэлт цамхаг
+        castle: 'Ордон '
+        cave_entrance: "Агуйн ам "
+        information: "Жуулчдын мэдээлэл"
+        memorial: Дурсгалт газар
+        theme_park: "Соёл амралтын цэцэрлэгт хүрээлэн"
+        tower: Цамхаг
+        viewpoint: "Алсыг харах цэг"
       unknown:
-        unknown: Unknown
+        unknown: Тодорхойгүй газар
