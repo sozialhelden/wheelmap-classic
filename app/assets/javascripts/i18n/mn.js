@@ -1,10 +1,10 @@
 I18n.translations || (I18n.translations = {});
 I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
   "actions": {
-    "cancel": "Cancel",
-    "next": "Next",
-    "save": "Save",
-    "send": "Send"
+    "cancel": "Цуцлах",
+    "next": "Дараагийнх ",
+    "save": "Хадгалах",
+    "send": "Илгээх"
   },
   "active_admin": {
     "access_denied": {
@@ -183,16 +183,16 @@ I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
   "activerecord": {
     "attributes": {
       "poi": {
-        "address": "Address",
-        "address_city": "City",
-        "address_housenumber": "House number",
-        "address_postcode": "Postcode",
-        "address_street": "Street",
-        "name": "Name",
-        "note": "Note",
-        "phone": "Phone",
-        "type": "Type",
-        "website": "Website"
+        "address": "Хаяг",
+        "address_city": "Хот",
+        "address_housenumber": "Гэрийн хаяг",
+        "address_postcode": "Шуудангийн хаяг",
+        "address_street": "Гудамж",
+        "name": "Нэр",
+        "note": "Тэмдэглэл",
+        "phone": "Утасны дугаар",
+        "type": "Төрөл",
+        "website": "Вэбсайт"
       },
       "user": {
         "first_name": "Given name",
@@ -297,37 +297,37 @@ I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
   },
   "application": {
     "require_no_user": {
-      "notice": "You’re already logged in…"
+      "notice": "Та нэвтэрсэн байна..."
     },
     "require_user": {
-      "notice": "You must be logged in to see this page."
+      "notice": "Та энэ хуудсыг харахын тулд заавал нэвтэрсэн байх ёстой."
     }
   },
   "breadcrumbs": {
     "node": {
-      "create": "Add a new place",
-      "edit": "Edit place"
+      "create": "Шинэ газар нэмэх ",
+      "edit": "Газрыг засварлах"
     },
-    "root": "Wheelmap"
+    "root": "Тэргэнцэртэй иргэд зорчих газрын зураглал"
   },
   "common": {
-    "close": "close",
-    "skip": "skip"
+    "close": "Ойрхон",
+    "skip": "Алгасах"
   },
   "community_support_form": {
     "new": {
       "form": {
-        "describe": "Please write to us in English or German.",
-        "flash_after_submit": "Thank you for contacting us. Our support team will get back to you as soon as possible.",
-        "header_text_html": "Please check the <a href=\"https://news.wheelmap.org/en/faq/\">frequently asked questions</a> for help first. If the solution to your problem is not there, please answer the following questions so we can fix it.",
-        "note": "Note that Wheelmap is an open-source project run by a non-profit organization and we have limited resources for the app development.",
+        "describe": "Англи эсвэл Герман хэлээр бичнэ үү.",
+        "flash_after_submit": "Бидэнтэй холбогдсонд баярлалаа. Бид таньтай удахгүй эргэн холбогдох болно. ",
+        "header_text_html": "Эхлээд та асуултынхаа хариултыг <a href=\"https://news.wheelmap.org/en/faq/\">Түгээмэл Асуулт Хариулт</a> хэсгээс хайна уу. Хэрвээ таны асуудлыг шийдэх шийдэл олдоогүй бол, та дараах асуултанд хариулна уу. ",
+        "note": "Wheelmap бол ашгийн бус байгууллагын нээлттэй эх үүсвэртэй төсөл бөгөөд аппликэйшн хөгжүүлэгчдэд хязгаарлагдмал нөөцтэй болно. ",
         "questions": {
-          "a": "What did you do?",
-          "b": "What did you expect would happen?",
-          "c": "What happened instead?"
+          "a": "Та юу хийсэн бэ?",
+          "b": "Та юу болно хэмээн хүлээж байсан бэ?",
+          "c": "Үүний оронд юу болсон бэ?"
         },
-        "submit_button": "Submit",
-        "title": "Report a problem"
+        "submit_button": "Хүргүүлэх ",
+        "title": "Асуудлыг мэдэгдэх "
       }
     }
   },
@@ -450,349 +450,349 @@ I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
   },
   "devise": {
     "confirmations": {
-      "confirmed": "Your email address was successfully confirmed.",
-      "link": "You didn't receive confirmation instructions?",
-      "send_instructions": "In a few minutes you will receive an email with a link to confirm your email address.",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
+      "confirmed": "Таны цахим хаяг амжилттай баталгаажлаа. ",
+      "link": "Та баталгаажуулах зааварчилгааг хүлээж аваагүй юу?",
+      "send_instructions": "Таны цахим хаягийг баталгуужуулах холбоос бүхий имэйл -ийг та хэдэн хормын дотор хүлээж авах болно.",
+      "send_paranoid_instructions": "Хэрвээ танд хэрэглэгчийн бүртгэл байгаа бол, таны хэрэглэгчийн бүртгэлийг хэрхэн баталгаажуулах зааварчилгаа бүхий имэйл -ийг хэдэн хормын дотор хүлээж авах болно. "
     },
     "destroy": {
-      "confirm": "Are you sure?",
-      "headline": "Delete account",
-      "link": "Delete now"
+      "confirm": "Та итгэлтэй байн уу?",
+      "headline": "Хэрэглэгчийн бүртгэлийг устгах ",
+      "link": "Яг одоо устгах"
     },
     "edit": {
       "form": {
         "labels": {
-          "current_password": "Current password <i>(we need it to confirm your changes)</i>",
-          "email": "Email",
-          "password": "Password <i>(leave empty if you don\\'t want to change it)</i>",
-          "password_confirmation": "Repeat password"
+          "current_password": "Одоо ашиглагдаж буй нууц үг <i>(Энэ нь таны өөрчлөлтийг баталгаажуулахад бидэнд хэрэгтэй)</i>",
+          "email": "Цахим шуудан",
+          "password": "Нууц үг <i>(Хэрвээ та үүнийг өөрчлөхийг хүсэхгүй байгаа бол хоосон орхино уу)</i>",
+          "password_confirmation": "Нууц үгийг давтах "
         },
-        "submit": "Save changes"
+        "submit": "Өөрчлөлтийг хадгалах "
       },
-      "headline": "Edit account"
+      "headline": "Хэрэглэгчийн бүртгэлийг засварлах "
     },
     "failure": {
-      "already_authenticated": "You are already signed in.",
-      "inactive": "Your account has not been activated yet.",
-      "invalid": "Invalid email or password.",
-      "invalid_token": "Invalid authentication token",
+      "already_authenticated": "Та нэвтэрсэн байна.",
+      "inactive": "Таны хэрэглэгчийн бүртгэл хараахан идэвхжээгүй байна.",
+      "invalid": "Цахим хаяг эсвэл нууц үг хүчин төгөлдөр биш байна. ",
+      "invalid_token": "Хүчин төгөлдөр бус нэвтрэлт бүртгэгдсэн байна ",
       "last_attempt": "You have one more attempt before your account will be locked.",
-      "locked": "Your account is locked",
+      "locked": "Таны хэрэглэгчийн бүртгэл түгжигдсэн байна",
       "not_found_in_database": "Invalid email or password.",
-      "timeout": "Your session has expired, please sign in again to continue.",
-      "unauthenticated": "You need to sign in or sign up before continuing",
-      "unconfirmed": "You need to confirm your account before continuing."
+      "timeout": "Таны оролдлого хэтэрсэн байна, үргэлжлүүлэхийн тулд нэвтрэн орно уу. ",
+      "unauthenticated": "Та үргэлжлүүлхийн өмнө нэвтрэх эсвэл бүртгүүлэх хэрэгтэй",
+      "unconfirmed": "Үргэлжлүүлэхийн өмнө та өөрийн хэрэглэгчийн бүртгэлээ баталгаажуулах шаардлагатай:."
     },
     "mailer": {
       "confirmation_instructions": {
-        "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
-        "subject": "One more step to activate your account"
+        "landing_page": "Таны цахим хаяг руу явуулсан холбоос дээр дарна уу. Хэрвээ та биднээс ямар нэгэн имэйл хүлээж аваагүй бол, та өөрийн spam хавтасыг эхлэн шалгана уу. Хэрвээ тэнд байхгүй бол нэвтрэх хуудас руу буцаж дахин нэвтрэх оролдлого хийнэ үү. ",
+        "subject": "Та хэрэглэгчийн бүртгэлээ идэвхжүүлэхийн тулд дахин нэг алхам хийнэ үү"
       },
       "reset_password_instructions": {
-        "subject": "Reset password instructions"
+        "subject": "Нууц үгийг дахин шинэчилэх заавар "
       },
       "unlock_instructions": {
-        "subject": "Unlock instructions"
+        "subject": "Заавруудыг чөлөөлөх "
       }
     },
-    "mandatory": "* Required",
+    "mandatory": "*Шаардлагатай ",
     "omniauth_callbacks": {
-      "failure": "Authorization with %{kind} failed. Error: \"%{reason}\". ",
-      "permission_missing": "You did not grant the required permission.",
-      "success": "Successfully logged in with %{kind}."
+      "failure": "Эрх үүсгэх үйл явц дараах төрлөөр %{kind} бүтэлгүйтлээ. Алдаа: %{reason}",
+      "permission_missing": "Та шаардлагатай зөвшөөрлүүдийг аваагүй байна.",
+      "success": "Та амжилттай нэвтэрлээ. %{kind}"
     },
     "password_recovery": {
       "form": {
         "labels": {
-          "email": "Email"
+          "email": "Цахим шуудан"
         },
-        "submit": "Reset password"
+        "submit": "Нууц үгийг шинэчилэх "
       },
-      "headline": "Forgot password?"
+      "headline": "Та нууц үгээ мартсан уу?"
     },
     "password_reset": {
       "email": {
-        "comment": "If you did not request a password reset, just ignore this email.<br/>Your password won\\'t be changed unless you click on the link above and set a new password.",
-        "headline": "Welcome %{email}",
-        "link": "Change my password",
-        "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
+        "comment": "Хэрвээ та нууц үгээ шинэчилэх хүсэлт илгээгээгүй бол, энэ имэйл -ийг хэрэгсэхгүй байж болно. <br/>Дээрх холбоосоор нэвтрэн нууц үгээ шинэчилэх хүртэл таны одоогийн хэрэглэж байгаа нууц үг өөрчлөгдөхгүй.",
+        "headline": "Тавтай морил %{email}",
+        "link": "Миний нууц үгийг өөрчил ",
+        "text": "Бид таны нууц үгийг өөрчлөх хүсэлт хүлээж авсан. Хэрвээ та хүсэлт илгээсэн бол, холбоосоор нэвтэрнэ үү - үгүй бол үүнийг үл хэрэгсэнэ үү!"
       },
       "form": {
         "labels": {
-          "password": "New password",
-          "password_confirmation": "Repeat password"
+          "password": "Шинэ нууц үг",
+          "password_confirmation": "Нууц үгийг давтах "
         },
-        "submit": "Reset password"
+        "submit": "Нууц үгийг шинэчилэх   "
       },
-      "headline": "Reset password"
+      "headline": "Нууц үгийг шинэчилэх  "
     },
     "passwords": {
-      "link": "Forgot password?",
+      "link": "Та нууц үгээ мартсан уу? ",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
-      "send_instructions": "You will receive an email with instructions on how to reset your password in a few minutes",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
-      "updated": "Your password was changed successfully, you are now logged in",
-      "updated_not_active": "Your password was changed successfully"
+      "send_instructions": "Та хэдхэн хормын дотор нууц үгээ шинэчилэх зааварчилгаа бүхий имэйл -ийг хүлээж авах болно. ",
+      "send_paranoid_instructions": "Хэрвээ та хэрэглэгчийн бүртгэлтэй бол, хэдхэн хормын дотор нууц үгээ шинэчилэх зааварчилгаа бүхий имэйл -ийг хүлээж авах болно. ",
+      "updated": "Таны нууц үг амжилттай өөрчлөгдлөө, одоо та нэвтэрч болно",
+      "updated_not_active": "Таны нууц үг амжилттай өөрчлөгдлөө"
     },
     "registrations": {
-      "destroyed": "Bye! Your account was successfully cancelled. We hope to see you again soon.",
-      "inactive_signed_up": "You have signed up successfully, but we could not log you in. Reason: \"%{reason}\"",
-      "link": "Sign up",
+      "destroyed": "Баяртай, таны хэрэглэгчийн бүртгэл амжилттай цуцлагдлаа. Бид таньтай дахин уулзана гэдэгт найдаж байна. ",
+      "inactive_signed_up": "Таны бүртгэл амжилттай хийгдлээ, гэвч бид таныг нэвтрүүлж чадахгүй. Шалтгаан нь: %{reason}",
+      "link": "Бүртгүүлэх ",
       "reasons": {
-        "inactive": "inactive",
-        "locked": "locked",
-        "unconfirmed": "unconfirmed"
+        "inactive": "Идэвхгүй ",
+        "locked": "Түгжигдсэн ",
+        "unconfirmed": "Баталгаажуулаагүй"
       },
-      "signed_up": "You have signed up successfully. A you have been sent a confirmation email.",
+      "signed_up": "Та амжилттай нэвтэрлээ. Баталгаажуулах имэйл илгээгдсэн байна.",
       "signed_up_but_inactive": "You have signed up successfully. However, we could not sign you in because your account is not yet activated.",
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
       "update_needs_confirmation": "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address.",
-      "updated": "You have updated your account successfully."
+      "updated": "Та хэрэглэгчийн бүртгэлээ амжилттай шинэчлэлээ. "
     },
     "sessions": {
-      "inactive": "Your account has not been activated yet",
-      "invalid": "Invalid email or password.",
-      "invalid_token": "Invalid authentication token",
-      "link": "Sign in",
-      "locked": "Your account is locked",
+      "inactive": "Таны хэрэглэгчийн бүртгэл хараахан идэвжээгүй байна",
+      "invalid": "Цахим шуудангийн хаяг эсвэл нууц үг хүчин төгөлдөр биш байна.  ",
+      "invalid_token": "Хүчин төгөлдөр бус нэвтрэлт бүртгэгдсэн байна ",
+      "link": "Нэвтрэх ",
+      "locked": "Таны хэрэглэгчийн бүртгэл түгжигдсэн байна",
       "new": {
-        "no_osm_account": "No OpenStreetMap account?",
-        "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
-        "promo_text_thank_you": "Thank you very much for your support!",
-        "sign_in_with": "Log in with %{kind}",
-        "sign_up_with_osm": "Register now.",
-        "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
+        "no_osm_account": "OpenStreetMap хэрэглэгчийн бүртгэл биш байна. ",
+        "osm_promo_text": "Wheelmap нь OpenStreetMap (OSM) -ийн geodata дээр суурилсан. OpenStreetMap' нь үнэгүй дэлхийн газарзүйн зураглал бөгөөд хүмүүсийн сайн дурын оролцоогоор бүтээгдсэн юм. Энэ нь Википедиа шиг ажилладаг гэсэн үг. Та OpenStreetMap -д хэрэглэгчийн бүртгэл үүсгэж нэвтрэн орсноор шинээр газар тэмдэглэх болон засварлах боломжтой болох юм. ",
+        "promo_text_thank_you": "Таны дэмжлэгт маш их баярлалаа!",
+        "sign_in_with": "Нэвтрэх %{kind}",
+        "sign_up_with_osm": "Бүртгүүлэх ",
+        "wheelmap_promo_text": "Та тэргэнцэрт хүртээмжтэй газруудын тухай мэдээлэлтэй болсноор тулгуур эрхтний хөгжлийн бэрхшээлтэй хүмүүст өдөр тутмын амьдралаа илүү сайнаар төлөвлөхөд нь туслах болно. Цаашлаад, энэ нь OpenStreetMap сайтыг илүү дэлгэрэнгүй мэдээллээр хангахад тус болох юм. "
       },
-      "signed_in": "Logged in successfully",
-      "signed_out": "You have signed out successfully",
-      "timeout": "Your session has expired, please sign in again to continue.",
-      "unauthenticated": "You need to sign in or sign up before continuing",
-      "unconfirmed": "You need to confirm your account before continuing"
+      "signed_in": "Амжилттай нэвтэрлээ. ",
+      "signed_out": "Амжилттай гарлаа",
+      "timeout": "Таны оролдлого хэтэрсэн байна, үргэлжлүүлэхийн тулд нэвтрэн орно уу. ",
+      "unauthenticated": "Та үргэлжлүүлхийн өмнө нэвтрэх эсвэл бүртгүүлэх шаардлагатай",
+      "unconfirmed": "Та үргэлжлүүлхийн өмнө өөрийн хэрэглэгчийн бүртгэлийг баталгаажуулах хэрэгтэй"
     },
     "sign_in": {
       "form": {
         "labels": {
-          "email": "Email",
-          "password": "Password",
-          "remember_me": "Stay logged in?"
+          "email": "Цахим шуудан",
+          "password": "Нууц үг",
+          "remember_me": "Нэвтэрсэн хэвээр үлдэх үү? "
         },
-        "submit": "Log in"
+        "submit": "Нэвтрэх"
       },
-      "headline": "Log in"
+      "headline": "Нэвтрэх"
     },
     "sign_out": {
-      "headline": "Log out"
+      "headline": "Гарах"
     },
     "sign_up": {
       "email": {
-        "confirm_my_account": "Confirm my account",
-        "please_confirm": "You can confirm your account through the link below:",
-        "welcome": "Welcome %{email}!"
+        "confirm_my_account": "Миний хэрэглэгчийн бүртгэлийг баталгаажуул ",
+        "please_confirm": "Та доорх холбоосоор нэвтэрч хэрэглэгчийн бүртгэлээ баталгаажуулна: ",
+        "welcome": "Тавтай морил %{email} !"
       },
       "form": {
         "labels": {
-          "email": "Email",
-          "password": "Password",
-          "password_confirmation": "Repeat password",
-          "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
+          "email": "Цахим хаяг ",
+          "password": "Нууц үг",
+          "password_confirmation": "Нууц үгийг давтах ",
+          "wants_newsletter": "Тийм, Wheelmap дээр хийгдэж байгаа хөгжүүлэлтүүдийг хадгал - гэхдээ сард ганц удаа ба түүнээс ихгүй байна."
         },
-        "submit": "Sign up"
+        "submit": "Бүртгүүлэх "
       },
-      "headline": "Sign up"
+      "headline": "Бүртгүүлэх "
     },
     "unlocks": {
-      "link": "You didn't receive unlock instructions?",
-      "send_instructions": "You will receive an email in a few minutes with instructions on how to unlock your account",
-      "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
-      "unlocked": "Your account was successfully unlocked. You are now signed in."
+      "link": "Та түгжээг тайлах зааварчилгааг хүлээж аваагүй юу?",
+      "send_instructions": "Та өөрийн хэрэглэгчийн бүртгэлийн түгжээг тайлах зааварчилгаа бүхий и-мэйлийг хэдэн хормын дотор хүлээж авах болно.",
+      "send_paranoid_instructions": "Хэрвээ та хэрэглэгчийн бүртгэлтэй бол, та өөрийн хэрэглэгчийн бүртгэлийн түгжээг тайлах зааварчилгаа бүхий и-мэйлийг хэдэн хормын дотор хүлээж авах болно. ",
+      "unlocked": "Таны хэрэглэгчийн бүртгэлийн түгжээ амжилттай гарлаа. Та одоо нэвтэрсэн байна ."
     }
   },
   "errors": {
     "dynamic_format": "%{message}",
     "format": "%{attribute} %{message}",
     "messages": {
-      "accepted": "must be accepted",
-      "already_confirmed": "has already been confirmed",
-      "blank": "must be filled in",
+      "accepted": "Хүлээн зөвшөөрсөн байх ёстой",
+      "already_confirmed": "Баталгаажсан байна",
+      "blank": "  Бөглөсөн байх ёстой ",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
       "carrierwave_processing_error": "failed to be processed",
-      "confirmation": "doesn't match confirmation",
+      "confirmation": "Өгөгдөл тохирсонгүй ",
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
-      "empty": "must be filled in",
-      "equal_to": "must be exactly %{count}",
-      "even": "must be an even number",
-      "exclusion": "is reserved",
-      "expired": "expired, please request a new one",
+      "empty": "  Бөглөсөн байх ёстой ",
+      "equal_to": "Таарч байх ёстой %{count}",
+      "even": "Тоо байх ёстой ",
+      "exclusion": "Нөөцлөгдсөн ",
+      "expired": "Хугацаа дууссан байна, шинээр хүсэлтээ илгээнэ үү ",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
       "extension_white_list_error": "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}",
-      "greater_than": "must be greater than %{count}",
-      "greater_than_or_equal_to": "must be greater than or equal to %{count}",
-      "inclusion": "not a valid value",
-      "invalid": "not valid",
-      "less_than": "must be less than %{count}",
-      "less_than_or_equal_to": "must be less than or equal to %{count}",
+      "greater_than": "Их байх ёстой %{count}",
+      "greater_than_or_equal_to": "Тэнцүү эсвэл их байх ёстой %{count}",
+      "inclusion": "Хүчин төгөлдөр бус үнэлэмж байна",
+      "invalid": "Хүчин төгөлдөр бус байна",
+      "less_than": "Бага байх ёстой %{count}",
+      "less_than_or_equal_to": "Тэнцүү эсвэл бага байх ёстой %{count}",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
-      "not_a_number": "is not a number",
-      "not_an_integer": "must be an integer",
-      "not_found": "was not found",
-      "not_locked": "was not locked",
+      "not_a_number": "Тоон утга биш байна",
+      "not_an_integer": "Бүхэл тоо байх ёстой ",
+      "not_found": "Илэрцгүй байна",
+      "not_locked": "Түгжигдээгүй байна",
       "not_saved": {
-        "one": "An error prohibited to save a %{resource}:",
-        "other": "%{count} errors prohibited to save a %{resource}:"
+        "one": "хадгалахыг хориглоно %{resource}:",
+        "other": "%{count} хадгалахыг хориглоно %{resource}:"
       },
-      "odd": "must be an odd number",
+      "odd": "Сондгой тоо байх ёстой ",
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
-      "taken": "has already been taken",
-      "too_long": "is too long (not more than %{count} characters)",
-      "too_short": "is too short (not less than %{count} characters)",
-      "wrong_length": "is the wrong length (should be %{count} characters)"
+      "taken": "Өгөгдсөн байна ",
+      "too_long": "Энэ хэтэрхий урт байна (%{count} үүнээс хэтрүүлэхгүй байх)",
+      "too_short": "Энэ хэтэрхий богино байна (%{count} үүнээс багадуулахгүй байх)",
+      "wrong_length": "Уртын хэмжээ буруу байна (%{count} өгөгдөл байх хэрэгтэй)"
     },
     "models": {
       "node": {
         "website": {
-          "invalid": "Website address is not valid."
+          "invalid": "Вэбсайт хаяг хүчин төгөлдөр биш байна "
         }
       }
     },
     "template": {
-      "body": "There were problems with the following fields:",
+      "body": "Дараах талбаруудад асуудал гарсан байна",
       "header": {
-        "one": "1 error prohibited this %{model} from being saved",
-        "other": "%{count} errors prohibited this %{model} from being saved"
+        "one": "1 адлаа нь %{model} хадгалахад саад болж байна",
+        "other": "%{count} алдаанууд нь %{model} үүнийг хадгалахад  саад болж байна "
       }
     }
   },
   "faq": {
     "answers": {
-      "0": "You can always change the marking of a place yourself. Just choose the right marking and \"Save\" - done!",
-      "1": "As a logged in user you can add / correct all the details of a place. Click on \"Edit\" and correct or add information in the mask.",
-      "2": "You can add further information (e.g. \"This place has a mobile ramp\") in the comment section. Click on \"Edit\" and \"Add comment\"."
+      "0": "Та өөрийн тэмдэглэсэн газраа өөрөө өөрчилөх боломжтой. Зөвхөн сонголтоо зөв хийж хадгална уу !",
+      "1": "Та хэрэглэгчийн эрхээр нэвтрэн орж өөрийн тэмтэглэсэн газар болон түүнтэй холбоотой бүх нарийвчилсан өөрчлөлтүүдийг хийх боломжтой. \"Засварлах\" гэсэн цэсийг сонгон нэмэлт мэдээлэл болон засварлах мэдээллээ оруулна уу.",
+      "2": "Та санал сэтгэгдлийн хэсэгт нэмэлт мэдээлэл  (жишээ нь: \"Энэ газар зөөврийн налуу замтай\") оруулж болно. \"Засварлах\" болон \"Сэтгэгдэл нэмэх\" хэсгийг сонгоно уу. "
     },
-    "headline": "Is there a problem with this place?",
+    "headline": "Энэ газартай холбоотой ямар нэгэн асуудал байна уу?",
     "questions": {
-      "0": "The marking is wrong.",
-      "1": "The details of the place are incorrect or missing.",
-      "2": "I have more information about this place."
+      "0": "Тэмдэгэгээ буруу байна. ",
+      "1": "Энэ газрын талаарх дэлгэрэнгүй мэдээлэл буруу эсвэл дутуу байна.",
+      "2": "Надад энэ газрын талаар дэлгэрэнгүй мэдээлэл байна. "
     }
   },
   "flash": {
     "actions": {
       "create": {
-        "notice": "%{resource_name} was successfully created"
+        "notice": "%{resource_name} амжилттай үүсгэлээ"
       },
       "destroy": {
-        "alert": "%{resource_name} could not be removed",
-        "notice": "%{resource_name} was successfully deleted"
+        "alert": "%{resource_name} арилгаж чадахгүй байна",
+        "notice": "%{resource_name} амжилттай устгагдлаа"
       },
       "update": {
-        "notice": "%{resource_name} was successfully updated"
+        "notice": "%{resource_name} амжилттай шинэчлэгдлээ"
       }
     },
     "photos": {
       "destroy": {
-        "notice": "Image was successfully deleted"
+        "notice": "Зураг амжилттай устгагдсан байна"
       }
     }
   },
   "form": {
-    "show_fully_accessible_places": "Wheelchair accessible",
-    "show_limited_accessible_places": "Partially wheelchair accessible",
-    "show_places_without_status": "Unknown status",
-    "show_unaccessible_places": "Not wheelchair accessible"
+    "show_fully_accessible_places": "Тэргэнцэрт хүртээмжтэй",
+    "show_limited_accessible_places": "Хэсэгчилсэн газрууд тэргэнцэрт хүртээмжтэй",
+    "show_places_without_status": "Таниулаагүй өгөгдөл байна ",
+    "show_unaccessible_places": "Тэргэнцэрт хүртээмжтэй бус "
   },
   "formtastic": {
     "hints": {
-      "email": "We treat your address confidentially. We promise not to send you spam!",
-      "lat": "Move the marker on the map to the correct position",
-      "osm_username": "Not a member yet? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>",
-      "password": "(leave empty if you don't want to change it)",
-      "phone": "For example: +49 30 12345678",
-      "website": "For example: http://www.example.com"
+      "email": "Бид таны хаягийг итгэлтэйгээр байршуулах хэрэгтэй байна. Бид тань руу ямар нэгэн вирус илгээхгүй гэдгийг амлаж байна  ",
+      "lat": "Газарзүйн зураглал дээр байрлах тэмдэглэгчийг зөв байршил руу шилжүүлэх ",
+      "osm_username": "Та хараахан гишүүнээр элсээгүй байна уу? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Та яг одоо OpenStreetMap бүртгэл үүсгэнэ үү</a>",
+      "password": "(Хэрвээ та өөрчлөхийг хүсэхгүй байгаа бол энэхүү зайг хоосон үлдээнэ үү)",
+      "phone": "Жишээ нь: +49 30 12345678",
+      "website": "Жишээ нь: http://www.example.com"
     },
     "labels": {
-      "category": "Category:",
-      "centralkey": "Central key:",
-      "city": "City:",
-      "create": "Create a place",
-      "email": "Email",
-      "finish": "Finish",
-      "housenumber": "No:",
-      "lat": "Latitude",
-      "lon": "Longitude",
-      "name": "Name:",
-      "osm_password": "OpenStreetMap password",
-      "osm_username": "OpenStreetMap account name",
-      "password": "Password",
-      "password_confirmation": "Repeat password",
-      "phone": "Telephone:",
-      "postcode": "Post code:",
-      "privacy_policy": "I accept paragraphs 1 and 2 of the data privacy agreement.",
-      "reset": "Reset",
-      "save": "Save",
-      "street": "Street:",
-      "terms": "I accept the terms of use.",
-      "type": "Type:",
-      "website": "Website:",
-      "wheelchair": "Wheelchair accessibility?",
-      "wheelchair_description": "Accessibility comment:",
-      "wheelchair_toilet": "Wheelchair accessible toilet:"
+      "category": "Ангилал:",
+      "centralkey": "Гол утга:",
+      "city": "Хот:",
+      "create": "Газар шинээр нээх ",
+      "email": "Цахим хаяг ",
+      "finish": "Дуусгах",
+      "housenumber": "Үгүй:",
+      "lat": "Өндөрийн хэмжээ",
+      "lon": "Уртын хэмжээ",
+      "name": "Нэр:",
+      "osm_password": "OpenStreetMap нууц үг",
+      "osm_username": "OpenStreetMap хэрэглэгчийн нэр ",
+      "password": "Нууц үг",
+      "password_confirmation": "Нууц үгийг давтах ",
+      "phone": "Харилцах утасны дугаар:",
+      "postcode": "Шуудангийн хайрцаг:",
+      "privacy_policy": "Би гэрээний хувийн мэдээлэл нууцлах 1 болон 2-р зүйлийг зөвшөөрч байна ",
+      "reset": "Дахин шинэчилэх ",
+      "save": "Хадгалах",
+      "street": "Гудамж: ",
+      "terms": "Би хэрэглэгчийн мөрдөх гэрээний нөхцлийг хүлээн зөвшөөрч байна",
+      "type": "Төрөл:",
+      "website": "Цахим хуудас:",
+      "wheelchair": "Тэргэнцэрт хүртээмжтэй юу?",
+      "wheelchair_description": "Хүртээмжийн талаарх сэтгэгдэл:",
+      "wheelchair_toilet": "Тэргэнцэрт хүртээмжтэй ариун цэврийн өрөө:"
     },
     "titles": {
-      "basic": "Basic data",
-      "optional": "More information <span class=\"addition\">(all fields are optional)</span>"
+      "basic": "Үндсэн мэдээлэл",
+      "optional": "Илүү их мэдээлэл <span class=\"addition\">(бүх газар сонголтоор)</span>"
     }
   },
   "global": {
-    "form_validation_error": "Please note the errors listed below"
+    "form_validation_error": "Дараах алдаануудыг анхаарна уу"
   },
   "header": {
     "meta": {
-      "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
-      "homepage": "Home page",
-      "keywords": "wheelchair accessible places find search mark",
-      "search": "Search",
+      "description": "Wheelmap.org бол тэргэнцэрт хүртээмжтэй газруудыг хайх, олох болон тэмдэглэх цахим газарзүйн зураглал юм. Бидэнтэй нэгдэж уушийн газар, зоогийн газар, кино театр болон худалдааны төв гэх мэт өөрийн үйлчлүүлж буй олон нийтийн газруудыг тэмдэглээрэй!",
+      "homepage": "Нүүр хуудас ",
+      "keywords": "Тэргэнцэрт хүртээмжтэй газруудыг олох хайлтын тэмдэглэгээ",
+      "search": "Хайлт",
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "blog": "News",
-      "choose_language": "Choose language",
-      "contact": "Contact",
-      "faq": "FAQ",
-      "feedback": "Feedback",
-      "home": "Start",
-      "how_to_add_a_place": "How do I add places?",
-      "imprint": "Imprint",
-      "logged_in_as": "Logged in as:",
-      "login": "Log in",
-      "logout": "Log out",
-      "map": "Map",
-      "newsletter": "Newsletter",
-      "press": "Press",
+      "blog": "Мэдээ",
+      "choose_language": "Хэлээ сонгоно уу.",
+      "contact": "Холбоо барих ",
+      "faq": "Түгээмэл Асуулт Хариулт",
+      "feedback": "Хариу ",
+      "home": "Эхлэх ",
+      "how_to_add_a_place": "Би хэрхэн газар нэмэх вэ?",
+      "imprint": "Тэмдэглэх ",
+      "logged_in_as": "Дараах байдлаар нэвтэрсэн байна:",
+      "login": "Нэвтрэх",
+      "logout": "Гарах",
+      "map": "Газарзүйн зураглал",
+      "newsletter": "Мэдээллийн самбар ",
+      "press": "Хэвлэл",
       "privacy": "Privacy Policy",
-      "profile": "Profile",
-      "projects": "Get involved",
-      "report_problem": "Report a problem",
-      "suggestions": "Suggestions",
-      "travelguide": "Travel guide",
-      "what_is_barrier_free": "What does \"wheelchair accessible\" mean?",
-      "what_is_wheelmap": "What is Wheelmap?"
+      "profile": "Хувийн хэрэг",
+      "projects": "Элслээ ",
+      "report_problem": "Асуудлыг мэдэгдэх ",
+      "suggestions": "Санал хүсэлтүүд ",
+      "travelguide": "Аялалын хөтөч ",
+      "what_is_barrier_free": "\"Тэргэнцэрт хүртээмжтэй\" гэдэг нь юу гэсэн утгатай вэ?",
+      "what_is_wheelmap": "Wheelmap гэж юу вэ?"
     },
     "searchbar": {
-      "add_place": "Add another place",
-      "find": "Find",
-      "placeholder": "Search for a place",
-      "title_add_place": "Add a new place at this position now!"
+      "add_place": "Өөр газар нэмэх",
+      "find": "Хайх",
+      "placeholder": "Тухайн газрыг хайх",
+      "title_add_place": "Яг одоо энэ байршилд шинэ газар нэмэх!"
     },
-    "tagline": "Wheelmap logo",
-    "title": "Find wheelchair accessible places",
+    "tagline": "Wheelmap лого ",
+    "title": "Тэргэнцэр хүртээмжтэй газруудыг олох ",
     "toolbar": {
-      "categories": "Categories"
+      "categories": "Ангилал"
     }
   },
   "helpers": {
@@ -809,75 +809,75 @@ I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
       }
     },
     "select": {
-      "prompt": "Please choose"
+      "prompt": "Сонголтоо хийнэ үү"
     },
     "submit": {
-      "create": "create %{model}",
-      "submit": "save %{model}",
-      "update": "update %{model}"
+      "create": "үүсгэх %{model}",
+      "submit": "хадгалах %{model}",
+      "update": "шинэчилэх %{model}"
     }
   },
   "home": {
     "index": {
-      "embed_link": "Show on Wheelmap.org",
+      "embed_link": "Wheelmap.org дээр харуул",
       "filter": {
-        "category": "Choose category",
-        "deselect_all": "Deselect all",
-        "select_all": "Select all",
-        "wheelchair": "Wheelchair accessible?"
+        "category": "Ангилалаа сонгоно уу",
+        "deselect_all": "Бүгдийг дахин сонго",
+        "select_all": "Бүгдийг сонго",
+        "wheelchair": "Тэргэнцэрт хүртээмжтэй юу?"
       },
       "ie": {
         "action": {
-          "ignore": "Ignore",
-          "upgrade": "Update Browser"
+          "ignore": "Хэрэгсэхгүй болгох ",
+          "upgrade": "Хөтөч шинэчлэл"
         },
         "warning": {
-          "headline": "We apologise!",
-          "message": "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
+          "headline": "Биднийг өршөөнө үү!",
+          "message": "Та интернэт хөтчийг ашиглаж байна. Wheelmap нь стандартад нийцсэн хөтчүүдийг ашиглахыг шаарддаг. Firefox, Chrome, Safari эсвэл Opera зэрэг хөтчүүдийг ашиглана уу. "
         }
       },
       "link": {
         "node": {
-          "create": "Add a new place"
+          "create": "Шинэ газар нэмэх "
         }
       },
       "overlay": {
-        "button": "Okay, let’s go!",
-        "categories": "Filter places by categories",
-        "filter": "Filter places by wheelchair accessibility",
-        "headline": "Mark and find wheelchair accessible places with Wheelmap.org - worldwide and for free. It’s easy:",
-        "lookup": "Search for a specific place",
-        "secondary_headline": "Our traffic light system to mark the wheelchair accessibility of public places:"
+        "button": "Эхэлцгээе!",
+        "categories": "Ангилалаар газруудыг шүүж харуулах",
+        "filter": "Тэргэнцэрт хүртээмжтэй газруудыг шүүж харуулах",
+        "headline": "Дэлхий даяар хүн бүр чөлөөтэй ашиглаж болох Wheelmap.org сайт дээр тэргэнцэрт хүртээмжтэй газруудыг хайж ол бас тэмдэглэ. Энэ үнэхээр амархан. ",
+        "lookup": "Тусгай газруудыг хайх",
+        "secondary_headline": "Олон нийтийн тэргэнцэрт хүртээмжтэй газруудыг тэмдэглэхэд бид замын хөдөлгөөний гэрлэн дохионы системийг ашигладаг. "
       },
       "popup": {
         "form": {
-          "limited": "Partially wheelchair accessible",
-          "no": "Not wheelchair accessible",
-          "save": "Update",
-          "unknown": "Unknown status",
-          "yes": "Wheelchair accessible"
+          "limited": "Тэргэнцэрт хэсэгчилсэн хүртээмжтэй ",
+          "no": "Тэргэнцэрт хүртээмжтэй бус",
+          "save": "Шинэчилэх ",
+          "unknown": "Таниулаагүй өгөгдөл байна",
+          "yes": "Тэргэнцэрт хүртээмжтэй "
         },
-        "help": "Wheelchair accessible? (Help)",
-        "more": "more ..."
+        "help": "Тэргэнцэрт хүртээмжтэй юу? (Тусламж)",
+        "more": "цааш ... "
       },
-      "zoom_alert": "Zoom in closer to see more places."
+      "zoom_alert": "Илүү олон газрыг харахын тулд томруулж хар "
     }
   },
-  "how?": "How?",
+  "how?": "Хэрхэн?",
   "landing_pages": {
     "index": {
       "wheelchair": {
         "limit": {
-          "headline": "All partially wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Тэргэнцэрт хэсэгчилсэн хүртээмжтэй бүх %{type} %{city} -д (%{count})    "
         },
         "no": {
-          "headline": "All not wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Тэргэнцэрт хүртээмжгүй бүх %{type} %{city} -д (%{count}) "
         },
         "unknown": {
-          "headline": "All %{type} in %{city} with unknown wheelchair status (%{count})"
+          "headline": "Бүх %{type}дараах %{city}хотуудад тэргэнцэрт хүртээмжтэй эсэх нь тодорхой бус (%{count}) "
         },
         "yes": {
-          "headline": "All wheelchair accessible %{type} in %{city} (%{count})"
+          "headline": "Тэргэнцэрт хүртээмжтэй бүх %{type} нь %{city} -д (%{count}) "
         }
       }
     }
@@ -885,181 +885,181 @@ I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
   "layouts": {
     "application": {
       "banner": {
-        "alt": "A project by Sozialhelden.de"
+        "alt": "Sozialhelden.de төсөл нь"
       }
     }
   },
   "models": {
     "category": {
-      "prompt": "Choose a category"
+      "prompt": "Ангилалыг сонгох "
     },
     "node": {
-      "info_edit_position": "The location will appear on the Wheelmap as it is shown above. If the marker is not in the correct spot you can <a href=\"%{url}\">change its position on the OpenStreetMap.</a>",
+      "info_edit_position": "Энэ байршил нь Wheelmap -д дээрх байдлаар харагдах болно. Хэрвээ буруу тэмдэглэгээ хийгдсэн бол <a href=\"%{url}\">та OpenStreetMap дээр өөрчлөлт хийж болно</a>",
       "mail": {
-        "body": "(Please only write in English or German.)\n\nHi Sozialhelden,\nsomething is wrong with location: %{url}\n\nThe problem is:",
-        "subject": "[Wheelmap] Problem with %{headline}"
+        "body": "(Зөвхөн Англи эсвэл Герман хэлээр бичнэ.)\n\nСайн байна уу Sozialhelden,\nбайршил алдаатай байна: %{url}\n\nАсуудал нь: ",
+        "subject": "[Wheelmap] Асуудал нь %{headline}"
       }
     },
     "node_type": {
-      "prompt": "Choose a type"
+      "prompt": "Төрлийг сонгох "
     }
   },
   "node": {
     "address": {
-      "city": "%{city} %{postcode}",
-      "street": "%{housenumber} %{street}"
+      "city": "%{city}%{postcode}",
+      "street": "%{housenumber}%{street}"
     },
     "tags": {
-      "phone": "Phone:",
-      "website": "Website:"
+      "phone": "Утасны дугаар:",
+      "website": "Цахим хуудас: "
     }
   },
   "nodes": {
     "create": {
       "flash": {
-        "not_successfull": "Oops, your input was either incorrect or incomplete",
-        "successfull": "Thank you, your submission was saved successfully and will be online shortly."
+        "not_successfull": "Уучлаарай, таны өгөгдөл буруу эсвэл бүрэн биш байна",
+        "successfull": "Баярлалаа, таны хүсэлт амжилттай хадгалагдаж онлайн хэлбэрээр байршилаа."
       }
     },
     "edit": {
       "header": {
-        "title": "Edit place: %{node} | wheelmap.org"
+        "title": "Газарт засвар хийх: %{node} wheelmap.org"
       },
       "link": {
-        "large_map": "&laquo; Cancel"
+        "large_map": "&laquo; Цуцлах"
       }
     },
     "errors": {
-      "default": "Oops something went wrong. We have been informed about this issue",
-      "not_authorized": "Sorry, authentication failed",
-      "not_available": "Sorry, this page is temporarily not available.",
-      "not_existent": "Sorry, this place is not available anymore.",
-      "not_found": "Sorry, page not found.",
-      "param_missing": "Please provide a search term"
+      "default": "Уучлаарай, ямар нэгэн зүйл буруу байна. Бид энэ асуудлын талаар мэдэгдсэн болно.",
+      "not_authorized": "Уучлаарай, нэвтрэлт амжилтгүй боллоо",
+      "not_available": "Уучлаарай, энэ хуудас түр хугацаагаар идэвхгүй байна.",
+      "not_existent": "Уучлаарай, энэ газар ашиглалтнаас гарсан байна.",
+      "not_found": "Уучлаарай, хуудас олдсонгүй.",
+      "param_missing": "Хайлтын нөхцлийг сайжруулна уу "
     },
     "flash": {
-      "authorize_wheelmap": "You need an OpenStreetMap account to modify data"
+      "authorize_wheelmap": " Мэдээлэлдээ өөрчлөлт оруулахад тань OpenStreetMap хэрэглэгчийн бүртгэл хэрэгтэй "
     },
     "new": {
       "form": {
-        "legend": "Location of the place",
-        "location": "Please click on the map where the place is located!",
+        "legend": "Газрын байршил ",
+        "location": "Газрын байршилийг газарзүйн зураглал дээр харуул!",
         "section": {
           "accessibility": {
-            "name": "Wheelchair accessibility",
-            "title": "Information on wheelchair accessibility"
+            "name": "Тэргэнцэрт хүртээмжтэй",
+            "title": "Тэргэнцэрт хүртээмжтэй гэсэн мэдээлэл"
           },
           "address": {
-            "help": "You can move the marker to the correct location on the map.",
-            "name": "Address",
-            "title": "Where is the place?"
+            "help": "Та газарзүйн зураглал дээр тэмдэглэсэн газрынхаа тэмдэглэгчийг зөв байршилд шилжүүлэх боломжтой. ",
+            "name": "Хаяг",
+            "title": "Газар хаана байрладаг вэ?"
           },
           "contact": {
-            "name": "Contact",
-            "title": "Other contact information"
+            "name": "Холбоо барих ",
+            "title": "Бусад холбоо барих мэдээлэл"
           },
           "name_category": {
-            "name": "Name and place type",
-            "title": "Give us some initial information about your place:"
+            "name": "Газрын төрөл болон нэр ",
+            "title": "Тэмдэглэсэн газрынхаа анхдагч мэдээллийг бидэнд өгнө үү: "
           },
           "overview": {
-            "title": "Is all the information correct?"
+            "title": "Эдгээр мэдээллүүд нь зөв үү?"
           },
           "similar_nodes": {
-            "empty": "No similar places were found.",
-            "go_edit": "Continue with this place",
-            "go_new": "It is none of the places above …",
-            "name": "Similar places",
-            "title": "We found similar places nearby. Is it one of these?"
+            "empty": "Ижил газрууд олдсонгүй.",
+            "go_edit": "Энэ газрыг үргэлжлүүл",
+            "go_new": "Энэ дээрх газруудын нэг биш байна ...",
+            "name": "Адилхан газар",
+            "title": "Бид ойролцоо ижил төстэй газар оллоо. Энэ тэргээрийн нэг хэсэг нь үү?"
           }
         },
-        "title": "Add a place"
+        "title": "Газар нэмэх "
       },
       "header": {
-        "title": "New place | wheelmap.org"
+        "title": "Шинэ газар | wheelmap.org"
       },
       "link": {
-        "large_map": "&laquo; Cancel"
+        "large_map": "&laquo; Цуцлах "
       }
     },
     "node": {
       "link": {
-        "claim": "Do you work here?",
-        "edit_node": "Edit place",
-        "report_bug": "Report a problem"
+        "claim": "Та энд ажилладаг уу?",
+        "edit_node": "Газрыг засварлах",
+        "report_bug": "Асуудлыг мэдэгдэх "
       }
     },
     "node_data": {
-      "address": "Address:",
-      "contact_details": "Contact details:"
+      "address": "Хаяг:",
+      "contact_details": "Холбоо барих мэдээлэл:"
     },
     "node_edit": {
-      "details": "Details",
-      "edit": "Edit"
+      "details": "Нарийвчилсан мэдээлэл",
+      "edit": "Засварлах"
     },
     "node_map": {
-      "map": "Map:"
+      "map": "Газарзүйн зураглал:"
     },
     "node_nearby": {
       "places_nearby": "Places nearby:"
     },
     "node_note": {
-      "comment": "Comment:"
+      "comment": "Сэтгэгдэл:"
     },
     "node_photos": {
-      "add": "Add",
-      "alert": "Please note: The entrance should be clearly visible in the photo in order to show the following: Are there steps at the entrance? Approximately how high is the step? How wide is the door? The photograph must be in a JPG or PNG format. It should not be larger than 10 MB.",
-      "photos_of_this_place": "Photos of this place:",
-      "upload": "Upload"
+      "add": "Нэмэх",
+      "alert": "Мэдэгдэл: Орох гарах гарцын зураг нь дараах зүйлсийг маш тод харуулсан байх ёстой. Орох гарах гарц шаттай эсэх? Хаалга хэр өргөн эсэх? Босгоны өндөр ойролцоогоор? Зураг нь JPG эсвэл PNG хувилбартай байх ёстой. Мөн 10 MB хэмжээнээс хэтрэхгүй байх хэрэгтэй. ",
+      "photos_of_this_place": "Энэ газрын зурагнууд:",
+      "upload": "Хуулах "
     },
     "node_similar": {
-      "similar": "Similar places: %{name}"
+      "similar": "Адилхан газрууд %{name}"
     },
     "node_status": {
-      "accessible_toilet": "Wheelchair accessible toilet:",
-      "premium": "%{name} says: this place is",
-      "wheelchair_accessibility": "Wheelchair accessibility:"
+      "accessible_toilet": "Тэргэнцэрт хүртээмжтэй ариун цэврийн өрөө:",
+      "premium": "%{name} Өгүүлэмж: Энэ газар бол ",
+      "wheelchair_accessibility": "Тэргэнцэрт хүртээмжтэй: "
     },
     "node_streetview": {
-      "streetview": "Streetview:"
+      "streetview": "Гудамжны харагдах байдал:"
     },
     "show": {
       "header": {
         "meta": {
-          "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
-          "title": "This place is on Wheelmap.org: %{name}"
+          "description": "Хэрвээ энэ газар нь тэргэнцэрт хүртээмжтэй бол Wheelmap.org сайт дээрээс олдох болно. Эсвэл дэлгэрэнгүй мэдээлэл болон зурагнуудыг нэмнэ үү. ",
+          "title": "Энэ газар нь Wheelmap.org сайт дээр байна: %{name}"
         },
-        "title": "Place: %{node} | wheelmap.org"
+        "title": "Газар: %{node}Wheelmap.org "
       },
       "link": {
-        "back": "back",
-        "large_map": "Enlarge",
-        "listing": "All places of typ '%{type}' in %{city}",
-        "upload": "Upload image"
+        "back": "Буцах",
+        "large_map": "Томруулах",
+        "listing": "Бүх газар дараах төрлөөр '%{type}' %{city}-д",
+        "upload": "Зураг хуулах "
       },
-      "more_data_from": "There is more information about this place, validated by:",
+      "more_data_from": "Энд тухайн газрын талаар илүү мэдээлэл байгаа ба дараах байдлаар баталгаажсан болно:",
       "share": {
-        "email": "Email",
+        "email": "Цахим хаяг ",
         "facebook": "Facebook",
-        "text": "I found this place on Wheelmap.org: %{name}",
+        "text": "Энэ газар нь Wheelmap.org сайт дээр олдлоо: %{name}",
         "twitter": "Twitter"
       },
       "show-in-osm": "OpenStreetMap"
     },
     "update": {
       "flash": {
-        "not_successfull": "Oops, your input was either incorrect or incomplete",
-        "successfull": "Thank you, your submission was saved successfully and will be online shortly."
+        "not_successfull": "Уучлаарай, таны өгөгдөл буруу эсвэл бүрэн биш байна ",
+        "successfull": "Баярлалаа, таны хүсэлт амжилттай хадгалагдаж онлайн хэлбэрээр байршилаа. "
       }
     },
     "update_wheelchair": {
-      "successfull": "The status for \"%{name}\" has been changed to \"%{status}\" and will be online shortly."
+      "successfull": "Төрөл нь \"%{name}\" байсан бөгөөд \"%{status}\" болж өөрчлөгдөж онлайн хэлбэрт шилжлээ. "
     }
   },
   "number": {
     "currency": {
       "format": {
-        "delimiter": ",",
+        "delimiter": ", ",
         "format": "%u%n",
         "precision": 2,
         "separator": ".",
@@ -1069,21 +1069,21 @@ I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
       }
     },
     "format": {
-      "delimiter": ",",
+      "delimiter": ", ",
       "precision": 3,
-      "separator": ".",
+      "separator": ". ",
       "significant": false,
       "strip_insignificant_zeros": false
     },
     "human": {
       "decimal_units": {
-        "format": "%n %u",
+        "format": "%n%u",
         "units": {
-          "billion": "Billion",
-          "million": "Million",
-          "quadrillion": "Quadrillion",
-          "thousand": "Thousand",
-          "trillion": "Trillion",
+          "billion": "Тэрбум ",
+          "million": "Сая",
+          "quadrillion": "Квадрилион",
+          "thousand": "Мянга",
+          "trillion": "Их наяд",
           "unit": ""
         }
       },
@@ -1094,10 +1094,10 @@ I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
         "strip_insignificant_zeros": true
       },
       "storage_units": {
-        "format": "%n %u",
+        "format": "%n%u ",
         "units": {
           "byte": {
-            "one": "Byte",
+            "one": "Byte ",
             "other": "Bytes"
           },
           "gb": "GB",
@@ -1122,234 +1122,234 @@ I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
   "oauth": {
     "application": {
       "connect": {
-        "headline": "You need to connect your account with your OpenStreetMap account before you can create or modify places on Wheelmap.org."
+        "headline": "Wheelmap.org хуудсанд шинээр газар нэмэх болон тохируулга хийхээсээ өмнө та OpenStreetMap хэрэглэгчийн эрхээрээ нэвтрэн орох хэрэгтэй. "
       }
     },
     "callback": {
-      "notice": "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
+      "notice": "Таны Wheelmap хэрэглэгчийн эрх OpenStreetMap - тай холбогдсон байна %{user}."
     }
   },
-  "or": "or",
+  "or": "эсвэл ",
   "place": {
-    "one": "%{count} place",
-    "other": "%{count} places"
+    "one": "%{count} газрууд",
+    "other": "%{count} газрууд  "
   },
   "poi": {
     "category": {
-      "accommodation": "Accomodation",
-      "education": "Education",
-      "food": "Food",
-      "government": "Government",
-      "health": "Health",
-      "leisure": "Leisure",
-      "misc": "Miscellaneous",
-      "money_post": "Bank / Post office",
-      "public_transfer": "Public transport",
-      "shopping": "Shopping",
-      "sport": "Sport",
-      "tourism": "Tourism",
-      "unknown": "Unknown"
+      "accommodation": "Байр, сууц",
+      "education": "Боловсрол",
+      "food": "Хоол, хүнс",
+      "government": "Засгийн газар ",
+      "health": "Эрүүл мэнд",
+      "leisure": "Чөлөөт цаг",
+      "misc": "Нэмэлт зүйлс",
+      "money_post": "Банк / Шуудан",
+      "public_transfer": "Нийтийн тээвэр",
+      "shopping": "Дэлгүүр",
+      "sport": "Спорт",
+      "tourism": "Аялал жуулчлал",
+      "unknown": "Танигдаагүй "
     },
     "name": {
       "accommodation": {
-        "beach_resort": "Beach hotel",
-        "bed_and_breakfast": "Bed and breakfast",
-        "camp_site": "Camp site",
-        "caravan_site": "Caravan site",
-        "chalet": "Chalet",
-        "dormitory": "Dormitory",
-        "guest_house": "Guest house",
-        "hostel": "Hostel",
-        "hotel": "Hotel",
-        "motel": "Motel"
+        "beach_resort": "Далайн эргийн зочид буудал",
+        "bed_and_breakfast": "Ор ба өглөөний цай",
+        "camp_site": "Майхан",
+        "caravan_site": "Чиргүүл ",
+        "chalet": "Дүнзэн байшин",
+        "dormitory": "Олон ортой унтлагын өрөө",
+        "guest_house": "Зочид буудаллах байшин ",
+        "hostel": "Дэн буудал",
+        "hotel": "Зочид буудал",
+        "motel": "Гэр буудал"
       },
       "education": {
-        "college": "College",
-        "driving_school": "Driving school",
-        "kindergarten": "Kindergarten",
-        "library": "Library",
-        "museum": "Museum",
-        "school": "School",
-        "university": "University"
+        "college": "Коллеж",
+        "driving_school": "Жолооны курс",
+        "kindergarten": "Цэцэрлэг",
+        "library": "Номын сан",
+        "museum": "Музей",
+        "school": "Сургууль",
+        "university": "Их сургууль"
       },
       "food": {
-        "bar": "Bar",
-        "biergarten": "Biergarten",
-        "cafe": "Cafe",
-        "drinking_water": "Drinking water",
-        "fast_food": "Fast Food",
-        "ice_cream": "Ice cream parlour",
-        "pub": "Pub",
-        "restaurant": "Restaurant"
+        "bar": "Баар",
+        "biergarten": "Цэцэрлэгт хүрээлэн",
+        "cafe": "Кафе",
+        "drinking_water": "Уух ус ",
+        "fast_food": "Түргэн хоол",
+        "ice_cream": "Зайрмаг худалдаалах газар",
+        "pub": "Уушийн газар",
+        "restaurant": "Зоогийн газар"
       },
       "government": {
-        "courthouse": "Courthouse",
-        "embassy": "Embassy",
-        "employment_agency": "Employment agency",
-        "government": "Government agency",
-        "police": "Police",
-        "public_building": "Public building",
-        "townhall": "Town hall"
+        "courthouse": "Шүүхийн байр",
+        "embassy": "Элчин ",
+        "employment_agency": "Хөдөлмөр зуучлалын газар",
+        "government": "Засгийн газрын агентлаг ",
+        "police": "Цагдаа",
+        "public_building": "Олон нийтийн байгууламж ",
+        "townhall": "Хотын захиргаа"
       },
       "health": {
-        "alternative": "Alternative medicine practitioner",
-        "dentist": "Dentist",
-        "doctors": "Doctor",
-        "hearing_aids": "Hearing aid dealer",
-        "hospital": "Hospital",
-        "medical_supply": "Medical supplies",
-        "occupational_therapist": "Occupational therapist",
-        "pharmacy": "Pharmacy",
-        "physiotherapist": "Physiotherapist",
-        "psychotherapist": "Psychotherapist",
-        "social_facility": "Social facility",
-        "speech_therapist": "Speech therapist",
-        "veterinary": "Veterinary"
+        "alternative": "Уламжлалт эмчилгээ",
+        "dentist": "Шүдний эмч",
+        "doctors": "Эмч ",
+        "hearing_aids": "Сонсголын туслах хэрэглэгдэхүүн худалдаалагч ",
+        "hospital": "Эмнэлэг",
+        "medical_supply": "Эм ханган нийлүүлэгч ",
+        "occupational_therapist": "Хөдөлгөөн засалч ",
+        "pharmacy": "Эмийн сан",
+        "physiotherapist": "Физик эмчилгээний эмч ",
+        "psychotherapist": "Сэтгэлзүйч ",
+        "social_facility": "Нийгмийн үйлчилгээний газар",
+        "speech_therapist": "Яриа засалч ",
+        "veterinary": "Амьтдын эмч "
       },
       "leisure": {
-        "arena": "Arena",
-        "brothel": "Brothel",
-        "casino": "Casino",
-        "cinema": "Cinema",
-        "community_centre": "Community centre",
-        "gallery": "Gallery",
-        "massage": "Massage spa",
-        "nightclub": "Nightclub",
-        "playground": "Playground",
-        "sauna": "Sauna",
-        "stripclub": "Stripclub",
-        "tattoo": "Tattoo shop",
-        "theatre": "Theatre",
-        "zoo": "Zoo"
+        "arena": "Төв цэнгэлдэх ",
+        "brothel": "Эмсийн хүрээлэн ",
+        "casino": "Казино",
+        "cinema": "Кино театр ",
+        "community_centre": "Олон нийтийн төв ",
+        "gallery": "Үзэсгэлэн ",
+        "massage": "Алжаал тайлах газар",
+        "nightclub": "Шөнийн цэнгээний газар",
+        "playground": "Тоглоомын талбай",
+        "sauna": "Саун",
+        "stripclub": "Тайчигч клуб",
+        "tattoo": "Шивээсний дэлгүүр",
+        "theatre": "Театр",
+        "zoo": "Амьтны хүрээлэн"
       },
       "misc": {
-        "association": "Association",
-        "company": "Company (Office)",
-        "estate_agent": "Real estate agent",
-        "insurance": "Insurance",
-        "lawyer": "Lawyer",
-        "ngo": "Non-government organisation",
-        "place_of_worship": "Place of worship",
-        "political_party": "Political party office",
-        "toilets": "Toilets"
+        "association": "Холбоо",
+        "company": "Хувийн хэвшил (Office)",
+        "estate_agent": "Үл хөдлөх хөрөнгө зуучын газар",
+        "insurance": "Даатгал",
+        "lawyer": "Хуульч",
+        "ngo": "Төрийн Бус Байгууллага",
+        "place_of_worship": "Мөргөлийн газар",
+        "political_party": "Улс төрийн намын байр",
+        "toilets": "Аруин цэврийн өрөө"
       },
       "money_post": {
-        "atm": "ATM",
-        "bank": "Bank",
-        "bureau_de_change": "Bureau de change",
-        "post_box": "Post box",
-        "post_office": "Post office"
+        "atm": "АТМ",
+        "bank": "Банк",
+        "bureau_de_change": "Валют арилжааны газар ",
+        "post_box": "Шуудангийн хайрцаг",
+        "post_office": "Шуудан "
       },
       "public_transfer": {
-        "aerodrome": "Airport",
-        "bicycle_parking": "Bicycle parking",
-        "bicycle_rental": "Bicycle rental",
-        "boatyard": "Boat yard",
-        "bus_station": "Bus station",
-        "bus_stop": "Bus stop",
-        "cable_car": "Cable car",
-        "car_rental": "Car rental",
-        "car_sharing": "Car sharing",
-        "chair_lift": "Chair lift",
-        "ferry": "Ferry",
-        "ferry_terminal": "Ferry terminal",
-        "fuel": "Gas station",
-        "halt": "Halt",
-        "light_rail": "Light rail",
-        "parking": "Parking",
-        "parking_aisle": "Parking aisle",
-        "platform": "Platform",
-        "station": "Train station",
-        "subway_entrance": "Subway entrance",
-        "terminal": "Airport terminal",
-        "tram_stop": "Tram stop"
+        "aerodrome": "Нисэх онгоцны буудал",
+        "bicycle_parking": "Дугуйн зогсоол",
+        "bicycle_rental": "Дугуй түрээсийн газар",
+        "boatyard": "Усан онгоцны зогсоол",
+        "bus_station": "Автобусны буудал",
+        "bus_stop": "Автобусны зогсоол",
+        "cable_car": "Тралейбус",
+        "car_rental": "Машин түрээсийн газар",
+        "car_sharing": "Албан бус такси үйлчилгээ",
+        "chair_lift": "Өргөгч сандал ",
+        "ferry": "Сүйх тэрэг",
+        "ferry_terminal": "Сүйх тэрэгний зогсоол",
+        "fuel": "Түлш түгээгүүрийн газар",
+        "halt": "Зогсоол",
+        "light_rail": "Гэрэлт зам ",
+        "parking": "Машины зогсоол",
+        "parking_aisle": "Онгоцны буудлын зогсоол",
+        "platform": "Платформ",
+        "station": "Галт тэрэгний буудал",
+        "subway_entrance": "Метроны нэвтрэх гарц ",
+        "terminal": "Нисэх онгоцны тавцан ",
+        "tram_stop": "Трамвайн зогсоол"
       },
       "shopping": {
-        "alcohol": "Liquor",
-        "antiques": "Antiques",
-        "art": "Gallery shop",
-        "bakery": "Bakery",
-        "beauty": "Beauty salon",
-        "beverages": "Beverages",
-        "bicycle": "Bike shop",
-        "books": "Books",
-        "butcher": "Butcher",
-        "car_repair": "Car repair",
-        "car_shop": "Car shop",
-        "chemist": "Chemist / Drugstore",
-        "clothes": "Clothes",
-        "computer": "Computer",
-        "confectionery": "Candy store",
-        "convenience": "Convenience",
-        "copyshop": "Copy shop",
-        "deli": "Delicatessen",
-        "department_store": "Department store",
-        "doityourself": "Do it yourself",
-        "dry_cleaning": "Dry cleaning",
-        "electronics": "Electronics",
-        "erotic": "Sex shop",
-        "fabric": "Fabric shop",
-        "farm_shop": "Farm shop",
-        "florist": "Florist",
-        "funeral_directors": "Funeral home",
-        "furniture": "Furniture",
-        "garden_centre": "Garden centre",
-        "gift": "Gift shop",
-        "greengrocer": "Greengrocer",
-        "hairdresser": "Hairdresser",
-        "hardware": "Hardware",
-        "interior_decoration": "Interior design shop",
-        "jewelry": "Jewelry",
-        "kiosk": "Kiosk",
-        "laundry": "Laundry",
-        "mall": "Shopping centre",
-        "mobile_phone": "Mobile phone shop",
-        "music": "Record store",
-        "musical_instrument": "Musical instrument shop",
-        "newsagent": "News agent",
-        "optician": "Optician",
-        "organic": "Organic shop",
-        "outdoor": "Outdoor supply",
-        "pet": "Pet shop",
-        "photo": "Photo",
-        "second_hand": "Second hand",
-        "shoes": "Shoes",
-        "sports": "Sports",
-        "stationery": "Stationery",
-        "supermarket": "Supermarket",
-        "tailor": "Tailor",
-        "tea": "Tea supply",
-        "tobacco": "Tobacco shop",
-        "toys": "Toys",
-        "travel_agency": "Travel agency",
-        "variety_store": "Discount store",
-        "video": "Video rental store"
+        "alcohol": "Архи худалдаалах цэг ",
+        "antiques": "Эртний эдлэлийн дэлгүүр ",
+        "art": "Галлирей дэлгүүр",
+        "bakery": "Бэйкери ",
+        "beauty": "Гоо сайхны салон ",
+        "beverages": "Ундаа ",
+        "bicycle": "Моторт дугуйн дэлгүүр",
+        "books": "Номын худалдаа",
+        "butcher": "Мах худалдаалах цэг",
+        "car_repair": "Машин засварын газар",
+        "car_shop": "Машин худалдааны газар",
+        "chemist": "Эмийн сан ",
+        "clothes": "Хувцас",
+        "computer": "Компьютер ",
+        "confectionery": "Чихрийн дэлгүүр",
+        "convenience": "Түргэн үйлчилгээний цэг",
+        "copyshop": "Канон, принтэр ",
+        "deli": "Мухлаг ",
+        "department_store": "Их дэлгүүр ",
+        "doityourself": "Өөрөө өөртөө үйлчилэх цэг",
+        "dry_cleaning": "Хуурай хими цэвэрлэгээ",
+        "electronics": "Электрон бараа ",
+        "erotic": "Секс хэрэгсэлийн дэлгүүр",
+        "fabric": "Бөс даавууны дэлгүүр ",
+        "farm_shop": "Хөдөө аж ахуйн тоног төхөөрөмж худалдааны газар",
+        "florist": "Цэцгийн худалдаа ",
+        "funeral_directors": "Оршуулгын газар ",
+        "furniture": "Тавилгын худалдаа ",
+        "garden_centre": "Цэцэрлэгт хүрээлэн ",
+        "gift": "Бэлэг дурсгалын дэлгүүр ",
+        "greengrocer": "Жимс ногооны худалдаа ",
+        "hairdresser": "Үсчин ",
+        "hardware": "Компьютерийн сэлбэг худалдаа ",
+        "interior_decoration": "Дотоод засал чимэглэлийн дэлгүүр ",
+        "jewelry": "Үнэт эдлэлийн дэлгүүр ",
+        "kiosk": "Нийтийн хоолны газар",
+        "laundry": "Хувцас цэвэрлэгээний үйлчилгээ ",
+        "mall": "Худалдааны төв ",
+        "mobile_phone": "Гар утасны дэлгүүр ",
+        "music": "Дуу бичлэг худалдаалах дэлгүүр",
+        "musical_instrument": "Хөгжмийн зэмсгийн дэлгүүр ",
+        "newsagent": "Мэдээний агентлаг ",
+        "optician": "Хараазүйн эмч ",
+        "organic": "Органик бүтээгдэхүүний дэлгүүр ",
+        "outdoor": "Аялал зугаалгын хэрэгсэл нийлүүлэгч ",
+        "pet": "Амьтны дэлгүүр ",
+        "photo": "Зураг ",
+        "second_hand": "Гар дамжсан худалдаа",
+        "shoes": "Гутал ",
+        "sports": "Спорт",
+        "stationery": "Бичиг хэргийн дэлгүүр ",
+        "supermarket": "Супермаркет",
+        "tailor": "Оёдолчин ",
+        "tea": "Цай нийлүүлэгч",
+        "tobacco": "Тамхины дэлгүүр",
+        "toys": "Тоглоом",
+        "travel_agency": "Аялалын агентлаг",
+        "variety_store": "Хямдралтай худалдааны дэлгүүр",
+        "video": "Видео түрээсийн газар"
       },
       "sport": {
-        "pitch": "Sports field",
-        "sports_centre": "Sports centre",
-        "stadium": "Stadium",
-        "swimming": "Swimming",
-        "swimming_pool": "Swimming pool"
+        "pitch": "Спортын талбай ",
+        "sports_centre": "Спортын төв",
+        "stadium": "Стадион ",
+        "swimming": "Усан спорт ",
+        "swimming_pool": "Усан сан "
       },
       "tourism": {
-        "archaeological_site": "Archaeological site",
-        "arts_centre": "Arts centre",
-        "artwork": "Artwork",
-        "attraction": "Attraction",
-        "battlefield": "Battlefield",
-        "beach": "Beach",
-        "beacon": "Lighthouse",
-        "castle": "Castle",
-        "cave_entrance": "Cave entrance",
-        "information": "Tourist information",
-        "memorial": "Memorial",
-        "theme_park": "Theme park",
-        "tower": "Tower",
-        "viewpoint": "View point"
+        "archaeological_site": "Археологийн бүс ",
+        "arts_centre": "Урлагын төв ",
+        "artwork": "Урлагын бүтээл",
+        "attraction": "Хүмүүсийн очих дуртай газар",
+        "battlefield": "Дайны талбар ",
+        "beach": "Далайн эрэг",
+        "beacon": "Гэрэлт цамхаг",
+        "castle": "Ордон ",
+        "cave_entrance": "Агуйн ам ",
+        "information": "Жуулчдын мэдээлэл",
+        "memorial": "Дурсгалт газар",
+        "theme_park": "Соёл амралтын цэцэрлэгт хүрээлэн",
+        "tower": "Цамхаг",
+        "viewpoint": "Алсыг харах цэг"
       },
       "unknown": {
-        "unknown": "Unknown"
+        "unknown": "Тодорхойгүй газар"
       }
     }
   },
@@ -1357,13 +1357,13 @@ I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
     "edit": {
       "application": {
         "oauth": {
-          "connected": "Status: connected",
-          "grant": "Connect now",
-          "not_connected": "Status: Not connected",
-          "revoke": "Disconnect"
+          "connected": "Төлөв: холбогдсон",
+          "grant": "Холбогдоно уу ",
+          "not_connected": "Төлөв: Холбогдоогүй ",
+          "revoke": "Салгах "
         }
       },
-      "headline": "Edit your profile"
+      "headline": "Профайл тохиргоо хийх "
     }
   },
   "ransack": {
@@ -1440,168 +1440,168 @@ I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
   "search": {
     "index": {
       "no-results": {
-        "headline": "Sorry, we couldn’t find a place called \"%{query}\".",
+        "headline": "Уучлаарай, энэ нэршлээр ямар нэгэн газар олдсонгүй \"%{query}\"",
         "hint": {
-          "example": "<strong>Example:</strong> London, United Kingdom",
-          "info": "Our search service only works with name and/or address information. Hence, please either search for the name of the place or an address, e.g. street name and/or city. Searching for a type of place, e.g. restaurant or cinema, does not work!",
-          "work_in_progress": "We work hard to make searching for places easier and more intuitive in the future."
+          "example": "<strong>Жишээ нь:</strong> Лондон, Нэгдсэн Улс ",
+          "info": "Манай хайлтын систем нь нэр эсвэл хаягын мэдээлэл оруулсан нөхцөлд ажиллах болно. Мөн нэр болон хаягаар зэрэг хайлт хийж болно. жишээ нь: хот болон гудамжны нэр. Харин дараах байдлаар хайлт хийвэл ажиллахгүй болохыг анхаарна уу! Газрын төрлөөр, жишээ нь: зоогийн газар, кино театр гэх мэт ",
+          "work_in_progress": "Бид хайлтын системээ илүү хялбар ирээдүйн шаардлагад нийцсэн болгох тал дээр шаргуу ажиллаж байна. "
         },
         "try_this": {
-          "address": "Please provide more <strong>address details</strong>.",
-          "intro": "Try this:",
-          "spell_check": "Check the <strong>spelling</strong> of your input."
+          "address": "Нарийвчилсан <strong>хаягжилтийн мэдээллийг</strong> дэлгэрэнгүй өгнө үү.",
+          "intro": "Үүнийг туршаад үзнэ үү: ",
+          "spell_check": "Та <strong>үсгийн алдаагаа</strong> шалгана уу. "
         }
       },
       "results": {
         "ticker": {
-          "one": "%{count} result:",
-          "other": "%{count} results:"
+          "one": "%{count}үр дүн:",
+          "other": "%{count}үр дүнгүүд: "
         }
       },
       "search": {
-        "for": "Searching for \"%{q}\"",
-        "not_found": "No places could be found!"
+        "for": "Хайлт хийж байна \"%{q}\"",
+        "not_found": "Хайсан газар олдсонгүй!"
       }
     },
     "timeout": {
-      "headline": "Sorry, something went wrong",
-      "info": "Our search service was temporarily not available.",
-      "repeat_search": "Retry search"
+      "headline": "Уучлаарай, зарим нэгэн зүйлс буруу байна ",
+      "info": "Манай хайлтын үйлчилгээ түр хугацаагаар ажиллахгүй болохыг анхаарна уу. ",
+      "repeat_search": "Дахин хайлт хийнэ үү"
     }
   },
   "splash": {
-    "countline": "%{count} places have already been marked.",
-    "headline": "Everyone can add wheelchair accessible places!",
-    "start": "Start",
-    "step1": "Click on a place you know",
-    "step2": "Mark it and click save",
-    "step3": "That's it! No registration necessary",
-    "what_is_wheelmap": "What is Wheelmap?"
+    "countline": "%{count} газрууд  тэмдэглэгдсэн байна. ",
+    "headline": "Хүн бүр тэргэнцэрт хүртээмжтэй газруудыг нэмэх боломжтой!",
+    "start": "Эхлэх",
+    "step1": "Өөрийн мэдэх газраа сонгоно уу",
+    "step2": "Тэмдэглээд дараа нь хадгалах гэсэн товчлуурыг дарна уу",
+    "step3": "Энэ хангалттай! Бүртгүүлэх шаардлагагүй ",
+    "what_is_wheelmap": "Wheelmap гэж юу вэ? "
   },
-  "statistics": "Statistics",
+  "statistics": "Үзүүлэлтүүд",
   "support": {
     "array": {
-      "last_word_connector": " and ",
-      "sentence_connector": "and",
-      "two_words_connector": " and ",
-      "words_connector": ","
+      "last_word_connector": "мөн",
+      "sentence_connector": "бас",
+      "two_words_connector": "түүнчлэн ",
+      "words_connector": ", "
     },
     "select": {
-      "prompt": "Please select"
+      "prompt": "Сонголтоо хийнэ үү"
     }
   },
   "time": {
     "am": "am",
     "formats": {
-      "default": "%a, %d %b %Y %H:%M:%S %z",
-      "long": "%B %d, %Y %H:%M",
-      "short": "%d %b %H:%M"
+      "default": "%a,%d%b %Y %H:%M:%S %z ",
+      "long": "%B %d, %Y %H:%M ",
+      "short": "%d%b %H:%M "
     },
     "pm": "pm"
   },
   "toiletstatus": {
-    "no": "No wheelchair accessible toilet",
-    "unknown": "Toilet status unknown",
+    "no": "Тэргэнцэрт хүртээмжгүй ариун цэврийн өрөө",
+    "unknown": "Ариун цэврийн өрөөний төлөв мэдэгдэхгүй байна",
     "what_is": {
-      "no": "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin.",
-      "unknown": "Help out by marking the toilet status!",
-      "yes": "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      "no": "Хаалганы дотор өргөн хамгийн багадаа 90см (35инч), шалны цэвэр хэмжээ хамгийн багадаа 150 x 150 см (59 x 59инч), суултуур болон тэргэнцэрийн өндрийн хэмжээ адил түвшинд байх, эвхэгддэг хашлагууд болон гар бариултай буюу хүртээмжтэй ванн ",
+      "unknown": "Ариун цэврийн өрөөний төлөвийг тогтооход туслана уу!",
+      "yes": "Хаалганы дотор өргөн хамгийн багадаа 90см (35инч), шалны цэвэр хэмжээ хамгийн багадаа 150 x 150 см (59 x 59инч), суултуур болон тэргэнцэрийн өндрийн хэмжээ адил түвшинд байх, эвхэгддэг хашлагууд болон гар бариултай буюу хүртээмжтэй ванн"
     },
-    "yes": "Wheelchair accessible toilet"
+    "yes": "Тэргэнцэрт хүртээмжтэй ариун цэврийн өрөө "
   },
   "user_sessions": {
     "create": {
       "activation": {
-        "notice": "Your account is activated now!"
+        "notice": "Таны бүртгэл идэвхижлээ!"
       },
       "error": {
-        "notice": "Email and password don't match."
+        "notice": "Имэйл хаяг болон нууц үг таарахгүй байна."
       },
-      "notice": "You're in!"
+      "notice": "Та нэвтэрсэн байна!"
     },
     "destroy": {
-      "notice": "Bye, come back soon!"
+      "notice": "Баяртай, удахгүй эргэн уулзъя! "
     },
     "new": {
-      "email": "Email address",
-      "login": "Log in",
-      "login_with_twitter": "Log in with Twitter",
-      "password": "Password",
-      "remember_me": "Stay logged in"
+      "email": "Имэйл хаяг",
+      "login": "Нэвтрэх ",
+      "login_with_twitter": "Twitter хаягаар нэвтрэх ",
+      "password": "Нууц үг ",
+      "remember_me": "Нэвтэрсэн хэвээр байна"
     }
   },
   "users": {
     "after_signup_edit": {
       "welcome": {
-        "headline": "You are almost there! Now on to finalize your Wheelmap account:",
-        "set_password_for_mobile": "You have successfully registered with OpenStreetMap. Please choose an email address that you would like Wheelmap to use so we can keep you informed about your activities (for example the number of places you have marked). You can access this information on your \"Profile\".",
-        "text": "How can we get in touch with you? You can change this information later in your profile."
+        "headline": "Та бараг хүрлээ! Одоо та Wheelmap хэрэглэгчийн бүртгэлээ дуусгана уу:",
+        "set_password_for_mobile": "Та OpenStreetMap -д амжилттай бүртгэгдлээ. Та  Wheelmap-д өөрийн мэйл хаягийг бүртггүүлснээр бид таны үйл ажиллагааг цаг алдалгүй мэдэгдэж байх болно. (жишээ нь: таны тэмдэглэсэн газрын тоо). Мөн та энэ мэдээллийг өөрийн \"Профайл\" дээрээ хүлээн авах боломжой. ",
+        "text": "Бид таньтай хэрхэн холбоотой байх вэ? Та энэ мэдээллийг дараа нь өөрийн Профайл дээрээ өөрчлөх боломжтой."
       }
     },
     "edit": {
       "headline": {
-        "your_images": "Your uploaded images"
+        "your_images": "Таны байршуулсан зурагнууд"
       }
     },
     "profile": {
       "edit": {
         "legends": {
-          "user_data": "Your account information"
+          "user_data": "Таны бүртгэлийн тухай мэдээлэл"
         },
-        "title": "Profile"
+        "title": "Хувийн хэрэг"
       },
       "newsletter": {
-        "label": "Yes, keep me updated about Wheelmap.",
-        "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
-        "title": "Newsletter"
+        "label": "Тийм, wheelmap - ийн тухайд намайг шинэчилнэ үү.",
+        "text": "Wheelmap мэдээ мэдээлэлтэй хамт байгаарай. Санаа зоволтгүй, бид танд ямар нэгэн хохирол учруулахгүй. Хамгийн ихдээ сардаа ганц удаа биднээс мэдээ мэдээлэл хүлээж авах болно. ",
+        "title": "Мэдээллийн самбар "
       },
       "photos": {
-        "empty": "You haven't uploaded any photos yet.",
-        "title": "Photos"
+        "empty": "Та одоогоор ямар нэгэн зураг оруулаагүй байна.",
+        "title": "Зураг"
       },
       "show": {
         "greeting": {
-          "anonymously": "Hello there",
-          "personalized": "Hello %{name}"
+          "anonymously": "Сайн байна уу ",
+          "personalized": "Сайн байна уу %{name}"
         },
         "overview": {
           "photos_uploaded": {
-            "one": "uploaded %{count} photo",
-            "other": "uploaded %{count} photos"
+            "one": "татаж оруулсан %{count} зурагнууд ",
+            "other": "татаж оруулсан %{count} зурагнууд "
           },
           "pois_added": {
-            "one": "added %{count} place",
-            "other": "added %{count} places"
+            "one": "нэмэгдсэн %{count}газрууд ",
+            "other": "нэмэгдсэн %{count} газрууд "
           },
           "pois_edited": {
-            "one": "edited %{count} place",
-            "other": "edited %{count} places"
+            "one": "засварлагдсан %{count}газрууд ",
+            "other": "засварлагдсан %{count}газрууд "
           },
           "pois_marked": {
-            "one": "marked %{count} place",
-            "other": "marked %{count} places"
+            "one": "тэмдэглэгдсэн %{count}газрууд ",
+            "other": "тэмдэглэгдсэн %{count}газрууд "
           },
-          "text": "You have"
+          "text": "Танд бий "
         },
-        "text_html": "Hello there,<br>\nWelcome (back) to Wheelmap.org! We’re happy to have you on board! You can browse our <a href=\"http://news.wheelmap.org/en/\">Blog</a> or <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> if you want to get to know Wheelmap.org a bit better. Or you can learn more about the <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projects</a> we offer around Wheelmap.org and how you can get involved.<br>\nTo stay in contact you can subscribe to our monthly newsletter and follow us on <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> and <a href=\"https://twitter.com/wheelmap\">Twitter</a>. We’re looking forward to hearing your opinion and starting a conversation with you!<br>\nAnd now, happy mapping!<br>\nYour Wheelmap team",
-        "title": "Overview"
+        "text_html": "Сайн байна уу,<br>\n Wheelmap.org! –т (эргэн) тавтай морил! Бид таньтай хамтран ажиллах болсондоо баяртай байна! Та бидний <a href=\"http://news.wheelmap.org/en/\">Блог</a> эсвэл <a href=\"http://news.wheelmap.org/en/FAQ/\">Тогтмол асуулт хариулт</a> хэсгээр нэвтэрч болно. Хэрвээ та Wheelmap.org сайтын талаарү ихийг мэдэхийг, эсвэл <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">төслийн</a> талаар илүү ихийг сурахыг хүсвэл бид тань руу Wheelmap.org! сайтад хэрхэн ажиллах талаар зааварчилгаа илгээх болно. <br>\n Та бидэнтэй холбоотой байж биднийг олон нийтийн сүлжээ болох <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> болон <a href=\"https://twitter.com/wheelmap\">Twitter</a> -т дагаснаар бидний гаргадаг сар тутмын мэдээ мэдээллүүдийг хүлээж авах болно. Бид таньтай холбоо тогтоон, таны санаа бодлыг сонсохдоо таатай байх болно. <br>\n Та одоо зураглалаа тааваараа хийж болно!<br>\n Газарзүйн зураглалын баг ",
+        "title": "Ерөнхий байдлаар харах "
       },
       "widget": {
-        "categories": "Show category filter",
-        "center": "Map area",
-        "empty_center": "Search for center of map …",
-        "empty_provider": "Choose a Provider",
-        "height": "Height",
+        "categories": "Ангилалаар шүүж харах",
+        "center": "Газрын зургийн талбар ",
+        "empty_center": "Газрын зургийн төвөөс эхлэн хайлт хийх ...",
+        "empty_provider": "Нийлүүлэгчийг сонгох ",
+        "height": "Өндрийн хэмжээ",
         "legends": {
-          "embed": "Embed code",
-          "embed_explanation": "You can change the specifications for latitude (<code>lat</code>), longitude (<code>lon</code>) and zoom level (<code>zoom</code>) in the code above manually and thereby adjust the map segment (widget) according to the location you want to show.",
-          "general": "Create your own Wheelmap widget and embed it in your website or blog.",
-          "preview": "Preview",
-          "settings": "Settings"
+          "embed": "Суулгасан код",
+          "embed_explanation": "Та өөрийн харахыг хүссэн газрыг байршлийн дагуу буюу уртраг (<code>lat</code>), өргөрөг (<code>lon</code>) болон томруулж, жижигрүүлэх (<code>zoom</code>) байдлаар газарзүйн нарийвчилсан (виджет) тохиргоо хийж харах боломжтой. ",
+          "general": "Та өөрийн Wheelmap виджетийг бий болгон түүнийгээ өөрийн вэбсайт болон блогтоо оруулж болно. ",
+          "preview": "Урьдчилан харах",
+          "settings": "Тохиргоо"
         },
-        "providers": "Provider",
-        "title": "Widget",
-        "width": "Width"
+        "providers": "Нийлүүлэгч ",
+        "title": "Виджет ",
+        "width": "Өргөний хэмжээ "
       }
     }
   },
@@ -1615,50 +1615,50 @@ I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
     }
   },
   "wheelchairstatus": {
-    "limited": "Partially wheelchair accessible",
-    "no": "Not wheelchair accessible",
-    "unknown": "Unknown status",
-    "yes": "Wheelchair accessible"
+    "limited": "Хэсэгчилсэн газрууд тэргэнцэрт хүртээмжтэй",
+    "no": "Тэргэнцэрт хүртээмжтэй бус ",
+    "unknown": "Таниулаагүй өгөгдөл байна ",
+    "yes": "Тэргэнцэрт хүртээмжтэй"
   },
   "wheelmap": {
     "footer": {
-      "a_project_of": "A project by",
-      "based_on": "Based on",
-      "become_a_supporter": "Become a supporter",
-      "main_supporter": "Main supporter"
+      "a_project_of": "Төслөөр ",
+      "based_on": "Суурилсан ",
+      "become_a_supporter": "Дэмжигч болох ",
+      "main_supporter": "Үндсэн дэмжигч "
     },
     "itunes": {
       "alt": "AppStore Logo",
-      "title": "Download the iPhone App now!"
+      "title": "IPhone App яг одоо татаж авах  "
     },
     "logo": {
-      "alt": "Wheelmap Logo - find wheelchair accessible places",
-      "title": "Wheelmap - find wheelchair accessible places"
+      "alt": "Wheelmap Logo - тэргэнцэрт хүртээмжтэй газруудыг хайх ",
+      "title": "Wheelmap - тэргэнцэрт хүртээмжтэй газруудыг хайх"
     },
     "what_is": {
-      "fully_accessible": "Entrance without steps, all rooms without steps.",
-      "limited_accessible": "Entrance has one step with max. height 7cm (3 in), most rooms are without steps.",
-      "not_accessible": "Entrance has a step or several steps, rooms are not accessible.",
-      "unknown_accessible": "Help out by marking places!"
+      "fully_accessible": "Нэвтрэх орц, гарц гишгүүргүй; бүх өрөө гишгүүргүй",
+      "limited_accessible": "Нэвтрэх орц, гарц хамгийн ихдээ ганц шаттай. Өндөр нь 7см (3инч), ихэнх өрөөнүүд гишгүүргүй ",
+      "not_accessible": "Нэвтрэх орц, гарц гишгүүртэй ба цөөн хэдэн гишгүүртэй, өрөөнүүд хүртээмжтэй бус.",
+      "unknown_accessible": "Газар тэмдэглэхэд туслах! "
     }
   },
   "will_paginate": {
-    "next_label": "Next &#8594;",
+    "next_label": "Дараа &#8594 ",
     "page_entries_info": {
-      "multi_page": "Displaying %{model} %{from} - %{to} of %{count} in total",
-      "multi_page_html": "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total",
+      "multi_page": "Дэлгэцэнд %{count}-н %{model}-г %{from} - %{to}хоорондох байдлаар харуулж байна",
+      "multi_page_html": "Дэлгэцэнд %{model}-г  <b>%{count}</b>-н байдлаар<b>%{from}&nbsp;-&nbsp;%{to}</b> хооронд харуулж байна ",
       "single_page": {
-        "one": "Displaying 1 %{model}",
-        "other": "Displaying all %{count} %{model}",
-        "zero": "No %{model} found"
+        "one": "Дэлгэцэнд 1 %{model} харуулж байна ",
+        "other": "Бүх %{count} %{model} дэлгэцэнд харуулж байна",
+        "zero": "%{model} олдсонгүй "
       },
       "single_page_html": {
-        "one": "Displaying <b>1</b> %{model}",
-        "other": "Displaying <b>all&nbsp;%{count}</b> %{model}",
-        "zero": "No %{model} found"
+        "one": "Дэлгэцэнд <b>1</b> %{model} харуулж байна ",
+        "other": "Дэлгэцэнд харуулж байна <b>all&nbsp; %{count}</b>%{model}",
+        "zero": "%{model} олдсонгүй"
       }
     },
-    "page_gap": "&hellip;",
-    "previous_label": "&#8592; Previous"
+    "page_gap": "&hellip; ",
+    "previous_label": "&#8592; Previous "
   }
 });
