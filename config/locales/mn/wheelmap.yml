@@ -1,0 +1,382 @@
+---
+en:
+  application:
+    require_no_user:
+      notice: "You’re already logged in…"
+    require_user:
+      notice: "You must be logged in to see this page."
+  breadcrumbs:
+    node:
+      create: "Add a new place"
+      edit: "Edit place"
+    root: Wheelmap
+  common:
+    close: close
+    skip: skip
+  errors:
+    dynamic_format: "%{message}"
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: "must be accepted"
+      already_confirmed: "has already been confirmed"
+      blank: "must be filled in"
+      confirmation: "doesn't match confirmation"
+      empty: "must be filled in"
+      equal_to: "must be exactly %{count}"
+      even: "must be an even number"
+      exclusion: "is reserved"
+      expired: "expired, please request a new one"
+      greater_than: "must be greater than %{count}"
+      greater_than_or_equal_to: "must be greater than or equal to %{count}"
+      inclusion: "not a valid value"
+      invalid: "not valid"
+      less_than: "must be less than %{count}"
+      less_than_or_equal_to: "must be less than or equal to %{count}"
+      not_a_number: "is not a number"
+      not_an_integer: "must be an integer"
+      not_found: "was not found"
+      not_locked: "was not locked"
+      not_saved:
+        one: "An error prohibited to save a %{resource}:"
+        other: "%{count} errors prohibited to save a %{resource}:"
+      odd: "must be an odd number"
+      taken: "has already been taken"
+      too_long: "is too long (not more than %{count} characters)"
+      too_short: "is too short (not less than %{count} characters)"
+      wrong_length: "is the wrong length (should be %{count} characters)"
+    template:
+      body: "There were problems with the following fields:"
+      header:
+        one: "1 error prohibited this %{model} from being saved"
+        other: "%{count} errors prohibited this %{model} from being saved"
+  flash:
+    actions:
+      create:
+        notice: "%{resource_name} was successfully created"
+      destroy:
+        alert: "%{resource_name} could not be removed"
+        notice: "%{resource_name} was successfully deleted"
+      update:
+        notice: "%{resource_name} was successfully updated"
+    photos:
+      destroy:
+        notice: "Image was successfully deleted"
+  form:
+    show_fully_accessible_places: "Wheelchair accessible"
+    show_limited_accessible_places: "Partially wheelchair accessible"
+    show_places_without_status: "Unknown status"
+    show_unaccessible_places: "Not wheelchair accessible"
+  formtastic:
+    hints:
+      email: "We treat your address confidentially. We promise not to send you spam!"
+      lat: "Move the marker on the map to the correct position"
+      osm_username: "Not a member yet? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>"
+      password: "(leave empty if you don't want to change it)"
+      phone: "For example: +49 30 12345678"
+      website: "For example: http://www.example.com"
+    labels:
+      category: "Category:"
+      centralkey: "Central key:"
+      city: "City:"
+      create: "Create a place"
+      email: Email
+      finish: Finish
+      housenumber: "No:"
+      lat: Latitude
+      lon: Longitude
+      name: "Name:"
+      osm_password: "OpenStreetMap password"
+      osm_username: "OpenStreetMap account name"
+      password: Password
+      password_confirmation: "Repeat password"
+      phone: "Telephone:"
+      postcode: "Post code:"
+      privacy_policy: "I accept paragraphs 1 and 2 of the data privacy agreement."
+      reset: Reset
+      save: Save
+      street: "Street:"
+      terms: "I accept the terms of use."
+      type: "Type:"
+      website: "Website:"
+      wheelchair: "Wheelchair accessibility?"
+      wheelchair_description: "Accessibility comment:"
+      wheelchair_toilet: "Wheelchair accessible toilet:"
+    titles:
+      basic: "Basic data"
+      optional: "More information <span class=\"addition\">(all fields are optional)</span>"
+  global:
+    form_validation_error: "Please note the errors listed below"
+  header:
+    meta:
+      homepage: "Home page"
+      keywords: "wheelchair accessible places find search mark"
+      search: Search
+    navigation:
+      blog: News
+      feedback: Feedback
+      home: Start
+      how_to_add_a_place: "How do I add places?"
+      imprint: Imprint
+      logged_in_as: "Logged in as:"
+      login: "Log in"
+      logout: "Log out"
+      newsletter: Newsletter
+      press: Press
+      profile: Profile
+      suggestions: Suggestions
+      what_is_barrier_free: "What does \"wheelchair accessible\" mean?"
+      what_is_wheelmap: "What is Wheelmap?"
+    searchbar:
+      add_place: "Add another place"
+      find: Find
+      placeholder: "Search for a place"
+      title_add_place: "Add a new place at this position now!"
+    tagline: "Wheelmap logo"
+    title: "Find wheelchair accessible places"
+  helpers:
+    select:
+      prompt: "Please choose"
+    submit:
+      create: "create %{model}"
+      submit: "save %{model}"
+      update: "update %{model}"
+  home:
+    index:
+      filter:
+        category: "Choose category"
+        deselect_all: "Deselect all"
+        select_all: "Select all"
+        wheelchair: "Wheelchair accessible?"
+      ie:
+        action:
+          ignore: Ignore
+          upgrade: "Update Browser"
+        warning:
+          headline: "We apologise!"
+          message: "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
+      link:
+        node:
+          create: "Add a new place"
+      popup:
+        form:
+          limited: "Partially wheelchair accessible"
+          'no': "Not wheelchair accessible"
+          save: Update
+          unknown: "Unknown status"
+          'yes': "Wheelchair accessible"
+        help: "Wheelchair accessible? (Help)"
+        more: "more ..."
+  how?: How?
+  landing_pages:
+    index:
+      wheelchair:
+        limit:
+          headline: "All partially wheelchair accessible %{type} in %{city} (%{count})"
+        'no':
+          headline: "All not wheelchair accessible %{type} in %{city} (%{count})"
+        unknown:
+          headline: "All %{type} in %{city} with unknown wheelchair status (%{count})"
+        'yes':
+          headline: "All wheelchair accessible %{type} in %{city} (%{count})"
+  layouts:
+    application:
+      banner:
+        alt: "A project by Sozialhelden.de"
+  node:
+    address:
+      city: "%{city} %{postcode}"
+      street: "%{housenumber} %{street}"
+    tags:
+      phone: "Phone:"
+      website: "Website:"
+  nodes:
+    create:
+      flash:
+        not_successfull: "Oops, your input was either incorrect or incomplete"
+        successfull: "Thank you, your submission was saved successfully and will be online shortly."
+    edit:
+      header:
+        title: "Edit place: %{node} | wheelmap.org"
+      link:
+        large_map: "&laquo; Cancel"
+    errors:
+      default: "Oops something went wrong. We have been informed about this issue"
+      not_authorized: "Sorry, authentication failed"
+      not_available: "Sorry, this page is temporarily not available."
+      not_existent: "Sorry, this place is not available anymore."
+      not_found: "Sorry, page not found."
+      param_missing: "Please provide a search term"
+    flash:
+      authorize_wheelmap: "You need an OpenStreetMap account to modify data"
+    new:
+      header:
+        title: "New place | wheelmap.org"
+      link:
+        large_map: "&laquo; Cancel"
+    node:
+      link:
+        claim: "Do you work here?"
+        edit_node: "Edit place"
+        report_bug: "Report a problem"
+    show:
+      header:
+        title: "Place: %{node} | wheelmap.org"
+      link:
+        back: back
+        large_map: Enlarge
+        listing: "All places of typ '%{type}' in %{city}"
+        upload: "Upload image"
+      more_data_from: "There is more information about this place, validated by:"
+      show-in-osm: OpenStreetMap
+    update:
+      flash:
+        not_successfull: "Oops, your input was either incorrect or incomplete"
+        successfull: "Thank you, your submission was saved successfully and will be online shortly."
+    update_wheelchair:
+      successfull: "The status for \"%{name}\" has been changed to \"%{status}\" and will be online shortly."
+  number:
+    currency:
+      format:
+        delimiter: ","
+        format: "%u%n"
+        separator: "."
+        unit: $
+    format:
+      delimiter: ","
+      separator: "."
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion: Billion
+          million: Million
+          quadrillion: Quadrillion
+          thousand: Thousand
+          trillion: Trillion
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: KB
+          mb: MB
+          tb: TB
+  oauth:
+    application:
+      connect:
+        headline: "You need to connect your account with your OpenStreetMap account before you can create or modify places on Wheelmap.org."
+    callback:
+      notice: "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
+  or: or
+  place:
+    one: "%{count} place"
+    other: "%{count} places"
+  profile:
+    edit:
+      application:
+        oauth:
+          connected: "Status: connected"
+          grant: "Connect now"
+          not_connected: "Status: Not connected"
+          revoke: Disconnect
+      headline: "Edit your profile"
+  search:
+    index:
+      search:
+        for: "Searching for \"%{q}\""
+        not_found: "No places could be found!"
+  splash:
+    countline: "%{count} places have already been marked."
+    headline: "Everyone can add wheelchair accessible places!"
+    start: Start
+    step1: "Click on a place you know"
+    step2: "Mark it and click save"
+    step3: "That's it! No registration necessary"
+    what_is_wheelmap: "What is Wheelmap?"
+  statistics: Statistics
+  support:
+    array:
+      last_word_connector: " and "
+      sentence_connector: and
+      two_words_connector: " and "
+      words_connector: ","
+    select:
+      prompt: "Please select"
+  time:
+    am: am
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S %z"
+      long: "%B %d, %Y %H:%M"
+      short: "%d %b %H:%M"
+    pm: pm
+  toiletstatus:
+    'no': "No wheelchair accessible toilet"
+    unknown: "Toilet status unknown"
+    'yes': "Wheelchair accessible toilet"
+    what_is:
+      'no': "Doorways' inner width min. 90 cm (35 in), clear floor space min. 150 x 150 cm (59 x 59 in), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      'yes': "Doorways' inner width min. 90 cm (35 inc), clear floor space min. 150 x 150 cm (59 x 59), wheelchair-height toilet seat, folding grab rails and accessible hand basin."
+      unknown: "Help out by marking the toilet status!"
+  user_sessions:
+    create:
+      activation:
+        notice: "Your account is activated now!"
+      error:
+        notice: "Email and password don't match."
+      notice: "You're in!"
+    destroy:
+      notice: "Bye, come back soon!"
+    new:
+      email: "Email address"
+      login: "Log in"
+      login_with_twitter: "Log in with Twitter"
+      password: Password
+      remember_me: "Stay logged in"
+  users:
+    after_signup_edit:
+      welcome:
+        headline: "You are almost there! Now on to finalize your Wheelmap account:"
+        set_password_for_mobile: "You have successfully registered with OpenStreetMap. Please choose an email address that you would like Wheelmap to use so we can keep you informed about your activities (for example the number of places you have marked). You can access this information on your \"Profile\"."
+        text: "How can we get in touch with you? You can change this information later in your profile."
+    edit:
+      headline:
+        your_images: "Your uploaded images"
+  wheelchairstatus:
+    limited: "Partially wheelchair accessible"
+    'no': "Not wheelchair accessible"
+    unknown: "Unknown status"
+    'yes': "Wheelchair accessible"
+  wheelmap:
+    footer:
+      a_project_of: "A project by"
+      based_on: "Based on"
+      become_a_supporter: "Become a supporter"
+      main_supporter: "Main supporter"
+    itunes:
+      alt: "AppStore Logo"
+      title: "Download the iPhone App now!"
+    logo:
+      alt: "Wheelmap Logo - find wheelchair accessible places"
+      title: "Wheelmap - find wheelchair accessible places"
+    what_is:
+      fully_accessible: "Entrance without steps, all rooms without steps."
+      limited_accessible: "Entrance has one step with max. height 7cm (3 in), most rooms are without steps."
+      not_accessible: "Entrance has a step or several steps, rooms are not accessible."
+      unknown_accessible: "Help out by marking places!"
+  will_paginate:
+    next_label: "Next &#8594;"
+    page_entries_info:
+      multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
+      multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
+      single_page:
+        one: "Displaying 1 %{model}"
+        other: "Displaying all %{count} %{model}"
+        zero: "No %{model} found"
+      single_page_html:
+        one: "Displaying <b>1</b> %{model}"
+        other: "Displaying <b>all&nbsp;%{count}</b> %{model}"
+        zero: "No %{model} found"
+    page_gap: "&hellip;"
+    previous_label: "&#8592; Previous"

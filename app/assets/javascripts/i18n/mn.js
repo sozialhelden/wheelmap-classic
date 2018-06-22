@@ -1,21 +1,21 @@
 I18n.translations || (I18n.translations = {});
-I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
+I18n.translations["mn"] = I18n.extend((I18n.translations["mn"] || {}), {
   "actions": {
     "cancel": "Cancel",
     "next": "Next",
-    "save": "Saglabāt",
+    "save": "Save",
     "send": "Send"
   },
   "active_admin": {
     "access_denied": {
       "message": "You are not authorized to perform this action."
     },
-    "any": "Jebkurš",
+    "any": "Any",
     "batch_actions": {
       "action_label": "%{title} Selected",
       "button_label": "Batch Actions",
-      "default_confirmation": "Vai tiešām vēlaties to darīt?",
-      "delete_confirmation": "Vai tiešām vēlaties dzēst šos %{plural_model}?",
+      "default_confirmation": "Are you sure you want to do this?",
+      "delete_confirmation": "Are you sure you want to delete these %{plural_model}? You won't be able to undo this.",
       "labels": {
         "destroy": "Delete"
       },
@@ -27,59 +27,59 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       }
     },
     "blank_slate": {
-      "content": "Sadaļā '%{resource_name}' nav neviena ieraksta.",
-      "link": "Izveidot jaunu"
+      "content": "There are no %{resource_name} yet.",
+      "link": "Create one"
     },
-    "cancel": "Atcelt",
+    "cancel": "Cancel",
     "clear_filters": "Clear Filters",
     "comments": {
-      "add": "Pievienot komentāru",
-      "author": "Autors",
+      "add": "Add Comment",
+      "author": "Author",
       "author_missing": "Anonymous",
       "author_type": "Author Type",
-      "body": "Saturs",
+      "body": "Body",
       "created_at": "Created",
       "delete": "Delete Comment",
       "delete_confirmation": "Are you sure you want to delete these comment?",
       "errors": {
-        "empty_text": "Komentārs netika saglabāts - nekas nav ierakstīts"
+        "empty_text": "Comment wasn't saved, text was empty."
       },
-      "no_comments_yet": "Nav neviena komentāra.",
-      "resource": "Resurss",
+      "no_comments_yet": "No comments yet.",
+      "resource": "Resource",
       "resource_type": "Resource Type",
-      "title": "Komentārs",
-      "title_content": "Komentāri (%{count})"
+      "title": "Comment",
+      "title_content": "Comments (%{count})"
     },
     "create_model": "New %{model}",
-    "dashboard": "Panelis",
+    "dashboard": "Dashboard",
     "dashboard_welcome": {
-      "call_to_action": "Izmantojiet 'app/admin/dashboard.rb', lai pievienotu sadaļas panelim.",
-      "welcome": "Laipni lūgti Active Admin."
+      "call_to_action": "To add dashboard sections, checkout 'app/admin/dashboards.rb'",
+      "welcome": "Welcome to Active Admin. This is the default dashboard page."
     },
-    "delete": "Dzēst",
-    "delete_confirmation": "Vai Tu tiešām vēlies dzēst?",
-    "delete_model": "Dzēst '%{model}' ierakstu",
-    "details": "Apraksts",
+    "delete": "Delete",
+    "delete_confirmation": "Are you sure you want to delete this?",
+    "delete_model": "Delete %{model}",
+    "details": "%{model} Details",
     "devise": {
       "change_password": {
-        "submit": "Nomainīt savu paroli",
-        "title": "Nomainīt paroli"
+        "submit": "Change my password",
+        "title": "Change your password"
       },
       "email": {
         "title": "Email"
       },
       "links": {
-        "forgot_your_password": "Aizmirsāt savu paroli?",
+        "forgot_your_password": "Forgot your password?",
         "resend_confirmation_instructions": "Resend confirmation instructions",
         "resend_unlock_instructions": "Resend unlock instructions",
-        "sign_in": "pierakstīties",
-        "sign_in_with_omniauth_provider": "Pierakstieties ar %{provider}",
+        "sign_in": "Sign in",
+        "sign_in_with_omniauth_provider": "Sign in with %{provider}",
         "sign_up": "Sign up"
       },
       "login": {
-        "remember_me": "atcerēties mani",
-        "submit": "Ielogojaties",
-        "title": "Ielogojaties"
+        "remember_me": "Remember me",
+        "submit": "Login",
+        "title": "Login"
       },
       "password": {
         "title": "Password"
@@ -89,8 +89,8 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         "title": "Resend confirmation instructions"
       },
       "reset_password": {
-        "submit": "Atjaunotu savu paroli",
-        "title": "Aizmirsāt savu paroli?"
+        "submit": "Reset My Password",
+        "title": "Forgot your password?"
       },
       "sign_up": {
         "submit": "Sign up",
@@ -107,33 +107,33 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         "title": "Username"
       }
     },
-    "download": "Lejuplādēt:",
+    "download": "Download:",
     "dropdown_actions": {
       "button_label": "Actions"
     },
-    "edit": "Labot",
-    "edit_model": "Labot '%{model}' ierakstu",
-    "empty": "Tukšs",
+    "edit": "Edit",
+    "edit_model": "Edit %{model}",
+    "empty": "Empty",
     "equal_to": "Equal To",
     "filter": "Filter",
     "filters": {
       "buttons": {
-        "clear": "Novākt filtrus",
-        "filter": "Filtrēt"
+        "clear": "Clear Filters",
+        "filter": "Filter"
       },
       "predicates": {
-        "contains": "Satur",
-        "ends_with": "Beidzas ar",
-        "equals": "Vienāds ar",
-        "greater_than": "Lielāks par",
-        "less_than": "Mazāks par",
-        "starts_with": "Sākas ar"
+        "contains": "Contains",
+        "ends_with": "Ends with",
+        "equals": "Equals",
+        "greater_than": "Greater than",
+        "less_than": "Less than",
+        "starts_with": "Starts with"
       }
     },
     "greater_than": "Greater Than",
-    "has_many_delete": "Dzēst",
-    "has_many_new": "Pievienot jaunu '%{model}' ierakstu",
-    "has_many_remove": "Noņemt",
+    "has_many_delete": "Delete",
+    "has_many_new": "Add New %{model}",
+    "has_many_remove": "Remove",
     "index_list": {
       "block": "List",
       "blog": "Blog",
@@ -141,23 +141,23 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       "table": "Table"
     },
     "less_than": "Less Than",
-    "logout": "Iziet",
-    "main_content": "Lūdzu implementēt %{model}#main_content, lai rādītos saturs.",
-    "new_model": "Pievienot '%{model}' ierakstu",
-    "next": "Nākošā",
+    "logout": "Logout",
+    "main_content": "Please implement %{model}#main_content to display content.",
+    "new_model": "New %{model}",
+    "next": "Next",
     "pagination": {
-      "empty": "Nav ierakstu",
+      "empty": "No %{model} found",
       "entry": {
-        "one": "ieraksts",
-        "other": "ieraksti"
+        "one": "entry",
+        "other": "entries"
       },
-      "multiple": "<b>%{from}&nbsp;-&nbsp;%{to}</b> ieraksti no <b>%{total}</b> kopā",
-      "multiple_without_total": "<b>%{from}&nbsp;-&nbsp;%{to}</b>",
-      "one": "<b>1</b> ieraksts",
-      "one_page": "<b>%{n}</b> ieraksti"
+      "multiple": "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{total}</b> in total",
+      "multiple_without_total": "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b>",
+      "one": "Displaying <b>1</b> %{model}",
+      "one_page": "Displaying <b>all %{n}</b> %{model}"
     },
     "powered_by": "Powered by %{active_admin} %{version}",
-    "previous": "Iepriekšējā",
+    "previous": "Previous",
     "search_field": "Search %{field}",
     "search_status": {
       "current_filters": "Current filters:",
@@ -165,12 +165,12 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       "no_current_filters": "None"
     },
     "sidebars": {
-      "filters": "Filtri",
+      "filters": "Filters",
       "search_status": "Search Status"
     },
     "status_tag": {
-      "no": "Nē",
-      "yes": "Jā"
+      "no": "No",
+      "yes": "Yes"
     },
     "unsupported_browser": {
       "headline": "Please note that ActiveAdmin no longer supports Internet Explorer versions 8 or less.",
@@ -178,7 +178,7 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       "turn_off_compatibility_view": "If you are using IE 9 or later, make sure you <a href=\"http://windows.microsoft.com/en-US/windows7/webpages-look-incorrect-in-Internet-Explorer\">turn off \"Compatibility View\"</a>."
     },
     "update_model": "Edit %{model}",
-    "view": "Apskatīt"
+    "view": "View"
   },
   "activerecord": {
     "attributes": {
@@ -206,31 +206,31 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         "format": "%{attribute} %{message}"
       },
       "messages": {
-        "accepted": "Jāapstiprina",
-        "blank": "nevar palikt neaizpildīts",
-        "confirmation": "neatbilst apstiprinājumam",
-        "empty": "nevar būt tukšs",
-        "equal_to": "jābūt vienādam ar %{count}",
-        "even": "jābūt pāra skaitlim",
-        "exclusion": "ir rezervēts",
-        "greater_than": "ir jābūt lielākam par  %{count}",
-        "greater_than_or_equal_to": "Ir jābūt lielākam vai vienādam ar  %{count}",
-        "inclusion": "nav iekļauts sarakstā",
-        "invalid": "nederīgs",
-        "less_than": "vēŗtībai jābūt mazākai par %{count}",
-        "less_than_or_equal_to": "Ir jābūt mazākam vai vienādam ar %{count}",
-        "not_a_number": "nav skaitlis",
+        "accepted": "must be accepted",
+        "blank": "can't be blank",
+        "confirmation": "doesn't match confirmation",
+        "empty": "can't be empty",
+        "equal_to": "must be equal to %{count}",
+        "even": "must be even",
+        "exclusion": "is reserved",
+        "greater_than": "must be greater than %{count}",
+        "greater_than_or_equal_to": "must be greater than or equal to %{count}",
+        "inclusion": "is not included in the list",
+        "invalid": "is invalid",
+        "less_than": "must be less than %{count}",
+        "less_than_or_equal_to": "must be less than or equal to %{count}",
+        "not_a_number": "is not a number",
         "not_equal_to": "must not be equal to %{count}",
-        "odd": "jābūt nepāra vērtībai",
-        "record_invalid": "Apstiprināšana neizdevās: %{errors}",
+        "odd": "must be odd",
+        "record_invalid": "Validation failed: %{errors}",
         "restrict_dependent_destroy": {
           "many": "Cannot delete record because dependent %{record} exist",
           "one": "Cannot delete record because a dependent %{record} exists"
         },
-        "taken": "jau ir aizņemts",
-        "too_long": "Ir par garu (maksimums %{count} zīmes)",
-        "too_short": "ir par īsu (minimums ir %{count} zīmes)",
-        "wrong_length": "garums ir nepareizs (jābūt %{count} zīmēm)"
+        "taken": "has already been taken",
+        "too_long": "is too long (maximum is %{count} characters)",
+        "too_short": "is too short (minimum is %{count} characters)",
+        "wrong_length": "is the wrong length (should be %{count} characters)"
       },
       "models": {
         "user": {
@@ -247,16 +247,16 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
           }
         },
         "user_session": {
-          "email": "E-pasta adrese",
-          "password": "Parole",
-          "remember_me": "Palikt piereģistrētam"
+          "email": "Email address",
+          "password": "Password",
+          "remember_me": "Stay logged in"
         }
       },
       "template": {
-        "body": "Radās sarežģījumi ar sekojošiem laukiem:",
+        "body": "There were problems with the following fields:",
         "header": {
-          "one": "1 kļūda neļāva saglabāt %{model}",
-          "other": "%{count} kļūdas liedza saglabāt %{model}"
+          "one": "1 error prohibited this %{model} from being saved",
+          "other": "%{count} errors prohibited this %{model} from being saved"
         }
       }
     },
@@ -297,22 +297,22 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
   },
   "application": {
     "require_no_user": {
-      "notice": "Jūs jau esat pierakstījies..."
+      "notice": "You’re already logged in…"
     },
     "require_user": {
-      "notice": "Jums ir jāpierakstās lai redzētu šo lapu."
+      "notice": "You must be logged in to see this page."
     }
   },
   "breadcrumbs": {
     "node": {
       "create": "Add a new place",
-      "edit": "Labot vietu"
+      "edit": "Edit place"
     },
     "root": "Wheelmap"
   },
   "common": {
-    "close": "aizvērt",
-    "skip": "izlaist"
+    "close": "close",
+    "skip": "skip"
   },
   "community_support_form": {
     "new": {
@@ -327,63 +327,63 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
           "c": "What happened instead?"
         },
         "submit_button": "Submit",
-        "title": "Ziņot par problēmu"
+        "title": "Report a problem"
       }
     }
   },
   "date": {
     "abbr_day_names": [
-      "Sv.",
-      "P.",
-      "O.",
-      "T.",
-      "C.",
-      "Pk.",
-      "S."
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri",
+      "Sat"
     ],
     "abbr_month_names": [
-      null,
-      "Janv",
-      "Febr",
-      "Marts",
+      "",
+      "Jan",
+      "Feb",
+      "Mar",
       "Apr",
-      "Maijs",
-      "Jūn",
-      "Jūl",
+      "May",
+      "Jun",
+      "Jul",
       "Aug",
-      "Sept",
-      "Okt",
+      "Sep",
+      "Oct",
       "Nov",
       "Dec"
     ],
     "day_names": [
-      "svētdiena",
-      "pirmdiena",
-      "otrdiena",
-      "trešdiena",
-      "ceturtdiena",
-      "piektdiena",
-      "sestdiena"
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday"
     ],
     "formats": {
-      "default": "%d.%m.%Y.",
-      "long": "%Y. gada %e. %B",
-      "short": "%e. %B"
+      "default": "%Y-%m-%d",
+      "long": "%B %d, %Y",
+      "short": "%b %d"
     },
     "month_names": [
-      null,
-      "janvārī",
-      "februārī",
-      "martā",
-      "aprīlī",
-      "maijā",
-      "jūnijā",
-      "jūlijā",
-      "augustā",
-      "septembrī",
-      "oktobrī",
-      "novembrī",
-      "decembrī"
+      "",
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
     ],
     "order": [
       "year",
@@ -394,169 +394,169 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
   "datetime": {
     "distance_in_words": {
       "about_x_hours": {
-        "one": "apmēram 1 stunda",
-        "other": "apmēram %{count} stundas"
+        "one": "about 1 hour",
+        "other": "about %{count} hours"
       },
       "about_x_months": {
-        "one": "apmēram 1 mēnesis",
-        "other": "apmēram %{count} mēneši"
+        "one": "about 1 month",
+        "other": "about %{count} months"
       },
       "about_x_years": {
-        "one": "apmēram 1 gads",
-        "other": "apmēram %{count} gadi"
+        "one": "about 1 year",
+        "other": "about %{count} years"
       },
       "almost_x_years": {
-        "one": "gandrīz 1 gads",
-        "other": "gandrīz %{count} gadi"
+        "one": "almost 1 year",
+        "other": "almost %{count} years"
       },
-      "half_a_minute": "pusminūte",
+      "half_a_minute": "half a minute",
       "less_than_x_minutes": {
-        "one": "mazāk par vienu minūti",
-        "other": "mazāk par %{count} minūtēm"
+        "one": "less than a minute",
+        "other": "less than %{count} minutes"
       },
       "less_than_x_seconds": {
-        "one": "mazāk par vienu sekundi",
-        "other": "mazāk par %{count} sekundēm"
+        "one": "less than 1 second",
+        "other": "less than %{count} seconds"
       },
       "over_x_years": {
-        "one": "vairāk kā gads",
-        "other": "vairāk kā %{count} gadi"
+        "one": "over 1 year",
+        "other": "over %{count} years"
       },
       "x_days": {
-        "one": "1 diena",
-        "other": "%{count} dienas"
+        "one": "1 day",
+        "other": "%{count} days"
       },
       "x_minutes": {
-        "one": "1 minūte",
-        "other": "%{count} minūtes"
+        "one": "1 minute",
+        "other": "%{count} minutes"
       },
       "x_months": {
-        "one": "1 mēnesis",
-        "other": "%{count} mēneši"
+        "one": "1 month",
+        "other": "%{count} months"
       },
       "x_seconds": {
-        "one": "1 sekunde",
-        "other": "%{count} sekundes"
+        "one": "1 second",
+        "other": "%{count} seconds"
       }
     },
     "prompts": {
-      "day": "diena",
-      "hour": "stunda",
-      "minute": "minūte",
-      "month": "mēnesis",
-      "second": "sekunde",
-      "year": "gads"
+      "day": "Day",
+      "hour": "Hour",
+      "minute": "Minute",
+      "month": "Month",
+      "second": "Seconds",
+      "year": "Year"
     }
   },
   "devise": {
     "confirmations": {
-      "confirmed": "Jūsu konts tika veiksmīgi apstiprināts. Jūs esat pierakstījies.",
+      "confirmed": "Your email address was successfully confirmed.",
       "link": "You didn't receive confirmation instructions?",
-      "send_instructions": "Pēc dažām minūtēm Jūs saņemsiet e-pastu ar instrukcijām, kā apstiprināt savu kontu.",
+      "send_instructions": "In a few minutes you will receive an email with a link to confirm your email address.",
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to confirm your account."
     },
     "destroy": {
-      "confirm": "Vai esat pārliecināts?",
+      "confirm": "Are you sure?",
       "headline": "Delete account",
-      "link": "Izdzēst tūlīt"
+      "link": "Delete now"
     },
     "edit": {
       "form": {
         "labels": {
-          "current_password": "Parole <i>(nepieciešama lai apstiprinātu veiktās izmaiņas)</i>",
-          "email": "E-pasts",
-          "password": "Parole <i>(atstājiet tukšu, ja nevēlaties to mainīt)</i>",
-          "password_confirmation": "Atkārtojiet paroli"
+          "current_password": "Current password <i>(we need it to confirm your changes)</i>",
+          "email": "Email",
+          "password": "Password <i>(leave empty if you don\\'t want to change it)</i>",
+          "password_confirmation": "Repeat password"
         },
-        "submit": "Saglabāt izmaiņas"
+        "submit": "Save changes"
       },
-      "headline": "Izmainīt kontu"
+      "headline": "Edit account"
     },
     "failure": {
-      "already_authenticated": "Jūs esat jau pierakstījies",
+      "already_authenticated": "You are already signed in.",
       "inactive": "Your account has not been activated yet.",
-      "invalid": "Nederīgs e-pasts vai parole",
-      "invalid_token": "Nederīgs autorizācijas apliecinājums",
+      "invalid": "Invalid email or password.",
+      "invalid_token": "Invalid authentication token",
       "last_attempt": "You have one more attempt before your account will be locked.",
-      "locked": "Jūsu konts ir bloķēts",
+      "locked": "Your account is locked",
       "not_found_in_database": "Invalid email or password.",
       "timeout": "Your session has expired, please sign in again to continue.",
-      "unauthenticated": "Lai turpinātu, jums ir jāpierakstās vai jāizveido konts",
-      "unconfirmed": "Pirms turpiniet, jums ir jāapstiprina savs konts"
+      "unauthenticated": "You need to sign in or sign up before continuing",
+      "unconfirmed": "You need to confirm your account before continuing."
     },
     "mailer": {
       "confirmation_instructions": {
         "landing_page": "Please click on the link that we just sent to your email address. If you do not receive an email from us, please first check if it is not hiding in your spam folder. If it is not there return to the sign up page and try again.",
-        "subject": "Vēl viens solis, lai aktivizētu jūsu kontu"
+        "subject": "One more step to activate your account"
       },
       "reset_password_instructions": {
-        "subject": "Paroles atjaunošanas instrukcijas"
+        "subject": "Reset password instructions"
       },
       "unlock_instructions": {
         "subject": "Unlock instructions"
       }
     },
-    "mandatory": "* obligāts",
+    "mandatory": "* Required",
     "omniauth_callbacks": {
-      "failure": "Autorizācija ar %{kind} neizdevās. Kļūda: \"%{reason}\".",
+      "failure": "Authorization with %{kind} failed. Error: \"%{reason}\". ",
       "permission_missing": "You did not grant the required permission.",
-      "success": "Veiksmīgi pierakstījies ar %{kind}."
+      "success": "Successfully logged in with %{kind}."
     },
     "password_recovery": {
       "form": {
         "labels": {
-          "email": "E-pasts"
+          "email": "Email"
         },
-        "submit": "Atjaunot paroli"
+        "submit": "Reset password"
       },
-      "headline": "Aizmirsāt paroli?"
+      "headline": "Forgot password?"
     },
     "password_reset": {
       "email": {
-        "comment": "Ja Jūs nepieprasījāt paroles maiņu, vienkārši ignorējiet šo e-pastu.<br/>Jūsu parole tiks nomainīta tikai tad, ja uzklikšķināsiet uz augstākminētās saites un norādīsiet jauno paroli",
-        "headline": "Laipni lūdzam, %{email}!",
-        "link": "Nomainīt manu paroli",
+        "comment": "If you did not request a password reset, just ignore this email.<br/>Your password won\\'t be changed unless you click on the link above and set a new password.",
+        "headline": "Welcome %{email}",
+        "link": "Change my password",
         "text": "We received a request to change your password. If you sent the request, click the following link - otherwise ignore this!"
       },
       "form": {
         "labels": {
-          "password": "Jauna parole",
-          "password_confirmation": "Atkārtojiet paroli"
+          "password": "New password",
+          "password_confirmation": "Repeat password"
         },
-        "submit": "Atjaunot paroli:"
+        "submit": "Reset password"
       },
-      "headline": "Atjaunot paroli"
+      "headline": "Reset password"
     },
     "passwords": {
-      "link": "Aizmirsāt paroli?",
+      "link": "Forgot password?",
       "no_token": "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.",
       "send_instructions": "You will receive an email with instructions on how to reset your password in a few minutes",
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to reset your password",
-      "updated": "Jūsu parole tika veiksmīgi nomainīta, tagad esat pierakstījies",
-      "updated_not_active": "Jūsu parole ir veiksmīgi nomainīta"
+      "updated": "Your password was changed successfully, you are now logged in",
+      "updated_not_active": "Your password was changed successfully"
     },
     "registrations": {
-      "destroyed": "Uz redzēšanos! Jūsu konts tika veiksmīgi atcelts. Mēs ceram drīz atkal jūs redzēt.",
-      "inactive_signed_up": "Jūs esat veiksmīgi piereģistrējies, bet pierakstīšanās neiedevās. Iemesls: \"%{reason}\"",
-      "link": "Izveidot kontu",
+      "destroyed": "Bye! Your account was successfully cancelled. We hope to see you again soon.",
+      "inactive_signed_up": "You have signed up successfully, but we could not log you in. Reason: \"%{reason}\"",
+      "link": "Sign up",
       "reasons": {
-        "inactive": "neaktīvs",
-        "locked": "bloķēts",
-        "unconfirmed": "neapstiprināts"
+        "inactive": "inactive",
+        "locked": "locked",
+        "unconfirmed": "unconfirmed"
       },
       "signed_up": "You have signed up successfully. A you have been sent a confirmation email.",
       "signed_up_but_inactive": "You have signed up successfully. However, we could not sign you in because your account is not yet activated.",
       "signed_up_but_locked": "You have signed up successfully. However, we could not sign you in because your account is locked.",
       "signed_up_but_unconfirmed": "A message with a confirmation link has been sent to your email address. Please open the link to activate your account.",
       "update_needs_confirmation": "You updated your account successfully, but we need to verify your new email address. Please check your email and click on the confirm link to finalize confirming your new email address.",
-      "updated": "Jūsu konts ir veiksmīgi atjaunots."
+      "updated": "You have updated your account successfully."
     },
     "sessions": {
       "inactive": "Your account has not been activated yet",
-      "invalid": "Nederīgs e-pasts vai parole",
-      "invalid_token": "Nederīga autorizācijas atslēga",
-      "link": "Pierakstīties",
-      "locked": "Jūsu konts ir bloķēts",
+      "invalid": "Invalid email or password.",
+      "invalid_token": "Invalid authentication token",
+      "link": "Sign in",
+      "locked": "Your account is locked",
       "new": {
         "no_osm_account": "No OpenStreetMap account?",
         "osm_promo_text": "The Wheelmap is based on geodata from OpenStreetMap (OSM). OpenStreetMap is a free worldwide map, created by people like you. It's like Wikipedia for maps. To be able to edit places or to create new ones you need an OpenStreetMap account and must be logged in with it.",
@@ -565,48 +565,48 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         "sign_up_with_osm": "Register now.",
         "wheelmap_promo_text": "With your knowledge about wheelchair accessible places you can help people with physical impairments to plan their daily lives better. Furthermore, this will help make OpenStreetMap more detailed."
       },
-      "signed_in": "Pierakstīšanās izdevās",
-      "signed_out": "Jūs esat veiksmīgi izrakstījies",
+      "signed_in": "Logged in successfully",
+      "signed_out": "You have signed out successfully",
       "timeout": "Your session has expired, please sign in again to continue.",
-      "unauthenticated": "Lai turpinātu, jums ir jāpierakstās vai jāizveido konts",
-      "unconfirmed": "Jums ir jāapstiprina savs konts pirms turpināt"
+      "unauthenticated": "You need to sign in or sign up before continuing",
+      "unconfirmed": "You need to confirm your account before continuing"
     },
     "sign_in": {
       "form": {
         "labels": {
-          "email": "E-pasts",
-          "password": "Parole",
-          "remember_me": "Palikt piereģistrētam?"
+          "email": "Email",
+          "password": "Password",
+          "remember_me": "Stay logged in?"
         },
-        "submit": "Pierakstīties"
+        "submit": "Log in"
       },
-      "headline": "Pierakstīties"
+      "headline": "Log in"
     },
     "sign_out": {
-      "headline": "Izrakstīties"
+      "headline": "Log out"
     },
     "sign_up": {
       "email": {
-        "confirm_my_account": "Apstiprināt manu kontu",
-        "please_confirm": "Jūs varat apstiprināt savu kontu izmantojot saiti zemāk:",
-        "welcome": "Laipni lūdzam, %{email}!"
+        "confirm_my_account": "Confirm my account",
+        "please_confirm": "You can confirm your account through the link below:",
+        "welcome": "Welcome %{email}!"
       },
       "form": {
         "labels": {
-          "email": "E-pasts",
-          "password": "Parole",
-          "password_confirmation": "Atkārtojiet paroli",
+          "email": "Email",
+          "password": "Password",
+          "password_confirmation": "Repeat password",
           "wants_newsletter": "Yes, keep me up to date about Wheelmap - but please not more than once a month."
         },
-        "submit": "Izveidot kontu"
+        "submit": "Sign up"
       },
-      "headline": "Pierakstīties"
+      "headline": "Sign up"
     },
     "unlocks": {
       "link": "You didn't receive unlock instructions?",
       "send_instructions": "You will receive an email in a few minutes with instructions on how to unlock your account",
       "send_paranoid_instructions": "If your account exists, you will receive an email in a few minutes with instructions on how to unlock your account",
-      "unlocked": "Jūsu konts tika veiksmīgi atbloķēts un esat veiksmīgi pierakstījies."
+      "unlocked": "Your account was successfully unlocked. You are now signed in."
     }
   },
   "errors": {
@@ -614,32 +614,32 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
     "format": "%{attribute} %{message}",
     "messages": {
       "accepted": "must be accepted",
-      "already_confirmed": "jau ir apstiprināts",
+      "already_confirmed": "has already been confirmed",
       "blank": "must be filled in",
       "carrierwave_download_error": "could not be downloaded",
       "carrierwave_integrity_error": "is not of an allowed file type",
       "carrierwave_processing_error": "failed to be processed",
-      "confirmation": "Neatbilst apstiprinājumam",
+      "confirmation": "doesn't match confirmation",
       "confirmation_period_expired": "needs to be confirmed within %{period}, please request a new one",
       "empty": "must be filled in",
-      "equal_to": "Jābūt precīzi %{count}",
+      "equal_to": "must be exactly %{count}",
       "even": "must be an even number",
-      "exclusion": "ir rezervēts",
-      "expired": "Izbeidzies derīgums, lūdzu pieprasiet jaunu",
+      "exclusion": "is reserved",
+      "expired": "expired, please request a new one",
       "extension_black_list_error": "You are not allowed to upload %{extension} files, prohibited types: %{prohibited_types}",
       "extension_white_list_error": "You are not allowed to upload %{extension} files, allowed types: %{allowed_types}",
-      "greater_than": "jābūt lielākam par %{count}",
+      "greater_than": "must be greater than %{count}",
       "greater_than_or_equal_to": "must be greater than or equal to %{count}",
-      "inclusion": "nederīga vērtība",
-      "invalid": "nav derīgs",
-      "less_than": "jābūt mazāk nekā %{count}",
+      "inclusion": "not a valid value",
+      "invalid": "not valid",
+      "less_than": "must be less than %{count}",
       "less_than_or_equal_to": "must be less than or equal to %{count}",
       "mime_types_processing_error": "Failed to process file with MIME::Types, maybe not valid content-type? Original Error: %{e}",
       "mini_magick_processing_error": "Failed to manipulate with MiniMagick, maybe it is not an image? Original Error: %{e}",
-      "not_a_number": "nav skaitlis",
-      "not_an_integer": "jābūt veselam skaitlim",
-      "not_found": "netika atrasts",
-      "not_locked": "netika bloķēts",
+      "not_a_number": "is not a number",
+      "not_an_integer": "must be an integer",
+      "not_found": "was not found",
+      "not_locked": "was not locked",
       "not_saved": {
         "one": "An error prohibited to save a %{resource}:",
         "other": "%{count} errors prohibited to save a %{resource}:"
@@ -648,10 +648,10 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       "other_than": "must be other than %{count}",
       "present": "must be blank",
       "rmagick_processing_error": "Failed to manipulate with rmagick, maybe it is not an image? Original Error: %{e}",
-      "taken": "jau ir aizņemts",
-      "too_long": "ir par garu (ne vairāk kā %{count} zīmes)",
-      "too_short": "ir par īsu (ne mazāk kā %{count} zīmes)",
-      "wrong_length": "garums ir nepareizs (jābūt %{count} zīmēm)"
+      "taken": "has already been taken",
+      "too_long": "is too long (not more than %{count} characters)",
+      "too_short": "is too short (not less than %{count} characters)",
+      "wrong_length": "is the wrong length (should be %{count} characters)"
     },
     "models": {
       "node": {
@@ -661,7 +661,7 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       }
     },
     "template": {
-      "body": "Ar sekojošiem laukiem radās problēmas:",
+      "body": "There were problems with the following fields:",
       "header": {
         "one": "1 error prohibited this %{model} from being saved",
         "other": "%{count} errors prohibited this %{model} from being saved"
@@ -684,24 +684,24 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
   "flash": {
     "actions": {
       "create": {
-        "notice": "Veiksmīgi tika izveidots %{resource_name} "
+        "notice": "%{resource_name} was successfully created"
       },
       "destroy": {
-        "alert": "%{resource_name} nevarēja izdzēst ",
-        "notice": "%{resource_name} tika veiksmīgi izdzēsts"
+        "alert": "%{resource_name} could not be removed",
+        "notice": "%{resource_name} was successfully deleted"
       },
       "update": {
-        "notice": "%{resource_name} tika veiksmīgi atjaunots"
+        "notice": "%{resource_name} was successfully updated"
       }
     },
     "photos": {
       "destroy": {
-        "notice": "Attēls tika veiksmīgi izdzēsts"
+        "notice": "Image was successfully deleted"
       }
     }
   },
   "form": {
-    "show_fully_accessible_places": "pieejams ar ratiņkrēslu",
+    "show_fully_accessible_places": "Wheelchair accessible",
     "show_limited_accessible_places": "Partially wheelchair accessible",
     "show_places_without_status": "Unknown status",
     "show_unaccessible_places": "Not wheelchair accessible"
@@ -709,85 +709,85 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
   "formtastic": {
     "hints": {
       "email": "We treat your address confidentially. We promise not to send you spam!",
-      "lat": "Pārvietojiet atzīmi uz pareizo vietu kartē ",
-      "osm_username": "Neesi reģistrējies? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>",
-      "password": "(atstājiet tukšu, ja nevēlaties mainīt)",
+      "lat": "Move the marker on the map to the correct position",
+      "osm_username": "Not a member yet? <a href=\"http://openstreetmap.org/user/new\" target=\"_blank\">Create an OpenStreetMap account now</a>",
+      "password": "(leave empty if you don't want to change it)",
       "phone": "For example: +49 30 12345678",
-      "website": "Piemēram: http://www.piemers.com"
+      "website": "For example: http://www.example.com"
     },
     "labels": {
-      "category": "Kategorija:",
-      "centralkey": "Centrālā atslēga:",
-      "city": "Pilsēta:",
+      "category": "Category:",
+      "centralkey": "Central key:",
+      "city": "City:",
       "create": "Create a place",
-      "email": "E-pasts",
-      "finish": "Beigas",
-      "housenumber": "Nr.:",
-      "lat": "garums",
-      "lon": "garums",
-      "name": "Vārds:",
+      "email": "Email",
+      "finish": "Finish",
+      "housenumber": "No:",
+      "lat": "Latitude",
+      "lon": "Longitude",
+      "name": "Name:",
       "osm_password": "OpenStreetMap password",
       "osm_username": "OpenStreetMap account name",
-      "password": "Parole",
-      "password_confirmation": "Atkārtot paroli",
-      "phone": "Tālrunis:",
-      "postcode": "pasta indekss:",
-      "privacy_policy": "Es piekrītu 1. un 2. privātuma vienošanās daļai.",
+      "password": "Password",
+      "password_confirmation": "Repeat password",
+      "phone": "Telephone:",
+      "postcode": "Post code:",
+      "privacy_policy": "I accept paragraphs 1 and 2 of the data privacy agreement.",
       "reset": "Reset",
-      "save": "Saglabāt",
-      "street": "Iela:",
-      "terms": "Es piekrītu lietošanas noteikumiem",
-      "type": "Veids:",
-      "website": "Mājas lapa:",
-      "wheelchair": "Pieejamība ar ratiņkrēslu?",
-      "wheelchair_description": "Komentārs par pieejamību",
+      "save": "Save",
+      "street": "Street:",
+      "terms": "I accept the terms of use.",
+      "type": "Type:",
+      "website": "Website:",
+      "wheelchair": "Wheelchair accessibility?",
+      "wheelchair_description": "Accessibility comment:",
       "wheelchair_toilet": "Wheelchair accessible toilet:"
     },
     "titles": {
-      "basic": "Pamatdati",
-      "optional": "Vairāk informācijas <span class=\"addition\">(all fields are optional)</span>"
+      "basic": "Basic data",
+      "optional": "More information <span class=\"addition\">(all fields are optional)</span>"
     }
   },
   "global": {
-    "form_validation_error": "Lūdzu ņemiet vērā zemāk uzskaitītās kļūdas"
+    "form_validation_error": "Please note the errors listed below"
   },
   "header": {
     "meta": {
       "description": "Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!",
-      "homepage": "Mājas lapa",
-      "keywords": "Ar ratiņkrēsliem pieejamas vietas meklēt atrast atzīmēt",
-      "search": "Meklēt",
+      "homepage": "Home page",
+      "keywords": "wheelchair accessible places find search mark",
+      "search": "Search",
       "title": "Wheelmap.org"
     },
     "navigation": {
-      "blog": "Blogs",
+      "blog": "News",
       "choose_language": "Choose language",
       "contact": "Contact",
       "faq": "FAQ",
-      "feedback": "Atsauksmes",
-      "home": "Sākt",
-      "how_to_add_a_place": "Ka es varu pievienot vietas?",
-      "imprint": "Par mums",
-      "logged_in_as": "Pierakstījies kā: ",
-      "login": "Pierakstīties",
-      "logout": "Izrakstīties",
+      "feedback": "Feedback",
+      "home": "Start",
+      "how_to_add_a_place": "How do I add places?",
+      "imprint": "Imprint",
+      "logged_in_as": "Logged in as:",
+      "login": "Log in",
+      "logout": "Log out",
       "map": "Map",
-      "newsletter": "Paziņojumi par jaunumiem",
-      "press": "Presei",
+      "newsletter": "Newsletter",
+      "press": "Press",
       "privacy": "Privacy Policy",
-      "profile": "Profils",
+      "profile": "Profile",
       "projects": "Get involved",
-      "report_problem": "Ziņot par problēmu",
-      "suggestions": "Ieteikumi",
+      "report_problem": "Report a problem",
+      "suggestions": "Suggestions",
       "travelguide": "Travel guide",
-      "what_is_barrier_free": "Ko \"pieejams ar ratiņkrēslu\" nozīmē?",
+      "what_is_barrier_free": "What does \"wheelchair accessible\" mean?",
       "what_is_wheelmap": "What is Wheelmap?"
     },
     "searchbar": {
-      "add_place": "Pievienot jaunu vietu",
-      "find": "atrast",
-      "placeholder": "piem., Sunset Boulevard L.A. or Brandenburg Gate Berlin",
-      "title_add_place": "Pievieno jaunu vietu šajā pozīcijā!"
+      "add_place": "Add another place",
+      "find": "Find",
+      "placeholder": "Search for a place",
+      "title_add_place": "Add a new place at this position now!"
     },
     "tagline": "Wheelmap logo",
     "title": "Find wheelchair accessible places",
@@ -798,7 +798,7 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
   "helpers": {
     "page_entries_info": {
       "more_pages": {
-        "display_entries": "Rāda %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> no <b>%{total}</b>"
+        "display_entries": "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
       },
       "one_page": {
         "display_entries": {
@@ -809,30 +809,30 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       }
     },
     "select": {
-      "prompt": "Lūdzu izvēlieties"
+      "prompt": "Please choose"
     },
     "submit": {
-      "create": "izveidot %{model}",
-      "submit": "saglabāt %{model}",
-      "update": "atjaunot %{model}"
+      "create": "create %{model}",
+      "submit": "save %{model}",
+      "update": "update %{model}"
     }
   },
   "home": {
     "index": {
       "embed_link": "Show on Wheelmap.org",
       "filter": {
-        "category": "Izvēlēties kategoriju:",
-        "deselect_all": "Neizvēlēties visu",
-        "select_all": "Izvēlēties visu",
-        "wheelchair": "Pieejams ar ratiņkrēslu?"
+        "category": "Choose category",
+        "deselect_all": "Deselect all",
+        "select_all": "Select all",
+        "wheelchair": "Wheelchair accessible?"
       },
       "ie": {
         "action": {
-          "ignore": "Ignorēt",
-          "upgrade": "Atjaunot pārlūku"
+          "ignore": "Ignore",
+          "upgrade": "Update Browser"
         },
         "warning": {
-          "headline": "Atvainojiet!",
+          "headline": "We apologise!",
           "message": "You appear to be using Internet Explorer. Wheelmap requires a standards compliant browser to work properly. Please consider using Firefox, Chrome, Safari or Opera."
         }
       },
@@ -853,17 +853,17 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         "form": {
           "limited": "Partially wheelchair accessible",
           "no": "Not wheelchair accessible",
-          "save": "Atjaunot",
+          "save": "Update",
           "unknown": "Unknown status",
-          "yes": "pieejams ar ratiņkrēslu"
+          "yes": "Wheelchair accessible"
         },
-        "help": "Pieejams ar ratiņkrēslu? (Palīdzība)",
-        "more": "vairāk..."
+        "help": "Wheelchair accessible? (Help)",
+        "more": "more ..."
       },
       "zoom_alert": "Zoom in closer to see more places."
     }
   },
-  "how?": "Kā?",
+  "how?": "How?",
   "landing_pages": {
     "index": {
       "wheelchair": {
@@ -874,10 +874,10 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
           "headline": "All not wheelchair accessible %{type} in %{city} (%{count})"
         },
         "unknown": {
-          "headline": "Visas (%{count}) %{type} vietas ar vēl nezināmu pieejamības ar ratiņkrēsliem statusu %{city}"
+          "headline": "All %{type} in %{city} with unknown wheelchair status (%{count})"
         },
         "yes": {
-          "headline": "Visas (%{count}) ar ratiņkrēslu pieejamās %{type} vietas %{city}"
+          "headline": "All wheelchair accessible %{type} in %{city} (%{count})"
         }
       }
     }
@@ -885,7 +885,7 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
   "layouts": {
     "application": {
       "banner": {
-        "alt": "Sozialhelden.de projekts"
+        "alt": "A project by Sozialhelden.de"
       }
     }
   },
@@ -907,38 +907,38 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
   "node": {
     "address": {
       "city": "%{city} %{postcode}",
-      "street": " %{street} %{housenumber}"
+      "street": "%{housenumber} %{street}"
     },
     "tags": {
-      "phone": "Tālrunis:",
-      "website": "Mājas lapa:"
+      "phone": "Phone:",
+      "website": "Website:"
     }
   },
   "nodes": {
     "create": {
       "flash": {
-        "not_successfull": "Ui, ievadītie dati bija vai nu nekorekti vai arī nepilnīgi",
-        "successfull": "Paldies, jūsu ieraksts tika veiksmīgi saglabāts un drīz būs pieejams tiešsaistē. "
+        "not_successfull": "Oops, your input was either incorrect or incomplete",
+        "successfull": "Thank you, your submission was saved successfully and will be online shortly."
       }
     },
     "edit": {
       "header": {
-        "title": "Labot vietu: %{node} | wheelmap.org"
+        "title": "Edit place: %{node} | wheelmap.org"
       },
       "link": {
-        "large_map": "&laquo; Atcelt"
+        "large_map": "&laquo; Cancel"
       }
     },
     "errors": {
       "default": "Oops something went wrong. We have been informed about this issue",
-      "not_authorized": "Atvainojiet, autorizācija neizdevās",
-      "not_available": "Atvainojiet, šī lapa šobrīd nav pieejama",
-      "not_existent": "Atvainojiet, šī vieta vairs nav pieejama",
-      "not_found": "Atvainojiet, lapa nav atrasta.",
-      "param_missing": "lūdzu norādiet terminu meklēšanai"
+      "not_authorized": "Sorry, authentication failed",
+      "not_available": "Sorry, this page is temporarily not available.",
+      "not_existent": "Sorry, this place is not available anymore.",
+      "not_found": "Sorry, page not found.",
+      "param_missing": "Please provide a search term"
     },
     "flash": {
-      "authorize_wheelmap": "Jums ir nepieciešams OpenStreetMap konts lai mainītu datus"
+      "authorize_wheelmap": "You need an OpenStreetMap account to modify data"
     },
     "new": {
       "form": {
@@ -976,17 +976,17 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         "title": "Add a place"
       },
       "header": {
-        "title": "Jauna vieta | wheelmap.org"
+        "title": "New place | wheelmap.org"
       },
       "link": {
-        "large_map": "&laquo; Atcelt"
+        "large_map": "&laquo; Cancel"
       }
     },
     "node": {
       "link": {
-        "claim": "Vai tu šeit strādā?",
-        "edit_node": "Labot vietu",
-        "report_bug": "Ziņot par problēmu"
+        "claim": "Do you work here?",
+        "edit_node": "Edit place",
+        "report_bug": "Report a problem"
       }
     },
     "node_data": {
@@ -1029,31 +1029,31 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
           "description": "Find out if this place is wheelchair accessible on Wheelmap.org. Or add further information and photos to the place.",
           "title": "This place is on Wheelmap.org: %{name}"
         },
-        "title": "Vieta: %{node} | wheelmap.org"
+        "title": "Place: %{node} | wheelmap.org"
       },
       "link": {
-        "back": "atpakaļ",
-        "large_map": "Palielināt",
-        "listing": "Visas '%{type}' veida vietas %{city}",
-        "upload": "Augšupuzlādēt attēlu"
+        "back": "back",
+        "large_map": "Enlarge",
+        "listing": "All places of typ '%{type}' in %{city}",
+        "upload": "Upload image"
       },
       "more_data_from": "There is more information about this place, validated by:",
       "share": {
-        "email": "E-pasts",
+        "email": "Email",
         "facebook": "Facebook",
         "text": "I found this place on Wheelmap.org: %{name}",
         "twitter": "Twitter"
       },
-      "show-in-osm": "OpenStreetMap\n"
+      "show-in-osm": "OpenStreetMap"
     },
     "update": {
       "flash": {
-        "not_successfull": "Ups, Jūsu ieraksts bija vai nu nekorekts vai arī nepilnīgs",
-        "successfull": "Paldies, jūsu ieraksts tika veiksmīgi saglabāts un tūlīt būs pieejams tiešsaistē"
+        "not_successfull": "Oops, your input was either incorrect or incomplete",
+        "successfull": "Thank you, your submission was saved successfully and will be online shortly."
       }
     },
     "update_wheelchair": {
-      "successfull": "\"%{name}\" statuss ir izmainīts uz \"%{status} wheelchair accessible\". Izmaiņas drīz būs redzamas tiešsaistē."
+      "successfull": "The status for \"%{name}\" has been changed to \"%{status}\" and will be online shortly."
     }
   },
   "number": {
@@ -1065,11 +1065,11 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         "separator": ".",
         "significant": false,
         "strip_insignificant_zeros": false,
-        "unit": "Ls"
+        "unit": "$"
       }
     },
     "format": {
-      "delimiter": ".",
+      "delimiter": ",",
       "precision": 3,
       "separator": ".",
       "significant": false,
@@ -1079,11 +1079,11 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       "decimal_units": {
         "format": "%n %u",
         "units": {
-          "billion": "Miljards",
-          "million": "miljons",
-          "quadrillion": "Kvadriljons",
-          "thousand": "tūkstotis",
-          "trillion": "Triljons",
+          "billion": "Billion",
+          "million": "Million",
+          "quadrillion": "Quadrillion",
+          "thousand": "Thousand",
+          "trillion": "Trillion",
           "unit": ""
         }
       },
@@ -1129,227 +1129,227 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       "notice": "Your Wheelmap account is now connected to the OpenStreetMap account %{user}."
     }
   },
-  "or": "vai",
+  "or": "or",
   "place": {
     "one": "%{count} place",
     "other": "%{count} places"
   },
   "poi": {
     "category": {
-      "accommodation": "Apmešanās vietas",
-      "education": "Izglītība",
-      "food": "Sabiedriskā ēdināšana",
-      "government": "Valdība",
-      "health": "Veselība",
-      "leisure": "Atpūta",
+      "accommodation": "Accomodation",
+      "education": "Education",
+      "food": "Food",
+      "government": "Government",
+      "health": "Health",
+      "leisure": "Leisure",
       "misc": "Miscellaneous",
       "money_post": "Bank / Post office",
       "public_transfer": "Public transport",
-      "shopping": "Iepirkšanās",
-      "sport": "Sports",
-      "tourism": "Tūrisms",
-      "unknown": "Nezināms"
+      "shopping": "Shopping",
+      "sport": "Sport",
+      "tourism": "Tourism",
+      "unknown": "Unknown"
     },
     "name": {
       "accommodation": {
-        "beach_resort": "Pludmales viesnīca",
-        "bed_and_breakfast": "B&B",
-        "camp_site": "Nometnes vieta",
-        "caravan_site": "Treileru kempings",
-        "chalet": "Kempinga mājiņas",
+        "beach_resort": "Beach hotel",
+        "bed_and_breakfast": "Bed and breakfast",
+        "camp_site": "Camp site",
+        "caravan_site": "Caravan site",
+        "chalet": "Chalet",
         "dormitory": "Dormitory",
-        "guest_house": "Viesu māja",
-        "hostel": "Hostelis",
-        "hotel": "Viesnīca",
-        "motel": "Motelis"
+        "guest_house": "Guest house",
+        "hostel": "Hostel",
+        "hotel": "Hotel",
+        "motel": "Motel"
       },
       "education": {
-        "college": "Koledža",
+        "college": "College",
         "driving_school": "Driving school",
-        "kindergarten": "Bērnu dārzs",
-        "library": "Bibliotēka",
-        "museum": "Muzejs",
-        "school": "Skola",
-        "university": "Universitāte"
+        "kindergarten": "Kindergarten",
+        "library": "Library",
+        "museum": "Museum",
+        "school": "School",
+        "university": "University"
       },
       "food": {
-        "bar": "Bārs",
-        "biergarten": "Alus dārzs",
-        "cafe": "Kafejnīca",
-        "drinking_water": "Dzeramais ūdens",
-        "fast_food": "Ātrā ēdināšana",
+        "bar": "Bar",
+        "biergarten": "Biergarten",
+        "cafe": "Cafe",
+        "drinking_water": "Drinking water",
+        "fast_food": "Fast Food",
         "ice_cream": "Ice cream parlour",
-        "pub": "Krogs",
-        "restaurant": "Restorāns"
+        "pub": "Pub",
+        "restaurant": "Restaurant"
       },
       "government": {
-        "courthouse": "Tiesa",
-        "embassy": "Vēstniecība",
+        "courthouse": "Courthouse",
+        "embassy": "Embassy",
         "employment_agency": "Employment agency",
         "government": "Government agency",
-        "police": "Policija",
-        "public_building": "Publiska ēka",
+        "police": "Police",
+        "public_building": "Public building",
         "townhall": "Town hall"
       },
       "health": {
         "alternative": "Alternative medicine practitioner",
         "dentist": "Dentist",
         "doctors": "Doctor",
-        "hearing_aids": "Dzirdes aparātu izplatītājs",
-        "hospital": "Slimnīca",
-        "medical_supply": "Medicīnas preces",
+        "hearing_aids": "Hearing aid dealer",
+        "hospital": "Hospital",
+        "medical_supply": "Medical supplies",
         "occupational_therapist": "Occupational therapist",
-        "pharmacy": "Aptieka",
+        "pharmacy": "Pharmacy",
         "physiotherapist": "Physiotherapist",
         "psychotherapist": "Psychotherapist",
-        "social_facility": "Sociālā iestāde",
+        "social_facility": "Social facility",
         "speech_therapist": "Speech therapist",
-        "veterinary": "veterinārā klīnika"
+        "veterinary": "Veterinary"
       },
       "leisure": {
-        "arena": "Arēna",
-        "brothel": "Bordelis",
+        "arena": "Arena",
+        "brothel": "Brothel",
         "casino": "Casino",
-        "cinema": "Kinoteātris",
+        "cinema": "Cinema",
         "community_centre": "Community centre",
-        "gallery": "Galerija",
+        "gallery": "Gallery",
         "massage": "Massage spa",
-        "nightclub": "Naktsklubs",
-        "playground": "Rotaļu laukums",
-        "sauna": "Pirts",
-        "stripclub": "Striptīza klubs",
+        "nightclub": "Nightclub",
+        "playground": "Playground",
+        "sauna": "Sauna",
+        "stripclub": "Stripclub",
         "tattoo": "Tattoo shop",
-        "theatre": "Teātris",
-        "zoo": "Zooloģiskais dārzs"
+        "theatre": "Theatre",
+        "zoo": "Zoo"
       },
       "misc": {
         "association": "Association",
-        "company": "Uzņēmums (birojs)",
+        "company": "Company (Office)",
         "estate_agent": "Real estate agent",
         "insurance": "Insurance",
-        "lawyer": "Juridiskie pakalpojumi",
+        "lawyer": "Lawyer",
         "ngo": "Non-government organisation",
-        "place_of_worship": "Reliģisks objekts",
+        "place_of_worship": "Place of worship",
         "political_party": "Political party office",
-        "toilets": "Labierīcības"
+        "toilets": "Toilets"
       },
       "money_post": {
-        "atm": "bankomāts",
-        "bank": "Banka",
-        "bureau_de_change": "Valūtas maiņa",
-        "post_box": "Vēstuļu kaste",
-        "post_office": "Pasta nodaļa"
+        "atm": "ATM",
+        "bank": "Bank",
+        "bureau_de_change": "Bureau de change",
+        "post_box": "Post box",
+        "post_office": "Post office"
       },
       "public_transfer": {
-        "aerodrome": "Lidosta",
-        "bicycle_parking": "Velosipēdu novietne",
-        "bicycle_rental": "Velosipēdu noma",
+        "aerodrome": "Airport",
+        "bicycle_parking": "Bicycle parking",
+        "bicycle_rental": "Bicycle rental",
         "boatyard": "Boat yard",
-        "bus_station": "Autobusa pietura",
-        "bus_stop": "Autobusu pietura",
-        "cable_car": "Trosu dzelzceļš",
-        "car_rental": "Auto noma",
-        "car_sharing": "Auto koplietošana",
-        "chair_lift": "Pacēlājs",
-        "ferry": "Prāmis",
-        "ferry_terminal": "Prāmju piestātne",
-        "fuel": "Degvielas uzpildes stacija",
-        "halt": "Pietura",
-        "light_rail": "Pilsētas vilciens",
-        "parking": "Auto stāvvieta",
-        "parking_aisle": "auto stāvvieta",
-        "platform": "Platforma",
-        "station": "Metro",
-        "subway_entrance": "Ieeja metro",
-        "terminal": "Lidostas terminālis",
-        "tram_stop": "Tramvaja pietura"
+        "bus_station": "Bus station",
+        "bus_stop": "Bus stop",
+        "cable_car": "Cable car",
+        "car_rental": "Car rental",
+        "car_sharing": "Car sharing",
+        "chair_lift": "Chair lift",
+        "ferry": "Ferry",
+        "ferry_terminal": "Ferry terminal",
+        "fuel": "Gas station",
+        "halt": "Halt",
+        "light_rail": "Light rail",
+        "parking": "Parking",
+        "parking_aisle": "Parking aisle",
+        "platform": "Platform",
+        "station": "Train station",
+        "subway_entrance": "Subway entrance",
+        "terminal": "Airport terminal",
+        "tram_stop": "Tram stop"
       },
       "shopping": {
-        "alcohol": "Alkohols",
+        "alcohol": "Liquor",
         "antiques": "Antiques",
         "art": "Gallery shop",
-        "bakery": "Konditoreja",
+        "bakery": "Bakery",
         "beauty": "Beauty salon",
-        "beverages": "Dzērieni",
-        "bicycle": "Velosipēdu veikals",
-        "books": "Grāmatas",
-        "butcher": "Gaļas veikals",
-        "car_repair": "Auto remonts",
-        "car_shop": "Auto veikals",
+        "beverages": "Beverages",
+        "bicycle": "Bike shop",
+        "books": "Books",
+        "butcher": "Butcher",
+        "car_repair": "Car repair",
+        "car_shop": "Car shop",
         "chemist": "Chemist / Drugstore",
-        "clothes": "Apģērbs",
-        "computer": "Datori",
+        "clothes": "Clothes",
+        "computer": "Computer",
         "confectionery": "Candy store",
-        "convenience": "Dažādas preces",
+        "convenience": "Convenience",
         "copyshop": "Copy shop",
         "deli": "Delicatessen",
-        "department_store": "Universālveikals",
-        "doityourself": "mājai & dārzam",
-        "dry_cleaning": "Ķīmiskā tīrītava",
-        "electronics": "Elektronika",
+        "department_store": "Department store",
+        "doityourself": "Do it yourself",
+        "dry_cleaning": "Dry cleaning",
+        "electronics": "Electronics",
         "erotic": "Sex shop",
         "fabric": "Fabric shop",
         "farm_shop": "Farm shop",
-        "florist": "Florists",
+        "florist": "Florist",
         "funeral_directors": "Funeral home",
-        "furniture": "Mēbeles",
+        "furniture": "Furniture",
         "garden_centre": "Garden centre",
         "gift": "Gift shop",
         "greengrocer": "Greengrocer",
-        "hairdresser": "Frizieris",
-        "hardware": "Saimniecības preces",
+        "hairdresser": "Hairdresser",
+        "hardware": "Hardware",
         "interior_decoration": "Interior design shop",
         "jewelry": "Jewelry",
-        "kiosk": "Kiosks",
-        "laundry": "Veļas mazgātuve",
-        "mall": "Iepirkšanās centrs",
+        "kiosk": "Kiosk",
+        "laundry": "Laundry",
+        "mall": "Shopping centre",
         "mobile_phone": "Mobile phone shop",
         "music": "Record store",
         "musical_instrument": "Musical instrument shop",
         "newsagent": "News agent",
-        "optician": "optiķis",
+        "optician": "Optician",
         "organic": "Organic shop",
         "outdoor": "Outdoor supply",
         "pet": "Pet shop",
-        "photo": "Foto",
-        "second_hand": "lietoti apģērbi",
-        "shoes": "Apavi",
+        "photo": "Photo",
+        "second_hand": "Second hand",
+        "shoes": "Shoes",
         "sports": "Sports",
-        "stationery": "Rakstāmlietas",
-        "supermarket": "Lielveikals",
+        "stationery": "Stationery",
+        "supermarket": "Supermarket",
         "tailor": "Tailor",
         "tea": "Tea supply",
         "tobacco": "Tobacco shop",
         "toys": "Toys",
         "travel_agency": "Travel agency",
         "variety_store": "Discount store",
-        "video": "Video noma"
+        "video": "Video rental store"
       },
       "sport": {
         "pitch": "Sports field",
-        "sports_centre": "Sporta centrs",
-        "stadium": "Stadions",
-        "swimming": "Peldēšana",
-        "swimming_pool": "Peldbaseins"
+        "sports_centre": "Sports centre",
+        "stadium": "Stadium",
+        "swimming": "Swimming",
+        "swimming_pool": "Swimming pool"
       },
       "tourism": {
-        "archaeological_site": "Arheoloģisko izrakumu vieta",
-        "arts_centre": "Mākslas centrs",
-        "artwork": "Mākslas darbs",
-        "attraction": "Ievērojama vieta",
-        "battlefield": "Kaujas lauks",
-        "beach": "Pludmale",
-        "beacon": "Bāka",
-        "castle": "Pils",
-        "cave_entrance": "Ieeja alā",
-        "information": "Tūrisma informācija",
-        "memorial": "Memoriāls",
-        "theme_park": "Atrakciju parks",
-        "tower": "Tornis",
-        "viewpoint": "Skatu laukums"
+        "archaeological_site": "Archaeological site",
+        "arts_centre": "Arts centre",
+        "artwork": "Artwork",
+        "attraction": "Attraction",
+        "battlefield": "Battlefield",
+        "beach": "Beach",
+        "beacon": "Lighthouse",
+        "castle": "Castle",
+        "cave_entrance": "Cave entrance",
+        "information": "Tourist information",
+        "memorial": "Memorial",
+        "theme_park": "Theme park",
+        "tower": "Tower",
+        "viewpoint": "View point"
       },
       "unknown": {
-        "unknown": "Nezināms"
+        "unknown": "Unknown"
       }
     }
   },
@@ -1357,13 +1357,13 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
     "edit": {
       "application": {
         "oauth": {
-          "connected": "Statuss: tiešsaistē",
-          "grant": "Pieslēgties tūlīt",
-          "not_connected": "Satuss: Nav tiešsaistē",
-          "revoke": "Atvienoties"
+          "connected": "Status: connected",
+          "grant": "Connect now",
+          "not_connected": "Status: Not connected",
+          "revoke": "Disconnect"
         }
       },
-      "headline": "Mainīt savu profilu"
+      "headline": "Edit your profile"
     }
   },
   "ransack": {
@@ -1459,8 +1459,8 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         }
       },
       "search": {
-        "for": "Meklē \"%{q}\"",
-        "not_found": "Neviena vieta nav atrasta!"
+        "for": "Searching for \"%{q}\"",
+        "not_found": "No places could be found!"
       }
     },
     "timeout": {
@@ -1470,34 +1470,34 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
     }
   },
   "splash": {
-    "countline": "%{count} vietas jau ir atzīmētas",
-    "headline": "Ikviens var pievienot ar ratiņkrēsliem pieejamās vietas!",
-    "start": "Sākt",
-    "step1": "Klikšķiniet uz vietas, kuru ziniet",
-    "step2": "Atzīmējiet to un nospiežiet saglabāt",
-    "step3": "Tas arī viss! Reģistrācija nav nepieciešama",
+    "countline": "%{count} places have already been marked.",
+    "headline": "Everyone can add wheelchair accessible places!",
+    "start": "Start",
+    "step1": "Click on a place you know",
+    "step2": "Mark it and click save",
+    "step3": "That's it! No registration necessary",
     "what_is_wheelmap": "What is Wheelmap?"
   },
-  "statistics": "Statistika",
+  "statistics": "Statistics",
   "support": {
     "array": {
-      "last_word_connector": "un",
-      "sentence_connector": "un",
-      "two_words_connector": "un",
+      "last_word_connector": " and ",
+      "sentence_connector": "and",
+      "two_words_connector": " and ",
       "words_connector": ","
     },
     "select": {
-      "prompt": "Lūdzu izvēlieties"
+      "prompt": "Please select"
     }
   },
   "time": {
-    "am": "no rīta",
+    "am": "am",
     "formats": {
       "default": "%a, %d %b %Y %H:%M:%S %z",
       "long": "%B %d, %Y %H:%M",
       "short": "%d %b %H:%M"
     },
-    "pm": "vakarā"
+    "pm": "pm"
   },
   "toiletstatus": {
     "no": "No wheelchair accessible toilet",
@@ -1512,22 +1512,22 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
   "user_sessions": {
     "create": {
       "activation": {
-        "notice": "Jūsu konts ir aktivizēts!"
+        "notice": "Your account is activated now!"
       },
       "error": {
-        "notice": "E-pasts un parole nesakrīt"
+        "notice": "Email and password don't match."
       },
-      "notice": "Izdevās pierakstīties!"
+      "notice": "You're in!"
     },
     "destroy": {
-      "notice": "Uz redzēšanos! "
+      "notice": "Bye, come back soon!"
     },
     "new": {
       "email": "Email address",
-      "login": "Pierakstīties",
-      "login_with_twitter": "Pierakstīties ar Twitter",
-      "password": "Parole",
-      "remember_me": "Palikt piereģistrētam"
+      "login": "Log in",
+      "login_with_twitter": "Log in with Twitter",
+      "password": "Password",
+      "remember_me": "Stay logged in"
     }
   },
   "users": {
@@ -1548,12 +1548,12 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
         "legends": {
           "user_data": "Your account information"
         },
-        "title": "Profils"
+        "title": "Profile"
       },
       "newsletter": {
         "label": "Yes, keep me updated about Wheelmap.",
         "text": "Stay up to date with the Wheelmap newsletter. Don't worry, we won't spam you. You'll hear from us once a month at most.",
-        "title": "Paziņojumi par jaunumiem"
+        "title": "Newsletter"
       },
       "photos": {
         "empty": "You haven't uploaded any photos yet.",
@@ -1607,10 +1607,10 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
   },
   "views": {
     "pagination": {
-      "first": "&laquo; Pirmā",
-      "last": "Pēdējā &raquo;",
-      "next": "Nākošais &rsaquo;",
-      "previous": "&lsaquo; Iepriekšējais",
+      "first": "&laquo; First",
+      "last": "Last &raquo;",
+      "next": "Next &rsaquo;",
+      "previous": "&lsaquo; Prev",
       "truncate": "&hellip;"
     }
   },
@@ -1618,22 +1618,22 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
     "limited": "Partially wheelchair accessible",
     "no": "Not wheelchair accessible",
     "unknown": "Unknown status",
-    "yes": "pieejams ar ratiņkrēslu"
+    "yes": "Wheelchair accessible"
   },
   "wheelmap": {
     "footer": {
-      "a_project_of": "projekts",
-      "based_on": "Balstīts uz",
-      "become_a_supporter": "Kļūsti par atbalstītāju",
-      "main_supporter": "Galvenais atbalstītājs"
+      "a_project_of": "A project by",
+      "based_on": "Based on",
+      "become_a_supporter": "Become a supporter",
+      "main_supporter": "Main supporter"
     },
     "itunes": {
       "alt": "AppStore Logo",
-      "title": "Lejupielādējiet iPhone App tūlīt!"
+      "title": "Download the iPhone App now!"
     },
     "logo": {
-      "alt": "Wheelmap Logo - atrodiet ar ratiņkrēslu pieejamas vietas",
-      "title": "Wheelmap - atrodiet ar ratiņkrēslu pieejamas vietas"
+      "alt": "Wheelmap Logo - find wheelchair accessible places",
+      "title": "Wheelmap - find wheelchair accessible places"
     },
     "what_is": {
       "fully_accessible": "Entrance without steps, all rooms without steps.",
@@ -1643,10 +1643,10 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
     }
   },
   "will_paginate": {
-    "next_label": "Nākošais &#8594;",
+    "next_label": "Next &#8594;",
     "page_entries_info": {
-      "multi_page": "Rāda %{from} - %{to} no %{count} %{model} kopumā",
-      "multi_page_html": "Parāda  %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> no <b>%{count}</b> kopumā",
+      "multi_page": "Displaying %{model} %{from} - %{to} of %{count} in total",
+      "multi_page_html": "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total",
       "single_page": {
         "one": "Displaying 1 %{model}",
         "other": "Displaying all %{count} %{model}",
@@ -1659,6 +1659,6 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
       }
     },
     "page_gap": "&hellip;",
-    "previous_label": "&#8592; Iepriekšējais"
+    "previous_label": "&#8592; Previous"
   }
 });

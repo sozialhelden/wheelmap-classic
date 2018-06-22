@@ -1,0 +1,54 @@
+---
+en:
+  activerecord:
+    attributes:
+      user:
+        first_name: "Given name"
+        last_name: "Last name"
+        privacy_policy: "Privacy policy"
+        terms: Terms
+    errors:
+      full_messages:
+        format: "%{attribute} %{message}"
+      messages:
+        accepted: "must be accepted"
+        blank: "can't be blank"
+        confirmation: "doesn't match confirmation"
+        empty: "can't be empty"
+        equal_to: "must be equal to %{count}"
+        even: "must be even"
+        exclusion: "is reserved"
+        greater_than: "must be greater than %{count}"
+        greater_than_or_equal_to: "must be greater than or equal to %{count}"
+        inclusion: "is not included in the list"
+        invalid: "is invalid"
+        less_than: "must be less than %{count}"
+        less_than_or_equal_to: "must be less than or equal to %{count}"
+        not_a_number: "is not a number"
+        not_equal_to: "must not be equal to %{count}"
+        odd: "must be odd"
+        record_invalid: "Validation failed: %{errors}"
+        taken: "has already been taken"
+        too_long: "is too long (maximum is %{count} characters)"
+        too_short: "is too short (minimum is %{count} characters)"
+        wrong_length: "is the wrong length (should be %{count} characters)"
+      models:
+        user:
+          attributes:
+            email:
+              blank: "can't be blank if password is given"
+            privacy_policy:
+              accepted: "must be accepted"
+            terms:
+              accepted: "must be accepted"
+        user_session:
+          email: "Email address"
+          password: Password
+          remember_me: "Stay logged in"
+      template:
+        body: "There were problems with the following fields:"
+        header:
+          one: "1 error prohibited this %{model} from being saved"
+          other: "%{count} errors prohibited this %{model} from being saved"
+    models:
+      user: User

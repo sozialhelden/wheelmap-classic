@@ -20,6 +20,7 @@ Languages = {
   'ja'    => '日本',
   'ko'    => '한국어',
   'lv'    => 'Latviešu',
+  'mn'    => 'монгол хэл',
   'nb'    => 'Norsk Bokmål',
   'nl'    => 'Nederlands',
   'pl'    => 'Polski',

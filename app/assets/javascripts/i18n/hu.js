@@ -801,7 +801,7 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
         "display_entries": "%{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> megjelenítve (összesen <b>%{total}</b>)"
       },
       "one_page": {
-        "display_entries": "<b>Mind a %{count}</b> %{entry_name} megjelenítve"
+        "display_entries": "<b>Mind a(z) %{count}</b> %{entry_name} megjelenítve"
       }
     },
     "select": {
@@ -1603,8 +1603,8 @@ I18n.translations["hu"] = I18n.extend((I18n.translations["hu"] || {}), {
   },
   "views": {
     "pagination": {
-      "first": "&laquo; First",
-      "last": "Last &raquo;",
+      "first": "&laquo; Első",
+      "last": "Utolsó &raquo;",
       "next": "Következő &rsaquo;",
       "previous": "&lsaquo; Előző",
       "truncate": "&hellip;"
