@@ -1,0 +1,21 @@
+mn:
+  models:
+    category:
+      prompt: "Ангилалыг сонгох "
+    node_type:
+      prompt: "Төрлийг сонгох "
+    node:
+      info_edit_position: "Энэ байршил нь Wheelmap -д дээрх байдлаар харагдах болно. Хэрвээ буруу тэмдэглэгээ хийгдсэн бол <a href=\"%{url}\">та OpenStreetMap дээр өөрчлөлт хийж болно</a>"
+      mail:
+        subject: "[Wheelmap] Асуудал нь %{headline}"
+        body: "(Зөвхөн Англи эсвэл Герман хэлээр бичнэ.)\n\nСайн байна уу Sozialhelden,\nбайршил алдаатай байна: %{url}\n\nАсуудал нь: "
+  actions:
+    send: Илгээх
+    save: Хадгалах
+    cancel: Цуцлах
+    next: 'Дараагийнх '
+  errors:
+    models:
+      node:
+        website:
+          invalid: "Вэбсайт хаяг хүчин төгөлдөр биш байна "

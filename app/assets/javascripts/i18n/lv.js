@@ -798,7 +798,7 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
   "helpers": {
     "page_entries_info": {
       "more_pages": {
-        "display_entries": "Parāda  %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> no <b>%{total}</b> kopumā"
+        "display_entries": "Rāda %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> no <b>%{total}</b>"
       },
       "one_page": {
         "display_entries": {
@@ -1607,8 +1607,8 @@ I18n.translations["lv"] = I18n.extend((I18n.translations["lv"] || {}), {
   },
   "views": {
     "pagination": {
-      "first": "&laquo; First",
-      "last": "Last &raquo;",
+      "first": "&laquo; Pirmā",
+      "last": "Pēdējā &raquo;",
       "next": "Nākošais &rsaquo;",
       "previous": "&lsaquo; Iepriekšējais",
       "truncate": "&hellip;"

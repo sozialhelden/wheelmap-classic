@@ -833,7 +833,7 @@ I18n.translations["ru"] = I18n.extend((I18n.translations["ru"] || {}), {
           "few": "Показаны <b>%{count}</b> %{entry_name}",
           "many": "Показаны <b>%{count}</b> %{entry_name}",
           "one": "Показано <b>%{count}</b> %{entry_name}",
-          "other": "Показаны <b>все %{count}</b> %{entry_name}\"",
+          "other": "Показаны <b>все %{count}</b> %{entry_name}",
           "zero": "No %{entry_name} found"
         }
       }

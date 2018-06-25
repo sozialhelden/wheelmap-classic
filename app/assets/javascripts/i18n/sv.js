@@ -803,7 +803,7 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
       "one_page": {
         "display_entries": {
           "one": "Visar <b>%{count}<b> %{entry_name}",
-          "other": "Visar <b>alla ,%{count}</b> %{entry_name}",
+          "other": "Visar <b>alla %{count}</b> %{entry_name}",
           "zero": "No %{entry_name} found"
         }
       }
@@ -1607,8 +1607,8 @@ I18n.translations["sv"] = I18n.extend((I18n.translations["sv"] || {}), {
   },
   "views": {
     "pagination": {
-      "first": "&laquo; First",
-      "last": "Last &raquo;",
+      "first": "&laquo; Första",
+      "last": "Sista &raquo;",
       "next": "Nästa &rsaquo;",
       "previous": "&lsaquo; Föregående",
       "truncate": "&hellip;"

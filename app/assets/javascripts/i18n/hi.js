@@ -1607,8 +1607,8 @@ I18n.translations["hi"] = I18n.extend((I18n.translations["hi"] || {}), {
   },
   "views": {
     "pagination": {
-      "first": "&laquo; First",
-      "last": "Last &raquo;",
+      "first": "&laquo; पहला",
+      "last": "आखरी &raquo;",
       "next": "अगला &rsaquo;",
       "previous": "&lsaquo; पिछला",
       "truncate": "&hellip;"

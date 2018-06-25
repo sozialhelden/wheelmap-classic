@@ -803,13 +803,14 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
   "helpers": {
     "page_entries_info": {
       "more_pages": {
-        "display_entries": "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
+        "display_entries": "Zobrazuji %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> z <b>%{total} celkových</b>"
       },
       "one_page": {
         "display_entries": {
-          "one": "Displaying <b>%{count}</b> %{entry_name}",
-          "other": "Displaying <b>all %{count}</b> %{entry_name}",
-          "zero": "No %{entry_name} found"
+          "few": "Zobrazuji <b>%{count}</b> %{entry_name}",
+          "one": "Zobrazuji <b>%{count}</b> %{entry_name}",
+          "other": "Zobrazuji <b>%{count}</b> %{entry_name}",
+          "zero": "Žádná položka nenalezena"
         }
       }
     },
@@ -1619,10 +1620,10 @@ I18n.translations["cs"] = I18n.extend((I18n.translations["cs"] || {}), {
   },
   "views": {
     "pagination": {
-      "first": "&laquo; First",
-      "last": "Last &raquo;",
-      "next": "Next &rsaquo;",
-      "previous": "&lsaquo; Prev",
+      "first": "&laquo; První",
+      "last": "Poslední &raquo;",
+      "next": "Další &rsaquo;",
+      "previous": "&lsaquo; Předchozí",
       "truncate": "&hellip;"
     }
   },

@@ -799,13 +799,14 @@ I18n.translations["lt"] = I18n.extend((I18n.translations["lt"] || {}), {
   "helpers": {
     "page_entries_info": {
       "more_pages": {
-        "display_entries": "Displaying %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> of <b>%{total}</b> in total"
+        "display_entries": "Rodomi %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> iš <b>%{total}</b>"
       },
       "one_page": {
         "display_entries": {
-          "one": "Displaying <b>%{count}</b> %{entry_name}",
-          "other": "Displaying <b>all %{count}</b> %{entry_name}",
-          "zero": "No %{entry_name} found"
+          "few": "Rodomi <b>visi %{count}</b> %{entry_name}",
+          "one": "Rodomas <b>%{count}</b> %{entry_name}",
+          "other": "Rodomi <b>visi %{count}</b> %{entry_name}",
+          "zero": "%{entry_name} nerastas"
         }
       }
     },
