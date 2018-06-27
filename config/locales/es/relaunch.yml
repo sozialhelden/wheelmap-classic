@@ -149,7 +149,7 @@ es:
         label: Sí, mantenme informado sobre Wheelmap
       show:
         title: Visión de conjunto
-        text_html: "Hola,<br>\nBienvenido (de nuevo) a Wheelmap.org! Estamos felices de tenerte con nosotros! Puedes navegar en nuestro <a href=\\\"http://news.wheelmap.org/en/\\\">Blog</a> o <a href=\\\"http://news.wheelmap.org/en/FAQ/\\\">FAQs</a> si quieres saber un poco más sobre Wheelmap.org. O quieres aprender un poco sobre el <a href=\\\"http://news.wheelmap.org/en/wheelmap-ambassador/\\\">projecto</a> que ofrecemos y como puedes formar parte de ellos.<br>\nPara estar en contacto, puedes subscribirte a nuestro boletín mensual o seguirnos en <a href=\\\"https://www.facebook.com/wheelmap\\\">Facebook</a> y <a href=\\\"https://twitter.com/wheelmap\\\">Twitter</a>. Esperamos con ansías escuchar tus opiniones y empezar una conversación contigo!<br>\nY ahora, mapea feliz!<br>\nTu equipo\
+        text_html: "Hola,<br>\nBienvenido (de nuevo) a Wheelmap.org! Estamos felices de tenerte con nosotros! Puedes navegar en nuestro <a href=\"http://news.wheelmap.org/en/\">Blog</a> o <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> si quieres saber un poco más sobre Wheelmap.org. O quieres aprender un poco sobre el <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">projecto</a> que ofrecemos y como puedes formar parte de ellos.<br>\nPara estar en contacto, puedes subscribirte a nuestro boletín mensual o seguirnos en <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> y <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Esperamos con ansías escuchar tus opiniones y empezar una conversación contigo!<br>\nY ahora, mapea feliz!<br>\nTu equipo\
           \ de Wheelmap"
         greeting:
           anonymously: Hola

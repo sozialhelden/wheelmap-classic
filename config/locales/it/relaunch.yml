@@ -149,7 +149,7 @@ it:
         label: Si, tienimi aggiornato su Wheelmap.
       show:
         title: Panoramica
-        text_html: "Ciao,<br>\nBenvenuto (bentornato) su Wheelmap.org! Siamo felici di averti a bordo! È possibile consultare il nostro <a href=\\\"http://news.wheelmap.org/en/\\\">Blog</a> o le nostre <a href=\\\"http://news.wheelmap.org/en/FAQ/\\\">FAQs</a> se vuoi conoscere meglio Wheelmap.org. Oppure puoi scoprire di più sui <a href=\\\"http://news.wheelmap.org/en/wheelmap-ambassador/\\\">progetti</a> che offriamo attorno a Wheelmap.org e come partecipare.<br>\nPer rimanere in contatto è possibile iscriversi alla nostra newsletter mensile e seguirci su <a href=\\\"https://www.facebook.com/wheelmap\\\">Facebook</a> e <a href=\\\"https://twitter.com/wheelmap\\\">Twitter</a>. Non vediamo l'ora di sentire la tua opinione e iniziare una conversazione con te!<br>\nE ora, buona mappatura!<br>\nIl team\
+        text_html: "Ciao,<br>\nBenvenuto (bentornato) su Wheelmap.org! Siamo felici di averti a bordo! È possibile consultare il nostro <a href=\"http://news.wheelmap.org/en/\">Blog</a> o le nostre <a href=\"http://news.wheelmap.org/en/FAQ/\">FAQs</a> se vuoi conoscere meglio Wheelmap.org. Oppure puoi scoprire di più sui <a href=\"http://news.wheelmap.org/en/wheelmap-ambassador/\">progetti</a> che offriamo attorno a Wheelmap.org e come partecipare.<br>\nPer rimanere in contatto è possibile iscriversi alla nostra newsletter mensile e seguirci su <a href=\"https://www.facebook.com/wheelmap\">Facebook</a> e <a href=\"https://twitter.com/wheelmap\">Twitter</a>. Non vediamo l'ora di sentire la tua opinione e iniziare una conversazione con te!<br>\nE ora, buona mappatura!<br>\nIl team\
           \ di Wheelmap"
         greeting:
           anonymously: Ciao
