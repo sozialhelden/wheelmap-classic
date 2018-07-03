@@ -1,3 +1,5 @@
+# require 'pry-byebug'
+
 class UsersController < ApplicationController
   include AuthenticateUserFromToken
 
@@ -24,6 +26,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    # binding.pry
+
     @user = current_user
     @user.attributes = user_params
     email_changed = @user.email_changed?
