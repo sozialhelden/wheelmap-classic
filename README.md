@@ -1,11 +1,13 @@
-# Wheelmap.org
+# Classic Wheelmap.org (deprecated)
+
+**This repository is not maintained anymore. The new GitHub repository is here: https://github.com/sozialhelden/wheelmap-react-frontend**
 
 [![Build Status](https://travis-ci.org/sozialhelden/wheelmap.svg?branch=master)](https://travis-ci.org/sozialhelden/wheelmap)
 [![Stories in Next](https://badge.waffle.io/sozialhelden/wheelmap.png?label=next&title=Next)](https://waffle.io/sozialhelden/wheelmap)
 
 Wheelmap.org is an online map to search, find and mark wheelchair-accessible places. Get involved by marking public places like bars, restaurants, cinemas or supermarkets!
 
-This Repository is the source code of the website [Wheelmap.org](http://wheelmap.org/).
+This repository is the source code of the old website [classic.wheelmap.org](http://classic.wheelmap.org/).
 
 ### Development Environment
 
