@@ -29,10 +29,10 @@ when 'production'
     command_without_output "flock -n tmp/pids/replicate.lock -c 'script/replicate.sh'"
   end
 
-  every '* * * * *' do
-    set :job_template, "bash -l -c ':job'"
-    rake 'report:minutely'
-  end
+  # every '* * * * *' do
+  #   set :job_template, "bash -l -c ':job'"
+  #   rake 'report:minutely'
+  # end
 
   every :sunday, at: '2:30 am' do
     set :job_template, "bash -l -c ':job'"
@@ -44,10 +44,10 @@ when 'production'
     rake 'poi:locate'
   end
 
-  every '*/30 * * * *' do
-    set :job_template, "bash -l -c ':job'"
-    rake 'report:hourly'
-  end
+  # every '*/30 * * * *' do
+  #   set :job_template, "bash -l -c ':job'"
+  #   rake 'report:hourly'
+  # end
 
   every :day, at: '0:20am' do
     set :job_template, "bash -l -c ':job'"
