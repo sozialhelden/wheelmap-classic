@@ -29,7 +29,7 @@ module Wheelmap
     config.middleware.use(Rack::I18nLocaleSwitcher)
     config.i18n.fallbacks = true
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-    config.i18n.default_locale = :de
+    config.i18n.default_locale = :en # We changed the default locale to english because #681
     config.i18n.enforce_available_locales = false
 
     config.i18n.available_locales = [:de]
