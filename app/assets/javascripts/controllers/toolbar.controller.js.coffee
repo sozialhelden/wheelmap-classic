@@ -115,11 +115,6 @@ Wheelmap.ToolbarController = Ember.ArrayController.extend
 
   categoryFiltersDidChange: (()->
     categories = @get('activeCategories').getEach('identifier')
-
-    if I18n.locale == 'de' and categories.length == 1 and categories[0] == 'sport'
-      $('#allianz').show()
-    else
-      $('#allianz').hide()
   ).observes('activeCategories')
 
   actions:
