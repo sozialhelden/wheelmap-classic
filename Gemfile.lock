@@ -263,7 +263,7 @@ GEM
     formtastic_i18n (0.6.0)
     friendly_id (5.0.5)
       activerecord (>= 4.0.0)
-    geocoder (1.4.9)
+    geocoder (1.6.1)
     gherkin (5.1.0)
     guard (2.14.2)
       formatador (>= 0.2.4)
