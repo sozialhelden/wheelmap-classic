@@ -1,3 +1,5 @@
+# ARCHIVED in March 2026
+
 # Classic Wheelmap.org (deprecated)
 
 **This repository is not maintained anymore. The new GitHub repository is here: https://github.com/sozialhelden/wheelmap-react-frontend**
